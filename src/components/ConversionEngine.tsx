@@ -14,7 +14,7 @@ export default function ConversionEngine() {
             Stop bleeding revenue. <br className="hidden md:block"/> Deploy the architecture.
           </h2>
           <p className="mt-8 text-xl text-white/50 font-light max-w-2xl">
-            Calculate your exact latency penalty on the left, then deploy your custom autonomous growth engine on the right.
+            Calculate your exact friction penalty on the left, then deploy your custom autonomous growth engine on the right.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export default function ConversionEngine() {
           {/* Left Column: Latency Penalty (ROI Calculator) */}
           <div className="w-full h-full bg-[#0a0a0a] rounded-[3rem] p-8 md:p-12 border border-white/10 shadow-2xl relative overflow-hidden flex flex-col justify-center">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none" />
-            <h3 className="text-2xl font-bold tracking-tight mb-8">The Latency Penalty</h3>
+            <h3 className="text-2xl font-bold tracking-tight mb-8">The Friction Penalty</h3>
             <div className="relative z-10 w-full h-full">
               <ROICalculator />
             </div>
