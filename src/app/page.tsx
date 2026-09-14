@@ -81,14 +81,12 @@ export default function Home() {
                 Command Your Market
               </Link>
             </Magnetic>
-            <Magnetic>
-              <Link 
-                href="#architectures"
-                className="px-10 py-5 rounded-full border border-white/20 text-white text-base md:text-lg font-medium hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm flex items-center justify-center"
-              >
-                See The Blueprints
-              </Link>
-            </Magnetic>
+            <Link 
+              href="#architectures"
+              className="px-10 py-5 rounded-full border border-white/20 text-white text-base md:text-lg font-medium hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm flex items-center justify-center"
+            >
+              See The Blueprints
+            </Link>
           </motion.div>
         </div>
       </section>

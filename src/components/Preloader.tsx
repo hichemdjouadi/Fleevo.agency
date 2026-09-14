@@ -3,118 +3,91 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
+const words = [
+  "Architecture",
+  "Automation",
+  "Performance",
+  "Fleevo."
+];
+
 export default function Preloader() {
-  const [counter, setCounter] = useState(0);
+  const [index, setIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Elegant, premium loading curve
-    let current = 0;
-    const interval = setInterval(() => {
-      // Slow down significantly as it approaches 100 to build anticipation
-      const increment = current < 80 ? Math.random() * 4 + 1 : Math.random() * 1.5;
-      current += increment;
-      
-      if (current >= 100) {
-        current = 100;
-        setCounter(100);
-        clearInterval(interval);
-        setTimeout(() => setIsLoaded(true), 600); // Dramatic pause at 100
-      } else {
-        setCounter(Math.floor(current));
-      }
-    }, 30);
+    // Total preloader duration should feel snappy but readable
+    if (index === words.length - 1) {
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 800); // Hold on "Fleevo." before exiting
+      return;
+    }
 
-    return () => clearInterval(interval);
-  }, []);
+    const timeout = setTimeout(() => {
+      setIndex(index + 1);
+    }, index === 0 ? 600 : 400); // Hold first word slightly longer, then snap through
 
-  // Complex Awwwards-style cubic bezier easing
-  const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
+    return () => clearTimeout(timeout);
+  }, [index]);
+
+  const easeCurve: [number, number, number, number] = [0.76, 0, 0.24, 1];
+
+  const slideUp = {
+    initial: { y: "100%" },
+    enter: { 
+      y: "0%", 
+      transition: { duration: 0.4, ease: easeCurve } 
+    },
+    exit: { 
+      y: "-100%", 
+      transition: { duration: 0.4, ease: easeCurve } 
+    }
+  };
+
+  const backgroundSlide = {
+    initial: { y: 0 },
+    exit: { 
+      y: "-100%", 
+      transition: { duration: 1, ease: easeCurve, delay: 0.2 } 
+    }
+  };
 
   return (
     <AnimatePresence>
       {!isLoaded && (
         <motion.div
-          initial={{ y: 0 }}
-          exit={{ y: "-100%" }}
-          transition={{ duration: 1.2, ease: easeOutExpo, delay: 0.2 }}
-          className="fixed inset-0 z-[100] flex flex-col justify-between p-8 md:p-12 bg-[#050505] overflow-hidden"
+          variants={backgroundSlide}
+          initial="initial"
+          exit="exit"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#050505]"
         >
-          {/* Subtle Grid Background */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-
-          {/* Top Row: Brand & Status */}
-          <div className="flex justify-between items-start w-full relative z-10 text-white/50 uppercase tracking-widest text-xs font-medium">
-            <motion.div 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+          {/* Subtle percentage counter tracking the array index */}
+          <div className="absolute bottom-10 right-10 flex text-white/40 font-mono text-sm tracking-widest overflow-hidden">
+            <motion.span 
+              key={index}
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              className="inline-block"
             >
-              Fleevo Agency
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            >
-              Initializing Architecture
-            </motion.div>
+              {Math.round(((index + 1) / words.length) * 100)}%
+            </motion.span>
           </div>
 
-          {/* Center: Massive Percentage & Branding */}
-          <div className="flex flex-col items-center justify-center relative z-10 w-full flex-1">
-            <motion.div className="overflow-hidden relative flex items-center justify-center">
-              
-              {/* Massive Percentage Background (Faded) */}
-              <motion.div 
-                exit={{ scale: 0.9, opacity: 0, filter: "blur(10px)" }}
-                transition={{ duration: 0.8, ease: easeOutExpo }}
-                className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none"
+          {/* The Word Sequence */}
+          <div className="overflow-hidden flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={index}
+                variants={slideUp}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                className="text-5xl md:text-7xl lg:text-[6rem] font-medium tracking-tighter text-white drop-shadow-2xl"
               >
-                <span className="text-[40vw] font-bold tracking-tighter text-white leading-none">
-                  {counter}
-                </span>
-              </motion.div>
-
-              {/* The Wordmark */}
-              <motion.h1 
-                initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
-                animate={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
-                exit={{ scale: 1.05, opacity: 0, filter: "blur(5px)" }}
-                transition={{ duration: 1.5, ease: easeOutExpo }}
-                className="text-5xl md:text-8xl lg:text-[9rem] font-medium tracking-tighter leading-none text-white relative z-20 mix-blend-difference"
-              >
-                FLEEVO.
+                {words[index]}
               </motion.h1>
-            </motion.div>
+            </AnimatePresence>
           </div>
-
-          {/* Bottom Row: Loading Bar */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="w-full relative z-10 flex flex-col gap-4"
-          >
-            <div className="flex justify-between items-end text-white/50 text-xs font-mono uppercase tracking-widest">
-              <span>Loading Systems</span>
-              <span className="text-white">{counter}%</span>
-            </div>
-            
-            {/* Impeccable Loading Track */}
-            <div className="w-full h-[2px] bg-white/10 rounded-full overflow-hidden relative">
-              <motion.div 
-                className="absolute top-0 left-0 bottom-0 bg-white"
-                style={{ width: `${counter}%` }}
-                layout
-                transition={{ duration: 0.1, ease: "linear" }}
-              />
-            </div>
-          </motion.div>
-
         </motion.div>
       )}
     </AnimatePresence>
