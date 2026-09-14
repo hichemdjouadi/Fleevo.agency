@@ -48,13 +48,13 @@ export default function ROICalculator() {
         <div className="flex bg-white/5 p-1 rounded-full text-[10px] font-bold tracking-[0.2em] border border-white/10 shrink-0">
           <button 
             onClick={() => handleCurrencyChange("DA")}
-            className={px-5 py-2.5 rounded-full transition-all duration-300 }
+            className={`px-5 py-2.5 rounded-full transition-all duration-300 ${currency === "DA" ? "bg-white text-black shadow-lg" : "text-white/40 hover:text-white"}`}
           >
             DZD
           </button>
           <button 
             onClick={() => handleCurrencyChange("USD")}
-            className={px-5 py-2.5 rounded-full transition-all duration-300 }
+            className={`px-5 py-2.5 rounded-full transition-all duration-300 ${currency === "USD" ? "bg-white text-black shadow-lg" : "text-white/40 hover:text-white"}`}
           >
             USD
           </button>
