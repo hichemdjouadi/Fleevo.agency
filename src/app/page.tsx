@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import ConversionEngine from "@/components/ConversionEngine";
 import Footer from "@/components/Footer";
+import HeroVisual from "@/components/HeroVisual";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import Bottlenecks from "@/components/Bottlenecks";
 import Magnetic from "@/components/Magnetic";
@@ -83,22 +84,13 @@ export default function Home() {
           </motion.div>
 
           {/* MASSIVE HERO VISUAL ANCHOR (Like the blue screen or yellow ghost in the inspiration) */}
-          <motion.div 
+                    <motion.div 
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-20 w-full max-w-[1000px] aspect-video md:aspect-[21/9] rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br from-blue-600 to-indigo-900 shadow-[0_40px_100px_-20px_rgba(37,99,235,0.4)] relative overflow-hidden flex items-center justify-center group cursor-pointer"
+            className="mt-20 w-full max-w-[1000px] aspect-video md:aspect-[21/9] rounded-[2rem] md:rounded-[3rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] relative overflow-hidden"
           >
-             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-             
-             {/* Placeholder for actual 3D visual */}
-             <div className="relative z-10 text-white/90 text-center flex flex-col items-center">
-                <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
-                </div>
-                <p className="text-sm font-bold tracking-[0.2em] uppercase">Play Showreel</p>
-             </div>
+             <HeroVisual />
           </motion.div>
 
         </div>
