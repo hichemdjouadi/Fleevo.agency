@@ -14,10 +14,7 @@ export default function Home() {
       
       {/* Pristine Light-Mode Hero */}
       <section className="relative w-full flex flex-col items-center pt-56 pb-24 overflow-hidden bg-[#fff]">
-        
-        {/* Ultra-Clean Typography Layout exactly like reference */}
         <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 w-full max-w-[1400px] mx-auto">
-
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,7 +32,6 @@ export default function Home() {
             className="mt-12 text-lg md:text-[24px] text-[#050505] font-medium max-w-[750px] leading-[1.3]">We design and build digital products, brands and websites for companies ready to move beyond the ordinary.
           </motion.p>
           
-          {/* MASSIVE HERO VISUAL ANCHOR */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,7 +40,6 @@ export default function Home() {
           >
              <HeroVisual />
           </motion.div>
-
         </div>
       </section>
 
@@ -55,12 +50,12 @@ export default function Home() {
         </div>
         <div className="w-full md:w-2/3">
           <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.3] text-black">
-            Since 2010, we've partnered with startups, scale-ups and global companies to design brands, websites and digital products that combine beautiful visuals with measurable business results.
+            We engineer autonomous systems for high-ticket service brands. We partner with ambitious companies to design brands, websites and digital products that combine beautiful visuals with measurable business results.
           </p>
         </div>
       </section>
 
-      {/* Features (No more gradient cards, ultra-clean list with huge typography) */}
+      {/* Features */}
       <section className="py-24 px-6 w-full max-w-[1200px] mx-auto">
         <div className="flex flex-col border-t border-black/10">
           {[
@@ -110,24 +105,48 @@ export default function Home() {
          </div>
       </section>
 
-      {/* FAQ restored */}
-      <div className="max-w-[1000px] mx-auto px-6 py-24 border-t border-black/10">
-        <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-16">Questions?</h2>
-        <FAQ />
+      {/* Stats Grid matching original Fleevo modules */}
+      <div className="max-w-[1200px] mx-auto px-6 pb-32">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="bg-emerald-50 rounded-[32px] p-8 flex flex-col justify-end min-h-[250px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
+            <span className="text-5xl md:text-6xl font-medium text-black tracking-tight">15+</span>
+            <span className="text-base font-medium text-black/50 mt-2">Partners</span>
+          </div>
+          <div className="bg-indigo-50 rounded-[32px] p-8 flex flex-col justify-end min-h-[250px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
+            <span className="text-5xl md:text-6xl font-medium text-black tracking-tight">40+</span>
+            <span className="text-base font-medium text-black/50 mt-2">Projects Launched</span>
+          </div>
+          <div className="bg-blue-50 rounded-[32px] p-8 flex flex-col justify-end min-h-[250px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
+            <span className="text-5xl md:text-6xl font-medium text-black tracking-tight">300+</span>
+            <span className="text-base font-medium text-black/50 mt-2">Million Generated</span>
+          </div>
+          <div className="bg-orange-50 rounded-[32px] p-8 flex flex-col justify-end min-h-[250px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
+            <span className="text-5xl md:text-6xl font-medium text-black tracking-tight">24/7</span>
+            <span className="text-base font-medium text-black/50 mt-2">Support</span>
+          </div>
+        </div>
       </div>
 
-      {/* Massive Get In Touch Outro */}
-      <section className="w-full bg-[#050505] text-white py-40 px-6 flex flex-col items-center justify-center text-center">
-        <h2 className="text-5xl md:text-[100px] font-medium tracking-tighter leading-none mb-12">
-          Have an idea?
-        </h2>
-        <Link href="/contact" className="inline-block px-12 py-6 rounded-full bg-white text-black text-xl font-medium hover:scale-105 transition-transform duration-300">
-          Tell us about it
-        </Link>
+      <FAQ />
+
+      {/* Cinematic Outro */}
+      <section className="relative w-full text-white py-56 px-6 flex flex-col items-center justify-center text-center overflow-hidden">
+        <div className="absolute inset-0 w-full h-full z-0 bg-black">
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-50 scale-105">
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="relative z-10 flex flex-col items-center">
+          <h2 className="text-5xl md:text-[110px] font-medium tracking-tighter leading-none mb-12">
+            Have an idea?
+          </h2>
+          <Link href="/contact" className="inline-block px-12 py-6 rounded-full bg-white text-black text-xl font-medium hover:scale-105 transition-transform duration-300">
+            Tell us about it
+          </Link>
+        </div>
       </section>
 
       <Footer />
     </main>
   );
 }
-
