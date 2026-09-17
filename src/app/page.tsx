@@ -5,6 +5,7 @@ import Methodology from "@/components/Methodology";
 import FeaturedWork from "@/components/FeaturedWork";
 import Architectures from "@/components/Architectures";
 import FAQ from "@/components/FAQ";
+import Testimonials from "@/components/Testimonials";
 import ConversionEngine from "@/components/ConversionEngine";
 import Footer from "@/components/Footer";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
@@ -62,34 +63,44 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 text-lg md:text-2xl text-black/60 font-light max-w-[800px] leading-[1.6]"
+            className="mt-8 text-lg md:text-xl text-black/60 font-light max-w-[600px] leading-[1.6]"
           >
-            We engineer autonomous systems for high-ticket service brands.
-            <br className="hidden md:block"/> Scale your revenue, buy back your time, and dominate your market.
+            We engineer autonomous systems for high-ticket service brands. Scale your revenue and buy back your time.
           </motion.p>
           
-          {/* Simple, mature CTAs - Inverted for Light Mode */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-14 flex flex-col sm:flex-row items-center gap-5"
+            className="mt-10 flex flex-col sm:flex-row items-center gap-5"
           >
-            <Magnetic>
-              <Link 
-                href="#conversion"
-                className="px-10 py-5 rounded-full bg-black text-white text-base md:text-lg font-medium tracking-wide hover:scale-105 transition-all duration-300 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] flex items-center justify-center"
-              >
-                Command Your Market
-              </Link>
-            </Magnetic>
             <Link 
-              href="#architectures"
-              className="px-10 py-5 rounded-full border border-black/10 text-black bg-white/50 backdrop-blur-md text-base md:text-lg font-medium hover:bg-black/5 transition-colors duration-300 flex items-center justify-center"
+              href="#conversion"
+              className="px-8 py-4 rounded-full bg-black text-white text-base font-medium tracking-wide hover:scale-105 transition-all duration-300 shadow-xl"
             >
-              See The Blueprints
+              Command Your Market
             </Link>
           </motion.div>
+
+          {/* MASSIVE HERO VISUAL ANCHOR (Like the blue screen or yellow ghost in the inspiration) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-20 w-full max-w-[1000px] aspect-video md:aspect-[21/9] rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br from-blue-600 to-indigo-900 shadow-[0_40px_100px_-20px_rgba(37,99,235,0.4)] relative overflow-hidden flex items-center justify-center group cursor-pointer"
+          >
+             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+             
+             {/* Placeholder for actual 3D visual */}
+             <div className="relative z-10 text-white/90 text-center flex flex-col items-center">
+                <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
+                </div>
+                <p className="text-sm font-bold tracking-[0.2em] uppercase">Play Showreel</p>
+             </div>
+          </motion.div>
+
         </div>
       </section>
 
@@ -116,7 +127,10 @@ export default function Home() {
         </div>
 
         {/* Light Block 2 (Services / Architecture) */}
-        <div className="bg-studio-light rounded-t-[3rem] overflow-hidden">
+                <Testimonials />
+
+        {/* Light Block 2 (Services / Architecture) */}
+        <div className="bg-studio-light rounded-t-[3rem] overflow-hidden border-t border-black/5">
           <Architectures />
         </div>
 

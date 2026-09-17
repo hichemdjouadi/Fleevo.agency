@@ -35,19 +35,19 @@ export default function Methodology() {
   });
 
   return (
-    <section className="bg-white text-black py-32 md:py-48 px-6 md:px-16" ref={containerRef}>
+    <section className="bg-transparent text-white py-32 md:py-48 px-6 md:px-16" ref={containerRef}>
       <div className="max-w-[1600px] mx-auto flex flex-col xl:flex-row gap-24">
         
         {/* Left: Sticky Header */}
         <div className="w-full xl:w-1/3">
           <div className="sticky top-40">
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-black/40 block mb-6">
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/40 block mb-6">
               The Blueprint
             </span>
             <h2 className="text-5xl md:text-7xl font-medium tracking-tighter leading-[0.9] mb-8">
               Our Operating Codes.
             </h2>
-            <p className="text-xl md:text-2xl text-black/60 font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed">
               We do not act as order-takers. We act as technical growth partners. These are the four strict architectural rules we apply to every platform we deploy.
             </p>
           </div>
@@ -57,11 +57,11 @@ export default function Methodology() {
         <div className="w-full xl:w-2/3 relative">
           
           {/* Background Line */}
-          <div className="absolute left-[15px] top-0 bottom-0 w-[1px] bg-black/10" />
+          <div className="absolute left-[15px] top-0 bottom-0 w-[1px] bg-white/10" />
           
           {/* Animated Progress Line */}
           <motion.div 
-            className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-black origin-top"
+            className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-white origin-top"
             style={{ scaleY: scrollYProgress }}
           />
 
@@ -69,15 +69,15 @@ export default function Methodology() {
             {STEPS.map((step, idx) => (
               <div key={idx} className="relative pl-16 md:pl-24">
                 {/* Node */}
-                <div className="absolute left-[11px] top-2 w-[10px] h-[10px] rounded-full bg-white border-[2px] border-black" />
+                <div className="absolute left-[11px] top-2 w-[10px] h-[10px] rounded-full bg-black border-[2px] border-white" />
                 
-                <span className="text-sm font-bold tracking-[0.2em] uppercase text-black/40 block mb-4">
+                <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/40 block mb-4">
                   {step.phase}
                 </span>
                 <h3 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">
                   {step.title}
                 </h3>
-                <p className="text-xl md:text-2xl text-black/70 font-light leading-relaxed max-w-2xl">
+                <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-2xl">
                   {step.description}
                 </p>
               </div>
