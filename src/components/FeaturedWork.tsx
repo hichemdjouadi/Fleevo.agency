@@ -21,7 +21,7 @@ export default function FeaturedWork() {
       title: "E-commerce Redesign",
       client: "Lumina",
       image: "/dental-ui.jpg",
-      bg: "bg-purple-100",
+      bg: "bg-indigo-100",
     },
     {
       title: "AI Booking Agent",
@@ -40,7 +40,7 @@ export default function FeaturedWork() {
               <Image src={project.image} alt={project.title} fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]" unoptimized />
             </div>
             <h3 className="text-xl font-medium text-white mb-1">{project.title}</h3>
-            <p className="text-sm text-white/40">{project.client}</p>
+            <p className="text-sm text-white/60">{project.client}</p>
           </Link>
         ))}
       </div>
@@ -51,7 +51,7 @@ export default function FeaturedWork() {
               <Image src={project.image} alt={project.title} fill className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]" unoptimized />
             </div>
             <h3 className="text-xl font-medium text-white mb-1">{project.title}</h3>
-            <p className="text-sm text-white/40">{project.client}</p>
+            <p className="text-sm text-white/60">{project.client}</p>
           </Link>
         ))}
       </div>
@@ -64,3 +64,4 @@ export default function FeaturedWork() {
     </div>
   );
 }
+
