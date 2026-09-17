@@ -67,12 +67,12 @@ export default function Footer() {
             {/* Offices */}
             <div className="flex flex-col md:flex-row gap-12 md:gap-24">
               <div className="flex flex-col gap-2">
-                <span className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase">MENA HQ</span>
+                <span className="text-xs font-bold tracking-[0.2em] text-white/60 uppercase">MENA HQ</span>
                 <span className="font-medium text-lg">Algiers, Algeria</span>
                 <span className="text-white/60 font-light">{time}</span>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase">Global</span>
+                <span className="text-xs font-bold tracking-[0.2em] text-white/60 uppercase">Global</span>
                 <span className="font-medium text-lg">Remote Distribution</span>
                 <span className="text-white/60 font-light">Available 24/7</span>
               </div>
@@ -83,12 +83,12 @@ export default function Footer() {
           {/* Right Side: Links */}
           <div className="lg:col-span-4 flex justify-start lg:justify-end">
             <div className="grid grid-cols-2 gap-x-16 gap-y-4 text-lg font-light tracking-wide">
-              <Link href="/systems" className="hover:text-white/50 transition-colors">Systems</Link>
-              <Link href="/work" className="hover:text-white/50 transition-colors">Proof of Concept</Link>
-              <Link href="/about" className="hover:text-white/50 transition-colors">The Agency</Link>
-              <Link href="/#intake" className="hover:text-white/50 transition-colors">Workflow</Link>
-              <Link href="#" className="hover:text-white/50 transition-colors">Blog</Link>
-              <Link href="#" className="hover:text-white/50 transition-colors">Contacts</Link>
+              <Link href="/systems" className="hover:text-white/70 transition-colors">Systems</Link>
+              <Link href="/work" className="hover:text-white/70 transition-colors">Proof of Concept</Link>
+              <Link href="/about" className="hover:text-white/70 transition-colors">The Agency</Link>
+              <Link href="/#intake" className="hover:text-white/70 transition-colors">Workflow</Link>
+              <Link href="#" className="hover:text-white/70 transition-colors">Blog</Link>
+              <Link href="#" className="hover:text-white/70 transition-colors">Contacts</Link>
             </div>
           </div>
 
@@ -96,7 +96,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 gap-8">
-          <div className="flex items-center gap-8 text-sm text-white/40">
+          <div className="flex items-center gap-8 text-sm text-white/60">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>&copy; {new Date().getFullYear()}, Fleevo</span>
           </div>

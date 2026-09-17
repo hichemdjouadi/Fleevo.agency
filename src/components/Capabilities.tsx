@@ -21,7 +21,7 @@ export default function Capabilities() {
           {/* Card 1 */}
           <div className="group relative bg-brand-card border border-white/5 rounded-3xl p-8 md:p-12 overflow-hidden hover:border-white/20 transition-colors">
             <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
-              <ArrowUpRight className="w-8 h-8 text-white/40" />
+              <ArrowUpRight className="w-8 h-8 text-white/60" />
             </div>
             <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
               <Globe className="w-6 h-6 text-white" />
@@ -40,7 +40,7 @@ export default function Capabilities() {
           {/* Card 2 */}
           <div className="group relative bg-brand-card border border-white/5 rounded-3xl p-8 md:p-12 overflow-hidden hover:border-white/20 transition-colors">
             <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
-              <ArrowUpRight className="w-8 h-8 text-white/40" />
+              <ArrowUpRight className="w-8 h-8 text-white/60" />
             </div>
             <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
               <Database className="w-6 h-6 text-white" />

@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabase-server';
-import { seedTestData } from './seed';
+import { seedTestData } from '../seed';
 import { revalidatePath } from 'next/cache';
 
 export default async function AdminDashboardPage() {

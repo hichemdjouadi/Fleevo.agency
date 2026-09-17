@@ -13,7 +13,7 @@ export default function ConversionEngine() {
           <h2 className="text-5xl md:text-7xl font-medium tracking-tighter leading-[0.9] max-w-4xl">
             Stop bleeding revenue. <br className="hidden md:block"/> Deploy the architecture.
           </h2>
-          <p className="mt-8 text-xl text-white/50 font-light max-w-2xl">
+          <p className="mt-8 text-xl text-white/70 font-light max-w-2xl">
             Calculate your exact friction penalty on the left, then deploy your custom autonomous growth engine on the right.
           </p>
         </div>

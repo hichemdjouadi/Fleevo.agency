@@ -62,7 +62,7 @@ export default function Preloader() {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#050505]"
         >
           {/* Subtle percentage counter tracking the array index */}
-          <div className="absolute bottom-10 right-10 flex text-white/40 font-mono text-sm tracking-widest overflow-hidden">
+          <div className="absolute bottom-10 right-10 flex text-white/60 font-mono text-sm tracking-widest overflow-hidden">
             <motion.span 
               key={index}
               initial={{ y: "100%" }}

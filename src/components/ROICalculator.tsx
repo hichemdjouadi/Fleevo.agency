@@ -41,20 +41,20 @@ export default function ROICalculator() {
       
       {/* Header & Toggle */}
       <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center mb-12 gap-6 border-b border-white/10 pb-8">
-        <p className="text-white/50 max-w-sm font-light text-sm leading-relaxed">
+        <p className="text-white/70 max-w-sm font-light text-sm leading-relaxed">
           Globally—across the US, Europe, and MENA—standard commodity websites leak up to <strong className="text-white">68%</strong> of potential revenue due to poor mobile UX, friction, and a lack of visual trust.
         </p>
         
         <div className="flex bg-white/5 p-1 rounded-full text-[10px] font-bold tracking-[0.2em] border border-white/10 shrink-0">
           <button 
             onClick={() => handleCurrencyChange("DA")}
-            className={`px-5 py-2.5 rounded-full transition-all duration-300 ${currency === "DA" ? "bg-white text-black shadow-lg" : "text-white/40 hover:text-white"}`}
+            className={`px-5 py-2.5 rounded-full transition-all duration-300 ${currency === "DA" ? "bg-white text-black shadow-lg" : "text-white/60 hover:text-white"}`}
           >
             DZD
           </button>
           <button 
             onClick={() => handleCurrencyChange("USD")}
-            className={`px-5 py-2.5 rounded-full transition-all duration-300 ${currency === "USD" ? "bg-white text-black shadow-lg" : "text-white/40 hover:text-white"}`}
+            className={`px-5 py-2.5 rounded-full transition-all duration-300 ${currency === "USD" ? "bg-white text-black shadow-lg" : "text-white/60 hover:text-white"}`}
           >
             USD
           </button>
@@ -68,7 +68,7 @@ export default function ROICalculator() {
           
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-center">
-              <label className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase">Monthly Traffic</label>
+              <label className="text-[10px] font-bold tracking-[0.2em] text-white/70 uppercase">Monthly Traffic</label>
               <span className="font-mono text-sm font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-md">{traffic.toLocaleString()}</span>
             </div>
             <input 
@@ -80,7 +80,7 @@ export default function ROICalculator() {
 
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-center">
-              <label className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase">Average Order Value</label>
+              <label className="text-[10px] font-bold tracking-[0.2em] text-white/70 uppercase">Average Order Value</label>
               <span className="font-mono text-sm font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-md">{aov.toLocaleString()} {currency}</span>
             </div>
             <input 
@@ -92,7 +92,7 @@ export default function ROICalculator() {
 
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-center">
-              <label className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase">Current Conversion</label>
+              <label className="text-[10px] font-bold tracking-[0.2em] text-white/70 uppercase">Current Conversion</label>
               <span className="font-mono text-sm font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-md">{conversion}%</span>
             </div>
             <input 
@@ -113,10 +113,10 @@ export default function ROICalculator() {
             <motion.span className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
               {displayLeak}
             </motion.span>
-            <span className="text-xl md:text-3xl font-light text-white/40">{currency}</span>
+            <span className="text-xl md:text-3xl font-light text-white/60">{currency}</span>
           </div>
           <p className="text-[10px] text-white/30 uppercase tracking-[0.1em] mt-8 text-left xl:text-center max-w-[250px] leading-relaxed">
-            Calculated using a highly conservative <strong className="text-white/50">+65%</strong> conversion uplift benchmark when migrating from a commodity template to a zero-friction premium architecture.
+            Calculated using a highly conservative <strong className="text-white/70">+65%</strong> conversion uplift benchmark when migrating from a commodity template to a zero-friction premium architecture.
           </p>
         </div>
 

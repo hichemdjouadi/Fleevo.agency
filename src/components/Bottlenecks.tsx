@@ -13,7 +13,7 @@ export default function Bottlenecks() {
         
         {/* Section Header */}
         <div className="flex flex-col mb-24 items-center text-center">
-          <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/40 block mb-6">The Diagnosis</span>
+          <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/60 block mb-6">The Diagnosis</span>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-[0.9] max-w-5xl text-white">
             The Bottlenecks <br className="hidden md:block"/> We Eliminate.
           </h2>
@@ -56,13 +56,13 @@ export default function Bottlenecks() {
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="text-base text-white/80 font-medium tracking-wide">More Clicks</span>
-                  <span className="text-sm text-white/40">than last month</span>
+                  <span className="text-sm text-white/60">than last month</span>
                 </div>
               </div>
             </div>
 
             <h3 className="text-3xl font-bold tracking-tight mb-4 text-white">The Ad-Spend Bleed</h3>
-            <p className="text-lg text-white/50 font-light leading-relaxed mb-10">
+            <p className="text-lg text-white/70 font-light leading-relaxed mb-10">
               You pay premium rates for ads, but your site is so slow that users leave before seeing your offer. You are burning money.
             </p>
             <div className="mt-auto border-t border-white/10 pt-8">
@@ -109,13 +109,13 @@ export default function Bottlenecks() {
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="text-base text-white/80 font-medium tracking-wide">Saved</span>
-                  <span className="text-sm text-white/40">from manual tasks</span>
+                  <span className="text-sm text-white/60">from manual tasks</span>
                 </div>
               </div>
             </div>
 
             <h3 className="text-3xl font-bold tracking-tight mb-4 text-white">Operational Nightmare</h3>
-            <p className="text-lg text-white/50 font-light leading-relaxed mb-10">
+            <p className="text-lg text-white/70 font-light leading-relaxed mb-10">
               Your staff wastes hours manually replying to messages, missing calls, and trying to qualify leads. Time is wasted, clients are lost.
             </p>
             <div className="mt-auto border-t border-white/10 pt-8">
@@ -162,13 +162,13 @@ export default function Bottlenecks() {
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="text-base text-white/80 font-medium tracking-wide">Reclaimed</span>
-                  <span className="text-sm text-white/40">from premium clients</span>
+                  <span className="text-sm text-white/60">from premium clients</span>
                 </div>
               </div>
             </div>
 
             <h3 className="text-3xl font-bold tracking-tight mb-4 text-white">The Commodity Trap</h3>
-            <p className="text-lg text-white/50 font-light leading-relaxed mb-10">
+            <p className="text-lg text-white/70 font-light leading-relaxed mb-10">
               Your digital presence looks exactly like your cheapest competitor, forcing you to constantly lower your prices to win clients.
             </p>
             <div className="mt-auto border-t border-white/10 pt-8">

@@ -36,4 +36,15 @@ export async function seedTestData() {
     status: 'New',
     notes: 'Found via Twitter.',
   });
+
+  // Seed Resources (Toolbox)
+  const resources = [
+    { title: 'Free For Dev', url: 'https://free-for.dev/#/', category: 'Dev Tools', description: 'Massive compilation of software that have free tiers.' },
+    { title: 'Catalin Vintila', url: 'https://catalinvintila.design/', category: 'Design Inspiration', description: 'Saved for exceptional design aesthetics and direction.' },
+    { title: 'Haoqi Design', url: 'https://haoqi.design/', category: 'Design Inspiration', description: 'Great reference for high-end aesthetics.' },
+    { title: 'Coolify', url: 'https://coolify.io/', category: 'Hosting', description: 'Self-hosting OVHcloud VPS managed via Coolify.' },
+    { title: 'Linear', url: 'https://linear.app/', category: 'Management', description: 'Excellent for tracking tasks, bugs, and features.' }
+  ];
+
+  await supabase.from('resources').insert(resources);
 }

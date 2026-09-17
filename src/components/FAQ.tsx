@@ -43,7 +43,7 @@ export default function FAQ() {
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
         
         <div className="w-full md:w-1/3 sticky top-32">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-white/40 block mb-4">Briefing</span>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-white/60 block mb-4">Briefing</span>
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">Common inquiries.</h2>
           <p className="text-lg text-white/60 font-light">
             Everything you need to know about our methodology, infrastructure, and deployment timelines.
@@ -60,7 +60,7 @@ export default function FAQ() {
                 <span className="text-2xl md:text-3xl font-medium tracking-tight group-hover:text-white/80 transition-colors">
                   {faq.question}
                 </span>
-                <span className="ml-8 flex-shrink-0 text-white/40 group-hover:text-white transition-colors">
+                <span className="ml-8 flex-shrink-0 text-white/60 group-hover:text-white transition-colors">
                   {openIndex === index ? <X className="w-6 h-6" /> : <Plus className="w-6 h-6" />}
                 </span>
               </button>
@@ -73,7 +73,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-8 text-xl text-white/50 font-light leading-relaxed max-w-2xl">
+                    <p className="pb-8 text-xl text-white/70 font-light leading-relaxed max-w-2xl">
                       {faq.answer}
                     </p>
                   </motion.div>

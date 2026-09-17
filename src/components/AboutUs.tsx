@@ -22,7 +22,7 @@ export default function AboutUs() {
 
         {/* Agency Copy Column */}
         <div className="flex flex-col justify-center">
-          <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/40 mb-6 block">The Institution</span>
+          <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/60 mb-6 block">The Institution</span>
           <h2 className="text-5xl md:text-6xl font-medium tracking-tighter mb-10 leading-[0.9]">
             We engineer unfair digital advantages.
           </h2>
@@ -32,18 +32,18 @@ export default function AboutUs() {
           
           <div className="grid grid-cols-2 gap-8 mb-12 border-y border-white/10 py-10">
             <div>
-              <h4 className="text-white/40 uppercase tracking-[0.2em] text-xs font-bold mb-3">Performance</h4>
+              <h4 className="text-white/60 uppercase tracking-[0.2em] text-xs font-bold mb-3">Performance</h4>
               <p className="font-medium text-lg md:text-xl tracking-tight">Sub-Second Latency</p>
             </div>
             <div>
-              <h4 className="text-white/40 uppercase tracking-[0.2em] text-xs font-bold mb-3">Operations</h4>
+              <h4 className="text-white/60 uppercase tracking-[0.2em] text-xs font-bold mb-3">Operations</h4>
               <p className="font-medium text-lg md:text-xl tracking-tight">Autonomous Routing</p>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-4">
             <a href="https://www.facebook.com/profile.php?id=61594431896792" target="_blank" rel="noreferrer" className="group flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-4 rounded-full transition-colors font-medium tracking-wide">
-              Facebook <ArrowUpRight className="w-4 h-4 text-white/40 group-hover:text-white transition-colors" />
+              Facebook <ArrowUpRight className="w-4 h-4 text-white/60 group-hover:text-white transition-colors" />
             </a>
           </div>
         </div>

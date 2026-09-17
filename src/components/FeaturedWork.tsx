@@ -12,10 +12,10 @@ export default function FeaturedWork() {
         <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-white mb-20">Selected work</h2>
         
         {/* Asymmetrical Masonry/Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 auto-rows-[400px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 auto-rows-[350px] md:auto-rows-[400px]">
           
           {/* Card 1: Large Wide (Left) */}
-          <Link href="/work" className="group relative block lg:col-span-8 row-span-2 rounded-[2rem] overflow-hidden bg-[#111] border border-white/5">
+          <Link href="/work" className="group relative block lg:col-span-8 row-span-1 md:row-span-2 rounded-[2rem] overflow-hidden bg-[#111] border border-white/5">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
             {/* Placeholder Image */}
             <div className="absolute inset-0 bg-[#0a0a0a] flex items-center justify-center text-white/10 group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]">
@@ -35,7 +35,7 @@ export default function FeaturedWork() {
           </Link>
 
           {/* Card 2: Tall Portrait (Right) */}
-          <Link href="/work" className="group relative block lg:col-span-4 row-span-2 rounded-[2rem] overflow-hidden bg-studio-lavender/10 border border-studio-lavender/20">
+          <Link href="/work" className="group relative block lg:col-span-4 row-span-1 md:row-span-2 rounded-[2rem] overflow-hidden bg-studio-lavender/10 border border-studio-lavender/20">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent z-10" />
             <div className="absolute inset-0 flex items-center justify-center p-8 group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]">
                <Image src="/tourism-ui.jpg" alt="Tourism App" fill className="object-cover opacity-80 mix-blend-overlay" unoptimized />
@@ -71,9 +71,9 @@ export default function FeaturedWork() {
                 <Image src="/dental-ui.jpg" alt="More Work" fill className="object-cover opacity-40 grayscale" unoptimized />
              </div>
              <div className="absolute bottom-0 left-0 p-8 z-20 w-full md:w-1/2">
-                <span className="text-white/40 text-sm font-bold tracking-widest uppercase mb-3 block">Real Estate</span>
+                <span className="text-white/60 text-sm font-bold tracking-widest uppercase mb-3 block">Real Estate</span>
                 <h3 className="text-3xl font-medium text-white tracking-tight leading-none mb-2">Aura Properties</h3>
-                <p className="text-base text-white/50 font-light">Lead Generation Architecture</p>
+                <p className="text-base text-white/70 font-light">Lead Generation Architecture</p>
              </div>
           </Link>
 

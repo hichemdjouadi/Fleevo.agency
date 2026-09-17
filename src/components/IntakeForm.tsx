@@ -185,7 +185,7 @@ export default function IntakeForm() {
                 </p>
                 <button 
                   onClick={() => { setStep(1); setNiche(""); setBusinessName(""); setContactEmail(""); setPhoneNumber(""); setWebsiteUrl(""); setIsDone(false); }}
-                  className="text-sm uppercase tracking-widest text-white/40 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
+                  className="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
                 >
                   Submit Another
                 </button>

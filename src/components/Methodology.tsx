@@ -41,7 +41,7 @@ export default function Methodology() {
         {/* Left: Sticky Header */}
         <div className="w-full xl:w-1/3">
           <div className="sticky top-40">
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/40 block mb-6">
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/60 block mb-6">
               The Blueprint
             </span>
             <h2 className="text-5xl md:text-7xl font-medium tracking-tighter leading-[0.9] mb-8">
@@ -71,7 +71,7 @@ export default function Methodology() {
                 {/* Node */}
                 <div className="absolute left-[11px] top-2 w-[10px] h-[10px] rounded-full bg-black border-[2px] border-white" />
                 
-                <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/40 block mb-4">
+                <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/60 block mb-4">
                   {step.phase}
                 </span>
                 <h3 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">
