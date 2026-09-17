@@ -32,7 +32,7 @@ export default function IntakeForm() {
           { 
             business_name: businessName, 
             contact_email: contactEmail,
-            phone_number: phoneNumber,
+            notes: "Phone Number: " + phoneNumber,
             niche: niche,
             website_url: websiteUrl || null
           }
