@@ -46,7 +46,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: -120, rotate: -6 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className={bsolute w-[300px] md:w-[350px] p-8 rounded-3xl  shadow-xl z-10 border border-black/5}
+            className={`absolute w-[300px] md:w-[350px] p-8 rounded-3xl ${cards[1].bg} shadow-xl z-10 border border-black/5`}
           >
             <p className="text-sm md:text-base text-black/80 font-medium leading-relaxed mb-6">"{cards[1].text}"</p>
             <div>
@@ -61,7 +61,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: 120, rotate: 6 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className={bsolute w-[300px] md:w-[350px] p-8 rounded-3xl  shadow-xl z-10 border border-black/5}
+            className={`absolute w-[300px] md:w-[350px] p-8 rounded-3xl ${cards[2].bg} shadow-xl z-10 border border-black/5`}
           >
             <p className="text-sm md:text-base text-black/80 font-medium leading-relaxed mb-6">"{cards[2].text}"</p>
             <div>
@@ -76,7 +76,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className={bsolute w-[320px] md:w-[400px] p-10 rounded-3xl  shadow-2xl z-20 border border-black/5}
+            className={`absolute w-[320px] md:w-[400px] p-10 rounded-3xl ${cards[0].bg} shadow-2xl z-20 border border-black/5`}
           >
             <p className="text-base md:text-lg text-black font-medium leading-relaxed mb-8">"{cards[0].text}"</p>
             <div>
@@ -111,3 +111,4 @@ export default function Testimonials() {
     </section>
   );
 }
+
