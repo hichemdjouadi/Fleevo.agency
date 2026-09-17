@@ -105,27 +105,7 @@ export default function Home() {
          </div>
       </section>
 
-      {/* Stats Grid matching original Fleevo modules */}
-      <div className="max-w-[1200px] mx-auto px-6 pb-32">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-emerald-50 rounded-[32px] p-8 flex flex-col justify-end min-h-[250px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
-            <span className="text-5xl md:text-6xl font-medium text-black tracking-tight">15+</span>
-            <span className="text-base font-medium text-black/50 mt-2">Partners</span>
-          </div>
-          <div className="bg-indigo-50 rounded-[32px] p-8 flex flex-col justify-end min-h-[250px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
-            <span className="text-5xl md:text-6xl font-medium text-black tracking-tight">40+</span>
-            <span className="text-base font-medium text-black/50 mt-2">Projects Launched</span>
-          </div>
-          <div className="bg-blue-50 rounded-[32px] p-8 flex flex-col justify-end min-h-[250px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
-            <span className="text-5xl md:text-6xl font-medium text-black tracking-tight">300+</span>
-            <span className="text-base font-medium text-black/50 mt-2">Million Generated</span>
-          </div>
-          <div className="bg-orange-50 rounded-[32px] p-8 flex flex-col justify-end min-h-[250px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
-            <span className="text-5xl md:text-6xl font-medium text-black tracking-tight">24/7</span>
-            <span className="text-base font-medium text-black/50 mt-2">Support</span>
-          </div>
-        </div>
-      </div>
+      
 
       <FAQ />
 
@@ -133,7 +113,7 @@ export default function Home() {
       <section className="relative w-full text-white py-56 px-6 flex flex-col items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0 bg-black">
           <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-50 scale-105">
-            <source src="/hero-video.mp4" type="video/mp4" />
+            <source src="/video-erasio-1.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="relative z-10 flex flex-col items-center">
@@ -150,3 +130,4 @@ export default function Home() {
     </main>
   );
 }
+

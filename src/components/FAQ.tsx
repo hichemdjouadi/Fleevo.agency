@@ -27,19 +27,19 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-white text-black py-32 px-6 md:px-16 w-full">
+    <section className="bg-[#050505] text-white py-32 px-6 md:px-16 w-full">
       <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
         
         <div className="w-full md:w-1/3 sticky top-32">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">FAQ</h2>
-          <p className="text-lg text-black/60 font-medium">
+          <p className="text-lg text-white/60 font-medium">
             Everything you need to know about our methodology, infrastructure, and deployment timelines.
           </p>
         </div>
 
-        <div className="w-full md:w-2/3 flex flex-col border-t border-black/10">
+        <div className="w-full md:w-2/3 flex flex-col border-t border-white/10">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-black/10">
+            <div key={index} className="border-b border-white/10">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full py-8 flex justify-between items-center text-left group"
@@ -47,7 +47,7 @@ export default function FAQ() {
                 <span className="text-2xl md:text-3xl font-medium tracking-tight group-hover:pl-2 transition-all duration-300">
                   {faq.question}
                 </span>
-                <span className="ml-8 flex-shrink-0 text-black/40 group-hover:text-black transition-colors">
+                <span className="ml-8 flex-shrink-0 text-white/40 group-hover:text-white transition-colors">
                   {openIndex === index ? <X className="w-6 h-6" /> : <Plus className="w-6 h-6" />}
                 </span>
               </button>
@@ -60,7 +60,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-8 text-xl text-black/60 font-medium leading-relaxed max-w-2xl">
+                    <p className="pb-8 text-xl text-white/60 font-medium leading-relaxed max-w-2xl">
                       {faq.answer}
                     </p>
                   </motion.div>
