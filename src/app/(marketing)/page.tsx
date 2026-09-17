@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import FeaturedWork from "@/components/FeaturedWork";
 import FAQ from "@/components/FAQ";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import HeroVisual from "@/components/HeroVisual";
 import Link from "next/link";
@@ -12,10 +10,10 @@ import { motion } from "framer-motion";
 export default function Home() {
 
   return (
-    <main className="bg-[#fafafa] text-black selection:bg-black selection:text-white">
+    <main className="bg-[#fff] text-black selection:bg-black selection:text-white">
       
       {/* Pristine Light-Mode Hero */}
-      <section className="relative w-full flex flex-col items-center pt-32 pb-16 overflow-hidden bg-[#fafafa]">
+      <section className="relative w-full flex flex-col items-center pt-56 pb-24 overflow-hidden bg-[#fff]">
         
         {/* Ultra-Clean Typography Layout exactly like reference */}
         <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 w-full max-w-[1400px] mx-auto">
@@ -34,7 +32,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 text-lg md:text-[22px] text-[#050505] font-medium max-w-[700px] leading-[1.4]">We design and build digital products, brands and websites for companies ready to move beyond the ordinary.
+            className="mt-12 text-lg md:text-[24px] text-[#050505] font-medium max-w-[750px] leading-[1.3]">We design and build digital products, brands and websites for companies ready to move beyond the ordinary.
           </motion.p>
           
           {/* MASSIVE HERO VISUAL ANCHOR */}
@@ -42,92 +40,94 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-12 w-full max-w-[1400px] aspect-video rounded-3xl md:rounded-[40px] shadow-2xl relative overflow-hidden bg-blue-600"
+            className="mt-20 w-full max-w-[1500px] aspect-video rounded-[40px] shadow-2xl relative overflow-hidden bg-gray-100"
           >
              <HeroVisual />
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="w-full max-w-[1400px] flex justify-between items-start text-left mt-6 px-4"
-          >
-            <p className="text-[10px] md:text-xs text-black/60 max-w-[300px] uppercase font-bold tracking-widest leading-relaxed">
-              We are a digital agency that builds high-conversion architecture. Ready to scale your brand.
-            </p>
-            <p className="text-[10px] md:text-xs text-black/60 uppercase font-bold tracking-widest hidden md:block">
-              SCROLL TO EXPLORE
-            </p>
           </motion.div>
 
         </div>
       </section>
 
-      {/* Dark Block */}
-      <div className="relative z-30 bg-[#050505] rounded-t-[40px] overflow-hidden pt-24 pb-32 px-6">
-        <div className="max-w-[1000px] mx-auto">
-          {/* Accordions matching the image */}
-          <div className="flex flex-col gap-4">
-            <div className="group relative rounded-3xl overflow-hidden bg-[#111111] p-10 cursor-pointer border border-white/5 hover:border-white/20 transition-all duration-500">
-              <div className="absolute top-0 right-0 bottom-0 w-1/3 bg-gradient-to-l from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <h3 className="text-3xl md:text-4xl font-medium text-white mb-2">Digital product design</h3>
-              <p className="text-white/60 text-sm md:text-base max-w-[400px]">Strategic UI/UX design tailored for enterprise conversion.</p>
+      {/* What we do */}
+      <section className="py-32 px-6 w-full max-w-[1200px] mx-auto flex flex-col md:flex-row gap-16 md:gap-32">
+        <div className="w-full md:w-1/3">
+          <h2 className="text-3xl font-medium tracking-tight">What we do</h2>
+        </div>
+        <div className="w-full md:w-2/3">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.3] text-black">
+            Since 2010, we've partnered with startups, scale-ups and global companies to design brands, websites and digital products that combine beautiful visuals with measurable business results.
+          </p>
+        </div>
+      </section>
+
+      {/* Features (No more gradient cards, ultra-clean list with huge typography) */}
+      <section className="py-24 px-6 w-full max-w-[1200px] mx-auto">
+        <div className="flex flex-col border-t border-black/10">
+          {[
+            { title: "Digital Product Design", desc: "We design digital products from early concepts to scalable systems. Combining product strategy, UX and interface design, we help startups and established companies turn complex ideas into clear, usable experiences." },
+            { title: "Web Design & Development", desc: "We create marketing websites that explain products clearly, strengthen brands and support business growth. From structure and content to responsive design and development, every website is built around a specific goal." },
+            { title: "Brand Identity", desc: "We create visual identities that give companies a distinct and consistent presence. From typography and color to digital guidelines and campaign assets, every element is designed to work as one system." },
+          ].map((feature, i) => (
+            <div key={i} className="flex flex-col md:flex-row gap-8 md:gap-32 py-16 border-b border-black/10 group cursor-pointer">
+              <div className="w-full md:w-1/2 flex items-start gap-8">
+                <span className="text-sm font-medium opacity-40 mt-3">0{i+1}</span>
+                <h3 className="text-4xl md:text-5xl font-medium tracking-tight group-hover:pl-4 transition-all duration-300">{feature.title}</h3>
+              </div>
+              <div className="w-full md:w-1/2 flex items-center">
+                <p className="text-lg md:text-xl font-medium leading-relaxed opacity-60">
+                  {feature.desc}
+                </p>
+              </div>
             </div>
-            
-            <div className="group relative rounded-3xl overflow-hidden bg-[#111111] p-10 cursor-pointer border border-white/5 hover:border-white/20 transition-all duration-500">
-              <div className="absolute top-0 right-0 bottom-0 w-1/3 bg-gradient-to-l from-indigo-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <h3 className="text-3xl md:text-4xl font-medium text-white mb-2">Web & app development</h3>
-              <p className="text-white/60 text-sm md:text-base max-w-[400px]">Next.js and Supabase infrastructure that runs autonomously.</p>
-            </div>
-            
-            <div className="group relative rounded-3xl overflow-hidden bg-[#111111] p-10 cursor-pointer border border-white/5 hover:border-white/20 transition-all duration-500">
-              <div className="absolute top-0 right-0 bottom-0 w-1/3 bg-gradient-to-l from-emerald-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <h3 className="text-3xl md:text-4xl font-medium text-white mb-2">Brand identity</h3>
-              <p className="text-white/60 text-sm md:text-base max-w-[400px]">Premium positioning and visual world-building for high-ticket offers.</p>
-            </div>
-          </div>
-          
-          <div className="mt-20">
-            <h2 className="text-5xl font-medium text-white mb-12">Selected work</h2>
-            <FeaturedWork />
+          ))}
+        </div>
+      </section>
+
+      {/* Selected Work (Dark Block) */}
+      <div className="relative z-30 bg-[#050505] rounded-[40px] overflow-hidden pt-32 pb-40 px-6 mx-4 my-24">
+        <div className="max-w-[1400px] mx-auto">
+          <h2 className="text-5xl md:text-7xl font-medium text-white mb-20 text-center tracking-tight">Selected work</h2>
+          <FeaturedWork />
+          <div className="mt-24 flex justify-center">
+             <Link href="/work" className="inline-flex items-center justify-center px-10 py-5 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-colors text-lg font-medium">
+               View all projects
+             </Link>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#fafafa] pt-32 pb-32">
-        <Testimonials />
-        
-        {/* Stats Grid matching image */}
-        <div className="max-w-[1000px] mx-auto px-6 mt-32">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-emerald-50 rounded-3xl p-8 flex flex-col justify-end min-h-[200px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
-              <span className="text-4xl font-medium text-black">15+</span>
-              <span className="text-sm font-medium text-black/50 mt-1">Partners</span>
+      {/* Clean Testimonials Block */}
+      <section className="py-32 px-6 w-full max-w-[1200px] mx-auto text-center">
+         <h2 className="text-5xl font-medium tracking-tight mb-24">Trusted by our clients</h2>
+         <div className="max-w-[800px] mx-auto">
+            <p className="text-2xl md:text-4xl font-medium leading-[1.4] mb-12">
+               "The quality of the team's work exceeded my expectations, and since completion we have won a number of awards, including the Site of Day awwward."
+            </p>
+            <div className="w-16 h-[1px] bg-black/20 mx-auto mb-12"></div>
+            <div className="text-sm font-bold tracking-widest uppercase">
+               Zelt
             </div>
-            <div className="bg-indigo-50 rounded-3xl p-8 flex flex-col justify-end min-h-[200px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
-              <span className="text-4xl font-medium text-black">40+</span>
-              <span className="text-sm font-medium text-black/50 mt-1">Projects Launched</span>
-            </div>
-            <div className="bg-blue-50 rounded-3xl p-8 flex flex-col justify-end min-h-[200px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
-              <span className="text-4xl font-medium text-black">300+</span>
-              <span className="text-sm font-medium text-black/50 mt-1">Million Generated</span>
-            </div>
-            <div className="bg-orange-50 rounded-3xl p-8 flex flex-col justify-end min-h-[200px] hover:scale-[1.02] transition-transform duration-500 cursor-default">
-              <span className="text-4xl font-medium text-black">24/7</span>
-              <span className="text-sm font-medium text-black/50 mt-1">Support</span>
-            </div>
-          </div>
-        </div>
+         </div>
+      </section>
+
+      {/* FAQ restored */}
+      <div className="max-w-[1000px] mx-auto px-6 py-24 border-t border-black/10">
+        <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-16">Questions?</h2>
+        <FAQ />
       </div>
+
+      {/* Massive Get In Touch Outro */}
+      <section className="w-full bg-[#050505] text-white py-40 px-6 flex flex-col items-center justify-center text-center">
+        <h2 className="text-5xl md:text-[100px] font-medium tracking-tighter leading-none mb-12">
+          Have an idea?
+        </h2>
+        <Link href="/contact" className="inline-block px-12 py-6 rounded-full bg-white text-black text-xl font-medium hover:scale-105 transition-transform duration-300">
+          Tell us about it
+        </Link>
+      </section>
 
       <Footer />
     </main>
   );
 }
-
-
-
-
-
 

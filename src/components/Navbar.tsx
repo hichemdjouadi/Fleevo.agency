@@ -28,7 +28,7 @@ export default function Navbar() {
           <Link href="/services" className="hover:opacity-50 transition-opacity">Services</Link>
           <Link href="/work" className="hover:opacity-50 transition-opacity">Projects</Link>
           <Link href="/about" className="hover:opacity-50 transition-opacity">About</Link>
-          <Link href="/blog" className="hover:opacity-50 transition-opacity">Blog</Link>
+          
         </div>
 
         <div className="flex items-center gap-4 z-[60]">
@@ -60,17 +60,17 @@ export default function Navbar() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-[45] bg-black text-white flex flex-col items-center justify-center gap-12"
           >
-            <div className="flex flex-col items-center gap-8 text-[12vw] font-medium tracking-tighter uppercase">
+            <div className="flex flex-col items-center gap-8 text-[12vw] font-medium tracking-tighter">
               <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">Services</Link>
               <Link href="/work" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">Projects</Link>
               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">About</Link>
-              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">Blog</Link>
+              
             </div>
             
             <Link 
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-8 px-12 py-5 rounded-full text-sm font-bold tracking-[0.2em] uppercase border border-white/20 bg-white text-black transition-transform active:scale-95"
+              className="mt-8 px-12 py-5 rounded-full text-lg font-medium bg-white text-black transition-transform active:scale-95"
             >
               Contacts
             </Link>

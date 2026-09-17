@@ -44,7 +44,7 @@ export default function Footer() {
           <div className="flex">
             <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm font-medium">
               <Link href="/services" className="hover:text-white/70 transition-colors">Services</Link>
-              <Link href="/blog" className="hover:text-white/70 transition-colors">Blog</Link>
+              
               <Link href="/work" className="hover:text-white/70 transition-colors">Projects</Link>
               <Link href="/workflow" className="hover:text-white/70 transition-colors">Workflow</Link>
               <Link href="/about" className="hover:text-white/70 transition-colors">About</Link>
@@ -82,4 +82,5 @@ export default function Footer() {
     </footer>
   );
 }
+
 
