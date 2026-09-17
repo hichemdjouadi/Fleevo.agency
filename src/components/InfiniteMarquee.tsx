@@ -14,11 +14,11 @@ const TRACK = [...WORDS, ...WORDS, ...WORDS, ...WORDS];
 
 export default function InfiniteMarquee() {
   return (
-    <section className="bg-[#050505] text-white py-12 border-y border-white/5 overflow-hidden">
+    <section className="bg-transparent text-black py-12 border-y border-black/5 overflow-hidden">
       <div data-cursor="DRAG" className="relative w-full flex overflow-hidden group items-center">
         {/* Gradient Masks */}
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#fafafa] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#fafafa] to-transparent z-10 pointer-events-none" />
         
         <motion.div 
           animate={{ x: ["0%", "-50%"] }}
@@ -30,7 +30,7 @@ export default function InfiniteMarquee() {
               <span className="text-3xl md:text-5xl font-medium tracking-tighter uppercase whitespace-nowrap">
                 {word}
               </span>
-              <span className="w-3 h-3 rounded-full bg-white/20" />
+              <span className="w-3 h-3 rounded-full bg-black/10" />
             </div>
           ))}
         </motion.div>
