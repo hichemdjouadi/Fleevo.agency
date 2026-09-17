@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Globe, Mail, MessageSquare, Share2 } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -64,16 +64,16 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex gap-4">
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <Twitter className="w-4 h-4 text-white" />
+              <MessageSquare className="w-4 h-4 text-white" />
             </a>
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <Github className="w-4 h-4 text-white" />
+              <Share2 className="w-4 h-4 text-white" />
             </a>
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <Youtube className="w-4 h-4 text-white" />
+              <Globe className="w-4 h-4 text-white" />
             </a>
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <Linkedin className="w-4 h-4 text-white" />
+              <Mail className="w-4 h-4 text-white" />
             </a>
           </div>
         </div>
@@ -82,3 +82,4 @@ export default function Footer() {
     </footer>
   );
 }
+
