@@ -24,7 +24,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-10 text-sm font-medium tracking-[0.2em] uppercase">
+        <div className="hidden md:flex items-center gap-10 text-[15px] font-medium">
           <Link href="/services" className="hover:opacity-50 transition-opacity">Services</Link>
           <Link href="/work" className="hover:opacity-50 transition-opacity">Projects</Link>
           <Link href="/about" className="hover:opacity-50 transition-opacity">About</Link>
@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4 z-[60]">
           <div className="hidden md:block">
             <Magnetic intensity={0.5}>
-              <Link href="/contact" className="inline-block px-8 py-3.5 rounded-full text-xs font-bold tracking-[0.2em] uppercase border border-white/20 bg-transparent hover:bg-white hover:text-black transition-colors duration-500">
+              <Link href="/contact" className="inline-block px-8 py-3 rounded-full text-[15px] font-medium bg-white text-black hover:bg-white/90 transition-colors">
                 Contacts
               </Link>
             </Magnetic>
@@ -80,3 +80,4 @@ export default function Navbar() {
     </>
   );
 }
+

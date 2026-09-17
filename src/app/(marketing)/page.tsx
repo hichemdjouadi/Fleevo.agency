@@ -18,25 +18,23 @@ export default function Home() {
       <section className="relative w-full flex flex-col items-center pt-32 pb-16 overflow-hidden bg-[#fafafa]">
         
         {/* Ultra-Clean Typography Layout exactly like reference */}
-        <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 w-full max-w-[1200px] mx-auto">
+        <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 w-full max-w-[1400px] mx-auto">
 
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-medium tracking-tight leading-[1.05] text-[#050505] w-full"
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-[110px] font-semibold tracking-tighter leading-[0.95] text-[#050505] w-full"
           >
             Digital design & <br className="hidden md:block"/>
-            development Agency
+            development agency
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 text-[15px] text-black/60 font-medium max-w-[400px] leading-[1.6]"
-          >
-            We engineer autonomous systems for high-ticket service brands. Scale your revenue and buy back your time.
+            className="mt-8 text-lg md:text-[22px] text-[#050505] font-medium max-w-[700px] leading-[1.4]">We design and build digital products, brands and websites for companies ready to move beyond the ordinary.
           </motion.p>
           
           {/* MASSIVE HERO VISUAL ANCHOR */}
@@ -44,7 +42,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-12 w-full max-w-[1000px] aspect-video rounded-3xl md:rounded-[40px] shadow-2xl relative overflow-hidden bg-blue-600"
+            className="mt-12 w-full max-w-[1400px] aspect-video rounded-3xl md:rounded-[40px] shadow-2xl relative overflow-hidden bg-blue-600"
           >
              <HeroVisual />
           </motion.div>
@@ -53,7 +51,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="w-full max-w-[1000px] flex justify-between items-start text-left mt-6 px-4"
+            className="w-full max-w-[1400px] flex justify-between items-start text-left mt-6 px-4"
           >
             <p className="text-[10px] md:text-xs text-black/60 max-w-[300px] uppercase font-bold tracking-widest leading-relaxed">
               We are a digital agency that builds high-conversion architecture. Ready to scale your brand.
@@ -127,6 +125,9 @@ export default function Home() {
     </main>
   );
 }
+
+
+
 
 
 
