@@ -16,13 +16,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  // Force scroll to top on refresh
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.history.scrollRestoration = 'manual';
-      window.scrollTo(0, 0);
-    }
-  }, []);
 
   return (
     <main className="bg-white text-black selection:bg-black selection:text-white">
