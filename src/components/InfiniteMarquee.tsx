@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const WORDS = [
-  "AUTONOMOUS SYSTEMS",
-  "HIGH-TICKET ACQUISITION",
-  "SUB-SECOND LATENCY",
-  "NEXT.JS ARCHITECTURE",
+  "ZERO FRICTION",
+  "HIGHER MARGINS",
+  "SCALABLE SYSTEMS",
+  "ELITE CONVERSION",
   "PREMIUM BRANDING"
 ];
 
@@ -14,11 +14,11 @@ const TRACK = [...WORDS, ...WORDS, ...WORDS, ...WORDS];
 
 export default function InfiniteMarquee() {
   return (
-    <section className="bg-transparent text-black py-12 border-y border-black/5 overflow-hidden">
+    <section className="bg-transparent text-black py-12 border-y border-studio-border-light overflow-hidden">
       <div data-cursor="DRAG" className="relative w-full flex overflow-hidden group items-center">
         {/* Gradient Masks */}
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#fafafa] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#fafafa] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-studio-light to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-studio-light to-transparent z-10 pointer-events-none" />
         
         <motion.div 
           animate={{ x: ["0%", "-50%"] }}

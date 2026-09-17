@@ -30,29 +30,29 @@ export default function Bottlenecks() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="bg-[#050505]/80 backdrop-blur-3xl rounded-[2.5rem] border border-white/10 p-10 flex flex-col group relative overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-emerald-500/0 group-hover:bg-emerald-500/5 transition-colors duration-700 pointer-events-none" />
+            <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-700 pointer-events-none" />
             
             {/* Highly Polished UI Graphic */}
             <div className="h-64 w-full bg-[#0a0a0a]/90 backdrop-blur-2xl rounded-3xl border border-white/10 mb-12 flex flex-col p-8 relative shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-50" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(16,185,129,0.15),_transparent_50%)]" />
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.1),_transparent_50%)]" />
 
               <div className="flex justify-between items-start mb-auto relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="bg-gradient-to-br from-emerald-500/20 to-transparent p-2 rounded-xl border border-emerald-500/30">
-                    <MousePointerClick className="w-5 h-5 text-emerald-400" />
+                  <div className="bg-gradient-to-br bg-white/10 to-transparent p-2 rounded-xl border border-white/20">
+                    <MousePointerClick className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-xs uppercase tracking-widest text-white/60 font-medium">Performance</span>
                 </div>
-                <div className="bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20 flex items-center gap-2">
-                  <Calendar className="w-3 h-3 text-emerald-400" />
-                  <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Monthly</span>
+                <div className="bg-white/10 px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-2">
+                  <Calendar className="w-3 h-3 text-white" />
+                  <span className="text-[10px] font-bold text-white uppercase tracking-wider">Monthly</span>
                 </div>
               </div>
               
               <div className="flex flex-col relative z-10 mt-4 justify-center flex-1">
-                <span className="text-[3.5rem] lg:text-[4rem] font-medium tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60 mb-2 drop-shadow-xl leading-none">
-                  240<span className="text-[2.5rem] lg:text-4xl text-emerald-400 ml-1">%</span>
+                <span className="text-[3.5rem] lg:text-[4rem] font-medium tracking-tighter text-white mb-2  leading-none">
+                  240<span className="text-[2.5rem] lg:text-4xl text-white ml-1">%</span>
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="text-base text-white/80 font-medium tracking-wide">More Clicks</span>
@@ -66,7 +66,7 @@ export default function Bottlenecks() {
               You pay premium rates for ads, but your site is so slow that users leave before seeing your offer. You are burning money.
             </p>
             <div className="mt-auto border-t border-white/10 pt-8">
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-emerald-400 flex items-center gap-2 mb-3">
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white flex items-center gap-2 mb-3">
                 <ChevronRight className="w-3 h-3" /> The Business Result
               </span>
               <p className="text-xl font-medium tracking-tight leading-snug text-white">
@@ -83,29 +83,29 @@ export default function Bottlenecks() {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="bg-[#050505]/80 backdrop-blur-3xl rounded-[2.5rem] border border-white/10 p-10 flex flex-col group relative overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 transition-colors duration-700 pointer-events-none" />
+            <div className="absolute inset-0 bg-studio-mint/0 group-hover:bg-studio-mint/5 transition-colors duration-700 pointer-events-none" />
             
             {/* Highly Polished UI Graphic */}
             <div className="h-64 w-full bg-[#0a0a0a]/90 backdrop-blur-2xl rounded-3xl border border-white/10 mb-12 flex flex-col p-8 relative shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent opacity-50" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.15),_transparent_50%)]" />
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-studio-mint/20 to-transparent opacity-50" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(224,242,254,0.1),_transparent_50%)]" />
 
               <div className="flex justify-between items-start mb-auto relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="bg-gradient-to-br from-blue-500/20 to-transparent p-2 rounded-xl border border-blue-500/30">
-                    <Clock className="w-5 h-5 text-blue-400" />
+                  <div className="bg-gradient-to-br bg-studio-mint/10 to-transparent p-2 rounded-xl border border-studio-mint/30">
+                    <Clock className="w-5 h-5 text-studio-mint" />
                   </div>
                   <span className="text-xs uppercase tracking-widest text-white/60 font-medium">Efficiency</span>
                 </div>
-                <div className="bg-blue-500/10 px-3 py-1.5 rounded-full border border-blue-500/20 flex items-center gap-2">
-                  <Calendar className="w-3 h-3 text-blue-400" />
-                  <span className="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Weekly</span>
+                <div className="bg-studio-mint/10 px-3 py-1.5 rounded-full border border-studio-mint/20 flex items-center gap-2">
+                  <Calendar className="w-3 h-3 text-studio-mint" />
+                  <span className="text-[10px] font-bold text-studio-mint uppercase tracking-wider">Weekly</span>
                 </div>
               </div>
               
               <div className="flex flex-col relative z-10 mt-4 justify-center flex-1">
-                <span className="text-[3.5rem] lg:text-[4rem] font-medium tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60 mb-2 drop-shadow-xl leading-none">
-                  18<span className="text-[2.5rem] lg:text-4xl text-blue-400 ml-3">Hours</span>
+                <span className="text-[3.5rem] lg:text-[4rem] font-medium tracking-tighter text-white mb-2  leading-none">
+                  18<span className="text-[2.5rem] lg:text-4xl text-studio-mint ml-3">Hours</span>
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="text-base text-white/80 font-medium tracking-wide">Saved</span>
@@ -119,7 +119,7 @@ export default function Bottlenecks() {
               Your staff wastes hours manually replying to messages, missing calls, and trying to qualify leads. Time is wasted, clients are lost.
             </p>
             <div className="mt-auto border-t border-white/10 pt-8">
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-400 flex items-center gap-2 mb-3">
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-studio-mint flex items-center gap-2 mb-3">
                 <ChevronRight className="w-3 h-3" /> The Business Result
               </span>
               <p className="text-xl font-medium tracking-tight leading-snug text-white">
@@ -136,29 +136,29 @@ export default function Bottlenecks() {
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             className="bg-[#050505]/80 backdrop-blur-3xl rounded-[2.5rem] border border-white/10 p-10 flex flex-col group relative overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-purple-500/0 group-hover:bg-purple-500/5 transition-colors duration-700 pointer-events-none" />
+            <div className="absolute inset-0 bg-studio-lavender/0 group-hover:bg-studio-lavender/5 transition-colors duration-700 pointer-events-none" />
             
             {/* Highly Polished UI Graphic */}
             <div className="h-64 w-full bg-[#0a0a0a]/90 backdrop-blur-2xl rounded-3xl border border-white/10 mb-12 flex flex-col p-8 relative shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-purple-400/20 to-transparent opacity-50" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(168,85,247,0.15),_transparent_50%)]" />
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-studio-lavender/20 to-transparent opacity-50" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(243,232,255,0.1),_transparent_50%)]" />
 
               <div className="flex justify-between items-start mb-auto relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="bg-gradient-to-br from-purple-500/20 to-transparent p-2 rounded-xl border border-purple-500/30">
-                    <Coins className="w-5 h-5 text-purple-400" />
+                  <div className="bg-gradient-to-br bg-studio-lavender/10 to-transparent p-2 rounded-xl border border-studio-lavender/30">
+                    <Coins className="w-5 h-5 text-studio-lavender" />
                   </div>
                   <span className="text-xs uppercase tracking-widest text-white/60 font-medium">Revenue</span>
                 </div>
-                <div className="bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/20 flex items-center gap-2">
-                  <Calendar className="w-3 h-3 text-purple-400" />
-                  <span className="text-[10px] font-bold text-purple-400 uppercase tracking-wider">Monthly</span>
+                <div className="bg-studio-lavender/10 px-3 py-1.5 rounded-full border border-studio-lavender/20 flex items-center gap-2">
+                  <Calendar className="w-3 h-3 text-studio-lavender" />
+                  <span className="text-[10px] font-bold text-studio-lavender uppercase tracking-wider">Monthly</span>
                 </div>
               </div>
               
               <div className="flex flex-col relative z-10 mt-4 justify-center flex-1">
-                <span className="text-[3.5rem] lg:text-[4rem] font-medium tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60 mb-2 drop-shadow-xl leading-none">
-                  2.5M<span className="text-[2.5rem] lg:text-4xl text-purple-400 ml-2 uppercase tracking-wide">DA</span>
+                <span className="text-[3.5rem] lg:text-[4rem] font-medium tracking-tighter text-white mb-2  leading-none">
+                  2.5M<span className="text-[2.5rem] lg:text-4xl text-studio-lavender ml-2 uppercase tracking-wide">DA</span>
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="text-base text-white/80 font-medium tracking-wide">Reclaimed</span>
@@ -172,7 +172,7 @@ export default function Bottlenecks() {
               Your digital presence looks exactly like your cheapest competitor, forcing you to constantly lower your prices to win clients.
             </p>
             <div className="mt-auto border-t border-white/10 pt-8">
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-purple-400 flex items-center gap-2 mb-3">
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-studio-lavender flex items-center gap-2 mb-3">
                 <ChevronRight className="w-3 h-3" /> The Business Result
               </span>
               <p className="text-xl font-medium tracking-tight leading-snug text-white">
@@ -188,7 +188,7 @@ export default function Bottlenecks() {
           <p className="text-3xl font-light tracking-tight text-white/60 mb-8 text-center max-w-2xl">
             Don't take our word for it. <br/> <strong className="text-white font-medium">Experience the performance yourself.</strong>
           </p>
-          <ArrowDown className="w-8 h-8 text-white animate-bounce" />
+          <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}><ArrowDown className="w-8 h-8 text-white" /></motion.div>
         </div>
 
       </div>

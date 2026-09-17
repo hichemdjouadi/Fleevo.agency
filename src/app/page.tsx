@@ -26,11 +26,11 @@ export default function Home() {
     <main className="bg-white text-black selection:bg-black selection:text-white">
       
       {/* Pristine Light-Mode Hero */}
-      <section className="relative min-h-[100vh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#fafafa]">
+      <section className="relative min-h-[100vh] w-full flex flex-col items-center justify-center overflow-hidden bg-studio-light">
         
         {/* Soft, Expensive Ambient Glows (Replacing the dark video) */}
-        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-500/20 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[150vw] md:w-[800px] h-[150vw] md:h-[600px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_60%)] rounded-full pointer-events-none" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[150vw] md:w-[600px] h-[150vw] md:h-[600px] bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1),transparent_60%)] rounded-full pointer-events-none" />
         
         {/* Subtle dot grid for depth */}
         <div className="absolute inset-0 bg-[radial-gradient(#00000010_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
@@ -52,7 +52,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-8xl lg:text-[7rem] font-medium tracking-tighter leading-[0.95] text-black w-full"
+            className="text-[12vw] sm:text-7xl md:text-8xl lg:text-[7rem] font-medium tracking-tighter leading-[0.95] text-black w-full"
           >
             Digital design & <br className="hidden md:block"/>
             development agency.
@@ -100,23 +100,23 @@ export default function Home() {
       <div className="relative z-30">
         
         {/* Dark Block 1 */}
-        <div className="bg-[#050505] rounded-t-[3rem] overflow-hidden">
+        <div className="bg-studio-dark rounded-t-[3rem] overflow-hidden">
           <Methodology />
           <Bottlenecks />
         </div>
 
         {/* Light Block 1 (Trust / Marquee) */}
-        <div className="bg-[#fafafa] py-16">
+        <div className="bg-studio-light py-16">
           <InfiniteMarquee />
         </div>
 
         {/* Dark Block 2 (The Portfolio) */}
-        <div className="bg-[#050505] rounded-t-[3rem] overflow-hidden">
+        <div className="bg-studio-dark rounded-t-[3rem] overflow-hidden">
           <FeaturedWork />
         </div>
 
         {/* Light Block 2 (Services / Architecture) */}
-        <div className="bg-[#fafafa] rounded-t-[3rem] overflow-hidden">
+        <div className="bg-studio-light rounded-t-[3rem] overflow-hidden">
           <Architectures />
         </div>
 
