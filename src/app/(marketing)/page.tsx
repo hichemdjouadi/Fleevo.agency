@@ -19,17 +19,16 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-[110px] font-semibold tracking-tighter leading-[0.95] text-[#050505] w-full"
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-[110px] font-semibold overflow-wrap-anywhere break-words tracking-tighter leading-[0.95] text-[#050505] w-full"
           >
-            Digital design & <br className="hidden md:block"/>
-            development agency
+            Autonomous<br className="hidden md:block"/> Growth Engines
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-12 text-lg md:text-[24px] text-[#050505] font-medium max-w-[750px] leading-[1.3]">We design and build digital products, brands and websites for companies ready to move beyond the ordinary.
+            className="mt-12 text-lg md:text-[24px] text-[#050505] font-medium max-w-[750px] leading-[1.3]">We replace slow, manual business operations with high-performance digital platforms. Scale your profit, build unshakeable brand authority, and buy back your time.
           </motion.p>
           
           <motion.div 
@@ -82,12 +81,8 @@ export default function Home() {
       <div className="relative z-30 bg-[#050505] rounded-[40px] overflow-hidden pt-32 pb-40 px-6 mx-4 my-24">
         <div className="max-w-[1400px] mx-auto">
           <h2 className="text-5xl md:text-7xl font-medium text-white mb-20 text-center tracking-tight">Selected work</h2>
-          <FeaturedWork />
-          <div className="mt-24 flex justify-center">
-             <Link href="/work" className="inline-flex items-center justify-center px-10 py-5 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-colors text-lg font-medium">
-               View all projects
-             </Link>
-          </div>
+          <FeaturedWork />`n          <div className="mt-24 flex justify-center">`n             <Link href="/work" className="inline-flex items-center justify-center px-10 py-5 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-colors text-lg font-medium">`n               View all projects`n             </Link>`n          </div>
+          
         </div>
       </div>
 
@@ -96,7 +91,7 @@ export default function Home() {
          <h2 className="text-5xl font-medium tracking-tight mb-24">Trusted by our clients</h2>
          <div className="max-w-[800px] mx-auto">
             <p className="text-2xl md:text-4xl font-medium leading-[1.4] mb-12">
-               "The quality of the team's work exceeded my expectations, and since completion we have won a number of awards, including the Site of Day awwward."
+               "Fleevo didn't just build us a website; they engineered a 24/7 autonomous system that completely eliminated our manual booking overhead and massively scaled our MRR."
             </p>
             <div className="w-16 h-[1px] bg-black/20 mx-auto mb-12"></div>
             <div className="text-sm font-bold tracking-widest uppercase">
@@ -130,4 +125,6 @@ export default function Home() {
     </main>
   );
 }
+
+
 
