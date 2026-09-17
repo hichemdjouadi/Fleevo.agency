@@ -25,20 +25,18 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-10 text-sm font-medium tracking-[0.2em] uppercase">
-          <Link href="/systems" className="hover:opacity-50 transition-opacity">Systems</Link>
-          <Link href="/work" className="hover:opacity-50 transition-opacity">Work</Link>
+          <Link href="/services" className="hover:opacity-50 transition-opacity">Services</Link>
+          <Link href="/work" className="hover:opacity-50 transition-opacity">Projects</Link>
           <Link href="/about" className="hover:opacity-50 transition-opacity">About</Link>
+          <Link href="/blog" className="hover:opacity-50 transition-opacity">Blog</Link>
         </div>
 
         <div className="flex items-center gap-4 z-[60]">
           <div className="hidden md:block">
             <Magnetic intensity={0.5}>
-              <button 
-                onClick={() => document.getElementById("intake")?.scrollIntoView({ behavior: "smooth" })}
-                className="px-8 py-3.5 rounded-full text-xs font-bold tracking-[0.2em] uppercase border border-white/20 bg-transparent hover:bg-white hover:text-black transition-colors duration-500"
-              >
-                Book Strategy
-              </button>
+              <Link href="/contact" className="inline-block px-8 py-3.5 rounded-full text-xs font-bold tracking-[0.2em] uppercase border border-white/20 bg-transparent hover:bg-white hover:text-black transition-colors duration-500">
+                Contacts
+              </Link>
             </Magnetic>
           </div>
           
@@ -63,20 +61,19 @@ export default function Navbar() {
             className="fixed inset-0 z-[45] bg-black text-white flex flex-col items-center justify-center gap-12"
           >
             <div className="flex flex-col items-center gap-8 text-[12vw] font-medium tracking-tighter uppercase">
-              <Link href="/systems" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">Systems</Link>
-              <Link href="/work" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">Work</Link>
+              <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">Services</Link>
+              <Link href="/work" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">Projects</Link>
               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">About</Link>
+              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-50 transition-opacity">Blog</Link>
             </div>
             
-            <button 
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                setTimeout(() => document.getElementById("intake")?.scrollIntoView({ behavior: "smooth" }), 500);
-              }}
+            <Link 
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="mt-8 px-12 py-5 rounded-full text-sm font-bold tracking-[0.2em] uppercase border border-white/20 bg-white text-black transition-transform active:scale-95"
             >
-              Book Strategy Call
-            </button>
+              Contacts
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
