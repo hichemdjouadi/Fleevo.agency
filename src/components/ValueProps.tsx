@@ -100,17 +100,18 @@ export default function ValueProps() {
   const [activeFeature, setActiveFeature] = useState(0);
 
   return (
-    <section className="py-32 px-6 w-full max-w-[1400px] mx-auto">
-      <div className="flex flex-col md:flex-row gap-12 md:gap-24">
-        
+    <section className="py-24 md:py-32 px-6 w-full max-w-[1400px] mx-auto">
+      
+      {/* Desktop Layout (Sticky hover interaction) */}
+      <div className="hidden md:flex flex-row gap-12 md:gap-24">
         {/* Left: The Interactive List */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
           <span className="text-sm font-bold tracking-[0.2em] uppercase text-black/50 block mb-12">The Automation Advantage</span>
           
           <div className="flex flex-col relative">
-            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-black/5 rounded-full hidden md:block" />
+            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-black/5 rounded-full" />
             <motion.div 
-              className="absolute left-0 w-[2px] bg-black rounded-full transition-all duration-500 ease-[0.16,1,0.3,1] hidden md:block"
+              className="absolute left-0 w-[2px] bg-black rounded-full transition-all duration-500 ease-[0.16,1,0.3,1]"
               style={{ 
                 height: `${100 / FEATURES.length}%`, 
                 top: `${(activeFeature * 100) / FEATURES.length}%` 
@@ -122,36 +123,28 @@ export default function ValueProps() {
               return (
                 <div 
                   key={feature.id} 
-                  className="pl-0 md:pl-12 py-6 md:py-8 cursor-pointer group border-b md:border-none border-black/5 last:border-none"
+                  className="pl-8 md:pl-12 py-8 cursor-pointer group"
                   onMouseEnter={() => setActiveFeature(i)}
-                  onClick={() => setActiveFeature(i)}
                 >
-                  <div className="flex items-start gap-4 md:gap-6">
+                  <div className="flex items-start gap-6">
                     <span className={`text-xs font-bold mt-2 uppercase tracking-widest transition-opacity duration-300 ${isActive ? 'text-black' : 'text-black/30'}`}>
                       {feature.id}
                     </span>
-                    <div className="flex flex-col w-full">
-                      <h3 className={`text-2xl md:text-4xl font-medium tracking-tight mb-2 md:mb-4 transition-all duration-300 ${isActive ? 'text-black md:translate-x-2' : 'text-black/40'}`}>
+                    <div className="flex flex-col">
+                      <h3 className={`text-3xl md:text-4xl font-medium tracking-tight mb-4 transition-all duration-300 ${isActive ? 'text-black translate-x-2' : 'text-black/40'}`}>
                         {feature.title}
                       </h3>
                       <AnimatePresence>
                         {isActive && (
-                          <motion.div 
+                          <motion.p 
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="overflow-hidden w-full"
+                            className="text-lg font-medium leading-relaxed text-black/70 max-w-md overflow-hidden"
                           >
-                            <p className="text-base md:text-lg font-medium leading-relaxed text-black/70 max-w-md pt-2">
-                              {feature.desc}
-                            </p>
-                            
-                            {/* Inline Visual for Mobile Only */}
-                            <div className="md:hidden mt-8 w-full h-[300px] rounded-3xl overflow-hidden shadow-xl relative border border-black/5 bg-[#f8f9fa]">
-                              {feature.visual}
-                            </div>
-                          </motion.div>
+                            <span className="block pt-2">{feature.desc}</span>
+                          </motion.p>
                         )}
                       </AnimatePresence>
                     </div>
@@ -162,8 +155,8 @@ export default function ValueProps() {
           </div>
         </div>
 
-        {/* Right: The Visual Payoff (Desktop Only) */}
-        <div className="hidden md:block w-1/2 h-[600px] sticky top-32">
+        {/* Right: The Visual Payoff */}
+        <div className="w-full md:w-1/2 h-[400px] md:h-[600px] sticky top-32">
           <div className="w-full h-full rounded-[40px] overflow-hidden bg-[#f8f9fa] shadow-2xl relative border border-black/5">
             <AnimatePresence mode="wait">
               <motion.div
@@ -179,8 +172,37 @@ export default function ValueProps() {
             </AnimatePresence>
           </div>
         </div>
-
       </div>
+
+      {/* Mobile Layout (Stacked and Interleaved) */}
+      <div className="flex flex-col md:hidden gap-16">
+        <span className="text-sm font-bold tracking-[0.2em] uppercase text-black/50 block">The Automation Advantage</span>
+        
+        <div className="flex flex-col gap-16">
+          {FEATURES.map((feature) => (
+            <div key={feature.id} className="flex flex-col gap-6">
+              <div className="flex items-start gap-4">
+                <span className="text-xs font-bold mt-1 uppercase tracking-widest text-black/40">
+                  {feature.id}
+                </span>
+                <div className="flex flex-col">
+                  <h3 className="text-3xl font-medium tracking-tight mb-3 text-black">
+                    {feature.title}
+                  </h3>
+                  <p className="text-lg font-medium leading-relaxed text-black/70">
+                    {feature.desc}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="w-full h-[300px] rounded-[32px] overflow-hidden bg-[#f8f9fa] shadow-xl relative border border-black/5">
+                 {feature.visual}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 }
