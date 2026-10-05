@@ -131,7 +131,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
 
       <a href={project.link} target="_blank" rel="noreferrer" className="group relative w-full block overflow-hidden rounded-[32px] md:rounded-[48px]">
         {/* Parallax image container */}
-        <div className="relative w-full aspect-[4/5] md:aspect-[21/9] bg-[#0A0A0A] overflow-hidden">
+        <div className="relative w-full aspect-video md:aspect-[21/9] bg-[#0A0A0A] overflow-hidden">
           <Image 
             src={project.image} 
             alt={project.title} 
