@@ -17,7 +17,20 @@ export default function CustomCursor() {
 
   useEffect(() => {
     // Hide on mobile devices inherently
-    if (window.matchMedia("(max-width: 768px)").matches) return;
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      document.body.style.cursor = 'auto';
+      return;
+    }
+
+    // Hide the system cursor globally on desktop
+    document.body.style.cursor = 'none';
+
+    // Also target all interactive elements to ensure they don't override the cursor
+    const styleEl = document.createElement('style');
+    styleEl.innerHTML = `
+      * { cursor: none !important; }
+    `;
+    document.head.appendChild(styleEl);
 
     const moveCursor = (e: MouseEvent) => {
       // Set to exact mouse coordinates (CSS -50% translation handles centering)
@@ -73,6 +86,8 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", moveCursor);
       document.documentElement.removeEventListener("mouseleave", handleMouseLeave);
       document.documentElement.removeEventListener("focusin", handleFocus);
+      document.body.style.cursor = 'auto';
+      if (styleEl.parentNode) styleEl.parentNode.removeChild(styleEl);
     };
   }, [cursorX, cursorY, isHovering, isVisible]);
 

@@ -24,7 +24,7 @@ export default function Bottlenecks() {
           {/* Column 01: Ad-Spend Bleed */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="bg-[#050505]/80 backdrop-blur-3xl rounded-[2.5rem] border border-white/10 hover:border-amber-500/50 p-6 md:p-10 flex flex-col group relative overflow-hidden shadow-2xl transition-all duration-500"
@@ -77,7 +77,7 @@ export default function Bottlenecks() {
           {/* Column 02: Operational Nightmare */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="bg-[#050505]/80 backdrop-blur-3xl rounded-[2.5rem] border border-white/10 hover:border-emerald-400/50 p-6 md:p-10 flex flex-col group relative overflow-hidden shadow-2xl transition-all duration-500"
@@ -130,7 +130,7 @@ export default function Bottlenecks() {
           {/* Column 03: Commodity Trap */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             className="bg-[#050505]/80 backdrop-blur-3xl rounded-[2.5rem] border border-white/10 hover:border-violet-500/50 p-6 md:p-10 flex flex-col group relative overflow-hidden shadow-2xl transition-all duration-500"

@@ -146,7 +146,7 @@ export default function SystemsPage() {
         {/* Data Flow Visualization (Impeccable Scale) */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1 }}
           className="w-full border-t border-b border-white/10 py-24 relative flex flex-col items-center justify-center"

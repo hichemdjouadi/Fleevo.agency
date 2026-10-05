@@ -8,11 +8,10 @@ const StackCard = ({ index, children, gradientColor }: { index: number, children
   return (
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
       viewport={{ once: true, margin: "-10%" }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className={`lg:sticky relative lg:top-[var(--card-top)] z-${index * 10} w-full rounded-[2.5rem] p-6 md:p-10 lg:p-12 bg-[#050505] border border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] flex flex-col lg:flex-row gap-8 lg:gap-12 items-center group overflow-hidden`}
-      style={{ "--card-top": `${index * 2 + 6}rem` } as React.CSSProperties}
+      className={`relative z-${index * 10} w-full rounded-[2.5rem] p-6 md:p-10 lg:p-12 bg-[#050505] border border-white/10 shadow-2xl flex flex-col lg:flex-row gap-8 lg:gap-12 items-center group overflow-hidden`}
     >
       {/* Subtle top glow line */}
       <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-${gradientColor}-500/50 to-transparent`} />
@@ -47,12 +46,11 @@ export default function Architectures() {
               </div>
             </div>
 
-            {/* Right: Dark Bento Grid */}
-            <div className="w-full lg:w-7/12 grid grid-cols-2 gap-4 h-auto lg:h-[450px] relative rounded-[2rem] border border-white/5 bg-[#0a0a0a] p-4 shadow-inner">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/10 via-transparent to-transparent opacity-50" />
+            {/* Right: Floating Collage */}
+            <div className="w-full lg:w-7/12 relative h-[500px] flex items-center justify-center">
               
-              {/* Top Left Bento */}
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="col-span-2 md:col-span-1 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-2xl flex flex-col justify-between">
+              {/* Pipeline Widget */}
+              <motion.div initial={{ x: 20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="absolute right-0 top-10 bg-[#0a0a0a] border border-white/10 p-5 rounded-3xl shadow-2xl w-[260px] z-10 backdrop-blur-xl hover:border-white/20 transition-colors">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-emerald-500/20 p-2.5 rounded-xl"><LayoutDashboard className="w-5 h-5 text-emerald-400" /></div>
                   <span className="text-[10px] text-white/50 uppercase tracking-widest font-bold">Pipeline</span>
@@ -63,15 +61,18 @@ export default function Architectures() {
                 </div>
               </motion.div>
 
-              {/* Top Right Bento */}
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="col-span-2 md:col-span-1 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-2xl flex flex-col justify-between">
-                <p className="text-xs text-white/50 font-bold uppercase tracking-widest flex items-center gap-2 mb-2"><Smartphone className="w-4 h-4"/> AI Assistant</p>
-                <p className="text-sm text-white/90 font-medium leading-relaxed">&quot;Great! Budget confirmed. Should I book your test drive for Tuesday at 3 PM?&quot;</p>
+              {/* AI Assistant Widget */}
+              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="absolute left-0 sm:left-4 top-28 bg-[#0a0a0a] border border-white/10 p-5 rounded-3xl shadow-2xl w-[280px] sm:w-[320px] z-20 backdrop-blur-xl hover:border-white/20 transition-colors">
+                <p className="text-xs text-white/50 font-bold uppercase tracking-widest flex items-center gap-2 mb-4"><Smartphone className="w-4 h-4"/> AI Assistant</p>
+                <motion.div initial={{ scale: 0.8, opacity: 0, originX: 0, originY: 1 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.5, delay: 0.6 }} className="bg-indigo-500/20 border border-indigo-500/30 p-3 rounded-2xl rounded-bl-sm mt-auto inline-block w-fit">
+                  <p className="text-sm text-white font-medium leading-relaxed">&quot;Great! Budget confirmed. Should I book your test drive for Tuesday at 3 PM?&quot;</p>
+                </motion.div>
               </motion.div>
 
-              {/* Bottom Wide Bento */}
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="col-span-2 bg-gradient-to-br from-emerald-900/40 to-transparent border border-emerald-500/30 p-6 rounded-2xl flex items-center gap-6">
-                <div className="bg-[#2AABEE] p-4 rounded-2xl shrink-0"><MessageCircle className="w-6 h-6 text-black" /></div>
+              {/* Telegram Widget */}
+              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute right-4 sm:right-10 bottom-10 bg-gradient-to-br from-[#0a0a0a] to-[#111] border border-white/10 p-6 rounded-3xl shadow-2xl flex items-center gap-6 z-30 overflow-hidden hover:border-emerald-500/30 transition-colors w-max">
+                <motion.div initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.6, delay: 0.7 }} className="absolute right-6 top-6 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-10 shadow-[0_0_15px_rgba(239,68,68,0.5)]">1</motion.div>
+                <div className="bg-[#2AABEE] p-4 rounded-2xl shrink-0"><MessageCircle className="w-6 h-6 text-white fill-white" /></div>
                 <div className="flex flex-col">
                   <p className="text-xs text-white/60 mb-1 font-bold uppercase tracking-wider">Telegram Alert</p>
                   <p className="text-xl text-white font-bold tracking-tight">New Qualified Lead</p>
@@ -98,10 +99,11 @@ export default function Architectures() {
               </div>
             </div>
 
-            <div className="w-full lg:w-7/12 grid grid-cols-2 gap-4 h-auto lg:h-[450px] relative rounded-[2rem] border border-white/5 bg-[#0a0a0a] p-4 shadow-inner">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent opacity-50" />
+            {/* Right: Floating Collage */}
+            <div className="w-full lg:w-7/12 relative h-[500px] flex items-center justify-center">
               
-              <motion.div initial={{ scale: 0.9, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} transition={{ delay: 0.2 }} className="col-span-2 bg-gradient-to-br from-blue-900/30 to-transparent border border-blue-500/30 p-6 rounded-2xl flex items-center justify-between">
+              {/* Stripe Widget */}
+              <motion.div initial={{ y: -20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="absolute left-0 sm:left-10 top-10 bg-[#0a0a0a] border border-white/10 p-6 rounded-3xl shadow-2xl flex items-center justify-between w-[320px] z-10 hover:border-blue-500/30 transition-colors backdrop-blur-xl">
                 <div className="flex items-center gap-4">
                   <div className="bg-[#635BFF] p-3 rounded-xl"><CreditCard className="w-6 h-6 text-white" /></div>
                   <div>
@@ -109,18 +111,22 @@ export default function Architectures() {
                     <p className="text-lg text-white font-medium">15,000 DA Received</p>
                   </div>
                 </div>
-                <div className="text-sm font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">Cleared</div>
+                <div className="text-sm font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full hidden sm:block">Cleared</div>
               </motion.div>
 
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="col-span-2 md:col-span-1 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-2xl flex flex-col justify-between">
-                <div className="bg-white/10 w-8 h-8 rounded-full flex items-center justify-center mb-3"><ShoppingCart className="w-4 h-4 text-blue-400" /></div>
-                <p className="text-sm text-white/90 font-medium">&quot;You left a book in your cart. Use SAVE10 to finish your order!&quot;</p>
+              {/* Shopping Cart Widget */}
+              <motion.div initial={{ x: 20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="absolute right-0 sm:right-4 top-36 bg-[#0a0a0a] border border-white/10 p-5 rounded-3xl shadow-2xl flex flex-col justify-between w-[280px] sm:w-[300px] z-20 hover:border-white/20 transition-colors backdrop-blur-xl">
+                <div className="bg-white/10 w-8 h-8 rounded-full flex items-center justify-center mb-4"><ShoppingCart className="w-4 h-4 text-blue-400" /></div>
+                <motion.div initial={{ scale: 0.8, opacity: 0, originX: 0, originY: 1 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.5, delay: 0.6 }} className="bg-blue-500/20 border border-blue-500/30 p-3 rounded-2xl rounded-tl-sm inline-block w-fit mt-auto">
+                  <p className="text-sm text-white/90 font-medium">&quot;You left a book in your cart. Use SAVE10 to finish your order!&quot;</p>
+                </motion.div>
               </motion.div>
 
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="col-span-2 md:col-span-1 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-2xl flex flex-col justify-between items-start">
+              {/* Analytics Widget */}
+              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute left-4 sm:left-20 bottom-10 bg-[#0a0a0a] border border-white/10 p-6 rounded-3xl shadow-2xl flex flex-col justify-between items-start w-[220px] z-30 hover:border-white/20 transition-colors backdrop-blur-xl">
                 <p className="text-[10px] text-white/50 uppercase tracking-widest font-bold mb-1">Live Analytics</p>
-                <TrendingUp className="w-6 h-6 text-blue-400 mb-2" />
-                <p className="text-2xl text-white font-light mt-auto">+42% <span className="text-sm text-white/40">Rev</span></p>
+                <TrendingUp className="w-6 h-6 text-blue-400 mb-4" />
+                <p className="text-4xl text-white font-light mt-auto">+42% <span className="text-base text-white/40 font-medium">Rev</span></p>
               </motion.div>
             </div>
           </StackCard>
@@ -142,10 +148,11 @@ export default function Architectures() {
               </div>
             </div>
 
-            <div className="w-full lg:w-7/12 grid grid-cols-2 gap-4 h-auto lg:h-[450px] relative rounded-[2rem] border border-white/5 bg-[#0a0a0a] p-4 shadow-inner">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-transparent to-transparent opacity-50" />
+            {/* Right: Floating Collage */}
+            <div className="w-full lg:w-7/12 relative h-[500px] flex items-center justify-center">
               
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="col-span-2 md:col-span-1 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-2xl flex flex-col justify-between">
+              {/* Cancelled Widget */}
+              <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="absolute left-0 sm:left-10 top-10 bg-[#0a0a0a] border border-white/10 p-5 rounded-3xl shadow-2xl flex flex-col justify-between w-[240px] z-10 hover:border-white/20 transition-colors backdrop-blur-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-red-500/20 p-2.5 rounded-xl"><CalendarCheck className="w-5 h-5 text-red-400" /></div>
                   <span className="text-[10px] text-white/50 uppercase tracking-widest font-bold">Cancelled</span>
@@ -155,20 +162,24 @@ export default function Architectures() {
                 </div>
               </motion.div>
 
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="col-span-2 md:col-span-1 bg-[#25D366]/10 backdrop-blur-md border border-[#25D366]/30 p-5 rounded-2xl flex flex-col justify-between">
-                <div className="flex items-center gap-2 mb-2">
+              {/* WhatsApp Widget */}
+              <motion.div initial={{ x: 20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="absolute right-0 sm:right-4 top-28 bg-[#0a0a0a] border border-white/10 p-5 rounded-3xl shadow-2xl flex flex-col justify-between w-[280px] sm:w-[320px] z-20 hover:border-white/20 transition-colors backdrop-blur-xl">
+                <div className="flex items-center gap-2 mb-4">
                   <MessageCircle className="w-4 h-4 text-[#25D366]" />
                   <span className="text-[10px] text-[#25D366] uppercase tracking-widest font-bold">WhatsApp</span>
                 </div>
-                <p className="text-sm text-white/90 font-medium leading-relaxed">&quot;Your table for 4 is confirmed for tonight at 8:00 PM.&quot;</p>
+                <motion.div initial={{ scale: 0.8, opacity: 0, originX: 0, originY: 1 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.5, delay: 0.6 }} className="bg-[#25D366]/20 border border-[#25D366]/30 p-3 rounded-2xl rounded-bl-sm inline-block w-fit mt-auto">
+                  <p className="text-sm text-white/90 font-medium leading-relaxed">&quot;Your table for 4 is confirmed for tonight at 8:00 PM.&quot;</p>
+                </motion.div>
               </motion.div>
 
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="col-span-2 bg-gradient-to-br from-purple-900/30 to-transparent border border-purple-500/30 p-6 rounded-2xl flex flex-col justify-center items-center text-center">
-                <div className="flex gap-2 mb-3">
+              {/* 5-Star Review Widget */}
+              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute left-4 sm:left-20 bottom-10 bg-[#0a0a0a] border border-white/10 p-6 rounded-3xl shadow-2xl flex flex-col justify-center items-center text-center w-[280px] z-30 hover:border-purple-500/30 transition-colors backdrop-blur-xl">
+                <div className="flex gap-2 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />)}
                 </div>
-                <p className="text-base text-white font-medium mb-1">&quot;Tap here to leave a 5-star review.&quot;</p>
-                <p className="text-xs text-purple-400 font-bold uppercase tracking-widest">Sent automatically</p>
+                <p className="text-base text-white font-medium mb-2">&quot;Tap here to leave a 5-star review.&quot;</p>
+                <p className="text-[10px] text-purple-400 font-bold uppercase tracking-widest">Sent automatically</p>
               </motion.div>
             </div>
           </StackCard>

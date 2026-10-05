@@ -9,6 +9,7 @@ import Bottlenecks from "@/components/Bottlenecks";
 import Methodology from "@/components/Methodology";
 
 import TransitionLink from "@/components/TransitionLink";
+import Magnetic from "@/components/Magnetic";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -123,7 +124,7 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl md:text-[80px] font-medium tracking-tighter leading-[0.9] mb-6"
           >
@@ -132,7 +133,7 @@ export default function Home() {
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-2xl text-white/60 font-medium max-w-xl mx-auto mb-14"
           >
@@ -141,15 +142,16 @@ export default function Home() {
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="rounded-[40px]"
+            className="rounded-[40px] z-50"
           >
-            <TransitionLink 
-              href="/contact" 
-              className="relative inline-flex items-center justify-center px-12 py-6 rounded-full bg-white text-black text-xl font-semibold overflow-hidden group transition-transform z-50 hover:scale-[1.02] active:scale-95"
-            >
+            <Magnetic intensity={0.2}>
+              <TransitionLink 
+                href="/contact" 
+                className="relative inline-flex items-center justify-center px-12 py-6 rounded-full bg-white text-black text-xl font-semibold overflow-hidden group transition-transform z-50 hover:scale-[1.02] active:scale-95"
+              >
               <motion.span 
                 className="relative z-10 flex items-center gap-2"
               >
@@ -167,6 +169,7 @@ export default function Home() {
               {/* Premium clean sweep hover effect */}
               <div className="absolute inset-0 w-full h-full bg-neutral-200 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[0.16,1,0.3,1] rounded-full z-0" />
             </TransitionLink>
+            </Magnetic>
           </motion.div>
         </div>
       </section>
