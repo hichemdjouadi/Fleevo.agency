@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import TransitionLink from "./TransitionLink";
 import Logo from "./Logo";
 import Magnetic from "./Magnetic";
@@ -9,13 +9,28 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   return (
     <>
       <motion.nav 
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: "-100%" }
+        }}
+        initial={{ y: "-100%" }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 w-full z-50 px-6 md:px-8 py-6 md:py-8 flex items-center justify-between text-white mix-blend-difference"
       >
         <div className="w-32 md:w-40 h-8 md:h-10 relative z-[60]">

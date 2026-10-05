@@ -11,8 +11,7 @@ export default function Bottlenecks() {
 
       <div className="max-w-[1200px] mx-auto relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col mb-24 items-center text-center">
+        <div className="flex flex-col mb-24 items-start text-left">
           <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/60 block mb-6">The Diagnosis</span>
           <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[0.9] max-w-4xl text-white">
             The Bottlenecks <br className="hidden md:block"/> We Eliminate.
@@ -183,9 +182,8 @@ export default function Bottlenecks() {
 
         </div>
 
-        {/* The Proof Bridge */}
-        <div className="w-full flex flex-col items-center justify-center pt-32 pb-16 relative z-10">
-          <p className="text-3xl font-light tracking-tight text-white/60 mb-8 text-center max-w-2xl">
+        <div className="w-full flex flex-col items-start justify-start pt-32 pb-16 relative z-10 border-t border-white/10 mt-12">
+          <p className="text-3xl font-light tracking-tight text-white/60 mb-8 text-left max-w-2xl">
             Don't take our word for it. <br/> <strong className="text-white font-medium">Experience the performance yourself.</strong>
           </p>
           <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}><ArrowDown className="w-8 h-8 text-white" /></motion.div>

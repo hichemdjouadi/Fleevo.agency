@@ -30,7 +30,7 @@ export default function FAQ() {
     <section className="bg-[#050505] text-white py-32 px-6 md:px-16 w-full">
       <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
         
-        <div className="w-full md:w-1/3 sticky top-32">
+        <div className="w-full md:w-1/3 md:sticky md:top-32">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">FAQ</h2>
           <p className="text-lg text-white/60 font-medium">
             Everything you need to know about our methodology, infrastructure, and deployment timelines.
