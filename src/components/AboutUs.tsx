@@ -27,17 +27,17 @@ export default function AboutUs() {
             We engineer unfair digital advantages.
           </h2>
           <p className="text-xl md:text-2xl text-white/60 font-light mb-12 leading-relaxed">
-            Fleevo is a global digital product agency. We replace slow, static brochures with autonomous infrastructure. We partner with high-ticket service businesses to build lead engines that capture, qualify, and convert while you sleep.
+            Fleevo is a global digital product agency. We replace static brochures with operational frameworks. We partner with high-ticket service businesses to build lead engines that plug your sales pipeline and convert attention into cash.
           </p>
           
           <div className="grid grid-cols-2 gap-8 mb-12 border-y border-white/10 py-10">
             <div>
               <h4 className="text-white/60 uppercase tracking-[0.2em] text-xs font-bold mb-3">Performance</h4>
-              <p className="font-medium text-lg md:text-xl tracking-tight">Sub-Second Latency</p>
+              <p className="font-medium text-lg md:text-xl tracking-tight">Frictionless Conversion</p>
             </div>
             <div>
               <h4 className="text-white/60 uppercase tracking-[0.2em] text-xs font-bold mb-3">Operations</h4>
-              <p className="font-medium text-lg md:text-xl tracking-tight">Autonomous Routing</p>
+              <p className="font-medium text-lg md:text-xl tracking-tight">Revenue Frameworks</p>
             </div>
           </div>
 

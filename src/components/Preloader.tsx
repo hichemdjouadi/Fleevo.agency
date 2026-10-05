@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const words = [
   "Architecture",
@@ -11,10 +12,13 @@ const words = [
 ];
 
 export default function Preloader() {
+  const pathname = usePathname();
   const [index, setIndex] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(pathname !== "/");
 
   useEffect(() => {
+    if (pathname !== "/") return; // Do not run on other pages
+
     // Total preloader duration should feel snappy but readable
     if (index === words.length - 1) {
       setTimeout(() => {

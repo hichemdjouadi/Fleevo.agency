@@ -7,11 +7,11 @@ import { Plus, X } from "lucide-react";
 const faqs = [
   {
     question: "What separates Fleevo from standard web design agencies?",
-    answer: "Most agencies build static brochures. We build digital ecosystems. We combine stunning, award-winning front-end design with battle-tested backend architecture (PostgreSQL, Supabase) to create systems that actively generate and route revenue."
+    answer: "Most agencies build static brochures. We build operational frameworks. We combine premium front-end design with battle-tested backend architecture to create systems that actively generate revenue and filter out time-wasters."
   },
   {
     question: "Do you work with startups?",
-    answer: "Yes. We work with established B2B firms and ambitious startups. Our architecture is designed to scale from 100 to 1,000,000 users without breaking. We frequently help early-stage companies look and operate like enterprise market leaders."
+    answer: "Yes. We work with established B2B firms and ambitious startups. We help early-stage companies look like premium market leaders on the front end, while building the backend infrastructure required to capture leads and close high-ticket deals."
   },
   {
     question: "How do the autonomous lead engines actually work?",
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     question: "How much does a full deployment cost?",
-    answer: "We do not offer cheap templates. We build bespoke digital infrastructure. Because every business requires different integrations and database architectures, we price based on the scope of the ecosystem required. Submit an audit request to receive a precise technical proposal."
+    answer: "We do not sell cheap templates. We build operational infrastructure. Because every business requires different integrations and custom workflows to stop their specific revenue bleed, we price based on the scope of the infrastructure required. Submit an audit request to receive a precise technical proposal."
   }
 ];
 

@@ -6,23 +6,23 @@ import { useRef } from "react";
 const STEPS = [
   {
     phase: "Code 01",
-    title: "Conversion-First Architecture",
-    description: "Design must serve a measurable business objective. Every interaction, micro-animation, and layout is engineered to eliminate friction and drive lead acquisition."
+    title: "Sell The Outcome",
+    description: "Your customers do not care about your tech stack. They care about their problem. We design every page to answer one specific question: 'Why should I give you money instead of the other guy?'"
   },
   {
     phase: "Code 02",
-    title: "Operational Automation",
-    description: "Manual workflows create overhead and throttle growth. Our systems integrate booking, CRM, and inventory to run your operations autonomously."
+    title: "Cut The Fat",
+    description: "Over-engineered websites confuse buyers. We strip away the noise. If an animation, image, or paragraph doesn't push a user closer to booking a call or buying a product, we delete it."
   },
   {
     phase: "Code 03",
-    title: "The Latency Standard",
-    description: "A 3-second delay loses 53% of mobile traffic. We deploy exclusively on Next.js edge networks to guarantee instantaneous response times, capturing the audience your competitors lose."
+    title: "Stop Money Bleeding",
+    description: "Every dropped cart, ignored DM, and manual follow-up is revenue bleeding out of your business. We build frameworks that plug the holes in your sales process, ensuring the traffic you pay for actually converts into cash."
   },
   {
     phase: "Code 04",
-    title: "Premium Market Positioning",
-    description: "Trust is visual. We engineer bespoke, high-fidelity interfaces that immediately separate you from market competitors and justify premium pricing."
+    title: "The Operating System",
+    description: "We don't hand you a website and leave. We plug the frontend directly into a private admin dashboard. You see exactly how many leads came in, who they are, and where they sit in your pipeline."
   }
 ];
 
@@ -35,20 +35,20 @@ export default function Methodology() {
   });
 
   return (
-    <section className="bg-transparent text-white py-32 md:py-48 px-6 md:px-16" ref={containerRef}>
-      <div className="max-w-[1600px] mx-auto flex flex-col xl:flex-row gap-24">
+    <section className="bg-transparent text-black py-24 md:py-32 px-6 md:px-12" ref={containerRef}>
+      <div className="max-w-[1200px] mx-auto flex flex-col xl:flex-row gap-16 md:gap-24">
         
         {/* Left: Sticky Header */}
         <div className="w-full xl:w-1/3">
-          <div className="sticky top-40">
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/60 block mb-6">
+          <div className="sticky top-32">
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-black/60 block mb-6">
               The Blueprint
             </span>
-            <h2 className="text-5xl md:text-7xl font-medium tracking-tighter leading-[0.9] mb-8">
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[0.9] mb-8">
               Our Operating Codes.
             </h2>
-            <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed">
-              We do not act as order-takers. We act as technical growth partners. These are the four strict architectural rules we apply to every platform we deploy.
+            <p className="text-lg md:text-xl text-black/70 font-medium leading-relaxed">
+              We do not act as order-takers. We act as technical growth partners. These are the four strict rules we apply to every system we deploy.
             </p>
           </div>
         </div>
@@ -57,27 +57,27 @@ export default function Methodology() {
         <div className="w-full xl:w-2/3 relative">
           
           {/* Background Line */}
-          <div className="absolute left-[15px] top-0 bottom-0 w-[1px] bg-white/10" />
+          <div className="absolute left-[15px] top-0 bottom-0 w-[1px] bg-black/10" />
           
           {/* Animated Progress Line */}
           <motion.div 
-            className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-white origin-top"
+            className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-black origin-top"
             style={{ scaleY: scrollYProgress }}
           />
 
-          <div className="flex flex-col gap-32">
+          <div className="flex flex-col gap-20">
             {STEPS.map((step, idx) => (
-              <div key={idx} className="relative pl-16 md:pl-24">
+              <div key={idx} className="relative pl-12 md:pl-20">
                 {/* Node */}
-                <div className="absolute left-[11px] top-2 w-[10px] h-[10px] rounded-full bg-black border-[2px] border-white" />
+                <div className="absolute left-[11px] top-2 w-[10px] h-[10px] rounded-full bg-white border-[2px] border-black" />
                 
-                <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/60 block mb-4">
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-black/50 block mb-4">
                   {step.phase}
                 </span>
-                <h3 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">
+                <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">
                   {step.title}
                 </h3>
-                <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-2xl">
+                <p className="text-lg md:text-xl text-black/70 font-medium leading-relaxed max-w-xl">
                   {step.description}
                 </p>
               </div>

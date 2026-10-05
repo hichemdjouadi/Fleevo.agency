@@ -8,18 +8,8 @@ export async function createTrelloProjectCard(clientName: string, projectType: s
   }
 
   try {
-    // 1. Get the user's boards
-    const boardsRes = await fetch(`https://api.trello.com/1/members/me/boards?key=${TRELLO_KEY}&token=${TRELLO_TOKEN}`);
-    if (!boardsRes.ok) throw new Error('Failed to fetch Trello boards');
-    const boards = await boardsRes.json();
-    
-    if (boards.length === 0) {
-      console.warn('No Trello boards found');
-      return null;
-    }
-
-    // Use the first board (you could filter by name e.g., boards.find(b => b.name === 'Projects'))
-    const boardId = boards[0].id;
+    // Use the explicit board ID for "The Agency"
+    const boardId = '9jXSNE8k';
 
     // 2. Get lists on that board
     const listsRes = await fetch(`https://api.trello.com/1/boards/${boardId}/lists?key=${TRELLO_KEY}&token=${TRELLO_TOKEN}`);

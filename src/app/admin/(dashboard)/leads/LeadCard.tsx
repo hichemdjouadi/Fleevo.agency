@@ -4,7 +4,7 @@ import { useState, useTransition } from 'react';
 import { updateLeadStatus, logLeadContact } from '../../actions';
 import { ExternalLink, Mail, Clock, AlertTriangle } from 'lucide-react';
 
-export function LeadCard({ lead }: { lead: any }) {
+export function LeadCard({ lead, hideStatusSelect }: { lead: any; hideStatusSelect?: boolean }) {
   const [isPending, startTransition] = useTransition();
   const [isExpanded, setIsExpanded] = useState(false);
 

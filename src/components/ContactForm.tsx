@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Paperclip } from "lucide-react";
-import { supabase } from "@/lib/supabase";
+import { submitAuditRequest } from "@/app/actions";
 
 export default function ContactForm() {
   const [interests, setInterests] = useState<string[]>([]);
@@ -15,9 +15,8 @@ export default function ContactForm() {
   const [error, setError] = useState<string | null>(null);
 
   const interestOptions = [
-    "Website design", "Website redesign", "UI/UX design", 
-    "Product design", "Branding", "Web development", 
-    "Mobile development", "Motion / 3D"
+    "Lead Generation System", "E-Commerce Infrastructure", "Automated Booking Engine", 
+    "Custom Admin Dashboard", "Conversion Rate Audit", "Full Operational Overhaul"
   ];
 
   const budgetOptions = ["10-20k", "20-30k", "30-50k", "50-100k", "100k+"];
@@ -33,32 +32,17 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setError(null);
 
-    const compiledNotes = `
-Interests: ${interests.join(', ')}
-Budget: ${budget}
-Project Details: ${details}
-`.trim();
+    const result = await submitAuditRequest({
+      name, email, budget, interests, details
+    });
 
-    try {
-      const { error: submitError } = await supabase
-        .from('leads')
-        .insert([
-          { 
-            business_name: name, 
-            contact_email: email,
-            notes: compiledNotes,
-            niche: "Inbound Lead",
-            status: "New"
-          }
-        ]);
-
-      if (submitError) throw submitError;
+    if (result.error) {
+      setError(result.error);
+    } else {
       setIsSuccess(true);
-    } catch (err: any) {
-      setError(err.message || "Failed to submit request.");
-    } finally {
-      setIsSubmitting(false);
     }
+    
+    setIsSubmitting(false);
   };
 
   if (isSuccess) {

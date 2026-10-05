@@ -3,71 +3,45 @@
 import { motion } from "framer-motion";
 
 export default function Testimonials() {
-  const cards = [
-    { text: "The architectural shift they brought to our clinic doubled our high-ticket consultations.", author: "Dr. Sarah Chen", bg: "bg-emerald-50" },
-    { text: "Fleevo rebuilt our entire booking infrastructure. We went from manual chaos to a fully automated engine.", author: "Marcus Thorne", bg: "bg-indigo-50" },
-    { text: "Our conversion rate was stuck for months. After they deployed the new frontend architecture, we saw a 142% uplift.", author: "Elena Rodriguez", bg: "bg-blue-50" },
-    { text: "The fastest execution we have ever seen. They built our entire digital product in less than 30 days.", author: "David Kim", bg: "bg-orange-50" }
+  const testimonials = [
+    {
+      quote: "The quality of the team's work exceeded my expectations, and since completion we have won a number of awards, including the Site of Day awwward.",
+      author: "Zelt",
+      role: "Digital Platform"
+    },
+    {
+      quote: "Fleevo re-engineered our entire client acquisition flow. We went from losing leads in our DMs to a fully automated pipeline.",
+      author: "Vertex Med",
+      role: "Private Clinic"
+    },
+    {
+      quote: "Before Fleevo, we were losing half of our checkouts to a clunky process. They built a frictionless infrastructure that plugged the holes in our sales funnel.",
+      author: "Aura Commerce",
+      role: "E-Commerce"
+    }
   ];
 
   return (
-    <section className="bg-[#fafafa] flex flex-col items-center justify-center">
-      <div className="max-w-[1200px] mx-auto w-full flex flex-col items-center">
-        
-        <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-[#050505] mb-24 text-center">
-          Trusted by our clients
+    <section className="py-24 px-6 w-full max-w-[1200px] mx-auto border-t border-black/10 mt-16">
+      <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[0.95]">
+          Proven by <br /> ambitious brands.
         </h2>
+      </div>
 
-        {/* The Overlapping Square Pastel Cards */}
-        <div className="relative w-full max-w-[800px] h-[400px] md:h-[400px] flex items-center justify-center">
-          
-          <motion.div 
-            initial={{ opacity: 0, rotate: 0 }}
-            whileInView={{ opacity: 1, rotate: -15, x: -180, y: 20 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className={`absolute w-[240px] h-[240px] p-6 ${cards[0].bg} shadow-lg z-10 flex flex-col justify-between`}
-          >
-            <p className="text-sm text-black/80 font-medium leading-relaxed">"{cards[0].text}"</p>
-            <p className="font-bold text-black text-sm">{cards[0].author}</p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, rotate: 0 }}
-            whileInView={{ opacity: 1, rotate: -5, x: -60, y: -20 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className={`absolute w-[240px] h-[240px] p-6 ${cards[1].bg} shadow-xl z-20 flex flex-col justify-between`}
-          >
-            <p className="text-sm text-black/80 font-medium leading-relaxed">"{cards[1].text}"</p>
-            <p className="font-bold text-black text-sm">{cards[1].author}</p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, rotate: 0 }}
-            whileInView={{ opacity: 1, rotate: 5, x: 60, y: -20 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className={`absolute w-[240px] h-[240px] p-6 ${cards[2].bg} shadow-xl z-30 flex flex-col justify-between`}
-          >
-            <p className="text-sm text-black/80 font-medium leading-relaxed">"{cards[2].text}"</p>
-            <p className="font-bold text-black text-sm">{cards[2].author}</p>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, rotate: 0 }}
-            whileInView={{ opacity: 1, rotate: 15, x: 180, y: 20 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className={`absolute w-[240px] h-[240px] p-6 ${cards[3].bg} shadow-lg z-40 flex flex-col justify-between`}
-          >
-            <p className="text-sm text-black/80 font-medium leading-relaxed">"{cards[3].text}"</p>
-            <p className="font-bold text-black text-sm">{cards[3].author}</p>
-          </motion.div>
-
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.map((t, i) => (
+          <div key={i} className="bg-[#f7f7f7] rounded-[32px] p-8 md:p-10 flex flex-col justify-between h-auto min-h-[300px] md:min-h-[350px] hover:bg-[#f0f0f0] transition-colors border border-black/5">
+            <p className="text-lg md:text-xl font-medium leading-[1.4] text-black">
+              "{t.quote}"
+            </p>
+            <div className="mt-12 flex flex-col gap-1 border-t border-black/10 pt-6">
+              <span className="font-bold text-black uppercase tracking-widest text-sm">{t.author}</span>
+              <span className="text-black/50 text-sm font-medium">{t.role}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
-

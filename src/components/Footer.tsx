@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import TransitionLink from "./TransitionLink";
 import { Globe, Mail, MessageSquare, Share2 } from "lucide-react";
 
 export default function Footer() {
@@ -43,12 +43,12 @@ export default function Footer() {
           {/* Right Side: Links */}
           <div className="flex">
             <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm font-medium">
-              <Link href="/services" className="hover:text-white/70 transition-colors">Services</Link>
+              <TransitionLink href="/services" className="hover:text-white/70 transition-colors">Services</TransitionLink>
               
-              <Link href="/work" className="hover:text-white/70 transition-colors">Projects</Link>
-              <Link href="/workflow" className="hover:text-white/70 transition-colors">Workflow</Link>
-              <Link href="/about" className="hover:text-white/70 transition-colors">About</Link>
-              <Link href="/contact" className="hover:text-white/70 transition-colors">Contacts</Link>
+              <TransitionLink href="/work" className="hover:text-white/70 transition-colors">Projects</TransitionLink>
+              <TransitionLink href="/workflow" className="hover:text-white/70 transition-colors">Workflow</TransitionLink>
+              <TransitionLink href="/about" className="hover:text-white/70 transition-colors">About</TransitionLink>
+              <TransitionLink href="/contact" className="hover:text-white/70 transition-colors">Contacts</TransitionLink>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-end md:items-center gap-8">
           <div className="flex items-center gap-4 text-[10px] text-white/60">
-            <Link href="#" className="hover:text-white font-medium transition-colors">Privacy Policy</Link>
+            <TransitionLink href="#" className="hover:text-white font-medium transition-colors">Privacy Policy</TransitionLink>
             <span>&copy; {new Date().getFullYear()} Fleevo</span>
           </div>
 

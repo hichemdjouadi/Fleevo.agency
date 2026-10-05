@@ -5,16 +5,16 @@ import { CheckCircle2, MessageCircle, CalendarCheck, CreditCard, ShoppingCart, S
 
 export default function Architectures() {
   return (
-    <section className="relative w-full px-6 py-24 md:py-40 bg-black overflow-hidden">
-      <div className="max-w-[1600px] mx-auto relative z-10">
+    <section className="relative w-full px-6 py-24 md:py-32 bg-black overflow-hidden">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         
-        <div className="flex flex-col mb-24 gap-6">
-          <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400">How We Help You</span>
-          <h2 className="text-[10vw] md:text-[6vw] font-medium tracking-tighter leading-none text-black">
-            The Growth Engines.
+        <div className="flex flex-col mb-20 gap-6">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-emerald-400">The Infrastructure</span>
+          <h2 className="text-5xl md:text-7xl font-medium tracking-tighter leading-none text-white">
+            Growth Engines.
           </h2>
-          <p className="text-xl md:text-2xl text-black/50 font-light max-w-3xl tracking-tight leading-relaxed">
-            We don't just build websites. We build automated systems that generate leads, process sales, and manage your bookings while you sleep.
+          <p className="text-lg md:text-xl text-white/50 font-light max-w-2xl tracking-tight leading-relaxed">
+            We don't build digital brochures. We build operational infrastructure that acquires leads, processes payments, and prevents calendar chaos.
           </p>
         </div>
 
@@ -26,29 +26,29 @@ export default function Architectures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="sticky top-24 z-10 w-full rounded-[2.5rem] p-8 md:p-12 lg:p-16 bg-white border border-black/5 shadow-2xl flex flex-col lg:flex-row gap-12 lg:gap-16 items-center group overflow-hidden"
+            className="sticky top-24 z-10 w-full rounded-[2rem] p-6 md:p-10 lg:p-12 bg-white border border-black/5 shadow-2xl flex flex-col lg:flex-row gap-8 lg:gap-12 items-center group overflow-hidden"
           >
             {/* Left: Content */}
-            <div className="w-full lg:w-5/12 flex flex-col gap-8 relative z-10">
-              <span className="px-5 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] text-emerald-400 w-fit">Pillar 01</span>
-              <h3 className="text-4xl md:text-5xl font-medium tracking-tighter leading-tight text-black">
+            <div className="w-full lg:w-5/12 flex flex-col gap-6 relative z-10">
+              <span className="px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 font-bold text-[10px] uppercase tracking-[0.2em] text-emerald-500 w-fit">Pillar 01</span>
+              <h3 className="text-3xl md:text-4xl font-medium tracking-tighter leading-tight text-black">
                 High-Ticket <br className="hidden lg:block"/> Lead Generation
               </h3>
-              <p className="text-lg text-black/60 font-light leading-relaxed">
-                Perfect for Dental Clinics, Medical Hubs, and Dealerships. We stop time-wasters. Our system automatically answers questions, qualifies buyers, and sends the best leads straight to your phone.
+              <p className="text-base text-black/60 font-medium leading-relaxed">
+                We build systems that filter time-wasters and route highly qualified buyers directly to your sales team.
               </p>
-              <div className="flex flex-col gap-3 pt-6 border-t border-black/5 text-sm md:text-base">
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-emerald-500" /> Filters out junk and spam leads</span>
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-emerald-500" /> Automatically books meetings on your calendar</span>
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-emerald-500" /> Instant Telegram/WhatsApp notifications</span>
+              <div className="flex flex-col gap-2 pt-4 border-t border-black/5 text-sm md:text-base">
+                <span className="flex items-center gap-3 font-medium text-black/80"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Blocks unqualified leads</span>
+                <span className="flex items-center gap-3 font-medium text-black/80"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Forces commitment upfront</span>
+                <span className="flex items-center gap-3 font-medium text-black/80"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Direct-to-calendar booking</span>
               </div>
             </div>
 
             {/* Right: The MASSIVE Features */}
-            <div className="w-full lg:w-7/12 h-[550px] relative rounded-3xl border border-white/5 bg-[#f5f5f5] overflow-hidden flex items-center justify-center shadow-inner">
+            <div className="w-full lg:w-7/12 h-[450px] relative rounded-[2rem] border border-white/5 bg-[#f5f5f5] overflow-hidden flex items-center justify-center shadow-inner">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/10 via-transparent to-transparent" />
               
-              <div className="relative w-full h-full max-w-[550px]">
+              <div className="relative w-full h-full max-w-[500px]">
                 {/* Feature 1: CRM Pipeline (NEW) */}
                 <motion.div initial={{ y: -20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="absolute top-10 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-2xl border border-black/5 p-5 rounded-[2rem] shadow-2xl w-[85%] z-10 flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -88,29 +88,29 @@ export default function Architectures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="sticky top-32 z-20 w-full rounded-[2.5rem] p-8 md:p-12 lg:p-16 bg-[#050505] border border-black/5 shadow-2xl flex flex-col lg:flex-row-reverse gap-12 lg:gap-16 items-center group overflow-hidden"
+            className="sticky top-32 z-20 w-full rounded-[2rem] p-6 md:p-10 lg:p-12 bg-[#050505] border border-white/5 shadow-2xl flex flex-col lg:flex-row-reverse gap-8 lg:gap-12 items-center group overflow-hidden"
           >
             {/* Left (Reversed): Content */}
-            <div className="w-full lg:w-5/12 flex flex-col gap-8 relative z-10">
-              <span className="px-5 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] text-blue-400 w-fit">Pillar 02</span>
-              <h3 className="text-4xl md:text-5xl font-medium tracking-tighter leading-tight text-black">
-                Scalable <br className="hidden lg:block"/> E-Commerce
+            <div className="w-full lg:w-5/12 flex flex-col gap-6 relative z-10">
+              <span className="px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 font-bold text-[10px] uppercase tracking-[0.2em] text-blue-400 w-fit">Pillar 02</span>
+              <h3 className="text-3xl md:text-4xl font-medium tracking-tighter leading-tight text-white">
+                Frictionless <br className="hidden lg:block"/> E-Commerce
               </h3>
-              <p className="text-lg text-black/60 font-light leading-relaxed">
-                Perfect for E-Learning Platforms and Bookstores. We build lightning-fast online stores. Your customers will never wait for a page to load, meaning they buy more and abandon fewer carts.
+              <p className="text-base text-white/60 font-medium leading-relaxed">
+                Every extra step in checkout is a lost sale. We build frictionless stores that convert attention into cash, preventing cart abandonment before it happens.
               </p>
-              <div className="flex flex-col gap-3 pt-6 border-t border-black/5 text-sm md:text-base">
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-blue-500" /> Instant page loading speeds</span>
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-blue-500" /> Automated abandoned cart recovery emails</span>
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-blue-500" /> Seamless Stripe & Local Payment integrations</span>
+              <div className="flex flex-col gap-2 pt-4 border-t border-white/10 text-sm md:text-base">
+                <span className="flex items-center gap-3 font-medium text-white/80"><CheckCircle2 className="w-4 h-4 text-blue-500" /> Frictionless checkout flow</span>
+                <span className="flex items-center gap-3 font-medium text-white/80"><CheckCircle2 className="w-4 h-4 text-blue-500" /> Automated cart recovery SMS</span>
+                <span className="flex items-center gap-3 font-medium text-white/80"><CheckCircle2 className="w-4 h-4 text-blue-500" /> Stripe & Local Payments</span>
               </div>
             </div>
 
             {/* Right: The MASSIVE Features */}
-            <div className="w-full lg:w-7/12 h-[550px] relative rounded-3xl border border-white/5 bg-white overflow-hidden flex items-center justify-center shadow-inner">
+            <div className="w-full lg:w-7/12 h-[450px] relative rounded-[2rem] border border-white/5 bg-white overflow-hidden flex items-center justify-center shadow-inner">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent" />
               
-              <div className="relative w-full h-full max-w-[550px]">
+              <div className="relative w-full h-full max-w-[500px]">
                 {/* Feature 1: Revenue Graph (NEW) */}
                 <motion.div initial={{ y: -20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="absolute top-10 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-2xl border border-black/5 p-5 rounded-[2rem] shadow-2xl w-[85%] z-10 flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -154,29 +154,29 @@ export default function Architectures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="sticky top-40 z-30 w-full rounded-[2.5rem] p-8 md:p-12 lg:p-16 bg-white border border-black/5 shadow-2xl flex flex-col lg:flex-row gap-12 lg:gap-16 items-center group overflow-hidden"
+            className="sticky top-40 z-30 w-full rounded-[2rem] p-6 md:p-10 lg:p-12 bg-white border border-black/5 shadow-2xl flex flex-col lg:flex-row gap-8 lg:gap-12 items-center group overflow-hidden"
           >
             {/* Left: Content */}
-            <div className="w-full lg:w-5/12 flex flex-col gap-8 relative z-10">
-              <span className="px-5 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] text-purple-400 w-fit">Pillar 03</span>
-              <h3 className="text-4xl md:text-5xl font-medium tracking-tighter leading-tight text-black">
-                Automated <br className="hidden lg:block"/> Reservations
+            <div className="w-full lg:w-5/12 flex flex-col gap-6 relative z-10">
+              <span className="px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 font-bold text-[10px] uppercase tracking-[0.2em] text-purple-600 w-fit">Pillar 03</span>
+              <h3 className="text-3xl md:text-4xl font-medium tracking-tighter leading-tight text-black">
+                Automated <br className="hidden lg:block"/> Bookings
               </h3>
-              <p className="text-lg text-black/60 font-light leading-relaxed">
-                Perfect for Tourism Agencies and Restaurants. No more double-bookings or empty tables. Our system manages your calendar completely hands-free and automatically reminds clients to show up.
+              <p className="text-base text-black/60 font-medium leading-relaxed">
+                Double-bookings and no-shows cost you money. The system manages your calendar, takes deposits, and forces accountability.
               </p>
-              <div className="flex flex-col gap-3 pt-6 border-t border-black/5 text-sm md:text-base">
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-purple-500" /> Eliminates double-bookings automatically</span>
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-purple-500" /> Sends WhatsApp/SMS appointment reminders</span>
-                <span className="flex items-center gap-4 font-medium text-black/80"><CheckCircle2 className="w-5 h-5 text-purple-500" /> Sends automated 5-star review requests</span>
+              <div className="flex flex-col gap-2 pt-4 border-t border-black/5 text-sm md:text-base">
+                <span className="flex items-center gap-3 font-medium text-black/80"><CheckCircle2 className="w-4 h-4 text-purple-500" /> Eliminates calendar conflicts</span>
+                <span className="flex items-center gap-3 font-medium text-black/80"><CheckCircle2 className="w-4 h-4 text-purple-500" /> WhatsApp no-show alerts</span>
+                <span className="flex items-center gap-3 font-medium text-black/80"><CheckCircle2 className="w-4 h-4 text-purple-500" /> Automated Google reviews</span>
               </div>
             </div>
 
             {/* Right: The MASSIVE Features */}
-            <div className="w-full lg:w-7/12 h-[550px] relative rounded-3xl border border-white/5 bg-[#f5f5f5] overflow-hidden flex items-center justify-center shadow-inner">
+            <div className="w-full lg:w-7/12 h-[450px] relative rounded-[2rem] border border-white/5 bg-[#f5f5f5] overflow-hidden flex items-center justify-center shadow-inner">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-transparent to-transparent" />
               
-              <div className="relative w-full h-full max-w-[550px]">
+              <div className="relative w-full h-full max-w-[500px]">
                 {/* Feature 1: No-Show Resolver (NEW) */}
                 <motion.div initial={{ y: -20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="absolute top-10 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-2xl border border-black/5 p-5 rounded-[2rem] shadow-2xl w-[85%] z-10 flex items-center justify-between">
                   <div className="flex items-center gap-4">

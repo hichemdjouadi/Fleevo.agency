@@ -72,3 +72,40 @@ export async function deleteProject(id: string) {
   await supabase.from('projects').delete().eq('id', id);
   revalidatePath('/admin/projects');
 }
+
+export async function deleteContentPost(id: string) {
+  const supabase = await createClient();
+  await supabase.from('content_posts').delete().eq('id', id);
+  revalidatePath('/admin/content');
+}
+
+export async function updateContentDraft(id: string, draft_body: string) {
+  const supabase = await createClient();
+  await supabase.from('content_posts').update({ draft_body }).eq('id', id);
+  revalidatePath('/admin/content');
+}
+
+export async function deleteIdea(id: string) {
+  const supabase = await createClient();
+  await supabase.from('ideas').delete().eq('id', id);
+  revalidatePath('/admin/ideas');
+}
+
+export async function updateIdea(id: string, description: string) {
+  const supabase = await createClient();
+  await supabase.from('ideas').update({ description }).eq('id', id);
+  revalidatePath('/admin/ideas');
+}
+
+export async function seedAction() {
+  revalidatePath('/admin');
+}
+
+export async function addTaskAction(formData: FormData) {
+  const title = formData.get('taskName') as string;
+  revalidatePath('/admin');
+}
+
+export async function completeTaskAction(id: string) {
+  revalidatePath('/admin');
+}

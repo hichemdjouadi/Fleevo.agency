@@ -4,7 +4,7 @@ import { useState, useTransition } from 'react';
 import { updateProjectStatus, deleteProject } from '../../actions';
 import { Calendar, AlertTriangle, Trash2 } from 'lucide-react';
 
-export function ProjectCard({ project }: { project: any }) {
+export function ProjectCard({ project, hideStatusSelect }: { project: any; hideStatusSelect?: boolean }) {
   const [isPending, startTransition] = useTransition();
   const [isExpanded, setIsExpanded] = useState(false);
 
