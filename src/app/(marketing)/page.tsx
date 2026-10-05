@@ -7,6 +7,7 @@ import HeroVisual from "@/components/HeroVisual";
 import Testimonials from "@/components/Testimonials";
 import Bottlenecks from "@/components/Bottlenecks";
 import Methodology from "@/components/Methodology";
+import ValueProps from "@/components/ValueProps";
 
 import TransitionLink from "@/components/TransitionLink";
 import Magnetic from "@/components/Magnetic";
@@ -18,11 +19,11 @@ export default function Home() {
     <main className="bg-[#fff] text-black selection:bg-black selection:text-white">
       
       {/* Pristine Light-Mode Hero */}
-      <section className="relative w-full flex flex-col items-center pt-56 pb-24 overflow-hidden bg-[#fff]">
+      <section className="relative w-full flex flex-col items-center pt-32 md:pt-56 pb-24 overflow-hidden bg-[#fff]">
         {/* Subtle Vercel-style background grid */}
         <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_110%)]"></div>
         
-        <div className="relative z-20 flex flex-col items-start justify-start text-left px-6 md:px-8 w-full max-w-[1400px] mx-auto">
+        <div className="relative z-20 flex flex-col items-start md:items-center justify-start text-left md:text-center px-6 md:px-8 w-full max-w-[1400px] mx-auto">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,28 +79,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Features - Biz Sales Focus */}
-      <section className="py-24 px-6 w-full max-w-[1000px] mx-auto">
-        <div className="flex flex-col border-t border-black/10">
-          {[
-            { title: "Filter Time-Wasters", desc: "Stop wasting hours replying to unqualified DMs. The system automatically qualifies prospects before they reach your calendar." },
-            { title: "Automate Follow-ups", desc: "Replace manual chasing with instant SMS and Telegram alerts. When a lead drops off, the system automatically re-engages them." },
-            { title: "Command Premium Pricing", desc: "If you look like your cheapest competitor, you compete on price. We design a visual presence that justifies a high-ticket fee without negotiation." },
-          ].map((feature, i) => (
-            <div key={i} className="flex flex-col md:flex-row gap-6 md:gap-16 py-12 border-b border-black/10 group cursor-pointer">
-              <div className="w-full md:w-1/2 flex items-start gap-6">
-                <span className="text-xs font-bold opacity-40 mt-2 uppercase tracking-widest">0{i+1}</span>
-                <h3 className="text-3xl md:text-4xl font-medium tracking-tight group-hover:pl-4 transition-all duration-300">{feature.title}</h3>
-              </div>
-              <div className="w-full md:w-1/2 flex items-center">
-                <p className="text-base md:text-lg font-medium leading-relaxed text-black/70">
-                  {feature.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ValueProps />
 
       <Methodology />
       

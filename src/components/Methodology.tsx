@@ -35,57 +35,63 @@ export default function Methodology() {
   });
 
   return (
-    <section className="bg-transparent text-black py-24 md:py-32 px-6 md:px-12" ref={containerRef}>
-      <div className="max-w-[1200px] mx-auto flex flex-col xl:flex-row gap-16 md:gap-24">
+    <div className="px-4 md:px-8 my-16">
+      <section className="bg-[#050505] text-white py-24 md:py-32 px-6 md:px-16 rounded-[40px] relative overflow-hidden" ref={containerRef}>
+        {/* Subtle grid background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
         
-        {/* Left: Sticky Header */}
-        <div className="w-full xl:w-1/3">
-          <div className="sticky top-32">
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-black/60 block mb-6">
-              The Blueprint
-            </span>
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[0.9] mb-8">
-              Our Operating Codes.
-            </h2>
-            <p className="text-lg md:text-xl text-black/70 font-medium leading-relaxed">
-              We do not act as order-takers. We act as technical growth partners. These are the four strict rules we apply to every system we deploy.
-            </p>
-          </div>
-        </div>
-
-        {/* Right: The Vertical Timeline */}
-        <div className="w-full xl:w-2/3 relative">
+        <div className="max-w-[1200px] mx-auto flex flex-col xl:flex-row gap-16 md:gap-24 relative z-10">
           
-          {/* Background Line */}
-          <div className="absolute left-[15px] top-0 bottom-0 w-[1px] bg-black/10" />
-          
-          {/* Animated Progress Line */}
-          <motion.div 
-            className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-black origin-top"
-            style={{ scaleY: scrollYProgress }}
-          />
-
-          <div className="flex flex-col gap-20">
-            {STEPS.map((step, idx) => (
-              <div key={idx} className="relative pl-12 md:pl-20">
-                {/* Node */}
-                <div className="absolute left-[11px] top-2 w-[10px] h-[10px] rounded-full bg-white border-[2px] border-black" />
-                
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-black/50 block mb-4">
-                  {step.phase}
-                </span>
-                <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-lg md:text-xl text-black/70 font-medium leading-relaxed max-w-xl">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+          {/* Left: Sticky Header */}
+          <div className="w-full xl:w-1/3">
+            <div className="sticky top-32">
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-white/50 block mb-6 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-white/30" />
+                The Blueprint
+              </span>
+              <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[0.9] mb-8 text-white">
+                Our Operating Codes.
+              </h2>
+              <p className="text-lg md:text-xl text-white/60 font-medium leading-relaxed">
+                We do not act as order-takers. We act as technical growth partners. These are the four strict rules we apply to every system we deploy.
+              </p>
+            </div>
           </div>
 
+          {/* Right: The Vertical Timeline */}
+          <div className="w-full xl:w-2/3 relative">
+            
+            {/* Background Line */}
+            <div className="absolute left-[15px] top-0 bottom-0 w-[1px] bg-white/10" />
+            
+            {/* Animated Progress Line */}
+            <motion.div 
+              className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-white origin-top"
+              style={{ scaleY: scrollYProgress }}
+            />
+
+            <div className="flex flex-col gap-24">
+              {STEPS.map((step, idx) => (
+                <div key={idx} className="relative pl-12 md:pl-20 group">
+                  {/* Node */}
+                  <div className="absolute left-[11px] top-2 w-[10px] h-[10px] rounded-full bg-[#050505] border-[2px] border-white group-hover:scale-150 transition-transform duration-300" />
+                  
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-white/40 block mb-4 group-hover:text-white/60 transition-colors">
+                    {step.phase}
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 text-white group-hover:translate-x-2 transition-transform duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-xl group-hover:text-white/80 transition-colors">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
