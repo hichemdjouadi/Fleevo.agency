@@ -26,7 +26,7 @@ export default function FeaturedWork() {
       <div className="flex flex-col gap-16 md:mt-0">
         {projects.filter((_, i) => i % 2 === 0).map((project, i) => (
           <a href={project.link} target="_blank" rel="noreferrer" key={i} className="group block">
-            <div className={"relative w-full aspect-[4/3] rounded-[32px] overflow-hidden mb-6 " + project.bg}>
+            <div className={"relative w-full aspect-video rounded-[32px] overflow-hidden mb-6 " + project.bg}>
               <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]" unoptimized />
             </div>
             <h3 className="text-xl font-medium text-white mb-1">{project.title}</h3>
@@ -37,7 +37,7 @@ export default function FeaturedWork() {
       <div className="flex flex-col gap-16 md:mt-32">
         {projects.filter((_, i) => i % 2 !== 0).map((project, i) => (
           <a href={project.link} target="_blank" rel="noreferrer" key={i} className="group block">
-            <div className={"relative w-full aspect-[4/3] rounded-[32px] overflow-hidden mb-6 " + project.bg}>
+            <div className={"relative w-full aspect-video rounded-[32px] overflow-hidden mb-6 " + project.bg}>
               <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]" unoptimized />
             </div>
             <h3 className="text-xl font-medium text-white mb-1">{project.title}</h3>
