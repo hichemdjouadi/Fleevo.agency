@@ -11,7 +11,7 @@ export default function CustomCursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { damping: 40, stiffness: 1000, mass: 0.05 };
+  const springConfig = { damping: 30, stiffness: 700, mass: 0.05 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
@@ -106,10 +106,10 @@ export default function CustomCursor() {
           x: "-50%",
           y: "-50%",
         }}
-        initial={{ width: 16, height: 16, borderRadius: "50%" }}
+        initial={{ width: 12, height: 12, borderRadius: "50%" }}
         animate={{ 
-          width: isHovering ? 80 : 16,
-          height: isHovering ? 80 : 16,
+          width: isHovering ? 64 : 12,
+          height: isHovering ? 64 : 12,
         }}
         transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.1 }}
       >
