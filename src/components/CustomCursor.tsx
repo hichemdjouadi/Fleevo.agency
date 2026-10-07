@@ -93,10 +93,11 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block mix-blend-difference"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:flex items-center justify-center mix-blend-difference"
       style={{
-        left: cursorXSpring,
-        top: cursorYSpring,
+        x: cursorXSpring,
+        y: cursorYSpring,
+        opacity: isVisible ? 1 : 0,
       }}
     >
       <motion.div
@@ -104,14 +105,13 @@ export default function CustomCursor() {
         style={{
           x: "-50%",
           y: "-50%",
-          opacity: isVisible ? 1 : 0,
         }}
         initial={{ width: 12, height: 12, borderRadius: "50%" }}
         animate={{ 
           width: isHovering ? 64 : 12,
           height: isHovering ? 64 : 12,
         }}
-        transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.1 }}
+        transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.15 }}
       >
         {isHovering && (
           <motion.span 
