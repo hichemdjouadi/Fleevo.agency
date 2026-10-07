@@ -21,7 +21,7 @@ export default function Home() {
       {/* Pristine Light-Mode Hero */}
       <section className="relative w-full flex flex-col items-center pt-32 md:pt-56 pb-24 overflow-hidden bg-[#fff]">
         {/* Subtle Vercel-style background grid */}
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_110%)] transform-gpu"></div>
         
         <div className="relative z-20 flex flex-col items-start md:items-center justify-start text-left md:text-center px-6 md:px-8 w-full max-w-[1400px] mx-auto">
           <motion.h1 
