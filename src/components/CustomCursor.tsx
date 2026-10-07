@@ -16,11 +16,6 @@ export default function CustomCursor() {
   const dotX = useSpring(mouseX, dotSpringConfig);
   const dotY = useSpring(mouseY, dotSpringConfig);
 
-  // Slower spring for the outer ring/hover state
-  const ringSpringConfig = { damping: 30, stiffness: 400, mass: 0.15 };
-  const ringX = useSpring(mouseX, ringSpringConfig);
-  const ringY = useSpring(mouseY, ringSpringConfig);
-
   useEffect(() => {
     if (window.matchMedia("(max-width: 768px)").matches) {
       document.body.style.cursor = 'auto';
@@ -75,30 +70,24 @@ export default function CustomCursor() {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[99999] hidden md:block mix-blend-difference">
-      {/* Outer Ring / Hover Circle */}
       <motion.div
-        className="absolute top-0 left-0 flex items-center justify-center font-bold tracking-[0.2em] text-[10px] text-black"
+        className="absolute top-0 left-0 bg-white rounded-full flex items-center justify-center font-bold tracking-[0.2em] text-[10px]"
         style={{
-          x: ringX,
-          y: ringY,
+          x: dotX,
+          y: dotY,
           opacity: isVisible ? 1 : 0,
         }}
         initial={{ 
-          width: 40, 
-          height: 40, 
-          borderRadius: "50%", 
-          border: "1px solid white", 
-          backgroundColor: "transparent",
-          marginLeft: -20,
-          marginTop: -20
+          width: 12, 
+          height: 12,
+          marginLeft: -6,
+          marginTop: -6
         }}
         animate={{ 
-          width: isHovering ? 80 : 40,
-          height: isHovering ? 80 : 40,
-          backgroundColor: isHovering ? "white" : "transparent",
-          border: isHovering ? "0px solid white" : "1px solid white",
-          marginLeft: isHovering ? -40 : -20,
-          marginTop: isHovering ? -40 : -20
+          width: isHovering ? 64 : 12,
+          height: isHovering ? 64 : 12,
+          marginLeft: isHovering ? -32 : -6,
+          marginTop: isHovering ? -32 : -6
         }}
         transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.1 }}
       >
@@ -107,28 +96,12 @@ export default function CustomCursor() {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ duration: 0.2 }}
-            className="mix-blend-normal"
+            className="mix-blend-normal text-black"
           >
             {cursorText}
           </motion.span>
         )}
       </motion.div>
-
-      {/* Inner small dot */}
-      <motion.div
-        className="absolute top-0 left-0 bg-white rounded-full"
-        style={{
-          x: dotX,
-          y: dotY,
-          opacity: isVisible && !isHovering ? 1 : 0,
-        }}
-        initial={{ 
-          width: 8, 
-          height: 8,
-          marginLeft: -4,
-          marginTop: -4
-        }}
-      />
     </div>
   );
 }
