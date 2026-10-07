@@ -93,7 +93,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[100] hidden md:flex items-center justify-center mix-blend-difference"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:flex items-center justify-center"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
@@ -101,7 +101,7 @@ export default function CustomCursor() {
       }}
     >
       <motion.div
-        className="flex items-center justify-center font-bold tracking-[0.2em] text-[10px] text-black bg-white"
+        className="flex items-center justify-center font-bold tracking-[0.2em] text-[10px] text-black bg-white mix-blend-difference"
         style={{
           x: "-50%",
           y: "-50%",
