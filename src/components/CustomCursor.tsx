@@ -74,25 +74,31 @@ export default function CustomCursor() {
   }, [mouseX, mouseY, isHovering, isVisible]);
 
   return (
-    <div className="fixed top-0 left-0 pointer-events-none z-[99999] hidden md:block mix-blend-difference">
+    <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[99999] hidden md:block mix-blend-difference">
       {/* Outer Ring / Hover Circle */}
       <motion.div
-        className="fixed top-0 left-0 flex items-center justify-center font-bold tracking-[0.2em] text-[10px] text-black"
+        className="absolute top-0 left-0 flex items-center justify-center font-bold tracking-[0.2em] text-[10px] text-black"
         style={{
           x: ringX,
           y: ringY,
-          xOrigin: "-50%",
-          yOrigin: "-50%",
           opacity: isVisible ? 1 : 0,
-          marginLeft: "-50%",
-          marginTop: "-50%",
         }}
-        initial={{ width: 40, height: 40, borderRadius: "50%", border: "1px solid white", backgroundColor: "transparent" }}
+        initial={{ 
+          width: 40, 
+          height: 40, 
+          borderRadius: "50%", 
+          border: "1px solid white", 
+          backgroundColor: "transparent",
+          marginLeft: -20,
+          marginTop: -20
+        }}
         animate={{ 
           width: isHovering ? 80 : 40,
           height: isHovering ? 80 : 40,
           backgroundColor: isHovering ? "white" : "transparent",
-          border: isHovering ? "0px solid white" : "1px solid white"
+          border: isHovering ? "0px solid white" : "1px solid white",
+          marginLeft: isHovering ? -40 : -20,
+          marginTop: isHovering ? -40 : -20
         }}
         transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.1 }}
       >
@@ -110,15 +116,18 @@ export default function CustomCursor() {
 
       {/* Inner small dot */}
       <motion.div
-        className="fixed top-0 left-0 bg-white rounded-full"
+        className="absolute top-0 left-0 bg-white rounded-full"
         style={{
           x: dotX,
           y: dotY,
-          marginLeft: "-50%",
-          marginTop: "-50%",
           opacity: isVisible && !isHovering ? 1 : 0,
         }}
-        initial={{ width: 8, height: 8 }}
+        initial={{ 
+          width: 8, 
+          height: 8,
+          marginLeft: -4,
+          marginTop: -4
+        }}
       />
     </div>
   );
