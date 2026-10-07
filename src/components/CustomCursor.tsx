@@ -1,20 +1,44 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function CustomCursor() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [cursorText, setCursorText] = useState("");
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const requestRef = useRef<number>();
+  const previousPos = useRef({ x: -100, y: -100 });
+  const mousePos = useRef({ x: -100, y: -100 });
+  
+  const [visible, setVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [cursorText, setCursorText] = useState("");
 
-  const mouseX = useMotionValue(-100);
-  const mouseY = useMotionValue(-100);
+  const targetSize = isHovering ? 64 : 12;
 
-  // Fast spring for the small dot
-  const dotSpringConfig = { damping: 40, stiffness: 1000, mass: 0.05 };
-  const dotX = useSpring(mouseX, dotSpringConfig);
-  const dotY = useSpring(mouseY, dotSpringConfig);
+  const animate = () => {
+    if (!cursorRef.current) return;
+
+    const currentX = previousPos.current.x;
+    const currentY = previousPos.current.y;
+    
+    // We adjust the target position by half the target size to center the cursor
+    const targetX = mousePos.current.x - targetSize / 2;
+    const targetY = mousePos.current.y - targetSize / 2;
+
+    const deltaX = (targetX - currentX) * 0.3;
+    const deltaY = (targetY - currentY) * 0.3;
+
+    const newX = currentX + deltaX;
+    const newY = currentY + deltaY;
+
+    previousPos.current = { x: newX, y: newY };
+    
+    // Use 2D translate to avoid translate3d hardware layer promotion
+    cursorRef.current.style.transform = `translate(${newX}px, ${newY}px)`;
+    cursorRef.current.style.width = `${targetSize}px`;
+    cursorRef.current.style.height = `${targetSize}px`;
+
+    requestRef.current = requestAnimationFrame(animate);
+  };
 
   useEffect(() => {
     if (window.matchMedia("(max-width: 768px)").matches) {
@@ -22,15 +46,13 @@ export default function CustomCursor() {
       return;
     }
 
-    document.body.style.cursor = 'none';
-
     const styleEl = document.createElement('style');
     styleEl.innerHTML = `* { cursor: none !important; }`;
     document.head.appendChild(styleEl);
 
-    const moveCursor = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+    const handleMouseMove = (e: MouseEvent) => {
+      setVisible(true);
+      mousePos.current = { x: e.clientX, y: e.clientY };
 
       const target = e.target as HTMLElement;
       const cursorElement = target.closest('[data-cursor]');
@@ -51,55 +73,45 @@ export default function CustomCursor() {
         setCursorText("");
         if (isHovering) setIsHovering(false);
       }
-      
-      if (!isVisible) setIsVisible(true);
     };
 
-    const handleMouseLeave = () => setIsVisible(false);
+    const handleMouseEnter = () => setVisible(true);
+    const handleMouseLeave = () => setVisible(false);
 
-    window.addEventListener("mousemove", moveCursor);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.documentElement.addEventListener("mouseenter", handleMouseEnter);
     document.documentElement.addEventListener("mouseleave", handleMouseLeave);
 
+    requestRef.current = requestAnimationFrame(animate);
+
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.documentElement.removeEventListener("mouseenter", handleMouseEnter);
       document.documentElement.removeEventListener("mouseleave", handleMouseLeave);
-      document.body.style.cursor = 'auto';
+      if (requestRef.current) cancelAnimationFrame(requestRef.current);
+      document.body.style.cursor = "auto";
       if (styleEl.parentNode) styleEl.parentNode.removeChild(styleEl);
     };
-  }, [mouseX, mouseY, isHovering, isVisible]);
+  }, [animate, isHovering]);
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[99999] hidden md:flex items-center justify-center font-bold tracking-[0.2em] text-[10px] bg-white rounded-full mix-blend-difference"
+    <div
+      ref={cursorRef}
+      className="fixed top-0 left-0 pointer-events-none rounded-full bg-white flex items-center justify-center font-bold tracking-[0.2em] text-[10px] mix-blend-difference z-[99999]"
       style={{
-        left: dotX,
-        top: dotY,
-        opacity: isVisible ? 1 : 0,
+        opacity: visible ? 1 : 0,
+        transition: 'width 0.2s ease-out, height 0.2s ease-out, opacity 0.3s',
       }}
-      initial={{ 
-        width: 12, 
-        height: 12,
-        marginLeft: -6,
-        marginTop: -6
-      }}
-      animate={{ 
-        width: isHovering ? 64 : 12,
-        height: isHovering ? 64 : 12,
-        marginLeft: isHovering ? -32 : -6,
-        marginTop: isHovering ? -32 : -6
-      }}
-      transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.1 }}
+      aria-hidden="true"
     >
       {isHovering && (
-        <motion.span 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ duration: 0.2 }}
+        <span 
           className="mix-blend-normal text-black"
+          style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.2s' }}
         >
           {cursorText}
-        </motion.span>
+        </span>
       )}
-    </motion.div>
+    </div>
   );
 }
