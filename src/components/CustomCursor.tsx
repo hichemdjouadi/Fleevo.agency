@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring, useMotionTemplate } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { useMotionValue, useSpring, useMotionValueEvent } from "framer-motion";
 
 export default function CustomCursor() {
+  const cursorRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [cursorText, setCursorText] = useState("");
   const [isHovering, setIsHovering] = useState(false);
@@ -16,8 +17,18 @@ export default function CustomCursor() {
   const dotX = useSpring(mouseX, dotSpringConfig);
   const dotY = useSpring(mouseY, dotSpringConfig);
 
-  // Force a 2D transform string to prevent Chrome from promoting this to an isolated 3D layer
-  const transform = useMotionTemplate`translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+  // Manually update the DOM to bypass Framer Motion's hardware acceleration injection
+  useMotionValueEvent(dotX, "change", (latestX) => {
+    if (cursorRef.current) {
+      cursorRef.current.style.transform = `translate(${latestX}px, ${dotY.get()}px) translate(-50%, -50%)`;
+    }
+  });
+
+  useMotionValueEvent(dotY, "change", (latestY) => {
+    if (cursorRef.current) {
+      cursorRef.current.style.transform = `translate(${dotX.get()}px, ${latestY}px) translate(-50%, -50%)`;
+    }
+  });
 
   useEffect(() => {
     if (window.matchMedia("(max-width: 768px)").matches) {
@@ -72,29 +83,25 @@ export default function CustomCursor() {
   }, [mouseX, mouseY, isHovering, isVisible]);
 
   return (
-    <motion.div
+    <div
+      ref={cursorRef}
       className="fixed top-0 left-0 pointer-events-none z-[99999] hidden md:flex items-center justify-center font-bold tracking-[0.2em] text-[10px] bg-white rounded-full mix-blend-difference"
       style={{
-        transform,
         opacity: isVisible ? 1 : 0,
+        width: isHovering ? "64px" : "12px",
+        height: isHovering ? "64px" : "12px",
+        transition: "width 0.2s ease-out, height 0.2s ease-out, opacity 0.3s",
       }}
-      initial={{ width: 12, height: 12 }}
-      animate={{ 
-        width: isHovering ? 64 : 12,
-        height: isHovering ? 64 : 12,
-      }}
-      transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.1 }}
     >
-      {isHovering && (
-        <motion.span 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ duration: 0.2 }}
-          className="mix-blend-normal text-black"
-        >
-          {cursorText}
-        </motion.span>
-      )}
-    </motion.div>
+      <span 
+        className="mix-blend-normal text-black"
+        style={{
+          opacity: isHovering ? 1 : 0,
+          transition: "opacity 0.2s ease-out",
+        }}
+      >
+        {cursorText}
+      </span>
+    </div>
   );
 }
