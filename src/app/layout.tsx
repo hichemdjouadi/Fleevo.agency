@@ -46,8 +46,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${manrope.variable} font-sans antialiased`} suppressHydrationWarning>
-        {children}
         <CustomCursor />
+        {children}
       </body>
     </html>
   );
