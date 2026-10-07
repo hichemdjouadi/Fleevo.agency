@@ -72,8 +72,8 @@ export default function CustomCursor() {
     <motion.div
       className="fixed top-0 left-0 pointer-events-none z-[99999] hidden md:flex items-center justify-center font-bold tracking-[0.2em] text-[10px] bg-white rounded-full mix-blend-difference"
       style={{
-        x: dotX,
-        y: dotY,
+        left: dotX,
+        top: dotY,
         opacity: isVisible ? 1 : 0,
       }}
       initial={{ 
