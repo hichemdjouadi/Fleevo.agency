@@ -93,7 +93,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:flex items-center justify-center mix-blend-difference"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:flex items-center justify-center"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
@@ -101,24 +101,26 @@ export default function CustomCursor() {
       }}
     >
       <motion.div
-        className="flex items-center justify-center font-bold tracking-[0.2em] text-[10px] text-black bg-white"
+        className="flex items-center justify-center font-bold tracking-[0.2em] text-[10px]"
         style={{
           x: "-50%",
           y: "-50%",
+          backdropFilter: "invert(100%)",
+          WebkitBackdropFilter: "invert(100%)",
         }}
         initial={{ width: 12, height: 12, borderRadius: "50%" }}
         animate={{ 
           width: isHovering ? 64 : 12,
           height: isHovering ? 64 : 12,
         }}
-        transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.15 }}
+        transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.1 }}
       >
         {isHovering && (
           <motion.span 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ duration: 0.2 }}
-            className="mix-blend-normal"
+            className="text-white mix-blend-difference"
           >
             {cursorText}
           </motion.span>
