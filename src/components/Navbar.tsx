@@ -10,9 +10,11 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 30);
     const previous = scrollY.getPrevious() ?? 0;
     if (latest > previous && latest > 150) {
       setHidden(true);
@@ -31,26 +33,33 @@ export default function Navbar() {
         initial={{ y: "-100%" }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 w-full z-50 px-6 md:px-8 py-6 md:py-8 flex justify-center text-white mix-blend-difference"
+        className="fixed top-0 left-0 w-full z-50 px-4 md:px-8 py-4 md:py-6 flex justify-center pointer-events-none"
       >
-        <div className="w-full max-w-[1400px] flex items-center justify-between">
-          <div className="w-32 md:w-40 h-8 md:h-10 relative z-[60]">
+        <div className={`w-full max-w-[1300px] flex items-center justify-between transition-all duration-500 ease-[0.16,1,0.3,1] pointer-events-auto ${
+          isScrolled 
+            ? "bg-[#080808]/90 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] rounded-full px-6 md:px-8 py-3 text-white" 
+            : "text-white mix-blend-difference px-2 py-2"
+        }`}>
+          <div className="w-28 md:w-36 h-7 md:h-9 relative z-[60]">
             <TransitionLink href="/" onClick={() => setIsMobileMenuOpen(false)}>
               <Logo className="w-full h-full" />
             </TransitionLink>
           </div>
 
           <div className="hidden md:flex items-center gap-10 text-[15px] font-medium">
-            <TransitionLink href="/services" className="hover:opacity-50 transition-opacity">Services</TransitionLink>
-            <TransitionLink href="/work" className="hover:opacity-50 transition-opacity">Projects</TransitionLink>
-            <TransitionLink href="/about" className="hover:opacity-50 transition-opacity">About</TransitionLink>
-            
+            <TransitionLink href="/services" className="hover:opacity-60 transition-opacity">Services</TransitionLink>
+            <TransitionLink href="/work" className="hover:opacity-60 transition-opacity">Projects</TransitionLink>
+            <TransitionLink href="/about" className="hover:opacity-60 transition-opacity">About</TransitionLink>
           </div>
 
           <div className="flex items-center gap-4 z-[60]">
             <div className="hidden md:block">
               <Magnetic intensity={0.5}>
-                <TransitionLink href="/contact" className="inline-block px-8 py-3 rounded-full text-[15px] font-medium bg-white text-black hover:bg-white/90 transition-colors">
+                <TransitionLink href="/contact" className={`inline-block px-7 py-2.5 rounded-full text-[14px] font-medium transition-all ${
+                  isScrolled 
+                    ? "bg-white text-black hover:bg-neutral-200" 
+                    : "bg-white text-black hover:bg-white/90"
+                }`}>
                   Contacts
                 </TransitionLink>
               </Magnetic>
