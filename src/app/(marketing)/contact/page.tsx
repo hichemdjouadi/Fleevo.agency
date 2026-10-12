@@ -15,7 +15,7 @@ export default function ContactPage() {
             <span className="font-serif italic font-light">engine that scales.</span>
           </h1>
           <p className="mt-6 text-lg md:text-xl text-neutral-600 font-light max-w-xl mx-auto leading-relaxed">
-            Tell us about your company and acquisition objectives. Our engineering leadership reviews every incoming brief and responds within 24 hours with architectural scope details.
+            Tell us what you need. We review every inquiry and reply within 24 hours.
           </p>
         </div>
 

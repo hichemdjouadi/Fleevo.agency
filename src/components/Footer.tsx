@@ -17,10 +17,10 @@ export default function Footer() {
             {/* Contact Pills */}
             <div className="flex flex-wrap gap-4">
               <a 
-                href="mailto:hello@fleevy.agency" 
+                href="mailto:contact@fleevo.net" 
                 className="inline-flex items-center px-6 py-3 rounded-full border border-white/20 hover:border-white transition-colors text-sm font-medium tracking-tight"
               >
-                hello@fleevy.agency
+                contact@fleevo.net
               </a>
               <a 
                 href="https://wa.me/213655934124" 
@@ -80,7 +80,7 @@ export default function Footer() {
               <MessageSquare className="w-4 h-4 text-white" />
             </a>
             <a 
-              href="mailto:hello@fleevy.agency" 
+              href="mailto:contact@fleevo.net" 
               aria-label="Email Fleevy" 
               className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
             >

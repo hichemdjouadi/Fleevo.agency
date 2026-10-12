@@ -5,28 +5,29 @@ import { submitAuditRequest } from "@/app/actions";
 import { CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone } from "lucide-react";
 
 export default function ContactForm() {
-  const [interests, setInterests] = useState<string[]>(["Customer Acquisition Platforms"]);
+  const [interests, setInterests] = useState<string[]>(["Website / Landing Page"]);
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [details, setDetails] = useState("");
-  const [scopeTier, setScopeTier] = useState("Platform + Demand Engine");
+  const [timeline, setTimeline] = useState("Within 2–4 weeks");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const serviceOptions = [
-    "Customer Acquisition Platforms",
-    "Demand Generation & Ads",
-    "Full Acquisition Machine"
+    "Website / Landing Page",
+    "E-Commerce Store",
+    "Web App / Client Portal",
+    "Meta Ads & Video Scripts",
+    "Conversion & Content Audit"
   ];
 
-  const scopeOptions = [
-    "Acquisition Platform Build",
-    "Platform + Demand Engine",
-    "Custom Web Application",
-    "Pipeline Leak Audit"
+  const timelineOptions = [
+    "Right away",
+    "Within 2–4 weeks",
+    "Planning ahead"
   ];
 
   useEffect(() => {
@@ -61,24 +62,25 @@ export default function ContactForm() {
     const trimmedDetails = details.trim();
 
     if (!trimmedName || !trimmedCompany || !trimmedEmail || !trimmedPhone) {
-      setError("Please complete your name, company, email address, and direct phone number.");
+      setError("Please fill in your name, company, email, and phone number.");
       return;
     }
 
     if (interests.length === 0) {
-      setError("Please select at least one service needed.");
+      setError("Please select at least one option.");
       return;
     }
 
     setIsSubmitting(true);
 
     const formattedName = `${trimmedName} (${trimmedCompany})`;
-    const compiledDetails = `Company: ${trimmedCompany}\nPhone/WhatsApp: ${trimmedPhone}\nScope Tier: ${scopeTier}\nBrief: ${trimmedDetails || "N/A"}`;
+    const compiledDetails = `Company: ${trimmedCompany}\nPhone/WhatsApp: ${trimmedPhone}\nDetails: ${trimmedDetails || "N/A"}`;
 
     const result = await submitAuditRequest({
       name: formattedName,
       email: trimmedEmail,
-      budget: scopeTier,
+      timeline,
+      budget: timeline,
       interests,
       details: compiledDetails
     });
@@ -98,9 +100,9 @@ export default function ContactForm() {
         <div className="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 className="w-7 h-7" />
         </div>
-        <h3 className="text-3xl font-medium tracking-tight text-black mb-3">Brief Received</h3>
+        <h3 className="text-3xl font-medium tracking-tight text-black mb-3">Request Received.</h3>
         <p className="text-neutral-600 font-light max-w-md mx-auto leading-relaxed">
-          Thank you. Our engineering leadership has received your project brief and will respond within 24 hours with architectural recommendations.
+          Thank you. We received your project details and will reply within 24 hours.
         </p>
       </div>
     );
@@ -112,12 +114,12 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="w-full bg-white border border-black/15 rounded-[32px] p-6 sm:p-10 md:p-12 flex flex-col gap-8 text-left shadow-[0_20px_50px_rgba(0,0,0,0.04)] text-black"
       >
-        {/* 1. Services Needed */}
+        {/* 1. What do you need? */}
         <div className="flex flex-col gap-3">
-          <label className="text-xs font-mono text-neutral-600 font-medium">
-            01 // Services Needed
-          </label>
-          <div className="flex flex-wrap gap-2.5" role="group" aria-label="Services Needed">
+          <span id="contact-need-label" className="text-xs font-mono text-neutral-600 font-medium">
+            01 // What do you need?
+          </span>
+          <div className="flex flex-wrap gap-2.5" role="group" aria-labelledby="contact-need-label">
             {serviceOptions.map((opt) => {
               const isSelected = interests.includes(opt);
               return (
@@ -139,22 +141,22 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* 2. Scope Tiers */}
+        {/* 2. Target Timeline */}
         <div className="flex flex-col gap-3">
-          <label className="text-xs font-mono text-neutral-600 font-medium">
-            02 // Project Scope Tier
-          </label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5" role="radiogroup" aria-label="Scope Tier">
-            {scopeOptions.map((opt) => {
-              const isSelected = scopeTier === opt;
+          <span id="contact-timeline-label" className="text-xs font-mono text-neutral-600 font-medium">
+            02 // Target Timeline
+          </span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5" role="radiogroup" aria-labelledby="contact-timeline-label">
+            {timelineOptions.map((opt) => {
+              const isSelected = timeline === opt;
               return (
                 <button
                   key={opt}
                   type="button"
-                  onClick={() => setScopeTier(opt)}
+                  onClick={() => setTimeline(opt)}
                   role="radio"
                   aria-checked={isSelected}
-                  className={`px-4 py-3 rounded-2xl border text-xs sm:text-sm transition-all text-left focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
+                  className={`px-5 py-3 rounded-full border text-xs sm:text-sm transition-all text-center focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
                     isSelected
                       ? "bg-black text-white border-black font-semibold shadow-sm"
                       : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
@@ -167,7 +169,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* 3. Organization & Contact Details */}
+        {/* 3. Contact Details */}
         <div className="flex flex-col gap-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
@@ -188,7 +190,7 @@ export default function ContactForm() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="contact-company" className="text-xs font-mono text-neutral-600 font-medium">
-                Company / Organization <span className="text-black font-bold" aria-hidden="true">*</span>
+                Company <span className="text-black font-bold" aria-hidden="true">*</span>
               </label>
               <input
                 id="contact-company"
@@ -222,7 +224,7 @@ export default function ContactForm() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="contact-phone" className="text-xs font-mono text-neutral-600 font-medium">
-                Direct Phone / WhatsApp <span className="text-black font-bold" aria-hidden="true">*</span>
+                Phone / WhatsApp <span className="text-black font-bold" aria-hidden="true">*</span>
               </label>
               <input
                 id="contact-phone"
@@ -239,14 +241,14 @@ export default function ContactForm() {
 
           <div className="flex flex-col gap-2">
             <label htmlFor="contact-details" className="text-xs font-mono text-neutral-600 font-medium">
-              Project Brief &amp; Acquisition Objectives
+              Project Details
             </label>
             <textarea
               id="contact-details"
               value={details}
               onChange={(e) => setDetails(e.target.value)}
-              placeholder="Outline your current acquisition setup, target customer flow, and primary commercial goals..."
-              rows={4}
+              placeholder="Tell us what you are building and your main goals."
+              rows={3}
               className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm resize-none"
             />
           </div>
@@ -265,13 +267,13 @@ export default function ContactForm() {
             disabled={isSubmitting}
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-black text-white font-semibold text-sm hover:bg-neutral-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 group shadow-sm"
           >
-            <span>{isSubmitting ? "Submitting Brief..." : "Submit Project Brief"}</span>
+            <span>{isSubmitting ? "Sending..." : "Send Request"}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
 
           <div className="flex items-center gap-2 text-xs text-neutral-600 font-mono">
             <ShieldCheck className="w-4 h-4 text-black" />
-            <span>Direct engineering review · Response in 24h</span>
+            <span>Direct review · Reply within 24h</span>
           </div>
         </div>
       </form>
@@ -280,19 +282,19 @@ export default function ContactForm() {
       <div className="w-full pt-8 border-t border-black/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div>
           <span className="text-xs font-mono text-neutral-500 block mb-1">
-            Direct Studio Access
+            Direct Contact
           </span>
           <p className="text-sm text-neutral-700 font-light">
-            Prefer direct executive correspondence? Reach our studio lines directly.
+            Prefer email or WhatsApp? Reach us directly.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
           <a
-            href="mailto:hello@fleevy.agency"
+            href="mailto:contact@fleevo.net"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors"
           >
             <Mail className="w-3.5 h-3.5" />
-            <span>hello@fleevy.agency</span>
+            <span>contact@fleevo.net</span>
           </a>
           <a
             href="https://wa.me/213655934124"

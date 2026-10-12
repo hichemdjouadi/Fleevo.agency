@@ -13,19 +13,19 @@ export default function AboutPage() {
       num: "01",
       badge: "Custom Architecture",
       title: "Craft Over Templates",
-      desc: "We engineer custom digital platforms from the ground up. Every typographic ratio, conversion path, and interaction state is authored specifically for your business model — never recycled from off-the-shelf themes or bloated page builders."
+      desc: "Every layout and conversion flow is built from scratch for your business model."
     },
     {
       num: "02",
       badge: "Mobile Velocity",
       title: "Performance as Luxury",
-      desc: "Every additional second of load time erodes buyer trust and cuts mobile conversion rates. Our platforms compile for the edge to deliver sub-800ms responsiveness, zero layout shift, and instantaneous catalog search."
+      desc: "Edge-compiled pages load in under 800ms on mobile 4G networks with zero lag."
     },
     {
       num: "03",
       badge: "Production Longevity",
       title: "Enduring Codebases",
-      desc: "We reject fragile plugin chains that break during routine updates. Every system is built on strict TypeScript, Next.js App Router, and PostgreSQL with row-level security — architected for years of commercial scale."
+      desc: "Built on strict TypeScript, Next.js, and PostgreSQL so nothing breaks during updates."
     }
   ];
 
@@ -34,37 +34,37 @@ export default function AboutPage() {
       num: "01",
       name: "Next.js App Router",
       category: "Frontend & Edge Runtime",
-      detail: "Server-side rendering and static edge compilation for instantaneous mobile load times."
+      detail: "Fast server rendering for mobile speed."
     },
     {
       num: "02",
       name: "TypeScript",
       category: "Language & Type Safety",
-      detail: "Strict end-to-end type verification across client interfaces, API routes, and database schemas."
+      detail: "Strict type safety across every module."
     },
     {
       num: "03",
       name: "PostgreSQL & Supabase",
       category: "Database & Authentication",
-      detail: "Production relational databases with row-level security, real-time sync, and automated backups."
+      detail: "Secure cloud databases with live sync."
     },
     {
       num: "04",
       name: "Tailwind CSS",
       category: "Design System Tokens",
-      detail: "Zero-bloat utility architecture enforcing precise layout spacing with strict monochrome discipline."
+      detail: "Clean styling with zero CSS bloat."
     },
     {
       num: "05",
       name: "Framer Motion",
       category: "Kinetic Choreography",
-      detail: "Hardware-accelerated physics and purposeful micro-interactions that strengthen perceived authority."
+      detail: "Smooth physics for responsive interface motion."
     },
     {
       num: "06",
       name: "Automated Bot Webhooks",
       category: "Intake & Logistics Sync",
-      detail: "Instantaneous WhatsApp or Telegram dispatch pipelines with courier synchronization."
+      detail: "Instant WhatsApp or Telegram lead alerts."
     }
   ];
 
@@ -84,8 +84,8 @@ export default function AboutPage() {
             <span className="font-serif italic font-light">ornaments without acquisition plumbing.</span>
           </h1>
 
-          <p className="text-lg sm:text-2xl text-neutral-600 max-w-3xl font-light leading-relaxed mb-12">
-            Traditional web agencies deliver decorative templates that look clean in a presentation deck, stall on mobile networks, and leave inquiries sitting in an unmonitored inbox. Fleevy engineers the opposite: high-velocity web platforms wired directly with automated bot intake, cloud databases, and targeted demand generation.
+          <p className="text-lg sm:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-12">
+            We replace slow brochure websites with fast acquisition platforms, automated bot intake, and targeted Meta ads.
           </p>
 
           {/* Credibility Hairline Ledger */}
@@ -118,8 +118,8 @@ export default function AboutPage() {
               <span className="font-serif italic font-light">Zero compromise.</span>
             </h2>
           </div>
-          <p className="text-lg text-neutral-600 font-light max-w-md leading-relaxed">
-            Every system we ship adheres to three non-negotiable standards that keep your platform fast and commercially resilient.
+          <p className="text-lg text-neutral-600 font-light max-w-sm leading-relaxed">
+            Non-negotiable standards that keep every build fast and reliable.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function AboutPage() {
                     {std.badge}
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-medium text-black tracking-tight mb-4">
+                <h3 className="text-2xl sm:text-3xl font-medium text-black tracking-tight mb-3">
                   {std.title}
                 </h3>
                 <p className="text-base text-neutral-600 font-light leading-relaxed">
@@ -162,8 +162,8 @@ export default function AboutPage() {
                 Production-grade <span className="font-serif italic font-light">stack.</span>
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-white/75 font-light max-w-md leading-relaxed">
-              We build with modern, enterprise-proven technologies that guarantee high security and developer maintainability.
+            <p className="text-base sm:text-lg text-white/75 font-light max-w-sm leading-relaxed">
+              Modern technologies built for speed and security.
             </p>
           </div>
 
@@ -219,15 +219,12 @@ export default function AboutPage() {
               Direct engineering <span className="font-serif italic font-light">accountability.</span>
             </h2>
 
-            <div className="space-y-6 text-base sm:text-lg text-neutral-700 font-light leading-relaxed max-w-[65ch]">
+            <div className="space-y-6 text-base sm:text-lg text-neutral-700 font-light leading-relaxed max-w-[58ch]">
               <p>
-                Fleevy was founded to bridge the divide between high-taste digital design and revenue-generating systems engineering. Growing companies do not need another isolated brochure website — they need integrated infrastructure that captures attention, qualifies buyer intent, and routes verified opportunities straight to sales.
-              </p>
-              <p>
-                At Fleevy, clients never navigate layers of account managers or junior coordinators. Every architecture, database schema, bot workflow, and acquisition campaign is directed and verified by principal engineering leadership.
+                Fleevy connects clean product design with automated sales systems. You work directly with principal engineering from day one, with no middlemen or account managers.
               </p>
               <blockquote className="text-black font-normal italic border-l border-black/30 pl-5 py-1">
-                &ldquo;If a digital platform does not measurably accelerate customer acquisition, automate order dispatch, or protect profit margins, it is unfinished. That is the standard governing every system we ship.&rdquo;
+                &ldquo;If a platform does not bring in customers or save your team hours, it is unfinished.&rdquo;
               </blockquote>
             </div>
 
@@ -245,7 +242,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono font-semibold shrink-0"
               >
-                <span>Initiate Partnership</span>
+                <span>Start a Project</span>
                 <ArrowRight className="w-4 h-4" />
               </TransitionLink>
             </div>
@@ -261,8 +258,8 @@ export default function AboutPage() {
             Let&apos;s engineer your next <br className="hidden md:block" />
             acquisition platform.
           </h2>
-          <p className="text-lg sm:text-xl text-white/75 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-            Book a 15-minute strategy call or send us your project brief. We respond within 24 hours with architectural recommendations and scope details.
+          <p className="text-lg sm:text-xl text-white/75 mb-12 max-w-xl mx-auto font-light leading-relaxed">
+            Book a 15-minute call or send your request. We reply within 24 hours.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
@@ -278,10 +275,10 @@ export default function AboutPage() {
 
             <Magnetic intensity={0.2}>
               <a
-                href="mailto:hello@fleevy.agency"
+                href="mailto:contact@fleevo.net"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/20 hover:border-white text-white font-medium text-base sm:text-lg transition-all"
               >
-                <span>hello@fleevy.agency</span>
+                <span>contact@fleevo.net</span>
               </a>
             </Magnetic>
           </div>

@@ -15,40 +15,37 @@ export default function ServicesPage() {
     {
       num: "01",
       title: "Client Acquisition Funnels & Brand Vitrines",
-      badge: "Clinics, Consulting & Services",
-      desc: "Conversion-first web platforms built for clinics, consulting firms, and service businesses to turn local traffic into booked appointments.",
-      mechanism: "Engineered around offer clarity, customer social proof, and direct-response triggers. Incoming inquiries trigger instant qualification flows via WhatsApp or Telegram bots so prospects are contacted while their buying intent is at its peak.",
+      badge: "Clinics & Services",
+      desc: "Websites built for clinics and service firms to book qualified appointments automatically.",
       deliverables: [
-        "Mobile acquisition architecture",
-        "Friction-free booking and consultation flows",
-        "Instant WhatsApp/Telegram lead dispatch bot",
-        "Lead capture database & pipeline sync"
+        "Mobile booking flow",
+        "WhatsApp qualification bot",
+        "Instant lead alerts",
+        "CRM database sync"
       ]
     },
     {
       num: "02",
       title: "Direct Customer Ordering & E-Commerce Engines",
-      badge: "D2C Stores & Retail Brands",
-      desc: "Direct-to-consumer digital storefronts that eliminate middleman marketplace cuts and maximize transaction completion on mobile devices.",
-      mechanism: "Fast mobile buying flow designed for local purchasing behavior (Cash on Delivery + online payment). Orders are instantly dispatched to the owner's phone with automated verification reminders to protect fulfillment margins.",
+      badge: "D2C & Retail",
+      desc: "Online stores that cut out middleman fees and speed up mobile checkout.",
       deliverables: [
-        "High-converting catalog presentation",
-        "58-Wilayas COD mobile checkout",
-        "Instant WhatsApp/Telegram order tickets",
-        "Yalidine & courier dispatch sync"
+        "Fast mobile catalog",
+        "58-Wilayas COD checkout",
+        "WhatsApp order tickets",
+        "Courier dispatch sync"
       ]
     },
     {
       num: "03",
-      title: "Custom Web Applications, Portals & Booking Software",
-      badge: "Operations & Web Software",
-      desc: "Tailored client portals, self-service ordering tools, and operational web apps that simplify customer retention and client onboarding.",
-      mechanism: "Removes friction from client re-orders, service renewals, and multi-step intake forms. Automates onboarding so your operations can handle five times more clients without hiring additional administrative staff.",
+      title: "Custom Web Applications & Client Portals",
+      badge: "Web Software",
+      desc: "Client portals and booking software that automate repeat orders and daily operations.",
       deliverables: [
-        "Secure user authentication",
-        "Private admin management dashboard",
-        "Automated client intake workflows",
-        "Custom Supabase & Postgres database architecture"
+        "Secure client login",
+        "Private admin dashboard",
+        "Automated intake forms",
+        "Custom cloud database"
       ]
     }
   ];
@@ -56,41 +53,38 @@ export default function ServicesPage() {
   const pillarTwo = [
     {
       num: "01",
-      title: "Performance Meta Ads & Direct-Response Video Direction",
-      badge: "Paid Demand Generation",
-      desc: "Paid acquisition campaigns across Facebook and Instagram designed to send qualified buyers straight into the acquisition funnel.",
-      mechanism: "Beyond managing ad spend, we write high-converting video scripts, hook angles, and creative guidance so you know exactly what to say on video to attract buyers and stop the scroll.",
+      title: "Performance Meta Ads & Video Direction",
+      badge: "Paid Demand",
+      desc: "Facebook and Instagram ad campaigns paired with video scripts that attract buyers.",
       deliverables: [
-        "Targeted audience architecture & pixel tracking",
-        "High-converting video scripts & hook angles",
-        "Creative guidance & testing matrix",
-        "Click-to-WhatsApp acquisition funnels"
+        "Meta ad campaigns",
+        "Conversion video scripts",
+        "Ad hook testing",
+        "WhatsApp ad funnels"
       ]
     },
     {
       num: "02",
-      title: "Pipeline Leak & Content Marketing Audits",
-      badge: "Diagnostic & Growth Roadmap",
-      desc: "An end-to-end diagnostic of where prospective customers drop off before paying, paired with an organic content roadmap.",
-      mechanism: "Pinpoints exactly where the business is losing money (unanswered messages, weak offers, confusing checkout steps), and provides a practical content roadmap to attract inbound customers without relying solely on ads.",
+      title: "Pipeline Leak & Content Audits",
+      badge: "Growth Audit",
+      desc: "A clear audit showing where buyers drop off and what converts best.",
       deliverables: [
-        "Full conversion funnel leak teardown",
-        "Offer conversion & pricing review",
-        "Actionable organic content roadmap",
-        "Priority conversion fix backlog"
+        "Funnel leak teardown",
+        "Offer positioning review",
+        "Organic content roadmap",
+        "Priority fix checklist"
       ]
     },
     {
       num: "03",
-      title: "Brand Credibility Polish (Complimentary Onboarding Bonus)",
-      badge: "Complimentary Onboarding Bonus",
-      desc: "Clean logo refinement, modern typography, and branded social/ad assets included complimentary with our core packages.",
-      mechanism: "First-time visitors buy when they trust the business. A polished visual identity eliminates hesitation and makes the company look established and authoritative.",
+      title: "Brand Credibility Polish",
+      badge: "Included Bonus",
+      desc: "Clean visual identity and branded ad assets included free with core builds.",
       deliverables: [
-        "Logomark & vector identity refinement",
-        "Modern typographic hierarchy system",
-        "Branded direct-response ad templates",
-        "Social vitrine presentation kit"
+        "Logo mark cleanup",
+        "Modern typography system",
+        "Branded ad templates",
+        "Social profile kit"
       ]
     }
   ];
@@ -98,23 +92,23 @@ export default function ServicesPage() {
   const methodology = [
     {
       step: "01",
-      title: "Strategic Intake & Leak Analysis",
-      desc: "We analyze your current client acquisition path, customer friction points, and unit economics to map out the exact digital infrastructure needed."
+      title: "Audit & Strategy",
+      desc: "We review your current funnel, spot leaks, and map the build."
     },
     {
       step: "02",
-      title: "Architectural Blueprint & Scope",
-      desc: "We deliver a detailed architectural scope with clear deliverables, data models, and a fixed timeline within 24 hours."
+      title: "Fixed Blueprint",
+      desc: "You get a fixed scope and clear delivery timeline within 24 hours."
     },
     {
       step: "03",
-      title: "Custom Engineering & Bot Integration",
-      desc: "We build your platform using Next.js and Supabase, wire automated qualification bots into WhatsApp/Telegram, and connect courier hooks."
+      title: "Build & Bot Setup",
+      desc: "We code the platform, connect WhatsApp or Telegram bots, and link couriers."
     },
     {
       step: "04",
-      title: "Verification & Acquisition Launch",
-      desc: "We test responsiveness on real 4G mobile devices, configure conversion pixels, review video hooks, and launch your acquisition engine."
+      title: "Test & Launch",
+      desc: "We test speed on mobile networks, set up ad pixels, and launch."
     }
   ];
 
@@ -137,9 +131,9 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 text-lg md:text-2xl text-neutral-600 font-light max-w-3xl leading-relaxed"
+          className="mt-8 text-lg md:text-2xl text-neutral-600 font-light max-w-2xl leading-relaxed"
         >
-          We engineer platforms that capture customers and turn attention into revenue: custom web platforms wired with automated bot intake, fueled by targeted Meta ads and direct-response creative direction.
+          High-speed websites, online stores, and ad systems that bring you paying clients.
         </motion.p>
 
         <motion.div
@@ -182,7 +176,7 @@ export default function ServicesPage() {
             </div>
           </div>
           <p className="text-base md:text-lg text-neutral-600 font-light max-w-md leading-relaxed">
-            Digital infrastructure engineered specifically to turn visitors into paying clients, with embedded bot qualification and instant sales routing.
+            Websites, online stores, and custom portals built to convert traffic.
           </p>
         </div>
 
@@ -190,7 +184,7 @@ export default function ServicesPage() {
           {pillarOne.map((service) => (
             <div
               key={service.num}
-              className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-10"
+              className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-6">
@@ -202,29 +196,20 @@ export default function ServicesPage() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-medium tracking-tight text-black mb-4">
+                <h3 className="text-2xl font-medium tracking-tight text-black mb-3">
                   {service.title}
                 </h3>
 
-                <p className="text-neutral-600 font-light text-base leading-relaxed mb-6">
+                <p className="text-neutral-600 font-light text-base leading-relaxed">
                   {service.desc}
                 </p>
-
-                <div className="pt-5 border-t border-black/10">
-                  <div className="text-xs font-mono font-semibold text-black mb-2">
-                    Acquisition Mechanism
-                  </div>
-                  <p className="text-sm text-neutral-600 font-light leading-relaxed">
-                    {service.mechanism}
-                  </p>
-                </div>
               </div>
 
               <div className="pt-6 border-t border-black/10">
                 <div className="text-xs font-mono font-semibold text-black mb-3">
-                  Key Deliverables
+                  Included
                 </div>
-                <div className="space-y-2.5">
+                <div className="space-y-2">
                   {service.deliverables.map((deliv, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-sm text-neutral-800">
                       <Check className="w-4 h-4 text-black shrink-0 mt-0.5" />
@@ -252,7 +237,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <p className="text-base md:text-lg text-white/75 font-light max-w-md leading-relaxed">
-              Fueling the platform with qualified buyers, fixing pipeline conversion leaks, and guiding direct-response video creative.
+              Targeted ads, video scripts, and conversion audits to scale your buyer flow.
             </p>
           </div>
 
@@ -260,7 +245,7 @@ export default function ServicesPage() {
             {pillarTwo.map((service) => (
               <div
                 key={service.num}
-                className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-10"
+                className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-6">
@@ -272,29 +257,20 @@ export default function ServicesPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-medium tracking-tight text-white mb-4">
+                  <h3 className="text-2xl font-medium tracking-tight text-white mb-3">
                     {service.title}
                   </h3>
 
-                  <p className="text-white/75 font-light text-base leading-relaxed mb-6">
+                  <p className="text-white/75 font-light text-base leading-relaxed">
                     {service.desc}
                   </p>
-
-                  <div className="pt-5 border-t border-white/15">
-                    <div className="text-xs font-mono font-semibold text-white mb-2">
-                      Acquisition Mechanism
-                    </div>
-                    <p className="text-sm text-white/70 font-light leading-relaxed">
-                      {service.mechanism}
-                    </p>
-                  </div>
                 </div>
 
                 <div className="pt-6 border-t border-white/15">
                   <div className="text-xs font-mono font-semibold text-white mb-3">
-                    Key Deliverables
+                    Included
                   </div>
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     {service.deliverables.map((deliv, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-sm text-white/85">
                         <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
@@ -313,11 +289,11 @@ export default function ServicesPage() {
       <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.02]">
-            Engineering methodology.{" "}
-            <span className="font-serif italic font-light">Four structured milestones.</span>
+            How we work.{" "}
+            <span className="font-serif italic font-light">Four clear steps.</span>
           </h2>
-          <p className="text-sm md:text-base text-neutral-600 max-w-md font-light leading-relaxed">
-            Every platform follows an uncompromising engineering lifecycle from diagnostic audit to bot intake verification and launch.
+          <p className="text-sm md:text-base text-neutral-600 max-w-sm font-light leading-relaxed">
+            From initial audit to live launch in four structured milestones.
           </p>
         </div>
 
@@ -329,9 +305,9 @@ export default function ServicesPage() {
             >
               <div>
                 <div className="text-xs font-mono font-bold text-neutral-500 mb-4">
-                  Phase {m.step}
+                  Step {m.step}
                 </div>
-                <h3 className="text-xl font-medium text-black mb-3">
+                <h3 className="text-xl font-medium text-black mb-2">
                   {m.title}
                 </h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed">
@@ -355,7 +331,7 @@ export default function ServicesPage() {
             Ready to build an acquisition engine that scales?
           </h2>
           <p className="text-lg md:text-2xl text-white/75 font-light max-w-xl mx-auto mb-12 leading-relaxed">
-            Book a 15-minute consultation. We review your acquisition pipeline and provide an exact architectural roadmap within 24 hours.
+            Book a 15-minute call. We send a clear build plan within 24 hours.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 z-30 w-full sm:w-auto">
@@ -371,10 +347,10 @@ export default function ServicesPage() {
 
             <Magnetic intensity={0.2}>
               <a
-                href="mailto:hello@fleevy.agency"
+                href="mailto:contact@fleevo.net"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/20 hover:border-white text-white text-base sm:text-lg font-medium transition-colors text-center"
               >
-                Direct Studio Email
+                contact@fleevo.net
               </a>
             </Magnetic>
           </div>

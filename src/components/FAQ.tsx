@@ -7,23 +7,23 @@ import { Plus, X } from "lucide-react";
 const faqs = [
   {
     question: "What makes Fleevy different from a traditional agency?",
-    answer: "Most agencies build decorative websites that fail to generate revenue. We engineer customer acquisition systems: custom high-speed web platforms wired directly with automated bot intake, targeted Meta ads, and acquisition audits to convert traffic into clients."
+    answer: "Most agencies build static websites. We build complete acquisition systems with automated bot intake and targeted Meta ads."
   },
   {
-    question: "How does automated bot intake work in practice?",
-    answer: "When prospective clients or buyers request an appointment or place an order, our automated WhatsApp or Telegram bot captures their details, pre-qualifies their requirements, and dispatches the verified lead directly to your team in under 30 seconds."
+    question: "How does automated bot intake work?",
+    answer: "When a visitor submits an inquiry or order, our WhatsApp or Telegram bot qualifies their details and sends the lead to your phone in 30 seconds."
   },
   {
     question: "Do we own all codebase assets and customer data?",
-    answer: "Yes, 100%. You own your codebase, database architecture, and custom domain with zero recurring platform take-rates or proprietary software locks."
+    answer: "Yes, 100%. You own the full codebase, database, and domain with zero platform fees."
   },
   {
-    question: "What is the typical engineering timeline?",
-    answer: "Core acquisition platform deployments typically complete in two to four weeks depending on architectural scope, followed by bot intake verification, courier sync, and launch testing."
+    question: "What is the typical delivery timeline?",
+    answer: "Most platforms launch in two to four weeks, including bot setup and testing."
   },
   {
-    question: "What is covered in our initial strategic consultation?",
-    answer: "We examine your current customer acquisition flow, diagnose pipeline friction, and map out the exact digital infrastructure required to convert attention into verified revenue."
+    question: "What happens on the strategy call?",
+    answer: "We review your current setup, spot where leads drop off, and outline a clear build plan."
   }
 ];
 
@@ -39,7 +39,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-base md:text-lg text-black/70 font-light leading-relaxed">
-            Direct answers on our acquisition architecture, bot intake workflows, and engineering methodology.
+            Quick answers on how we build and launch.
           </p>
         </div>
 

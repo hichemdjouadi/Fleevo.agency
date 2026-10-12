@@ -11,13 +11,23 @@ const telegramChatId = process.env.TELEGRAM_CHAT_ID;
 const trelloKey = process.env.TRELLO_API_KEY;
 const trelloToken = process.env.TRELLO_TOKEN;
 const trelloListId = process.env.TRELLO_LIST_ID || '697a36b5212fb7c1c35f5be4';
-const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL || 'hichemdjouadi@gmail.com';
-const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'Fleevy <onboarding@resend.dev>';
+const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL || 'contact@fleevo.net';
+const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'Fleevo <onboarding@resend.dev>';
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 export async function submitAuditRequest(formData: {
   name: string;
   email: string;
-  budget: string;
+  timeline?: string;
+  budget?: string;
   interests: string[];
   details: string;
 }) {
@@ -26,13 +36,14 @@ export async function submitAuditRequest(formData: {
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const { name, email, budget, interests, details } = formData;
+  const { name, email, timeline, budget, interests, details } = formData;
+  const targetTimeline = (timeline || budget || "Not specified").trim();
   
   if (!name || !email) {
     return { error: "Name and email are required." };
   }
 
-  const compiledNotes = `Interests: ${interests.join(', ')}\nBudget: ${budget}\nProject Details: ${details}`.trim();
+  const compiledNotes = `Interests: ${interests.join(', ')}\nTimeline: ${targetTimeline}\n${details}`.trim();
 
   try {
     // 1. Insert into Supabase
@@ -53,9 +64,9 @@ export async function submitAuditRequest(formData: {
 
     // Await all notification dispatches so serverless lambdas do not freeze prematurely
     const dispatchResults = await Promise.allSettled([
-      sendTelegramNotification(name, email, budget, interests, details),
+      sendTelegramNotification(name, email, targetTimeline, interests, details),
       createTrelloCard(name, compiledNotes, email),
-      sendResendEmail(name, email, budget, interests, details)
+      sendResendEmail(name, email, targetTimeline, interests, details)
     ]);
 
     dispatchResults.forEach((result, idx) => {
@@ -71,20 +82,23 @@ export async function submitAuditRequest(formData: {
   }
 }
 
-async function sendTelegramNotification(name: string, email: string, budget: string, interests: string[], details: string) {
+async function sendTelegramNotification(name: string, email: string, timeline: string, interests: string[], details: string) {
   if (!telegramBotToken || !telegramChatId) return;
-  const message = `🚨 *New Audit Request!*\n\n*Name:* ${name}\n*Email:* ${email}\n*Budget:* ${budget}\n*Interests:* ${interests.join(', ')}\n*Details:* ${details}`;
+  const message = `🚨 <b>New Project Inquiry</b>\n\n<b>Name:</b> ${escapeHtml(name)}\n<b>Email:</b> ${escapeHtml(email)}\n<b>Timeline:</b> ${escapeHtml(timeline)}\n<b>Needs:</b> ${escapeHtml(interests.join(', '))}\n<b>Details:</b>\n${escapeHtml(details)}`;
   
   const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
-  await fetch(url, {
+  const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       chat_id: telegramChatId,
       text: message,
-      parse_mode: 'Markdown'
+      parse_mode: 'HTML'
     })
   });
+  if (!res.ok) {
+    throw new Error(`Telegram webhook failed with status ${res.status}`);
+  }
 }
 
 async function createTrelloCard(name: string, notes: string, email: string) {
@@ -93,23 +107,27 @@ async function createTrelloCard(name: string, notes: string, email: string) {
   const desc = `${notes}\n\nEmail: ${email}`;
   const url = `https://api.trello.com/1/cards?idList=${trelloListId}&key=${trelloKey}&token=${trelloToken}&name=${encodeURIComponent(name)}&desc=${encodeURIComponent(desc)}`;
   
-  await fetch(url, { method: 'POST' });
+  const res = await fetch(url, { method: 'POST' });
+  if (!res.ok) {
+    throw new Error(`Trello webhook failed with status ${res.status}`);
+  }
 }
 
-async function sendResendEmail(name: string, email: string, budget: string, interests: string[], details: string) {
+async function sendResendEmail(name: string, email: string, timeline: string, interests: string[], details: string) {
   if (!process.env.RESEND_API_KEY) return;
   
+  const formattedDetails = escapeHtml(details).replace(/\n/g, "<br />");
   await resend.emails.send({
     from: resendFromEmail,
     to: [notificationEmail],
     subject: `New Lead: ${name}`,
     html: `
-      <h2>New Pipeline Teardown Request</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Budget:</strong> ${budget}</p>
-      <p><strong>Interests:</strong> ${interests.join(', ')}</p>
-      <p><strong>Details:</strong> ${details}</p>
+      <h2>New Project Inquiry</h2>
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Timeline:</strong> ${escapeHtml(timeline)}</p>
+      <p><strong>Needs:</strong> ${escapeHtml(interests.join(', '))}</p>
+      <p><strong>Details:</strong><br />${formattedDetails}</p>
     `
   });
 }

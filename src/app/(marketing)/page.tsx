@@ -18,41 +18,62 @@ const PILLAR_ONE_SERVICES = [
   {
     num: "01",
     title: "Client Acquisition Funnels & Brand Vitrines",
-    desc: "Conversion-first web platforms built for clinics, consulting firms, and service practices. Incoming inquiries trigger instant WhatsApp or Telegram bot qualification so prospective clients are contacted while buying intent is highest.",
-    footer: "Instant Bot Qualification · Zero Friction Booking"
+    desc: "Service websites that capture leads and qualify buyers automatically on WhatsApp.",
+    tags: ["Instant Bot Intake", "Zero-Friction Booking"]
   },
   {
     num: "02",
     title: "Direct Customer Ordering & E-Commerce Engines",
-    desc: "Direct-to-consumer digital storefronts that eliminate middleman commission cuts. Designed for frictionless mobile purchasing with 58-Wilayas COD checkout, instant WhatsApp order tickets, and courier dispatch sync.",
-    footer: "0% Commission Cuts · 58-Wilayas COD Ready"
+    desc: "Mobile online stores with zero commission fees and instant kitchen or warehouse alerts.",
+    tags: ["0% Commission", "58-Wilayas COD"]
   },
   {
     num: "03",
-    title: "Custom Web Applications, Portals & Booking Software",
-    desc: "Tailored client portals, self-service re-ordering systems, and operational web apps that remove friction from repeat business, automated onboarding, and multi-step intake flows.",
-    footer: "Private Dashboards · Supabase Infrastructure"
+    title: "Custom Web Applications & Client Portals",
+    desc: "Private client portals and booking systems that automate repeat orders and onboarding.",
+    tags: ["Client Portals", "Cloud Database"]
   }
 ];
 
 const PILLAR_TWO_SERVICES = [
   {
     num: "01",
-    title: "Performance Meta Ads & Direct-Response Video Direction",
-    desc: "Targeted acquisition campaigns across Facebook and Instagram. We write high-converting video scripts, hook angles, and creative guidance so you attract qualified buyers and route them straight into your funnel.",
-    footer: "Direct-Response Scripts · Click-to-WhatsApp Funnels"
+    title: "Performance Meta Ads & Video Direction",
+    desc: "Facebook and Instagram ad campaigns paired with high-converting video scripts.",
+    tags: ["Video Scripts", "Click-to-WhatsApp Ads"]
   },
   {
     num: "02",
-    title: "Pipeline Leak & Content Marketing Audits",
-    desc: "An end-to-end diagnostic pinpointing where prospective customers drop off before paying, paired with a practical organic content roadmap to attract inbound clients without relying solely on paid ads.",
-    footer: "Full Conversion Funnel Leak Teardown · Offer Review"
+    title: "Pipeline Leak & Content Audits",
+    desc: "A clear breakdown of where leads drop off plus an organic content plan.",
+    tags: ["Funnel Audit", "Content Roadmap"]
   },
   {
     num: "03",
-    title: "Brand Credibility Polish (Complimentary Onboarding Bonus)",
-    desc: "Visual identity refinement, modern typography, and branded social/ad assets included complimentary with our core packages to establish authority and eliminate buyer hesitation.",
-    footer: "Visual Identity · Authority Assets"
+    title: "Brand Credibility Polish",
+    desc: "Clean visual identity and branded ad templates included free with core builds.",
+    tags: ["Logo Polish", "Ad Templates"]
+  }
+];
+
+const ACQUISITION_FLOW = [
+  {
+    num: "01",
+    phase: "Attract",
+    title: "Ads & Video Scripts",
+    desc: "Targeted Meta ads and clear video hooks pull in ready-to-buy prospects."
+  },
+  {
+    num: "02",
+    phase: "Convert",
+    title: "Fast Web Platforms",
+    desc: "Sub-second websites and mobile stores turn visitors into orders or bookings."
+  },
+  {
+    num: "03",
+    phase: "Close",
+    title: "30s Bot Dispatch",
+    desc: "Automated WhatsApp or Telegram bots qualify details and alert your team immediately."
   }
 ];
 
@@ -81,9 +102,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 md:mt-8 text-lg md:text-2xl text-black/75 font-light max-w-[780px] leading-relaxed"
+            className="mt-6 md:mt-8 text-lg md:text-2xl text-black/75 font-light max-w-[680px] leading-relaxed"
           >
-            Conversion-engineered web platforms, e-commerce stores, and custom applications wired with automated bot intake — fueled by targeted Meta ads and direct-response video direction.
+            Fast websites, online stores, and web apps wired with instant WhatsApp bots and targeted Meta ads.
           </motion.p>
 
           {/* Hero CTAs */}
@@ -149,8 +170,8 @@ export default function Home() {
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] max-w-2xl">
             The 2-Pillar Acquisition <span className="font-serif italic font-light">Architecture.</span>
           </h2>
-          <p className="text-base sm:text-lg text-black/70 font-light max-w-md leading-relaxed">
-            We install complete customer acquisition engines that capture qualified prospects, automate intake, and convert attention into measurable revenue.
+          <p className="text-base sm:text-lg text-black/70 font-light max-w-sm leading-relaxed">
+            Two connected engines that attract buyers, automate intake, and close sales.
           </p>
         </div>
 
@@ -158,15 +179,15 @@ export default function Home() {
         <div className="pt-12 border-t border-black/15 mb-24">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4f4f5] text-xs font-mono font-semibold text-black mb-4">
-                <span>Pillar 01 · The Conversion Engine</span>
-              </div>
-              <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-black">
+              <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-black mb-3">
                 Customer Acquisition Platforms &amp; Bot Intake
               </h3>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4f4f5] text-xs font-mono font-semibold text-black">
+                <span>Pillar 01 · The Conversion Engine</span>
+              </div>
             </div>
-            <p className="text-sm md:text-base text-neutral-600 font-light max-w-md leading-relaxed">
-              Digital infrastructure engineered specifically to turn visitors into paying clients, with embedded bot qualification and real-time sales dispatch.
+            <p className="text-sm md:text-base text-neutral-600 font-light max-w-sm leading-relaxed">
+              Websites, online stores, and portals built to turn visitors into buyers.
             </p>
           </div>
 
@@ -174,7 +195,7 @@ export default function Home() {
             {PILLAR_ONE_SERVICES.map((item) => (
               <div
                 key={item.num}
-                className="py-8 md:py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-8"
+                className="py-8 md:py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
               >
                 <div>
                   <h4 className="text-xl md:text-2xl font-medium text-black tracking-tight mb-3">
@@ -185,8 +206,15 @@ export default function Home() {
                     {item.desc}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-black/10 font-mono text-xs text-neutral-600">
-                  {item.footer}
+                <div className="pt-4 border-t border-black/10 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-[#f4f4f5] font-mono text-xs text-neutral-800 font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
@@ -197,15 +225,15 @@ export default function Home() {
         <div className="p-8 sm:p-12 md:p-16 rounded-[2.5rem] bg-[#050505] text-white">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono font-semibold text-white mb-4">
-                <span>Pillar 02 · The Scaling Engine</span>
-              </div>
-              <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white">
+              <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white mb-3">
                 Demand Generation &amp; Acquisition Scaling
               </h3>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono font-semibold text-white">
+                <span>Pillar 02 · The Scaling Engine</span>
+              </div>
             </div>
-            <p className="text-sm md:text-base text-white/70 font-light max-w-md leading-relaxed">
-              Fueling your acquisition platform with qualified buyers, fixing conversion leaks, and guiding direct-response video creative.
+            <p className="text-sm md:text-base text-white/70 font-light max-w-sm leading-relaxed">
+              Targeted ads, video scripts, and conversion audits to fill your pipeline.
             </p>
           </div>
 
@@ -213,7 +241,7 @@ export default function Home() {
             {PILLAR_TWO_SERVICES.map((item) => (
               <div
                 key={item.num}
-                className="py-8 md:py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-8"
+                className="py-8 md:py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
               >
                 <div>
                   <h4 className="text-xl md:text-2xl font-medium text-white tracking-tight mb-3">
@@ -224,8 +252,15 @@ export default function Home() {
                     {item.desc}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-white/10 font-mono text-xs text-white/65">
-                  {item.footer}
+                <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-white/10 font-mono text-xs text-white/85 font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
@@ -241,8 +276,8 @@ export default function Home() {
               Selected <span className="font-serif italic font-light">deployments.</span>
             </h2>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <p className="text-lg text-black/70 font-light max-w-md leading-relaxed">
-                Live platforms and custom systems engineered to turn attention into paying clients from day one.
+              <p className="text-lg text-black/70 font-light max-w-sm leading-relaxed">
+                Live platforms built to convert traffic from day one.
               </p>
               <TransitionLink
                 href="/work"
@@ -256,38 +291,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. STUDIO MANIFESTO (CORE SUPERPOWER & VALUE PROPOSITION) */}
+      {/* 4. 3-STEP ACQUISITION FLOW */}
       <section className="bg-[#050505] text-white py-28 md:py-40 px-6 md:px-12 border-t border-white/10">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-4">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono text-white/80">
-                Studio Manifesto
-              </span>
-            </div>
-            <div className="lg:col-span-8 space-y-10">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
+            <div className="max-w-2xl">
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-[-0.03em] leading-[1.04] text-white">
-                We don&apos;t just build websites — we engineer integrated systems that{" "}
-                <span className="font-serif italic font-light">acquire customers and turn attention into revenue.</span>
+                How our systems turn attention{" "}
+                <span className="font-serif italic font-light">into revenue.</span>
               </h2>
-              <p className="text-lg sm:text-xl text-white/75 font-light leading-relaxed max-w-[68ch]">
-                We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake — fueled by targeted Meta ads, video scripting guidance, and acquisition audits to predictably grow your client base.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-10 border-t border-white/15">
+            </div>
+            <p className="text-base sm:text-lg text-white/70 font-light max-w-sm leading-relaxed">
+              One connected flow from first ad impression to verified sale.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/15 border-y border-white/15">
+            {ACQUISITION_FLOW.map((item) => (
+              <div
+                key={item.num}
+                className="py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
+              >
                 <div>
-                  <h3 className="text-lg font-medium text-white mb-2">The Problem We Solve</h3>
-                  <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed">
-                    Most businesses spend money on social media or isolated websites, but lack a reliable mechanism to turn viewers into paying clients. Inquiries sit unanswered in DMs and prospects slip away before booking.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-white mb-2">How We Make Clients Money</h3>
-                  <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed">
-                    Targeted ads pull in high-intent buyers, conversion-engineered platforms convince them to act, and automated WhatsApp or Telegram bots capture their details and route them to sales in 30 seconds.
+                  <div className="flex items-center justify-between gap-2 mb-5">
+                    <span className="text-xs font-mono font-semibold text-white/60">
+                      Step {item.num}
+                    </span>
+                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/10 text-white font-medium">
+                      {item.phase}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-white/75 font-light leading-relaxed">
+                    {item.desc}
                   </p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -323,9 +365,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-2xl text-white/75 font-light max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-lg md:text-2xl text-white/75 font-light max-w-xl mx-auto mb-12 leading-relaxed"
           >
-            Book a 15-minute consultation with our engineering team. We will review your acquisition pipeline, diagnose leaks, and present an exact digital infrastructure plan.
+            Book a 15-minute call. We review your setup and map out a clear build plan.
           </motion.p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 z-30 w-full sm:w-auto">
@@ -341,10 +383,10 @@ export default function Home() {
 
             <Magnetic intensity={0.2}>
               <a
-                href="mailto:hello@fleevy.agency"
+                href="mailto:contact@fleevo.net"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/20 hover:border-white text-white text-base sm:text-lg font-medium transition-colors text-center"
               >
-                <span>Direct Studio Email</span>
+                <span>contact@fleevo.net</span>
               </a>
             </Magnetic>
           </div>

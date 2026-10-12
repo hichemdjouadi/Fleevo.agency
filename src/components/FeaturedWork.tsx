@@ -26,7 +26,7 @@ const PROJECTS: ProjectItem[] = [
     title: "Mo Pizza Direct Ordering",
     niche: "Restaurant & Hospitality · Mobile Commerce",
     deployment: "Direct Mobile Commerce & Bot Intake",
-    summary: "Custom mobile-first ordering engine bypassing delivery marketplace take-rates. Shoppers select items with sub-second responsiveness, and complete orders route directly into kitchen WhatsApp dispatch.",
+    summary: "Mobile ordering system that sends orders straight to the kitchen on WhatsApp.",
     statusBadge: "Live Production Platform",
     benefits: [
       { direction: "up", label: "Direct Margin Retained (0% Commission)" },
@@ -40,7 +40,7 @@ const PROJECTS: ProjectItem[] = [
     title: "Almadina Bookstore",
     niche: "Headless Commerce · Scholarly Publishing",
     deployment: "Headless Catalog & Delivery Pipeline",
-    summary: "High-performance digital catalog infrastructure featuring sub-second search across scholarly volumes, zero layout shift, and automated cash-on-delivery checkout tailored for nationwide distribution.",
+    summary: "Fast online bookstore with instant search and 58-Wilayas cash-on-delivery checkout.",
     statusBadge: "Live Production Platform",
     benefits: [
       { direction: "up", label: "Search & Discovery Speed" },
@@ -54,7 +54,7 @@ const PROJECTS: ProjectItem[] = [
     title: "Adréna Club",
     niche: "Elite Athletics · Private Club Memberships",
     deployment: "High-Ticket Qualification Gateway",
-    summary: "Dedicated intake architecture pre-qualifying athlete commitment, verifying phone authenticity, and routing vetted membership applications directly to the executive sales director.",
+    summary: "Private application portal that qualifies members and alerts sales staff instantly.",
     statusBadge: "Private Preview · Launching Soon",
     benefits: [
       { direction: "up", label: "VIP Qualification" },
@@ -91,7 +91,7 @@ const PROJECTS: ProjectItem[] = [
     title: "Tawheed & Sunnah Bookstore",
     niche: "Publishing & Distribution · Digital Commerce",
     deployment: "Zero-Latency Mobile Commerce Pipeline",
-    summary: "Direct mobile ordering pipeline for authentic publications with frictionless checkout, direct courier dispatch integration, and real-time inventory synchronization.",
+    summary: "Mobile book store connected directly to courier dispatch and live inventory.",
     statusBadge: "Private Preview · Launching Soon",
     benefits: [
       { direction: "up", label: "Automated Dispatch" },

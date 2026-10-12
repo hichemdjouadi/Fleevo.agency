@@ -45,13 +45,13 @@ const PROJECTS: Project[] = [
         direction: "up",
         type: "Commercial Result",
         headline: "Direct Margin Retained (0% Commission)",
-        detail: "Bypasses third-party delivery marketplace cuts, allowing the restaurant group to capture 100% of order value directly into their kitchen ticket pipeline."
+        detail: "Zero marketplace fees and direct WhatsApp tickets."
       },
       {
         direction: "up",
         type: "Problem Solved",
         headline: "Sub-800ms Mobile Checkout Velocity",
-        detail: "Eliminates phone busy signals and clunky app downloads with a frictionless mobile web order flow tested on local 4G networks."
+        detail: "Instant mobile ordering without any app downloads."
       }
     ],
   },
@@ -70,13 +70,13 @@ const PROJECTS: Project[] = [
         direction: "up",
         type: "Commercial Result",
         headline: "Search & Discovery Speed",
-        detail: "Instantaneous sub-second queries across thousands of scholarly volumes, keeping reader engagement high and maximizing cart completion."
+        detail: "Fast catalog search across thousands of titles."
       },
       {
         direction: "down",
         type: "Problem Solved",
         headline: "Mobile Catalog Drop-off",
-        detail: "Direct mobile checkout designed for 58-Wilayas cash-on-delivery purchasing, eliminating cart abandonment caused by heavy legacy plugins."
+        detail: "Fast 58-Wilayas cash on delivery mobile checkout."
       }
     ],
   },
@@ -94,13 +94,13 @@ const PROJECTS: Project[] = [
         direction: "up",
         type: "Commercial Result",
         headline: "VIP Qualification",
-        detail: "Structured intake gateway pre-qualifies athlete commitment, verifies phone authenticity, and routes high-intent applications directly to executive staff."
+        detail: "Screens every applicant before alerting sales staff."
       },
       {
         direction: "down",
         type: "Problem Solved",
         headline: "Staff Time Wasted on Unscreened Inquiries",
-        detail: "Filters out casual window-shoppers before they reach coaching calendars, saving hours of manual administrative follow-up every week."
+        detail: "Filters casual browsers out of coaching calendars."
       }
     ],
     renderVisual: () => (
@@ -142,13 +142,13 @@ const PROJECTS: Project[] = [
         direction: "up",
         type: "Commercial Result",
         headline: "Automated Dispatch",
-        detail: "Direct mobile ordering pipeline linked to automated warehouse tickets, ensuring immediate fulfillment dispatch as soon as orders are placed."
+        detail: "Orders route directly to warehouse fulfillment teams."
       },
       {
         direction: "down",
         type: "Problem Solved",
         headline: "Manual Order Friction",
-        detail: "Replaces manual message-based ordering and inventory inquiries with real-time stock status and instant courier dispatch hooks."
+        detail: "Live stock sync with instant courier dispatch."
       }
     ],
     renderVisual: () => (
@@ -203,8 +203,8 @@ export default function Work() {
             Selected <span className="font-serif italic font-light">Deployments.</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl font-light leading-relaxed tracking-tight mb-12">
-            Customer acquisition platforms, mobile e-commerce engines, and high-ticket qualification gateways built for ambitious businesses.
+          <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed tracking-tight mb-12">
+            Live platforms and private systems built to turn visitors into buyers.
           </p>
 
           {/* Filter Pills */}
@@ -218,7 +218,7 @@ export default function Work() {
                   : "bg-[#f4f4f5] text-neutral-700 hover:text-black"
               }`}
             >
-              All Projects ({PROJECTS.length})
+              All Deployments
             </button>
             <button
               type="button"
@@ -229,7 +229,7 @@ export default function Work() {
                   : "bg-[#f4f4f5] text-neutral-700 hover:text-black"
               }`}
             >
-              Digital Commerce (2)
+              Digital Commerce
             </button>
             <button
               type="button"
@@ -240,7 +240,7 @@ export default function Work() {
                   : "bg-[#f4f4f5] text-neutral-700 hover:text-black"
               }`}
             >
-              Web Applications (2)
+              Web Applications
             </button>
             <button
               type="button"
@@ -251,7 +251,7 @@ export default function Work() {
                   : "bg-[#f4f4f5] text-neutral-700 hover:text-black"
               }`}
             >
-              Private Previews (2)
+              Private Previews
             </button>
           </div>
         </motion.div>
@@ -273,7 +273,7 @@ export default function Work() {
             Ready to build an acquisition engine that scales?
           </h2>
           <p className="text-lg md:text-xl text-white/75 mb-12 max-w-xl font-light leading-relaxed">
-            Book a 15-minute consultation. We evaluate your acquisition model and present an exact digital infrastructure plan.
+            Book a 15-minute call to review your setup and plan your build.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 z-30 w-full sm:w-auto">
             <Magnetic intensity={0.2}>
@@ -287,10 +287,10 @@ export default function Work() {
             </Magnetic>
             <Magnetic intensity={0.2}>
               <a
-                href="mailto:hello@fleevy.agency"
+                href="mailto:contact@fleevo.net"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4.5 rounded-full border border-white/20 hover:border-white text-white text-base sm:text-lg font-medium transition-colors"
               >
-                Direct Studio Email
+                contact@fleevo.net
               </a>
             </Magnetic>
           </div>
