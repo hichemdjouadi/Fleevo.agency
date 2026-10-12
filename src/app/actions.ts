@@ -5,7 +5,6 @@ import { Resend } from "resend";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const resend = new Resend(process.env.RESEND_API_KEY);
 const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
 const telegramChatId = process.env.TELEGRAM_CHAT_ID;
 const trelloKey = process.env.TRELLO_API_KEY;
@@ -116,6 +115,7 @@ async function createTrelloCard(name: string, notes: string, email: string) {
 async function sendResendEmail(name: string, email: string, timeline: string, interests: string[], details: string) {
   if (!process.env.RESEND_API_KEY) return;
   
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const formattedDetails = escapeHtml(details).replace(/\n/g, "<br />");
   await resend.emails.send({
     from: resendFromEmail,
