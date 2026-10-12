@@ -367,6 +367,8 @@ function ProjectShowcase({ project, index }: { project: Project; index: number }
               src={project.image}
               alt={project.title}
               fill
+              sizes="(max-width: 1400px) 100vw, 1400px"
+              priority={index < 2}
               className="object-cover object-top"
               unoptimized
             />

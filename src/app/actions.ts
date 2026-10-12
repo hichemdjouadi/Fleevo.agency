@@ -117,17 +117,34 @@ async function sendResendEmail(name: string, email: string, timeline: string, in
   
   const resend = new Resend(process.env.RESEND_API_KEY);
   const formattedDetails = escapeHtml(details).replace(/\n/g, "<br />");
-  await resend.emails.send({
-    from: resendFromEmail,
-    to: [notificationEmail],
-    subject: `New Lead: ${name}`,
-    html: `
+  const htmlBody = `
       <h2>New Project Inquiry</h2>
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       <p><strong>Timeline:</strong> ${escapeHtml(timeline)}</p>
       <p><strong>Needs:</strong> ${escapeHtml(interests.join(', '))}</p>
       <p><strong>Details:</strong><br />${formattedDetails}</p>
-    `
+    `;
+
+  const { error } = await resend.emails.send({
+    from: resendFromEmail,
+    to: [notificationEmail],
+    replyTo: email,
+    subject: `New Lead: ${name}`,
+    html: htmlBody
   });
+
+  if (error && (error as any).statusCode === 403) {
+    const match = error.message?.match(/\(([^)]+@[^)]+)\)/);
+    const fallbackRecipient = match ? match[1] : undefined;
+    if (fallbackRecipient && fallbackRecipient !== notificationEmail) {
+      await resend.emails.send({
+        from: resendFromEmail,
+        to: [fallbackRecipient],
+        replyTo: email,
+        subject: `New Lead: ${name} (via contact@fleevo.net)`,
+        html: htmlBody
+      });
+    }
+  }
 }

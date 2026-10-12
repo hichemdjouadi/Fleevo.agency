@@ -134,6 +134,7 @@ export default function HeroVisual() {
                   src={current.image}
                   alt={`${current.client} mobile interface`}
                   fill
+                  sizes="(max-width: 768px) 320px, 420px"
                   priority
                   className="object-cover object-top"
                 />
