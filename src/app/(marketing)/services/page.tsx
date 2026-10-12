@@ -532,7 +532,7 @@ export default function ServicesPage() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-black leading-[1.08]">
-              Almadina Bookstore: 3,000+ publications, zero lag.
+              Almadina Bookstore: Scholarly catalog, zero search lag.
             </h2>
 
             <p className="text-base sm:text-lg text-neutral-600 font-light leading-relaxed">

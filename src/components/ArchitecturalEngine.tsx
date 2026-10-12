@@ -135,9 +135,9 @@ export default function ArchitecturalEngine() {
                   >
                     LAYER {layer.number}
                   </span>
-                  <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-1">
+                  <span className="block text-xl md:text-2xl font-medium tracking-tight mb-1">
                     {layer.title}
-                  </h3>
+                  </span>
                   <p
                     className={`text-sm font-light ${
                       isActive ? "text-white/70" : "text-black/60"
@@ -183,9 +183,9 @@ export default function ArchitecturalEngine() {
                   </span>
                 </div>
 
-                <h4 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 text-white">
+                <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 text-white">
                   {selected.title}
-                </h4>
+                </h3>
                 <p className="text-base md:text-lg text-white/70 font-light leading-relaxed max-w-2xl">
                   {selected.spec}
                 </p>

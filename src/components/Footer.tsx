@@ -27,12 +27,12 @@ export default function Footer() {
             {/* Offices */}
             <div className="flex flex-col md:flex-row gap-12 md:gap-24">
               <div className="flex flex-col gap-1 text-sm">
-                <span className="text-[10px] text-white/50 tracking-widest uppercase mb-1">Main Office</span>
+                <span className="text-xs font-mono text-white/50 tracking-widest uppercase mb-1">Main Office</span>
                 <span className="font-medium">Algiers HQ</span>
                 <span className="text-white/80">Algiers, Algeria</span>
               </div>
               <div className="flex flex-col gap-1 text-sm">
-                <span className="text-[10px] text-white/50 tracking-widest uppercase mb-1">Second Office</span>
+                <span className="text-xs font-mono text-white/50 tracking-widest uppercase mb-1">Second Office</span>
                 <span className="font-medium">Global</span>
                 <span className="text-white/80">Remote Distribution</span>
               </div>
@@ -54,7 +54,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-end md:items-center gap-8">
-          <div className="flex items-center gap-4 text-[10px] text-white/60">
+          <div className="flex items-center gap-4 text-xs font-mono text-white/60">
             <span className="text-white/60">Privacy & Terms Protected</span>
             <span>&copy; {new Date().getFullYear()} Fleevo</span>
           </div>

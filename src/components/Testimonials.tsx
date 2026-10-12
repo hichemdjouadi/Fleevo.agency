@@ -13,7 +13,7 @@ export default function Testimonials() {
       accent: "from-amber-500/10 to-orange-500/5",
       badgeColor: "text-amber-800 bg-amber-50 border-amber-200",
       system: "Headless Storefront & Sub-Second Search",
-      summary: "Engineered a headless commerce engine with sub-800ms catalog search across 3,000+ Islamic publications, zero-friction mobile checkout, and automated warehouse routing.",
+      summary: "Engineered a headless commerce engine with sub-800ms catalog search across their Islamic publications catalog, zero-friction mobile checkout, and automated warehouse routing.",
       shift: {
         before: "Slow WordPress search with dropped mobile shoppers",
         after: "Sub-800ms edge search with +42% mobile checkout completion"

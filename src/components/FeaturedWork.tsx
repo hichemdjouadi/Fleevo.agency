@@ -41,7 +41,7 @@ const PROJECTS: ProjectItem[] = [
     title: "Al-Madina Bookstore",
     niche: "Headless E-Commerce · Scholarly Publishing",
     deployment: "Headless Commerce Platform",
-    summary: "High-performance bookstore architecture featuring instant sub-second catalog search across 3,000+ publications and mobile checkout tailored for Algerian delivery.",
+    summary: "High-performance bookstore architecture featuring instant sub-second catalog search across their scholarly catalog and mobile checkout tailored for Algerian delivery.",
     shift: {
       before: "Slow WordPress search with dropped mobile shoppers",
       after: "Sub-second edge search with zero mobile drop-off"
@@ -66,12 +66,11 @@ const PROJECTS: ProjectItem[] = [
     hasImage: false,
     renderVisual: () => (
       <div className="w-full h-full bg-[#0a0a0e] p-6 flex flex-col justify-between relative overflow-hidden text-white font-mono select-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(16,185,129,0.15),_transparent_70%)]" />
         <div className="relative z-10 flex items-center justify-between pb-3 border-b border-white/10 text-xs">
-          <span className="flex items-center gap-2 text-emerald-400 font-semibold tracking-wider uppercase">
+          <span className="flex items-center gap-2 text-emerald-400 font-semibold tracking-wider">
             <Dumbbell className="w-4 h-4" /> Adréna Intake Terminal
           </span>
-          <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">
+          <span className="text-xs font-mono bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded border border-emerald-500/30">
             Verified OTP · Sub-45s
           </span>
         </div>
@@ -85,7 +84,7 @@ const PROJECTS: ProjectItem[] = [
             <span className="font-bold">Sent to Director</span>
           </div>
         </div>
-        <div className="relative z-10 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] text-white/50">
+        <div className="relative z-10 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/50">
           <span>Commitment Gate: Active</span>
           <span className="text-emerald-400 font-medium">Zero Drop-off</span>
         </div>
@@ -107,12 +106,11 @@ const PROJECTS: ProjectItem[] = [
     hasImage: false,
     renderVisual: () => (
       <div className="w-full h-full bg-[#08080c] p-6 flex flex-col justify-between relative overflow-hidden text-white font-mono select-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.15),_transparent_70%)]" />
         <div className="relative z-10 flex items-center justify-between pb-3 border-b border-white/10 text-xs">
-          <span className="flex items-center gap-2 text-blue-400 font-semibold tracking-wider uppercase">
+          <span className="flex items-center gap-2 text-blue-400 font-semibold tracking-wider">
             <BookOpen className="w-4 h-4" /> Tawhid & Sunnah Distribution
           </span>
-          <span className="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded border border-blue-500/30">
+          <span className="text-xs font-mono bg-blue-500/20 text-blue-300 px-2.5 py-0.5 rounded border border-blue-500/30">
             Edge Synchronized
           </span>
         </div>
@@ -129,7 +127,7 @@ const PROJECTS: ProjectItem[] = [
             <span className="font-bold">Auto-Logged</span>
           </div>
         </div>
-        <div className="relative z-10 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] text-white/50">
+        <div className="relative z-10 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/50">
           <span>Inventory Sync: Instant</span>
           <span className="text-blue-400 font-medium">Next.js Edge</span>
         </div>
@@ -191,11 +189,11 @@ function Card3D({ project }: { project: ProjectItem }) {
             project.renderVisual?.()
           )}
           <div className="absolute top-4 left-4 z-10 flex flex-wrap items-center gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-800 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-black/10 font-semibold shadow-sm">
+            <span className="text-xs font-mono tracking-wider text-neutral-800 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-black/10 font-medium shadow-sm">
               {project.deployment}
             </span>
             {project.isLocked && (
-              <span className="text-[10px] font-mono uppercase tracking-widest text-amber-700 bg-amber-50/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-amber-500/30 font-semibold flex items-center gap-1.5 shadow-sm">
+              <span className="text-xs font-mono tracking-wider text-amber-700 bg-amber-50/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-amber-500/30 font-medium flex items-center gap-1.5 shadow-sm">
                 <Lock className="w-3 h-3 text-amber-600" /> Under Construction
               </span>
             )}
@@ -205,7 +203,7 @@ function Card3D({ project }: { project: ProjectItem }) {
         {/* Header Details */}
         <div className="flex items-start justify-between gap-4 mb-3">
           <div>
-            <span className="text-xs font-mono uppercase tracking-wider text-emerald-700 block mb-1 font-semibold">
+            <span className="text-xs font-mono tracking-wider text-emerald-700 block mb-1 font-medium">
               {project.niche}
             </span>
             <h3 className="text-2xl md:text-3xl font-medium text-black tracking-tight group-hover:text-neutral-800 transition-colors">

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function Template({ children }: { children: ReactNode }) {
   const [isExiting, setIsExiting] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -16,28 +17,26 @@ export default function Template({ children }: { children: ReactNode }) {
 
   const easeCurve: [number, number, number, number] = [0.76, 0, 0.24, 1];
   
-  // If we are just loading the site for the first time, don't play the intro overlay 
-  // because the Preloader will handle it. We can guess it's not the initial load if 
-  // sessionStorage has our flag, or we just rely on Preloader covering it up.
-  // Actually, we'll just always run it. The Preloader sits above it anyway.
-
   return (
     <>
       {/* Outgoing overlay (Slides up from bottom when link clicked) */}
-      <motion.div
-        className="fixed inset-0 z-[140] bg-black pointer-events-none"
-        initial={{ y: "100%" }}
-        animate={{ y: isExiting ? "0%" : "100%" }}
-        transition={{ duration: 0.6, ease: easeCurve }}
-      />
+      {isExiting && (
+        <motion.div
+          className="fixed inset-0 z-[140] bg-black pointer-events-none"
+          initial={{ y: "100%" }}
+          animate={{ y: "0%" }}
+          transition={{ duration: 0.6, ease: easeCurve }}
+        />
+      )}
       
-      {/* Incoming overlay (Slides up to top when page mounts) */}
-      {!isExiting && (
+      {/* Incoming overlay (Slides up to top when page mounts, then unmounts) */}
+      {!isExiting && !hasEntered && (
         <motion.div
           className="fixed inset-0 z-[140] bg-black pointer-events-none"
           initial={{ y: "0%" }}
           animate={{ y: "-100%" }}
           transition={{ duration: 0.8, ease: easeCurve, delay: 0.1 }}
+          onAnimationComplete={() => setHasEntered(true)}
         />
       )}
 

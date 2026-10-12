@@ -13,7 +13,6 @@ const FEATURES = [
     tag: "Lead Qualification",
     visual: (
       <div className="w-full h-full flex flex-col items-center justify-center p-6 md:p-10 bg-[#0a0a0e] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.12),_transparent_60%)]" />
         <div className="relative w-full max-w-sm flex flex-col gap-3 z-10">
           {[
             { label: "Spam Bot / Missing Phone", status: "Filtered", match: false },
@@ -27,7 +26,7 @@ const FEATURES = [
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className={`w-full p-4 rounded-2xl border flex items-center justify-between transition-all ${
                 item.match 
-                  ? 'bg-[#141824] border-blue-500/40 shadow-xl shadow-blue-500/10' 
+                  ? 'bg-[#141824] border-blue-500/40 shadow-lg' 
                   : 'bg-[#0f0f14]/60 border-white/5 opacity-40'
               }`}
             >
@@ -41,7 +40,7 @@ const FEATURES = [
                   <div className={`text-sm font-medium ${item.match ? 'text-white' : 'text-white/60'}`}>
                     {item.label}
                   </div>
-                  <div className="text-[10px] font-mono text-white/40">
+                  <div className="text-xs font-mono text-white/50">
                     {item.status}
                   </div>
                 </div>
@@ -49,7 +48,7 @@ const FEATURES = [
               {item.match ? (
                 <CheckCircle2 className="text-blue-400 w-5 h-5 shrink-0" />
               ) : (
-                <span className="text-[10px] font-mono text-white/30">DROP</span>
+                <span className="text-xs font-mono text-white/40">DROP</span>
               )}
             </motion.div>
           ))}
@@ -65,7 +64,6 @@ const FEATURES = [
     tag: "Speed to Lead",
     visual: (
       <div className="w-full h-full flex flex-col items-center justify-center p-6 md:p-10 bg-[#0a0a0e] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(16,185,129,0.12),_transparent_60%)]" />
         <div className="relative w-full max-w-sm space-y-4 z-10">
           <motion.div 
             initial={{ y: 20, opacity: 0 }}
@@ -74,10 +72,10 @@ const FEATURES = [
             className="p-4 rounded-2xl bg-[#12161f] border border-white/10 shadow-lg text-left"
           >
             <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-mono uppercase text-emerald-400 font-semibold flex items-center gap-1">
-                <Zap className="w-3 h-3" /> Form Submitted · 0s
+              <span className="text-xs font-mono uppercase text-emerald-400 font-semibold flex items-center gap-1">
+                <Zap className="w-3.5 h-3.5" /> Form Submitted · 0s
               </span>
-              <span className="text-[10px] font-mono text-white/40">Verified Number</span>
+              <span className="text-xs font-mono text-white/50">Verified Number</span>
             </div>
             <p className="text-xs text-white/80 font-medium leading-relaxed">
               New qualified inquiry: <strong>Mobile Storefront & WhatsApp Engine</strong>
@@ -88,13 +86,13 @@ const FEATURES = [
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 to-emerald-900/40 border border-emerald-500/30 text-white shadow-xl text-left"
+            className="p-4 rounded-2xl bg-neutral-900/90 border border-emerald-500/30 text-white shadow-xl text-left"
           >
             <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-mono uppercase text-emerald-300 font-semibold flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3" /> Auto-Dispatched · 14s
+              <span className="text-xs font-mono uppercase text-emerald-300 font-semibold flex items-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5" /> Auto-Dispatched · 14s
               </span>
-              <span className="text-[10px] font-mono text-emerald-200/60">WhatsApp & Phone</span>
+              <span className="text-xs font-mono text-emerald-200/70">WhatsApp & Phone</span>
             </div>
             <p className="text-xs text-white/90 font-medium leading-relaxed">
               Customer order and details delivered directly to owner WhatsApp with zero commission loss.
@@ -112,17 +110,15 @@ const FEATURES = [
     tag: "Margin Protection",
     visual: (
       <div className="w-full h-full flex flex-col justify-between p-6 md:p-8 bg-[#070709] relative overflow-hidden text-white font-sans">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(16,185,129,0.08),_transparent_70%)] pointer-events-none" />
-        
         {/* Top Architecture Status */}
         <div className="relative z-10 flex items-center justify-between pb-4 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[10px] font-mono uppercase tracking-widest text-white/70">
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="text-xs font-mono tracking-wider text-white/70">
               Stack Performance Comparison
             </span>
           </div>
-          <span className="text-[10px] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-medium">
+          <span className="text-xs font-mono text-emerald-300 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20 font-medium">
             Production Standard
           </span>
         </div>
@@ -141,14 +137,14 @@ const FEATURES = [
             <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
               <div className="bg-rose-500/80 h-full w-[85%] rounded-full" />
             </div>
-            <div className="flex justify-between text-[10px] text-white/50 font-mono">
+            <div className="flex justify-between text-xs text-white/50 font-mono">
               <span>Third-party delivery apps</span>
               <span className="text-rose-400/90 font-medium">20-25% Cut on Every Sale</span>
             </div>
           </div>
 
           {/* Fleevo Edge Architecture */}
-          <div className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-950/40 to-black border border-emerald-500/30 flex flex-col gap-2 shadow-lg">
+          <div className="p-3.5 rounded-xl bg-neutral-900 border border-white/10 flex flex-col gap-2 shadow-lg">
             <div className="flex items-center justify-between text-xs font-mono">
               <span className="text-white font-medium flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
@@ -161,10 +157,10 @@ const FEATURES = [
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="bg-emerald-400 h-full rounded-full shadow-[0_0_12px_rgba(52,211,153,0.5)]" 
+                className="bg-emerald-400 h-full rounded-full" 
               />
             </div>
-            <div className="flex justify-between text-[10px] text-white/70 font-mono">
+            <div className="flex justify-between text-xs text-white/70 font-mono">
               <span className="text-emerald-400/90 font-medium">Direct WhatsApp Orders</span>
               <span className="text-emerald-300 font-semibold">0% Commission Cut</span>
             </div>
@@ -172,7 +168,7 @@ const FEATURES = [
         </div>
 
         {/* Bottom Authority Proof */}
-        <div className="relative z-10 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/60">
+        <div className="relative z-10 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/60">
           <span>Business Outcome:</span>
           <span className="text-white font-medium">100% Profit Stays with Owner</span>
         </div>
@@ -224,28 +220,26 @@ export default function ValueProps() {
                     }
                   }}
                 >
-                  <div className="flex items-start gap-6">
-                    <span className={`text-xs font-mono font-bold mt-2 uppercase tracking-widest transition-opacity duration-300 ${isActive ? 'text-black' : 'text-neutral-500'}`}>
-                      {feature.id}
-                    </span>
-                    <div className="flex flex-col">
-                      <h3 className={`text-2xl md:text-3xl font-medium tracking-tight mb-3 transition-all duration-300 ${isActive ? 'text-black translate-x-2' : 'text-neutral-500'}`}>
-                        {feature.title}
-                      </h3>
-                      <AnimatePresence>
-                        {isActive && (
-                          <motion.p 
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="text-base md:text-lg font-light leading-relaxed text-neutral-600 max-w-md overflow-hidden"
-                          >
-                            <span className="block pt-2">{feature.desc}</span>
-                          </motion.p>
-                        )}
-                      </AnimatePresence>
-                    </div>
+                  <div>
+                    <h3 className={`text-2xl md:text-3xl font-medium tracking-tight mb-3 transition-all duration-300 ${isActive ? 'text-black translate-x-2' : 'text-neutral-500'}`}>
+                      <span className="font-mono text-neutral-400 font-light mr-4 text-xl md:text-2xl">
+                        {feature.id}
+                      </span>
+                      {feature.title}
+                    </h3>
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.p 
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="text-base md:text-lg font-light leading-relaxed text-neutral-600 max-w-md overflow-hidden"
+                        >
+                          <span className="block pt-2">{feature.desc}</span>
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
               );
@@ -286,18 +280,16 @@ export default function ValueProps() {
         <div className="flex flex-col gap-12">
           {FEATURES.map((feature) => (
             <div key={feature.id} className="flex flex-col gap-6">
-              <div className="flex items-start gap-4">
-                <span className="text-xs font-mono font-bold mt-1 text-neutral-500">
-                  {feature.id}
-                </span>
-                <div className="flex flex-col">
-                  <h3 className="text-2xl font-medium tracking-tight mb-2 text-black">
-                    {feature.title}
-                  </h3>
-                  <p className="text-base text-neutral-600 leading-relaxed font-light">
-                    {feature.desc}
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-2xl font-medium tracking-tight mb-2 text-black">
+                  <span className="font-mono text-neutral-400 font-light mr-3 text-xl">
+                    {feature.id}
+                  </span>
+                  {feature.title}
+                </h3>
+                <p className="text-base text-neutral-600 leading-relaxed font-light">
+                  {feature.desc}
+                </p>
               </div>
               
               <div className="w-full h-[320px] rounded-[28px] overflow-hidden bg-[#0a0a0e] shadow-xl relative border border-black/10">

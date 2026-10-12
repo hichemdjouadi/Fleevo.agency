@@ -7,12 +7,12 @@ export default function CustomCursor() {
   const textRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    // Disable on mobile, touch, or reduced-motion environments
+    // Only run on non-touch devices with fine pointers (desktop mouse)
     if (
       typeof window === "undefined" ||
       window.matchMedia("(max-width: 768px)").matches ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      "ontouchstart" in window
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ) {
       return;
     }
@@ -49,7 +49,8 @@ export default function CustomCursor() {
         target.tagName.toLowerCase() === "button" || 
         target.closest("a") || 
         target.closest("button") ||
-        target.classList.contains("cursor-pointer");
+        target.classList.contains("cursor-pointer") ||
+        target.getAttribute("role") === "button";
 
       if (cursorDataEl) {
         isHovering = true;
@@ -82,19 +83,26 @@ export default function CustomCursor() {
 
     let rafId: number;
 
-    const render = () => {
-      cursorX += (mouseX - cursorX) * 0.3;
-      cursorY += (mouseY - cursorY) * 0.3;
+    let currentScale = 0.28;
+    let targetScale = 0.28;
 
-      let scale = 1;
+    const render = () => {
+      // Smooth, responsive interpolation
+      cursorX += (mouseX - cursorX) * 0.35;
+      cursorY += (mouseY - cursorY) * 0.35;
+
       if (isMouseDown) {
-        scale = 0.7;
+        targetScale = 0.22;
       } else if (isHovering) {
-        scale = currentText ? 2.6 : 1.8;
+        targetScale = currentText ? 1.35 : 0.9;
+      } else {
+        targetScale = 0.28;
       }
 
-      // Hardware accelerated transform without layout recalculations
-      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%) scale(${scale})`;
+      currentScale += (targetScale - currentScale) * 0.22;
+
+      // Hardware accelerated transform without texture upscaling blur
+      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%) scale(${currentScale.toFixed(4)})`;
 
       if (currentText && isHovering) {
         textEl.style.opacity = "1";
@@ -122,15 +130,17 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 pointer-events-none z-[999999] hidden md:flex items-center justify-center font-mono font-bold tracking-[0.2em] text-[10px] w-8 h-8 bg-white rounded-full mix-blend-difference will-change-transform"
+      className="fixed top-0 left-0 pointer-events-none z-[999999] hidden md:flex items-center justify-center font-mono font-bold tracking-[0.2em] text-[9px] w-11 h-11 bg-white rounded-full mix-blend-difference will-change-transform"
       style={{
         opacity: 0,
-        transition: "opacity 0.25s ease-out",
+        backfaceVisibility: "hidden",
+        WebkitBackfaceVisibility: "hidden",
+        transition: "opacity 0.2s ease-out",
       }}
     >
       <span 
         ref={textRef}
-        className="text-black select-none pointer-events-none text-[8px]"
+        className="text-black select-none pointer-events-none text-[9px] font-bold"
         style={{
           opacity: 0,
           transition: "opacity 0.15s ease-out",

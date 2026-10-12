@@ -15,32 +15,32 @@ const OPERATING_CODES = [
     title: "Profit Over Pixels",
     subtitle: "Built to Convert",
     description:
-      "Aesthetics only matter if they make your customers buy or book. We do not design for agency design awards; we build clear, high-converting platforms that bring in revenue.",
-    guarantee: "Every page is engineered to move visitors closer to an order or booking."
+      "Aesthetics only matter when they make your customers buy or book. We do not design for agency awards; we build clear platforms that turn visitors into paying clients.",
+    guarantee: "Every layout and action is engineered around conversion math, not vanity."
   },
   {
     code: "02",
-    title: "Sub-Second Mobile Speed",
-    subtitle: "Fast on 4G Networks",
+    title: "Time is the Ultimate Currency",
+    subtitle: "Automating the Manual Grind",
     description:
-      "Most business websites take 4 to 5 seconds to load on a mobile phone, losing half their visitors. We write 100% custom Next.js code that loads in under a second on local networks.",
-    guarantee: "Sub-second load times with zero heavy WordPress template bloat."
+      "Waiting hours for an email reply loses clients. We wire orders and consultation requests directly into your WhatsApp in seconds, so you never lose high-intent buyers or waste time on manual tracking.",
+    guarantee: "Instant lead routing to your phone with zero manual data entry."
   },
   {
     code: "03",
-    title: "Direct WhatsApp Plumbing",
-    subtitle: "Zero Middleman Cuts",
+    title: "Friction is the Enemy",
+    subtitle: "Sub-Second Edge Speed",
     description:
-      "Waiting hours for an email response loses sales. We wire orders and inquiries straight into your WhatsApp or phone in seconds, so you never pay third-party app commissions.",
-    guarantee: "Immediate customer notifications delivered directly to your device."
+      "Most business websites take 4 to 5 seconds to load on local mobile networks, losing half their visitors. We build custom Next.js code that renders in under a second so customers never bounce.",
+    guarantee: "Sub-second mobile speed with zero heavy template bloat."
   },
   {
     code: "04",
-    title: "The 50/50 Milestone Guarantee",
-    subtitle: "Transparent Delivery",
+    title: "Authority by Design",
+    subtitle: "Premium Market Leadership",
     description:
-      "You pay 50% advance to start work. You only pay the remaining 50% after you test and approve the working website on our private staging link before public launch.",
-    guarantee: "Zero surprise fees. You inspect the product before final payment."
+      "Looking like a generic template forces you to discount your fees. We craft sharp, custom typography and editorial layouts that make your brand stand out as the obvious leader in your market.",
+    guarantee: "Undisputed visual authority that justifies high-ticket pricing."
   }
 ];
 
@@ -60,14 +60,6 @@ export default function AboutPage() {
       {/* 1. HERO - THE MANIFESTO */}
       <section className="relative min-h-[85vh] flex flex-col justify-center px-6 md:px-12 max-w-[1400px] mx-auto pt-32 pb-20">
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 max-w-5xl">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }} 
-            animate={{ opacity: 1, scale: 1 }} 
-            className="px-4 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-xs font-mono uppercase tracking-[0.2em] font-medium mb-8 text-neutral-700 w-fit"
-          >
-            About Fleevo
-          </motion.div>
-
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
@@ -82,7 +74,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 15 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="mt-8 text-lg sm:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed"
+            className="mt-8 text-lg sm:text-2xl text-black/70 max-w-2xl font-light leading-relaxed"
           >
             We are a boutique design and engineering studio based in Algiers. We replace slow, outdated websites with fast mobile storefronts and WhatsApp ordering systems that work.
           </motion.p>
@@ -92,7 +84,7 @@ export default function AboutPage() {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="pt-16 flex items-center gap-3 text-neutral-500 uppercase text-xs font-mono tracking-[0.2em]"
+          className="pt-16 flex items-center gap-3 text-black/50 uppercase text-xs font-mono tracking-[0.2em]"
         >
           <motion.div
             animate={{ y: [0, 5, 0] }}
@@ -116,7 +108,7 @@ export default function AboutPage() {
               <span className="text-black/40 italic font-light">Operating Codes.</span>
             </h2>
           </div>
-          <p className="text-base md:text-lg text-neutral-600 max-w-md font-light leading-relaxed">
+          <p className="text-base md:text-lg text-black/70 max-w-md font-light leading-relaxed">
             Strict standards governing every system we deploy. Built to protect your customer experience and ensure every visitor turns into a buyer.
           </p>
         </div>
@@ -129,14 +121,14 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-5%" }}
               transition={{ duration: 0.6 }}
-              className="border border-black/10 rounded-[2.5rem] p-8 sm:p-12 bg-white flex flex-col justify-between hover:border-black/30 transition-colors shadow-sm"
+              className="border border-black/10 rounded-[3rem] p-8 sm:p-12 bg-white flex flex-col justify-between hover:border-black transition-colors"
             >
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-black/10 mb-8">
-                  <span className="font-mono text-sm tracking-[0.2em] font-bold text-neutral-400">
+                  <span className="font-mono text-sm tracking-[0.2em] font-bold text-black/40">
                     CODE {codeItem.code}
                   </span>
-                  <span className="font-mono text-xs uppercase tracking-wider text-neutral-600 font-semibold">
+                  <span className="font-mono text-xs uppercase tracking-wider text-black/60 font-semibold">
                     {codeItem.subtitle}
                   </span>
                 </div>
@@ -144,14 +136,14 @@ export default function AboutPage() {
                 <h3 className="text-2xl sm:text-3xl font-medium tracking-tight mb-4 text-black">
                   {codeItem.title}
                 </h3>
-                <p className="text-neutral-600 font-light leading-relaxed text-base sm:text-lg">
+                <p className="text-black/70 font-light leading-relaxed text-base sm:text-lg">
                   {codeItem.description}
                 </p>
               </div>
 
               <div className="mt-8 pt-6 border-t border-black/10 flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-mono text-neutral-700 leading-snug">
+                <span className="text-xs sm:text-sm font-mono text-black/80 leading-snug">
                   {codeItem.guarantee}
                 </span>
               </div>
@@ -192,7 +184,7 @@ export default function AboutPage() {
               <h3 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-2">
                 Hichem Djouadi
               </h3>
-              <p className="text-neutral-500 font-mono uppercase tracking-widest text-xs">
+              <p className="text-black/50 font-mono uppercase tracking-widest text-xs">
                 Founder & Technical Lead
               </p>
             </motion.div>
@@ -202,7 +194,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15, duration: 0.6 }}
-              className="space-y-6 text-lg sm:text-xl text-neutral-700 font-light leading-relaxed"
+              className="space-y-6 text-lg sm:text-xl text-black/80 font-light leading-relaxed"
             >
               <p>
                 "I started Fleevo because local businesses were burning money on slow WordPress templates that took 5 seconds to load and did nothing to bring in sales."
@@ -225,7 +217,7 @@ export default function AboutPage() {
               <div className="text-3xl font-serif italic text-black font-medium">
                 H. Djouadi
               </div>
-              <span className="font-mono text-xs text-neutral-500 tracking-wider font-semibold">
+              <span className="font-mono text-xs text-black/50 tracking-wider font-semibold">
                 Direct Engineering Lead
               </span>
             </motion.div>
@@ -245,11 +237,11 @@ export default function AboutPage() {
         >
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight mb-8 leading-[0.95] text-white">
-              Ready to modernize <br className="hidden md:block" />
-              your business?
+              Ready to stop losing <br className="hidden md:block" />
+              customers to slow websites?
             </h2>
             <p className="text-lg sm:text-xl text-white/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              Message us on WhatsApp or book a 15-minute call. We'll give you honest advice, a realistic timeframe, and an exact quote within 24 hours.
+              Message us on WhatsApp or book a 15-minute call. We will review your current website, pinpoint where customers drop off, and give you an exact quote within 24 hours.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -280,7 +272,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-10 text-xs font-mono tracking-wider text-white/60">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
-                Zero-obligation advice
+                Zero-obligation audit
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-white/60" />

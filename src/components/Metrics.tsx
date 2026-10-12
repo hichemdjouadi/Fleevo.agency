@@ -20,7 +20,7 @@ const VECTORS: VectorItem[] = [
     tag: "METRIC 01",
     icon: Clock,
     direction: "down",
-    trend: "LEAD RESPONSE TIME",
+    trend: "Lead Response Speed",
     title: "14h Delay → Sub-60s Dispatch",
     before: "Prospects submit contact forms that sit in a shared inbox until the next business morning.",
     after: "Instant qualification routes high-value inquiries straight to sales reps via WhatsApp and SMS within 60 seconds."
@@ -30,7 +30,7 @@ const VECTORS: VectorItem[] = [
     tag: "METRIC 02",
     icon: Users,
     direction: "down",
-    trend: "TIRE-KICKER DISCOVERY CALLS",
+    trend: "Pre-Screened Intake",
     title: "Dead Leads → Pre-Screened Intent",
     before: "Founders spend hours on the phone with prospects who are just browsing or have no clear project.",
     after: "Multi-step intake screens for project requirements and timeline before calendar booking."
@@ -40,7 +40,7 @@ const VECTORS: VectorItem[] = [
     tag: "METRIC 03",
     icon: Zap,
     direction: "up",
-    trend: "PAGE CONVERSION RATE",
+    trend: "Sub-Second Mobile Conversion",
     title: "Bloated Load → Instant Mobile Speed",
     before: "Heavy WordPress themes take 4+ seconds to load, losing mobile visitors before the page even renders.",
     after: "Clean custom Next.js builds load in under 1 second, keeping visitors focused on the offer."
@@ -50,7 +50,7 @@ const VECTORS: VectorItem[] = [
     tag: "METRIC 04",
     icon: Shield,
     direction: "up",
-    trend: "AVERAGE DEAL & ORDER VALUE",
+    trend: "Deal Margin & Authority",
     title: "Price Discounts → Premium Authority",
     before: "Generic templates look cheap and invite fee negotiation, pushing you into discount wars against competitors.",
     after: "A clean, custom digital presence protects your pricing and establishes immediate trust."
@@ -64,7 +64,7 @@ export default function Metrics() {
       {/* Header */}
       <div className="flex flex-col xl:flex-row justify-between items-start mb-20 gap-8">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[0.95] text-black">
+          <h2 className="text-4xl md:text-6xl font-medium tracking-[-0.03em] leading-[0.95] text-black">
             Measurable shifts, <br className="hidden md:block" />
             not vanity statistics.
           </h2>
@@ -98,10 +98,10 @@ export default function Metrics() {
                     <IconComponent className="w-5 h-5 text-neutral-800" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono tracking-widest text-neutral-500 uppercase block font-medium">
+                    <span className="text-xs font-mono tracking-widest text-neutral-500 uppercase block font-medium">
                       {vector.tag}
                     </span>
-                    <span className="text-xs font-mono font-medium text-neutral-800 uppercase">
+                    <span className="text-xs font-mono font-medium text-neutral-800">
                       {vector.trend}
                     </span>
                   </div>
@@ -124,7 +124,7 @@ export default function Metrics() {
               {/* Before vs After comparison */}
               <div className="space-y-3 pt-6 border-t border-black/10 text-sm">
                 <div className="flex items-start gap-3">
-                  <span className="text-[10px] font-mono uppercase text-red-700 bg-red-50 px-2 py-0.5 rounded border border-red-200 shrink-0 mt-0.5">
+                  <span className="text-xs font-mono uppercase text-neutral-500 font-semibold shrink-0 mt-0.5 w-24">
                     BEFORE
                   </span>
                   <p className="text-neutral-500 font-light leading-relaxed">
@@ -132,7 +132,7 @@ export default function Metrics() {
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-[10px] font-mono uppercase text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 shrink-0 mt-0.5 font-semibold">
+                  <span className="text-xs font-mono uppercase text-black font-semibold shrink-0 mt-0.5 w-24">
                     WITH FLEEVO
                   </span>
                   <p className="text-neutral-900 font-normal leading-relaxed">
