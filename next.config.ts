@@ -4,8 +4,14 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
+  async redirects() {
+    return [
+      {
+        source: '/systems',
+        destination: '/services',
+        permanent: true,
+      },
+    ];
   },
 };
 

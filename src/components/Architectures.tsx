@@ -8,7 +8,7 @@ const StackCard = ({ index, children, gradientColor }: { index: number, children
   return (
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10%" }}
       transition={{ duration: 1, ease: "easeOut" }}
       className={`relative z-${index * 10} w-full rounded-[2.5rem] p-6 md:p-10 lg:p-12 bg-[#050505] border border-white/10 shadow-2xl flex flex-col lg:flex-row gap-8 lg:gap-12 items-center group overflow-hidden`}

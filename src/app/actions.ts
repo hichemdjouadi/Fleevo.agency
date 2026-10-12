@@ -10,7 +10,9 @@ const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
 const telegramChatId = process.env.TELEGRAM_CHAT_ID;
 const trelloKey = process.env.TRELLO_API_KEY;
 const trelloToken = process.env.TRELLO_TOKEN;
-const trelloListId = '697a36b5212fb7c1c35f5be4'; // "Leads" list on Design Light Work board
+const trelloListId = process.env.TRELLO_LIST_ID || '697a36b5212fb7c1c35f5be4';
+const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL || 'hichemdjouadi@gmail.com';
+const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'Fleevo <onboarding@resend.dev>';
 
 export async function submitAuditRequest(formData: {
   name: string;
@@ -34,7 +36,7 @@ export async function submitAuditRequest(formData: {
 
   try {
     // 1. Insert into Supabase
-    const { data: insertedLead, error: submitError } = await supabase
+    const { error: submitError } = await supabase
       .from('leads')
       .insert([
         { 
@@ -49,16 +51,17 @@ export async function submitAuditRequest(formData: {
 
     if (submitError) throw submitError;
 
-    // Run external notifications in parallel so the user doesn't wait
-    Promise.allSettled([
+    // Await all notification dispatches so serverless lambdas do not freeze prematurely
+    const dispatchResults = await Promise.allSettled([
       sendTelegramNotification(name, email, budget, interests, details),
       createTrelloCard(name, compiledNotes, email),
       sendResendEmail(name, email, budget, interests, details)
-    ]).then(results => {
-      // Log errors but don't block the UI
-      results.forEach(r => {
-        if (r.status === 'rejected') console.error('Notification failed:', r.reason);
-      });
+    ]);
+
+    dispatchResults.forEach((result, idx) => {
+      if (result.status === 'rejected') {
+        console.error(`Notification channel ${idx} failed:`, result.reason);
+      }
     });
 
     return { success: true };
@@ -97,11 +100,11 @@ async function sendResendEmail(name: string, email: string, budget: string, inte
   if (!process.env.RESEND_API_KEY) return;
   
   await resend.emails.send({
-    from: 'Acme <onboarding@resend.dev>', // Resend free tier requires this default sender
-    to: ['hichemdjouadi@gmail.com'], // Or the user's registered Gmail with Resend
+    from: resendFromEmail,
+    to: [notificationEmail],
     subject: `New Lead: ${name}`,
     html: `
-      <h2>New Audit Request</h2>
+      <h2>New Pipeline Teardown Request</h2>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Budget:</strong> ${budget}</p>

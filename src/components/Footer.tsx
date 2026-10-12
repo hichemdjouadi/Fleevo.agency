@@ -6,7 +6,7 @@ import { Globe, Mail, MessageSquare, Share2 } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="w-full bg-black text-white pt-24 pb-12 px-6 md:px-12">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-32">
+      <div className="max-w-[1400px] mx-auto flex flex-col gap-32">
         
         {/* Main Content */}
         <div className="flex flex-col lg:flex-row justify-between gap-16">
@@ -44,9 +44,7 @@ export default function Footer() {
           <div className="flex">
             <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm font-medium">
               <TransitionLink href="/services" className="hover:text-white/70 transition-colors">Services</TransitionLink>
-              
               <TransitionLink href="/work" className="hover:text-white/70 transition-colors">Projects</TransitionLink>
-              <TransitionLink href="/workflow" className="hover:text-white/70 transition-colors">Workflow</TransitionLink>
               <TransitionLink href="/about" className="hover:text-white/70 transition-colors">About</TransitionLink>
               <TransitionLink href="/contact" className="hover:text-white/70 transition-colors">Contacts</TransitionLink>
             </div>
@@ -57,24 +55,21 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-end md:items-center gap-8">
           <div className="flex items-center gap-4 text-[10px] text-white/60">
-            <TransitionLink href="#" className="hover:text-white font-medium transition-colors">Privacy Policy</TransitionLink>
+            <span className="text-white/60">Privacy & Terms Protected</span>
             <span>&copy; {new Date().getFullYear()} Fleevo</span>
           </div>
 
-          {/* Social Icons */}
+          {/* Contact & Social Links */}
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+            <a href="https://wa.me/213655934124" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
               <MessageSquare className="w-4 h-4 text-white" />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <Share2 className="w-4 h-4 text-white" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-              <Globe className="w-4 h-4 text-white" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+            <a href="mailto:contact@fleevo.com" aria-label="Email Fleevo" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
               <Mail className="w-4 h-4 text-white" />
             </a>
+            <TransitionLink href="/contact" aria-label="Contact Fleevo" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+              <Globe className="w-4 h-4 text-white" />
+            </TransitionLink>
           </div>
         </div>
 

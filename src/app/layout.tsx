@@ -4,17 +4,17 @@ import "./globals.css";
 
 const manrope = Manrope({ 
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-manrope",
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fleevo.com"),
-  title: "Fleevo | Global Digital Product Agency",
-  description: "We engineer autonomous profit engines for high-ticket service brands. Replacing slow, static brochures with Next.js & Supabase infrastructure.",
+  title: "Fleevo | Websites & Mobile Sales Engines",
+  description: "Fast, custom websites and direct WhatsApp ordering platforms for restaurants, storefronts, and service businesses. Delivered in weeks.",
   openGraph: {
-    title: "Fleevo | Global Digital Product Agency",
-    description: "We engineer autonomous profit engines for high-ticket service brands.",
+    title: "Fleevo | Websites & Mobile Sales Engines",
+    description: "Fast, custom websites and direct WhatsApp ordering platforms for restaurants, storefronts, and service businesses.",
     url: "https://fleevo.com",
     siteName: "Fleevo",
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fleevo Agency Architecture",
+        alt: "Fleevo Platforms & Sales Engines",
       }
     ],
     locale: "en_US",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fleevo | Global Digital Product Agency",
-    description: "We engineer autonomous profit engines for high-ticket service brands.",
+    title: "Fleevo | Websites & Mobile Sales Engines",
+    description: "Fast, custom websites and direct WhatsApp ordering platforms for restaurants, storefronts, and service businesses.",
     images: ["/opengraph-image.jpg"],
   },
 };
@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={manrope.variable} suppressHydrationWarning>
       <body className={`${manrope.variable} font-sans antialiased`} suppressHydrationWarning>
         {children}
         <CustomCursor />

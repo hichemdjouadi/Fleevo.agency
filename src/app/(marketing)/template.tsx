@@ -14,7 +14,7 @@ export default function Template({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("trigger-page-exit", handleExit);
   }, []);
 
-  const easeCurve = [0.76, 0, 0.24, 1];
+  const easeCurve: [number, number, number, number] = [0.76, 0, 0.24, 1];
   
   // If we are just loading the site for the first time, don't play the intro overlay 
   // because the Preloader will handle it. We can guess it's not the initial load if 

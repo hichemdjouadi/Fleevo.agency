@@ -6,20 +6,24 @@ import { Plus, X } from "lucide-react";
 
 const faqs = [
   {
-    question: "What separates Fleevo from standard web design agencies?",
-    answer: "Most agencies build static brochures. We build operational frameworks. We combine premium front-end design with battle-tested backend architecture to create systems that actively generate revenue and filter out time-wasters."
+    question: "What makes Fleevo different from a typical web agency?",
+    answer: "Most agencies build static digital brochures that dump form submissions into an unmonitored inbox. We build high-converting frontends wired directly into real-time sales pipelines. Your platform screens out unqualified tire-kickers, verifies contact details, and routes serious prospects straight to your team within 60 seconds."
   },
   {
-    question: "Do you work with startups?",
-    answer: "Yes. We work with established B2B firms and ambitious startups. We help early-stage companies look like premium market leaders on the front end, while building the backend infrastructure required to capture leads and close high-ticket deals."
+    question: "Who are your systems built for?",
+    answer: "We specialize in two core profiles: high-ticket service operators (medical clinics, consulting, advisory, B2B firms) who need to protect their calendar from bad leads; and high-yield transactional businesses (restaurants, retail, specialized commerce) that require sub-second mobile speed and frictionless order capture."
   },
   {
-    question: "How do the autonomous lead engines actually work?",
-    answer: "We replace standard contact forms with intelligent, progressive intake systems. When a user interacts, the system qualifies them in real-time, stores their data in a secure PostgreSQL database, and instantly routes high-value prospects directly to your sales team via webhook."
+    question: "What does the tech stack look like?",
+    answer: "We build on modern edge architecture: Next.js for fast mobile rendering, Tailwind CSS for custom responsive typography and layout, and Supabase for secure data storage. Everything integrates directly with your WhatsApp, phone, or email notifications."
   },
   {
-    question: "How much does a full deployment cost?",
-    answer: "We do not sell cheap templates. We build operational infrastructure. Because every business requires different integrations and custom workflows to stop their specific revenue bleed, we price based on the scope of the infrastructure required. Submit an audit request to receive a precise technical proposal."
+    question: "How long does a deployment take?",
+    answer: "A standard deployment runs between 2 to 4 weeks from initial blueprint to live launch. This includes full custom interface design, edge frontend development, database schema configuration, and automated pipeline testing."
+  },
+  {
+    question: "What happens during the 15-minute pipeline teardown?",
+    answer: "We review your current frontend and intake flow, pinpoint exactly where you are dropping qualified prospects or losing sales momentum, and present the specific architecture needed to fix it. No pressure, no generic sales pitch."
   }
 ];
 
@@ -27,40 +31,48 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-[#050505] text-white py-32 px-6 md:px-16 w-full">
-      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
+    <section className="py-24 md:py-36 px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black">
+      <div className="flex flex-col md:flex-row justify-between items-start gap-16">
         
         <div className="w-full md:w-1/3 md:sticky md:top-32">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">FAQ</h2>
-          <p className="text-lg text-white/60 font-medium">
-            Everything you need to know about our methodology, infrastructure, and deployment timelines.
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4 text-black">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-base md:text-lg text-neutral-600 font-light leading-relaxed">
+            Everything you need to know about our engineering standards, deployment timelines, and integration process.
           </p>
         </div>
 
-        <div className="w-full md:w-2/3 flex flex-col border-t border-white/10">
+        <div className="w-full md:w-2/3 flex flex-col border-t border-black/10">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-white/10">
+            <div key={index} className="border-b border-black/10">
               <button
+                id={`faq-btn-${index}`}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full py-8 flex justify-between items-center text-left group"
+                className="w-full py-8 flex justify-between items-center text-left group focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none rounded-lg px-2 -mx-2"
               >
-                <span className="text-2xl md:text-3xl font-medium tracking-tight group-hover:pl-2 transition-all duration-300">
+                <span className="text-xl md:text-2xl font-medium tracking-tight group-hover:text-black transition-colors text-neutral-900 pr-4">
                   {faq.question}
                 </span>
-                <span className="ml-8 flex-shrink-0 text-white/40 group-hover:text-white transition-colors">
-                  {openIndex === index ? <X className="w-6 h-6" /> : <Plus className="w-6 h-6" />}
+                <span className="ml-4 flex-shrink-0 text-neutral-400 group-hover:text-black transition-colors">
+                  {openIndex === index ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                 </span>
               </button>
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-btn-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-8 text-xl text-white/60 font-medium leading-relaxed max-w-2xl">
+                    <p className="pb-8 text-base md:text-lg text-neutral-600 font-light leading-relaxed max-w-2xl px-2">
                       {faq.answer}
                     </p>
                   </motion.div>
