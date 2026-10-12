@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor";
 
 const manrope = Manrope({ 
   subsets: ["latin"],
@@ -9,20 +10,20 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fleevy.com"),
-  title: "Fleevy | Websites & Mobile Sales Engines",
-  description: "Fast, custom websites and direct WhatsApp ordering platforms for restaurants, storefronts, and service businesses. Delivered in weeks.",
+  metadataBase: new URL("https://fleevy.agency"),
+  title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
+  description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads, video scripting guidance, and acquisition audits to predictably grow your client base.",
   openGraph: {
-    title: "Fleevy | Websites & Mobile Sales Engines",
-    description: "Fast, custom websites and direct WhatsApp ordering platforms for restaurants, storefronts, and service businesses.",
-    url: "https://fleevy.com",
+    title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
+    description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads and direct-response video direction.",
+    url: "https://fleevy.agency",
     siteName: "Fleevy",
     images: [
       {
         url: "/opengraph-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fleevy Platforms & Sales Engines",
+        alt: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
       }
     ],
     locale: "en_US",
@@ -30,13 +31,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fleevy | Websites & Mobile Sales Engines",
-    description: "Fast, custom websites and direct WhatsApp ordering platforms for restaurants, storefronts, and service businesses.",
+    title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
+    description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads and direct-response video direction.",
     images: ["/opengraph-image.jpg"],
   },
 };
-
-import CustomCursor from "@/components/CustomCursor";
 
 export default function RootLayout({
   children,

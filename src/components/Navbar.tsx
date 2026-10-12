@@ -51,7 +51,7 @@ export default function Navbar() {
             <TransitionLink 
               href="/" 
               onClick={() => setIsMobileMenuOpen(false)}
-              aria-label="Fleevo Home"
+              aria-label="Fleevy Home"
               className="block w-full h-full"
             >
               <Logo className={`w-full h-full transition-colors duration-300 ${isMobileMenuOpen ? "text-white" : "text-black"}`} />
@@ -163,8 +163,8 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)} 
               className={`mt-6 px-10 py-4 rounded-full text-base font-semibold transition-transform active:scale-95 shadow-2xl ${
                 pathname === '/contact'
-                  ? 'bg-emerald-500 text-white font-bold'
-                  : 'bg-white text-black'
+                  ? 'bg-neutral-200 text-black font-bold ring-2 ring-white'
+                  : 'bg-white text-black hover:bg-neutral-200'
               }`}
             >
               Contact
@@ -175,4 +175,3 @@ export default function Navbar() {
     </>
   );
 }
-

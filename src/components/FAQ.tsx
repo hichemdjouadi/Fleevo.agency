@@ -6,24 +6,24 @@ import { Plus, X } from "lucide-react";
 
 const faqs = [
   {
-    question: "What makes Fleevo different from a typical web agency?",
-    answer: "Most agencies build slow templates that look like everyone else and take three months to deliver. We build custom, sub-second mobile platforms that send orders and qualified inquiries straight to your WhatsApp in seconds. Custom code, delivered in 14 days."
+    question: "What makes Fleevy different from a traditional agency?",
+    answer: "Most agencies build decorative websites that fail to generate revenue. We engineer customer acquisition systems: custom high-speed web platforms wired directly with automated bot intake, targeted Meta ads, and acquisition audits to convert traffic into clients."
   },
   {
-    question: "How does the 50/50 milestone guarantee work?",
-    answer: "You pay a 50% deposit to initiate custom design and engineering. You only pay the remaining 50% after you test and approve the live working platform on your own smartphone before public launch. Zero surprise invoices."
+    question: "How does automated bot intake work in practice?",
+    answer: "When prospective clients or buyers request an appointment or place an order, our automated WhatsApp or Telegram bot captures their details, pre-qualifies their requirements, and dispatches the verified lead directly to your team in under 30 seconds."
   },
   {
-    question: "How long does it take from start to launch?",
-    answer: "A standard platform launch takes 10 to 14 days. This includes custom mobile design, catalog configuration, WhatsApp order integration, and testing on local 4G connections."
+    question: "Do we own all codebase assets and customer data?",
+    answer: "Yes, 100%. You own your codebase, database architecture, and custom domain with zero recurring platform take-rates or proprietary software locks."
   },
   {
-    question: "Do I need technical skills to manage my platform?",
-    answer: "None. When a customer orders or books an appointment, a complete formatted ticket lands directly in your WhatsApp or phone. You manage your business the same way you already do every day."
+    question: "What is the typical engineering timeline?",
+    answer: "Core acquisition platform deployments typically complete in two to four weeks depending on architectural scope, followed by bot intake verification, courier sync, and launch testing."
   },
   {
-    question: "What happens on the 15-minute call?",
-    answer: "We review your business, understand what products or services you sell, and show you the exact mobile layout and WhatsApp flow that will work best for your buyers. Honest advice, zero pressure, and a fixed quote in 24 hours."
+    question: "What is covered in our initial strategic consultation?",
+    answer: "We examine your current customer acquisition flow, diagnose pipeline friction, and map out the exact digital infrastructure required to convert attention into verified revenue."
   }
 ];
 
@@ -39,7 +39,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-base md:text-lg text-black/70 font-light leading-relaxed">
-            Clear answers about our 14-day turnaround, WhatsApp integration, and the 50/50 guarantee.
+            Direct answers on our acquisition architecture, bot intake workflows, and engineering methodology.
           </p>
         </div>
 
