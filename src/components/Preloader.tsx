@@ -101,16 +101,17 @@ export default function Preloader() {
         {/* Word Sequence */}
         <div className="overflow-hidden flex items-center justify-center">
           <AnimatePresence mode="wait">
-            <motion.h1
+            <motion.div
               key={index}
               variants={slideUp}
               initial="initial"
               animate="enter"
               exit="exit"
+              aria-live="polite"
               className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-white"
             >
               {words[index]}
-            </motion.h1>
+            </motion.div>
           </AnimatePresence>
         </div>
       </motion.div>

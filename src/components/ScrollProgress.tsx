@@ -12,7 +12,10 @@ export default function ScrollProgress() {
   });
 
   return (
-    <div className="fixed top-0 right-0 w-[2px] h-screen bg-white/10 z-[100] mix-blend-difference hidden md:block">
+    <div
+      aria-hidden="true"
+      className="fixed top-0 right-0 w-[2px] h-screen bg-white/10 z-[100] mix-blend-difference hidden md:block pointer-events-none"
+    >
       <motion.div
         className="w-full bg-white origin-top"
         style={{ scaleY, height: "100%" }}

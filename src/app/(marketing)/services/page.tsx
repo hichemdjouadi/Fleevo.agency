@@ -93,22 +93,26 @@ export default function ServicesPage() {
     {
       step: "01",
       title: "Audit & Strategy",
-      desc: "We review your current funnel, spot leaks, and map the build."
+      desc: "We review your current funnel, spot leaks, and map the build.",
+      deliverable: "Funnel Audit Brief"
     },
     {
       step: "02",
       title: "Fixed Blueprint",
-      desc: "You get a fixed scope and clear delivery timeline within 24 hours."
+      desc: "You get a fixed scope and clear delivery timeline within 24 hours.",
+      deliverable: "Fixed-Scope Roadmap"
     },
     {
       step: "03",
       title: "Build & Bot Setup",
-      desc: "We code the platform, connect WhatsApp or Telegram bots, and link couriers."
+      desc: "We code the platform, connect WhatsApp or Telegram bots, and link couriers.",
+      deliverable: "Staging Platform & Bots"
     },
     {
       step: "04",
       title: "Test & Launch",
-      desc: "We test speed on mobile networks, set up ad pixels, and launch."
+      desc: "We test speed on mobile networks, set up ad pixels, and launch.",
+      deliverable: "Live Production Handover"
     }
   ];
 
@@ -121,7 +125,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-[72px] font-medium tracking-[-0.035em] leading-[0.95] max-w-4xl text-black"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-[72px] font-medium tracking-[-0.035em] leading-[0.95] max-w-4xl text-black text-balance"
         >
           Customer acquisition systems{" "}
           <span className="font-serif italic font-light">&amp; digital infrastructure.</span>
@@ -131,7 +135,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 text-lg md:text-2xl text-neutral-600 font-light max-w-2xl leading-relaxed"
+          className="mt-8 text-lg md:text-2xl text-neutral-600 font-light max-w-2xl leading-relaxed text-balance"
         >
           High-speed websites, online stores, and ad systems that bring you paying clients.
         </motion.p>
@@ -167,7 +171,7 @@ export default function ServicesPage() {
       <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] mb-4">
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] mb-4 text-balance">
               Customer Acquisition Platforms{" "}
               <span className="font-serif italic font-light">&amp; Automated Intake.</span>
             </h2>
@@ -175,7 +179,7 @@ export default function ServicesPage() {
               Pillar 01 · The Conversion Engine
             </div>
           </div>
-          <p className="text-base md:text-lg text-neutral-600 font-light max-w-md leading-relaxed">
+          <p className="text-base md:text-lg text-neutral-600 font-light max-w-md leading-relaxed text-pretty">
             Websites, online stores, and custom portals built to convert traffic.
           </p>
         </div>
@@ -187,27 +191,24 @@ export default function ServicesPage() {
               className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
             >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-6">
-                  <span className="text-xs font-mono font-semibold text-neutral-500">
-                    System {service.num}
-                  </span>
-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium">
-                    {service.badge}
-                  </span>
-                </div>
-
-                <h3 className="text-2xl font-medium tracking-tight text-black mb-3">
+                <h3 className="text-2xl font-medium tracking-tight text-black mb-3 text-balance">
+                  <span className="font-mono text-sm text-neutral-500 mr-2">{service.num}. </span>
                   {service.title}
                 </h3>
 
-                <p className="text-neutral-600 font-light text-base leading-relaxed">
+                <p className="text-neutral-600 font-light text-base leading-relaxed text-pretty">
                   {service.desc}
                 </p>
               </div>
 
               <div className="pt-6 border-t border-black/10">
-                <div className="text-xs font-mono font-semibold text-black mb-3">
-                  Included
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="text-xs font-mono font-semibold text-black">
+                    Included
+                  </span>
+                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium">
+                    {service.badge}
+                  </span>
                 </div>
                 <div className="space-y-2">
                   {service.deliverables.map((deliv, idx) => (
@@ -228,7 +229,7 @@ export default function ServicesPage() {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
             <div className="max-w-3xl">
-              <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-white leading-[1.02] mb-4">
+              <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-white leading-[1.02] mb-4 text-balance">
                 Demand Generation{" "}
                 <span className="font-serif italic font-light">&amp; Acquisition Scaling.</span>
               </h2>
@@ -236,7 +237,7 @@ export default function ServicesPage() {
                 Pillar 02 · The Scaling Engine
               </div>
             </div>
-            <p className="text-base md:text-lg text-white/75 font-light max-w-md leading-relaxed">
+            <p className="text-base md:text-lg text-white/75 font-light max-w-md leading-relaxed text-pretty">
               Targeted ads, video scripts, and conversion audits to scale your buyer flow.
             </p>
           </div>
@@ -248,27 +249,24 @@ export default function ServicesPage() {
                 className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-6">
-                    <span className="text-xs font-mono font-semibold text-white/60">
-                      Scaling {service.num}
-                    </span>
-                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/10 text-white font-medium">
-                      {service.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl font-medium tracking-tight text-white mb-3">
+                  <h3 className="text-2xl font-medium tracking-tight text-white mb-3 text-balance">
+                    <span className="font-mono text-sm text-white/55 mr-2">{service.num}. </span>
                     {service.title}
                   </h3>
 
-                  <p className="text-white/75 font-light text-base leading-relaxed">
+                  <p className="text-white/75 font-light text-base leading-relaxed text-pretty">
                     {service.desc}
                   </p>
                 </div>
 
                 <div className="pt-6 border-t border-white/15">
-                  <div className="text-xs font-mono font-semibold text-white mb-3">
-                    Included
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="text-xs font-mono font-semibold text-white">
+                      Included
+                    </span>
+                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/10 text-white font-medium">
+                      {service.badge}
+                    </span>
                   </div>
                   <div className="space-y-2">
                     {service.deliverables.map((deliv, idx) => (
@@ -288,11 +286,11 @@ export default function ServicesPage() {
       {/* 4. METHODOLOGY & COLLABORATION PROCESS */}
       <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.02]">
+          <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] text-balance">
             How we work.{" "}
             <span className="font-serif italic font-light">Four clear steps.</span>
           </h2>
-          <p className="text-sm md:text-base text-neutral-600 max-w-sm font-light leading-relaxed">
+          <p className="text-sm md:text-base text-neutral-600 max-w-sm font-light leading-relaxed text-pretty">
             From initial audit to live launch in four structured milestones.
           </p>
         </div>
@@ -304,20 +302,18 @@ export default function ServicesPage() {
               className="py-8 sm:px-6 first:sm:pl-0 last:sm:pr-0 flex flex-col justify-between gap-8"
             >
               <div>
-                <div className="text-xs font-mono font-bold text-neutral-500 mb-4">
-                  Step {m.step}
-                </div>
-                <h3 className="text-xl font-medium text-black mb-2">
+                <h3 className="text-xl font-medium text-black mb-2 text-balance">
+                  <span className="font-mono text-sm text-neutral-500 mr-2">{m.step}. </span>
                   {m.title}
                 </h3>
-                <p className="text-sm text-neutral-600 font-light leading-relaxed">
+                <p className="text-sm text-neutral-600 font-light leading-relaxed text-pretty">
                   {m.desc}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-black/10 flex items-center gap-2 text-xs font-mono text-neutral-600">
-                <ShieldCheck className="w-4 h-4 text-black" />
-                <span>Verified Milestone</span>
+              <div className="pt-4 border-t border-black/10 flex items-center gap-2 text-xs font-mono text-neutral-700">
+                <ShieldCheck className="w-4 h-4 text-black shrink-0" />
+                <span>{m.deliverable}</span>
               </div>
             </div>
           ))}
@@ -327,10 +323,10 @@ export default function ServicesPage() {
       {/* 5. CINEMATIC OUTRO */}
       <section className="relative w-full text-white py-36 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden border-t border-white/10 bg-black">
         <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] leading-[0.98] mb-6">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] leading-[0.98] mb-6 text-balance">
             Ready to build an acquisition engine that scales?
           </h2>
-          <p className="text-lg md:text-2xl text-white/75 font-light max-w-xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-2xl text-white/75 font-light max-w-xl mx-auto mb-12 leading-relaxed text-balance">
             Book a 15-minute call. We send a clear build plan within 24 hours.
           </p>
 

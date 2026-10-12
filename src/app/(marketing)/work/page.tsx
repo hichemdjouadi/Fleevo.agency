@@ -104,26 +104,32 @@ const PROJECTS: Project[] = [
       }
     ],
     renderVisual: () => (
-      <div className="w-full h-full p-6 sm:p-12 flex flex-col justify-between gap-4 sm:gap-8 relative text-white font-mono select-none" data-cursor="Preview">
-        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-white/75">
+      <div className="w-full h-full p-8 sm:p-14 flex flex-col justify-between gap-8 relative text-white select-none bg-[#0a0a0e] overflow-hidden" data-cursor="Preview">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/75">
           <span className="flex items-center gap-2 text-white font-medium">
-            <Dumbbell className="w-4 h-4 text-white/70 shrink-0" /> Adréna Intake Terminal
+            <Dumbbell className="w-4 h-4 text-white/75 shrink-0" /> Adréna Intake Terminal
           </span>
-          <span>Private Preview · Launching Soon</span>
+          <span className="px-3.5 py-1 rounded-full bg-white/10 text-white font-medium">Private Preview · Launching Soon</span>
         </div>
-        <div className="my-auto max-w-2xl mx-auto w-full space-y-3 sm:space-y-4">
-          <div className="flex items-center justify-between gap-4 text-xs sm:text-sm">
-            <span className="text-white/65">Membership Intake</span>
-            <span className="text-white font-medium text-right">Executive VIP Athletic Pass</span>
-          </div>
-          <div className="flex items-center justify-between gap-4 text-xs sm:text-sm text-white">
-            <span className="text-white/75">Automated Bot Qualification</span>
-            <span className="font-semibold text-white text-right">Direct Director Alert</span>
+        <div className="relative z-10 my-auto max-w-3xl py-6">
+          <div className="text-3xl sm:text-5xl md:text-6xl font-serif italic font-light text-white tracking-tight leading-[1.04] text-balance">
+            Executive Membership &amp; Automated Athlete Qualification.
           </div>
         </div>
-        <div className="flex items-center justify-between gap-2 text-xs text-white/60">
-          <span>Staging Verification Complete</span>
-          <span className="text-white font-medium">Public Launch Scheduled</span>
+        <div className="relative z-10 pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono">
+          <div>
+            <span className="text-white/55 block mb-1">Membership Tier</span>
+            <span className="text-white font-medium text-sm">Executive VIP Athletic Pass</span>
+          </div>
+          <div>
+            <span className="text-white/55 block mb-1">Automated Intake</span>
+            <span className="text-white font-medium text-sm">Instant WhatsApp Bot Screening</span>
+          </div>
+          <div className="sm:text-right">
+            <span className="text-white/55 block mb-1">Deployment State</span>
+            <span className="text-white font-medium text-sm">Staging Verification Complete</span>
+          </div>
         </div>
       </div>
     )
@@ -152,26 +158,32 @@ const PROJECTS: Project[] = [
       }
     ],
     renderVisual: () => (
-      <div className="w-full h-full p-6 sm:p-12 flex flex-col justify-between gap-4 sm:gap-8 relative text-white font-mono select-none" data-cursor="Preview">
-        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-white/75">
+      <div className="w-full h-full p-8 sm:p-14 flex flex-col justify-between gap-8 relative text-white select-none bg-[#0a0a0e] overflow-hidden" data-cursor="Preview">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/75">
           <span className="flex items-center gap-2 text-white font-medium">
-            <BookOpen className="w-4 h-4 text-white/70 shrink-0" /> Scholarly Distribution Pipeline
+            <BookOpen className="w-4 h-4 text-white/75 shrink-0" /> Scholarly Distribution Pipeline
           </span>
-          <span>Private Preview · Launching Soon</span>
+          <span className="px-3.5 py-1 rounded-full bg-white/10 text-white font-medium">Private Preview · Launching Soon</span>
         </div>
-        <div className="my-auto max-w-2xl mx-auto w-full space-y-3 sm:space-y-4">
-          <div className="flex items-center justify-between gap-4 text-xs sm:text-sm">
-            <span className="text-white/65">Catalog Index</span>
-            <span className="text-white font-medium text-right">Scholarly Editions &amp; Treatises</span>
-          </div>
-          <div className="flex items-center justify-between gap-4 text-xs sm:text-sm text-white">
-            <span className="text-white/75">Order Verification Hook</span>
-            <span className="font-semibold text-white text-right">Automated Warehouse Sync</span>
+        <div className="relative z-10 my-auto max-w-3xl py-6">
+          <div className="text-3xl sm:text-5xl md:text-6xl font-serif italic font-light text-white tracking-tight leading-[1.04] text-balance">
+            Scholarly Editions &amp; Direct Courier Fulfillment.
           </div>
         </div>
-        <div className="flex items-center justify-between gap-2 text-xs text-white/60">
-          <span>Courier Integration Synced</span>
-          <span className="text-white font-medium">Public Launch Scheduled</span>
+        <div className="relative z-10 pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono">
+          <div>
+            <span className="text-white/55 block mb-1">Catalog Index</span>
+            <span className="text-white font-medium text-sm">Scholarly Editions &amp; Treatises</span>
+          </div>
+          <div>
+            <span className="text-white/55 block mb-1">Order Pipeline</span>
+            <span className="text-white font-medium text-sm">Automated Warehouse &amp; Courier Sync</span>
+          </div>
+          <div className="sm:text-right">
+            <span className="text-white/55 block mb-1">Deployment State</span>
+            <span className="text-white font-medium text-sm">Courier Integration Synced</span>
+          </div>
         </div>
       </div>
     )
@@ -199,11 +211,11 @@ export default function Work() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-[1400px] mx-auto w-full relative z-10"
         >
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[88px] font-medium tracking-[-0.035em] leading-[0.92] mb-8 text-black">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[88px] font-medium tracking-[-0.035em] leading-[0.92] mb-8 text-black text-balance">
             Selected <span className="font-serif italic font-light">Deployments.</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed tracking-tight mb-12">
+          <p className="text-xl md:text-2xl text-neutral-600 max-w-xl font-light leading-relaxed tracking-tight mb-12 text-balance">
             Live platforms and private systems built to turn visitors into buyers.
           </p>
 
@@ -269,10 +281,10 @@ export default function Work() {
       {/* 3. CTA SECTION */}
       <section className="py-36 md:py-48 px-6 text-center relative overflow-hidden border-t border-white/10 bg-black text-white">
         <div className="relative z-10 max-w-[840px] mx-auto flex flex-col items-center">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] text-white mb-6 leading-[0.96]">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] text-white mb-6 leading-[0.96] text-balance">
             Ready to build an acquisition engine that scales?
           </h2>
-          <p className="text-lg md:text-xl text-white/75 mb-12 max-w-xl font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-white/75 mb-12 max-w-xl font-light leading-relaxed text-balance">
             Book a 15-minute call to review your setup and plan your build.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 z-30 w-full sm:w-auto">
@@ -316,7 +328,7 @@ function ProjectShowcase({ project, index }: { project: Project; index: number }
       {/* Header bar — h2 leads with generous top breathing room, tight binding to meta below */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-8">
         <div>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white mb-3">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white mb-3 text-balance">
             {project.title}
           </h2>
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-white/65">
@@ -354,7 +366,7 @@ function ProjectShowcase({ project, index }: { project: Project; index: number }
       </div>
 
       {/* Visual Canvas (Single container, no image hover transform, no duplicate hover circle) */}
-      <div className={`relative w-full overflow-hidden rounded-[28px] md:rounded-[36px] bg-[#111116] mb-10 ${project.image ? "aspect-[16/10] md:aspect-[16/9]" : "min-h-[240px] md:aspect-[21/9] flex"}`}>
+      <div className={`relative w-full overflow-hidden rounded-[28px] md:rounded-[36px] bg-[#111116] mb-10 ${project.image ? "aspect-[16/10] md:aspect-[16/9]" : "min-h-[300px] md:aspect-[21/9] flex"}`}>
         {project.image ? (
           <a
             href={project.link}
@@ -378,23 +390,22 @@ function ProjectShowcase({ project, index }: { project: Project; index: number }
         )}
       </div>
 
-      {/* Directional Benefits Ledger (Open Architectural Hairline Grid — Zero Nested Cards) */}
+      {/* Directional Benefits Ledger — h3 leads directly at the top of each column */}
       <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/15 border-y border-white/15">
         {project.benefits.map((b, idx) => (
           <div key={idx} className="py-8 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-mono font-medium text-white/75 mb-3">
-                <span className="font-bold text-white text-sm">{b.direction === "up" ? "↑" : "↓"}</span>
-                <span>{b.type}</span>
-              </div>
-
-              <h3 className="text-xl md:text-2xl font-medium tracking-tight text-white mb-2">
+              <h3 className="text-xl md:text-2xl font-medium tracking-tight text-white mb-2 text-balance">
+                <span className="font-mono font-bold text-white mr-2">{b.direction === "up" ? "↑" : "↓"}</span>
                 {b.headline}
               </h3>
 
-              <p className="text-sm md:text-base text-white/70 font-light leading-relaxed max-w-[60ch]">
+              <p className="text-sm md:text-base text-white/70 font-light leading-relaxed max-w-[60ch] text-pretty">
                 {b.detail}
               </p>
+            </div>
+            <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/60">
+              {b.type}
             </div>
           </div>
         ))}

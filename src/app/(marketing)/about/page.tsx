@@ -13,19 +13,22 @@ export default function AboutPage() {
       num: "01",
       badge: "Custom Architecture",
       title: "Craft Over Templates",
-      desc: "Every layout and conversion flow is built from scratch for your business model."
+      desc: "Every layout and conversion flow is built from scratch for your business model.",
+      benchmark: "100% Bespoke Codebase"
     },
     {
       num: "02",
       badge: "Mobile Velocity",
       title: "Performance as Luxury",
-      desc: "Edge-compiled pages load in under 800ms on mobile 4G networks with zero lag."
+      desc: "Edge-compiled pages load in under 800ms on mobile 4G networks with zero lag.",
+      benchmark: "< 800ms Mobile Load"
     },
     {
       num: "03",
       badge: "Production Longevity",
       title: "Enduring Codebases",
-      desc: "Built on strict TypeScript, Next.js, and PostgreSQL so nothing breaks during updates."
+      desc: "Built on strict TypeScript, Next.js, and PostgreSQL so nothing breaks during updates.",
+      benchmark: "Strict TypeScript & RLS"
     }
   ];
 
@@ -79,31 +82,28 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-5xl"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium tracking-[-0.035em] leading-[1.02] text-black mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium tracking-[-0.035em] leading-[1.02] text-black mb-8 text-balance">
             We exist because most agencies build{" "}
             <span className="font-serif italic font-light">ornaments without acquisition plumbing.</span>
           </h1>
 
-          <p className="text-lg sm:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-12">
+          <p className="text-lg sm:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-12 text-pretty">
             We replace slow brochure websites with fast acquisition platforms, automated bot intake, and targeted Meta ads.
           </p>
 
-          {/* Credibility Hairline Ledger */}
+          {/* Credibility Hairline Ledger — headline leads at the top of each column */}
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-black/15 border-y border-black/15">
             <div className="py-6 sm:px-6 first:sm:pl-0 last:sm:pr-0">
-              <div className="text-xs font-mono text-neutral-500">Speed Standard</div>
-              <div className="text-xl font-medium text-black mt-1">Sub-800ms Edge Loading</div>
-              <div className="text-xs text-neutral-600 mt-1">Engineered for mobile 4G networks</div>
+              <div className="text-xl font-medium text-black">Sub-800ms Edge Loading</div>
+              <div className="text-sm text-neutral-600 mt-1">Engineered for mobile 4G networks</div>
             </div>
             <div className="py-6 sm:px-6 first:sm:pl-0 last:sm:pr-0">
-              <div className="text-xs font-mono text-neutral-500">Margin Protection</div>
-              <div className="text-xl font-medium text-black mt-1">0% Third-Party Cut</div>
-              <div className="text-xs text-neutral-600 mt-1">Direct customer ordering &amp; bot dispatch</div>
+              <div className="text-xl font-medium text-black">0% Third-Party Cut</div>
+              <div className="text-sm text-neutral-600 mt-1">Direct customer ordering &amp; bot dispatch</div>
             </div>
             <div className="py-6 sm:px-6 first:sm:pl-0 last:sm:pr-0">
-              <div className="text-xs font-mono text-neutral-500">Asset Sovereignty</div>
-              <div className="text-xl font-medium text-black mt-1">100% Codebase Ownership</div>
-              <div className="text-xs text-neutral-600 mt-1">Zero proprietary platform lock-in</div>
+              <div className="text-xl font-medium text-black">100% Codebase Ownership</div>
+              <div className="text-sm text-neutral-600 mt-1">Zero proprietary platform lock-in</div>
             </div>
           </div>
         </motion.div>
@@ -113,12 +113,12 @@ export default function AboutPage() {
       <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04]">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] text-balance">
               Three architectural standards.{" "}
               <span className="font-serif italic font-light">Zero compromise.</span>
             </h2>
           </div>
-          <p className="text-lg text-neutral-600 font-light max-w-sm leading-relaxed">
+          <p className="text-lg text-neutral-600 font-light max-w-sm leading-relaxed text-pretty">
             Non-negotiable standards that keep every build fast and reliable.
           </p>
         </div>
@@ -130,23 +130,19 @@ export default function AboutPage() {
               className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
             >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-6">
-                  <span className="text-xs font-mono font-bold text-neutral-500">
-                    Standard {std.num}
-                  </span>
-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium">
-                    {std.badge}
-                  </span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-medium text-black tracking-tight mb-3">
+                <h3 className="text-2xl sm:text-3xl font-medium text-black tracking-tight mb-3 text-balance">
+                  <span className="font-mono text-sm text-neutral-500 mr-2">{std.num}. </span>
                   {std.title}
                 </h3>
-                <p className="text-base text-neutral-600 font-light leading-relaxed">
+                <p className="text-base text-neutral-600 font-light leading-relaxed text-pretty">
                   {std.desc}
                 </p>
               </div>
-              <div className="pt-6 border-t border-black/10 text-xs font-mono text-neutral-500">
-                Verified Production Requirement
+              <div className="pt-6 border-t border-black/10 flex items-center justify-between gap-2 text-xs font-mono">
+                <span className="text-neutral-600">{std.benchmark}</span>
+                <span className="px-3 py-1 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium">
+                  {std.badge}
+                </span>
               </div>
             </div>
           ))}
@@ -158,11 +154,11 @@ export default function AboutPage() {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.04]">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.04] text-balance">
                 Production-grade <span className="font-serif italic font-light">stack.</span>
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-white/75 font-light max-w-sm leading-relaxed">
+            <p className="text-base sm:text-lg text-white/75 font-light max-w-sm leading-relaxed text-pretty">
               Modern technologies built for speed and security.
             </p>
           </div>
@@ -174,16 +170,16 @@ export default function AboutPage() {
                 className="p-8 sm:p-10 border-r border-b border-white/15 flex flex-col justify-between gap-6"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-6 text-xs font-mono text-white/60">
-                    <span>{item.num}</span>
-                    <span>{item.category}</span>
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-medium text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white mb-2 text-balance">
+                    <span className="font-mono text-sm text-white/55 mr-2">{item.num}. </span>
                     {item.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed">
+                  <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed text-pretty">
                     {item.detail}
                   </p>
+                </div>
+                <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/60">
+                  {item.category}
                 </div>
               </div>
             ))}
@@ -215,11 +211,11 @@ export default function AboutPage() {
 
           {/* Executive Statement Column */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] mb-8">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] mb-8 text-balance">
               Direct engineering <span className="font-serif italic font-light">accountability.</span>
             </h2>
 
-            <div className="space-y-6 text-base sm:text-lg text-neutral-700 font-light leading-relaxed max-w-[58ch]">
+            <div className="space-y-6 text-base sm:text-lg text-neutral-700 font-light leading-relaxed max-w-[58ch] text-pretty">
               <p>
                 Fleevy connects clean product design with automated sales systems. You work directly with principal engineering from day one, with no middlemen or account managers.
               </p>
@@ -254,11 +250,11 @@ export default function AboutPage() {
       {/* 5. OUTRO COLLABORATION GATEWAY */}
       <section className="py-28 md:py-40 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] mb-8 leading-[0.96] text-white">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] mb-8 leading-[0.96] text-white text-balance">
             Let&apos;s engineer your next <br className="hidden md:block" />
             acquisition platform.
           </h2>
-          <p className="text-lg sm:text-xl text-white/75 mb-12 max-w-xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/75 mb-12 max-w-lg mx-auto font-light leading-relaxed text-balance">
             Book a 15-minute call or send your request. We reply within 24 hours.
           </p>
 

@@ -63,26 +63,28 @@ const PROJECTS: ProjectItem[] = [
     link: "/contact?subject=Private+Preview+-+Adrena+Club",
     hasImage: false,
     renderVisual: () => (
-      <div className="w-full h-full p-6 sm:p-8 flex flex-col justify-between relative text-white font-mono select-none">
-        <div className="flex items-center justify-between gap-2 text-xs text-white/75">
+      <div className="w-full h-full p-6 sm:p-10 flex flex-col justify-between relative text-white select-none bg-[#050505] overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+        <div className="relative z-10 flex items-center justify-between gap-2 text-xs font-mono text-white/75">
           <span className="flex items-center gap-2 text-white font-medium">
-            <Dumbbell className="w-4 h-4 text-white/70 shrink-0" /> Adréna Private Gateway
+            <Dumbbell className="w-4 h-4 text-white/75 shrink-0" /> Adréna Private Gateway
           </span>
-          <span>Private Preview</span>
+          <span className="px-3 py-1 rounded-full bg-white/10 text-white">Private Preview</span>
         </div>
-        <div className="my-auto space-y-3 py-4">
-          <div className="flex items-center justify-between gap-4 text-xs">
-            <span className="text-white/60">Target Tier</span>
-            <span className="text-white font-medium text-right">Executive Membership Pass</span>
-          </div>
-          <div className="flex items-center justify-between gap-4 text-xs text-white">
-            <span className="text-white/70">Intake Pipeline</span>
-            <span className="font-semibold text-white text-right">Automated Bot Qualification</span>
+        <div className="relative z-10 my-auto py-4">
+          <div className="text-2xl sm:text-3xl font-serif italic font-light text-white tracking-tight leading-snug text-balance">
+            Executive Membership &amp; Automated Athlete Qualification
           </div>
         </div>
-        <div className="flex items-center justify-between gap-2 text-xs text-white/60">
-          <span>Staging Verification Complete</span>
-          <span className="text-white font-medium">Launching Soon</span>
+        <div className="relative z-10 pt-4 border-t border-white/15 grid grid-cols-2 gap-4 text-xs font-mono">
+          <div>
+            <span className="text-white/55 block">Intake Pipeline</span>
+            <span className="text-white font-medium">WhatsApp Bot Screening</span>
+          </div>
+          <div className="text-right">
+            <span className="text-white/55 block">Release Status</span>
+            <span className="text-white font-medium">Staging Verified</span>
+          </div>
         </div>
       </div>
     )
@@ -100,26 +102,28 @@ const PROJECTS: ProjectItem[] = [
     link: "/contact?subject=Private+Preview+-+Tawheed+Bookstore",
     hasImage: false,
     renderVisual: () => (
-      <div className="w-full h-full p-6 sm:p-8 flex flex-col justify-between relative text-white font-mono select-none">
-        <div className="flex items-center justify-between gap-2 text-xs text-white/75">
+      <div className="w-full h-full p-6 sm:p-10 flex flex-col justify-between relative text-white select-none bg-[#050505] overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+        <div className="relative z-10 flex items-center justify-between gap-2 text-xs font-mono text-white/75">
           <span className="flex items-center gap-2 text-white font-medium">
-            <BookOpen className="w-4 h-4 text-white/70 shrink-0" /> Distribution Pipeline
+            <BookOpen className="w-4 h-4 text-white/75 shrink-0" /> Distribution Pipeline
           </span>
-          <span>Private Preview</span>
+          <span className="px-3 py-1 rounded-full bg-white/10 text-white">Private Preview</span>
         </div>
-        <div className="my-auto space-y-3 py-4">
-          <div className="flex items-center justify-between gap-4 text-xs">
-            <span className="text-white/60">Catalog Index</span>
-            <span className="text-white font-medium text-right">Scholarly Editions &amp; Manuscripts</span>
-          </div>
-          <div className="flex items-center justify-between gap-4 text-xs text-white">
-            <span className="text-white/70">Order Pipeline</span>
-            <span className="font-semibold text-white text-right">Direct Courier Verification</span>
+        <div className="relative z-10 my-auto py-4">
+          <div className="text-2xl sm:text-3xl font-serif italic font-light text-white tracking-tight leading-snug text-balance">
+            Scholarly Editions &amp; Direct Courier Fulfillment
           </div>
         </div>
-        <div className="flex items-center justify-between gap-2 text-xs text-white/60">
-          <span>Fulfillment Hooks Active</span>
-          <span className="text-white font-medium">Launching Soon</span>
+        <div className="relative z-10 pt-4 border-t border-white/15 grid grid-cols-2 gap-4 text-xs font-mono">
+          <div>
+            <span className="text-white/55 block">Order Pipeline</span>
+            <span className="text-white font-medium">58-Wilayas Courier Sync</span>
+          </div>
+          <div className="text-right">
+            <span className="text-white/55 block">Release Status</span>
+            <span className="text-white font-medium">Staging Verified</span>
+          </div>
         </div>
       </div>
     )
@@ -182,25 +186,24 @@ function ShowcaseItem({ project }: { project: ProjectItem }) {
           )}
         </div>
 
-        {/* Status & Niche Meta Row */}
-        <div className="flex flex-wrap items-center justify-between gap-2 mb-3 text-xs font-mono text-neutral-600">
-          <span>{project.niche}</span>
-          <span className="px-3 py-1 rounded-full bg-[#f4f4f5] text-black font-medium">
-            {project.statusBadge}
-          </span>
-        </div>
-
-        {/* Header Details */}
+        {/* Header Details — h3 leads directly below the visual stage without an eyebrow above it */}
         <div className="flex items-start justify-between gap-4 mb-3">
-          <h3 className="text-2xl md:text-3xl font-medium text-black tracking-tight group-hover:text-neutral-700 transition-colors">
-            {project.title}
-          </h3>
+          <div>
+            <h3 className="text-2xl md:text-3xl font-medium text-black tracking-tight group-hover:text-neutral-700 transition-colors text-balance">
+              {project.title}
+            </h3>
+            <div className="mt-1.5 flex flex-wrap items-center gap-2 text-xs font-mono text-neutral-500">
+              <span>{project.niche}</span>
+              <span>·</span>
+              <span className="text-black font-medium">{project.statusBadge}</span>
+            </div>
+          </div>
           <div className="w-10 h-10 rounded-full border border-black/15 flex items-center justify-center bg-white group-hover:bg-black group-hover:text-white transition-all shrink-0">
             <ArrowUpRight className="w-4 h-4 text-black group-hover:text-white transition-colors" />
           </div>
         </div>
 
-        <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed mb-6 max-w-[65ch]">
+        <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed mb-6 max-w-[65ch] text-pretty">
           {project.summary}
         </p>
       </div>

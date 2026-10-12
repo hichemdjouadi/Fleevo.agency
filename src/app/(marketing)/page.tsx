@@ -92,7 +92,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[0.94] text-black w-full max-w-5xl"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[0.94] text-black w-full max-w-5xl text-balance"
           >
             We engineer customer acquisition systems{" "}
             <span className="font-serif italic font-light">&amp; digital infrastructure.</span>
@@ -102,7 +102,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 md:mt-8 text-lg md:text-2xl text-black/75 font-light max-w-[680px] leading-relaxed"
+            className="mt-6 md:mt-8 text-lg md:text-2xl text-black/75 font-light max-w-[640px] leading-relaxed text-pretty"
           >
             Fast websites, online stores, and web apps wired with instant WhatsApp bots and targeted Meta ads.
           </motion.p>
@@ -167,10 +167,10 @@ export default function Home() {
       {/* 2. THE 2 PILLARS OF ACQUISITION ARCHITECTURE (OPEN EDITORIAL CANVAS) */}
       <section className="py-28 md:py-40 px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] max-w-2xl">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] max-w-2xl text-balance">
             The 2-Pillar Acquisition <span className="font-serif italic font-light">Architecture.</span>
           </h2>
-          <p className="text-base sm:text-lg text-black/70 font-light max-w-sm leading-relaxed">
+          <p className="text-base sm:text-lg text-black/70 font-light max-w-sm leading-relaxed text-pretty">
             Two connected engines that attract buyers, automate intake, and close sales.
           </p>
         </div>
@@ -179,14 +179,14 @@ export default function Home() {
         <div className="pt-12 border-t border-black/15 mb-24">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
-              <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-black mb-3">
+              <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-black mb-3 text-balance">
                 Customer Acquisition Platforms &amp; Bot Intake
               </h3>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4f4f5] text-xs font-mono font-semibold text-black">
                 <span>Pillar 01 · The Conversion Engine</span>
               </div>
             </div>
-            <p className="text-sm md:text-base text-neutral-600 font-light max-w-sm leading-relaxed">
+            <p className="text-sm md:text-base text-neutral-600 font-light max-w-sm leading-relaxed text-pretty">
               Websites, online stores, and portals built to turn visitors into buyers.
             </p>
           </div>
@@ -198,11 +198,11 @@ export default function Home() {
                 className="py-8 md:py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
               >
                 <div>
-                  <h4 className="text-xl md:text-2xl font-medium text-black tracking-tight mb-3">
+                  <h4 className="text-xl md:text-2xl font-medium text-black tracking-tight mb-3 text-balance">
                     <span className="font-mono text-sm text-neutral-500 mr-2">{item.num}. </span>
                     {item.title}
                   </h4>
-                  <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed">
+                  <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed text-pretty">
                     {item.desc}
                   </p>
                 </div>
@@ -225,14 +225,14 @@ export default function Home() {
         <div className="p-8 sm:p-12 md:p-16 rounded-[2.5rem] bg-[#050505] text-white">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
-              <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white mb-3">
+              <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white mb-3 text-balance">
                 Demand Generation &amp; Acquisition Scaling
               </h3>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono font-semibold text-white">
                 <span>Pillar 02 · The Scaling Engine</span>
               </div>
             </div>
-            <p className="text-sm md:text-base text-white/70 font-light max-w-sm leading-relaxed">
+            <p className="text-sm md:text-base text-white/70 font-light max-w-sm leading-relaxed text-pretty">
               Targeted ads, video scripts, and conversion audits to fill your pipeline.
             </p>
           </div>
@@ -244,11 +244,11 @@ export default function Home() {
                 className="py-8 md:py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
               >
                 <div>
-                  <h4 className="text-xl md:text-2xl font-medium text-white tracking-tight mb-3">
+                  <h4 className="text-xl md:text-2xl font-medium text-white tracking-tight mb-3 text-balance">
                     <span className="font-mono text-sm text-white/60 mr-2">{item.num}. </span>
                     {item.title}
                   </h4>
-                  <p className="text-sm md:text-base text-white/75 font-light leading-relaxed">
+                  <p className="text-sm md:text-base text-white/75 font-light leading-relaxed text-pretty">
                     {item.desc}
                   </p>
                 </div>
@@ -272,11 +272,11 @@ export default function Home() {
       <section className="bg-white text-black py-28 md:py-40 border-t border-black/10">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20 gap-8">
-            <h2 className="text-4xl md:text-7xl font-medium text-black tracking-[-0.03em] leading-[0.94]">
+            <h2 className="text-4xl md:text-7xl font-medium text-black tracking-[-0.03em] leading-[0.94] text-balance">
               Selected <span className="font-serif italic font-light">deployments.</span>
             </h2>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <p className="text-lg text-black/70 font-light max-w-sm leading-relaxed">
+              <p className="text-lg text-black/70 font-light max-w-sm leading-relaxed text-pretty">
                 Live platforms built to convert traffic from day one.
               </p>
               <TransitionLink
@@ -296,12 +296,12 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-[-0.03em] leading-[1.04] text-white">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-[-0.03em] leading-[1.04] text-white text-balance">
                 How our systems turn attention{" "}
                 <span className="font-serif italic font-light">into revenue.</span>
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-white/70 font-light max-w-sm leading-relaxed">
+            <p className="text-base sm:text-lg text-white/70 font-light max-w-sm leading-relaxed text-pretty">
               One connected flow from first ad impression to verified sale.
             </p>
           </div>
@@ -313,20 +313,19 @@ export default function Home() {
                 className="py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-5">
-                    <span className="text-xs font-mono font-semibold text-white/60">
-                      Step {item.num}
-                    </span>
-                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/10 text-white font-medium">
-                      {item.phase}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-3">
+                  <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-3 text-balance">
+                    <span className="font-mono text-sm text-white/55 mr-2">{item.num}. </span>
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base text-white/75 font-light leading-relaxed">
+                  <p className="text-sm md:text-base text-white/75 font-light leading-relaxed text-pretty">
                     {item.desc}
                   </p>
+                </div>
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/70">
+                  <span>Phase {item.num}</span>
+                  <span className="px-3 py-1 rounded-full bg-white/10 text-white font-medium">
+                    {item.phase}
+                  </span>
                 </div>
               </div>
             ))}
@@ -354,7 +353,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] leading-[0.95] mb-6"
+            className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] leading-[0.95] mb-6 text-balance"
           >
             Ready to build an acquisition <br className="hidden sm:block" />
             engine that scales?
@@ -365,7 +364,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-2xl text-white/75 font-light max-w-xl mx-auto mb-12 leading-relaxed"
+            className="text-lg md:text-2xl text-white/75 font-light max-w-xl mx-auto mb-12 leading-relaxed text-pretty"
           >
             Book a 15-minute call. We review your setup and map out a clear build plan.
           </motion.p>
