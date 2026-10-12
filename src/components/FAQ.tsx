@@ -7,23 +7,23 @@ import { Plus, X } from "lucide-react";
 const faqs = [
   {
     question: "What makes Fleevo different from a typical web agency?",
-    answer: "Most agencies build static digital brochures that dump form submissions into an unmonitored inbox. We build high-converting frontends wired directly into real-time sales pipelines. Your platform screens out unqualified tire-kickers, verifies contact details, and routes serious prospects straight to your team within 60 seconds."
+    answer: "Most agencies build slow templates that look like everyone else and take three months to deliver. We build custom, sub-second mobile platforms that send orders and qualified inquiries straight to your WhatsApp in seconds. Custom code, delivered in 14 days."
   },
   {
-    question: "Who are your systems built for?",
-    answer: "We specialize in two core profiles: high-ticket service operators (medical clinics, consulting, advisory, B2B firms) who need to protect their calendar from bad leads; and high-yield transactional businesses (restaurants, retail, specialized commerce) that require sub-second mobile speed and frictionless order capture."
+    question: "How does the 50/50 milestone guarantee work?",
+    answer: "You pay a 50% deposit to initiate custom design and engineering. You only pay the remaining 50% after you test and approve the live working platform on your own smartphone before public launch. Zero surprise invoices."
   },
   {
-    question: "What does the tech stack look like?",
-    answer: "We build on modern edge architecture: Next.js for fast mobile rendering, Tailwind CSS for custom responsive typography and layout, and Supabase for secure data storage. Everything integrates directly with your WhatsApp, phone, or email notifications."
+    question: "How long does it take from start to launch?",
+    answer: "A standard platform launch takes 10 to 14 days. This includes custom mobile design, catalog configuration, WhatsApp order integration, and testing on local 4G connections."
   },
   {
-    question: "How long does a deployment take?",
-    answer: "A standard deployment runs between 2 to 4 weeks from initial blueprint to live launch. This includes full custom interface design, edge frontend development, database schema configuration, and automated pipeline testing."
+    question: "Do I need technical skills to manage my platform?",
+    answer: "None. When a customer orders or books an appointment, a complete formatted ticket lands directly in your WhatsApp or phone. You manage your business the same way you already do every day."
   },
   {
-    question: "What happens during the 15-minute pipeline teardown?",
-    answer: "We review your current frontend and intake flow, pinpoint exactly where you are dropping qualified prospects or losing sales momentum, and present the specific architecture needed to fix it. No pressure, no generic sales pitch."
+    question: "What happens on the 15-minute call?",
+    answer: "We review your business, understand what products or services you sell, and show you the exact mobile layout and WhatsApp flow that will work best for your buyers. Honest advice, zero pressure, and a fixed quote in 24 hours."
   }
 ];
 
@@ -38,8 +38,8 @@ export default function FAQ() {
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4 text-black">
             Frequently Asked Questions
           </h2>
-          <p className="text-base md:text-lg text-neutral-600 font-light leading-relaxed">
-            Everything you need to know about our engineering standards, deployment timelines, and integration process.
+          <p className="text-base md:text-lg text-black/70 font-light leading-relaxed">
+            Clear answers about our 14-day turnaround, WhatsApp integration, and the 50/50 guarantee.
           </p>
         </div>
 
@@ -53,10 +53,10 @@ export default function FAQ() {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full py-8 flex justify-between items-center text-left group focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none rounded-lg px-2 -mx-2"
               >
-                <span className="text-xl md:text-2xl font-medium tracking-tight group-hover:text-black transition-colors text-neutral-900 pr-4">
+                <span className="text-xl md:text-2xl font-medium tracking-tight group-hover:text-black transition-colors text-black pr-4">
                   {faq.question}
                 </span>
-                <span className="ml-4 flex-shrink-0 text-neutral-400 group-hover:text-black transition-colors">
+                <span className="ml-4 flex-shrink-0 text-black/40 group-hover:text-black transition-colors">
                   {openIndex === index ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                 </span>
               </button>
@@ -72,7 +72,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-8 text-base md:text-lg text-neutral-600 font-light leading-relaxed max-w-2xl px-2">
+                    <p className="pb-8 text-base md:text-lg text-black/70 font-light leading-relaxed max-w-2xl px-2">
                       {faq.answer}
                     </p>
                   </motion.div>

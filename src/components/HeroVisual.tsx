@@ -83,7 +83,7 @@ const PROJECTS: ShowcaseProject[] = [
     id: "gym",
     tabLabel: "Adréna Club",
     client: "Adréna Athletics Club",
-    url: "adrena-club.staging.fleevo.dz",
+    url: "adrena-club.staging.fleevy.dz",
     liveUrl: "/contact?subject=VIP+Gym+Early+Access",
     isStaging: true,
     notification: {

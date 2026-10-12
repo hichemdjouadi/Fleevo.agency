@@ -10,7 +10,7 @@ interface DeviceFrameProps {
 }
 
 export default function DeviceFrame({
-  url = "fleevo.agency",
+  url = "fleevy.agency",
   statusBadge = "4G · <50ms",
   children,
   className = ""

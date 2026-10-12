@@ -1,247 +1,426 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ChevronDown, CheckCircle2, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { 
+  ArrowRight, 
+  MessageCircle, 
+  CheckCircle2, 
+  XCircle, 
+  Zap, 
+  ShieldCheck, 
+  Terminal, 
+  Smartphone, 
+  Layers, 
+  Clock, 
+  Database,
+  PhoneCall
+} from "lucide-react";
 import Image from "next/image";
 import TransitionLink from "@/components/TransitionLink";
 import Footer from "@/components/Footer";
-import { useRef } from "react";
 import Magnetic from "@/components/Magnetic";
-import ArchitecturalEngine from "@/components/ArchitecturalEngine";
-
-const OPERATING_CODES = [
-  {
-    code: "01",
-    title: "Profit Over Pixels",
-    subtitle: "Built to Convert",
-    description:
-      "Aesthetics only matter when they make your customers buy or book. We do not design for agency awards; we build clear platforms that turn visitors into paying clients.",
-    guarantee: "Every layout and action is engineered around conversion math, not vanity."
-  },
-  {
-    code: "02",
-    title: "Time is the Ultimate Currency",
-    subtitle: "Automating the Manual Grind",
-    description:
-      "Waiting hours for an email reply loses clients. We wire orders and consultation requests directly into your WhatsApp in seconds, so you never lose high-intent buyers or waste time on manual tracking.",
-    guarantee: "Instant lead routing to your phone with zero manual data entry."
-  },
-  {
-    code: "03",
-    title: "Friction is the Enemy",
-    subtitle: "Sub-Second Edge Speed",
-    description:
-      "Most business websites take 4 to 5 seconds to load on local mobile networks, losing half their visitors. We build custom Next.js code that renders in under a second so customers never bounce.",
-    guarantee: "Sub-second mobile speed with zero heavy template bloat."
-  },
-  {
-    code: "04",
-    title: "Authority by Design",
-    subtitle: "Premium Market Leadership",
-    description:
-      "Looking like a generic template forces you to discount your fees. We craft sharp, custom typography and editorial layouts that make your brand stand out as the obvious leader in your market.",
-    guarantee: "Undisputed visual authority that justifies high-ticket pricing."
-  }
-];
 
 export default function AboutPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  const heroY = useTransform(scrollYProgress, [0, 0.4], ["0%", "20%"]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
-
   return (
-    <main ref={containerRef} className="bg-white text-black min-h-screen selection:bg-black selection:text-white">
+    <main className="bg-white text-black min-h-screen selection:bg-black selection:text-white">
       
-      {/* 1. HERO - THE MANIFESTO */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center px-6 md:px-12 max-w-[1400px] mx-auto pt-32 pb-20">
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 max-w-5xl">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-[0.95] text-black"
-          >
-            Digital platforms <br className="hidden sm:inline"/>
-            <span className="font-serif italic font-light">that bring in revenue.</span>
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 15 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="mt-8 text-lg sm:text-2xl text-black/70 max-w-2xl font-light leading-relaxed"
-          >
-            We are a boutique design and engineering studio based in Algiers. We replace slow, outdated websites with fast mobile storefronts and WhatsApp ordering systems that work.
-          </motion.p>
-        </motion.div>
-        
+      {/* 1. THE MANIFESTO HERO */}
+      <section className="relative w-full pt-36 md:pt-48 pb-20 px-6 md:px-12 max-w-[1400px] mx-auto">
         <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="pt-16 flex items-center gap-3 text-black/50 uppercase text-xs font-mono tracking-[0.2em]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-5xl"
         >
-          <motion.div
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronDown className="w-4 h-4 text-black" />
-          </motion.div>
-          Scroll to explore standards
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-mono text-neutral-800 font-medium mb-8">
+            <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+            <span>THE FLEEVY DOCTRINE</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-[0.96] text-black mb-8">
+            We exist because most web agencies build ornaments that never earn a dinar.
+          </h1>
+
+          <p className="text-lg sm:text-2xl text-neutral-600 max-w-3xl font-light leading-relaxed mb-12">
+            Traditional agencies sell pretty templates that look clean in a portfolio but take five seconds to load on local phone connections and dump inquiries into an unmonitored inbox. Fleevy engineers the opposite: sub-second mobile platforms wired directly into WhatsApp order dispatch and automated database pipelines.
+          </p>
+
+          {/* Quick Credibility Strip */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-black/10">
+            <div className="p-4 rounded-2xl bg-neutral-50 border border-black/5">
+              <div className="text-xs font-mono text-neutral-500 uppercase">Speed Standard</div>
+              <div className="text-xl font-medium text-black mt-1">&lt; 800ms Edge Loading</div>
+              <div className="text-xs text-neutral-500 mt-0.5">Tested on Algerian mobile 4G</div>
+            </div>
+            <div className="p-4 rounded-2xl bg-neutral-50 border border-black/5">
+              <div className="text-xs font-mono text-neutral-500 uppercase">Margin Protection</div>
+              <div className="text-xl font-medium text-emerald-700 mt-1">0% Third-Party Cut</div>
+              <div className="text-xs text-neutral-500 mt-0.5">Direct WhatsApp & Yalidine dispatch</div>
+            </div>
+            <div className="p-4 rounded-2xl bg-neutral-50 border border-black/5">
+              <div className="text-xs font-mono text-neutral-500 uppercase">Accountability</div>
+              <div className="text-xl font-medium text-black mt-1">Direct Engineering Lead</div>
+              <div className="text-xs text-neutral-500 mt-0.5">Zero account manager middlemen</div>
+            </div>
+          </div>
         </motion.div>
       </section>
 
-      {/* 2. THE BLUEPRINT VISUAL */}
-      <ArchitecturalEngine />
-
-      {/* 3. OPERATING CODES */}
-      <section className="py-28 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10 text-black">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-6">
+      {/* 2. THE CONTRAST ENGINE (CONVENTIONAL TRAP VS FLEEVY STANDARD) */}
+      <section className="py-24 md:py-32 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[0.95] text-black">
-              The Four <br />
-              <span className="text-black/40 italic font-light">Operating Codes.</span>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04]">
+              The conventional agency trap vs. The Fleevy standard.
             </h2>
           </div>
-          <p className="text-base md:text-lg text-black/70 max-w-md font-light leading-relaxed">
-            Strict standards governing every system we deploy. Built to protect your customer experience and ensure every visitor turns into a buyer.
+          <p className="text-lg text-neutral-600 font-light max-w-md leading-relaxed">
+            Why local businesses burn time and money on standard web agencies, and how our engineering pipeline fixes it.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {OPERATING_CODES.map((codeItem) => (
-            <motion.div 
-              key={codeItem.code}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-5%" }}
-              transition={{ duration: 0.6 }}
-              className="border border-black/10 rounded-[3rem] p-8 sm:p-12 bg-white flex flex-col justify-between hover:border-black transition-colors"
-            >
-              <div>
-                <div className="flex items-center justify-between pb-6 border-b border-black/10 mb-8">
-                  <span className="font-mono text-sm tracking-[0.2em] font-bold text-black/40">
-                    CODE {codeItem.code}
-                  </span>
-                  <span className="font-mono text-xs uppercase tracking-wider text-black/60 font-semibold">
-                    {codeItem.subtitle}
-                  </span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          {/* Left Column: The Conventional Agency Trap */}
+          <div className="lg:col-span-6 rounded-[2.5rem] bg-neutral-50 border border-black/10 p-8 sm:p-12 flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100/70 text-xs font-mono text-red-800 font-semibold mb-6">
+                <span className="w-2 h-2 rounded-full bg-red-600" />
+                <span>THE CONVENTIONAL AGENCY MODEL</span>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-medium text-black tracking-tight mb-6">
+                Slow templates, lost leads, and middleman delays.
+              </h3>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <XCircle className="w-5 h-5 text-red-600 shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-base font-medium text-black">Bloated 5-Second Load Times</h4>
+                    <p className="text-sm text-neutral-600 font-light leading-relaxed mt-1">
+                      Heavy WordPress themes loaded with 35 plugins that freeze on mobile phones, losing half your potential buyers before the page finishes loading.
+                    </p>
+                  </div>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-medium tracking-tight mb-4 text-black">
-                  {codeItem.title}
-                </h3>
-                <p className="text-black/70 font-light leading-relaxed text-base sm:text-lg">
-                  {codeItem.description}
-                </p>
+                <div className="flex items-start gap-4">
+                  <XCircle className="w-5 h-5 text-red-600 shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-base font-medium text-black">Unmonitored Form Inboxes</h4>
+                    <p className="text-sm text-neutral-600 font-light leading-relaxed mt-1">
+                      Contact inquiries dumped into forgotten email accounts, leaving warm leads waiting 48 hours until they have already called your competitor.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <XCircle className="w-5 h-5 text-red-600 shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-base font-medium text-black">The 25% Delivery App Tax</h4>
+                    <p className="text-sm text-neutral-600 font-light leading-relaxed mt-1">
+                      Restaurants and retail stores bleeding a quarter of their revenue to delivery marketplaces because their website has no direct ordering pipeline.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <XCircle className="w-5 h-5 text-red-600 shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-base font-medium text-black">Junior Intern Delegation</h4>
+                    <p className="text-sm text-neutral-600 font-light leading-relaxed mt-1">
+                      You negotiate with a senior sales rep, only to have your actual website handed off to junior interns learning how to code on your invoice.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-black/10 text-xs font-mono text-neutral-500">
+              Result: High upfront cost, zero measurable sales volume.
+            </div>
+          </div>
+
+          {/* Right Column: The Fleevy Engineering Standard */}
+          <div className="lg:col-span-6 rounded-[2.5rem] bg-neutral-950 text-white border border-white/10 p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 font-semibold mb-6">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span>THE FLEEVY ENGINEERING STANDARD</span>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-black/10 flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-mono text-black/80 leading-snug">
-                  {codeItem.guarantee}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. THE FOUNDER (EDITORIAL & ACCOUNTABILITY) */}
-      <section className="py-28 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10 text-black">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-1/2 relative aspect-[3/4] rounded-[3rem] overflow-hidden group border border-black/10"
-          >
-            <div className="absolute inset-0 bg-black/5 z-10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
-            <Image 
-              src="/founder-real.jpg" 
-              alt="Hichem Djouadi - Founder & Technical Architect" 
-              fill 
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-              className="object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 ease-in-out"
-            />
-          </motion.div>
-
-          <div className="w-full lg:w-1/2 flex flex-col gap-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-2">
-                Hichem Djouadi
+              <h3 className="text-2xl sm:text-3xl font-medium text-white tracking-tight mb-6">
+                Sub-second code, direct WhatsApp dispatch, 100% margin.
               </h3>
-              <p className="text-black/50 font-mono uppercase tracking-widest text-xs">
-                Founder & Technical Lead
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15, duration: 0.6 }}
-              className="space-y-6 text-lg sm:text-xl text-black/80 font-light leading-relaxed"
-            >
-              <p>
-                "I started Fleevo because local businesses were burning money on slow WordPress templates that took 5 seconds to load and did nothing to bring in sales."
-              </p>
-              <p>
-                We build custom, modern platforms with zero bloat. Every project connects directly to where your customers actually are—whether that's an instant mobile search or direct WhatsApp ordering.
-              </p>
-              <p className="text-black font-medium italic border-l-2 border-black pl-4">
-                If the platform does not help you get more orders or clients, it has no reason to exist.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25, duration: 0.6 }}
-              className="pt-6 flex items-center justify-between border-t border-black/10"
-            >
-              <div className="text-3xl font-serif italic text-black font-medium">
-                H. Djouadi
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-base font-medium text-white">Sub-800ms Mobile Performance</h4>
+                    <p className="text-sm text-neutral-400 font-light leading-relaxed mt-1">
+                      Hand-authored Next.js code compiled for the edge. Pages render instantaneously on Algerian mobile networks, keeping buyers engaged.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-base font-medium text-white">Direct WhatsApp Dispatch</h4>
+                    <p className="text-sm text-neutral-400 font-light leading-relaxed mt-1">
+                      Inquiries, reservations, and orders land straight on your phone in under 5 seconds, letting you close buyers while their intent is hot.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-base font-medium text-white">Zero Marketplace Commissions</h4>
+                    <p className="text-sm text-neutral-400 font-light leading-relaxed mt-1">
+                      Direct mobile checkout linked to Yalidine cash-on-delivery tracking. You keep 100% of every order with zero platform fees.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-base font-medium text-white">Single Point of Accountability</h4>
+                    <p className="text-sm text-neutral-400 font-light leading-relaxed mt-1">
+                      Every database schema, animation curve, and ad funnel is engineered and verified by Hichem Djouadi directly. No middlemen.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <span className="font-mono text-xs text-black/50 tracking-wider font-semibold">
-                Direct Engineering Lead
-              </span>
-            </motion.div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-emerald-400">
+              Result: Faster customer orders, retained margins, and predictable revenue.
+            </div>
           </div>
 
         </div>
       </section>
 
-      {/* 5. THE CHALLENGE (CTA & REASSURANCE) */}
-      <section className="py-28 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto text-center border-t border-black/10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="bg-black border border-black rounded-[3rem] p-10 sm:p-16 md:p-24 relative overflow-hidden text-white"
-        >
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight mb-8 leading-[0.95] text-white">
+      {/* 3. THREE ARCHITECTURAL PILLARS (CONSOLIDATED & AUTHORITATIVE) */}
+      <section className="py-24 md:py-32 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04]">
+              Three architectural standards. <br />
+              Zero compromise.
+            </h2>
+          </div>
+          <p className="text-lg text-neutral-600 font-light max-w-md leading-relaxed">
+            Every platform we build adheres to three core engineering rules that ensure your business stays fast and commercially dominant.
+          </p>
+        </div>
+
+        {/* Tier 1: Asymmetric Split (7 cols / 5 cols) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+          
+          {/* Pillar 01: Speed is Revenue */}
+          <div className="lg:col-span-7 rounded-[2.5rem] bg-neutral-50 border border-black/10 p-8 sm:p-12 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 text-xs font-mono text-neutral-800 font-semibold">
+                  <span>PILLAR 01 · EDGE INFRASTRUCTURE</span>
+                </div>
+                <div className="w-10 h-10 rounded-2xl bg-black text-white flex items-center justify-center shrink-0">
+                  <Zap className="w-5 h-5 text-emerald-400" />
+                </div>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black tracking-tight mb-4">
+                Speed is revenue, not decoration.
+              </h3>
+
+              <p className="text-base sm:text-lg text-neutral-600 font-light leading-relaxed mb-8 max-w-xl">
+                Every additional second of load time cuts mobile conversion rates by 10%. We never use generic page builders or heavy WordPress templates. We author clean Next.js code compiled for the edge so your site loads before your buyer thinks about leaving.
+              </p>
+            </div>
+
+            {/* Visual Specimen: Speed Telemetry */}
+            <div className="rounded-2xl bg-white border border-black/10 p-5 shadow-sm font-mono text-xs">
+              <div className="flex items-center justify-between pb-3 border-b border-black/5">
+                <div className="flex items-center gap-2 text-neutral-800 font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>LOCAL NETWORK BENCHMARK</span>
+                </div>
+                <span className="text-emerald-700 font-semibold">0.72s VERIFIED</span>
+              </div>
+              <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="bg-neutral-50 p-2.5 rounded-xl border border-black/5">
+                  <div className="text-[10px] text-neutral-400 uppercase">Core Web Vitals</div>
+                  <div className="font-semibold text-neutral-900 mt-0.5">100 / 100 Score</div>
+                </div>
+                <div className="bg-neutral-50 p-2.5 rounded-xl border border-black/5">
+                  <div className="text-[10px] text-neutral-400 uppercase">Mobile Network</div>
+                  <div className="font-semibold text-neutral-900 mt-0.5">Algerian 4G Edge</div>
+                </div>
+                <div className="bg-neutral-50 p-2.5 rounded-xl border border-black/5">
+                  <div className="text-[10px] text-neutral-400 uppercase">Asset Bloat</div>
+                  <div className="font-semibold text-emerald-700 mt-0.5">0 KB Unused Code</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pillar 02: Eliminate Middleman Tax */}
+          <div className="lg:col-span-5 rounded-[2.5rem] bg-neutral-950 text-white border border-white/10 p-8 sm:p-12 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-xs font-mono text-neutral-300 font-semibold">
+                  <span>PILLAR 02 · DIRECT PIPELINE</span>
+                </div>
+                <div className="w-10 h-10 rounded-2xl bg-white/10 border border-white/10 text-white flex items-center justify-center shrink-0">
+                  <PhoneCall className="w-5 h-5 text-emerald-400" />
+                </div>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-medium text-white tracking-tight mb-4">
+                Eliminate the middleman tax.
+              </h3>
+
+              <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed mb-8">
+                Third-party delivery apps take 20% to 25% from every single sale. We route customer orders straight into your WhatsApp kitchen or order desk, complete with customer details and Yalidine delivery options.
+              </p>
+            </div>
+
+            {/* Visual Specimen: Dispatch Ticket */}
+            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 font-mono text-xs space-y-2.5">
+              <div className="flex items-center justify-between text-neutral-400 pb-2 border-b border-white/10">
+                <span>Direct WhatsApp Route</span>
+                <span className="text-emerald-400 font-semibold">0% Commission Cut</span>
+              </div>
+              <div className="flex items-center justify-between text-neutral-300">
+                <span>Notification Latency</span>
+                <span className="text-white font-medium">&lt; 3 Seconds</span>
+              </div>
+              <div className="flex items-center justify-between text-neutral-300">
+                <span>Fulfillment Method</span>
+                <span className="text-white font-medium">Yalidine COD Sync</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Tier 2: Pillar 03 (Full-Width 12 cols) */}
+        <div className="rounded-[2.5rem] bg-neutral-900 text-white border border-white/10 p-8 sm:p-12 md:p-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 font-semibold mb-6">
+                <span>PILLAR 03 · PRODUCTION BACKEND</span>
+              </div>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white tracking-tight leading-[1.08] mb-4">
+                Architecture that endures.
+              </h3>
+              <p className="text-base text-neutral-300 font-light leading-relaxed mb-6">
+                No third-party plugins that break when WordPress updates. We build custom frontends backed by Supabase PostgreSQL databases with strict row-level security, instant queries, and automatic data retention.
+              </p>
+              <div className="flex items-center gap-6 text-xs font-mono text-neutral-400">
+                <span>Postgres · Auth</span>
+                <span>Row-Level Security</span>
+                <span>Automated Webhooks</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                <div className="text-neutral-400 mb-1">DATA INTEGRITY</div>
+                <div className="text-lg font-medium text-white">Zero Data Loss</div>
+                <div className="text-[11px] text-neutral-400 mt-2">Every inquiry and order saved directly in secure cloud databases.</div>
+              </div>
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                <div className="text-neutral-400 mb-1">OPERATIONAL UPTIME</div>
+                <div className="text-lg font-medium text-white">99.9% Reliable</div>
+                <div className="text-[11px] text-neutral-400 mt-2">Serverless edge functions that scale automatically without maintenance downtime.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* 4. LETTER FROM THE BUILDER (FOUNDER EDITORIAL & ACCOUNTABILITY) */}
+      <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          
+          {/* Portrait Column */}
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden border border-black/10 shadow-lg bg-neutral-100">
+              <Image 
+                src="/founder-real.jpg" 
+                alt="Hichem Djouadi - Founder & Technical Lead at Fleevy" 
+                fill 
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+                className="object-cover grayscale contrast-125"
+              />
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/80 backdrop-blur-md text-white border border-white/10 font-mono text-xs">
+                <div className="font-semibold text-white">Hichem Djouadi</div>
+                <div className="text-neutral-400 text-[11px] mt-0.5">Founder & Lead Software Engineer</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Letter Column */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] mb-8">
+              Letter from the builder.
+            </h2>
+
+            <div className="space-y-6 text-base sm:text-lg text-neutral-700 font-light leading-relaxed">
+              <p>
+                "I started Fleevy because I got tired of seeing ambitious local businesses get burned by web agencies. They would pay thousands of dinars for a pretty WordPress theme that took five seconds to load, broke three months later, and never captured a single paying client."
+              </p>
+              <p>
+                "At Fleevy, you never deal with account managers or junior project coordinators playing telephone. When you hire us, you work directly with me. I design the architecture, write the code, and inspect every deployment before it goes live."
+              </p>
+              <p className="text-black font-normal italic border-l-2 border-black pl-4">
+                "Our philosophy is simple: If your digital platform does not help you capture qualified leads, close orders, or protect your margins, it has no reason to exist. That is the standard behind every deployment we build."
+              </p>
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-black/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div>
+                <div className="text-3xl font-serif italic text-black font-medium">
+                  H. Djouadi
+                </div>
+                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider block mt-1">
+                  Direct Engineering Lead · Fleevy
+                </span>
+              </div>
+
+              <a
+                href="https://wa.me/213655934124?text=Hi%20Hichem,%20I'd%20like%20to%20discuss%20a%20website%20project%20for%20my%20business."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono uppercase tracking-wider font-semibold shrink-0"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <span>Direct WhatsApp Contact</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. THE FINAL ACTION (OUTRO CTA) */}
+      <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
+        <div className="bg-neutral-950 border border-white/10 rounded-[3rem] p-10 sm:p-16 md:p-24 text-center text-white relative overflow-hidden">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight mb-8 leading-[0.96] text-white">
               Ready to stop losing <br className="hidden md:block" />
               customers to slow websites?
             </h2>
-            <p className="text-lg sm:text-xl text-white/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              Message us on WhatsApp or book a 15-minute call. We will review your current website, pinpoint where customers drop off, and give you an exact quote within 24 hours.
+            <p className="text-lg sm:text-xl text-neutral-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+              Message us on WhatsApp or book a 15-minute call. We will review your current website, identify where you are losing buyers, and give you an exact quote within 24 hours.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -250,7 +429,7 @@ export default function AboutPage() {
                   href="https://wa.me/213655934124?text=Hi%20Hichem,%20I'd%20like%20to%20discuss%20a%20website%20project%20for%20my%20business."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4.5 sm:py-5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-base sm:text-lg transition-all shadow-xl"
+                  className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-base sm:text-lg transition-all shadow-xl"
                 >
                   <MessageCircle className="w-5 h-5 fill-white/20" />
                   <span>Message on WhatsApp</span>
@@ -260,32 +439,32 @@ export default function AboutPage() {
               <Magnetic intensity={0.2}>
                 <TransitionLink
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4.5 sm:py-5 rounded-full bg-white text-black font-semibold text-base sm:text-lg hover:bg-neutral-100 transition-all group"
+                  className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-white text-black font-semibold text-base sm:text-lg hover:bg-neutral-100 transition-all group"
                 >
-                  Book a 15-Minute Call
+                  <span>Book a 15-Minute Call</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
                 </TransitionLink>
               </Magnetic>
             </div>
 
             {/* 3-Point Reassurance Strip */}
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-10 text-xs font-mono tracking-wider text-white/60">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-12 text-xs font-mono tracking-wider text-neutral-400">
               <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 Zero-obligation audit
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 Direct talk with the builder
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 Fixed quote in 24 hours
               </span>
             </div>
 
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <Footer />

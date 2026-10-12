@@ -29,7 +29,7 @@ export function Sidebar() {
     <>
       {/* Mobile Top Bar */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-[#0a0a0a] border-b border-white/10 z-50 flex items-center justify-between px-6">
-        <h1 className="text-xl font-bold tracking-tight">Fleevo.</h1>
+        <h1 className="text-xl font-bold tracking-tight">Fleevy.</h1>
         <button onClick={() => setIsOpen(!isOpen)} className="text-white/80 p-2 -mr-2">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -50,7 +50,7 @@ export function Sidebar() {
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
         <div className="h-16 md:h-auto p-8 border-b border-white/10 flex items-center justify-between">
-          <h1 className="text-2xl font-bold tracking-tight hidden md:block">Fleevo.</h1>
+          <h1 className="text-2xl font-bold tracking-tight hidden md:block">Fleevy.</h1>
         </div>
         
         <nav className="flex-1 overflow-y-auto py-6 flex flex-col gap-2 px-4">

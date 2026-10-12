@@ -27,7 +27,7 @@ export default function AboutUs() {
             We engineer unfair digital advantages.
           </h2>
           <p className="text-xl md:text-2xl text-white/60 font-light mb-12 leading-relaxed">
-            Fleevo is a global digital product agency. We replace static brochures with operational frameworks. We partner with high-ticket service businesses to build lead engines that plug your sales pipeline and convert attention into cash.
+            Fleevy is a global digital product agency. We replace static brochures with operational frameworks. We partner with high-ticket service businesses to build lead engines that plug your sales pipeline and convert attention into cash.
           </p>
           
           <div className="grid grid-cols-2 gap-8 mb-12 border-y border-white/10 py-10">

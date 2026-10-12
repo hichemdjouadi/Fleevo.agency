@@ -133,7 +133,7 @@ export default function Metrics() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-xs font-mono uppercase text-black font-semibold shrink-0 mt-0.5 w-24">
-                    WITH FLEEVO
+                    WITH FLEEVY
                   </span>
                   <p className="text-neutral-900 font-normal leading-relaxed">
                     {vector.after}

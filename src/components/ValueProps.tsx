@@ -143,12 +143,12 @@ const FEATURES = [
             </div>
           </div>
 
-          {/* Fleevo Edge Architecture */}
+          {/* Fleevy Edge Architecture */}
           <div className="p-3.5 rounded-xl bg-neutral-900 border border-white/10 flex flex-col gap-2 shadow-lg">
             <div className="flex items-center justify-between text-xs font-mono">
               <span className="text-white font-medium flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                Fleevo Custom Platform
+                Fleevy Custom Platform
               </span>
               <span className="text-emerald-300 font-semibold font-mono">Sub-1s Mobile</span>
             </div>
@@ -191,7 +191,7 @@ export default function ValueProps() {
             How we protect your margins and sales time.
           </h2>
           
-          <div className="flex flex-col relative" role="tablist" aria-label="Fleevo Operational Architecture Pillars">
+          <div className="flex flex-col relative" role="tablist" aria-label="Fleevy Operational Architecture Pillars">
             <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-black/10 rounded-full" />
             <motion.div 
               className="absolute left-0 w-[2px] bg-black rounded-full transition-all duration-500 ease-[0.16,1,0.3,1]"

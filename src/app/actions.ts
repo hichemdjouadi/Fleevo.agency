@@ -12,7 +12,7 @@ const trelloKey = process.env.TRELLO_API_KEY;
 const trelloToken = process.env.TRELLO_TOKEN;
 const trelloListId = process.env.TRELLO_LIST_ID || '697a36b5212fb7c1c35f5be4';
 const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL || 'hichemdjouadi@gmail.com';
-const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'Fleevo <onboarding@resend.dev>';
+const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'Fleevy <onboarding@resend.dev>';
 
 export async function submitAuditRequest(formData: {
   name: string;

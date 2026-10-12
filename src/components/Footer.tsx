@@ -16,8 +16,8 @@ export default function Footer() {
             
             {/* Contact Pills */}
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:contact@fleevo.com" className="inline-flex items-center px-6 py-3 rounded-full border border-white/20 hover:border-white transition-colors text-sm font-medium">
-                contact@fleevo.com
+              <a href="mailto:hello@fleevo.agency" className="inline-flex items-center px-6 py-3 rounded-full border border-white/20 hover:border-white transition-colors text-sm font-medium">
+                hello@fleevo.agency
               </a>
               <a href="https://wa.me/213655934124" target="_blank" rel="noreferrer" className="inline-flex items-center px-6 py-3 rounded-full border border-white/20 hover:border-white transition-colors text-sm font-medium">
                 +213 655 934 124
@@ -64,7 +64,7 @@ export default function Footer() {
             <a href="https://wa.me/213655934124" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
               <MessageSquare className="w-4 h-4 text-white" />
             </a>
-            <a href="mailto:contact@fleevo.com" aria-label="Email Fleevo" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+            <a href="mailto:hello@fleevo.agency" aria-label="Email Fleevo" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
               <Mail className="w-4 h-4 text-white" />
             </a>
             <TransitionLink href="/contact" aria-label="Contact Fleevo" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
