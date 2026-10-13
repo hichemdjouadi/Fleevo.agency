@@ -112,14 +112,14 @@ export default function ContactForm() {
     <div className="w-full flex flex-col gap-8">
       <form
         onSubmit={handleSubmit}
-        className="w-full bg-white border border-black/15 rounded-[32px] p-6 sm:p-10 md:p-12 flex flex-col gap-8 text-left shadow-[0_20px_50px_rgba(0,0,0,0.04)] text-black"
+        className="w-full bg-white border border-black/15 rounded-2xl sm:rounded-[32px] p-5 sm:p-10 md:p-12 flex flex-col gap-7 sm:gap-8 text-left shadow-[0_20px_50px_rgba(0,0,0,0.04)] text-black"
       >
         {/* 1. What do you need? */}
         <div className="flex flex-col gap-3">
           <span id="contact-need-label" className="text-xs font-mono text-neutral-600 font-medium">
             01 // What do you need?
           </span>
-          <div className="flex flex-wrap gap-2.5" role="group" aria-labelledby="contact-need-label">
+          <div className="flex flex-wrap gap-2 sm:gap-2.5" role="group" aria-labelledby="contact-need-label">
             {serviceOptions.map((opt) => {
               const isSelected = interests.includes(opt);
               return (
@@ -128,7 +128,7 @@ export default function ContactForm() {
                   type="button"
                   onClick={() => toggleInterest(opt)}
                   aria-pressed={isSelected}
-                  className={`px-5 py-2.5 rounded-full border text-xs sm:text-sm transition-all focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
+                  className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full border text-xs sm:text-sm transition-all focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
                     isSelected
                       ? "bg-black text-white border-black font-semibold shadow-sm"
                       : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
@@ -146,7 +146,7 @@ export default function ContactForm() {
           <span id="contact-timeline-label" className="text-xs font-mono text-neutral-600 font-medium">
             02 // Target Timeline
           </span>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5" role="radiogroup" aria-labelledby="contact-timeline-label">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5" role="radiogroup" aria-labelledby="contact-timeline-label">
             {timelineOptions.map((opt) => {
               const isSelected = timeline === opt;
               return (
@@ -156,7 +156,7 @@ export default function ContactForm() {
                   onClick={() => setTimeline(opt)}
                   role="radio"
                   aria-checked={isSelected}
-                  className={`px-5 py-3 rounded-full border text-xs sm:text-sm transition-all text-center focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
+                  className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border text-xs sm:text-sm transition-all text-center focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
                     isSelected
                       ? "bg-black text-white border-black font-semibold shadow-sm"
                       : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
@@ -288,10 +288,10 @@ export default function ContactForm() {
             Prefer email or WhatsApp? Reach us directly.
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
           <a
             href="mailto:contact@fleevo.net"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
           >
             <Mail className="w-3.5 h-3.5" />
             <span>contact@fleevo.net</span>
@@ -300,7 +300,7 @@ export default function ContactForm() {
             href="https://wa.me/213655934124"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>+213 655 934 124</span>

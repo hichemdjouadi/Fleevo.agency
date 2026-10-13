@@ -140,6 +140,7 @@ function ShowcaseItem({ project }: { project: ProjectItem }) {
   const rotateY = useTransform(springX, [-0.5, 0.5], ["-2deg", "2deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) return;
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const xPct = (e.clientX - rect.left) / rect.width - 0.5;
@@ -168,16 +169,17 @@ function ShowcaseItem({ project }: { project: ProjectItem }) {
       rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
       aria-label={`${project.title} - ${project.niche}`}
       data-cursor={project.link.startsWith("http") ? "Visit" : "Preview"}
-      className="group flex flex-col justify-between pb-10 border-b border-black/15 transition-colors duration-300"
+      className="group flex flex-col justify-between pb-8 sm:pb-10 border-b border-black/15 transition-colors duration-300"
     >
       <div>
         {/* Visual Stage (Single container, zero nested cards) */}
-        <div className="relative w-full aspect-[16/10] rounded-[28px] overflow-hidden mb-7 bg-[#08080c]">
+        <div className="relative w-full aspect-[16/10] rounded-2xl sm:rounded-[28px] overflow-hidden mb-5 sm:mb-7 bg-[#08080c]">
           {project.hasImage && project.image ? (
             <Image
               src={project.image}
               alt={project.title}
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-top"
             />
@@ -187,23 +189,23 @@ function ShowcaseItem({ project }: { project: ProjectItem }) {
         </div>
 
         {/* Header Details — h3 leads directly below the visual stage without an eyebrow above it */}
-        <div className="flex items-start justify-between gap-4 mb-3">
+        <div className="flex items-start justify-between gap-3 sm:gap-4 mb-2.5 sm:mb-3">
           <div>
-            <h3 className="text-2xl md:text-3xl font-medium text-black tracking-tight group-hover:text-neutral-700 transition-colors text-balance">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-medium text-black tracking-tight group-hover:text-neutral-700 transition-colors text-balance">
               {project.title}
             </h3>
-            <div className="mt-1.5 flex flex-wrap items-center gap-2 text-xs font-mono text-neutral-500">
+            <div className="mt-1 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs font-mono text-neutral-500">
               <span>{project.niche}</span>
               <span>·</span>
               <span className="text-black font-medium">{project.statusBadge}</span>
             </div>
           </div>
-          <div className="w-10 h-10 rounded-full border border-black/15 flex items-center justify-center bg-white group-hover:bg-black group-hover:text-white transition-all shrink-0">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/15 flex items-center justify-center bg-white group-hover:bg-black group-hover:text-white transition-all shrink-0">
             <ArrowUpRight className="w-4 h-4 text-black group-hover:text-white transition-colors" />
           </div>
         </div>
 
-        <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed mb-6 max-w-[65ch] text-pretty">
+        <p className="text-xs sm:text-sm md:text-base text-neutral-600 font-light leading-relaxed mb-5 sm:mb-6 max-w-[65ch] text-pretty">
           {project.summary}
         </p>
       </div>

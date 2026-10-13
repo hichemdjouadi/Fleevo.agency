@@ -125,7 +125,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-[72px] font-medium tracking-[-0.035em] leading-[0.95] max-w-4xl text-black text-balance"
+          className="text-[32px] sm:text-5xl md:text-7xl lg:text-[72px] font-medium tracking-[-0.035em] leading-[1.04] sm:leading-[0.95] max-w-4xl text-black text-balance"
         >
           Customer acquisition systems{" "}
           <span className="font-serif italic font-light">&amp; digital infrastructure.</span>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 text-lg md:text-2xl text-neutral-600 font-light max-w-2xl leading-relaxed text-balance"
+          className="mt-5 sm:mt-8 text-base sm:text-xl md:text-2xl text-neutral-600 font-light max-w-2xl leading-relaxed text-balance"
         >
           High-speed websites, online stores, and ad systems that bring you paying clients.
         </motion.p>
@@ -144,12 +144,12 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto"
         >
           <Magnetic intensity={0.2}>
             <TransitionLink
               href="/contact"
-              className="w-full sm:w-auto justify-center px-8 py-4 rounded-full bg-black text-white text-base font-semibold hover:bg-neutral-800 transition-all shadow-sm flex items-center gap-2 group"
+              className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-black text-white text-sm sm:text-base font-semibold hover:bg-neutral-800 transition-all shadow-sm flex items-center gap-2 group"
             >
               <span>Book a 15-Minute Strategy Call</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -159,7 +159,7 @@ export default function ServicesPage() {
           <Magnetic intensity={0.2}>
             <TransitionLink
               href="/work"
-              className="w-full sm:w-auto justify-center px-8 py-4 rounded-full border border-black/15 text-black text-base font-medium hover:bg-black/5 transition-colors flex items-center"
+              className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border border-black/15 text-black text-sm sm:text-base font-medium hover:bg-black/5 transition-colors flex items-center"
             >
               View Selected Deployments
             </TransitionLink>

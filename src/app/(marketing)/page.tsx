@@ -92,7 +92,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[0.94] text-black w-full max-w-5xl text-balance"
+            className="text-[32px] sm:text-5xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[1.04] sm:leading-[0.94] text-black w-full max-w-5xl text-balance"
           >
             We engineer customer acquisition systems{" "}
             <span className="font-serif italic font-light">&amp; digital infrastructure.</span>
@@ -102,7 +102,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 md:mt-8 text-lg md:text-2xl text-black/75 font-light max-w-[640px] leading-relaxed text-pretty"
+            className="mt-5 sm:mt-8 text-base sm:text-xl md:text-2xl text-black/75 font-light max-w-[640px] leading-relaxed text-pretty"
           >
             Fast websites, online stores, and web apps wired with instant WhatsApp bots and targeted Meta ads.
           </motion.p>
@@ -112,20 +112,20 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 z-30 w-full sm:w-auto"
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 z-30 w-full sm:w-auto"
           >
             <Magnetic intensity={0.2}>
               <TransitionLink
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 sm:px-9 py-4 rounded-full bg-black text-white font-semibold text-sm sm:text-base hover:bg-neutral-800 transition-colors shadow-sm text-center"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-9 py-3.5 sm:py-4 rounded-full bg-black text-white font-semibold text-sm sm:text-base hover:bg-neutral-800 transition-colors shadow-sm text-center"
               >
-                Book a 15-Minute Strategy Call
+                <span>Book a 15-Minute Strategy Call</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </TransitionLink>
             </Magnetic>
             <TransitionLink
               href="/work"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-7 sm:px-9 py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-9 py-3.5 sm:py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
             >
               View Selected Work
             </TransitionLink>
@@ -136,17 +136,17 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs font-mono text-black/65"
+            className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-3.5 sm:gap-8 text-[11px] sm:text-xs font-mono text-black/65"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <Bot className="w-3.5 h-3.5 text-black" />
               <span>Automated Bot Intake</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <Zap className="w-3.5 h-3.5 text-black" />
               <span>Direct Margin Retained</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <ShieldCheck className="w-3.5 h-3.5 text-black" />
               <span>Enduring Architecture</span>
             </div>
@@ -157,7 +157,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-12 md:mt-16 w-full max-w-[1300px] relative z-20"
+            className="mt-8 sm:mt-16 w-full max-w-[1300px] relative z-20"
           >
             <HeroVisual />
           </motion.div>
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
 
         {/* PILLAR 2: Scaling Engine (High-Contrast Obsidian Theater Block) */}
-        <div className="p-8 sm:p-12 md:p-16 rounded-[2.5rem] bg-[#050505] text-white">
+        <div className="p-6 sm:p-12 md:p-16 rounded-3xl sm:rounded-[2.5rem] bg-[#050505] text-white">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
               <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white mb-3 text-balance">
@@ -338,7 +338,7 @@ export default function Home() {
 
       {/* 6. CINEMATIC OUTRO & COLLABORATION GATEWAY */}
       <section className="relative w-full bg-black text-white py-36 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden border-t border-white/10">
-        <div className="absolute inset-0 w-full h-full z-0 bg-black">
+        <div className="absolute inset-0 w-full h-full z-0 bg-black overflow-hidden pointer-events-none">
           <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-25 scale-105">
             <source src="/video-erasio-1.mp4" type="video/mp4" />
           </video>

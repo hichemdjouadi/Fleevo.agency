@@ -104,31 +104,31 @@ const PROJECTS: Project[] = [
       }
     ],
     renderVisual: () => (
-      <div className="w-full h-full p-8 sm:p-14 flex flex-col justify-between gap-8 relative text-white select-none bg-[#0a0a0e] overflow-hidden" data-cursor="Preview">
+      <div className="w-full h-full p-5 sm:p-14 flex flex-col justify-between gap-5 sm:gap-8 relative text-white select-none bg-[#0a0a0e] overflow-hidden" data-cursor="Preview">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/75">
-          <span className="flex items-center gap-2 text-white font-medium">
-            <Dumbbell className="w-4 h-4 text-white/75 shrink-0" /> Adréna Intake Terminal
+        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs font-mono text-white/75">
+          <span className="flex items-center gap-1.5 sm:gap-2 text-white font-medium">
+            <Dumbbell className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/75 shrink-0" /> Adréna Intake Terminal
           </span>
-          <span className="px-3.5 py-1 rounded-full bg-white/10 text-white font-medium">Private Preview · Launching Soon</span>
+          <span className="px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-white/10 text-white font-medium">Private Preview</span>
         </div>
-        <div className="relative z-10 my-auto max-w-3xl py-6">
-          <div className="text-3xl sm:text-5xl md:text-6xl font-serif italic font-light text-white tracking-tight leading-[1.04] text-balance">
+        <div className="relative z-10 my-auto max-w-3xl py-3 sm:py-6">
+          <div className="text-2xl sm:text-5xl md:text-6xl font-serif italic font-light text-white tracking-tight leading-[1.08] sm:leading-[1.04] text-balance">
             Executive Membership &amp; Automated Athlete Qualification.
           </div>
         </div>
-        <div className="relative z-10 pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono">
+        <div className="relative z-10 pt-4 sm:pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 text-[11px] sm:text-xs font-mono">
           <div>
-            <span className="text-white/55 block mb-1">Membership Tier</span>
-            <span className="text-white font-medium text-sm">Executive VIP Athletic Pass</span>
+            <span className="text-white/55 block mb-0.5 sm:mb-1">Membership Tier</span>
+            <span className="text-white font-medium text-xs sm:text-sm">Executive VIP Athletic Pass</span>
           </div>
           <div>
-            <span className="text-white/55 block mb-1">Automated Intake</span>
-            <span className="text-white font-medium text-sm">Instant WhatsApp Bot Screening</span>
+            <span className="text-white/55 block mb-0.5 sm:mb-1">Automated Intake</span>
+            <span className="text-white font-medium text-xs sm:text-sm">Instant WhatsApp Bot Screening</span>
           </div>
           <div className="sm:text-right">
-            <span className="text-white/55 block mb-1">Deployment State</span>
-            <span className="text-white font-medium text-sm">Staging Verification Complete</span>
+            <span className="text-white/55 block mb-0.5 sm:mb-1">Deployment State</span>
+            <span className="text-white font-medium text-xs sm:text-sm">Staging Verification Complete</span>
           </div>
         </div>
       </div>
@@ -158,31 +158,31 @@ const PROJECTS: Project[] = [
       }
     ],
     renderVisual: () => (
-      <div className="w-full h-full p-8 sm:p-14 flex flex-col justify-between gap-8 relative text-white select-none bg-[#0a0a0e] overflow-hidden" data-cursor="Preview">
+      <div className="w-full h-full p-5 sm:p-14 flex flex-col justify-between gap-5 sm:gap-8 relative text-white select-none bg-[#0a0a0e] overflow-hidden" data-cursor="Preview">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/75">
-          <span className="flex items-center gap-2 text-white font-medium">
-            <BookOpen className="w-4 h-4 text-white/75 shrink-0" /> Scholarly Distribution Pipeline
+        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs font-mono text-white/75">
+          <span className="flex items-center gap-1.5 sm:gap-2 text-white font-medium">
+            <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/75 shrink-0" /> Scholarly Distribution Pipeline
           </span>
-          <span className="px-3.5 py-1 rounded-full bg-white/10 text-white font-medium">Private Preview · Launching Soon</span>
+          <span className="px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-white/10 text-white font-medium">Private Preview</span>
         </div>
-        <div className="relative z-10 my-auto max-w-3xl py-6">
-          <div className="text-3xl sm:text-5xl md:text-6xl font-serif italic font-light text-white tracking-tight leading-[1.04] text-balance">
+        <div className="relative z-10 my-auto max-w-3xl py-3 sm:py-6">
+          <div className="text-2xl sm:text-5xl md:text-6xl font-serif italic font-light text-white tracking-tight leading-[1.08] sm:leading-[1.04] text-balance">
             Scholarly Editions &amp; Direct Courier Fulfillment.
           </div>
         </div>
-        <div className="relative z-10 pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono">
+        <div className="relative z-10 pt-4 sm:pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 text-[11px] sm:text-xs font-mono">
           <div>
-            <span className="text-white/55 block mb-1">Catalog Index</span>
-            <span className="text-white font-medium text-sm">Scholarly Editions &amp; Treatises</span>
+            <span className="text-white/55 block mb-0.5 sm:mb-1">Catalog Index</span>
+            <span className="text-white font-medium text-xs sm:text-sm">Scholarly Editions &amp; Treatises</span>
           </div>
           <div>
-            <span className="text-white/55 block mb-1">Order Pipeline</span>
-            <span className="text-white font-medium text-sm">Automated Warehouse &amp; Courier Sync</span>
+            <span className="text-white/55 block mb-0.5 sm:mb-1">Order Pipeline</span>
+            <span className="text-white font-medium text-xs sm:text-sm">Automated Warehouse &amp; Courier Sync</span>
           </div>
           <div className="sm:text-right">
-            <span className="text-white/55 block mb-1">Deployment State</span>
-            <span className="text-white font-medium text-sm">Courier Integration Synced</span>
+            <span className="text-white/55 block mb-0.5 sm:mb-1">Deployment State</span>
+            <span className="text-white font-medium text-xs sm:text-sm">Courier Integration Synced</span>
           </div>
         </div>
       </div>
@@ -219,12 +219,12 @@ export default function Work() {
             Live platforms and private systems built to turn visitors into buyers.
           </p>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2.5 pt-6 border-t border-black/10" role="group" aria-label="Filter projects">
+          {/* Filter Pills — Silky horizontal scroll track on mobile, wrapped pills on desktop */}
+          <div className="flex items-center gap-2 pt-6 border-t border-black/10 overflow-x-auto no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 sm:flex-wrap" role="group" aria-label="Filter projects">
             <button
               type="button"
               onClick={() => setFilter("all")}
-              className={`px-5 py-2.5 rounded-full text-xs font-mono transition-colors ${
+              className={`shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-mono transition-colors ${
                 filter === "all"
                   ? "bg-black text-white font-semibold"
                   : "bg-[#f4f4f5] text-neutral-700 hover:text-black"
@@ -235,7 +235,7 @@ export default function Work() {
             <button
               type="button"
               onClick={() => setFilter("commerce")}
-              className={`px-5 py-2.5 rounded-full text-xs font-mono transition-colors ${
+              className={`shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-mono transition-colors ${
                 filter === "commerce"
                   ? "bg-black text-white font-semibold"
                   : "bg-[#f4f4f5] text-neutral-700 hover:text-black"
@@ -246,7 +246,7 @@ export default function Work() {
             <button
               type="button"
               onClick={() => setFilter("webapp")}
-              className={`px-5 py-2.5 rounded-full text-xs font-mono transition-colors ${
+              className={`shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-mono transition-colors ${
                 filter === "webapp"
                   ? "bg-black text-white font-semibold"
                   : "bg-[#f4f4f5] text-neutral-700 hover:text-black"
@@ -257,7 +257,7 @@ export default function Work() {
             <button
               type="button"
               onClick={() => setFilter("preview")}
-              className={`px-5 py-2.5 rounded-full text-xs font-mono transition-colors ${
+              className={`shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-mono transition-colors ${
                 filter === "preview"
                   ? "bg-black text-white font-semibold"
                   : "bg-[#f4f4f5] text-neutral-700 hover:text-black"
@@ -270,8 +270,8 @@ export default function Work() {
       </section>
 
       {/* 2. PROJECTS SHOWCASE (CINEMATIC DARK THEATER) */}
-      <section className="relative z-20 pt-24 pb-36 bg-[#050505] text-white border-t border-black/10">
-        <div className="flex flex-col gap-28 md:gap-40 px-6 md:px-12 max-w-[1400px] mx-auto">
+      <section className="relative z-20 pt-16 sm:pt-24 pb-24 sm:pb-36 bg-[#050505] text-white border-t border-black/10">
+        <div className="flex flex-col gap-16 sm:gap-28 md:gap-40 px-6 md:px-12 max-w-[1400px] mx-auto">
           {filteredProjects.map((project, i) => (
             <ProjectShowcase key={project.title} project={project} index={i} />
           ))}
@@ -319,34 +319,34 @@ function ProjectShowcase({ project, index }: { project: Project; index: number }
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0.2, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col pt-12 border-t border-white/15 first:border-t-0 first:pt-0"
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className="flex flex-col pt-8 sm:pt-12 border-t border-white/15 first:border-t-0 first:pt-0"
     >
       {/* Header bar — h2 leads with generous top breathing room, tight binding to meta below */}
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-8">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-5 sm:gap-6 pb-6 sm:pb-8">
         <div>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white mb-3 text-balance">
+          <h2 className="text-2xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white mb-2.5 sm:mb-3 text-balance">
             {project.title}
           </h2>
-          <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-white/65">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-mono text-white/65">
             <span>0{index + 1} · {project.systemType}</span>
             <span>·</span>
-            <span className="px-3 py-1 rounded-full bg-white/10 text-white font-medium">
+            <span className="px-2.5 sm:px-3 py-1 rounded-full bg-white/10 text-white font-medium">
               {project.statusBadge}
             </span>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
           {isExternal ? (
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors text-xs sm:text-sm font-semibold"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors text-xs sm:text-sm font-semibold"
               data-cursor="Visit"
             >
               <span>Visit Live Platform</span>
@@ -355,7 +355,7 @@ function ProjectShowcase({ project, index }: { project: Project; index: number }
           ) : (
             <TransitionLink
               href={project.link}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/25 hover:border-white text-white transition-colors text-xs sm:text-sm font-medium"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/25 hover:border-white text-white transition-colors text-xs sm:text-sm font-medium"
               data-cursor="Preview"
             >
               <span>Request Private Preview</span>
@@ -366,7 +366,7 @@ function ProjectShowcase({ project, index }: { project: Project; index: number }
       </div>
 
       {/* Visual Canvas (Single container, no image hover transform, no duplicate hover circle) */}
-      <div className={`relative w-full overflow-hidden rounded-[28px] md:rounded-[36px] bg-[#111116] mb-10 ${project.image ? "aspect-[16/10] md:aspect-[16/9]" : "min-h-[300px] md:aspect-[21/9] flex"}`}>
+      <div className={`relative w-full overflow-hidden rounded-2xl sm:rounded-[28px] md:rounded-[36px] bg-[#111116] mb-6 sm:mb-10 ${project.image ? "aspect-[16/10] md:aspect-[16/9]" : "min-h-[260px] sm:min-h-[300px] md:aspect-[21/9] flex"}`}>
         {project.image ? (
           <a
             href={project.link}

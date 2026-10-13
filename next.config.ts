@@ -4,6 +4,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  devIndicators: false,
   async redirects() {
     return [
       {

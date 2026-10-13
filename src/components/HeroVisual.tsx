@@ -9,6 +9,7 @@ import DeviceFrame from "@/components/ui/DeviceFrame";
 interface ShowcaseProject {
   id: "mopizza" | "almadina";
   tabLabel: string;
+  shortLabel: string;
   client: string;
   category: string;
   url: string;
@@ -24,6 +25,7 @@ const PROJECTS: ShowcaseProject[] = [
   {
     id: "mopizza",
     tabLabel: "Mo Pizza Direct Ordering",
+    shortLabel: "Mo Pizza",
     client: "Mo Pizza Restaurants",
     category: "Mobile Commerce & Bot Intake",
     url: "mopizza.app",
@@ -37,6 +39,7 @@ const PROJECTS: ShowcaseProject[] = [
   {
     id: "almadina",
     tabLabel: "Almadina Bookstore",
+    shortLabel: "Almadina",
     client: "Almadina Publishing",
     category: "Headless Catalog Architecture",
     url: "almadinabookstore.com",
@@ -81,10 +84,10 @@ export default function HeroVisual() {
       ref={stageRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full flex flex-col items-center justify-center py-4 select-none"
+      className="relative w-full flex flex-col items-center justify-center py-2 sm:py-4 select-none"
     >
-      {/* 1. Project Selector Pills */}
-      <div className="relative z-30 mb-8 sm:mb-10 flex flex-wrap items-center justify-center gap-1.5 p-1.5 bg-[#f4f4f5] rounded-full border border-black/10">
+      {/* 1. Project Selector Segmented Control (Responsive 2-col on mobile, full pill on desktop) */}
+      <div className="relative z-30 mb-6 sm:mb-10 w-full max-w-[340px] sm:max-w-md grid grid-cols-2 p-1 sm:p-1.5 bg-[#f4f4f5] rounded-xl sm:rounded-full border border-black/10 gap-1 text-center">
         {PROJECTS.map((proj, idx) => {
           const isActive = activeTab === idx;
           return (
@@ -92,13 +95,14 @@ export default function HeroVisual() {
               key={proj.id}
               type="button"
               onClick={() => setActiveTab(idx)}
-              className={`px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
+              className={`py-2 px-3 sm:px-6 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
                 isActive
                   ? "bg-black text-white shadow-sm font-semibold"
                   : "text-neutral-700 hover:text-black hover:bg-black/[0.04]"
               }`}
             >
-              {proj.tabLabel}
+              <span className="sm:hidden">{proj.shortLabel}</span>
+              <span className="hidden sm:inline">{proj.tabLabel}</span>
             </button>
           );
         })}
@@ -111,10 +115,10 @@ export default function HeroVisual() {
           rotateY,
           transformStyle: "preserve-3d"
         }}
-        className="relative w-full max-w-[900px] flex flex-col items-center justify-center px-4"
+        className="relative w-full max-w-[900px] flex flex-col items-center justify-center px-2 sm:px-4"
       >
         <div
-          className="relative z-20 group"
+          className="relative z-20 group w-full flex justify-center"
           data-cursor="Explore"
         >
           <DeviceFrame
@@ -134,8 +138,9 @@ export default function HeroVisual() {
                   src={current.image}
                   alt={`${current.client} mobile interface`}
                   fill
-                  sizes="(max-width: 768px) 320px, 420px"
+                  sizes="(max-width: 640px) 340px, (max-width: 768px) 360px, 420px"
                   priority
+                  unoptimized
                   className="object-cover object-top"
                 />
               </motion.div>
@@ -144,11 +149,11 @@ export default function HeroVisual() {
         </div>
 
         {/* Directional Benefits Ledger below device */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 max-w-xl text-center">
+        <div className="mt-5 sm:mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-xl text-center px-2">
           {current.benefits.map((b, i) => (
             <div
               key={i}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f7f7f8] border border-black/10 text-xs font-mono text-neutral-800 font-medium"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#f7f7f8] border border-black/10 text-[11px] sm:text-xs font-mono text-neutral-800 font-medium"
             >
               <span className="font-bold text-black">{b.direction === "up" ? "↑" : "↓"}</span>
               <span>{b.label}</span>
@@ -158,15 +163,16 @@ export default function HeroVisual() {
       </motion.div>
 
       {/* 3. Direct Live Platform Link */}
-      <div className="relative z-30 mt-6 flex items-center justify-center">
+      <div className="relative z-30 mt-5 sm:mt-6 flex items-center justify-center w-full px-4">
         <a
           href={current.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 font-medium text-xs sm:text-sm shadow-sm transition-all group"
+          className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 font-medium text-xs sm:text-sm shadow-sm transition-all group"
           data-cursor="Visit"
         >
-          <span>Visit Live Deployment ({current.tabLabel})</span>
+          <span className="sm:hidden">Visit Live Deployment</span>
+          <span className="hidden sm:inline">Visit Live Deployment ({current.tabLabel})</span>
           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </a>
       </div>

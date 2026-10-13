@@ -19,6 +19,17 @@ export default function Navbar() {
     setIsScrolled(scrollY.get() > 20);
   }, [scrollY]);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 20);
     const previous = scrollY.getPrevious() ?? 0;
@@ -111,64 +122,90 @@ export default function Navbar() {
             
             {/* Mobile Menu Toggle */}
             <button 
-              className={`md:hidden p-2 -mr-1 transition-colors rounded-full focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
-                isMobileMenuOpen ? "text-white hover:bg-white/10" : "text-black hover:bg-black/5"
-              }`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              className="md:hidden w-11 h-11 flex items-center justify-center -mr-1.5 transition-colors rounded-full text-black hover:bg-black/5 active:bg-black/10 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open navigation menu"
               aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <Menu className="w-6 h-6" />
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Cinematic Mobile Menu Overlay */}
+      {/* Editorial Luxury Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[55] bg-black text-white flex flex-col items-center justify-center gap-10 px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[100] bg-[#050505] text-white flex flex-col justify-between p-6 sm:p-8"
           >
-            <div className="flex flex-col items-center gap-6 text-[11vw] sm:text-[48px] font-medium tracking-tighter">
-              <TransitionLink 
-                href="/services" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className={`transition-all ${pathname === '/services' ? 'text-white font-semibold underline underline-offset-8' : 'text-white/60 hover:text-white'}`}
+            {/* Top Bar with Logo & Close Button */}
+            <div className="w-full flex items-center justify-between pt-2">
+              <div className="w-28 h-7">
+                <TransitionLink 
+                  href="/" 
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                  aria-label="Fleevy Home"
+                >
+                  <Logo className="w-full h-full text-white" />
+                </TransitionLink>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close navigation menu"
+                className="w-11 h-11 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all"
               >
-                Services
-              </TransitionLink>
-              <TransitionLink 
-                href="/work" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className={`transition-all ${pathname === '/work' ? 'text-white font-semibold underline underline-offset-8' : 'text-white/60 hover:text-white'}`}
-              >
-                Projects
-              </TransitionLink>
-              <TransitionLink 
-                href="/about" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className={`transition-all ${pathname === '/about' ? 'text-white font-semibold underline underline-offset-8' : 'text-white/60 hover:text-white'}`}
-              >
-                About
-              </TransitionLink>
+                <X className="w-5 h-5" />
+              </button>
             </div>
-            
-            <TransitionLink 
-              href="/contact" 
-              onClick={() => setIsMobileMenuOpen(false)} 
-              className={`mt-6 px-10 py-4 rounded-full text-base font-semibold transition-transform active:scale-95 shadow-2xl ${
-                pathname === '/contact'
-                  ? 'bg-neutral-200 text-black font-bold ring-2 ring-white'
-                  : 'bg-white text-black hover:bg-neutral-200'
-              }`}
-            >
-              Contact
-            </TransitionLink>
+
+            {/* Middle Nav Links */}
+            <div className="flex flex-col gap-6 py-6">
+              {[
+                { num: "01", label: "Services", href: "/services" },
+                { num: "02", label: "Projects", href: "/work" },
+                { num: "03", label: "About", href: "/about" },
+                { num: "04", label: "Contact", href: "/contact" },
+              ].map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <TransitionLink
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="group flex items-baseline justify-between py-2 border-b border-white/10"
+                  >
+                    <span className="text-3xl sm:text-4xl font-medium tracking-tight group-hover:text-neutral-300 transition-colors">
+                      {item.label}
+                    </span>
+                    <span className="font-mono text-xs text-white/50 group-hover:text-white transition-colors">
+                      {item.num}
+                    </span>
+                  </TransitionLink>
+                );
+              })}
+            </div>
+
+            {/* Bottom Studio Contact Strip */}
+            <div className="pt-6 border-t border-white/10 flex flex-col gap-4 text-xs font-mono text-white/70">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <a href="mailto:contact@fleevo.net" className="hover:text-white transition-colors">
+                  contact@fleevo.net
+                </a>
+                <a href="tel:+213655934124" className="hover:text-white transition-colors">
+                  +213 655 934 124
+                </a>
+              </div>
+              <div className="text-white/40 text-[11px]">
+                Algiers HQ · Worldwide Remote Infrastructure
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
