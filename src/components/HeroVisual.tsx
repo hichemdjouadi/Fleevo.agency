@@ -44,8 +44,8 @@ const PROJECTS: ShowcaseProject[] = [
     ctaTextDesktop: "Visit Live Deployment (Mo Pizza Direct Ordering)",
     image: "/mopizza-mobile.png",
     benefits: [
-      { direction: "up", label: "Direct Margin Retained (0% Commission)" },
-      { direction: "up", label: "Sub-800ms Mobile Checkout Velocity" }
+      { direction: "up", label: "0% Commission Direct Orders" },
+      { direction: "up", label: "Sub-800ms Mobile Velocity" }
     ]
   },
   {
@@ -63,8 +63,8 @@ const PROJECTS: ShowcaseProject[] = [
     ctaTextDesktop: "Visit Live Deployment (Almadina Bookstore)",
     image: "/almadina-mobile.png",
     benefits: [
-      { direction: "up", label: "Search & Discovery Speed" },
-      { direction: "down", label: "Mobile Catalog Drop-off" }
+      { direction: "up", label: "Instant Title & ISBN Search" },
+      { direction: "down", label: "58-Wilayas Cart Drop-Off" }
     ]
   },
   {
@@ -81,8 +81,8 @@ const PROJECTS: ShowcaseProject[] = [
     ctaText: "Request Staging Access",
     ctaTextDesktop: "Request Staging Access (Adréna Club)",
     benefits: [
-      { direction: "up", label: "VIP Client Screening & Qualification" },
-      { direction: "down", label: "Staff Time Wasted on Unscreened Leads" }
+      { direction: "up", label: "VIP Screening & Intake" },
+      { direction: "down", label: "Unscreened Leads on Calendars" }
     ],
     renderCanvas: () => (
       <div className="w-full h-full p-4 sm:p-6 flex flex-col justify-between text-white bg-[#070709] select-none font-sans relative overflow-hidden">
@@ -245,17 +245,44 @@ export default function HeroVisual() {
           </DeviceFrame>
         </div>
 
-        {/* Directional Benefits Ledger below device */}
-        <div className="mt-5 sm:mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-xl text-center px-2">
-          {current.benefits.map((b, i) => (
-            <div
-              key={i}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#f7f7f8] border border-black/10 text-[11px] sm:text-xs font-mono text-neutral-800 font-medium"
+        {/* Directional Benefits Ledger below device with Delightful Motion */}
+        <div className="mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-xl text-center px-2 min-h-[42px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-wrap items-center justify-center gap-2 sm:gap-3"
             >
-              <span className="font-bold text-black">{b.direction === "up" ? "↑" : "↓"}</span>
-              <span>{b.label}</span>
-            </div>
-          ))}
+              {current.benefits.map((b, i) => (
+                <motion.div
+                  key={`${current.id}-${i}`}
+                  initial={{ opacity: 0, scale: 0.94, y: 4 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.28, 
+                    delay: i * 0.07, 
+                    ease: [0.16, 1, 0.3, 1] 
+                  }}
+                  whileHover={{ y: -2, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-white border border-black/10 hover:border-black/30 text-[11px] sm:text-xs font-mono text-neutral-800 hover:text-black transition-all shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.06)] duration-200 cursor-default"
+                  data-cursor="Outcome"
+                >
+                  <span className="w-4 h-4 sm:w-4.5 sm:h-4.5 rounded-full bg-black/5 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center text-[10px] sm:text-[11px] font-bold text-black shrink-0">
+                    <span className={`inline-block transition-transform duration-200 ${
+                      b.direction === "up" ? "group-hover:-translate-y-0.5" : "group-hover:translate-y-0.5"
+                    }`}>
+                      {b.direction === "up" ? "↑" : "↓"}
+                    </span>
+                  </span>
+                  <span className="font-medium tracking-tight">{b.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </motion.div>
 
