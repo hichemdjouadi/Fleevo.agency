@@ -85,70 +85,59 @@ const PROJECTS: ShowcaseProject[] = [
       { direction: "down", label: "Staff Time Wasted on Unscreened Leads" }
     ],
     renderCanvas: () => (
-      <div className="w-full h-full p-4 sm:p-5 flex flex-col justify-between text-white bg-[#08080c] select-none font-sans overflow-hidden">
-        {/* Subtle grid background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff07_1px,transparent_1px),linear-gradient(to_bottom,#ffffff07_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
+      <div className="w-full h-full p-4 sm:p-6 flex flex-col justify-between text-white bg-[#070709] select-none font-sans relative overflow-hidden">
+        {/* Subtle radial ambient light */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.06),transparent_65%)] pointer-events-none" />
         
         {/* Top Header inside Phone */}
         <div className="relative z-10">
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+          <div className="flex items-center justify-between border-b border-white/10 pb-2.5 sm:pb-3.5">
             <div>
-              <span className="text-[10px] font-mono tracking-widest text-amber-400/90 uppercase block font-semibold">
-                Private Staging Preview
+              <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-white/50 uppercase block font-medium">
+                Private Preview
               </span>
-              <h4 className="text-base sm:text-lg font-bold tracking-tight text-white mt-0.5">
+              <h4 className="text-sm sm:text-base font-bold tracking-tight text-white mt-0.5">
                 ADRÉNA CLUB
               </h4>
             </div>
-            <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            </div>
+            <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-white/80 font-medium">
+              Staging
+            </span>
           </div>
-          
-          <p className="text-[11px] text-white/60 font-light mt-2.5 leading-snug">
-            High-ticket VIP athletic suites &amp; private coaching membership intake.
-          </p>
         </div>
 
-        {/* Interactive Intake Gateway Card */}
-        <div className="relative z-10 my-auto py-2 flex flex-col gap-2.5">
-          <div className="rounded-xl p-3 bg-white/[0.03] border border-white/10 flex flex-col gap-2">
-            <span className="text-[10px] font-mono text-white/50 uppercase tracking-wider">
-              Membership Division
-            </span>
-            <div className="grid grid-cols-2 gap-1.5">
-              <div className="p-2 rounded-lg bg-white/10 border border-white/20 text-center">
-                <span className="text-[10px] font-medium text-white block">Executive Pass</span>
-                <span className="text-[9px] font-mono text-white/60">Tier 01 · VIP</span>
-              </div>
-              <div className="p-2 rounded-lg bg-white/[0.02] border border-white/5 text-center opacity-60">
-                <span className="text-[10px] font-medium text-white block">Recovery Lab</span>
-                <span className="text-[9px] font-mono text-white/40">Tier 02 · Limited</span>
-              </div>
+        {/* Distilled Editorial Center Piece */}
+        <div className="relative z-10 my-auto py-2 sm:py-3">
+          <div className="text-lg sm:text-2xl font-serif italic font-light text-white tracking-tight leading-[1.12] mb-2 sm:mb-3 text-balance">
+            Executive Membership &amp; Private Coaching.
+          </div>
+          <p className="text-[11px] sm:text-xs text-white/60 font-light leading-relaxed mb-4 sm:mb-5 text-pretty">
+            Automated VIP intake and high-ticket athlete screening.
+          </p>
+
+          {/* Clean Editorial Ledger - Zero Nested Cards */}
+          <div className="pt-3 sm:pt-4 border-t border-white/10 space-y-2 text-[10px] sm:text-xs font-mono">
+            <div className="flex items-center justify-between">
+              <span className="text-white/45">Admission</span>
+              <span className="text-white font-medium">Private Screening</span>
             </div>
-          </div>
-
-          <div className="rounded-xl p-2.5 bg-white/[0.02] border border-white/5 flex items-center justify-between text-[11px] font-mono">
-            <span className="text-white/60">Qualification Filter</span>
-            <span className="text-emerald-400 font-semibold flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> WhatsApp Bot Active
-            </span>
-          </div>
-
-          <div className="rounded-xl p-2.5 bg-amber-500/10 border border-amber-500/20 text-[10px] font-mono text-amber-200/90 leading-tight">
-            ⚡ Staging Verification: 84% unscreened inquiries filtered before calendar sync.
+            <div className="flex items-center justify-between">
+              <span className="text-white/45">Qualification</span>
+              <span className="text-white font-medium">WhatsApp Bot Filter</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-white/45">Architecture</span>
+              <span className="text-white font-medium">Staging Verified</span>
+            </div>
           </div>
         </div>
 
         {/* Action Button inside Phone */}
-        <div className="relative z-10 pt-2 border-t border-white/10">
-          <div className="w-full py-2.5 px-3 rounded-xl bg-white text-black font-semibold text-xs flex items-center justify-center gap-1.5 shadow-lg">
-            <span>VIP Intake Gateway</span>
-            <span className="text-black/60 font-mono text-[10px]">→</span>
+        <div className="relative z-10 pt-2.5 sm:pt-3 border-t border-white/10">
+          <div className="w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-full bg-white text-black font-semibold text-[11px] sm:text-xs flex items-center justify-center gap-1.5 shadow-sm">
+            <span>Request Private Admission</span>
+            <span className="text-black/60 font-mono text-xs">→</span>
           </div>
-          <span className="text-[9px] font-mono text-white/40 text-center block mt-1.5">
-            Deployment Architecture Verified · Staging Mode
-          </span>
         </div>
       </div>
     )
