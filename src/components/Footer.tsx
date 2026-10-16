@@ -65,7 +65,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 text-xs font-mono text-white/60">
             <span>Customer Acquisition Systems & Digital Infrastructure</span>
             <span>·</span>
-            <span>&copy; {new Date().getFullYear()} Fleevy</span>
+            <span>&copy; {new Date().getFullYear()} Fleevo</span>
           </div>
 
           {/* Direct channels */}
@@ -81,14 +81,14 @@ export default function Footer() {
             </a>
             <a 
               href="mailto:contact@fleevo.net" 
-              aria-label="Email Fleevy" 
+              aria-label="Email Fleevo" 
               className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
             >
               <Mail className="w-4 h-4 text-white" />
             </a>
             <TransitionLink 
               href="/contact" 
-              aria-label="Contact Fleevy" 
+              aria-label="Contact Fleevo" 
               className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
             >
               <Globe className="w-4 h-4 text-white" />

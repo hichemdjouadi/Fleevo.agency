@@ -11,7 +11,8 @@ import {
   ArrowRight,
   Zap,
   ShieldCheck,
-  Bot
+  Bot,
+  MessageCircle
 } from "lucide-react";
 
 const PILLAR_ONE_SERVICES = [
@@ -29,9 +30,9 @@ const PILLAR_ONE_SERVICES = [
   },
   {
     num: "03",
-    title: "Custom Web Applications & Client Portals",
-    desc: "Private client portals and booking systems that automate repeat orders and onboarding.",
-    tags: ["Client Portals", "Cloud Database"]
+    title: "Custom Web Apps, Proprietary CRMs & Automation",
+    desc: "Lightweight deal tracking pipelines, client portals, and back-office automations that eliminate manual data entry.",
+    tags: ["Custom CRM Pipelines", "Workflow Automation"]
   }
 ];
 
@@ -66,8 +67,8 @@ const ACQUISITION_FLOW = [
   {
     num: "02",
     phase: "Convert",
-    title: "Fast Web Platforms",
-    desc: "Sub-second websites and mobile stores turn visitors into orders or bookings."
+    title: "Acquisition Platforms & CRMs",
+    desc: "High-converting web platforms and lightweight CRMs that turn visitors into confirmed orders or bookings."
   },
   {
     num: "03",
@@ -115,19 +116,30 @@ export default function Home() {
             className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 z-30 w-full sm:w-auto"
           >
             <Magnetic intensity={0.2}>
+              <a
+                href="https://wa.me/213655934124?text=Hi%20Hichem,%20I'd%20like%20to%20discuss%20an%20acquisition%20system%20for%20my%20business."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm sm:text-base transition-colors shadow-lg text-center"
+              >
+                <MessageCircle className="w-4 h-4 fill-white/20" />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </Magnetic>
+            <Magnetic intensity={0.2}>
               <TransitionLink
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-9 py-3.5 sm:py-4 rounded-full bg-black text-white font-semibold text-sm sm:text-base hover:bg-neutral-800 transition-colors shadow-sm text-center"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-black text-white font-semibold text-sm sm:text-base hover:bg-neutral-800 transition-colors shadow-sm text-center"
               >
-                <span>Book a 15-Minute Strategy Call</span>
+                <span>Book Strategy Call</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </TransitionLink>
             </Magnetic>
             <TransitionLink
               href="/work"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-9 py-3.5 sm:py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
             >
-              View Selected Work
+              View Work
             </TransitionLink>
           </motion.div>
 
@@ -168,22 +180,22 @@ export default function Home() {
       <section className="py-28 md:py-40 px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] max-w-2xl text-balance">
-            The 2-Pillar Acquisition <span className="font-serif italic font-light">Architecture.</span>
+            The Two-Discipline <span className="font-serif italic font-light">Architecture.</span>
           </h2>
           <p className="text-base sm:text-lg text-black/70 font-light max-w-sm leading-relaxed text-pretty">
-            Two connected engines that attract buyers, automate intake, and close sales.
+            Two connected disciplines that attract buyers, automate intake, and close sales.
           </p>
         </div>
 
-        {/* PILLAR 1: Conversion Engine (Open Canvas Hairline Grid) */}
+        {/* DISCIPLINE 1: Platforms & Digital Infrastructure */}
         <div className="pt-12 border-t border-black/15 mb-24">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
               <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-black mb-3 text-balance">
-                Customer Acquisition Platforms &amp; Bot Intake
+                Platforms &amp; Digital Infrastructure
               </h3>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4f4f5] text-xs font-mono font-semibold text-black">
-                <span>Pillar 01 · The Conversion Engine</span>
+                <span>Discipline 01 · Platforms &amp; Digital Infrastructure</span>
               </div>
             </div>
             <p className="text-sm md:text-base text-neutral-600 font-light max-w-sm leading-relaxed text-pretty">
@@ -221,15 +233,15 @@ export default function Home() {
           </div>
         </div>
 
-        {/* PILLAR 2: Scaling Engine (High-Contrast Obsidian Theater Block) */}
+        {/* DISCIPLINE 2: Growth & Customer Acquisition (High-Contrast Obsidian Theater Block) */}
         <div className="p-6 sm:p-12 md:p-16 rounded-3xl sm:rounded-[2.5rem] bg-[#050505] text-white">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
               <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white mb-3 text-balance">
-                Demand Generation &amp; Acquisition Scaling
+                Growth &amp; Customer Acquisition
               </h3>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono font-semibold text-white">
-                <span>Pillar 02 · The Scaling Engine</span>
+                <span>Discipline 02 · Growth &amp; Customer Acquisition</span>
               </div>
             </div>
             <p className="text-sm md:text-base text-white/70 font-light max-w-sm leading-relaxed text-pretty">
@@ -288,6 +300,25 @@ export default function Home() {
             </div>
           </div>
           <FeaturedWork />
+
+          {/* Proof-to-Action Conversion Bridge */}
+          <div className="mt-16 pt-10 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-wider text-neutral-500 block mb-1">
+                Have a project in mind?
+              </span>
+              <p className="text-base sm:text-lg text-black font-medium">
+                We can engineer a similar high-speed platform for your business.
+              </p>
+            </div>
+            <TransitionLink
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono font-semibold shrink-0"
+            >
+              <span>Request a Project Blueprint</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </TransitionLink>
+          </div>
         </div>
       </section>
 

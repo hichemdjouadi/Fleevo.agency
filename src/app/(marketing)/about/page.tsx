@@ -196,7 +196,7 @@ export default function AboutPage() {
             <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-black/10 bg-[#f4f4f5]">
               <Image
                 src="/founder-real.jpg"
-                alt="Hichem Djouadi - Founder & Principal Systems Architect at Fleevy"
+                alt="Hichem Djouadi - Founder & Principal Systems Architect at Fleevo"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
@@ -217,7 +217,7 @@ export default function AboutPage() {
 
             <div className="space-y-6 text-base sm:text-lg text-neutral-700 font-light leading-relaxed max-w-[58ch] text-pretty">
               <p>
-                Fleevy connects clean product design with automated sales systems. You work directly with principal engineering from day one, with no middlemen or account managers.
+                Fleevo connects clean product design with automated sales systems. You work directly with principal engineering from day one, with no middlemen or account managers.
               </p>
               <blockquote className="text-black font-normal italic border-l border-black/30 pl-5 py-1">
                 &ldquo;If a platform does not bring in customers or save your team hours, it is unfinished.&rdquo;
@@ -230,7 +230,7 @@ export default function AboutPage() {
                   H. Djouadi
                 </div>
                 <span className="font-mono text-xs text-neutral-600 block mt-1">
-                  Founder &amp; Principal Systems Architect · Fleevy
+                  Founder &amp; Principal Systems Architect · Fleevo
                 </span>
               </div>
 

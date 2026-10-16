@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Check,
-  ShieldCheck
+  ShieldCheck,
+  Zap,
+  Clock,
+  Lock,
+  Bot,
+  MessageCircle
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import TransitionLink from "@/components/TransitionLink";
@@ -16,11 +21,13 @@ export default function ServicesPage() {
       num: "01",
       title: "Client Acquisition Funnels & Brand Vitrines",
       badge: "Clinics & Services",
-      desc: "Websites built for clinics and service firms to book qualified appointments automatically.",
+      sla: "2–3 Weeks Delivery",
+      queryService: "Website / Landing Page",
+      desc: "High-conversion platforms built for clinics and service firms to capture and qualify client inquiries automatically.",
       deliverables: [
-        "Mobile booking flow",
+        "Mobile conversion flow",
         "WhatsApp qualification bot",
-        "Instant lead alerts",
+        "Instant lead notification alerts",
         "CRM database sync"
       ]
     },
@@ -28,24 +35,28 @@ export default function ServicesPage() {
       num: "02",
       title: "Direct Customer Ordering & E-Commerce Engines",
       badge: "D2C & Retail",
-      desc: "Online stores that cut out middleman fees and speed up mobile checkout.",
+      sla: "2–3 Weeks Delivery",
+      queryService: "E-Commerce Store",
+      desc: "Dedicated digital storefronts that eliminate marketplace cuts and streamline mobile purchasing.",
       deliverables: [
-        "Fast mobile catalog",
+        "High-conversion mobile catalog",
         "58-Wilayas COD checkout",
-        "WhatsApp order tickets",
+        "Instant WhatsApp order tickets",
         "Courier dispatch sync"
       ]
     },
     {
       num: "03",
-      title: "Custom Web Applications & Client Portals",
-      badge: "Web Software",
-      desc: "Client portals and booking software that automate repeat orders and daily operations.",
+      title: "Custom Web Apps, Proprietary CRMs & Automation",
+      badge: "Custom CRMs & Software",
+      sla: "3–4 Weeks Delivery",
+      queryService: "Custom CRM / Web App",
+      desc: "Tailored lead tracking pipelines, client portals, and back-office automations that eliminate manual spreadsheet data entry.",
       deliverables: [
-        "Secure client login",
-        "Private admin dashboard",
-        "Automated intake forms",
-        "Custom cloud database"
+        "Lightweight deal pipeline CRM",
+        "Lead-going-cold tracking & alerts",
+        "Automated courier & dispatch sync",
+        "Custom database & client portal"
       ]
     }
   ];
@@ -55,6 +66,8 @@ export default function ServicesPage() {
       num: "01",
       title: "Performance Meta Ads & Video Direction",
       badge: "Paid Demand",
+      sla: "1–2 Weeks Delivery",
+      queryService: "Meta Ads & Video Scripts",
       desc: "Facebook and Instagram ad campaigns paired with video scripts that attract buyers.",
       deliverables: [
         "Meta ad campaigns",
@@ -67,6 +80,8 @@ export default function ServicesPage() {
       num: "02",
       title: "Pipeline Leak & Content Audits",
       badge: "Growth Audit",
+      sla: "48-Hour Delivery",
+      queryService: "Conversion & Content Audit",
       desc: "A clear audit showing where buyers drop off and what converts best.",
       deliverables: [
         "Funnel leak teardown",
@@ -79,6 +94,8 @@ export default function ServicesPage() {
       num: "03",
       title: "Brand Credibility Polish",
       badge: "Included Bonus",
+      sla: "Included With Build",
+      queryService: "Website / Landing Page",
       desc: "Clean visual identity and branded ad assets included free with core builds.",
       deliverables: [
         "Logo mark cleanup",
@@ -125,7 +142,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[32px] sm:text-5xl md:text-7xl lg:text-[72px] font-medium tracking-[-0.035em] leading-[1.04] sm:leading-[0.95] max-w-4xl text-black text-balance"
+          className="text-[32px] sm:text-5xl md:text-7xl lg:text-[72px] font-medium tracking-tight leading-[1.04] sm:leading-[0.95] max-w-4xl text-black text-balance"
         >
           Customer acquisition systems{" "}
           <span className="font-serif italic font-light">&amp; digital infrastructure.</span>
@@ -140,47 +157,58 @@ export default function ServicesPage() {
           High-speed websites, online stores, and ad systems that bring you paying clients.
         </motion.p>
 
+        {/* Dual CTAs for Mobile & Desktop */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto"
         >
-          <Magnetic intensity={0.2}>
-            <TransitionLink
-              href="/contact"
-              className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-black text-white text-sm sm:text-base font-semibold hover:bg-neutral-800 transition-all shadow-sm flex items-center gap-2 group"
-            >
-              <span>Book a 15-Minute Strategy Call</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </TransitionLink>
-          </Magnetic>
+            <Magnetic intensity={0.2}>
+              <a
+                href="https://wa.me/213655934124?text=Hi%20Hichem,%20I'd%20like%20to%20discuss%20an%20acquisition%20system%20for%20my%20business."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm sm:text-base transition-colors shadow-lg text-center"
+              >
+                <MessageCircle className="w-4 h-4 fill-white/20" />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </Magnetic>
 
-          <Magnetic intensity={0.2}>
+            <Magnetic intensity={0.2}>
+              <TransitionLink
+                href="/contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-black text-white text-sm sm:text-base font-semibold hover:bg-neutral-800 transition-all shadow-sm text-center"
+              >
+                <span>Book Strategy Call</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </TransitionLink>
+            </Magnetic>
+
             <TransitionLink
               href="/work"
-              className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border border-black/15 text-black text-sm sm:text-base font-medium hover:bg-black/5 transition-colors flex items-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border border-black/15 text-black text-sm sm:text-base font-medium hover:bg-black/5 transition-colors text-center"
             >
-              View Selected Deployments
+              View Deployments
             </TransitionLink>
-          </Magnetic>
-        </motion.div>
+          </motion.div>
       </section>
 
-      {/* 2. PILLAR 1: CUSTOMER ACQUISITION PLATFORMS (THE CONVERSION ENGINE) */}
+      {/* 2. DISCIPLINE 01: PLATFORMS & DIGITAL INFRASTRUCTURE */}
       <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-3xl">
             <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] mb-4 text-balance">
-              Customer Acquisition Platforms{" "}
-              <span className="font-serif italic font-light">&amp; Automated Intake.</span>
+              Platforms{" "}
+              <span className="font-serif italic font-light">&amp; Digital Infrastructure.</span>
             </h2>
             <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#f4f4f5] text-xs font-mono font-semibold text-black">
-              Pillar 01 · The Conversion Engine
+              Discipline 01 · Platforms &amp; Digital Infrastructure
             </div>
           </div>
           <p className="text-base md:text-lg text-neutral-600 font-light max-w-md leading-relaxed text-pretty">
-            Websites, online stores, and custom portals built to convert traffic.
+            Customer acquisition platforms, stores, and custom CRMs engineered to convert traffic and automate intake.
           </p>
         </div>
 
@@ -191,6 +219,16 @@ export default function ServicesPage() {
               className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
             >
               <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-800 font-semibold">
+                    {service.badge}
+                  </span>
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-700 font-semibold">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>{service.sla}</span>
+                  </div>
+                </div>
+
                 <h3 className="text-2xl font-medium tracking-tight text-black mb-3 text-balance">
                   <span className="font-mono text-sm text-neutral-500 mr-2">{service.num}. </span>
                   {service.title}
@@ -201,44 +239,97 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-black/10">
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="text-xs font-mono font-semibold text-black">
-                    Included
+              <div>
+                <div className="pt-6 border-t border-black/10">
+                  <span className="text-xs font-mono font-semibold text-black block mb-4">
+                    Core Deliverables Included
                   </span>
-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium">
-                    {service.badge}
-                  </span>
+                  <div className="space-y-2 mb-6">
+                    {service.deliverables.map((deliv, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-sm text-neutral-800">
+                        <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                        <span>{deliv}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  {service.deliverables.map((deliv, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-sm text-neutral-800">
-                      <Check className="w-4 h-4 text-black shrink-0 mt-0.5" />
-                      <span>{deliv}</span>
-                    </div>
-                  ))}
-                </div>
+
+                <TransitionLink
+                  href={`/contact?service=${encodeURIComponent(service.queryService)}`}
+                  className="w-full inline-flex items-center justify-between px-5 py-3 rounded-full bg-neutral-50 hover:bg-black hover:text-white border border-black/10 transition-colors text-xs font-mono font-semibold group"
+                >
+                  <span>Inquire About This Build</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </TransitionLink>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Specialized Niche Capability Callout */}
+        <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-neutral-50 border border-black/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 text-xs font-mono text-neutral-800 font-semibold mb-3">
+              <Bot className="w-3.5 h-3.5 text-emerald-600" />
+              <span>SPECIALIZED VERTICAL CAPABILITY · HIGH-INQUIRY NICHES</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-black mb-2">
+              Domain-Specific Conversational AI &amp; Triage Agents
+            </h3>
+            <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
+              We do not deploy novelty chatbots everywhere. For inquiry-heavy sectors like polyclinics, real estate developments, and specialized service firms, we train custom AI agents on your pricing, procedures, and availability to pre-qualify leads and book consultations 24/7 without consuming staff hours.
+            </p>
+          </div>
+          <TransitionLink
+            href="/contact?service=Domain-Specific%20AI%20Agent"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono uppercase tracking-wider font-semibold shrink-0"
+          >
+            <span>Inquire for Your Niche</span>
+            <ArrowRight className="w-4 h-4" />
+          </TransitionLink>
+        </div>
       </section>
 
-      {/* 3. PILLAR 2: DEMAND GENERATION & ACQUISITION SCALING (THE SCALING ENGINE) */}
+      {/* 3. ZERO-RISK GUARANTEE CALLOUT */}
+      <section className="py-16 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
+        <div className="rounded-[2.5rem] bg-neutral-50 border border-black/10 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 text-xs font-mono text-neutral-800 font-semibold mb-4">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <span>THE FLEEVO ACQUISITION GUARANTEE</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-black mb-3">
+              Built to capture leads and process orders without friction.
+            </h3>
+            <p className="text-base text-neutral-600 font-light leading-relaxed">
+              Every system we deploy is tested against real-world customer journeys. If inquiries fail to alert your team in 30 seconds, or if your checkout sequence creates friction on mobile, we do not sign off on delivery until the pipeline is airtight.
+            </p>
+          </div>
+          <TransitionLink
+            href="/contact"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono uppercase tracking-wider font-semibold shrink-0"
+          >
+            <span>Discuss Your Timeline</span>
+            <ArrowRight className="w-4 h-4" />
+          </TransitionLink>
+        </div>
+      </section>
+
+      {/* 4. DISCIPLINE 02: GROWTH & CUSTOMER ACQUISITION */}
       <section className="py-24 md:py-36 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
             <div className="max-w-3xl">
               <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-white leading-[1.02] mb-4 text-balance">
-                Demand Generation{" "}
-                <span className="font-serif italic font-light">&amp; Acquisition Scaling.</span>
+                Growth{" "}
+                <span className="font-serif italic font-light">&amp; Customer Acquisition.</span>
               </h2>
               <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono font-semibold text-white">
-                Pillar 02 · The Scaling Engine
+                Discipline 02 · Growth &amp; Customer Acquisition
               </div>
             </div>
             <p className="text-base md:text-lg text-white/75 font-light max-w-md leading-relaxed text-pretty">
-              Targeted ads, video scripts, and conversion audits to scale your buyer flow.
+              Targeted Meta campaigns, direct-response video direction, and pipeline audits to fuel your platform with qualified buyers.
             </p>
           </div>
 
@@ -249,6 +340,16 @@ export default function ServicesPage() {
                 className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
               >
                 <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/10 text-white font-semibold">
+                      {service.badge}
+                    </span>
+                    <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-400 font-semibold">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>{service.sla}</span>
+                    </div>
+                  </div>
+
                   <h3 className="text-2xl font-medium tracking-tight text-white mb-3 text-balance">
                     <span className="font-mono text-sm text-white/55 mr-2">{service.num}. </span>
                     {service.title}
@@ -259,23 +360,28 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/15">
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="text-xs font-mono font-semibold text-white">
-                      Included
+                <div>
+                  <div className="pt-6 border-t border-white/15">
+                    <span className="text-xs font-mono font-semibold text-white block mb-4">
+                      Core Deliverables Included
                     </span>
-                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/10 text-white font-medium">
-                      {service.badge}
-                    </span>
+                    <div className="space-y-2 mb-6">
+                      {service.deliverables.map((deliv, idx) => (
+                        <div key={idx} className="flex items-start gap-2.5 text-sm text-white/85">
+                          <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                          <span>{deliv}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    {service.deliverables.map((deliv, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-sm text-white/85">
-                        <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                        <span>{deliv}</span>
-                      </div>
-                    ))}
-                  </div>
+
+                  <TransitionLink
+                    href={`/contact?service=${encodeURIComponent(service.queryService)}`}
+                    className="w-full inline-flex items-center justify-between px-5 py-3 rounded-full bg-white/5 hover:bg-white hover:text-black border border-white/10 transition-colors text-xs font-mono font-semibold group"
+                  >
+                    <span>Inquire About This Scope</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </TransitionLink>
                 </div>
               </div>
             ))}
@@ -283,7 +389,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 4. METHODOLOGY & COLLABORATION PROCESS */}
+      {/* 5. METHODOLOGY & COLLABORATION PROCESS */}
       <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] text-balance">
@@ -320,10 +426,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 5. CINEMATIC OUTRO */}
+      {/* 6. CINEMATIC OUTRO */}
       <section className="relative w-full text-white py-36 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden border-t border-white/10 bg-black">
         <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] leading-[0.98] mb-6 text-balance">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[0.98] mb-6 text-balance">
             Ready to build an acquisition engine that scales?
           </h2>
           <p className="text-lg md:text-2xl text-white/75 font-light max-w-xl mx-auto mb-12 leading-relaxed text-balance">

@@ -6,7 +6,7 @@ import { Plus, X } from "lucide-react";
 
 const faqs = [
   {
-    question: "What makes Fleevy different from a traditional agency?",
+    question: "What makes Fleevo different from a traditional agency?",
     answer: "Most agencies build static websites. We build complete acquisition systems with automated bot intake and targeted Meta ads."
   },
   {
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "Do we own all codebase assets and customer data?",
-    answer: "Yes, 100%. You own the full codebase, database, and domain with zero platform fees."
+    answer: "Yes. You have full ownership of the codebase and customer data with zero monthly platform lock-in."
   },
   {
     question: "What is the typical delivery timeline?",

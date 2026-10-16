@@ -8,7 +8,7 @@ const words = [
   "Architecture",
   "Automation",
   "Performance",
-  "Fleevy."
+  "Fleevo."
 ];
 
 export default function Preloader() {
@@ -24,7 +24,7 @@ export default function Preloader() {
     }
 
     // Check if user already saw the preloader this session or prefers reduced motion
-    const alreadySeen = typeof window !== "undefined" && sessionStorage.getItem("fleevy_preloader_seen");
+    const alreadySeen = typeof window !== "undefined" && sessionStorage.getItem("fleevo_preloader_seen");
     const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (alreadySeen || prefersReducedMotion) {
@@ -33,7 +33,7 @@ export default function Preloader() {
     }
 
     // Mark as seen for subsequent page transitions/refreshes in this session
-    sessionStorage.setItem("fleevy_preloader_seen", "true");
+    sessionStorage.setItem("fleevo_preloader_seen", "true");
     setIsLoaded(false);
   }, [pathname]);
 

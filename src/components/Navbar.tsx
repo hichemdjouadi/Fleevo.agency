@@ -62,7 +62,7 @@ export default function Navbar() {
             <TransitionLink 
               href="/" 
               onClick={() => setIsMobileMenuOpen(false)}
-              aria-label="Fleevy Home"
+              aria-label="Fleevo Home"
               className="block w-full h-full"
             >
               <Logo className={`w-full h-full transition-colors duration-300 ${isMobileMenuOpen ? "text-white" : "text-black"}`} />
@@ -149,7 +149,7 @@ export default function Navbar() {
                 <TransitionLink 
                   href="/" 
                   onClick={() => setIsMobileMenuOpen(false)} 
-                  aria-label="Fleevy Home"
+                  aria-label="Fleevo Home"
                 >
                   <Logo className="w-full h-full text-white" />
                 </TransitionLink>

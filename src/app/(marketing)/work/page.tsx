@@ -88,7 +88,7 @@ const PROJECTS: Project[] = [
     link: "/contact?subject=Private+Preview+-+Adrena+Club",
     systemType: "Autonomous Intent & Intake Gateway",
     isLive: false,
-    statusBadge: "Private Preview · Launching Soon",
+    statusBadge: "Private Preview · Staging Architecture",
     benefits: [
       {
         direction: "up",
@@ -142,7 +142,7 @@ const PROJECTS: Project[] = [
     link: "/contact?subject=Private+Preview+-+Tawheed+Bookstore",
     systemType: "Zero-Latency Mobile Commerce Pipeline",
     isLive: false,
-    statusBadge: "Private Preview · Launching Soon",
+    statusBadge: "Private Preview · Staging Architecture",
     benefits: [
       {
         direction: "up",
@@ -409,6 +409,20 @@ function ProjectShowcase({ project, index }: { project: Project; index: number }
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Contextual Architecture Inquiry Hook */}
+      <div className="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="text-xs font-mono text-white/50">
+          <span>SPECIFICATION // {project.systemType}</span>
+        </div>
+        <TransitionLink
+          href={`/contact?subject=${encodeURIComponent(`Case Study: ${project.title}`)}&service=${encodeURIComponent(project.filterCategory === "commerce" ? "E-Commerce Store" : "Web App / Client Portal")}`}
+          className="inline-flex items-center gap-2 text-xs font-mono text-white/80 hover:text-white border-b border-white/20 hover:border-white pb-0.5 transition-colors group"
+        >
+          <span>Build a similar acquisition platform for your business</span>
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+        </TransitionLink>
       </div>
     </motion.article>
   );

@@ -10,20 +10,20 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fleevy.agency"),
-  title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
+  metadataBase: new URL("https://fleevo.net"),
+  title: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
   description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads, video scripting guidance, and acquisition audits to predictably grow your client base.",
   openGraph: {
-    title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
+    title: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
     description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads and direct-response video direction.",
-    url: "https://fleevy.agency",
-    siteName: "Fleevy",
+    url: "https://fleevo.net",
+    siteName: "Fleevo",
     images: [
       {
         url: "/opengraph-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
+        alt: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
       }
     ],
     locale: "en_US",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
+    title: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
     description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads and direct-response video direction.",
     images: ["/opengraph-image.jpg"],
   },

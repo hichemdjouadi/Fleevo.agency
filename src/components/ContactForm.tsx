@@ -19,9 +19,10 @@ export default function ContactForm() {
   const serviceOptions = [
     "Website / Landing Page",
     "E-Commerce Store",
-    "Web App / Client Portal",
+    "Custom CRM / Web App",
     "Meta Ads & Video Scripts",
-    "Conversion & Content Audit"
+    "Conversion & Content Audit",
+    "Domain-Specific AI Agent"
   ];
 
   const timelineOptions = [
@@ -34,9 +35,21 @@ export default function ContactForm() {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
     const subject = params.get("subject");
+    const serviceParam = params.get("service");
+
+    if (serviceParam) {
+      const decoded = decodeURIComponent(serviceParam).toLowerCase();
+      const matched = serviceOptions.find(
+        (opt) => opt.toLowerCase().includes(decoded) || decoded.includes(opt.toLowerCase())
+      );
+      if (matched) {
+        setInterests([matched]);
+      }
+    }
+
     if (subject) {
       setDetails((prev) =>
-        prev ? prev : `Inquiry regarding: ${subject}\n`
+        prev ? prev : `Inquiry regarding: ${decodeURIComponent(subject)}\n`
       );
     }
   }, []);
