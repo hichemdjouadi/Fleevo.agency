@@ -108,39 +108,49 @@ export default function Home() {
             Fast websites, online stores, and web apps wired with instant WhatsApp bots and targeted Meta ads.
           </motion.p>
 
-          {/* Hero CTAs */}
+          {/* Hero CTAs - Direct Executive Hierarchy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 z-30 w-full sm:w-auto"
+            className="mt-8 sm:mt-10 flex flex-col items-center justify-center z-30 w-full"
           >
-            <Magnetic intensity={0.2}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
+              <Magnetic intensity={0.2}>
+                <TransitionLink
+                  href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-4 rounded-full bg-black text-white font-medium text-sm sm:text-base hover:bg-neutral-800 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.12)] text-center group"
+                >
+                  <span>Book a Strategy Call</span>
+                  <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
+                </TransitionLink>
+              </Magnetic>
+              <Magnetic intensity={0.2}>
+                <TransitionLink
+                  href="/work"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-7 sm:px-9 py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
+                >
+                  Explore Selected Work
+                </TransitionLink>
+              </Magnetic>
+            </div>
+
+            {/* Direct Executive Fast-Track Line */}
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs font-mono text-black/60">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span>Need immediate consultation?</span>
               <a
                 href="https://wa.me/213655934124?text=Hi%20Hichem,%20I'd%20like%20to%20discuss%20an%20acquisition%20system%20for%20my%20business."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm sm:text-base transition-colors shadow-lg text-center"
+                className="font-medium text-black underline underline-offset-4 hover:text-neutral-600 transition-colors"
               >
-                <MessageCircle className="w-4 h-4 fill-white/20" />
-                <span>Chat on WhatsApp</span>
+                Direct Partner WhatsApp (&lt; 15m SLA) &rarr;
               </a>
-            </Magnetic>
-            <Magnetic intensity={0.2}>
-              <TransitionLink
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-black text-white font-semibold text-sm sm:text-base hover:bg-neutral-800 transition-colors shadow-sm text-center"
-              >
-                <span>Book Strategy Call</span>
-                <ArrowRight className="w-4 h-4 shrink-0" />
-              </TransitionLink>
-            </Magnetic>
-            <TransitionLink
-              href="/work"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
-            >
-              View Work
-            </TransitionLink>
+            </div>
           </motion.div>
 
           {/* Micro Reassurances */}

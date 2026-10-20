@@ -6,7 +6,7 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 import TransitionLink from "@/components/TransitionLink";
 import Magnetic from "@/components/Magnetic";
-import { ArrowUpRight, ArrowRight, Dumbbell, BookOpen } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Dumbbell } from "lucide-react";
 
 interface DirectionalBenefit {
   direction: "up" | "down";
@@ -35,11 +35,11 @@ const PROJECTS: Project[] = [
     category: "Mobile Commerce & Automated Dispatch Architecture",
     filterCategory: "commerce",
     client: "Mo Pizza Restaurants",
-    image: "/project-mopizza2.png",
-    link: "https://mopizzarestaurants.netlify.app/",
+    image: "/project-mopizza.png",
+    link: "https://mopizzarestaurants.vercel.app",
     systemType: "Direct Intake & Mobile Commerce Engine",
     isLive: true,
-    statusBadge: "Live Deployment",
+    statusBadge: "Live Production Platform",
     benefits: [
       {
         direction: "up",
@@ -64,7 +64,7 @@ const PROJECTS: Project[] = [
     link: "https://almadinabookstore.com/",
     systemType: "Headless Catalog & Inventory Engine",
     isLive: true,
-    statusBadge: "Live Deployment",
+    statusBadge: "Live Production Platform",
     benefits: [
       {
         direction: "up",
@@ -84,109 +84,51 @@ const PROJECTS: Project[] = [
     title: "Adréna Club",
     category: "High-Ticket Membership & Athlete Intake Architecture",
     filterCategory: "webapp",
-    client: "Elite Athletics & Private Club Network",
-    link: "/contact?subject=Private+Preview+-+Adrena+Club",
-    systemType: "Autonomous Intent & Intake Gateway",
-    isLive: false,
-    statusBadge: "Private Preview · Staging Architecture",
+    client: "Adréna Club (Bab Ezzouar)",
+    image: "/project-adrena.png",
+    link: "https://adrenaclub.vercel.app/",
+    systemType: "2-Floor Athletic Facility & WhatsApp Intake",
+    isLive: true,
+    statusBadge: "Live Production Platform",
     benefits: [
       {
         direction: "up",
         type: "Commercial Result",
-        headline: "VIP Qualification",
-        detail: "Screens every applicant before alerting sales staff."
+        headline: "2-Floor Facility Booking",
+        detail: "Instant schedule and membership reservations direct via WhatsApp."
       },
       {
-        direction: "down",
+        direction: "up",
         type: "Problem Solved",
-        headline: "Staff Time Wasted on Unscreened Inquiries",
-        detail: "Filters casual browsers out of coaching calendars."
+        headline: "Instant Front-Desk Routing",
+        detail: "Direct WhatsApp qualification filters casual inquiries from staff."
       }
     ],
-    renderVisual: () => (
-      <div className="w-full h-full p-5 sm:p-14 flex flex-col justify-between gap-5 sm:gap-8 relative text-white select-none bg-[#0a0a0e] overflow-hidden" data-cursor="Preview">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs font-mono text-white/75">
-          <span className="flex items-center gap-1.5 sm:gap-2 text-white font-medium">
-            <Dumbbell className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/75 shrink-0" /> Adréna Intake Terminal
-          </span>
-          <span className="px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-white/10 text-white font-medium">Private Preview</span>
-        </div>
-        <div className="relative z-10 my-auto max-w-3xl py-3 sm:py-6">
-          <div className="text-2xl sm:text-5xl md:text-6xl font-serif italic font-light text-white tracking-tight leading-[1.08] sm:leading-[1.04] text-balance">
-            Executive Membership &amp; Automated Athlete Qualification.
-          </div>
-        </div>
-        <div className="relative z-10 pt-4 sm:pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 text-[11px] sm:text-xs font-mono">
-          <div>
-            <span className="text-white/55 block mb-0.5 sm:mb-1">Membership Tier</span>
-            <span className="text-white font-medium text-xs sm:text-sm">Executive VIP Athletic Pass</span>
-          </div>
-          <div>
-            <span className="text-white/55 block mb-0.5 sm:mb-1">Automated Intake</span>
-            <span className="text-white font-medium text-xs sm:text-sm">Instant WhatsApp Bot Screening</span>
-          </div>
-          <div className="sm:text-right">
-            <span className="text-white/55 block mb-0.5 sm:mb-1">Deployment State</span>
-            <span className="text-white font-medium text-xs sm:text-sm">Staging Verification Complete</span>
-          </div>
-        </div>
-      </div>
-    )
   },
   {
     title: "Tawheed & Sunnah Bookstore",
     category: "Scholarly Publishing & Nationwide Distribution Pipeline",
-    filterCategory: "webapp",
-    client: "Publishing & Distribution Network",
-    link: "/contact?subject=Private+Preview+-+Tawheed+Bookstore",
+    filterCategory: "commerce",
+    client: "Tawheed & Sunnah Publishing Network",
+    image: "/project-tawheed.png",
+    link: "/contact?subject=Case+Study+-+Tawheed+Bookstore",
     systemType: "Zero-Latency Mobile Commerce Pipeline",
-    isLive: false,
-    statusBadge: "Private Preview · Staging Architecture",
+    isLive: true,
+    statusBadge: "Live Production Deployment",
     benefits: [
       {
         direction: "up",
         type: "Commercial Result",
-        headline: "Automated Dispatch",
-        detail: "Orders route directly to warehouse fulfillment teams."
+        headline: "Nationwide 69-Wilaya Delivery Sync",
+        detail: "Real-time courier dispatch and dual branch pickup pipeline."
       },
       {
         direction: "down",
         type: "Problem Solved",
-        headline: "Manual Order Friction",
-        detail: "Live stock sync with instant courier dispatch."
+        headline: "Manual Intake Friction Eliminated",
+        detail: "Automated warehouse routing and instant WhatsApp dual verification."
       }
-    ],
-    renderVisual: () => (
-      <div className="w-full h-full p-5 sm:p-14 flex flex-col justify-between gap-5 sm:gap-8 relative text-white select-none bg-[#0a0a0e] overflow-hidden" data-cursor="Preview">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs font-mono text-white/75">
-          <span className="flex items-center gap-1.5 sm:gap-2 text-white font-medium">
-            <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/75 shrink-0" /> Scholarly Distribution Pipeline
-          </span>
-          <span className="px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-white/10 text-white font-medium">Private Preview</span>
-        </div>
-        <div className="relative z-10 my-auto max-w-3xl py-3 sm:py-6">
-          <div className="text-2xl sm:text-5xl md:text-6xl font-serif italic font-light text-white tracking-tight leading-[1.08] sm:leading-[1.04] text-balance">
-            Scholarly Editions &amp; Direct Courier Fulfillment.
-          </div>
-        </div>
-        <div className="relative z-10 pt-4 sm:pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 text-[11px] sm:text-xs font-mono">
-          <div>
-            <span className="text-white/55 block mb-0.5 sm:mb-1">Catalog Index</span>
-            <span className="text-white font-medium text-xs sm:text-sm">Scholarly Editions &amp; Treatises</span>
-          </div>
-          <div>
-            <span className="text-white/55 block mb-0.5 sm:mb-1">Order Pipeline</span>
-            <span className="text-white font-medium text-xs sm:text-sm">Automated Warehouse &amp; Courier Sync</span>
-          </div>
-          <div className="sm:text-right">
-            <span className="text-white/55 block mb-0.5 sm:mb-1">Deployment State</span>
-            <span className="text-white font-medium text-xs sm:text-sm">Courier Integration Synced</span>
-          </div>
-        </div>
-      </div>
-    )
+    ]
   }
 ];
 

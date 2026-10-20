@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, Dumbbell, BookOpen } from "lucide-react";
+import { ArrowUpRight, Dumbbell } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -32,8 +32,8 @@ const PROJECTS: ProjectItem[] = [
       { direction: "up", label: "Direct Margin Retained (0% Commission)" },
       { direction: "up", label: "Sub-800ms Mobile Checkout Velocity" }
     ],
-    image: "/project-mopizza2.png",
-    link: "https://mopizzarestaurants.netlify.app/",
+    image: "/project-mopizza.png",
+    link: "https://mopizzarestaurants.vercel.app",
     hasImage: true,
   },
   {
@@ -52,81 +52,31 @@ const PROJECTS: ProjectItem[] = [
   },
   {
     title: "Adréna Club",
-    niche: "Elite Athletics · Private Club Memberships",
-    deployment: "High-Ticket Qualification Gateway",
-    summary: "Private application portal that qualifies members and alerts sales staff instantly.",
-    statusBadge: "Private Preview · Launching Soon",
+    niche: "Athletics & Combat · Membership Booking",
+    deployment: "2-Floor Facility Platform & WhatsApp Intake",
+    summary: "Two-floor premium athletic performance club platform in Bab Ezzouar with instant WhatsApp membership intake and private schedule management.",
+    statusBadge: "Live Production Platform",
     benefits: [
-      { direction: "up", label: "VIP Qualification" },
-      { direction: "down", label: "Staff Time Wasted on Unscreened Inquiries" }
+      { direction: "up", label: "2-Floor Facility Booking" },
+      { direction: "up", label: "Instant WhatsApp Membership Routing" }
     ],
-    link: "/contact?subject=Private+Preview+-+Adrena+Club",
-    hasImage: false,
-    renderVisual: () => (
-      <div className="w-full h-full p-6 sm:p-10 flex flex-col justify-between relative text-white select-none bg-[#050505] overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-        <div className="relative z-10 flex items-center justify-between gap-2 text-xs font-mono text-white/75">
-          <span className="flex items-center gap-2 text-white font-medium">
-            <Dumbbell className="w-4 h-4 text-white/75 shrink-0" /> Adréna Private Gateway
-          </span>
-          <span className="px-3 py-1 rounded-full bg-white/10 text-white">Private Preview</span>
-        </div>
-        <div className="relative z-10 my-auto py-4">
-          <div className="text-2xl sm:text-3xl font-serif italic font-light text-white tracking-tight leading-snug text-balance">
-            Executive Membership &amp; Automated Athlete Qualification
-          </div>
-        </div>
-        <div className="relative z-10 pt-4 border-t border-white/15 grid grid-cols-2 gap-4 text-xs font-mono">
-          <div>
-            <span className="text-white/55 block">Intake Pipeline</span>
-            <span className="text-white font-medium">WhatsApp Bot Screening</span>
-          </div>
-          <div className="text-right">
-            <span className="text-white/55 block">Release Status</span>
-            <span className="text-white font-medium">Staging Verified</span>
-          </div>
-        </div>
-      </div>
-    )
+    image: "/project-adrena.png",
+    link: "https://adrenaclub.vercel.app/",
+    hasImage: true,
   },
   {
     title: "Tawheed & Sunnah Bookstore",
     niche: "Publishing & Distribution · Digital Commerce",
     deployment: "Zero-Latency Mobile Commerce Pipeline",
-    summary: "Mobile book store connected directly to courier dispatch and live inventory.",
-    statusBadge: "Private Preview · Launching Soon",
+    summary: "High-performance Arabic catalog architecture with 69-wilayas courier sync, dual branch pickup, and instant WhatsApp verification.",
+    statusBadge: "Live Production Platform",
     benefits: [
-      { direction: "up", label: "Automated Dispatch" },
-      { direction: "down", label: "Manual Order Friction" }
+      { direction: "up", label: "Nationwide Courier Integration" },
+      { direction: "down", label: "Manual Intake Friction" }
     ],
-    link: "/contact?subject=Private+Preview+-+Tawheed+Bookstore",
-    hasImage: false,
-    renderVisual: () => (
-      <div className="w-full h-full p-6 sm:p-10 flex flex-col justify-between relative text-white select-none bg-[#050505] overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-        <div className="relative z-10 flex items-center justify-between gap-2 text-xs font-mono text-white/75">
-          <span className="flex items-center gap-2 text-white font-medium">
-            <BookOpen className="w-4 h-4 text-white/75 shrink-0" /> Distribution Pipeline
-          </span>
-          <span className="px-3 py-1 rounded-full bg-white/10 text-white">Private Preview</span>
-        </div>
-        <div className="relative z-10 my-auto py-4">
-          <div className="text-2xl sm:text-3xl font-serif italic font-light text-white tracking-tight leading-snug text-balance">
-            Scholarly Editions &amp; Direct Courier Fulfillment
-          </div>
-        </div>
-        <div className="relative z-10 pt-4 border-t border-white/15 grid grid-cols-2 gap-4 text-xs font-mono">
-          <div>
-            <span className="text-white/55 block">Order Pipeline</span>
-            <span className="text-white font-medium">58-Wilayas Courier Sync</span>
-          </div>
-          <div className="text-right">
-            <span className="text-white/55 block">Release Status</span>
-            <span className="text-white font-medium">Staging Verified</span>
-          </div>
-        </div>
-      </div>
-    )
+    link: "/contact?subject=Case+Study+-+Tawheed+Bookstore",
+    hasImage: true,
+    image: "/project-tawheed.png"
   }
 ];
 
@@ -179,7 +129,6 @@ function ShowcaseItem({ project }: { project: ProjectItem }) {
               src={project.image}
               alt={project.title}
               fill
-              unoptimized
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-top"
             />
@@ -200,7 +149,7 @@ function ShowcaseItem({ project }: { project: ProjectItem }) {
               <span className="text-black font-medium">{project.statusBadge}</span>
             </div>
           </div>
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/15 flex items-center justify-center bg-white group-hover:bg-black group-hover:text-white transition-all shrink-0">
+          <div className="w-11 h-11 rounded-full border border-black/15 flex items-center justify-center bg-white group-hover:bg-black group-hover:text-white transition-all shrink-0">
             <ArrowUpRight className="w-4 h-4 text-black group-hover:text-white transition-colors" />
           </div>
         </div>
@@ -217,7 +166,8 @@ function ShowcaseItem({ project }: { project: ProjectItem }) {
             key={idx}
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium"
           >
-            <span className="font-bold text-black">{b.direction === "up" ? "↑" : "↓"}</span>
+            <span className="sr-only">{b.direction === "up" ? "Increased: " : "Reduced: "}</span>
+            <span aria-hidden="true" className="font-bold text-black">{b.direction === "up" ? "↑" : "↓"}</span>
             <span>{b.label}</span>
           </span>
         ))}
