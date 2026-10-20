@@ -3,33 +3,26 @@
 import { useState, useEffect } from "react";
 import { submitAuditRequest } from "@/app/actions";
 import { CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone } from "lucide-react";
+import { useTranslation } from "@/lib/i18n";
+
+type ServiceKey = "website" | "ecommerce" | "crm" | "ads" | "audit" | "aiAgent";
+type TimelineKey = "rightAway" | "twoToFourWeeks" | "planningAhead";
+
+const SERVICE_KEYS: ServiceKey[] = ["website", "ecommerce", "crm", "ads", "audit", "aiAgent"];
+const TIMELINE_KEYS: TimelineKey[] = ["rightAway", "twoToFourWeeks", "planningAhead"];
 
 export default function ContactForm() {
-  const [interests, setInterests] = useState<string[]>(["Website / Landing Page"]);
+  const { t, isRTL, locale } = useTranslation();
+  const [selectedServiceKeys, setSelectedServiceKeys] = useState<ServiceKey[]>(["website"]);
+  const [selectedTimelineKey, setSelectedTimelineKey] = useState<TimelineKey>("twoToFourWeeks");
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [details, setDetails] = useState("");
-  const [timeline, setTimeline] = useState("Within 2–4 weeks");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  const serviceOptions = [
-    "Website / Landing Page",
-    "E-Commerce Store",
-    "Custom CRM / Web App",
-    "Meta Ads & Video Scripts",
-    "Conversion & Content Audit",
-    "Domain-Specific AI Agent"
-  ];
-
-  const timelineOptions = [
-    "Right away",
-    "Within 2–4 weeks",
-    "Planning ahead"
-  ];
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -39,11 +32,18 @@ export default function ContactForm() {
 
     if (serviceParam) {
       const decoded = decodeURIComponent(serviceParam).toLowerCase();
-      const matched = serviceOptions.find(
-        (opt) => opt.toLowerCase().includes(decoded) || decoded.includes(opt.toLowerCase())
-      );
-      if (matched) {
-        setInterests([matched]);
+      if (decoded.includes("crm") || decoded.includes("app")) {
+        setSelectedServiceKeys(["crm"]);
+      } else if (decoded.includes("commerce") || decoded.includes("store")) {
+        setSelectedServiceKeys(["ecommerce"]);
+      } else if (decoded.includes("ad") || decoded.includes("script")) {
+        setSelectedServiceKeys(["ads"]);
+      } else if (decoded.includes("audit")) {
+        setSelectedServiceKeys(["audit"]);
+      } else if (decoded.includes("ai")) {
+        setSelectedServiceKeys(["aiAgent"]);
+      } else {
+        setSelectedServiceKeys(["website"]);
       }
     }
 
@@ -54,13 +54,13 @@ export default function ContactForm() {
     }
   }, []);
 
-  const toggleInterest = (option: string) => {
-    setInterests((prev) => {
-      if (prev.includes(option)) {
+  const toggleInterest = (key: ServiceKey) => {
+    setSelectedServiceKeys((prev) => {
+      if (prev.includes(key)) {
         if (prev.length === 1) return prev;
-        return prev.filter((i) => i !== option);
+        return prev.filter((i) => i !== key);
       }
-      return [...prev, option];
+      return [...prev, key];
     });
   };
 
@@ -75,26 +75,29 @@ export default function ContactForm() {
     const trimmedDetails = details.trim();
 
     if (!trimmedName || !trimmedCompany || !trimmedEmail || !trimmedPhone) {
-      setError("Please fill in your name, company, email, and phone number.");
+      setError(t.contactForm.errorRequired);
       return;
     }
 
-    if (interests.length === 0) {
-      setError("Please select at least one option.");
+    if (selectedServiceKeys.length === 0) {
+      setError(t.contactForm.errorInterests);
       return;
     }
 
     setIsSubmitting(true);
 
+    const localizedServices = selectedServiceKeys.map((k) => t.contactForm.services[k]);
+    const localizedTimeline = t.contactForm.timelines[selectedTimelineKey];
+
     const formattedName = `${trimmedName} (${trimmedCompany})`;
-    const compiledDetails = `Company: ${trimmedCompany}\nPhone/WhatsApp: ${trimmedPhone}\nDetails: ${trimmedDetails || "N/A"}`;
+    const compiledDetails = `Language: ${locale.toUpperCase()}\nCompany: ${trimmedCompany}\nPhone/WhatsApp: ${trimmedPhone}\nDetails: ${trimmedDetails || "N/A"}`;
 
     const result = await submitAuditRequest({
       name: formattedName,
       email: trimmedEmail,
-      timeline,
-      budget: timeline,
-      interests,
+      timeline: localizedTimeline,
+      budget: localizedTimeline,
+      interests: localizedServices,
       details: compiledDetails
     });
 
@@ -113,9 +116,11 @@ export default function ContactForm() {
         <div className="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 className="w-7 h-7" />
         </div>
-        <h3 className="text-3xl font-medium tracking-tight text-black mb-3">Request Received.</h3>
+        <h3 className="text-3xl font-medium tracking-tight text-black mb-3">
+          {t.contactForm.successTitle}
+        </h3>
         <p className="text-neutral-600 font-light max-w-md mx-auto leading-relaxed">
-          Thank you. We received your project details and will reply within 24 hours.
+          {t.contactForm.successDesc}
         </p>
       </div>
     );
@@ -125,21 +130,22 @@ export default function ContactForm() {
     <div className="w-full flex flex-col gap-8">
       <form
         onSubmit={handleSubmit}
-        className="w-full bg-white border border-black/15 rounded-2xl sm:rounded-[32px] p-5 sm:p-10 md:p-12 flex flex-col gap-7 sm:gap-8 text-left shadow-[0_20px_50px_rgba(0,0,0,0.04)] text-black"
+        className="w-full bg-white border border-black/15 rounded-2xl sm:rounded-[32px] p-5 sm:p-10 md:p-12 flex flex-col gap-7 sm:gap-8 text-start shadow-[0_20px_50px_rgba(0,0,0,0.04)] text-black"
       >
         {/* 1. What do you need? */}
         <div className="flex flex-col gap-3">
           <span id="contact-need-label" className="text-xs font-mono text-neutral-600 font-medium">
-            01 // What do you need?
+            {t.contactForm.needLabel}
           </span>
           <div className="flex flex-wrap gap-2 sm:gap-2.5" role="group" aria-labelledby="contact-need-label">
-            {serviceOptions.map((opt) => {
-              const isSelected = interests.includes(opt);
+            {SERVICE_KEYS.map((key) => {
+              const label = t.contactForm.services[key];
+              const isSelected = selectedServiceKeys.includes(key);
               return (
                 <button
-                  key={opt}
+                  key={key}
                   type="button"
-                  onClick={() => toggleInterest(opt)}
+                  onClick={() => toggleInterest(key)}
                   aria-pressed={isSelected}
                   className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full border text-xs sm:text-sm transition-all focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
                     isSelected
@@ -147,7 +153,7 @@ export default function ContactForm() {
                       : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
                   }`}
                 >
-                  {opt}
+                  {label}
                 </button>
               );
             })}
@@ -157,16 +163,17 @@ export default function ContactForm() {
         {/* 2. Target Timeline */}
         <div className="flex flex-col gap-3">
           <span id="contact-timeline-label" className="text-xs font-mono text-neutral-600 font-medium">
-            02 // Target Timeline
+            {t.contactForm.timelineLabel}
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5" role="radiogroup" aria-labelledby="contact-timeline-label">
-            {timelineOptions.map((opt) => {
-              const isSelected = timeline === opt;
+            {TIMELINE_KEYS.map((key) => {
+              const label = t.contactForm.timelines[key];
+              const isSelected = selectedTimelineKey === key;
               return (
                 <button
-                  key={opt}
+                  key={key}
                   type="button"
-                  onClick={() => setTimeline(opt)}
+                  onClick={() => setSelectedTimelineKey(key)}
                   role="radio"
                   aria-checked={isSelected}
                   className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border text-xs sm:text-sm transition-all text-center focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
@@ -175,7 +182,7 @@ export default function ContactForm() {
                       : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
                   }`}
                 >
-                  {opt}
+                  {label}
                 </button>
               );
             })}
@@ -187,7 +194,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
               <label htmlFor="contact-name" className="text-xs font-mono text-neutral-600 font-medium">
-                Your Name <span className="text-black font-bold" aria-hidden="true">*</span>
+                {t.contactForm.nameLabel} <span className="text-black font-bold" aria-hidden="true">*</span>
               </label>
               <input
                 id="contact-name"
@@ -196,14 +203,14 @@ export default function ContactForm() {
                 aria-required="true"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Full name"
+                placeholder={t.contactForm.namePlaceholder}
                 className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm"
               />
             </div>
 
             <div className="flex flex-col gap-2">
               <label htmlFor="contact-company" className="text-xs font-mono text-neutral-600 font-medium">
-                Company <span className="text-black font-bold" aria-hidden="true">*</span>
+                {t.contactForm.companyLabel} <span className="text-black font-bold" aria-hidden="true">*</span>
               </label>
               <input
                 id="contact-company"
@@ -212,7 +219,7 @@ export default function ContactForm() {
                 aria-required="true"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                placeholder="Company or brand name"
+                placeholder={t.contactForm.companyPlaceholder}
                 className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm"
               />
             </div>
@@ -221,7 +228,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
               <label htmlFor="contact-email" className="text-xs font-mono text-neutral-600 font-medium">
-                Email Address <span className="text-black font-bold" aria-hidden="true">*</span>
+                {t.contactForm.emailLabel} <span className="text-black font-bold" aria-hidden="true">*</span>
               </label>
               <input
                 id="contact-email"
@@ -230,14 +237,14 @@ export default function ContactForm() {
                 aria-required="true"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@company.com"
+                placeholder={t.contactForm.emailPlaceholder}
                 className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm"
               />
             </div>
 
             <div className="flex flex-col gap-2">
               <label htmlFor="contact-phone" className="text-xs font-mono text-neutral-600 font-medium">
-                Phone / WhatsApp <span className="text-black font-bold" aria-hidden="true">*</span>
+                {t.contactForm.phoneLabel} <span className="text-black font-bold" aria-hidden="true">*</span>
               </label>
               <input
                 id="contact-phone"
@@ -246,7 +253,7 @@ export default function ContactForm() {
                 aria-required="true"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="+213 655 00 00 00"
+                placeholder={t.contactForm.phonePlaceholder}
                 className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm"
               />
             </div>
@@ -254,13 +261,13 @@ export default function ContactForm() {
 
           <div className="flex flex-col gap-2">
             <label htmlFor="contact-details" className="text-xs font-mono text-neutral-600 font-medium">
-              Project Details
+              {t.contactForm.projectScopeLabel}
             </label>
             <textarea
               id="contact-details"
               value={details}
               onChange={(e) => setDetails(e.target.value)}
-              placeholder="Tell us what you are building and your main goals."
+              placeholder={t.contactForm.projectScopePlaceholder}
               rows={3}
               className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm resize-none"
             />
@@ -280,13 +287,13 @@ export default function ContactForm() {
             disabled={isSubmitting}
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-black text-white font-semibold text-sm hover:bg-neutral-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 group shadow-sm"
           >
-            <span>{isSubmitting ? "Sending..." : "Send Request"}</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <span>{isSubmitting ? t.contactForm.submittingBtn : t.contactForm.submitBtn}</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
           </button>
 
           <div className="flex items-center gap-2 text-xs text-neutral-600 font-mono">
-            <ShieldCheck className="w-4 h-4 text-black" />
-            <span>Direct review · Reply within 24h</span>
+            <ShieldCheck className="w-4 h-4 text-black shrink-0" />
+            <span>{t.contactForm.securityBadge}</span>
           </div>
         </div>
       </form>
@@ -295,10 +302,10 @@ export default function ContactForm() {
       <div className="w-full pt-8 border-t border-black/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div>
           <span className="text-xs font-mono text-neutral-500 block mb-1">
-            Direct Contact
+            {t.footer.mainStudio}
           </span>
           <p className="text-sm text-neutral-700 font-light">
-            Prefer email or WhatsApp? Reach us directly.
+            {t.nav.hqNotice}
           </p>
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">

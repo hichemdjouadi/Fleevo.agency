@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, Cairo } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -7,6 +7,12 @@ const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
   weight: ["200", "300", "400", "500", "600", "700", "800"],
+});
+
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  variable: "--font-cairo",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -43,8 +49,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={manrope.variable} suppressHydrationWarning>
-      <body className={`${manrope.variable} font-sans antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${manrope.variable} ${cairo.variable}`} suppressHydrationWarning>
+      <body className={`${manrope.variable} ${cairo.variable} font-sans antialiased`} suppressHydrationWarning>
         {children}
         <CustomCursor />
       </body>

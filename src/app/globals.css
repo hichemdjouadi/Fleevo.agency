@@ -19,6 +19,7 @@
   --color-studio-border-light: var(--studio-border-light);
   --color-studio-border-dark: var(--studio-border-dark);
   --font-sans: var(--font-manrope), Arial, sans-serif;
+  --font-arabic: var(--font-cairo), Arial, sans-serif;
 }
 
 body {
@@ -27,6 +28,15 @@ body {
   font-family: var(--font-manrope), Arial, sans-serif;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Proper Arabic Typography & Bidirectional Support */
+[dir="rtl"], [dir="rtl"] body, body[dir="rtl"], html.locale-ar, html.locale-ar body {
+  font-family: var(--font-cairo), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] a, [dir="rtl"] button {
+  letter-spacing: normal !important;
 }
 
 body::-webkit-scrollbar {

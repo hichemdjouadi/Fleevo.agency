@@ -3,92 +3,40 @@
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import DeviceFrame from "@/components/ui/DeviceFrame";
-import TransitionLink from "@/components/TransitionLink";
+import { useTranslation } from "@/lib/i18n";
 
-interface ShowcaseProject {
-  id: "mopizza" | "adrena" | "almadina" | "tawheed";
-  tabLabel: string;
-  shortLabel: string;
-  client: string;
-  category: string;
+interface ProjectMeta {
   url: string;
   liveUrl: string;
-  isExternal: boolean;
-  statusBadge: string;
-  statusDotColor?: string;
-  ctaText: string;
-  ctaTextDesktop: string;
-  image?: string;
-  benefits: {
-    direction: "up" | "down";
-    label: string;
-  }[];
-  renderCanvas?: () => React.ReactNode;
+  image: string;
+  statusDotColor: string;
 }
 
-const PROJECTS: ShowcaseProject[] = [
-  {
-    id: "mopizza",
-    tabLabel: "Mo Pizza",
-    shortLabel: "Mo Pizza",
-    client: "Mo Pizza Restaurants",
-    category: "Direct Intake & Mobile Commerce Engine",
+const STATIC_METAS: Record<string, ProjectMeta> = {
+  mopizza: {
     url: "mopizzarestaurants.vercel.app",
     liveUrl: "https://mopizzarestaurants.vercel.app/",
-    isExternal: true,
-    statusBadge: "Live Production Platform",
-    statusDotColor: "bg-emerald-400",
-    ctaText: "Visit Live Deployment",
-    ctaTextDesktop: "Visit Live Deployment (Mo Pizza Direct Ordering)",
     image: "/mopizza-mobile.png",
-    benefits: [
-      { direction: "up", label: "0% Commission Direct Orders" },
-      { direction: "up", label: "Sub-800ms Mobile Velocity" }
-    ]
+    statusDotColor: "bg-emerald-400",
   },
-  {
-    id: "adrena",
-    tabLabel: "Adréna Club",
-    shortLabel: "Adréna",
-    client: "Adréna Club (Bab Ezzouar)",
-    category: "Athletic Club & Intake System",
+  adrena: {
     url: "adrenaclub.vercel.app",
     liveUrl: "https://adrenaclub.vercel.app/",
-    isExternal: true,
-    statusBadge: "Private Preview · Staging Deployment",
-    statusDotColor: "bg-amber-400",
-    ctaText: "Explore Staging Platform",
-    ctaTextDesktop: "Explore Staging Platform (Adréna Club)",
     image: "/adrena-mobile.png",
-    benefits: [
-      { direction: "up", label: "Direct WhatsApp Enrollment (dès 3 000 DA)" },
-      { direction: "down", label: "Front-Desk Inquiry Overload" }
-    ]
+    statusDotColor: "bg-amber-400",
   },
-  {
-    id: "almadina",
-    tabLabel: "Almadina Bookstore",
-    shortLabel: "Almadina",
-    client: "Almadina Publishing",
-    category: "Headless Catalog Architecture",
+  almadina: {
     url: "almadinabookstore.com",
     liveUrl: "https://almadinabookstore.com/",
-    isExternal: true,
-    statusBadge: "Live Production Platform",
-    statusDotColor: "bg-emerald-400",
-    ctaText: "Visit Live Deployment",
-    ctaTextDesktop: "Visit Live Deployment (Almadina Bookstore)",
     image: "/almadina-mobile.png",
-    benefits: [
-      { direction: "up", label: "Instant Title & ISBN Search" },
-      { direction: "down", label: "58-Wilayas Cart Drop-Off" }
-    ]
-  }
-];
+    statusDotColor: "bg-emerald-400",
+  },
+};
 
 export default function HeroVisual() {
+  const { t, isRTL } = useTranslation();
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const stageRef = useRef<HTMLDivElement>(null);
@@ -113,7 +61,9 @@ export default function HeroVisual() {
     mouseY.set(0);
   };
 
-  const current = PROJECTS[activeTab];
+  const projects = t.heroVisual.projects;
+  const current = projects[activeTab] || projects[0];
+  const meta = STATIC_METAS[current.id] || STATIC_METAS.mopizza;
 
   return (
     <div
@@ -122,13 +72,13 @@ export default function HeroVisual() {
       onMouseLeave={handleMouseLeave}
       className="relative w-full flex flex-col items-center justify-center py-2 sm:py-4 select-none"
     >
-      {/* 1. Project Selector Segmented Control (Responsive 3-col on mobile, full pill on desktop) */}
+      {/* 1. Project Selector Segmented Control */}
       <div 
         role="tablist"
         aria-label="Featured client platforms"
         className="relative z-30 mb-6 sm:mb-10 w-full max-w-[360px] sm:max-w-xl grid grid-cols-3 p-1 sm:p-1.5 bg-[#f4f4f5] rounded-xl sm:rounded-full border border-black/10 gap-1 text-center"
       >
-        {PROJECTS.map((proj, idx) => {
+        {projects.map((proj, idx) => {
           const isActive = activeTab === idx;
           return (
             <button
@@ -139,12 +89,17 @@ export default function HeroVisual() {
               aria-controls={`panel-${proj.id}`}
               id={`tab-${proj.id}`}
               onClick={() => setActiveTab(idx)}
-              className={`min-h-[44px] flex items-center justify-center py-2 px-2 sm:px-4 rounded-lg sm:rounded-full text-xs md:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
-                isActive
-                  ? "bg-black text-white shadow-sm font-semibold"
-                  : "text-neutral-700 hover:text-black hover:bg-black/[0.04]"
+              className={`relative z-10 py-2 sm:py-2.5 px-2 sm:px-4 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black ${
+                isActive ? "text-white" : "text-neutral-600 hover:text-black"
               }`}
             >
+              {isActive && (
+                <motion.div
+                  layoutId="activeHeroTab"
+                  className="absolute inset-0 bg-black rounded-lg sm:rounded-full -z-10 shadow-sm"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
               <span className="sm:hidden">{proj.shortLabel}</span>
               <span className="hidden sm:inline">{proj.tabLabel}</span>
             </button>
@@ -152,55 +107,64 @@ export default function HeroVisual() {
         })}
       </div>
 
-      {/* 2. The Clean Photorealistic Hardware Stage */}
+      {/* 2. Realistic Dynamic Mobile Showcase */}
       <motion.div
         style={{
           rotateX,
           rotateY,
           transformStyle: "preserve-3d"
         }}
-        className="relative w-full max-w-[900px] flex flex-col items-center justify-center px-2 sm:px-4"
+        className="relative z-20 flex flex-col items-center"
       >
-        <div
-          className="relative z-20 group w-full flex justify-center"
-          data-cursor="Explore"
-        >
+        <div className="w-[300px] sm:w-[340px] md:w-[370px] drop-shadow-[0_25px_60px_rgba(0,0,0,0.18)]">
           <DeviceFrame
-            url={current.url}
+            url={meta.url}
             statusBadge={current.statusBadge}
-            statusDotColor={current.statusDotColor}
+            statusDotColor={meta.statusDotColor}
+            className="w-full"
           >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current.id}
-                id={`panel-${current.id}`}
-                role="tabpanel"
-                aria-labelledby={`tab-${current.id}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="relative w-full h-full"
-              >
-                {current.renderCanvas ? (
-                  current.renderCanvas()
-                ) : (
+            <div className="relative w-full h-full bg-[#050505] overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current.id}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative w-full h-full"
+                >
                   <Image
-                    src={current.image!}
-                    alt={`${current.client} mobile interface`}
+                    src={meta.image}
+                    alt={current.client}
                     fill
-                    sizes="(max-width: 640px) 340px, (max-width: 768px) 360px, 420px"
-                    priority
-                    unoptimized
+                    sizes="(max-width: 640px) 300px, 370px"
+                    priority={activeTab === 0}
                     className="object-cover object-top"
+                    unoptimized
                   />
-                )}
-              </motion.div>
-            </AnimatePresence>
+
+                  {/* Top Edge Gradient overlay for realistic luxury glass depth */}
+                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
+
+                  {/* Floating Live Badge inside viewport */}
+                  <div className="absolute bottom-3 inset-x-3 p-3 rounded-2xl bg-black/80 backdrop-blur-xl border border-white/15 text-white flex items-center justify-between pointer-events-none">
+                    <div className="flex items-center gap-2">
+                      <span className={`w-2 h-2 rounded-full ${meta.statusDotColor} animate-pulse`} />
+                      <span className="text-[11px] font-mono tracking-tight font-medium">
+                        {current.statusBadge}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono text-white/50">
+                      {current.client}
+                    </span>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </DeviceFrame>
         </div>
 
-        {/* Directional Benefits Ledger below device with Delightful Motion */}
+        {/* Directional Benefits Ledger below device */}
         <div className="mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-xl text-center px-2 min-h-[42px]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -224,7 +188,6 @@ export default function HeroVisual() {
                   whileHover={{ y: -2, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="group inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-white border border-black/10 hover:border-black/30 text-[11px] sm:text-xs font-mono text-neutral-800 hover:text-black transition-all shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.06)] duration-200 cursor-default"
-                  data-cursor="Outcome"
                 >
                   <span className="w-4 h-4 sm:w-4.5 sm:h-4.5 rounded-full bg-black/5 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center text-[10px] sm:text-[11px] font-bold text-black shrink-0">
                     <span className="sr-only">{b.direction === "up" ? "Increased: " : "Reduced: "}</span>
@@ -242,31 +205,19 @@ export default function HeroVisual() {
         </div>
       </motion.div>
 
-      {/* 3. Direct Live Platform Link or Staging Access Link */}
+      {/* 3. Direct Live Platform Link */}
       <div className="relative z-30 mt-5 sm:mt-6 flex items-center justify-center w-full px-4">
-        {current.isExternal ? (
-          <a
-            href={current.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 font-medium text-xs sm:text-sm shadow-sm transition-all group"
-            data-cursor="Visit"
-          >
-            <span className="sm:hidden">{current.ctaText}</span>
-            <span className="hidden sm:inline">{current.ctaTextDesktop}</span>
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
-        ) : (
-          <TransitionLink
-            href={current.liveUrl}
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 font-medium text-xs sm:text-sm shadow-sm transition-all group"
-            data-cursor="Preview"
-          >
-            <span className="sm:hidden">{current.ctaText}</span>
-            <span className="hidden sm:inline">{current.ctaTextDesktop}</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </TransitionLink>
-        )}
+        <a
+          href={meta.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 font-medium text-xs sm:text-sm shadow-sm transition-all group"
+          data-cursor="Visit"
+        >
+          <span className="sm:hidden">{current.ctaText}</span>
+          <span className="hidden sm:inline">{current.ctaTextDesktop}</span>
+          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform rtl:rotate-[-90deg]" />
+        </a>
       </div>
     </div>
   );

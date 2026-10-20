@@ -14,71 +14,11 @@ import {
   Bot,
   MessageCircle
 } from "lucide-react";
-
-const PILLAR_ONE_SERVICES = [
-  {
-    num: "01",
-    title: "Client Acquisition Funnels & Brand Vitrines",
-    desc: "Service websites that capture leads and qualify buyers automatically on WhatsApp.",
-    tags: ["Instant Bot Intake", "Zero-Friction Booking"]
-  },
-  {
-    num: "02",
-    title: "Direct Customer Ordering & E-Commerce Engines",
-    desc: "Mobile online stores with zero commission fees and instant kitchen or warehouse alerts.",
-    tags: ["0% Commission", "58-Wilayas COD"]
-  },
-  {
-    num: "03",
-    title: "Custom Web Apps, Proprietary CRMs & Automation",
-    desc: "Lightweight deal tracking pipelines, client portals, and back-office automations that eliminate manual data entry.",
-    tags: ["Custom CRM Pipelines", "Workflow Automation"]
-  }
-];
-
-const PILLAR_TWO_SERVICES = [
-  {
-    num: "01",
-    title: "Full-Funnel Marketing Strategy & Meta Ads",
-    desc: "Targeted Facebook and Instagram ad campaigns paired with full acquisition strategy and video scripts.",
-    tags: ["Marketing Strategy", "Video Scripts", "Meta Ads"]
-  },
-  {
-    num: "02",
-    title: "Pipeline Leak & Growth Audits",
-    desc: "A clear breakdown of where leads drop off plus an actionable growth roadmap.",
-    tags: ["Funnel Audit", "Growth Roadmap"]
-  },
-  {
-    num: "03",
-    title: "Brand Credibility Polish",
-    desc: "Clean visual identity and branded ad templates included free with core builds.",
-    tags: ["Free Build Bonus", "Ad Templates"]
-  }
-];
-
-const ACQUISITION_FLOW = [
-  {
-    num: "01",
-    phase: "Attract",
-    title: "Ads & Video Scripts",
-    desc: "Targeted Meta ads and clear video hooks pull in ready-to-buy prospects."
-  },
-  {
-    num: "02",
-    phase: "Convert",
-    title: "Acquisition Platforms & CRMs",
-    desc: "High-converting web platforms and lightweight CRMs that turn visitors into confirmed orders or bookings."
-  },
-  {
-    num: "03",
-    phase: "Close",
-    title: "30s Bot Dispatch",
-    desc: "Automated WhatsApp or Telegram bots qualify details and alert your team immediately."
-  }
-];
+import { useTranslation } from "@/lib/i18n";
 
 export default function Home() {
+  const { t, isRTL } = useTranslation();
+
   return (
     <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen">
 
@@ -95,8 +35,8 @@ export default function Home() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="text-[32px] sm:text-5xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[1.04] sm:leading-[0.94] text-black w-full max-w-5xl text-balance"
           >
-            We engineer customer acquisition systems{" "}
-            <span className="font-serif italic font-light">&amp; digital infrastructure.</span>
+            {t.home.hero.headlineStart}{" "}
+            <span className="font-serif italic font-light">{t.home.hero.headlineEnd}</span>
           </motion.h1>
 
           <motion.p
@@ -105,10 +45,10 @@ export default function Home() {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mt-5 sm:mt-8 text-base sm:text-xl md:text-2xl text-black/75 font-light max-w-[640px] leading-relaxed text-pretty"
           >
-            Fast websites, online stores, and web apps wired with instant WhatsApp bots and targeted Meta ads.
+            {t.home.hero.subtitle}
           </motion.p>
 
-          {/* Hero CTAs - Direct Executive Hierarchy */}
+          {/* Hero CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,8 +61,8 @@ export default function Home() {
                   href="/contact"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-4 rounded-full bg-black text-white font-medium text-sm sm:text-base hover:bg-neutral-800 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.12)] text-center group"
                 >
-                  <span>Book a Strategy Call</span>
-                  <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
+                  <span>{t.home.hero.ctaPrimary}</span>
+                  <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
                 </TransitionLink>
               </Magnetic>
               <Magnetic intensity={0.2}>
@@ -130,25 +70,26 @@ export default function Home() {
                   href="/work"
                   className="w-full sm:w-auto inline-flex items-center justify-center px-7 sm:px-9 py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
                 >
-                  Explore Selected Work
+                  {t.home.hero.ctaSecondary}
                 </TransitionLink>
               </Magnetic>
             </div>
 
             {/* Direct Executive Fast-Track Line */}
-            <div className="mt-4 flex items-center justify-center gap-2 text-xs font-mono text-black/60">
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-black/60">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span>Need immediate consultation?</span>
+              <span>WhatsApp:</span>
               <a
                 href="https://wa.me/213655934124?text=Hi%20Hichem,%20I'd%20like%20to%20discuss%20an%20acquisition%20system%20for%20my%20business."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-black underline underline-offset-4 hover:text-neutral-600 transition-colors"
+                className="font-medium text-black underline underline-offset-4 hover:text-neutral-600 transition-colors inline-flex items-center gap-1"
               >
-                Direct Partner WhatsApp (&lt; 15m SLA) &rarr;
+                <span>+213 655 934 124 (&lt; 15m)</span>
+                <span className="rtl:rotate-180">&rarr;</span>
               </a>
             </div>
           </motion.div>
@@ -161,16 +102,16 @@ export default function Home() {
             className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-3.5 sm:gap-8 text-[11px] sm:text-xs font-mono text-black/65"
           >
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <Bot className="w-3.5 h-3.5 text-black" />
-              <span>Automated Bot Intake</span>
+              <Bot className="w-3.5 h-3.5 text-black shrink-0" />
+              <span>{t.home.hero.badges.bot}</span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <Zap className="w-3.5 h-3.5 text-black" />
-              <span>Direct Margin Retained</span>
+              <Zap className="w-3.5 h-3.5 text-black shrink-0" />
+              <span>{t.home.hero.badges.commission}</span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <ShieldCheck className="w-3.5 h-3.5 text-black" />
-              <span>Enduring Architecture</span>
+              <ShieldCheck className="w-3.5 h-3.5 text-black shrink-0" />
+              <span>{t.home.hero.badges.speed}</span>
             </div>
           </motion.div>
 
@@ -186,104 +127,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. THE 2 PILLARS OF ACQUISITION ARCHITECTURE (OPEN EDITORIAL CANVAS) */}
+      {/* 2. THE 2 PILLARS OF ACQUISITION ARCHITECTURE */}
       <section className="py-28 md:py-40 px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] max-w-2xl text-balance">
-            The Two-Discipline <span className="font-serif italic font-light">Architecture.</span>
+            {t.home.pillars.headline}
           </h2>
           <p className="text-base sm:text-lg text-black/70 font-light max-w-sm leading-relaxed text-pretty">
-            Two connected disciplines that attract buyers, automate intake, and close sales.
+            {t.home.pillars.subhead}
           </p>
         </div>
 
-        {/* DISCIPLINE 1: Platforms & Digital Infrastructure */}
+        {/* PILLAR 1: Platforms & Digital Infrastructure */}
         <div className="pt-12 border-t border-black/15 mb-24">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
               <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-black mb-3 text-balance">
-                Platforms &amp; Digital Infrastructure
+                {t.home.pillars.pillarOneTitle}
               </h3>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4f4f5] text-xs font-mono font-semibold text-black">
-                <span>Discipline 01 · Platforms &amp; Digital Infrastructure</span>
+                <span>{t.home.pillars.badge} · 01</span>
               </div>
             </div>
             <p className="text-sm md:text-base text-neutral-600 font-light max-w-sm leading-relaxed text-pretty">
-              Websites, online stores, and portals built to turn visitors into buyers.
+              {t.home.pillars.pillarOneDesc}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black/10 border-y border-black/10">
-            {PILLAR_ONE_SERVICES.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-black/10 border-y border-black/10">
+            {t.home.pillars.pillarOneServices.map((item) => (
               <div
                 key={item.num}
-                className="py-8 md:py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
+                className="py-8 md:py-10 md:px-8 first:md:ps-0 last:md:pe-0 flex flex-col justify-between gap-6 text-start"
               >
                 <div>
                   <h4 className="text-xl md:text-2xl font-medium text-black tracking-tight mb-3 text-balance">
-                    <span className="font-mono text-sm text-neutral-500 mr-2">{item.num}. </span>
+                    <span className="font-mono text-sm text-neutral-500 me-2">{item.num}. </span>
                     {item.title}
                   </h4>
                   <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed text-pretty">
                     {item.desc}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-black/10 flex flex-wrap gap-2">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full bg-[#f4f4f5] font-mono text-xs text-neutral-800 font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                {item.tags && (
+                  <div className="pt-4 border-t border-black/10 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 rounded-full bg-[#f4f4f5] font-mono text-xs text-neutral-800 font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* DISCIPLINE 2: Growth & Customer Acquisition (High-Contrast Obsidian Theater Block) */}
+        {/* PILLAR 2: Growth & Customer Acquisition */}
         <div className="p-6 sm:p-12 md:p-16 rounded-3xl sm:rounded-[2.5rem] bg-[#050505] text-white">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
               <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white mb-3 text-balance">
-                Growth &amp; Customer Acquisition
+                {t.home.pillars.pillarTwoTitle}
               </h3>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono font-semibold text-white">
-                <span>Discipline 02 · Growth &amp; Customer Acquisition</span>
+                <span>{t.home.pillars.badge} · 02</span>
               </div>
             </div>
             <p className="text-sm md:text-base text-white/70 font-light max-w-sm leading-relaxed text-pretty">
-              Targeted ads, video scripts, and conversion audits to fill your pipeline.
+              {t.home.pillars.pillarTwoDesc}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/15 border-y border-white/15">
-            {PILLAR_TWO_SERVICES.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-white/15 border-y border-white/15">
+            {t.home.pillars.pillarTwoServices.map((item) => (
               <div
                 key={item.num}
-                className="py-8 md:py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
+                className="py-8 md:py-10 md:px-8 first:md:ps-0 last:md:pe-0 flex flex-col justify-between gap-6 text-start"
               >
                 <div>
                   <h4 className="text-xl md:text-2xl font-medium text-white tracking-tight mb-3 text-balance">
-                    <span className="font-mono text-sm text-white/60 mr-2">{item.num}. </span>
+                    <span className="font-mono text-sm text-white/60 me-2">{item.num}. </span>
                     {item.title}
                   </h4>
                   <p className="text-sm md:text-base text-white/75 font-light leading-relaxed text-pretty">
                     {item.desc}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full bg-white/10 font-mono text-xs text-white/85 font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                {item.tags && (
+                  <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 rounded-full bg-white/10 font-mono text-xs text-white/85 font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -295,38 +240,39 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20 gap-8">
             <h2 className="text-4xl md:text-7xl font-medium text-black tracking-[-0.03em] leading-[0.94] text-balance">
-              Selected <span className="font-serif italic font-light">deployments.</span>
+              {t.home.showcase.headline}
             </h2>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <p className="text-lg text-black/70 font-light max-w-sm leading-relaxed text-pretty">
-                Live platforms built to convert traffic from day one.
+                {t.home.showcase.subhead}
               </p>
               <TransitionLink
                 href="/work"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-sm font-semibold shadow-sm shrink-0"
               >
-                View all deployments <ArrowRight className="w-4 h-4" />
+                <span>{t.home.showcase.viewAll}</span>
+                <ArrowRight className="w-4 h-4 rtl:rotate-180" />
               </TransitionLink>
             </div>
           </div>
           <FeaturedWork />
 
           {/* Proof-to-Action Conversion Bridge */}
-          <div className="mt-16 pt-10 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="mt-16 pt-10 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-start">
             <div>
               <span className="text-xs font-mono uppercase tracking-wider text-neutral-500 block mb-1">
-                Have a project in mind?
+                {t.work.bottomCta.headline}
               </span>
               <p className="text-base sm:text-lg text-black font-medium">
-                We can engineer a similar high-speed platform for your business.
+                {t.work.bottomCta.subhead}
               </p>
             </div>
             <TransitionLink
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono font-semibold shrink-0"
             >
-              <span>Request a Project Blueprint</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span>{t.home.ctaBanner.primaryBtn}</span>
+              <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />
             </TransitionLink>
           </div>
         </div>
@@ -338,24 +284,23 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
             <div className="max-w-2xl">
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-[-0.03em] leading-[1.04] text-white text-balance">
-                How our systems turn attention{" "}
-                <span className="font-serif italic font-light">into revenue.</span>
+                {t.home.flow.headline}
               </h2>
             </div>
             <p className="text-base sm:text-lg text-white/70 font-light max-w-sm leading-relaxed text-pretty">
-              One connected flow from first ad impression to verified sale.
+              {t.home.flow.subhead}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/15 border-y border-white/15">
-            {ACQUISITION_FLOW.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-white/15 border-y border-white/15">
+            {t.home.flow.steps.map((item) => (
               <div
                 key={item.num}
-                className="py-10 md:px-8 first:md:pl-0 last:md:pr-0 flex flex-col justify-between gap-6"
+                className="py-10 md:px-8 first:md:ps-0 last:md:pe-0 flex flex-col justify-between gap-6 text-start"
               >
                 <div>
                   <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-3 text-balance">
-                    <span className="font-mono text-sm text-white/55 mr-2">{item.num}. </span>
+                    <span className="font-mono text-sm text-white/55 me-2">{item.num}. </span>
                     {item.title}
                   </h3>
                   <p className="text-sm md:text-base text-white/75 font-light leading-relaxed text-pretty">
@@ -363,7 +308,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/70">
-                  <span>Phase {item.num}</span>
+                  <span>{item.num}</span>
                   <span className="px-3 py-1 rounded-full bg-white/10 text-white font-medium">
                     {item.phase}
                   </span>
@@ -396,8 +341,7 @@ export default function Home() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] leading-[0.95] mb-6 text-balance"
           >
-            Ready to build an acquisition <br className="hidden sm:block" />
-            engine that scales?
+            {t.home.ctaBanner.headline}
           </motion.h2>
 
           <motion.p
@@ -407,7 +351,7 @@ export default function Home() {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-2xl text-white/75 font-light max-w-xl mx-auto mb-12 leading-relaxed text-pretty"
           >
-            Book a 15-minute call. We review your setup and map out a clear build plan.
+            {t.home.ctaBanner.subhead}
           </motion.p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 z-30 w-full sm:w-auto">
@@ -416,28 +360,31 @@ export default function Home() {
                 href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-white text-black text-base sm:text-lg font-semibold transition-colors hover:bg-neutral-200 shadow-2xl text-center gap-2"
               >
-                <span>Book a 15-Minute Strategy Call</span>
-                <ArrowRight className="w-5 h-5 shrink-0" />
+                <span>{t.home.ctaBanner.primaryBtn}</span>
+                <ArrowRight className="w-5 h-5 shrink-0 rtl:rotate-180" />
               </TransitionLink>
             </Magnetic>
 
             <Magnetic intensity={0.2}>
               <a
-                href="mailto:contact@fleevo.net"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/20 hover:border-white text-white text-base sm:text-lg font-medium transition-colors text-center"
+                href="https://wa.me/213655934124"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/20 hover:border-white text-white text-base sm:text-lg font-medium transition-colors text-center gap-2"
               >
-                <span>contact@fleevo.net</span>
+                <MessageCircle className="w-5 h-5 shrink-0" />
+                <span>{t.home.ctaBanner.whatsappBtn}</span>
               </a>
             </Magnetic>
           </div>
 
           {/* Outro Reassurance Strip */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs font-mono text-white/65">
-            <span>Direct engineering consultation</span>
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono text-white/65">
+            <span>{t.home.founder.badge}</span>
             <span>·</span>
-            <span>Full codebase ownership</span>
+            <span>{t.about.hero.ledger.lockinTitle}</span>
             <span>·</span>
-            <span>Detailed scope breakdown</span>
+            <span>{t.contact.reassurance.fixedProposal}</span>
           </div>
         </div>
       </section>

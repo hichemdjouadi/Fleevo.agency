@@ -3,16 +3,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-
-const words = [
-  "Architecture",
-  "Automation",
-  "Performance",
-  "Fleevo."
-];
+import { useTranslation } from "@/lib/i18n";
 
 export default function Preloader() {
   const pathname = usePathname();
+  const { t } = useTranslation();
+  const words = t.preloader.words;
   const [index, setIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(true);
 

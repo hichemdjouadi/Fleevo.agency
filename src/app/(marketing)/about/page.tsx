@@ -6,138 +6,82 @@ import Image from "next/image";
 import TransitionLink from "@/components/TransitionLink";
 import Footer from "@/components/Footer";
 import Magnetic from "@/components/Magnetic";
+import { useTranslation } from "@/lib/i18n";
 
 export default function AboutPage() {
-  const standards = [
-    {
-      num: "01",
-      badge: "Custom Architecture",
-      title: "Craft Over Templates",
-      desc: "Every layout and conversion flow is built from scratch for your business model.",
-      benchmark: "100% Bespoke Codebase"
-    },
-    {
-      num: "02",
-      badge: "Mobile Velocity",
-      title: "Performance as Luxury",
-      desc: "Edge-compiled pages load in under 800ms on mobile 4G networks with zero lag.",
-      benchmark: "< 800ms Mobile Load"
-    },
-    {
-      num: "03",
-      badge: "Production Longevity",
-      title: "Enduring Codebases",
-      desc: "Built on strict TypeScript, Next.js, and PostgreSQL so nothing breaks during updates.",
-      benchmark: "Strict TypeScript & RLS"
-    }
-  ];
-
-  const stack = [
-    {
-      num: "01",
-      name: "Next.js App Router",
-      category: "Frontend & Edge Runtime",
-      detail: "Fast server rendering for mobile speed."
-    },
-    {
-      num: "02",
-      name: "TypeScript",
-      category: "Language & Type Safety",
-      detail: "Strict type safety across every module."
-    },
-    {
-      num: "03",
-      name: "PostgreSQL & Supabase",
-      category: "Database & Authentication",
-      detail: "Secure cloud databases with live sync."
-    },
-    {
-      num: "04",
-      name: "Tailwind CSS",
-      category: "Design System Tokens",
-      detail: "Clean styling with zero CSS bloat."
-    },
-    {
-      num: "05",
-      name: "Framer Motion",
-      category: "Kinetic Choreography",
-      detail: "Smooth physics for responsive interface motion."
-    },
-    {
-      num: "06",
-      name: "Automated Bot Webhooks",
-      category: "Intake & Logistics Sync",
-      detail: "Instant WhatsApp or Telegram lead alerts."
-    }
-  ];
+  const { t, isRTL, locale } = useTranslation();
 
   return (
     <main className="bg-white text-black min-h-screen selection:bg-black selection:text-white">
 
       {/* 1. THE MANIFESTO HERO */}
-      <section className="relative w-full pt-36 md:pt-44 pb-20 px-6 md:px-12 max-w-[1400px] mx-auto">
+      <section className="relative w-full pt-36 md:pt-44 pb-20 px-6 md:px-12 max-w-[1400px] mx-auto text-start">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-5xl"
         >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-mono font-medium text-neutral-800 mb-6">
+            <span>{t.nav.about.toUpperCase()}</span>
+          </div>
+
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium tracking-[-0.035em] leading-[1.02] text-black mb-8 text-balance">
-            We exist because most agencies build{" "}
-            <span className="font-serif italic font-light">ornaments without acquisition plumbing.</span>
+            {t.about.hero.headlineStart}{" "}
+            <span className="font-serif italic font-light">{t.about.hero.headlineEnd}</span>
           </h1>
 
           <p className="text-lg sm:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-12 text-pretty">
-            We replace slow brochure websites with fast acquisition platforms, automated bot intake, and targeted Meta ads.
+            {t.about.hero.subhead}
           </p>
 
-          {/* Credibility Hairline Ledger — headline leads at the top of each column */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-black/15 border-y border-black/15">
-            <div className="py-6 sm:px-6 first:sm:pl-0 last:sm:pr-0">
-              <div className="text-xl font-medium text-black">Sub-800ms Edge Loading</div>
-              <div className="text-sm text-neutral-600 mt-1">Engineered for mobile 4G networks</div>
+          {/* Credibility Hairline Ledger */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x rtl:sm:divide-x-reverse divide-black/15 border-y border-black/15">
+            <div className="py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
+              <div className="text-xl font-medium text-black">{t.about.hero.ledger.speedTitle}</div>
+              <div className="text-sm text-neutral-600 mt-1">{t.about.hero.ledger.speedSub}</div>
             </div>
-            <div className="py-6 sm:px-6 first:sm:pl-0 last:sm:pr-0">
-              <div className="text-xl font-medium text-black">0% Third-Party Cut</div>
-              <div className="text-sm text-neutral-600 mt-1">Direct customer ordering &amp; bot dispatch</div>
+            <div className="py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
+              <div className="text-xl font-medium text-black">{t.about.hero.ledger.botTitle}</div>
+              <div className="text-sm text-neutral-600 mt-1">{t.about.hero.ledger.botSub}</div>
             </div>
-            <div className="py-6 sm:px-6 first:sm:pl-0 last:sm:pr-0">
-              <div className="text-xl font-medium text-black">100% Codebase Ownership</div>
-              <div className="text-sm text-neutral-600 mt-1">Zero proprietary platform lock-in</div>
+            <div className="py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
+              <div className="text-xl font-medium text-black">{t.about.hero.ledger.lockinTitle}</div>
+              <div className="text-sm text-neutral-600 mt-1">{t.about.hero.ledger.lockinSub}</div>
             </div>
           </div>
         </motion.div>
       </section>
 
       {/* 2. THREE ARCHITECTURAL STANDARDS */}
-      <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
+      <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] text-balance">
-              Three architectural standards.{" "}
-              <span className="font-serif italic font-light">Zero compromise.</span>
+              {t.about.standards.headline}
             </h2>
           </div>
           <p className="text-lg text-neutral-600 font-light max-w-sm leading-relaxed text-pretty">
-            Non-negotiable standards that keep every build fast and reliable.
+            {t.about.standards.subhead}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-black/15 border-y border-black/15">
-          {standards.map((std) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x rtl:lg:divide-x-reverse divide-black/15 border-y border-black/15">
+          {t.about.standards.items.map((std) => (
             <div
               key={std.num}
-              className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
+              className="py-10 lg:py-12 lg:px-8 first:lg:ps-0 last:lg:pe-0 flex flex-col justify-between gap-8 text-start"
             >
               <div>
                 <h3 className="text-2xl sm:text-3xl font-medium text-black tracking-tight mb-3 text-balance">
-                  <span className="font-mono text-sm text-neutral-500 mr-2">{std.num}. </span>
+                  <span className="font-mono text-sm text-neutral-500 me-2">{std.num}. </span>
                   {std.title}
                 </h3>
                 <p className="text-base text-neutral-600 font-light leading-relaxed text-pretty">
                   {std.desc}
                 </p>
               </div>
+
               <div className="pt-6 border-t border-black/10 flex items-center justify-between gap-2 text-xs font-mono">
                 <span className="text-neutral-600">{std.benchmark}</span>
                 <span className="px-3 py-1 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium">
@@ -150,28 +94,28 @@ export default function AboutPage() {
       </section>
 
       {/* 3. FULL ENGINEERING STACK */}
-      <section className="py-24 md:py-36 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10">
+      <section className="py-24 md:py-36 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-start">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
             <div className="max-w-2xl">
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.04] text-balance">
-                Production-grade <span className="font-serif italic font-light">stack.</span>
+                {t.about.techStack.headline}
               </h2>
             </div>
             <p className="text-base sm:text-lg text-white/75 font-light max-w-sm leading-relaxed text-pretty">
-              Modern technologies built for speed and security.
+              {t.about.techStack.subhead}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/15">
-            {stack.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-s border-white/15">
+            {t.about.techStack.items.map((item) => (
               <div
                 key={item.num}
-                className="p-8 sm:p-10 border-r border-b border-white/15 flex flex-col justify-between gap-6"
+                className="p-8 sm:p-10 border-e border-b border-white/15 flex flex-col justify-between gap-6 text-start"
               >
                 <div>
                   <h3 className="text-xl sm:text-2xl font-medium text-white mb-2 text-balance">
-                    <span className="font-mono text-sm text-white/55 mr-2">{item.num}. </span>
+                    <span className="font-mono text-sm text-white/55 me-2">{item.num}. </span>
                     {item.name}
                   </h3>
                   <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed text-pretty">
@@ -188,7 +132,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. EXECUTIVE CREATIVE & TECHNICAL LEADERSHIP */}
-      <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
+      <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
           {/* Portrait Column */}
@@ -196,41 +140,42 @@ export default function AboutPage() {
             <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-black/10 bg-[#f4f4f5]">
               <Image
                 src="/founder-real.jpg"
-                alt="Hichem Djouadi - Founder & Principal Systems Architect at Fleevo"
+                alt="Hichem Djouadi - Founder & Technical Lead at Fleevo"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
                 className="object-cover grayscale contrast-125"
               />
-              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-[#050505] text-white border border-white/15 font-mono text-xs">
-                <div className="font-semibold text-white text-sm">Hichem Djouadi</div>
-                <div className="text-white/75 text-xs mt-0.5">Founder &amp; Principal Systems Architect</div>
+              <div className="absolute bottom-6 inset-x-6 p-5 rounded-2xl bg-[#050505] text-white border border-white/15 font-mono text-xs">
+                <div className="font-semibold text-white text-sm">{t.about.founder.founderName}</div>
+                <div className="text-white/75 text-xs mt-0.5">{t.about.founder.founderRole}</div>
               </div>
             </div>
           </div>
 
           {/* Executive Statement Column */}
           <div className="lg:col-span-7 flex flex-col justify-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 text-xs font-mono font-medium text-neutral-800 mb-4 w-fit">
+              <span>{t.about.founder.badge}</span>
+            </div>
+
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] mb-8 text-balance">
-              Direct engineering <span className="font-serif italic font-light">accountability.</span>
+              {t.about.founder.headline}
             </h2>
 
             <div className="space-y-6 text-base sm:text-lg text-neutral-700 font-light leading-relaxed max-w-[58ch] text-pretty">
-              <p>
-                Fleevo connects clean product design with automated sales systems. You work directly with principal engineering from day one, with no middlemen or account managers.
-              </p>
-              <blockquote className="text-black font-normal italic border-l border-black/30 pl-5 py-1">
-                &ldquo;If a platform does not bring in customers or save your team hours, it is unfinished.&rdquo;
-              </blockquote>
+              {t.about.founder.paragraphs.map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))}
             </div>
 
             <div className="mt-10 pt-8 border-t border-black/15 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div>
                 <div className="text-3xl font-serif italic text-black font-medium">
-                  H. Djouadi
+                  {t.about.founder.founderName}
                 </div>
                 <span className="font-mono text-xs text-neutral-600 block mt-1">
-                  Founder &amp; Principal Systems Architect · Fleevo
+                  {t.about.founder.founderRole} · Fleevo
                 </span>
               </div>
 
@@ -238,8 +183,8 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono font-semibold shrink-0"
               >
-                <span>Start a Project</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>{t.about.bottomCta.ctaBtn}</span>
+                <ArrowRight className="w-4 h-4 rtl:rotate-180" />
               </TransitionLink>
             </div>
           </div>
@@ -251,11 +196,10 @@ export default function AboutPage() {
       <section className="py-28 md:py-40 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] mb-8 leading-[0.96] text-white text-balance">
-            Let&apos;s engineer your next <br className="hidden md:block" />
-            acquisition platform.
+            {t.about.bottomCta.headline}
           </h2>
           <p className="text-lg sm:text-xl text-white/75 mb-12 max-w-lg mx-auto font-light leading-relaxed text-balance">
-            Book a 15-minute call or send your request. We reply within 24 hours.
+            {t.about.bottomCta.subhead}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
@@ -264,8 +208,8 @@ export default function AboutPage() {
                 href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-white text-black font-semibold text-base sm:text-lg hover:bg-neutral-200 transition-all group"
               >
-                <span>Book a 15-Minute Strategy Call</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
+                <span>{t.about.bottomCta.ctaBtn}</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />
               </TransitionLink>
             </Magnetic>
 
