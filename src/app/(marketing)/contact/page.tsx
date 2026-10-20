@@ -1,14 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import ContactForm from "@/components/ContactForm";
+import OnboardingWizard from "@/components/OnboardingWizard";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { MessageCircle, Clock, CheckCircle2, ArrowRight } from "lucide-react";
 import Magnetic from "@/components/Magnetic";
 import { useTranslation } from "@/lib/i18n";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const { t, isRTL, locale } = useTranslation();
+  const [activeMode, setActiveMode] = useState<"wizard" | "form">("wizard");
 
   const waPreFillMessage = {
     en: "Hi Hichem, I'd like to discuss an acquisition system for my business.",
@@ -36,7 +40,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* Dual-Channel Grid: Left Fast-Lane + Right Form */}
+        {/* Dual-Channel Grid: Left Fast-Lane + Right Configurator / Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Direct WhatsApp Fast-Lane Card & Reassurance */}
@@ -114,9 +118,61 @@ export default function ContactPage() {
 
           </div>
 
-          {/* Right Column: Structured Intake Form */}
-          <div className="lg:col-span-7">
-            <ContactForm />
+          {/* Right Column: Mode Toggle + Wizard / Form */}
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            
+            {/* Mode Switcher Segmented Control */}
+            <div 
+              role="tablist"
+              aria-label="Intake mode"
+              className="relative p-1 bg-[#f4f4f5] rounded-full border border-black/10 flex items-center max-w-md"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeMode === "wizard"}
+                onClick={() => setActiveMode("wizard")}
+                className={`relative z-10 flex-1 py-2 sm:py-2.5 px-4 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 outline-none text-center ${
+                  activeMode === "wizard" ? "text-white font-semibold" : "text-neutral-600 hover:text-black"
+                }`}
+              >
+                {activeMode === "wizard" && (
+                  <motion.div
+                    layoutId="contactModeTab"
+                    className="absolute inset-0 bg-black rounded-full -z-10 shadow-sm"
+                    transition={{ type: "spring", stiffness: 450, damping: 32 }}
+                  />
+                )}
+                {t.contact.modeToggle.wizard}
+              </button>
+
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeMode === "form"}
+                onClick={() => setActiveMode("form")}
+                className={`relative z-10 flex-1 py-2 sm:py-2.5 px-4 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 outline-none text-center ${
+                  activeMode === "form" ? "text-white font-semibold" : "text-neutral-600 hover:text-black"
+                }`}
+              >
+                {activeMode === "form" && (
+                  <motion.div
+                    layoutId="contactModeTab"
+                    className="absolute inset-0 bg-black rounded-full -z-10 shadow-sm"
+                    transition={{ type: "spring", stiffness: 450, damping: 32 }}
+                  />
+                )}
+                {t.contact.modeToggle.form}
+              </button>
+            </div>
+
+            {/* Content view */}
+            {activeMode === "wizard" ? (
+              <OnboardingWizard />
+            ) : (
+              <ContactForm />
+            )}
+
           </div>
 
         </div>

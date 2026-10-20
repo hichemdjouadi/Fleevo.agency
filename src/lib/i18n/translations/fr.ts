@@ -61,6 +61,113 @@ export const fr: TranslationDictionary = {
       planningAhead: "Planification à venir"
     }
   },
+  onboardingWizard: {
+    badge: "Assistant de Cadrage Immédiat",
+    stepPrefix: "Étape",
+    stepOf: "sur 3",
+    blueprintReady: "Plan d'Architecture Prêt",
+    step1: {
+      title: "Quelle infrastructure numérique correspond à votre entreprise ?",
+      subhead: "Sélectionnez le système prioritaire pour moderniser vos opérations.",
+      options: [
+        {
+          id: "ecom",
+          title: "01. Moteur E-Commerce Direct",
+          desc: "Boutique ultra-rapide avec synchronisation transporteurs (Yalidine/ZR) et commande en 1 clic."
+        },
+        {
+          id: "lead",
+          title: "02. Tunnel d'Acquisition Client",
+          desc: "Pages de conversion haute performance qualifiant les prospects vers un rendez-vous confirmé."
+        },
+        {
+          id: "crm",
+          title: "03. Portail CRM & Ops Sur Mesure",
+          desc: "Portails web internes pour remplacer les tableurs désorganisés et les échanges manuels WhatsApp."
+        },
+        {
+          id: "ads",
+          title: "04. Stratégie & Publicités Meta",
+          desc: "Créatifs direct-response et campagnes ciblées pilotées par un tracking rigoureux."
+        }
+      ]
+    },
+    step2: {
+      title: "Quel est votre principal frein de croissance aujourd'hui ?",
+      subhead: "Identifiez le point de friction majeur dans vos opérations.",
+      backBtn: "← Revenir au choix du système",
+      options: [
+        {
+          id: "dm_chaos",
+          title: "Commandes perdues dans les messages",
+          desc: "Les acheteurs abandonnent en attendant des heures une confirmation manuelle sur Instagram/WhatsApp."
+        },
+        {
+          id: "marketplace_fees",
+          title: "Commissions élevées des plateformes",
+          desc: "Zéro donnée client directe, zéro réachat automatique, et marges réduites."
+        },
+        {
+          id: "blind_ads",
+          title: "Dépenses publicitaires à l'aveugle",
+          desc: "Le budget part sans savoir quelle campagne génère réellement les ventes."
+        },
+        {
+          id: "sheet_chaos",
+          title: "Désorganisation et tableurs manuels",
+          desc: "Relances manquées, erreurs de saisie et désorganisation du suivi commercial."
+        }
+      ]
+    },
+    step3: {
+      title: "Quand souhaitez-vous que ce système soit opérationnel ?",
+      subhead: "Permet de bloquer la bande passante technique nécessaire.",
+      backBtn: "← Revenir au goulot d'étranglement",
+      options: [
+        {
+          id: "asap",
+          title: "Sprint Prioritaire (< 14 jours)",
+          desc: "Déploiement accéléré pour débloquer votre acquisition au plus vite.",
+          badge: "Sprint",
+          window: "10 à 14 Jours Ouvrés"
+        },
+        {
+          id: "standard",
+          title: "Feuille de Route Standard (3 à 5 semaines)",
+          desc: "Lancement phasé avec formation de vos équipes et phase de test.",
+          badge: "Planifié",
+          window: "3 à 5 Semaines"
+        },
+        {
+          id: "exploring",
+          title: "Étude de faisabilité pour le trimestre prochain",
+          desc: "Audit des besoins et cadrage technique sans urgence immédiate.",
+          badge: "Audit",
+          window: "Flexible"
+        }
+      ]
+    },
+    step4: {
+      title: "Plan d'Architecture Prêt",
+      subhead: "Calculé sur mesure d'après vos priorités et vos opérations.",
+      cardSystemLabel: "Architecture Recommandée",
+      cardWindowLabel: "Délai Estimé",
+      cardChallengeLabel: "Solution au Goulot d'Étranglement",
+      cardDeliverablesLabel: "Livrables Inclus",
+      deliverables: [
+        "Plateforme web sur mesure ultra-rapide (< 1 seconde) en Next.js & Supabase",
+        "Synchronisation API avec les transporteurs algériens (Yalidine / ZR Express)",
+        "Propriété intégrale du code source et de vos bases de données, 0% d'abonnement captif"
+      ],
+      whatsappBtn: "Envoyer le Plan à Hichem sur WhatsApp",
+      resetBtn: "↺ Réinitialiser et tester une autre configuration",
+      waPrefix: "Bonjour Hichem, j'ai configuré mon projet via l'assistant Fleevo :",
+      waSystemLabel: "Système",
+      waChallengeLabel: "Défi Majeur",
+      waTimelineLabel: "Échéance",
+      waClosing: "Je souhaite échanger sur le plan technique et vérifier vos disponibilités."
+    }
+  },
   faq: {
     title: "Questions Fréquentes",
     subtitle: "Des réponses précises sur notre méthode de conception et de déploiement.",
@@ -666,6 +773,10 @@ export const fr: TranslationDictionary = {
       badge: "CANAL D'ACQUISITION DIRECT",
       headline: "Construisons un moteur d'acquisition performant et pérenne.",
       subhead: "Choisissez votre canal. Écrivez-nous directement sur WhatsApp pour un diagnostic immédiat, ou détaillez vos besoins ci-dessous pour recevoir un plan technique sous 24 heures."
+    },
+    modeToggle: {
+      wizard: "⚡ Cadrage Rapide en 3 Clics",
+      form: "📝 Demande Détaillée"
     },
     fastLane: {
       badge: "VOIE RAPIDE WHATSAPP",

@@ -304,11 +304,69 @@ export interface AboutPageTranslations {
   };
 }
 
+export interface OnboardingWizardTranslations {
+  badge: string;
+  stepPrefix: string;
+  stepOf: string;
+  blueprintReady: string;
+  step1: {
+    title: string;
+    subhead: string;
+    options: {
+      id: string;
+      title: string;
+      desc: string;
+    }[];
+  };
+  step2: {
+    title: string;
+    subhead: string;
+    backBtn: string;
+    options: {
+      id: string;
+      title: string;
+      desc: string;
+    }[];
+  };
+  step3: {
+    title: string;
+    subhead: string;
+    backBtn: string;
+    options: {
+      id: string;
+      title: string;
+      desc: string;
+      badge: string;
+      window: string;
+    }[];
+  };
+  step4: {
+    title: string;
+    subhead: string;
+    cardSystemLabel: string;
+    cardWindowLabel: string;
+    cardChallengeLabel: string;
+    cardDeliverablesLabel: string;
+    deliverables: string[];
+    whatsappBtn: string;
+    resetBtn: string;
+    waPrefix: string;
+    waSystemLabel: string;
+    waChallengeLabel: string;
+    waTimelineLabel: string;
+    waClosing: string;
+  };
+}
+
 export interface ContactPageTranslations {
   hero: {
     badge: string;
     headline: string;
     subhead: string;
+  };
+  modeToggle: {
+    wizard: string;
+    form: string;
   };
   fastLane: {
     badge: string;
@@ -332,6 +390,7 @@ export interface TranslationDictionary {
   nav: NavTranslations;
   footer: FooterTranslations;
   contactForm: ContactFormTranslations;
+  onboardingWizard: OnboardingWizardTranslations;
   faq: FAQTranslations;
   heroVisual: {
     projects: HeroVisualProjectTranslation[];

@@ -50,6 +50,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${manrope.variable} ${cairo.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var p = new URLSearchParams(window.location.search).get('lang');
+                var s = p || localStorage.getItem('fleevo_lang') || (document.cookie.match(/(?:^|; )fleevo_locale=([^;]*)/) || [])[1];
+                if (s === 'ar') {
+                  document.documentElement.lang = 'ar';
+                  document.documentElement.dir = 'rtl';
+                  document.documentElement.classList.add('locale-ar');
+                } else if (s === 'fr') {
+                  document.documentElement.lang = 'fr';
+                  document.documentElement.dir = 'ltr';
+                }
+              } catch(e) {}
+            `,
+          }}
+        />
+      </head>
       <body className={`${manrope.variable} ${cairo.variable} font-sans antialiased`} suppressHydrationWarning>
         {children}
         <CustomCursor />

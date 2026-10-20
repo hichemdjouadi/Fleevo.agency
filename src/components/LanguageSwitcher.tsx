@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n";
 import { Locale } from "@/lib/i18n/types";
 import { Globe } from "lucide-react";
@@ -20,11 +21,11 @@ export default function LanguageSwitcher({
   variant = "navbar",
   className = "",
 }: LanguageSwitcherProps) {
-  const { locale, setLocale, isRTL } = useLanguage();
+  const { locale, setLocale } = useLanguage();
 
   if (variant === "mobile") {
     return (
-      <div className={`w-full flex items-center justify-between gap-2 p-1.5 rounded-2xl bg-white/5 border border-white/10 ${className}`}>
+      <div className={`w-full flex items-center justify-between gap-1.5 p-1.5 rounded-2xl bg-white/5 border border-white/10 ${className}`}>
         {LANGUAGES.map((lang) => {
           const isActive = locale === lang.code;
           return (
@@ -33,12 +34,19 @@ export default function LanguageSwitcher({
               type="button"
               onClick={() => setLocale(lang.code)}
               aria-pressed={isActive}
-              className={`flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+              className={`relative z-10 flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-medium transition-colors duration-200 ${
                 isActive
-                  ? "bg-white text-black font-semibold shadow-sm"
-                  : "text-white/60 hover:text-white hover:bg-white/5"
+                  ? "text-black font-semibold"
+                  : "text-white/60 hover:text-white"
               }`}
             >
+              {isActive && (
+                <motion.div
+                  layoutId="activeLangMobile"
+                  className="absolute inset-0 bg-white rounded-xl -z-10 shadow-sm"
+                  transition={{ type: "spring", stiffness: 450, damping: 32 }}
+                />
+              )}
               {lang.label}
             </button>
           );
@@ -60,12 +68,19 @@ export default function LanguageSwitcher({
               type="button"
               onClick={() => setLocale(lang.code)}
               aria-pressed={isActive}
-              className={`px-2.5 py-1 rounded-full transition-all ${
+              className={`relative z-10 px-2.5 py-1 rounded-full transition-colors duration-200 ${
                 isActive
-                  ? "bg-white text-black font-semibold"
-                  : "text-white/60 hover:text-white hover:bg-white/10"
+                  ? "text-black font-semibold"
+                  : "text-white/60 hover:text-white"
               }`}
             >
+              {isActive && (
+                <motion.div
+                  layoutId="activeLangFooter"
+                  className="absolute inset-0 bg-white rounded-full -z-10 shadow-sm"
+                  transition={{ type: "spring", stiffness: 450, damping: 32 }}
+                />
+              )}
               {lang.short}
             </button>
           );
@@ -79,7 +94,7 @@ export default function LanguageSwitcher({
     <div
       role="group"
       aria-label="Language selector"
-      className={`inline-flex items-center gap-0.5 p-0.5 rounded-full bg-black/[0.04] border border-black/5 text-[12px] font-medium text-neutral-600 ${className}`}
+      className={`relative inline-flex items-center gap-0.5 p-0.5 rounded-full bg-black/[0.04] border border-black/5 text-[12px] font-medium text-neutral-600 ${className}`}
     >
       {LANGUAGES.map((lang) => {
         const isActive = locale === lang.code;
@@ -89,12 +104,19 @@ export default function LanguageSwitcher({
             type="button"
             onClick={() => setLocale(lang.code)}
             aria-pressed={isActive}
-            className={`px-2.5 py-1 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
+            className={`relative z-10 px-2.5 py-1 rounded-full transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
               isActive
-                ? "bg-black text-white font-semibold shadow-xs"
-                : "text-neutral-600 hover:text-black hover:bg-black/[0.04]"
+                ? "text-white font-semibold"
+                : "text-neutral-600 hover:text-black"
             }`}
           >
+            {isActive && (
+              <motion.div
+                layoutId="activeLangNavbar"
+                className="absolute inset-0 bg-black rounded-full -z-10 shadow-xs"
+                transition={{ type: "spring", stiffness: 450, damping: 32 }}
+              />
+            )}
             {lang.short}
           </button>
         );

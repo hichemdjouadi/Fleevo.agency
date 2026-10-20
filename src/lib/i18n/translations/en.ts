@@ -61,6 +61,113 @@ export const en: TranslationDictionary = {
       planningAhead: "Planning ahead"
     }
   },
+  onboardingWizard: {
+    badge: "System Intake Wizard",
+    stepPrefix: "Step",
+    stepOf: "of 3",
+    blueprintReady: "Blueprint Ready",
+    step1: {
+      title: "What digital system does your business need?",
+      subhead: "Select the primary build required for your operations.",
+      options: [
+        {
+          id: "ecom",
+          title: "01. E-Commerce Engine",
+          desc: "Headless store with Yalidine/ZR sync & instant 1-tap checkout."
+        },
+        {
+          id: "lead",
+          title: "02. Lead Gen Funnel",
+          desc: "High-ticket landing pages that filter tire-kickers into confirmed appointments."
+        },
+        {
+          id: "crm",
+          title: "03. Custom Ops & CRM",
+          desc: "Private web portals replacing messy spreadsheets & manual WhatsApp chats."
+        },
+        {
+          id: "ads",
+          title: "04. Growth Strategy & Meta Ads",
+          desc: "High-converting creative frameworks backed by verified pixel tracking."
+        }
+      ]
+    },
+    step2: {
+      title: "What is stopping your revenue growth today?",
+      subhead: "Select the single biggest operational bottleneck.",
+      backBtn: "← Back to system selection",
+      options: [
+        {
+          id: "dm_chaos",
+          title: "Losing sales in DMs",
+          desc: "Customers abandon while waiting hours for human WhatsApp/Instagram confirmation."
+        },
+        {
+          id: "marketplace_fees",
+          title: "Marketplaces eating margins",
+          desc: "Zero direct customer data, zero repeat purchases, and heavy platform cuts."
+        },
+        {
+          id: "blind_ads",
+          title: "Blind ad spend",
+          desc: "Budget goes out without knowing which creative campaign actually brings revenue."
+        },
+        {
+          id: "sheet_chaos",
+          title: "Operational chaos & messy sheets",
+          desc: "Disorganized client handoffs, missed follow-ups, and manual re-typing."
+        }
+      ]
+    },
+    step3: {
+      title: "When do you need this operational?",
+      subhead: "Helps us allocate immediate engineering bandwidth.",
+      backBtn: "← Back to bottleneck",
+      options: [
+        {
+          id: "asap",
+          title: "ASAP (Next 14 Days)",
+          desc: "Priority sprint deployment to solve immediate bottlenecks.",
+          badge: "Sprint",
+          window: "10 - 14 Business Days"
+        },
+        {
+          id: "standard",
+          title: "Standard Roadmap (3–5 Weeks)",
+          desc: "Phased rollout with team training and test staging.",
+          badge: "Planned",
+          window: "3 - 5 Weeks"
+        },
+        {
+          id: "exploring",
+          title: "Exploring feasibility for Q3/Q4",
+          desc: "Auditing requirements and comparing build options.",
+          badge: "Audit",
+          window: "Flexible"
+        }
+      ]
+    },
+    step4: {
+      title: "Tailored Architecture Blueprint Ready",
+      subhead: "Calculated based on your selected stack and operations.",
+      cardSystemLabel: "Recommended Build",
+      cardWindowLabel: "Deployment Window",
+      cardChallengeLabel: "Target Solution",
+      cardDeliverablesLabel: "What Gets Delivered",
+      deliverables: [
+        "Sub-second custom web system (Next.js & Supabase)",
+        "Integrated Algerian courier API (Yalidine/ZR Express)",
+        "100% owned source code, database, and infrastructure"
+      ],
+      whatsappBtn: "Send Blueprint to Hichem on WhatsApp",
+      resetBtn: "↺ Reset & try another configuration",
+      waPrefix: "Salam Hichem, I went through the Fleevo onboarding wizard:",
+      waSystemLabel: "System",
+      waChallengeLabel: "Core Challenge",
+      waTimelineLabel: "Target Timeline",
+      waClosing: "I would like to review the technical blueprint and confirm availability."
+    }
+  },
   faq: {
     title: "Frequently Asked Questions",
     subtitle: "Quick answers on how we build and launch.",
@@ -666,6 +773,10 @@ export const en: TranslationDictionary = {
       badge: "DIRECT INTAKE PIPELINE",
       headline: "Let's build an acquisition engine that scales.",
       subhead: "Choose your channel. Message directly on WhatsApp for an immediate teardown, or submit your project requirements below for a detailed blueprint within 24 hours."
+    },
+    modeToggle: {
+      wizard: "⚡ Quick 3-Tap Intake",
+      form: "📝 Detailed Message"
     },
     fastLane: {
       badge: "FAST-LANE WHATSAPP",
