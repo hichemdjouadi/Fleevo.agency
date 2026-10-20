@@ -39,21 +39,21 @@ const PILLAR_ONE_SERVICES = [
 const PILLAR_TWO_SERVICES = [
   {
     num: "01",
-    title: "Performance Meta Ads & Video Direction",
-    desc: "Facebook and Instagram ad campaigns paired with high-converting video scripts.",
-    tags: ["Video Scripts", "Click-to-WhatsApp Ads"]
+    title: "Full-Funnel Marketing Strategy & Meta Ads",
+    desc: "Targeted Facebook and Instagram ad campaigns paired with full acquisition strategy and video scripts.",
+    tags: ["Marketing Strategy", "Video Scripts", "Meta Ads"]
   },
   {
     num: "02",
-    title: "Pipeline Leak & Content Audits",
-    desc: "A clear breakdown of where leads drop off plus an organic content plan.",
-    tags: ["Funnel Audit", "Content Roadmap"]
+    title: "Pipeline Leak & Growth Audits",
+    desc: "A clear breakdown of where leads drop off plus an actionable growth roadmap.",
+    tags: ["Funnel Audit", "Growth Roadmap"]
   },
   {
     num: "03",
     title: "Brand Credibility Polish",
     desc: "Clean visual identity and branded ad templates included free with core builds.",
-    tags: ["Logo Polish", "Ad Templates"]
+    tags: ["Free Build Bonus", "Ad Templates"]
   }
 ];
 

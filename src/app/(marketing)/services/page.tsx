@@ -20,88 +20,107 @@ export default function ServicesPage() {
     {
       num: "01",
       title: "Client Acquisition Funnels & Brand Vitrines",
-      badge: "Clinics & Services",
+      badge: "Clinics & High-Ticket Services",
       sla: "2–3 Weeks Delivery",
       queryService: "Website / Landing Page",
-      desc: "High-conversion platforms built for clinics and service firms to capture and qualify client inquiries automatically.",
+      desc: "High-conversion platforms built for clinics, legal firms, and specialized consultancies to capture qualified inquiries and eliminate phone tag.",
+      steps: [
+        { num: "1", title: "Prospect lands on mobile vitrine", detail: "Loads in under 1 second with clear procedure authority." },
+        { num: "2", title: "Automated intent screening", detail: "Interactive questionnaire filters serious buyers before ringing staff." },
+        { num: "3", title: "Staff phone pings on WhatsApp", detail: "Pre-screened appointment details delivered in < 30 seconds." }
+      ],
       deliverables: [
-        "Mobile conversion flow",
-        "WhatsApp qualification bot",
-        "Instant lead notification alerts",
-        "CRM database sync"
-      ]
+        "High-conversion Next.js mobile vitrine",
+        "WhatsApp pre-qualification triage bot",
+        "Instant lead notification alerts (< 30s)",
+        "Direct Google Calendar & CRM database sync"
+      ],
+      proof: { label: "Adréna Club Private Intake", link: "/work" }
     },
     {
       num: "02",
       title: "Direct Customer Ordering & E-Commerce Engines",
-      badge: "D2C & Retail",
+      badge: "D2C Brands, Retail & Food",
       sla: "2–3 Weeks Delivery",
       queryService: "E-Commerce Store",
-      desc: "Dedicated digital storefronts that eliminate marketplace cuts and streamline mobile purchasing.",
+      desc: "Dedicated digital storefronts that eliminate 15–30% marketplace commissions, calculate 58-Wilayas shipping, and route orders to WhatsApp.",
+      steps: [
+        { num: "1", title: "Customer browses & orders on mobile", detail: "Fast mobile checkout in under 1 second. Zero app downloads." },
+        { num: "2", title: "Delivery & COD calculated automatically", detail: "Native 58-Wilayas rates and automated courier address formatting." },
+        { num: "3", title: "Your phone rings on WhatsApp", detail: "Complete customer name, items, address, and total in < 30 seconds." }
+      ],
       deliverables: [
-        "High-conversion mobile catalog",
-        "58-Wilayas COD checkout",
-        "Instant WhatsApp order tickets",
-        "Courier dispatch sync"
-      ]
+        "Custom Next.js mobile store (fast on mobile 4G)",
+        "58-Wilayas Cash on Delivery (COD) checkout",
+        "Instant WhatsApp order dispatch bot",
+        "0% commission fees · 100% database & code ownership"
+      ],
+      proof: { label: "Tawheed Bookstore & Mo Pizza", link: "/work" }
     },
     {
       num: "03",
       title: "Custom Web Apps, Proprietary CRMs & Automation",
-      badge: "Custom CRMs & Software",
+      badge: "Multi-Branch Operations & Logistics",
       sla: "3–4 Weeks Delivery",
       queryService: "Custom CRM / Web App",
-      desc: "Tailored lead tracking pipelines, client portals, and back-office automations that eliminate manual spreadsheet data entry.",
+      desc: "Tailored lead tracking pipelines, branch dispatch portals, and back-office automations that replace chaotic Excel spreadsheets and prevent leads from going cold.",
+      steps: [
+        { num: "1", title: "Multi-channel lead consolidation", detail: "Unifies incoming leads from WhatsApp, ads, and web forms into one hub." },
+        { num: "2", title: "Anti-drop 'Going Cold' radar", detail: "Flags leads untouched for 7+ days to prevent losing deals." },
+        { num: "3", title: "Automated warehouse & courier sync", detail: "Auto-generates task checklists, receipts, and delivery tracking." }
+      ],
       deliverables: [
-        "Lightweight deal pipeline CRM",
-        "Lead-going-cold tracking & alerts",
-        "Automated courier & dispatch sync",
-        "Custom database & client portal"
-      ]
+        "Lightweight visual deal pipeline CRM",
+        "Inactivity alerts (preventing leads going cold)",
+        "Automated courier & dispatch sync webhooks",
+        "Role-based staff logins with 100% data ownership"
+      ],
+      proof: { label: "Fleevo Command Center", link: "/contact?service=Custom%20CRM%20%2F%20Web%20App" }
     }
   ];
 
   const pillarTwo = [
     {
       num: "01",
-      title: "Performance Meta Ads & Video Direction",
-      badge: "Paid Demand",
-      sla: "1–2 Weeks Delivery",
+      title: "Full-Funnel Marketing Strategy & Meta Ads",
+      badge: "Strategy & Paid Demand",
+      sla: "1–2 Weeks Setup",
       queryService: "Meta Ads & Video Scripts",
-      desc: "Facebook and Instagram ad campaigns paired with video scripts that attract buyers.",
+      desc: "We build your end-to-end customer acquisition strategy, write high-converting video scripts, and run targeted Facebook & Instagram ads optimized for WhatsApp orders—not vanity likes.",
       deliverables: [
-        "Meta ad campaigns",
-        "Conversion video scripts",
-        "Ad hook testing",
-        "WhatsApp ad funnels"
+        "Customer acquisition strategy & positioning",
+        "Direct-response video scripts & hook formulas",
+        "Targeted Facebook & Instagram ad campaigns",
+        "Pixel, Conversions API & WhatsApp tracking"
       ]
     },
     {
       num: "02",
-      title: "Pipeline Leak & Content Audits",
+      title: "Pipeline Leak & Growth Audits",
       badge: "Growth Audit",
       sla: "48-Hour Delivery",
       queryService: "Conversion & Content Audit",
-      desc: "A clear audit showing where buyers drop off and what converts best.",
+      desc: "A fast, 48-hour diagnostic of your existing marketing, social media, and website showing exactly where you are losing sales and which content angles will attract ready buyers.",
       deliverables: [
-        "Funnel leak teardown",
-        "Offer positioning review",
-        "Organic content roadmap",
-        "Priority fix checklist"
+        "48-hour video & PDF customer journey teardown",
+        "Offer positioning & pricing friction review",
+        "Organic content marketing roadmap",
+        "Prioritized quick-win revenue checklist"
       ]
     },
     {
       num: "03",
       title: "Brand Credibility Polish",
-      badge: "Included Bonus",
+      badge: "Included Free Bonus",
       sla: "Included With Build",
+      isBonus: true,
       queryService: "Website / Landing Page",
-      desc: "Clean visual identity and branded ad assets included free with core builds.",
+      desc: "We don't sell standalone logos. We refine your logo, clean up your typography, and build branded ad templates free of charge with your website so your brand looks premium from day one.",
       deliverables: [
-        "Logo mark cleanup",
-        "Modern typography system",
-        "Branded ad templates",
-        "Social profile kit"
+        "Logo mark cleanup & high-res vectorization",
+        "Modern typography system & color tokens",
+        "Ready-to-use branded social ad templates",
+        "Social profile launch kit"
       ]
     }
   ];
@@ -234,9 +253,27 @@ export default function ServicesPage() {
                   {service.title}
                 </h3>
 
-                <p className="text-neutral-600 font-light text-base leading-relaxed text-pretty">
+                <p className="text-neutral-600 font-light text-base leading-relaxed text-pretty mb-6">
                   {service.desc}
                 </p>
+
+                {/* 3-Step Customer Flow */}
+                <div className="p-4 rounded-2xl bg-neutral-50 border border-black/5 space-y-3 mb-6">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 font-semibold">
+                    How it works in 30 seconds
+                  </div>
+                  {service.steps.map((st) => (
+                    <div key={st.num} className="flex items-start gap-2.5">
+                      <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center font-mono text-[10px] font-bold shrink-0 mt-0.5">
+                        {st.num}
+                      </span>
+                      <div>
+                        <div className="text-xs font-semibold text-black">{st.title}</div>
+                        <div className="text-[11px] text-neutral-600 leading-tight">{st.detail}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div>
@@ -254,9 +291,18 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
+                {/* Discreet Proof Link */}
+                <div className="mb-4 text-xs font-mono text-neutral-600 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Proven in:</span>
+                  <TransitionLink href={service.proof.link} className="text-black font-semibold underline underline-offset-4 hover:text-neutral-600">
+                    {service.proof.label} &rarr;
+                  </TransitionLink>
+                </div>
+
                 <TransitionLink
                   href={`/contact?service=${encodeURIComponent(service.queryService)}`}
-                  className="w-full inline-flex items-center justify-between px-5 py-3 rounded-full bg-neutral-50 hover:bg-black hover:text-white border border-black/10 transition-colors text-xs font-mono font-semibold group"
+                  className="w-full inline-flex items-center justify-between px-5 py-3 rounded-full bg-neutral-900 text-white hover:bg-black transition-colors text-xs font-semibold group shadow-sm"
                 >
                   <span>Inquire About This Build</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -333,7 +379,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <p className="text-base md:text-lg text-white/75 font-light max-w-md leading-relaxed text-pretty">
-              Targeted Meta campaigns, direct-response video direction, and pipeline audits to fuel your platform with qualified buyers.
+              Comprehensive marketing strategy, high-converting video scripts, and targeted Meta ad execution to fuel your platform with qualified buyers.
             </p>
           </div>
 
@@ -345,7 +391,9 @@ export default function ServicesPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/10 text-white font-semibold">
+                    <span className={`text-xs font-mono px-2.5 py-1 rounded-full font-semibold ${
+                      service.isBonus ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" : "bg-white/10 text-white"
+                    }`}>
                       {service.badge}
                     </span>
                     <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-400 font-semibold">
@@ -379,13 +427,20 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  <TransitionLink
-                    href={`/contact?service=${encodeURIComponent(service.queryService)}`}
-                    className="w-full inline-flex items-center justify-between px-5 py-3 rounded-full bg-white/5 hover:bg-white hover:text-black border border-white/10 transition-colors text-xs font-mono font-semibold group"
-                  >
-                    <span>Inquire About This Scope</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </TransitionLink>
+                  {service.isBonus ? (
+                    <div className="w-full flex items-center justify-between px-5 py-3 rounded-full bg-white/10 border border-white/15 text-xs font-mono text-emerald-300 font-semibold">
+                      <span>Included at 0 DA with Core Build</span>
+                      <span>⚡ 100% Free</span>
+                    </div>
+                  ) : (
+                    <TransitionLink
+                      href={`/contact?service=${encodeURIComponent(service.queryService)}`}
+                      className="w-full inline-flex items-center justify-between px-5 py-3 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/15 transition-all text-xs font-semibold group"
+                    >
+                      <span>Inquire About This Scope</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </TransitionLink>
+                  )}
                 </div>
               </div>
             ))}
