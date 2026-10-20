@@ -267,22 +267,22 @@ export default function ServicesPage() {
         </div>
 
         {/* Specialized Niche Capability Callout */}
-        <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-neutral-50 border border-black/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-neutral-950 text-white border border-neutral-800 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-sm">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 text-xs font-mono text-neutral-800 font-semibold mb-3">
-              <Bot className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-emerald-400 font-semibold mb-3">
+              <Bot className="w-3.5 h-3.5" />
               <span>SPECIALIZED VERTICAL CAPABILITY · HIGH-INQUIRY NICHES</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-black mb-2">
+            <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-white mb-2">
               Domain-Specific Conversational AI &amp; Triage Agents
             </h3>
-            <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed">
               We do not deploy novelty chatbots everywhere. For inquiry-heavy sectors like polyclinics, real estate developments, and specialized service firms, we train custom AI agents on your pricing, procedures, and availability to pre-qualify leads and book consultations 24/7 without consuming staff hours.
             </p>
           </div>
           <TransitionLink
             href="/contact?service=Domain-Specific%20AI%20Agent"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono uppercase tracking-wider font-semibold shrink-0"
+            className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors text-sm font-semibold shrink-0"
           >
             <span>Inquire for Your Niche</span>
             <ArrowRight className="w-4 h-4" />
@@ -290,24 +290,28 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 3. ZERO-RISK GUARANTEE CALLOUT */}
-      <section className="py-16 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
-        <div className="rounded-[2.5rem] bg-neutral-50 border border-black/10 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 text-xs font-mono text-neutral-800 font-semibold mb-4">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>THE FLEEVO ACQUISITION GUARANTEE</span>
+      {/* 3. ZERO-RISK GUARANTEE STRIP */}
+      <section className="py-14 sm:py-16 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-10">
+          <div className="flex items-start gap-4 sm:gap-5 max-w-3xl">
+            <div className="w-11 h-11 rounded-2xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center shrink-0 mt-0.5">
+              <ShieldCheck className="w-5 h-5 text-emerald-700" />
             </div>
-            <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-black mb-3">
-              Built to capture leads and process orders without friction.
-            </h3>
-            <p className="text-base text-neutral-600 font-light leading-relaxed">
-              Every system we deploy is tested against real-world customer journeys. If inquiries fail to alert your team in 30 seconds, or if your checkout sequence creates friction on mobile, we do not sign off on delivery until the pipeline is airtight.
-            </p>
+            <div>
+              <span className="text-xs font-mono font-semibold text-emerald-800 uppercase tracking-wider block mb-1">
+                The Fleevo Acquisition Guarantee
+              </span>
+              <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-black mb-2">
+                Built to capture leads and process orders without friction.
+              </h3>
+              <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
+                Every system we deploy is tested against real customer journeys. If inquiries fail to alert your team in 30 seconds, or if your checkout sequence creates friction on mobile, we do not sign off on delivery until the pipeline is airtight.
+              </p>
+            </div>
           </div>
           <TransitionLink
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono uppercase tracking-wider font-semibold shrink-0"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-black hover:bg-neutral-800 text-white text-sm font-semibold transition-colors shadow-sm shrink-0"
           >
             <span>Discuss Your Timeline</span>
             <ArrowRight className="w-4 h-4" />
