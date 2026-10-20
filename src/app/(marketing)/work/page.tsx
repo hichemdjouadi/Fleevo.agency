@@ -32,11 +32,11 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     title: "Mo Pizza Direct Ordering",
-    category: "Mobile Commerce & Automated Dispatch Architecture",
+    category: "Direct Commerce & Multilingual Intake Architecture",
     filterCategory: "commerce",
-    client: "Mo Pizza Restaurants",
+    client: "Mo Pizza Restaurants (Morad Oudia)",
     image: "/project-mopizza.png",
-    link: "https://mopizzarestaurants.vercel.app",
+    link: "https://mopizzarestaurants.vercel.app/",
     systemType: "Direct Intake & Mobile Commerce Engine",
     isLive: true,
     statusBadge: "Live Production Platform",
@@ -44,14 +44,14 @@ const PROJECTS: Project[] = [
       {
         direction: "up",
         type: "Commercial Result",
-        headline: "Direct Margin Retained (0% Commission)",
-        detail: "Zero marketplace fees and direct WhatsApp tickets."
+        headline: "0% Commission Direct Margin Retained",
+        detail: "Bypasses 15–30% food aggregator fees with direct WhatsApp and phone dispatch straight to branch kitchens."
       },
       {
         direction: "up",
         type: "Problem Solved",
-        headline: "Sub-800ms Mobile Checkout Velocity",
-        detail: "Instant mobile ordering without any app downloads."
+        headline: "Instant Multilingual Ordering Without App Friction",
+        detail: "Interactive 6-item order tray supporting English, Arabic, and French across 5 locations with zero app downloads."
       }
     ],
   },
@@ -89,19 +89,19 @@ const PROJECTS: Project[] = [
     link: "https://adrenaclub.vercel.app/",
     systemType: "2-Floor Athletic Facility & WhatsApp Intake",
     isLive: true,
-    statusBadge: "Live Production Platform",
+    statusBadge: "Private Preview · Staging Deployment",
     benefits: [
       {
         direction: "up",
         type: "Commercial Result",
-        headline: "2-Floor Facility Booking",
-        detail: "Instant schedule and membership reservations direct via WhatsApp."
+        headline: "Direct WhatsApp Membership Enrollment",
+        detail: "Qualified membership signups direct to WhatsApp with pre-selected tiers starting from 3,000 DA/month."
       },
       {
-        direction: "up",
+        direction: "down",
         type: "Problem Solved",
-        headline: "Instant Front-Desk Routing",
-        detail: "Direct WhatsApp qualification filters casual inquiries from staff."
+        headline: "Front-Desk Inquiry Overload",
+        detail: "Live floor schedules and private soundproof women's hours answer common questions before reaching staff."
       }
     ],
   },
@@ -138,7 +138,7 @@ export default function Work() {
   const filteredProjects = PROJECTS.filter((proj) => {
     if (filter === "commerce") return proj.filterCategory === "commerce";
     if (filter === "webapp") return proj.filterCategory === "webapp";
-    if (filter === "preview") return !proj.isLive;
+    if (filter === "preview") return !proj.isLive || proj.statusBadge.includes("Preview") || proj.statusBadge.includes("Staging");
     return true;
   });
 

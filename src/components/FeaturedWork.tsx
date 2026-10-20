@@ -24,16 +24,16 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     title: "Mo Pizza Direct Ordering",
-    niche: "Restaurant & Hospitality · Mobile Commerce",
-    deployment: "Direct Mobile Commerce & Bot Intake",
-    summary: "Mobile ordering system that sends orders straight to the kitchen on WhatsApp.",
+    niche: "Restaurant & Hospitality · Direct Mobile Commerce",
+    deployment: "Direct Mobile Commerce & Multilingual Intake",
+    summary: "Direct ordering engine for Morad Oudia's 5-branch restaurant network that cuts aggregator commission fees via instant call and WhatsApp dispatch.",
     statusBadge: "Live Production Platform",
     benefits: [
-      { direction: "up", label: "Direct Margin Retained (0% Commission)" },
-      { direction: "up", label: "Sub-800ms Mobile Checkout Velocity" }
+      { direction: "up", label: "0% Commission Direct Orders" },
+      { direction: "up", label: "Instant Multilingual Ordering" }
     ],
     image: "/project-mopizza.png",
-    link: "https://mopizzarestaurants.vercel.app",
+    link: "https://mopizzarestaurants.vercel.app/",
     hasImage: true,
   },
   {
@@ -54,11 +54,11 @@ const PROJECTS: ProjectItem[] = [
     title: "Adréna Club",
     niche: "Athletics & Combat · Membership Booking",
     deployment: "2-Floor Facility Platform & WhatsApp Intake",
-    summary: "Two-floor premium athletic performance club platform in Bab Ezzouar with instant WhatsApp membership intake and private schedule management.",
-    statusBadge: "Live Production Platform",
+    summary: "Two-floor athletic performance platform in Bab Ezzouar with real-time floor schedules, dedicated women-only hours, and direct WhatsApp membership onboarding from 3,000 DA/month.",
+    statusBadge: "Private Preview · Staging Deployment",
     benefits: [
-      { direction: "up", label: "2-Floor Facility Booking" },
-      { direction: "up", label: "Instant WhatsApp Membership Routing" }
+      { direction: "up", label: "Direct WhatsApp Enrollment (dès 3 000 DA)" },
+      { direction: "down", label: "Front-Desk Inquiry Overload" }
     ],
     image: "/project-adrena.png",
     link: "https://adrenaclub.vercel.app/",
@@ -131,6 +131,7 @@ function ShowcaseItem({ project }: { project: ProjectItem }) {
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-top"
+              unoptimized
             />
           ) : (
             project.renderVisual?.()

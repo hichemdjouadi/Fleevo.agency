@@ -34,9 +34,9 @@ const PROJECTS: ShowcaseProject[] = [
     tabLabel: "Mo Pizza",
     shortLabel: "Mo Pizza",
     client: "Mo Pizza Restaurants",
-    category: "Mobile Commerce & Bot Intake",
+    category: "Direct Intake & Mobile Commerce Engine",
     url: "mopizzarestaurants.vercel.app",
-    liveUrl: "https://mopizzarestaurants.vercel.app",
+    liveUrl: "https://mopizzarestaurants.vercel.app/",
     isExternal: true,
     statusBadge: "Live Production Platform",
     statusDotColor: "bg-emerald-400",
@@ -57,14 +57,14 @@ const PROJECTS: ShowcaseProject[] = [
     url: "adrenaclub.vercel.app",
     liveUrl: "https://adrenaclub.vercel.app/",
     isExternal: true,
-    statusBadge: "Live Production Platform",
-    statusDotColor: "bg-emerald-400",
-    ctaText: "Visit Live Deployment",
-    ctaTextDesktop: "Visit Live Deployment (Adréna Club)",
+    statusBadge: "Private Preview · Staging Deployment",
+    statusDotColor: "bg-amber-400",
+    ctaText: "Explore Staging Platform",
+    ctaTextDesktop: "Explore Staging Platform (Adréna Club)",
     image: "/adrena-mobile.png",
     benefits: [
-      { direction: "up", label: "2-Floor Facility & Schedule" },
-      { direction: "up", label: "Instant WhatsApp Intake Engine" }
+      { direction: "up", label: "Direct WhatsApp Enrollment (dès 3 000 DA)" },
+      { direction: "down", label: "Front-Desk Inquiry Overload" }
     ]
   },
   {
@@ -191,6 +191,7 @@ export default function HeroVisual() {
                     fill
                     sizes="(max-width: 640px) 340px, (max-width: 768px) 360px, 420px"
                     priority
+                    unoptimized
                     className="object-cover object-top"
                   />
                 )}
