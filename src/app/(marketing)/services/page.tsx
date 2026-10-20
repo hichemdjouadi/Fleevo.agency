@@ -24,13 +24,8 @@ export default function ServicesPage() {
       sla: "2–3 Weeks Delivery",
       queryService: "Website / Landing Page",
       desc: "High-conversion platforms built for clinics, legal firms, and specialized consultancies to capture qualified inquiries and eliminate phone tag.",
-      steps: [
-        { num: "1", title: "Prospect lands on mobile vitrine", detail: "Loads in under 1 second with clear procedure authority." },
-        { num: "2", title: "Automated intent screening", detail: "Interactive questionnaire filters serious buyers before ringing staff." },
-        { num: "3", title: "Staff phone pings on WhatsApp", detail: "Pre-screened appointment details delivered in < 30 seconds." }
-      ],
       deliverables: [
-        "High-conversion Next.js mobile vitrine",
+        "High-conversion Next.js mobile vitrine (loads in < 1s)",
         "WhatsApp pre-qualification triage bot",
         "Instant lead notification alerts (< 30s)",
         "Direct Google Calendar & CRM database sync"
@@ -44,15 +39,10 @@ export default function ServicesPage() {
       sla: "2–3 Weeks Delivery",
       queryService: "E-Commerce Store",
       desc: "Dedicated digital storefronts that eliminate 15–30% marketplace commissions, calculate 58-Wilayas shipping, and route orders to WhatsApp.",
-      steps: [
-        { num: "1", title: "Customer browses & orders on mobile", detail: "Fast mobile checkout in under 1 second. Zero app downloads." },
-        { num: "2", title: "Delivery & COD calculated automatically", detail: "Native 58-Wilayas rates and automated courier address formatting." },
-        { num: "3", title: "Your phone rings on WhatsApp", detail: "Complete customer name, items, address, and total in < 30 seconds." }
-      ],
       deliverables: [
-        "Custom Next.js mobile store (fast on mobile 4G)",
+        "Custom Next.js mobile store (fast on 4G networks)",
         "58-Wilayas Cash on Delivery (COD) checkout",
-        "Instant WhatsApp order dispatch bot",
+        "Instant WhatsApp order dispatch bot (< 30s)",
         "0% commission fees · 100% database & code ownership"
       ],
       proof: { label: "Tawheed Bookstore & Mo Pizza", link: "/work" }
@@ -64,11 +54,6 @@ export default function ServicesPage() {
       sla: "3–4 Weeks Delivery",
       queryService: "Custom CRM / Web App",
       desc: "Tailored lead tracking pipelines, branch dispatch portals, and back-office automations that replace chaotic Excel spreadsheets and prevent leads from going cold.",
-      steps: [
-        { num: "1", title: "Multi-channel lead consolidation", detail: "Unifies incoming leads from WhatsApp, ads, and web forms into one hub." },
-        { num: "2", title: "Anti-drop 'Going Cold' radar", detail: "Flags leads untouched for 7+ days to prevent losing deals." },
-        { num: "3", title: "Automated warehouse & courier sync", detail: "Auto-generates task checklists, receipts, and delivery tracking." }
-      ],
       deliverables: [
         "Lightweight visual deal pipeline CRM",
         "Inactivity alerts (preventing leads going cold)",
@@ -238,53 +223,35 @@ export default function ServicesPage() {
               className="py-10 lg:py-12 lg:px-8 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-8"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-800 font-semibold">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-neutral-100 text-neutral-900 font-semibold border border-neutral-200">
                     {service.badge}
                   </span>
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-700 font-semibold">
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-700 font-semibold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/60">
                     <Clock className="w-3.5 h-3.5" />
                     <span>{service.sla}</span>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-medium tracking-tight text-black mb-3 text-balance">
+                <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-black mb-3 text-balance">
                   <span className="font-mono text-sm text-neutral-500 mr-2">{service.num}. </span>
                   {service.title}
                 </h3>
 
-                <p className="text-neutral-600 font-light text-base leading-relaxed text-pretty mb-6">
+                <p className="text-neutral-700 font-light text-base leading-relaxed text-pretty mb-6">
                   {service.desc}
                 </p>
-
-                {/* 3-Step Customer Flow */}
-                <div className="p-4 rounded-2xl bg-neutral-50 border border-black/5 space-y-3 mb-6">
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 font-semibold">
-                    How it works in 30 seconds
-                  </div>
-                  {service.steps.map((st) => (
-                    <div key={st.num} className="flex items-start gap-2.5">
-                      <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center font-mono text-[10px] font-bold shrink-0 mt-0.5">
-                        {st.num}
-                      </span>
-                      <div>
-                        <div className="text-xs font-semibold text-black">{st.title}</div>
-                        <div className="text-[11px] text-neutral-600 leading-tight">{st.detail}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               <div>
                 <div className="pt-6 border-t border-black/10">
-                  <span className="text-xs font-mono font-semibold text-black block mb-4">
+                  <span className="text-xs font-mono uppercase tracking-wider font-semibold text-neutral-500 block mb-4">
                     Core Deliverables Included
                   </span>
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-3 mb-6">
                     {service.deliverables.map((deliv, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-sm text-neutral-800">
-                        <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-3 text-sm sm:text-base text-neutral-900 font-medium">
+                        <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
                         <span>{deliv}</span>
                       </div>
                     ))}
@@ -292,8 +259,8 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Discreet Proof Link */}
-                <div className="mb-4 text-xs font-mono text-neutral-600 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <div className="mb-5 text-xs sm:text-sm font-mono text-neutral-700 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                   <span>Proven in:</span>
                   <TransitionLink href={service.proof.link} className="text-black font-semibold underline underline-offset-4 hover:text-neutral-600">
                     {service.proof.label} &rarr;
@@ -302,10 +269,10 @@ export default function ServicesPage() {
 
                 <TransitionLink
                   href={`/contact?service=${encodeURIComponent(service.queryService)}`}
-                  className="w-full inline-flex items-center justify-between px-5 py-3 rounded-full bg-neutral-900 text-white hover:bg-black transition-colors text-xs font-semibold group shadow-sm"
+                  className="w-full inline-flex items-center justify-between px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-sm font-semibold group shadow-sm"
                 >
                   <span>Inquire About This Build</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </TransitionLink>
               </div>
             </div>
@@ -414,13 +381,13 @@ export default function ServicesPage() {
 
                 <div>
                   <div className="pt-6 border-t border-white/15">
-                    <span className="text-xs font-mono font-semibold text-white block mb-4">
+                    <span className="text-xs font-mono uppercase tracking-wider font-semibold text-white/60 block mb-4">
                       Core Deliverables Included
                     </span>
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-3 mb-6">
                       {service.deliverables.map((deliv, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5 text-sm text-white/85">
-                          <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <div key={idx} className="flex items-start gap-3 text-sm sm:text-base text-white/90 font-medium">
+                          <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-1" />
                           <span>{deliv}</span>
                         </div>
                       ))}
@@ -428,17 +395,17 @@ export default function ServicesPage() {
                   </div>
 
                   {service.isBonus ? (
-                    <div className="w-full flex items-center justify-between px-5 py-3 rounded-full bg-white/10 border border-white/15 text-xs font-mono text-emerald-300 font-semibold">
-                      <span>Included at 0 DA with Core Build</span>
+                    <div className="w-full flex items-center justify-between px-6 py-3.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm font-mono text-emerald-300 font-semibold">
+                      <span>Included with Core Build</span>
                       <span>⚡ 100% Free</span>
                     </div>
                   ) : (
                     <TransitionLink
                       href={`/contact?service=${encodeURIComponent(service.queryService)}`}
-                      className="w-full inline-flex items-center justify-between px-5 py-3 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/15 transition-all text-xs font-semibold group"
+                      className="w-full inline-flex items-center justify-between px-6 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 transition-all text-sm font-semibold group"
                     >
                       <span>Inquire About This Scope</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </TransitionLink>
                   )}
                 </div>
