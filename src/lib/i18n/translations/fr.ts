@@ -8,7 +8,7 @@ export const fr: TranslationDictionary = {
     projects: "Projets",
     about: "À Propos",
     contact: "Contact",
-    homeAria: "Accueil Fleevo",
+    homeAria: "Accueil Fleevy",
     openMenu: "Ouvrir le menu de navigation",
     closeMenu: "Fermer le menu de navigation",
     hqNotice: "QG Alger · Infrastructure Distante Mondiale",
@@ -23,8 +23,8 @@ export const fr: TranslationDictionary = {
     remoteInfra: "Ingénierie & Infrastructure à Distance",
     tagline: "Systèmes d'Acquisition Client & Infrastructure Numérique",
     whatsappAria: "Ligne Directe WhatsApp",
-    emailAria: "Envoyer un e-mail à Fleevo",
-    contactAria: "Contacter Fleevo"
+    emailAria: "Envoyer un e-mail à Fleevy",
+    contactAria: "Contacter Fleevy"
   },
   contactForm: {
     successTitle: "Demande Reçue.",
@@ -161,7 +161,7 @@ export const fr: TranslationDictionary = {
       ],
       whatsappBtn: "Envoyer le Plan à Hichem sur WhatsApp",
       resetBtn: "↺ Réinitialiser et tester une autre configuration",
-      waPrefix: "Bonjour Hichem, j'ai configuré mon projet via l'assistant Fleevo :",
+      waPrefix: "Bonjour Hichem, j'ai configuré mon projet via l'assistant Fleevy :",
       waSystemLabel: "Système",
       waChallengeLabel: "Défi Majeur",
       waTimelineLabel: "Échéance",
@@ -173,7 +173,7 @@ export const fr: TranslationDictionary = {
     subtitle: "Des réponses précises sur notre méthode de conception et de déploiement.",
     items: [
       {
-        question: "En quoi Fleevo diffère-t-il d'une agence classique ?",
+        question: "En quoi Fleevy diffère-t-il d'une agence classique ?",
         answer: "La plupart des agences livrent de simples sites vitrines statiques. Nous concevons des systèmes complets d'acquisition client avec qualification instantanée par bot WhatsApp et publicités Meta ciblées."
       },
       {
@@ -386,7 +386,7 @@ export const fr: TranslationDictionary = {
     },
     founder: {
       badge: "COLLABORATION TECHNIQUE DIRECTE",
-      quote: "Chez Fleevo, vous n'échangez pas avec des chargés de clientèle intermédiaires. Vous travaillez directement avec des ingénieurs et stratèges seniors qui conçoivent et éprouvent votre système dès le premier jour.",
+      quote: "Chez Fleevy, vous n'échangez pas avec des chargés de clientèle intermédiaires. Vous travaillez directement avec des ingénieurs et stratèges seniors qui conçoivent et éprouvent votre système dès le premier jour.",
       founderName: "Hichem Djouadi",
       founderRole: "Fondateur & Architecte Systèmes"
     },
@@ -447,7 +447,7 @@ export const fr: TranslationDictionary = {
           "Webhooks de synchronisation automatique avec les transporteurs",
           "Accès collaborateurs par rôles avec souveraineté des données"
         ],
-        proofLabel: "Fleevo Command Center"
+        proofLabel: "Fleevy Command Center"
       }
     ],
     pillarTwoBadge: "PILIER 02 // GÉNÉRATION DE DEMANDE",
@@ -496,35 +496,35 @@ export const fr: TranslationDictionary = {
     ],
     comparison: {
       badge: "LA DIFFÉRENCE",
-      headline: "Agences Traditionnelles vs Fleevo",
+      headline: "Agences Traditionnelles vs Fleevy",
       subhead: "Pourquoi les dirigeants choisissent un partenaire d'ingénierie et d'acquisition.",
       colAgency: "Agence Traditionnelle",
-      colFleevo: "Systèmes Fleevo",
+      colFleevy: "Systèmes Fleevy",
       rows: [
         {
           metric: "Objectif Principal",
           agency: "Brochures décoratives et design superficiel",
-          fleevo: "Génération de revenus et qualification automatisée"
+          fleevy: "Génération de revenus et qualification automatisée"
         },
         {
           metric: "Socle Technique",
           agency: "WordPress surchargé ou éditeurs propriétaires fermés",
-          fleevo: "Next.js sur mesure, TypeScript et PostgreSQL"
+          fleevy: "Next.js sur mesure, TypeScript et PostgreSQL"
         },
         {
           metric: "Performance Mobile",
           agency: "3 à 6 secondes de chargement sur réseau 4G",
-          fleevo: "Chargement en moins de 800ms à la périphérie"
+          fleevy: "Chargement en moins de 800ms à la périphérie"
         },
         {
           metric: "Gestion des Prospects",
           agency: "Formulaires statiques perdus dans les spams",
-          fleevo: "Qualification immédiate en 30s par bot WhatsApp"
+          fleevy: "Qualification immédiate en 30s par bot WhatsApp"
         },
         {
           metric: "Propriété du Code & Données",
           agency: "Abonnements d'hébergement captifs",
-          fleevo: "100% de propriété client sur tous les actifs"
+          fleevy: "100% de propriété client sur tous les actifs"
         }
       ]
     },
@@ -557,7 +557,7 @@ export const fr: TranslationDictionary = {
     hero: {
       badge: "ÉTUDES DE CAS & ARCHITECTURE",
       headline: "Des systèmes conçus pour la vitesse, la conversion et zéro perte d'opportunité.",
-      subhead: "Découvrez les plateformes en production et les environnements de test conçus par Fleevo."
+      subhead: "Découvrez les plateformes en production et les environnements de test conçus par Fleevy."
     },
     filters: {
       all: "Tous les Projets",
@@ -752,11 +752,11 @@ export const fr: TranslationDictionary = {
     },
     founder: {
       badge: "RELATION DIRECTE AVEC LES BÂTISSEURS",
-      headline: "Pourquoi Fleevo a été créé.",
+      headline: "Pourquoi Fleevy a été créé.",
       paragraphs: [
         "En 2024, trop d'agences continuent de vendre des sites web comme de simples brochures décoratives. Elles facturent des forfaits mensuels pour des éditeurs de pages qui mettent 5 secondes à charger sur smartphone et laissent les demandes clients pourrir dans des boîtes mail oubliées.",
-        "Nous avons fondé Fleevo sur un constat sans appel : les entreprises modernes sur des marchés compétitifs n'ont pas besoin de pages statiques supplémentaires. Elles ont besoin d'une infrastructure d'acquisition : des systèmes qui s'affichent instantanément en 4G, qualifient les acheteurs en 30 secondes sur WhatsApp et génèrent un chiffre d'affaires mesurable grâce à la publicité ciblée.",
-        "Chaque client chez Fleevo collabore directement avec des ingénieurs seniors. Aucun commercial intermédiaire, aucun délai administratif : une ingénierie agile dédiée à votre croissance commerciale."
+        "Nous avons fondé Fleevy sur un constat sans appel : les entreprises modernes sur des marchés compétitifs n'ont pas besoin de pages statiques supplémentaires. Elles ont besoin d'une infrastructure d'acquisition : des systèmes qui s'affichent instantanément en 4G, qualifient les acheteurs en 30 secondes sur WhatsApp et génèrent un chiffre d'affaires mesurable grâce à la publicité ciblée.",
+        "Chaque client chez Fleevy collabore directement avec des ingénieurs seniors. Aucun commercial intermédiaire, aucun délai administratif : une ingénierie agile dédiée à votre croissance commerciale."
       ],
       founderName: "Hichem Djouadi",
       founderRole: "Fondateur & Directeur Technique"
@@ -794,7 +794,7 @@ export const fr: TranslationDictionary = {
     }
   },
   preloader: {
-    words: ["Architecture", "Automatisation", "Performance", "Fleevo."]
+    words: ["Architecture", "Automatisation", "Performance", "Fleevy."]
   },
   error: {
     title: "Systèmes ",

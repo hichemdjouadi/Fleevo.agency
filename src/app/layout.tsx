@@ -17,20 +17,20 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fleevo.net"),
-  title: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
+  metadataBase: new URL("https://fleevy.net"),
+  title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
   description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads, video scripting guidance, and acquisition audits to predictably grow your client base.",
   openGraph: {
-    title: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
+    title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
     description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads and direct-response video direction.",
-    url: "https://fleevo.net",
-    siteName: "Fleevo",
+    url: "https://fleevy.net",
+    siteName: "Fleevy",
     images: [
       {
         url: "/opengraph-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
+        alt: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
       }
     ],
     locale: "en_US",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
+    title: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
     description: "We build customer-acquiring web platforms, e-commerce stores, and custom applications wired with automated bot intake—fueled by targeted Meta ads and direct-response video direction.",
     images: ["/opengraph-image.jpg"],
   },
@@ -58,7 +58,7 @@ export default function RootLayout({
               try {
                 var p = new URLSearchParams(window.location.search).get('lang');
                 var nav = (navigator.language || '').toLowerCase().slice(0, 2);
-                var s = p || localStorage.getItem('fleevo_lang') || (document.cookie.match(/(?:^|; )fleevo_locale=([^;]*)/) || [])[1] || (nav === 'ar' || nav === 'fr' ? nav : 'en');
+                var s = p || localStorage.getItem('fleevy_lang') || localStorage.getItem('fleevo_lang') || (document.cookie.match(/(?:^|; )(?:fleevy_locale|fleevo_locale)=([^;]*)/) || [])[1] || (nav === 'ar' || nav === 'fr' ? nav : 'en');
                 if (s === 'ar') {
                   document.documentElement.lang = 'ar';
                   document.documentElement.dir = 'rtl';

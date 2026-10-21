@@ -8,7 +8,7 @@ export const en: TranslationDictionary = {
     projects: "Projects",
     about: "About",
     contact: "Contact",
-    homeAria: "Fleevo Home",
+    homeAria: "Fleevy Home",
     openMenu: "Open navigation menu",
     closeMenu: "Close navigation menu",
     hqNotice: "Algiers HQ · Worldwide Remote Infrastructure",
@@ -23,8 +23,8 @@ export const en: TranslationDictionary = {
     remoteInfra: "Remote Engineering & Infrastructure",
     tagline: "Customer Acquisition Systems & Digital Infrastructure",
     whatsappAria: "WhatsApp Direct Line",
-    emailAria: "Email Fleevo",
-    contactAria: "Contact Fleevo"
+    emailAria: "Email Fleevy",
+    contactAria: "Contact Fleevy"
   },
   contactForm: {
     successTitle: "Request Received.",
@@ -161,7 +161,7 @@ export const en: TranslationDictionary = {
       ],
       whatsappBtn: "Send Blueprint to Hichem on WhatsApp",
       resetBtn: "↺ Reset & try another configuration",
-      waPrefix: "Salam Hichem, I went through the Fleevo onboarding wizard:",
+      waPrefix: "Salam Hichem, I went through the Fleevy onboarding wizard:",
       waSystemLabel: "System",
       waChallengeLabel: "Core Challenge",
       waTimelineLabel: "Target Timeline",
@@ -173,7 +173,7 @@ export const en: TranslationDictionary = {
     subtitle: "Quick answers on how we build and launch.",
     items: [
       {
-        question: "What makes Fleevo different from a traditional agency?",
+        question: "What makes Fleevy different from a traditional agency?",
         answer: "Most agencies build static websites. We build complete acquisition systems with automated bot intake and targeted Meta ads."
       },
       {
@@ -386,7 +386,7 @@ export const en: TranslationDictionary = {
     },
     founder: {
       badge: "DIRECT TECHNICAL PARTNERSHIP",
-      quote: "When you hire Fleevo, you don't talk to junior account managers. You work directly with senior engineers and acquisition strategists who build and test your system from day one.",
+      quote: "When you hire Fleevy, you don't talk to junior account managers. You work directly with senior engineers and acquisition strategists who build and test your system from day one.",
       founderName: "Hichem Djouadi",
       founderRole: "Founder & Lead Systems Architect"
     },
@@ -447,7 +447,7 @@ export const en: TranslationDictionary = {
           "Automated courier & dispatch sync webhooks",
           "Role-based staff logins with 100% data ownership"
         ],
-        proofLabel: "Fleevo Command Center"
+        proofLabel: "Fleevy Command Center"
       }
     ],
     pillarTwoBadge: "PILLAR 02 // DEMAND GENERATION",
@@ -496,35 +496,35 @@ export const en: TranslationDictionary = {
     ],
     comparison: {
       badge: "THE DIFFERENCE",
-      headline: "Traditional Agencies vs Fleevo",
+      headline: "Traditional Agencies vs Fleevy",
       subhead: "Why business owners switch to an engineering and acquisition partner.",
       colAgency: "Traditional Agency",
-      colFleevo: "Fleevo Systems",
+      colFleevy: "Fleevy Systems",
       rows: [
         {
           metric: "Primary Focus",
           agency: "Aesthetic brochures & vanity design",
-          fleevo: "Revenue generation & automated bot intake"
+          fleevy: "Revenue generation & automated bot intake"
         },
         {
           metric: "Technology Stack",
           agency: "Bloated WordPress or locked site builders",
-          fleevo: "Custom Next.js, TypeScript & PostgreSQL"
+          fleevy: "Custom Next.js, TypeScript & PostgreSQL"
         },
         {
           metric: "Mobile Performance",
           agency: "3–6 second load times on 4G networks",
-          fleevo: "Sub-800ms edge loading with zero bloat"
+          fleevy: "Sub-800ms edge loading with zero bloat"
         },
         {
           metric: "Lead Intake",
           agency: "Static contact forms that sit in spam",
-          fleevo: "Instant 30s WhatsApp bot triage"
+          fleevy: "Instant 30s WhatsApp bot triage"
         },
         {
           metric: "Code & Data Ownership",
           agency: "Recurring host locks or platform fees",
-          fleevo: "100% full client ownership of all assets"
+          fleevy: "100% full client ownership of all assets"
         }
       ]
     },
@@ -557,7 +557,7 @@ export const en: TranslationDictionary = {
     hero: {
       badge: "CASE STUDIES & ARCHITECTURE",
       headline: "Systems built for speed, conversion, and zero-leak operations.",
-      subhead: "Browse live client deployments and staging platforms engineered by Fleevo."
+      subhead: "Browse live client deployments and staging platforms engineered by Fleevy."
     },
     filters: {
       all: "All Projects",
@@ -752,11 +752,11 @@ export const en: TranslationDictionary = {
     },
     founder: {
       badge: "DIRECT BUILDER ENGAGEMENT",
-      headline: "Why Fleevo was founded.",
+      headline: "Why Fleevy was founded.",
       paragraphs: [
         "In 2024, most agencies still treat websites as decorative brochures. They charge hefty monthly retainer fees for page builders that take five seconds to load on mobile and bury customer inquiries in forgotten email inboxes.",
-        "We built Fleevo around a single realization: modern businesses in fast-growing markets do not need more static pages. They need acquisition infrastructure—systems that load instantly on 4G, qualify buyers in 30 seconds via WhatsApp, and generate predictable sales with targeted ads.",
-        "Every client at Fleevo works directly with senior builders. No intermediate account executives, no bureaucratic delays—just high-velocity engineering focused on your commercial growth."
+        "We built Fleevy around a single realization: modern businesses in fast-growing markets do not need more static pages. They need acquisition infrastructure—systems that load instantly on 4G, qualify buyers in 30 seconds via WhatsApp, and generate predictable sales with targeted ads.",
+        "Every client at Fleevy works directly with senior builders. No intermediate account executives, no bureaucratic delays—just high-velocity engineering focused on your commercial growth."
       ],
       founderName: "Hichem Djouadi",
       founderRole: "Founder & Technical Lead"
@@ -794,7 +794,7 @@ export const en: TranslationDictionary = {
     }
   },
   preloader: {
-    words: ["Architecture", "Automation", "Performance", "Fleevo."]
+    words: ["Architecture", "Automation", "Performance", "Fleevy."]
   },
   error: {
     title: "Systems ",

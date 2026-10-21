@@ -10,8 +10,8 @@ const telegramChatId = process.env.TELEGRAM_CHAT_ID;
 const trelloKey = process.env.TRELLO_API_KEY;
 const trelloToken = process.env.TRELLO_TOKEN;
 const trelloListId = process.env.TRELLO_LIST_ID || '697a36b5212fb7c1c35f5be4';
-const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL || 'contact@fleevo.net';
-const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'Fleevo <onboarding@resend.dev>';
+const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL || 'contact@fleevy.net';
+const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'Fleevy <onboarding@resend.dev>';
 
 function escapeHtml(value: string): string {
   return value
@@ -142,7 +142,7 @@ async function sendResendEmail(name: string, email: string, timeline: string, in
         from: resendFromEmail,
         to: [fallbackRecipient],
         replyTo: email,
-        subject: `New Lead: ${name} (via contact@fleevo.net)`,
+        subject: `New Lead: ${name} (via contact@fleevy.net)`,
         html: htmlBody
       });
     }

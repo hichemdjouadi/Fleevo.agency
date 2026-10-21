@@ -204,8 +204,8 @@ export default function Navbar() {
             {/* Bottom Studio Contact Strip */}
             <div className="pt-5 border-t border-white/10 flex flex-col gap-3 text-xs font-mono text-white/70">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <a href="mailto:contact@fleevo.net" className="hover:text-white transition-colors">
-                  contact@fleevo.net
+                <a href="mailto:contact@fleevy.net" className="hover:text-white transition-colors">
+                  contact@fleevy.net
                 </a>
                 <a href="tel:+213655934124" dir="ltr" className="hover:text-white transition-colors">
                   +213 655 934 124

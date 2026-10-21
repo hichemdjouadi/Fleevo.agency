@@ -50,7 +50,8 @@ export default function Preloader() {
 
     // 4. Session frequency capping: only display on fresh session entry to prevent repetitive fatigue
     const alreadySeen =
-      typeof window !== "undefined" && sessionStorage.getItem("fleevo_preloader_seen");
+      typeof window !== "undefined" &&
+      (sessionStorage.getItem("fleevy_preloader_seen") || sessionStorage.getItem("fleevo_preloader_seen"));
 
     if (alreadySeen) {
       setIsLoaded(true);
@@ -59,7 +60,7 @@ export default function Preloader() {
 
     // Mark as seen for subsequent internal navigations and page refreshes in this session
     try {
-      sessionStorage.setItem("fleevo_preloader_seen", "true");
+      sessionStorage.setItem("fleevy_preloader_seen", "true");
     } catch {
       // ignore storage access errors
     }

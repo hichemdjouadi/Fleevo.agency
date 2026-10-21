@@ -29,8 +29,10 @@ const LanguageContext = createContext<LanguageContextType>({
   t: en,
 });
 
-const STORAGE_KEY = "fleevo_lang";
-const COOKIE_KEY = "fleevo_locale";
+const STORAGE_KEY = "fleevy_lang";
+const FALLBACK_STORAGE_KEY = "fleevo_lang";
+const COOKIE_KEY = "fleevy_locale";
+const FALLBACK_COOKIE_KEY = "fleevo_locale";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
@@ -54,7 +56,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
     // 2. Check localStorage
     try {
-      const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
+      const saved = (localStorage.getItem(STORAGE_KEY) || localStorage.getItem(FALLBACK_STORAGE_KEY)) as Locale | null;
       if (saved === "ar" || saved === "fr" || saved === "en") {
         setLocaleState(saved);
         return;
@@ -65,7 +67,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
     // 3. Check document cookie
     try {
-      const match = document.cookie.match(new RegExp(`(?:^|; )${COOKIE_KEY}=([^;]*)`));
+      const match = document.cookie.match(/(?:^|; )(?:fleevy_locale|fleevo_locale)=([^;]*)/);
       if (match) {
         const val = decodeURIComponent(match[1]) as Locale;
         if (val === "ar" || val === "fr" || val === "en") {
@@ -128,34 +130,34 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       // Localized dynamic page title across all routes and languages
       const titles: Record<string, Record<Locale, string>> = {
         "/": {
-          en: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
-          fr: "Fleevo | Systèmes d'Acquisition Client & Infrastructure Digitale",
-          ar: "فليفو | أنظمة اكتساب العملاء والبنية التحتية الرقمية",
+          en: "Fleevy | Customer Acquisition Systems & Digital Infrastructure",
+          fr: "Fleevy | Systèmes d'Acquisition Client & Infrastructure Digitale",
+          ar: "فليفي | أنظمة اكتساب العملاء والبنية التحتية الرقمية",
         },
         "/services": {
-          en: "Services & Systems Architecture | Fleevo",
-          fr: "Services & Architecture de Systèmes | Fleevo",
-          ar: "الخدمات وهندسة الأنظمة | فليفو",
+          en: "Services & Systems Architecture | Fleevy",
+          fr: "Services & Architecture de Systèmes | Fleevy",
+          ar: "الخدمات وهندسة الأنظمة | فليفي",
         },
         "/work": {
-          en: "Selected Case Studies & Systems | Fleevo",
-          fr: "Études de Cas & Réalisations | Fleevo",
-          ar: "دراسات الحالة ونماذج الأنظمة | فليفو",
+          en: "Selected Case Studies & Systems | Fleevy",
+          fr: "Études de Cas & Réalisations | Fleevy",
+          ar: "دراسات الحالة ونماذج الأنظمة | فليفي",
         },
         "/about": {
-          en: "About & Engineering Standards | Fleevo",
-          fr: "À Propos & Standards d'Ingénierie | Fleevo",
-          ar: "عن الوكالة والمعايير الهندسية | فليفو",
+          en: "About & Engineering Standards | Fleevy",
+          fr: "À Propos & Standards d'Ingénierie | Fleevy",
+          ar: "عن الوكالة والمعايير الهندسية | فليفي",
         },
         "/contact": {
-          en: "Direct Contact & Technical Review | Fleevo",
-          fr: "Contact Direct & Audit Technique | Fleevo",
-          ar: "طلب استشارة وبدء المشروع | فليفو",
+          en: "Direct Contact & Technical Review | Fleevy",
+          fr: "Contact Direct & Audit Technique | Fleevy",
+          ar: "طلب استشارة وبدء المشروع | فليفي",
         },
         "/start": {
-          en: "System Configurator & Scope | Fleevo",
-          fr: "Configurateur de Système | Fleevo",
-          ar: "مُهيئ المنظومة الرقمية | فليفو",
+          en: "System Configurator & Scope | Fleevy",
+          fr: "Configurateur de Système | Fleevy",
+          ar: "مُهيئ المنظومة الرقمية | فليفي",
         },
       };
 

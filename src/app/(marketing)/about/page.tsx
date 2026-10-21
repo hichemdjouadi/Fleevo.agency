@@ -140,7 +140,7 @@ export default function AboutPage() {
             <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-black/10 bg-[#f4f4f5]">
               <Image
                 src="/founder-real.jpg"
-                alt="Hichem Djouadi - Founder & Technical Lead at Fleevo"
+                alt="Hichem Djouadi - Founder & Technical Lead at Fleevy"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
@@ -175,7 +175,7 @@ export default function AboutPage() {
                   {t.about.founder.founderName}
                 </div>
                 <span className="rtl:font-sans ltr:font-mono text-xs text-neutral-600 block mt-1">
-                  {t.about.founder.founderRole} · Fleevo
+                  {t.about.founder.founderRole} · Fleevy
                 </span>
               </div>
 
@@ -215,10 +215,10 @@ export default function AboutPage() {
 
             <Magnetic intensity={0.2}>
               <a
-                href="mailto:contact@fleevo.net"
+                href="mailto:contact@fleevy.net"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/20 hover:border-white text-white font-medium text-base sm:text-lg transition-all"
               >
-                <span>contact@fleevo.net</span>
+                <span>contact@fleevy.net</span>
               </a>
             </Magnetic>
           </div>

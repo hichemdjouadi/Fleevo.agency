@@ -11,7 +11,7 @@ interface DeviceFrameProps {
 }
 
 export default function DeviceFrame({
-  url = "fleevo.net",
+  url = "fleevy.net",
   statusBadge = "Live",
   statusDotColor,
   children,

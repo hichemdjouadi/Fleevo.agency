@@ -193,11 +193,11 @@ export interface ServicesPageTranslations {
     headline: string;
     subhead: string;
     colAgency: string;
-    colFleevo: string;
+    colFleevy: string;
     rows: {
       metric: string;
       agency: string;
-      fleevo: string;
+      fleevy: string;
     }[];
   };
   guarantees: {

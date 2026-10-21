@@ -21,10 +21,10 @@ export default function Footer() {
             {/* Contact Pills */}
             <div className="flex flex-wrap gap-4">
               <a 
-                href="mailto:contact@fleevo.net" 
+                href="mailto:contact@fleevy.net" 
                 className="inline-flex items-center px-6 py-3 rounded-full border border-white/20 hover:border-white transition-colors text-sm font-medium tracking-tight"
               >
-                contact@fleevo.net
+                contact@fleevy.net
               </a>
               <a 
                 href="https://wa.me/213655934124" 
@@ -86,7 +86,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-mono text-white/60">
             <span>{t.footer.tagline}</span>
             <span>·</span>
-            <span>&copy; {new Date().getFullYear()} Fleevo</span>
+            <span>&copy; {new Date().getFullYear()} Fleevy</span>
           </div>
 
           {/* Direct channels */}
@@ -101,7 +101,7 @@ export default function Footer() {
               <MessageSquare className="w-4 h-4 text-white" />
             </a>
             <a 
-              href="mailto:contact@fleevo.net" 
+              href="mailto:contact@fleevy.net" 
               aria-label={t.footer.emailAria} 
               className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
             >

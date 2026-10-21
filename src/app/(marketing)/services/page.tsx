@@ -42,19 +42,19 @@ export default function ServicesPage() {
 
   const guaranteeText = {
     en: {
-      badge: "The Fleevo Acquisition Guarantee",
+      badge: "The Fleevy Acquisition Guarantee",
       title: "Built to capture leads and process orders without friction.",
       desc: "Every system we deploy is tested against real customer journeys. If inquiries fail to alert your team in 30 seconds, or if your checkout sequence creates friction on mobile, we do not sign off on delivery until the pipeline is airtight.",
       cta: "Discuss Your Timeline"
     },
     fr: {
-      badge: "La Garantie d'Acquisition Fleevo",
+      badge: "La Garantie d'Acquisition Fleevy",
       title: "Conçu pour capter des prospects et traiter des commandes sans aucune friction.",
       desc: "Chaque système déployé est testé en conditions réelles. Si les demandes n'alertent pas votre équipe en moins de 30 secondes ou si votre tunnel mobile crée un point de blocage, nous ne validons pas la livraison tant que le flux n'est pas parfaitement fluide.",
       cta: "Planifier Vos Délais"
     },
     ar: {
-      badge: "ضمان فليفو لاكتساب العملاء",
+      badge: "ضمان فليفي لاكتساب العملاء",
       title: "مبني لجلب العملاء ومعالجة الطلبات دون أي عقبات تقنية.",
       desc: "كل نظام نطلقه يتم اختباره على مسارات مستخدمين حقيقية. إذا تعذر إشعار فريقك بطلب العميل خلال 30 ثانية، أو ظهر أي ثقل في عملية الشراء عبر الهاتف، فلن نعتمد التسليم النهائي حتى تصبح المنصة خالية تماماً من أي تسرب.",
       cta: "احجز موعد إطلاق مشروعك"
@@ -513,10 +513,10 @@ export default function ServicesPage() {
 
             <Magnetic intensity={0.2}>
               <a
-                href="mailto:contact@fleevo.net"
+                href="mailto:contact@fleevy.net"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/20 hover:border-white text-white text-base sm:text-lg font-medium transition-colors text-center"
               >
-                contact@fleevo.net
+                contact@fleevy.net
               </a>
             </Magnetic>
           </div>

@@ -10,11 +10,11 @@ export default function Template({ children }: { children: ReactNode }) {
   const [hasEntered, setHasEntered] = useState(false);
   const pathname = usePathname();
 
-  let brandName = "Fleevo.";
+  let brandName = "Fleevy.";
   try {
     const lang = useLanguage();
     if (lang?.locale === "ar") {
-      brandName = "فليفو.";
+      brandName = "فليفي.";
     }
   } catch {
     // fallback

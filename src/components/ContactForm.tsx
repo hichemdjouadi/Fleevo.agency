@@ -310,11 +310,11 @@ export default function ContactForm() {
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
           <a
-            href="mailto:contact@fleevo.net"
+            href="mailto:contact@fleevy.net"
             className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
           >
             <Mail className="w-3.5 h-3.5" />
-            <span>contact@fleevo.net</span>
+            <span>contact@fleevy.net</span>
           </a>
           <a
             href="https://wa.me/213655934124"

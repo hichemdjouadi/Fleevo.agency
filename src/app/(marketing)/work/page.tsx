@@ -150,10 +150,10 @@ export default function Work() {
             </Magnetic>
             <Magnetic intensity={0.2}>
               <a
-                href="mailto:contact@fleevo.net"
+                href="mailto:contact@fleevy.net"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4.5 rounded-full border border-white/20 hover:border-white text-white text-base sm:text-lg font-medium transition-colors"
               >
-                contact@fleevo.net
+                contact@fleevy.net
               </a>
             </Magnetic>
           </div>

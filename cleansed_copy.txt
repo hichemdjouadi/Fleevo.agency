@@ -9,9 +9,9 @@ Web Design & Development: We create marketing sites that explain products clearl
 
 Brand Identity: We build visual identities that give companies a distinct presence. From typography to digital guidelines, every element works as one system.
 
-"Fleevo built us a 24/7 autonomous system that eliminated our manual booking overhead and scaled our MRR."
+"Fleevy built us a 24/7 autonomous system that eliminated our manual booking overhead and scaled our MRR."
 
-What separates Fleevo from standard web design agencies? Most agencies build static brochures. We build ecosystems. We pair award-winning front-end design with battle-tested backend architecture (PostgreSQL, Supabase) to create systems that actively generate revenue.
+What separates Fleevy from standard web design agencies? Most agencies build static brochures. We build ecosystems. We pair award-winning front-end design with battle-tested backend architecture (PostgreSQL, Supabase) to create systems that actively generate revenue.
 
 Do you work with startups? Yes. We work with established B2B firms and ambitious startups. Our architecture scales to handle massive traffic spikes without breaking. We frequently help early-stage companies operate like enterprise market leaders.
 
