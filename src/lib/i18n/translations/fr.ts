@@ -95,7 +95,7 @@ export const fr: TranslationDictionary = {
     step2: {
       title: "Quel est votre principal frein de croissance aujourd'hui ?",
       subhead: "Identifiez le point de friction majeur dans vos opérations.",
-      backBtn: "← Revenir au choix du système",
+      backBtn: "Revenir au choix du système",
       options: [
         {
           id: "dm_chaos",
@@ -122,7 +122,7 @@ export const fr: TranslationDictionary = {
     step3: {
       title: "Quand souhaitez-vous que ce système soit opérationnel ?",
       subhead: "Permet de bloquer la bande passante technique nécessaire.",
-      backBtn: "← Revenir au goulot d'étranglement",
+      backBtn: "Revenir au goulot d'étranglement",
       options: [
         {
           id: "asap",
@@ -802,5 +802,13 @@ export const fr: TranslationDictionary = {
     message: "Nous avons rencontré une anomalie dans l'architecture de déploiement.",
     reboot: "Redémarrer le Moteur",
     returnBase: "Retour à l'Accueil"
+  },
+  notFound: {
+    badge: "404 // PAGE INTROUVABLE",
+    title: "Page ",
+    titleItalic: "introuvable.",
+    message: "L'itinéraire demandé n'existe pas ou a été déplacé au sein de notre architecture.",
+    returnHome: "Retour à l'Accueil",
+    exploreServices: "Nos Services"
   }
 };

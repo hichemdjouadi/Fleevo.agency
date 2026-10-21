@@ -166,9 +166,10 @@ export default function OnboardingWizard({ className = "", onComplete }: Onboard
               <button
                 type="button"
                 onClick={() => setStep(1)}
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-neutral-600 hover:text-black transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs rtl:font-sans ltr:font-mono font-medium text-neutral-600 hover:text-black transition-colors"
               >
-                {w.step2.backBtn}
+                <ArrowLeft className="w-3.5 h-3.5 rtl:rotate-180" />
+                <span>{w.step2.backBtn}</span>
               </button>
             </div>
           </motion.div>
@@ -220,9 +221,10 @@ export default function OnboardingWizard({ className = "", onComplete }: Onboard
               <button
                 type="button"
                 onClick={() => setStep(2)}
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-neutral-600 hover:text-black transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs rtl:font-sans ltr:font-mono font-medium text-neutral-600 hover:text-black transition-colors"
               >
-                {w.step3.backBtn}
+                <ArrowLeft className="w-3.5 h-3.5 rtl:rotate-180" />
+                <span>{w.step3.backBtn}</span>
               </button>
             </div>
           </motion.div>

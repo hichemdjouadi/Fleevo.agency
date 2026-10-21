@@ -146,7 +146,7 @@ export default function AboutPage() {
                 priority
                 className="object-cover grayscale contrast-125"
               />
-              <div className="absolute bottom-6 inset-x-6 p-5 rounded-2xl bg-[#050505] text-white border border-white/15 font-mono text-xs">
+              <div className="absolute bottom-6 inset-x-6 p-5 rounded-2xl bg-[#050505] text-white border border-white/15 rtl:font-sans ltr:font-mono text-xs">
                 <div className="font-semibold text-white text-sm">{t.about.founder.founderName}</div>
                 <div className="text-white/75 text-xs mt-0.5">{t.about.founder.founderRole}</div>
               </div>
@@ -155,7 +155,7 @@ export default function AboutPage() {
 
           {/* Executive Statement Column */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 text-xs font-mono font-medium text-neutral-800 mb-4 w-fit">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 text-xs rtl:font-sans ltr:font-mono font-medium text-neutral-800 mb-4 w-fit">
               <span>{t.about.founder.badge}</span>
             </div>
 

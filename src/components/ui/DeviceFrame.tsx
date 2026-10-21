@@ -28,13 +28,13 @@ export default function DeviceFrame({
       </div>
 
       {/* Minimal Mobile Browser Bar */}
-      <div className="pt-8 sm:pt-9 pb-2 sm:pb-2.5 px-3.5 sm:px-4 border-b border-white/10 flex items-center justify-between gap-2 text-[11px] sm:text-xs font-mono text-white/80 z-20 bg-[#08080c]">
+      <div className="pt-8 sm:pt-9 pb-2 sm:pb-2.5 px-3.5 sm:px-4 border-b border-white/10 flex items-center justify-between gap-2 text-[11px] sm:text-xs rtl:font-sans ltr:font-mono text-white/80 z-20 bg-[#08080c]">
         <div className="flex items-center gap-2 min-w-0">
           <span className={`w-1.5 h-1.5 rounded-full shrink-0 animate-pulse ${statusDotColor || "bg-emerald-400"}`} />
-          <span className="text-white/90 truncate">{url}</span>
+          <span dir="ltr" className="text-white/90 truncate">{url}</span>
         </div>
         {statusBadge && (
-          <span className="text-[10px] sm:text-xs font-mono font-medium text-white/90 shrink-0">
+          <span className="text-[10px] sm:text-xs rtl:font-sans ltr:font-mono font-medium text-white/90 shrink-0">
             {statusBadge}
           </span>
         )}

@@ -413,4 +413,12 @@ export interface TranslationDictionary {
     reboot: string;
     returnBase: string;
   };
+  notFound: {
+    badge: string;
+    title: string;
+    titleItalic: string;
+    message: string;
+    returnHome: string;
+    exploreServices: string;
+  };
 }

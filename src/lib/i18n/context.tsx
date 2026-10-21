@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState, useMemo } from "react";
+import { usePathname } from "next/navigation";
 import { Locale, Direction, TranslationDictionary } from "./types";
 import { en } from "./translations/en";
 import { fr } from "./translations/fr";
@@ -108,6 +109,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const pathname = usePathname();
   const direction: Direction = locale === "ar" ? "rtl" : "ltr";
   const isRTL = direction === "rtl";
 
@@ -122,8 +124,47 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         document.documentElement.classList.remove("locale-ar");
         document.body?.setAttribute("dir", "ltr");
       }
+
+      // Localized dynamic page title across all routes and languages
+      const titles: Record<string, Record<Locale, string>> = {
+        "/": {
+          en: "Fleevo | Customer Acquisition Systems & Digital Infrastructure",
+          fr: "Fleevo | Systèmes d'Acquisition Client & Infrastructure Digitale",
+          ar: "فليفو | أنظمة اكتساب العملاء والبنية التحتية الرقمية",
+        },
+        "/services": {
+          en: "Services & Systems Architecture | Fleevo",
+          fr: "Services & Architecture de Systèmes | Fleevo",
+          ar: "الخدمات وهندسة الأنظمة | فليفو",
+        },
+        "/work": {
+          en: "Selected Case Studies & Systems | Fleevo",
+          fr: "Études de Cas & Réalisations | Fleevo",
+          ar: "دراسات الحالة ونماذج الأنظمة | فليفو",
+        },
+        "/about": {
+          en: "About & Engineering Standards | Fleevo",
+          fr: "À Propos & Standards d'Ingénierie | Fleevo",
+          ar: "عن الوكالة والمعايير الهندسية | فليفو",
+        },
+        "/contact": {
+          en: "Direct Contact & Technical Review | Fleevo",
+          fr: "Contact Direct & Audit Technique | Fleevo",
+          ar: "طلب استشارة وبدء المشروع | فليفو",
+        },
+        "/start": {
+          en: "System Configurator & Scope | Fleevo",
+          fr: "Configurateur de Système | Fleevo",
+          ar: "مُهيئ المنظومة الرقمية | فليفو",
+        },
+      };
+
+      const matched = titles[pathname] || (pathname?.startsWith("/admin") ? null : titles["/"]);
+      if (matched) {
+        document.title = matched[locale];
+      }
     }
-  }, [locale, direction, isRTL]);
+  }, [locale, direction, isRTL, pathname]);
 
   const value = useMemo(() => {
     return {

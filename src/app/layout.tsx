@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Cairo } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
+import { LanguageProvider } from "@/lib/i18n";
 
 const manrope = Manrope({ 
   subsets: ["latin"],
@@ -72,8 +73,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`${manrope.variable} ${cairo.variable} font-sans antialiased`} suppressHydrationWarning>
-        {children}
-        <CustomCursor />
+        <LanguageProvider>
+          {children}
+          <CustomCursor />
+        </LanguageProvider>
       </body>
     </html>
   );

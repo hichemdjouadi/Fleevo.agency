@@ -95,7 +95,7 @@ export const en: TranslationDictionary = {
     step2: {
       title: "What is stopping your revenue growth today?",
       subhead: "Select the single biggest operational bottleneck.",
-      backBtn: "← Back to system selection",
+      backBtn: "Back to system selection",
       options: [
         {
           id: "dm_chaos",
@@ -122,7 +122,7 @@ export const en: TranslationDictionary = {
     step3: {
       title: "When do you need this operational?",
       subhead: "Helps us allocate immediate engineering bandwidth.",
-      backBtn: "← Back to bottleneck",
+      backBtn: "Back to bottleneck",
       options: [
         {
           id: "asap",
@@ -802,5 +802,13 @@ export const en: TranslationDictionary = {
     message: "We encountered an anomaly in the deployment architecture.",
     reboot: "Reboot Engine",
     returnBase: "Return Base"
+  },
+  notFound: {
+    badge: "404 // ROUTE NOT FOUND",
+    title: "Page ",
+    titleItalic: "not found.",
+    message: "The requested route does not exist or has been relocated within our architecture.",
+    returnHome: "Return to Base",
+    exploreServices: "Explore Services"
   }
 };

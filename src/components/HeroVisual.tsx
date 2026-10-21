@@ -150,11 +150,11 @@ export default function HeroVisual() {
                   <div className="absolute bottom-3 inset-x-3 p-3 rounded-2xl bg-black/80 backdrop-blur-xl border border-white/15 text-white flex items-center justify-between pointer-events-none">
                     <div className="flex items-center gap-2">
                       <span className={`w-2 h-2 rounded-full ${meta.statusDotColor} animate-pulse`} />
-                      <span className="text-[11px] font-mono tracking-tight font-medium">
+                      <span className="text-[11px] rtl:font-sans ltr:font-mono tracking-tight font-medium">
                         {current.statusBadge}
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-white/50">
+                    <span className="text-[10px] rtl:font-sans ltr:font-mono text-white/50">
                       {current.client}
                     </span>
                   </div>
@@ -187,7 +187,7 @@ export default function HeroVisual() {
                   }}
                   whileHover={{ y: -2, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-white border border-black/10 hover:border-black/30 text-[11px] sm:text-xs font-mono text-neutral-800 hover:text-black transition-all shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.06)] duration-200 cursor-default"
+                  className="group inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/90 hover:bg-white border border-black/10 hover:border-black/30 text-[11px] sm:text-xs rtl:font-sans ltr:font-mono text-neutral-800 hover:text-black transition-all shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.06)] duration-200 cursor-default"
                 >
                   <span className="w-4 h-4 sm:w-4.5 sm:h-4.5 rounded-full bg-black/5 group-hover:bg-black group-hover:text-white transition-colors flex items-center justify-center text-[10px] sm:text-[11px] font-bold text-black shrink-0">
                     <span className="sr-only">{b.direction === "up" ? "Increased: " : "Reduced: "}</span>

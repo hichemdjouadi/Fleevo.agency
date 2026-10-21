@@ -95,7 +95,7 @@ export const ar: TranslationDictionary = {
     step2: {
       title: "ما هو التحدي الأكبر الذي يعيق نمو مبيعاتك حالياً؟",
       subhead: "حدد العقبة التشغيلية الرئيسية في نموذج عملك اليوم.",
-      backBtn: "← العودة لاختيار النظام",
+      backBtn: "العودة لاختيار النظام",
       options: [
         {
           id: "dm_chaos",
@@ -122,7 +122,7 @@ export const ar: TranslationDictionary = {
     step3: {
       title: "ما هو الجدول الزمني المستهدف لتشغيل هذا النظام؟",
       subhead: "يساعدنا ذلك على حجز الموارد الهندسية المناسبة لمشروعك فوراً.",
-      backBtn: "← العودة لتحديد التحدي",
+      backBtn: "العودة لتحديد التحدي",
       options: [
         {
           id: "asap",
@@ -802,5 +802,13 @@ export const ar: TranslationDictionary = {
     message: "حدث خلل تقني غير متوقع في خوادم المعالجة.",
     reboot: "إعادة تشغيل المحرك",
     returnBase: "العودة للرئيسية"
+  },
+  notFound: {
+    badge: "404 // مسار غير موجود",
+    title: "الصفحة ",
+    titleItalic: "غير موجودة.",
+    message: "المسار المطلوب غير متاح أو تم نقله ضمن بنيتنا الرقمية.",
+    returnHome: "العودة للرئيسية",
+    exploreServices: "استكشاف الخدمات"
   }
 };
