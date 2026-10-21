@@ -2,6 +2,7 @@
 
 import Link, { LinkProps } from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/lib/i18n";
 
 interface TransitionLinkProps
@@ -19,6 +20,7 @@ export default function TransitionLink({
   onClick,
   ...props
 }: TransitionLinkProps) {
+  const router = useRouter();
   let locale = "en";
   try {
     const langContext = useLanguage();
@@ -39,8 +41,41 @@ export default function TransitionLink({
     finalHref = `${path}?${params.toString()}`;
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onClick) onClick(e);
+
+    // If default was prevented or modifier key was pressed, let browser handle normally
+    if (
+      e.defaultPrevented ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.shiftKey ||
+      e.altKey ||
+      props.target === "_blank" ||
+      !finalHref.startsWith("/") ||
+      finalHref.startsWith("//")
+    ) {
+      return;
+    }
+
+    if (typeof window !== "undefined") {
+      const currentUrl = `${window.location.pathname}${window.location.search}`;
+      if (finalHref === currentUrl || finalHref === window.location.pathname) {
+        return;
+      }
+
+      e.preventDefault();
+      // Trigger cinematic curtain sweep
+      window.dispatchEvent(new CustomEvent("trigger-page-exit"));
+
+      setTimeout(() => {
+        router.push(finalHref);
+      }, 300);
+    }
+  };
+
   return (
-    <Link {...props} href={finalHref} onClick={onClick} className={className}>
+    <Link {...props} href={finalHref} onClick={handleClick} className={className}>
       {children}
     </Link>
   );
