@@ -48,6 +48,12 @@ body {
   line-height: 1.25 !important;
 }
 
+/* Prevent artificial browser font slant on Arabic cursive script */
+[dir="rtl"] em, [dir="rtl"] i, [dir="rtl"] .italic {
+  font-style: normal !important;
+  font-weight: 300;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }

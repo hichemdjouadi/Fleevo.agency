@@ -11,13 +11,13 @@ export default function StartPage() {
   const titleByLocale = {
     en: "Configure your acquisition system.",
     fr: "Configurez votre système d'acquisition.",
-    ar: "حدد مواصفات بنية اكتساب المبيعات الخاصة بك.",
+    ar: "صمّم بنية اكتساب العملاء المناسبة لمشروعك.",
   }[t.locale];
 
   const subheadByLocale = {
     en: "Tap through three structured questions to generate a tailored technical scope blueprint and connect directly with Hichem on WhatsApp.",
     fr: "Répondez à trois questions pour générer un plan technique sur mesure et échanger directement avec Hichem sur WhatsApp.",
-    ar: "أجب عن ثلاثة أسئلة سريعة لاحتساب المخطط الهندسي الأنسب لنموذج عملك، والتواصل الفوري مع هشام عبر واتساب.",
+    ar: "أجب عن ثلاثة أسئلة سريعة لاستخراج المخطط الفني الملائم لنموذج عملك، ثم ابدأ محادثة مباشرة مع هشام عبر واتساب.",
   }[t.locale];
 
   return (
