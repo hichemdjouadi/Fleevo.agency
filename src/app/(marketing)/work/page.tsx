@@ -190,7 +190,7 @@ function ProjectShowcase({
           <h2 className="text-2xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white mb-2.5 sm:mb-3 text-balance">
             {project.title}
           </h2>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-mono text-white/65">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs rtl:font-sans ltr:font-mono text-white/65">
             <span>0{index + 1} · {project.systemType}</span>
             <span>·</span>
             <span className="px-2.5 sm:px-3 py-1 rounded-full bg-white/10 text-white font-medium">
@@ -261,7 +261,7 @@ function ProjectShowcase({
                 {b.detail}
               </p>
             </div>
-            <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/60">
+            <div className="pt-4 border-t border-white/10 text-xs rtl:font-sans ltr:font-mono text-white/60">
               {b.type}
             </div>
           </div>

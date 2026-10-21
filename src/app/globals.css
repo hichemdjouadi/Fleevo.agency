@@ -30,22 +30,62 @@ body {
   scrollbar-width: none;
 }
 
-/* Proper Arabic Typography & Bidirectional Support */
-[dir="rtl"], [dir="rtl"] body, body[dir="rtl"], html.locale-ar, html.locale-ar body {
-  font-family: var(--font-cairo), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif;
+/* =========================================================================
+   BULLETPROOF ARABIC TYPOGRAPHY (FIX DISJOINED / MONOSPACED ARABIC TEXT)
+   Arabic script is cursive and MUST NEVER use monospace fonts or positive
+   letter-spacing. Monospace fonts (Courier/Consolas) force fixed character
+   cells that violently break cursive connections into spaced-out letters.
+   ========================================================================= */
+
+[dir="rtl"], 
+[dir="rtl"] body, 
+body[dir="rtl"], 
+html.locale-ar, 
+html.locale-ar body {
+  font-family: var(--font-cairo), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif !important;
 }
 
-[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] a, [dir="rtl"] button {
+/* Force all text elements in RTL to use normal letter-spacing and word-spacing */
+[dir="rtl"],
+[dir="rtl"] *,
+[dir="rtl"] *::before,
+[dir="rtl"] *::after,
+html.locale-ar,
+html.locale-ar *,
+html.locale-ar *::before,
+html.locale-ar *::after {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+/* Override .font-mono and monospace utilities in RTL mode to prevent letter separation */
+[dir="rtl"] .font-mono,
+[dir="rtl"] [class*="font-mono"],
+html.locale-ar .font-mono,
+html.locale-ar [class*="font-mono"],
+body[dir="rtl"] .font-mono,
+body[dir="rtl"] [class*="font-mono"],
+[dir="rtl"] code,
+[dir="rtl"] kbd,
+[dir="rtl"] samp {
+  font-family: var(--font-cairo), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+/* Strip any tracking utilities that destroy cursive Arabic connections */
+[dir="rtl"] [class*="tracking-"],
+html.locale-ar [class*="tracking-"] {
   letter-spacing: normal !important;
 }
 
-/* Ensure proper line height for Arabic diacritics and ascenders on tight display headings */
+/* Proper line height for Arabic display typography */
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 {
-  line-height: 1.18 !important;
+  line-height: 1.25 !important;
 }
 
 [dir="rtl"] .leading-none, [dir="rtl"] .leading-tight {
-  line-height: 1.25 !important;
+  line-height: 1.3 !important;
 }
 
 /* Prevent artificial browser font slant on Arabic cursive script */

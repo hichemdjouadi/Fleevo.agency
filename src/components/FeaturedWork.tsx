@@ -102,7 +102,7 @@ function ShowcaseItem({ project }: { project: FeaturedProjectTranslation }) {
             <h3 className="text-xl sm:text-2xl md:text-3xl font-medium text-black tracking-tight group-hover:text-neutral-700 transition-colors text-balance">
               {project.title}
             </h3>
-            <div className="mt-1 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs font-mono text-neutral-500">
+            <div className="mt-1 flex flex-wrap items-center gap-2 text-xs rtl:font-sans ltr:font-mono text-neutral-500">
               <span>{project.niche}</span>
               <span>·</span>
               <span className="text-black font-medium">{project.statusBadge}</span>
@@ -119,7 +119,7 @@ function ShowcaseItem({ project }: { project: FeaturedProjectTranslation }) {
       </div>
 
       {/* Directional Benefits Ledger */}
-      <div className="pt-4 border-t border-black/10 flex flex-wrap gap-2 text-xs font-mono">
+      <div className="pt-4 border-t border-black/10 flex flex-wrap gap-2 text-xs rtl:font-sans ltr:font-mono">
         {project.benefits.map((b, idx) => (
           <span
             key={idx}
