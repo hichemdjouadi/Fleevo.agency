@@ -28,7 +28,7 @@ export default function AboutPage() {
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium tracking-[-0.035em] leading-[1.02] text-black mb-8 text-balance">
             {t.about.hero.headlineStart}{" "}
-            <span className="font-serif italic font-light">{t.about.hero.headlineEnd}</span>
+            <span className="rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic font-light">{t.about.hero.headlineEnd}</span>
           </h1>
 
           <p className="text-lg sm:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-12 text-pretty">
@@ -171,7 +171,7 @@ export default function AboutPage() {
 
             <div className="mt-10 pt-8 border-t border-black/15 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div>
-                <div className="text-3xl font-serif italic text-black font-medium">
+                <div className="text-3xl rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic text-black font-medium">
                   {t.about.founder.founderName}
                 </div>
                 <span className="font-mono text-xs text-neutral-600 block mt-1">

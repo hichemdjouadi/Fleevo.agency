@@ -22,7 +22,7 @@ export default function Error({
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-6">
       <div className="flex flex-col items-center text-center space-y-8 max-w-xl relative z-10">
         <h2 className="text-[6vw] md:text-[4vw] font-medium tracking-tighter leading-none">
-          {t.error.title}<span className="italic text-white/50">{t.error.titleItalic}</span>
+          {t.error.title}<span className="rtl:not-italic ltr:italic text-white/50">{t.error.titleItalic}</span>
         </h2>
         <p className="text-white/60 text-lg md:text-xl font-light">
           {t.error.message}

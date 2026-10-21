@@ -458,7 +458,7 @@ export default function ServicesPage() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] text-balance">
             {methodologyText.title}
-            <span className="font-serif italic font-light">{methodologyText.titleItalic}</span>
+            <span className="rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic font-light">{methodologyText.titleItalic}</span>
           </h2>
           <p className="text-sm md:text-base text-neutral-600 max-w-sm font-light leading-relaxed text-pretty">
             {methodologyText.desc}

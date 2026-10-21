@@ -73,6 +73,17 @@ body[dir="rtl"] [class*="font-mono"],
   word-spacing: normal !important;
 }
 
+/* Neutralize .font-serif and serif utilities in RTL / Arabic mode to prevent font clash */
+[dir="rtl"] .font-serif,
+[dir="rtl"] [class*="font-serif"],
+html.locale-ar .font-serif,
+html.locale-ar [class*="font-serif"],
+body[dir="rtl"] .font-serif,
+body[dir="rtl"] [class*="font-serif"] {
+  font-family: var(--font-cairo), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif !important;
+  font-style: normal !important;
+}
+
 /* Strip any tracking utilities that destroy cursive Arabic connections */
 [dir="rtl"] [class*="tracking-"],
 html.locale-ar [class*="tracking-"] {
@@ -89,9 +100,15 @@ html.locale-ar [class*="tracking-"] {
 }
 
 /* Prevent artificial browser font slant on Arabic cursive script */
-[dir="rtl"] em, [dir="rtl"] i, [dir="rtl"] .italic {
+[dir="rtl"] em, 
+[dir="rtl"] i, 
+[dir="rtl"] .italic,
+[dir="rtl"] [class*="italic"],
+html.locale-ar em,
+html.locale-ar i,
+html.locale-ar .italic,
+html.locale-ar [class*="italic"] {
   font-style: normal !important;
-  font-weight: 300;
 }
 
 body::-webkit-scrollbar {

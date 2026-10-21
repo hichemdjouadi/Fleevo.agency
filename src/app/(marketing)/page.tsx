@@ -36,7 +36,7 @@ export default function Home() {
             className="text-[32px] sm:text-5xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[1.04] sm:leading-[0.94] text-black w-full max-w-5xl text-balance"
           >
             {t.home.hero.headlineStart}{" "}
-            <span className="font-serif italic font-light">{t.home.hero.headlineEnd}</span>
+            <span className="rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic font-light">{t.home.hero.headlineEnd}</span>
           </motion.h1>
 
           <motion.p
