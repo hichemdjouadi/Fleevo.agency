@@ -81,7 +81,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="text-sm font-medium text-white">{t.contact.fastLane.founderName}</div>
-                    <div className="text-xs text-neutral-400 font-mono">{t.contact.fastLane.founderRole}</div>
+                    <div className="text-xs text-neutral-400 rtl:font-sans ltr:font-mono">{t.contact.fastLane.founderRole}</div>
                   </div>
                 </div>
               </div>

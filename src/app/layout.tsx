@@ -56,7 +56,8 @@ export default function RootLayout({
             __html: `
               try {
                 var p = new URLSearchParams(window.location.search).get('lang');
-                var s = p || localStorage.getItem('fleevo_lang') || (document.cookie.match(/(?:^|; )fleevo_locale=([^;]*)/) || [])[1];
+                var nav = (navigator.language || '').toLowerCase().slice(0, 2);
+                var s = p || localStorage.getItem('fleevo_lang') || (document.cookie.match(/(?:^|; )fleevo_locale=([^;]*)/) || [])[1] || (nav === 'ar' || nav === 'fr' ? nav : 'en');
                 if (s === 'ar') {
                   document.documentElement.lang = 'ar';
                   document.documentElement.dir = 'rtl';

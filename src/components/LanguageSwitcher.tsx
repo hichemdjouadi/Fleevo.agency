@@ -59,7 +59,7 @@ export default function LanguageSwitcher({
     return (
       <div className={`inline-flex items-center gap-1 p-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono ${className}`}>
         <span className="sr-only">Switch language</span>
-        <Globe className="w-3.5 h-3.5 text-white/40 ml-2 mr-1 shrink-0" />
+        <Globe className="w-3.5 h-3.5 text-white/40 ms-2 me-1 shrink-0" />
         {LANGUAGES.map((lang) => {
           const isActive = locale === lang.code;
           return (

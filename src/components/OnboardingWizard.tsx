@@ -261,7 +261,7 @@ export default function OnboardingWizard({ className = "", onComplete }: Onboard
                     {selectedSystem.title}
                   </div>
                 </div>
-                <div className="sm:text-right">
+                <div className="sm:text-end">
                   <span className="text-xs font-mono text-neutral-500 uppercase tracking-wider block mb-1">
                     {w.step4.cardWindowLabel}
                   </span>

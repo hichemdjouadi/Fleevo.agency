@@ -83,7 +83,7 @@ export default function Preloader() {
         className="fixed inset-0 z-[100] flex items-center justify-center bg-[#050505] pointer-events-none"
       >
         {/* Progress counter */}
-        <div className="absolute bottom-10 right-10 flex text-white/40 font-mono text-xs tracking-widest overflow-hidden">
+        <div className="absolute bottom-10 end-10 flex text-white/40 rtl:font-sans ltr:font-mono text-xs tracking-widest overflow-hidden">
           <motion.span 
             key={index}
             initial={{ y: "100%" }}

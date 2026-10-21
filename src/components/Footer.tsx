@@ -30,6 +30,7 @@ export default function Footer() {
                 href="https://wa.me/213655934124" 
                 target="_blank" 
                 rel="noreferrer" 
+                dir="ltr"
                 className="inline-flex items-center px-6 py-3 rounded-full border border-white/20 hover:border-white transition-colors text-sm font-medium tracking-tight"
               >
                 +213 655 934 124

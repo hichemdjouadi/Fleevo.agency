@@ -274,7 +274,7 @@ export default function ServicesPage() {
               <div>
                 {service.deliverables && (
                   <div className="pt-6 border-t border-black/10">
-                    <span className="text-xs font-mono uppercase tracking-wider font-semibold text-neutral-500 block mb-4">
+                    <span className="text-xs rtl:font-sans ltr:font-mono uppercase tracking-wider font-semibold text-neutral-500 block mb-4">
                       {locale === "fr" ? "Livrables Inclus" : locale === "ar" ? "المخرجات المتضمنة" : "Core Deliverables Included"}
                     </span>
                     <div className="space-y-3 mb-6">
@@ -289,7 +289,7 @@ export default function ServicesPage() {
                 )}
 
                 {service.proofLabel && (
-                  <div className="mb-5 text-xs sm:text-sm font-mono text-neutral-700 flex items-center gap-2">
+                  <div className="mb-5 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-neutral-700 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                     <span>{locale === "fr" ? "Éprouvé dans :" : locale === "ar" ? "تم إثباته في :" : "Proven in:"}</span>
                     <TransitionLink href="/work" className="text-black font-semibold underline underline-offset-4 hover:text-neutral-600 inline-flex items-center gap-1">
@@ -417,7 +417,7 @@ export default function ServicesPage() {
                   <div>
                     {service.deliverables && (
                       <div className="pt-6 border-t border-white/15">
-                        <span className="text-xs font-mono uppercase tracking-wider font-semibold text-white/60 block mb-4">
+                        <span className="text-xs rtl:font-sans ltr:font-mono uppercase tracking-wider font-semibold text-white/60 block mb-4">
                           {locale === "fr" ? "Livrables Inclus" : locale === "ar" ? "المخرجات المتضمنة" : "Core Deliverables Included"}
                         </span>
                         <div className="space-y-3 mb-6">
@@ -432,9 +432,9 @@ export default function ServicesPage() {
                     )}
 
                     {isBonus ? (
-                      <div className="w-full flex items-center justify-between px-6 py-3.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm font-mono text-emerald-300 font-semibold">
+                      <div className="w-full flex items-center justify-between px-6 py-3.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-emerald-300 font-semibold">
                         <span>{locale === "fr" ? "Inclus avec le Projet Web" : locale === "ar" ? "مدمج مع البناء الأساسي" : "Included with Core Build"}</span>
-                        <span>⚡ 100% Free</span>
+                        <span>⚡ {locale === "fr" ? "100% Offert" : locale === "ar" ? "100% مجاناً" : "100% Free"}</span>
                       </div>
                     ) : (
                       <TransitionLink

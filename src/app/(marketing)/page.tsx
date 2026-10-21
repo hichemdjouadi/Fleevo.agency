@@ -88,7 +88,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="font-medium text-black underline underline-offset-4 hover:text-neutral-600 transition-colors inline-flex items-center gap-1"
               >
-                <span>+213 655 934 124 (&lt; 15m)</span>
+                <span dir="ltr">+213 655 934 124 (&lt; 15m)</span>
                 <span className="rtl:rotate-180">&rarr;</span>
               </a>
             </div>

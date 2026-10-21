@@ -174,7 +174,7 @@ export default function AboutPage() {
                 <div className="text-3xl rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic text-black font-medium">
                   {t.about.founder.founderName}
                 </div>
-                <span className="font-mono text-xs text-neutral-600 block mt-1">
+                <span className="rtl:font-sans ltr:font-mono text-xs text-neutral-600 block mt-1">
                   {t.about.founder.founderRole} · Fleevo
                 </span>
               </div>

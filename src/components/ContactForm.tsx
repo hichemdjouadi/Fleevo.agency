@@ -323,7 +323,7 @@ export default function ContactForm() {
             className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
           >
             <Phone className="w-3.5 h-3.5" />
-            <span>+213 655 934 124</span>
+            <span dir="ltr">+213 655 934 124</span>
           </a>
         </div>
       </div>

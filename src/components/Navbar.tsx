@@ -123,7 +123,7 @@ export default function Navbar() {
             
             {/* Mobile Menu Toggle */}
             <button 
-              className="md:hidden w-11 h-11 flex items-center justify-center -mr-1.5 transition-colors rounded-full text-black hover:bg-black/5 active:bg-black/10 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none"
+              className="md:hidden w-11 h-11 flex items-center justify-center -me-1.5 transition-colors rounded-full text-black hover:bg-black/5 active:bg-black/10 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label={t.nav.openMenu}
               aria-expanded={isMobileMenuOpen}
@@ -207,7 +207,7 @@ export default function Navbar() {
                 <a href="mailto:contact@fleevo.net" className="hover:text-white transition-colors">
                   contact@fleevo.net
                 </a>
-                <a href="tel:+213655934124" className="hover:text-white transition-colors">
+                <a href="tel:+213655934124" dir="ltr" className="hover:text-white transition-colors">
                   +213 655 934 124
                 </a>
               </div>
