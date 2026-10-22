@@ -289,6 +289,20 @@ export interface AboutPageTranslations {
       detail: string;
     }[];
   };
+  scopeCard: {
+    badge: string;
+    countBadge: string;
+    headline: string;
+    footerText: string;
+    items: {
+      id: string;
+      num: string;
+      title: string;
+      sector: string;
+      output: string;
+      tag: string;
+    }[];
+  };
   founder: {
     badge: string;
     headline: string;

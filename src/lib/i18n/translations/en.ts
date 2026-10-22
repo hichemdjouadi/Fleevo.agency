@@ -750,6 +750,46 @@ export const en: TranslationDictionary = {
         }
       ]
     },
+    scopeCard: {
+      badge: "STUDIO CAPABILITIES",
+      countBadge: "4 CORE DISCIPLINES",
+      headline: "The systems we engineer.",
+      footerText: "Fleevy Studio · 100% Bespoke Code · Zero Lock-In",
+      items: [
+        {
+          id: "intake",
+          num: "01",
+          title: "Acquisition Platforms & Booking",
+          sector: "Clinics, consultancies & specialized services",
+          output: "Sub-second mobile vitrines paired with instant WhatsApp inquiry qualification.",
+          tag: "Zero Lost Inquiries"
+        },
+        {
+          id: "commerce",
+          num: "02",
+          title: "Direct E-Commerce & Ordering",
+          sector: "Consumer brands, retail & food",
+          output: "Dedicated storefronts with 58-Wilayas shipping calculation and 0% platform commission.",
+          tag: "100% Margin Ownership"
+        },
+        {
+          id: "portals",
+          num: "03",
+          title: "Custom Web Apps & Operations CRMs",
+          sector: "Multi-branch operations & logistics",
+          output: "Visual deal pipelines and dispatcher portals replacing chaotic spreadsheets.",
+          tag: "Airtight Operations"
+        },
+        {
+          id: "growth",
+          num: "04",
+          title: "Targeted Paid Advertising",
+          sector: "Scalable commercial operators",
+          output: "Data-driven Meta ad campaigns and creative direction engineered for predictable volume.",
+          tag: "Predictable Volume"
+        }
+      ]
+    },
     founder: {
       badge: "DIRECT BUILDER ENGAGEMENT",
       headline: "Why Fleevy was founded.",

@@ -750,6 +750,46 @@ export const fr: TranslationDictionary = {
         }
       ]
     },
+    scopeCard: {
+      badge: "CHAMP D'INTERVENTION",
+      countBadge: "4 DISCIPLINES",
+      headline: "Les systèmes que nous concevons.",
+      footerText: "Studio Fleevy · 100% Code Sur Mesure · Zéro Dépendance",
+      items: [
+        {
+          id: "intake",
+          num: "01",
+          title: "Plateformes d'Acquisition & Prise de RDV",
+          sector: "Cliniques, cabinets & services premium",
+          output: "Vitrines mobiles ultra-rapides (< 1s) et qualification automatisée en 30 secondes.",
+          tag: "Zéro Perte de Prospect"
+        },
+        {
+          id: "commerce",
+          num: "02",
+          title: "Boutiques E-Commerce & Commande Directe",
+          sector: "Marques D2C, commerce & restauration",
+          output: "Tunnels de vente dédiés avec livraison 58 wilayas et 0% de commission tiers.",
+          tag: "Marge 100% Préservée"
+        },
+        {
+          id: "portals",
+          num: "03",
+          title: "Applications Web & CRM Propriétaires",
+          sector: "Opérations multi-agences & logistique",
+          output: "Pipelines visuels et portails de dispatch remplaçant les feuilles Excel chaotiques.",
+          tag: "Opérations Fluides"
+        },
+        {
+          id: "growth",
+          num: "04",
+          title: "Publicités Ciblées & Stratégie Directe",
+          sector: "Entreprises en phase d'accélération",
+          output: "Campagnes Meta coordonnées et orientations créatives pour un flux d'acheteurs régulier.",
+          tag: "Volume Prévisible"
+        }
+      ]
+    },
     founder: {
       badge: "RELATION DIRECTE AVEC LES BÂTISSEURS",
       headline: "Pourquoi Fleevy a été créé.",

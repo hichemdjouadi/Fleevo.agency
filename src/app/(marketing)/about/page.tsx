@@ -1,12 +1,130 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  ArrowRight, 
+  Globe, 
+  ShoppingBag, 
+  Layers, 
+  TrendingUp, 
+  Sparkles, 
+  ChevronRight 
+} from "lucide-react";
 import TransitionLink from "@/components/TransitionLink";
 import Footer from "@/components/Footer";
 import Magnetic from "@/components/Magnetic";
 import { useTranslation } from "@/lib/i18n";
+
+function StudioCapabilitiesCard({ scopeCard }: { scopeCard: any }) {
+  const [activeId, setActiveId] = useState<string>(scopeCard?.items?.[0]?.id || "intake");
+
+  const icons: Record<string, React.ElementType> = {
+    intake: Globe,
+    commerce: ShoppingBag,
+    portals: Layers,
+    growth: TrendingUp,
+  };
+
+  return (
+    <div className="relative rounded-[2rem] overflow-hidden bg-[#070707] border border-black/15 shadow-2xl p-6 sm:p-8 text-white flex flex-col justify-between gap-6 transition-all duration-300">
+      {/* Top Background Glow */}
+      <div 
+        className="absolute -top-24 -left-24 w-72 h-72 bg-white/[0.04] rounded-full blur-3xl pointer-events-none" 
+        aria-hidden="true" 
+      />
+
+      {/* Header */}
+      <div className="relative z-10">
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-white/70">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="tracking-wider uppercase">{scopeCard.badge}</span>
+          </div>
+          <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] font-mono text-white/75">
+            {scopeCard.countBadge}
+          </span>
+        </div>
+        <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-white text-balance">
+          {scopeCard.headline}
+        </h3>
+      </div>
+
+      {/* Interactive Capabilities Stack */}
+      <div className="relative z-10 flex flex-col gap-2.5">
+        {scopeCard.items.map((item: any) => {
+          const isActive = activeId === item.id;
+          const Icon = icons[item.id] || Sparkles;
+
+          return (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => setActiveId(item.id)}
+              className={`w-full text-start p-4 sm:p-4.5 rounded-2xl transition-all duration-300 border ${
+                isActive
+                  ? "bg-white/[0.08] border-white/20 shadow-md"
+                  : "bg-white/[0.02] border-white/5 hover:bg-white/[0.04] hover:border-white/10"
+              }`}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                    isActive ? "bg-white text-black" : "bg-white/5 text-white/60"
+                  }`}>
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-white/40 me-2">{item.num}.</span>
+                    <span className={`text-sm sm:text-base font-medium transition-colors ${
+                      isActive ? "text-white" : "text-white/80"
+                    }`}>
+                      {item.title}
+                    </span>
+                  </div>
+                </div>
+                <div className="shrink-0 text-white/40">
+                  <ChevronRight className={`w-4 h-4 rtl:rotate-180 transition-transform duration-200 ${
+                    isActive ? "rotate-90 rtl:-rotate-90 text-white" : ""
+                  }`} />
+                </div>
+              </div>
+
+              <AnimatePresence>
+                {isActive && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    className="mt-3 pt-3 border-t border-white/10 flex flex-col gap-2 text-start overflow-hidden"
+                  >
+                    <div className="text-[11px] font-mono text-white/55">
+                      {item.sector}
+                    </div>
+                    <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed">
+                      {item.output}
+                    </p>
+                    <div className="mt-1 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 text-[11px] font-mono text-white/90 w-fit">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/70" />
+                      <span>{item.tag}</span>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Footer Studio Seal */}
+      <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between gap-3 text-[11px] font-mono text-white/50">
+        <span className="truncate">{scopeCard.footerText}</span>
+        <span className="shrink-0 text-white/30">FLEEVY</span>
+      </div>
+    </div>
+  );
+}
 
 export default function AboutPage() {
   const { t, isRTL, locale } = useTranslation();
@@ -135,22 +253,9 @@ export default function AboutPage() {
       <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
-          {/* Portrait Column */}
+          {/* Studio Capabilities Column */}
           <div className="lg:col-span-5">
-            <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-black/10 bg-[#f4f4f5]">
-              <Image
-                src="/founder-real.jpg"
-                alt="Hichem Djouadi - Founder & Technical Lead at Fleevy"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                priority
-                className="object-cover grayscale contrast-125"
-              />
-              <div className="absolute bottom-6 inset-x-6 p-5 rounded-2xl bg-[#050505] text-white border border-white/15 rtl:font-sans ltr:font-mono text-xs">
-                <div className="font-semibold text-white text-sm">{t.about.founder.founderName}</div>
-                <div className="text-white/75 text-xs mt-0.5">{t.about.founder.founderRole}</div>
-              </div>
-            </div>
+            <StudioCapabilitiesCard scopeCard={t.about.scopeCard} />
           </div>
 
           {/* Executive Statement Column */}
