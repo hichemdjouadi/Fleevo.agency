@@ -108,23 +108,19 @@ export default function AnatomyOfTheLeak() {
                   {stage.title}
                 </span>
 
-                <h3 className="text-lg sm:text-xl font-medium tracking-tight text-black mb-3 text-balance leading-snug">
+                <h3 className="text-base sm:text-lg font-medium tracking-tight text-black text-balance leading-snug">
                   {data.headline}
                 </h3>
-
-                <p className="text-sm text-neutral-700 font-light leading-relaxed text-pretty">
-                  {data.desc}
-                </p>
               </div>
 
               {/* Impact Metric Strip */}
-              <div className={`pt-4 border-t flex items-center justify-between text-xs font-mono font-semibold ${
+              <div className={`pt-3.5 border-t flex items-center justify-between text-xs font-mono font-semibold ${
                 isTraditional 
                   ? "border-red-200/60 text-red-800" 
                   : "border-emerald-200/60 text-emerald-800"
               }`}>
                 <span>{isTraditional ? "Loss Metric:" : "Capture Metric:"}</span>
-                <span className="text-sm font-bold">{data.metric}</span>
+                <span className="text-xs sm:text-sm font-bold">{data.metric}</span>
               </div>
             </motion.div>
           );
@@ -132,23 +128,20 @@ export default function AnatomyOfTheLeak() {
       </div>
 
       {/* 4. Bottom Bottom-Line Verdict Strip */}
-      <div className="mt-12 sm:mt-16 p-6 sm:p-10 rounded-3xl bg-neutral-950 text-white border border-neutral-800 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xl">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-emerald-400 font-semibold mb-2 sm:mb-3">
-            <Zap className="w-3.5 h-3.5" />
+      <div className="mt-8 sm:mt-12 p-5 sm:p-8 rounded-3xl bg-neutral-950 text-white border border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 shadow-lg">
+        <div className="max-w-xl">
+          <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white/10 text-[11px] font-mono text-emerald-400 font-semibold mb-2">
+            <Zap className="w-3 h-3" />
             <span>THE ARCHITECTURAL VERDICT</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-white mb-2 text-balance">
+          <h3 className="text-lg sm:text-xl font-medium tracking-tight text-white text-balance">
             {diagnostic.bottomNotice.headline}
           </h3>
-          <p className="text-xs sm:text-sm md:text-base text-neutral-400 font-light leading-relaxed text-pretty">
-            {diagnostic.bottomNotice.desc}
-          </p>
         </div>
 
         <TransitionLink
           href="/contact"
-          className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors text-xs sm:text-sm font-semibold shrink-0 cursor-pointer shadow-md"
+          className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors text-xs sm:text-sm font-semibold shrink-0 cursor-pointer shadow-md"
         >
           <span>{diagnostic.bottomNotice.cta}</span>
           <ArrowRight className="w-4 h-4 rtl:rotate-180" />

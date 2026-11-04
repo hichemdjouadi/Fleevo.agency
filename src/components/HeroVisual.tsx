@@ -49,6 +49,7 @@ export default function HeroVisual() {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!stageRef.current) return;
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) return;
     const rect = stageRef.current.getBoundingClientRect();
     const xPct = (e.clientX - rect.left) / rect.width - 0.5;
     const yPct = (e.clientY - rect.top) / rect.height - 0.5;
@@ -76,7 +77,7 @@ export default function HeroVisual() {
       <div 
         role="tablist"
         aria-label="Featured client platforms"
-        className="relative z-30 mb-6 sm:mb-10 w-full max-w-[min(360px,calc(100vw-2rem))] sm:max-w-xl grid grid-cols-3 p-1 sm:p-1.5 bg-[#f4f4f5] rounded-xl sm:rounded-full border border-black/10 gap-1 text-center"
+        className="relative z-30 mb-6 sm:mb-10 w-full max-w-[min(360px,calc(100%-1rem))] sm:max-w-xl grid grid-cols-3 p-1 sm:p-1.5 bg-[#f4f4f5] rounded-xl sm:rounded-full border border-black/10 gap-1 text-center"
       >
         {projects.map((proj, idx) => {
           const isActive = activeTab === idx;
@@ -116,7 +117,7 @@ export default function HeroVisual() {
         }}
         className="relative z-20 flex flex-col items-center w-full px-2"
       >
-        <div className="w-[min(280px,85vw)] sm:w-[340px] md:w-[370px] drop-shadow-[0_25px_60px_rgba(0,0,0,0.18)]">
+        <div className="w-[min(280px,calc(100%-1rem))] sm:w-[340px] md:w-[370px] drop-shadow-[0_25px_60px_rgba(0,0,0,0.18)]">
           <DeviceFrame
             url={meta.url}
             statusBadge={current.statusBadge}

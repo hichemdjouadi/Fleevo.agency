@@ -302,7 +302,7 @@ export const en: TranslationDictionary = {
     hero: {
       headlineStart: "We engineer customer acquisition systems ",
       headlineEnd: "& digital infrastructure.",
-      subtitle: "Fast websites, online stores, and web apps wired with instant WhatsApp bots and targeted Meta ads.",
+      subtitle: "Custom sales platforms and automated systems wired with WhatsApp and targeted Meta ads.",
       ctaPrimary: "Start Your Project",
       ctaSecondary: "Explore Client Work",
       badges: {
@@ -314,7 +314,7 @@ export const en: TranslationDictionary = {
     engineSimulator: {
       badge: "LIVE AUTOMATION LAB // INTERACTIVE SYSTEM",
       headline: "Test the Autonomous Engine in Real Time.",
-      subhead: "Automation is not just a chat widget. It is an end-to-end event cascade: ad attribution, sub-second edge load, automated qualification, database sync, and dispatch.",
+      subhead: "Real-time event cascade: ad attribution, edge render, qualification, and multi-channel dispatch.",
       triggerBtn: "Run Autonomous Simulation",
       resetBtn: "Reset Telemetry",
       statusIdle: "Ready for telemetry test",
@@ -326,50 +326,44 @@ export const en: TranslationDictionary = {
           name: "Specialty Medical Clinic",
           niche: "Healthcare & High-Value Consultations",
           badge: "Consultation Pipeline",
-          desc: "Patient clicks targeted ad, gets pre-qualified by diagnosis bot, and reserves a live calendar slot.",
-          speedMetric: "1.8s Total Runtime",
-          commissionMetric: "0% Third-Party Rent",
-          resultSummary: "Confirmed patient consultation synced to Google Calendar and reception desk alert delivered.",
+          speedMetric: "1.8s Runtime",
+          commissionMetric: "0% Commission Cut",
+          resultSummary: "Confirmed patient consultation synced to Google Calendar and reception desk alerted.",
           events: [
             {
               timestamp: "00:00.15",
               step: "01",
-              title: "Meta CAPI Attribution Handshake",
-              detail: "Server-side pixel handshake verified. Clean ad attribution logged with zero browser cookie drop.",
-              system: "Meta Conversions API",
-              badge: "Telemetry OK"
+              title: "Meta CAPI Attribution",
+              system: "CAPI Server",
+              badge: "Verified"
             },
             {
               timestamp: "00:00.38",
               step: "02",
-              title: "Sub-Second Edge Infrastructure",
-              detail: "Next.js dynamic edge route renders in 240ms on mobile 4G. 0% visitor bounce.",
-              system: "Vercel Edge Node",
-              badge: "240ms Load"
+              title: "Sub-Second Edge Render",
+              system: "Next.js Edge",
+              badge: "240ms"
             },
             {
               timestamp: "00:01.05",
               step: "03",
-              title: "Autonomous Patient Qualification",
-              detail: "Bot collects symptoms, preferred time, and confirms phone number without human intervention.",
-              system: "Intake Automation Agent",
+              title: "Patient Qualification",
+              system: "Intake Bot",
               badge: "Qualified"
             },
             {
               timestamp: "00:01.62",
               step: "04",
-              title: "Calendar & Database Synchronization",
-              detail: "Time slot locked in doctor's Google Calendar; encrypted patient record saved in PostgreSQL.",
-              system: "Google Calendar + Supabase",
-              badge: "Slot Reserved"
+              title: "Calendar Sync",
+              system: "Google Calendar",
+              badge: "Slot Locked"
             },
             {
               timestamp: "00:01.80",
               step: "05",
-              title: "Instant Staff Dispatch Ping",
-              detail: "Complete briefing pushed to front desk WhatsApp & Telegram in 18 seconds.",
-              system: "Instant Dispatch Webhook",
-              badge: "Staff Alerted"
+              title: "Staff Dispatch Ping",
+              system: "WhatsApp Webhook",
+              badge: "Delivered"
             }
           ]
         },
@@ -378,41 +372,36 @@ export const en: TranslationDictionary = {
           name: "Direct-to-Consumer Commerce",
           niche: "Retail, Food & 58-Wilayas COD",
           badge: "Zero-Commission Commerce",
-          desc: "Customer orders directly via sub-second checkout with automated shipping calculation to 58 wilayas.",
-          speedMetric: "1.4s Total Runtime",
+          speedMetric: "1.4s Runtime",
           commissionMetric: "0% Commission Cut",
-          resultSummary: "Order logged, tracking assigned, warehouse dispatch payload sent via webhook.",
+          resultSummary: "Order logged, 58-Wilayas shipping calculated, warehouse dispatch payload sent.",
           events: [
             {
               timestamp: "00:00.12",
               step: "01",
-              title: "Instant Product Catalog Retrieval",
-              detail: "Item cached on edge CDN. Instant mobile checkout opens with 0 latency.",
-              system: "Edge Commerce Cache",
+              title: "Edge Catalog Fetch",
+              system: "Edge CDN",
               badge: "Cached"
             },
             {
               timestamp: "00:00.45",
               step: "02",
-              title: "58-Wilayas Shipping Logic Engine",
-              detail: "Auto-calculates home delivery vs desk stop desk rates across all 58 wilayas.",
-              system: "Logistics Router",
+              title: "58-Wilayas Logistics Router",
+              system: "Logistics Engine",
               badge: "Calculated"
             },
             {
               timestamp: "00:00.95",
               step: "03",
-              title: "Cart & Address Validation",
-              detail: "Validates customer phone and shipping address format in under 20 milliseconds.",
-              system: "Integrity Gate",
+              title: "Address & Phone Check",
+              system: "Validation Gate",
               badge: "Verified"
             },
             {
               timestamp: "00:01.35",
               step: "04",
-              title: "Warehouse & Kitchen Webhook Dispatch",
-              detail: "Packaging slip and order item details sent directly to warehouse printer and packing station.",
-              system: "Warehouse Dispatch Hook",
+              title: "Warehouse Dispatch Hook",
+              system: "Warehouse Dispatch",
               badge: "Dispatched"
             }
           ]
@@ -422,41 +411,36 @@ export const en: TranslationDictionary = {
           name: "High-Ticket B2B & Advisory",
           niche: "Corporate Services & Real Estate",
           badge: "Lead Scoring Pipeline",
-          desc: "Corporate lead completes project assessment, qualifies budget tier, and schedules discovery call.",
-          speedMetric: "2.1s Total Runtime",
+          speedMetric: "2.1s Runtime",
           commissionMetric: "100% Data Sovereignty",
-          resultSummary: "Lead scored high-priority, executive NDA delivered, founder alerted with deal briefing.",
+          resultSummary: "Lead scored Tier-A, Zoom consultation locked, founder alerted with full dossier.",
           events: [
             {
               timestamp: "00:00.20",
               step: "01",
-              title: "Dynamic Proposal Assessment",
-              detail: "Custom interactive scope estimator collects company size, timeline, and budget bracket.",
-              system: "Dynamic Intake Engine",
-              badge: "Intake Captured"
+              title: "Scope Assessment",
+              system: "Scope Estimator",
+              badge: "Captured"
             },
             {
               timestamp: "00:00.85",
               step: "02",
-              title: "Automated Lead Scoring Algorithm",
-              detail: "Lead scored Tier-A ($3k+ budget). Bypasses junior queue directly to executive priority desk.",
+              title: "Lead Scoring Algorithm",
               system: "Scoring Engine",
               badge: "Tier-A Lead"
             },
             {
               timestamp: "00:01.50",
               step: "03",
-              title: "Executive Calendar Allocation",
-              detail: "Dedicated Zoom consultation locked on CEO calendar with pre-call brief attached.",
-              system: "Google Calendar Sync",
+              title: "Executive Calendar Slot",
+              system: "Google Calendar",
               badge: "Meeting Locked"
             },
             {
               timestamp: "00:02.10",
               step: "04",
-              title: "Founder VIP Channel Notification",
-              detail: "Instant encrypted notification delivered to founder's direct channel with full dossier.",
-              system: "Encrypted Telegram/WhatsApp Alert",
+              title: "Founder VIP Channel Ping",
+              system: "CEO Alert",
               badge: "CEO Notified"
             }
           ]
@@ -466,23 +450,21 @@ export const en: TranslationDictionary = {
     leakDiagnostic: {
       badge: "THE REVENUE LEAK // DIAGNOSTIC INSPECTION",
       headline: "Where 80% of Marketing Budgets Disappear.",
-      subhead: "Most business owners believe they have an advertising problem. In reality, their technical infrastructure drops buyers at every step. Here is what happens under the hood.",
-      traditionalTab: "The Fragmented Setup (The Invisible Leak)",
-      fleevyTab: "The Fleevy Autonomous Machine",
+      subhead: "Most ad budgets vanish due to slow loading speeds and missing automated intake.",
+      traditionalTab: "The Fragmented Setup (The Leak)",
+      fleevyTab: "The Fleevy Machine (Captured)",
       stages: [
         {
           id: "speed",
           num: "01",
-          title: "First Touch & Load Velocity",
+          title: "First Touch Speed",
           traditional: {
-            headline: "7 to 11 Seconds on Bloated Page Builders",
-            desc: "Heavy WordPress templates and unoptimized plugins crawl on Algerian 4G networks. Visitors hit the back button before the page finishes loading.",
+            headline: "7–11s Slow Builders",
             metric: "53% Bounce Before First View",
             badge: "Traffic Bleed"
           },
           fleevy: {
-            headline: "240ms Sub-Second Static Edge Delivery",
-            desc: "Lightweight Next.js code pre-rendered on regional edge networks. Opens instantly on any mobile network, preserving every single click.",
+            headline: "240ms Sub-Second Edge",
             metric: "99.2% Visitor Retention",
             badge: "Zero Drop-off"
           }
@@ -490,58 +472,51 @@ export const en: TranslationDictionary = {
         {
           id: "intake",
           num: "02",
-          title: "Lead Capture & Response Speed",
+          title: "Response Velocity",
           traditional: {
-            headline: "Unstructured DMs & 4-Hour Response Lags",
-            desc: "Customers message Instagram or fill passive forms. Staff replies hours later when the buyer has already contacted a competitor or lost interest.",
-            metric: "68% Drop in Lead Conversion",
+            headline: "Unstructured 4-Hour DM Lags",
+            metric: "68% Drop in Conversion",
             badge: "Dead Inquiries"
           },
           fleevy: {
-            headline: "Autonomous Intake in Under 15 Seconds",
-            desc: "Intelligent qualification agents engage instantly 24/7, ask the right filtering questions, and capture confirmed details while purchase intent is peaking.",
-            metric: "< 15s Instant Response Time",
+            headline: "Autonomous Intake in < 15s",
+            metric: "< 15s Instant Response",
             badge: "100% Captured"
           }
         },
         {
           id: "ops",
           num: "03",
-          title: "Operations & Booking Logistics",
+          title: "Operations & Booking",
           traditional: {
-            headline: "Manual Copy-Pasting & Scattered Spreadsheets",
-            desc: "Orders and appointments are manually typed into Excel, WhatsApp groups, or paper notebooks. Leads get forgotten and double-booked.",
-            metric: "Chaotic Daily Operations",
+            headline: "Manual Spreadsheets & Errors",
+            metric: "Chaotic Operations",
             badge: "Human Error"
           },
           fleevy: {
-            headline: "Multi-Channel Synchronization Pipeline",
-            desc: "Every confirmation automatically locks a slot in Google Calendar, updates the PostgreSQL database, and pings the team's dispatch channel in seconds.",
-            metric: "0 Manual Interventions Needed",
-            badge: "Autopilot Operations"
+            headline: "Calendar & Database Pipeline",
+            metric: "0 Manual Drag",
+            badge: "Autopilot Ops"
           }
         },
         {
           id: "economics",
           num: "04",
-          title: "Unit Economics & Platform Ownership",
+          title: "Unit Economics",
           traditional: {
-            headline: "15%–30% Marketplace Cuts & Ongoing SaaS Rent",
-            desc: "Third-party delivery platforms take 20% of your gross margin, while closed website builders trap your customer data and charge recurring fees.",
+            headline: "15%–30% Platform Rent",
             metric: "20% Margin Surrendered",
             badge: "Margin Tax"
           },
           fleevy: {
-            headline: "0% Commission & 100% Code Sovereignty",
-            desc: "You own 100% of the software, database, and client records. No commission cuts, no third-party lock-in, and full financial independence.",
+            headline: "0% Commission · Owned Code",
             metric: "0% Commission · 100% Owned",
-            badge: "Total Independence"
+            badge: "Sovereign"
           }
         }
       ],
       bottomNotice: {
         headline: "Stop burning ad budget on a leaking bucket.",
-        desc: "We diagnose your current infrastructure, patch every dropped lead, and wire an autonomous capture engine that converts.",
         cta: "Request an Architecture Diagnostic"
       }
     },
@@ -563,78 +538,78 @@ export const en: TranslationDictionary = {
         {
           num: "02",
           title: "Direct Customer Ordering & E-Commerce Engines",
-          desc: "Mobile online stores with zero commission fees and instant kitchen or warehouse alerts.",
+          desc: "Mobile online stores with 0% commission fees and instant warehouse dispatch alerts.",
           tags: ["0% Commission", "58-Wilayas COD"]
         },
         {
           num: "03",
-          title: "Custom Web Apps, Proprietary CRMs & Automation",
-          desc: "Lightweight deal tracking pipelines, client portals, and back-office automations that eliminate manual data entry.",
-          tags: ["Custom CRM Pipelines", "Workflow Automation"]
+          title: "Custom Web Apps & Proprietary CRMs",
+          desc: "Lightweight deal tracking pipelines and client portals that eliminate manual data entry.",
+          tags: ["Custom CRM", "Workflow Automation"]
         }
       ],
       pillarTwoServices: [
         {
           num: "01",
           title: "Full-Funnel Marketing Strategy & Meta Ads",
-          desc: "Targeted Facebook and Instagram ad campaigns paired with full acquisition strategy and video scripts.",
-          tags: ["Marketing Strategy", "Video Scripts", "Meta Ads"]
+          desc: "Targeted Facebook and Instagram campaigns paired with high-converting video scripts.",
+          tags: ["Meta Ads", "Video Scripts"]
         },
         {
           num: "02",
           title: "Pipeline Leak & Growth Audits",
-          desc: "A clear breakdown of where leads drop off plus an actionable growth roadmap.",
-          tags: ["Funnel Audit", "Growth Roadmap"]
+          desc: "Precise diagnostic of conversion leaks with an actionable sprint to lift net revenue.",
+          tags: ["Funnel Audit", "Revenue Roadmap"]
         },
         {
           num: "03",
-          title: "Brand Credibility Polish",
-          desc: "Clean visual identity and branded ad templates included free with core builds.",
-          tags: ["Free Build Bonus", "Ad Templates"]
+          title: "Brand Authority & Creative Systems",
+          desc: "Editorial typography and modular ad creative templates bundled turnkey with every build.",
+          tags: ["Turnkey Included", "Ad Systems"]
         }
       ]
     },
     flow: {
-      badge: "THE ACQUISITION LOOP",
+      badge: "ACQUISITION FLOW",
       headline: "The 3-step acquisition loop.",
-      subhead: "How we move cold traffic to paid clients without manual friction.",
+      subhead: "Turning visitors into paying clients with zero manual drag.",
       steps: [
         {
           num: "01",
           phase: "Attract",
           title: "Ads & Video Scripts",
-          desc: "Targeted Meta ads and clear video hooks pull in ready-to-buy prospects."
+          desc: "Targeted Meta ad campaigns that bring high-intent buyers into your pipeline."
         },
         {
           num: "02",
           phase: "Convert",
           title: "Acquisition Platforms & CRMs",
-          desc: "High-converting web platforms and lightweight CRMs that turn visitors into confirmed orders or bookings."
+          desc: "Lightning-fast mobile infrastructure that turns clicks into confirmed appointments and orders."
         },
         {
           num: "03",
           phase: "Close",
-          title: "30s Bot Dispatch",
-          desc: "Automated WhatsApp or Telegram bots qualify details and alert your team immediately."
+          title: "Instant 30s Bot Qualification",
+          desc: "Automated qualification agents that route confirmed buyer dossiers directly to your team."
         }
       ]
     },
     showcase: {
-      headline: "Selected Client Deployments",
-      subhead: "Real systems built for growing businesses in Algeria and worldwide.",
-      viewAll: "View All Projects"
+      headline: "Selected Deployments",
+      subhead: "Real commercial platforms generating revenue for our clients.",
+      viewAll: "Explore All Work"
     },
     founder: {
-      badge: "DIRECT TECHNICAL PARTNERSHIP",
-      quote: "When you hire Fleevy, you don't talk to junior account managers. You work directly with senior engineers and acquisition strategists who build and test your system from day one.",
+      badge: "Direct Engineering Access",
+      quote: "When you partner with Fleevy, you work directly with the engineers and strategists building your system—not junior account managers.",
       founderName: "Hichem Djouadi",
       founderRole: "Founder & Lead Systems Architect"
     },
     ctaBanner: {
-      headline: "Ready to engineer predictable acquisition?",
-      subhead: "Book a 20-minute architecture review or message us on WhatsApp for an immediate audit.",
-      primaryBtn: "Submit Project Brief",
-      whatsappBtn: "WhatsApp Fast-Lane"
+      headline: "Ready to build an automated acquisition system?",
+      subhead: "Get a direct technical audit of your business infrastructure to unlock hidden revenue.",
+      primaryBtn: "Start Your Project",
+      whatsappBtn: "WhatsApp Fast-Track"
     }
   },
   services: {

@@ -132,13 +132,13 @@ export interface LeakDiagnosticStage {
   title: string;
   traditional: {
     headline: string;
-    desc: string;
+    desc?: string;
     metric: string;
     badge: string;
   };
   fleevy: {
     headline: string;
-    desc: string;
+    desc?: string;
     metric: string;
     badge: string;
   };
@@ -153,7 +153,7 @@ export interface LeakDiagnosticTranslations {
   stages: LeakDiagnosticStage[];
   bottomNotice: {
     headline: string;
-    desc: string;
+    desc?: string;
     cta: string;
   };
 }
@@ -162,7 +162,7 @@ export interface SimulatorEvent {
   timestamp: string;
   step: string;
   title: string;
-  detail: string;
+  detail?: string;
   system: string;
   badge: string;
 }
@@ -172,7 +172,7 @@ export interface SimulatorScenario {
   name: string;
   niche: string;
   badge: string;
-  desc: string;
+  desc?: string;
   events: SimulatorEvent[];
   resultSummary: string;
   speedMetric: string;

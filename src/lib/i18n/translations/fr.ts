@@ -302,7 +302,7 @@ export const fr: TranslationDictionary = {
     hero: {
       headlineStart: "Nous concevons des systèmes d'acquisition client ",
       headlineEnd: "& des infrastructures numériques.",
-      subtitle: "Plateformes web ultra-rapides, boutiques mobiles et applications connectées à des bots WhatsApp instantanés et des publicités Meta ciblées.",
+      subtitle: "Plateformes de vente sur mesure et systèmes automatisés connectés à WhatsApp et Meta ads.",
       ctaPrimary: "Lancer Votre Projet",
       ctaSecondary: "Explorer Nos Réalisations",
       badges: {
@@ -314,7 +314,7 @@ export const fr: TranslationDictionary = {
     engineSimulator: {
       badge: "LABO D'AUTOMATISATION // SYSTÈME INTERACTIF",
       headline: "Testez le moteur autonome en temps réel.",
-      subhead: "L'automatisation ne se résume pas à un widget de chat. C'est une cascade d'événements continue : attribution publicitaire, chargement sub-seconde, qualification intelligente, synchronisation de base de données et dispatching.",
+      subhead: "Cascade d'événements en direct : attribution pub, rendu edge, qualification et dispatching.",
       triggerBtn: "Lancer la Simulation Autonome",
       resetBtn: "Réinitialiser la Télémétrie",
       statusIdle: "Prêt pour le test de télémétrie",
@@ -326,50 +326,44 @@ export const fr: TranslationDictionary = {
           name: "Clinique Médicale & Consultations VIP",
           niche: "Santé & Prestations à Haute Valeur",
           badge: "Pipeline de Rendez-vous",
-          desc: "Le patient clique sur l'annonce, est pré-qualifié par le bot de diagnostic et réserve son créneau en direct.",
-          speedMetric: "1.8s Temps d'exécution total",
-          commissionMetric: "0% Commission Intermédiaire",
-          resultSummary: "Consultation confirmée dans Google Calendar et alerte envoyée à l'accueil en 18 secondes.",
+          speedMetric: "1.8s Exécution",
+          commissionMetric: "0% Commission",
+          resultSummary: "Consultation confirmée dans Google Calendar et alerte transmise à l'accueil.",
           events: [
             {
               timestamp: "00:00.15",
               step: "01",
-              title: "Handshake d'Attribution Meta CAPI",
-              detail: "Vérification côté serveur direct sans perte due aux cookies tiers désactivés.",
-              system: "Meta Conversions API",
-              badge: "Télémétrie OK"
+              title: "Attribution Meta CAPI",
+              system: "CAPI Server",
+              badge: "Vérifié"
             },
             {
               timestamp: "00:00.38",
               step: "02",
-              title: "Infrastructure Edge Sub-Seconde",
-              detail: "Rendu Next.js dynamique en 240ms sur réseau mobile 4G. 0% d'abandon visiteur.",
-              system: "Nœuds Edge Vercel",
-              badge: "Chargement 240ms"
+              title: "Rendu Edge Sub-Seconde",
+              system: "Next.js Edge",
+              badge: "240ms"
             },
             {
               timestamp: "00:01.05",
               step: "03",
-              title: "Qualification Autonome du Patient",
-              detail: "Le bot recueille les symptômes, le créneau souhaité et valide le numéro sans humain.",
-              system: "Agent d'Intake Intelligent",
+              title: "Qualification Patient",
+              system: "Intake Bot",
               badge: "Qualifié"
             },
             {
               timestamp: "00:01.62",
               step: "04",
-              title: "Synchronisation Calendrier & Base",
-              detail: "Créneau verrouillé dans Google Calendar ; dossier patient chiffré dans PostgreSQL.",
-              system: "Google Calendar + Supabase",
-              badge: "Créneau Réservé"
+              title: "Synchro Calendrier",
+              system: "Google Calendar",
+              badge: "Créneau Verrouillé"
             },
             {
               timestamp: "00:01.80",
               step: "05",
-              title: "Alerte de Dispatching Immédiate",
-              detail: "Dossier complet transmis sur le WhatsApp & Telegram de la réception en 18 secondes.",
-              system: "Webhook de Notification",
-              badge: "Équipe Alertée"
+              title: "Alerte de Réception",
+              system: "WhatsApp Webhook",
+              badge: "Transmis"
             }
           ]
         },
@@ -378,41 +372,36 @@ export const fr: TranslationDictionary = {
           name: "Commerce D2C & Restauration Directe",
           niche: "Retail, Food & Paiement à la Livraison 58 Wilayas",
           badge: "Commerce Direct 0% Commission",
-          desc: "Commande mobile fluide avec calcul automatique des frais de livraison vers 58 wilayas.",
-          speedMetric: "1.4s Temps d'exécution",
-          commissionMetric: "0% Commission Prélevée",
+          speedMetric: "1.4s Exécution",
+          commissionMetric: "0% Commission",
           resultSummary: "Commande enregistrée, expédition 58 wilayas calculée, bon envoyé au préparateur.",
           events: [
             {
               timestamp: "00:00.12",
               step: "01",
-              title: "Récupération Instantanée du Catalogue",
-              detail: "Produit mis en cache sur le CDN Edge. Tunnel de commande ouvert à latence zéro.",
-              system: "Cache Edge Commerce",
+              title: "Chargement Catalogue Edge",
+              system: "Edge CDN",
               badge: "En Cache"
             },
             {
               timestamp: "00:00.45",
               step: "02",
-              title: "Moteur de Tarification 58 Wilayas",
-              detail: "Calcul instantané livraison à domicile vs bureau pour chaque wilaya et commune.",
-              system: "Routeur Logistique",
-              badge: "Tarif Calculé"
+              title: "Routeur Logistique 58 Wilayas",
+              system: "Moteur Tarifaire",
+              badge: "Calculé"
             },
             {
               timestamp: "00:00.95",
               step: "03",
-              title: "Validation Téléphone & Coordonnées",
-              detail: "Vérification automatisée du format téléphonique et de l'adresse en moins de 20ms.",
-              system: "Passerelle de Contrôle",
+              title: "Vérification Coordonnées",
+              system: "Passerelle Contrôle",
               badge: "Vérifié"
             },
             {
               timestamp: "00:01.35",
               step: "04",
-              title: "Dispatching Entrepôt & Cuisine",
-              detail: "Bon de préparation et détails envoyés directement au préparateur et livreur.",
-              system: "Hook Entrepôt",
+              title: "Hook Dispatching Entrepôt",
+              system: "Warehouse Dispatch",
               badge: "Expédié"
             }
           ]
@@ -422,42 +411,37 @@ export const fr: TranslationDictionary = {
           name: "Services B2B, Immobilier & Conseil",
           niche: "Prestations Corporate & Mandats Premium",
           badge: "Pipeline de Scoring Client",
-          desc: "Le prospect évalue son projet, qualifie sa tranche budgétaire et bloque un rendez-vous stratégique.",
-          speedMetric: "2.1s Temps d'exécution",
-          commissionMetric: "100% Souveraineté Données",
-          resultSummary: "Prospect qualifié haute priorité, NDA transmis, fondateur alerté avec briefing complet.",
+          speedMetric: "2.1s Exécution",
+          commissionMetric: "100% Souveraineté",
+          resultSummary: "Lead scoré Tier-A, rendez-vous Zoom réservé, briefing transmis au dirigeant.",
           events: [
             {
               timestamp: "00:00.20",
               step: "01",
-              title: "Estimation Interactive de Périmètre",
-              detail: "Calculateur de scope recueillant taille d'entreprise, budget cible et calendrier.",
-              system: "Moteur d'Intake Dynamique",
-              badge: "Demande Reçue"
+              title: "Évaluation du Périmètre",
+              system: "Scope Estimator",
+              badge: "Reçu"
             },
             {
               timestamp: "00:00.85",
               step: "02",
-              title: "Algorithme de Scoring Automatique",
-              detail: "Score Tier-A attribué (budget élevé) ; accès direct à l'agenda de direction sans attente.",
+              title: "Scoring Automatique",
               system: "Moteur de Scoring",
-              badge: "Client Prioritaire"
+              badge: "Tier-A Lead"
             },
             {
               timestamp: "00:01.50",
               step: "03",
-              title: "Allocation de Créneau Direction",
-              detail: "Consultation Zoom fixée dans l'agenda du dirigeant avec briefing préparatoire.",
-              system: "Google Calendar Sync",
-              badge: "Réunion Bloquée"
+              title: "Créneau Agenda Direction",
+              system: "Google Calendar",
+              badge: "Bloqué"
             },
             {
               timestamp: "00:02.10",
               step: "04",
-              title: "Notification Cryptée Canal VIP",
-              detail: "Alerte instantanée sur le canal direct du fondateur avec dossier complet du prospect.",
-              system: "Alerte Chiffrée Telegram/WhatsApp",
-              badge: "Direction Alertée"
+              title: "Notification Canal VIP",
+              system: "Alerte Dirigeant",
+              badge: "Alerte Envoyée"
             }
           ]
         }
@@ -466,40 +450,36 @@ export const fr: TranslationDictionary = {
     leakDiagnostic: {
       badge: "DIAGNOSTIC DE PERTE // INSPECTION TECHNIQUE",
       headline: "Où disparaissent 80% des budgets marketing ?",
-      subhead: "La plupart des dirigeants pensent avoir un problème de publicité. En réalité, leur infrastructure technique perd des clients à chaque étape. Voici l'anatomie exacte du système.",
-      traditionalTab: "La Structure Fragmentée (La Fuite Invisible)",
-      fleevyTab: "La Machine Autonome Fleevy (Capture Immédiate)",
+      subhead: "La plupart des budgets sont perdus à cause des temps de chargement lents et de l'absence d'automatisation.",
+      traditionalTab: "La Structure Fragmentée (La Fuite)",
+      fleevyTab: "La Machine Fleevy (Capté)",
       stages: [
         {
           id: "speed",
           num: "01",
-          title: "Vitesse de Premier Contact & Rendu",
+          title: "Vitesse Premier Contact",
           traditional: {
-            headline: "7 à 11 Secondes sur des Thèmes Wordpress Lourds",
-            desc: "Thèmes surchargés et extensions lentes qui rament sur le réseau 4G algérien. Les visiteurs cliquent sur retour avant même d'avoir vu votre offre.",
+            headline: "7–11s Thèmes Surchargés",
             metric: "53% d'Abandon Avant Rendu",
-            badge: "Hémorragie de Trafic"
+            badge: "Hémorragie"
           },
           fleevy: {
-            headline: "240ms Rendu Edge Statique Instantané",
-            desc: "Architecture Next.js pré-rendue sur le réseau Edge. Affichage immédiat en un battement de cil sur tout smartphone, préservant 100% du trafic.",
-            metric: "99.2% de Rétention Visiteurs",
+            headline: "240ms Rendu Edge Sub-Seconde",
+            metric: "99.2% de Rétention",
             badge: "Zéro Perte"
           }
         },
         {
           id: "intake",
           num: "02",
-          title: "Capture de Leads & Délai de Réponse",
+          title: "Vitesse de Réponse",
           traditional: {
-            headline: "DMs Instagram Désordonnés & Réponse en 4 Heures",
-            desc: "Les prospects écrivent en privé ou remplissent des formulaires passifs. L'équipe répond des heures plus tard quand le client a déjà acheté ailleurs.",
+            headline: "DMs Désordonnés & Retard 4h",
             metric: "68% de Perte de Conversion",
-            badge: "Demandes Perdues"
+            badge: "Leads Perdus"
           },
           fleevy: {
-            headline: "Intake Autonome en Moins de 15 Secondes",
-            desc: "Des agents intelligents disponibles 24/7 qui posent les bonnes questions de qualification et capturent les détails quand l'intention d'achat est maximale.",
+            headline: "Intake Autonome en < 15s",
             metric: "< 15s Réponse Immédiate",
             badge: "100% Capté"
           }
@@ -507,48 +487,43 @@ export const fr: TranslationDictionary = {
         {
           id: "ops",
           num: "03",
-          title: "Gestion Opérationnelle & Synchronisation",
+          title: "Opérations & Agenda",
           traditional: {
-            headline: "Copier-Coller Manuel & Tableurs Éparpillés",
-            desc: "Commandes et réservations notées manuellement dans Excel, des groupes WhatsApp ou des cahiers. Erreurs humaines et oublis quotidiens.",
-            metric: "Opérations Quotidiennes Chaotiques",
+            headline: "Tableurs Manuels & Erreurs",
+            metric: "Opérations Chaotiques",
             badge: "Erreur Humaine"
           },
           fleevy: {
-            headline: "Pipeline de Synchronisation Multi-Canal",
-            desc: "Chaque confirmation verrouille un créneau Google Calendar, met à jour la base PostgreSQL et alerte l'équipe de livraison en quelques secondes.",
-            metric: "0 Intervention Manuelle",
-            badge: "Pilotage Automatique"
+            headline: "Synchro Calendrier & Base",
+            metric: "0 Friction Manuelle",
+            badge: "Pilote Auto"
           }
         },
         {
           id: "economics",
           num: "04",
-          title: "Rentabilité Nette & Souveraineté Logicielle",
+          title: "Rentabilité Nette",
           traditional: {
-            headline: "15% à 30% de Commissions & Abonnements Mensuels",
-            desc: "Les marketplaces de livraison prélèvent 20% de votre marge, tandis que les CMS propriétaires enferment vos données et vous facturent chaque mois.",
+            headline: "15%–30% Rentes Intermédiaires",
             metric: "20% de Marge Cédée",
-            badge: "Taxe Intermédiaire"
+            badge: "Taxe Plateforme"
           },
           fleevy: {
-            headline: "0% Commission & 100% Souveraineté du Code",
-            desc: "Vous êtes le seul propriétaire du logiciel, de la base et des données clients. Zéro commission prélevée et une indépendance financière absolue.",
-            metric: "0% Commission · 100% Propriété",
-            badge: "Souveraineté Totale"
+            headline: "0% Commission · Code Souverain",
+            metric: "0% Commission · 100% Détenu",
+            badge: "Souveraineté"
           }
         }
       ],
       bottomNotice: {
         headline: "Cessez de brûler votre budget dans un panier percé.",
-        desc: "Nous diagnostiquons votre infrastructure actuelle, colmatons chaque fuite et déployons une machine d'acquisition autonome qui convertit.",
         cta: "Demander un Diagnostic d'Infrastructure"
       }
     },
     pillars: {
       badge: "LES DEUX PILIERS",
       headline: "Quand l'ingénierie rencontre l'acquisition client.",
-      subhead: "Le code seul ne suffit pas à faire croître une entreprise. Nous associons une infrastructure technique sur mesure à une génération de demande hautement ciblée.",
+      subhead: "Nous unissons infrastructure logicielle sur mesure et acquisition client directe.",
       pillarOneTitle: "Infrastructure Numérique & Systèmes",
       pillarOneDesc: "Plateformes web rapides, boutiques mobiles et outils internes conçus sur mesure.",
       pillarTwoTitle: "Génération de Demande & Croissance Directe",
@@ -557,84 +532,84 @@ export const fr: TranslationDictionary = {
         {
           num: "01",
           title: "Tunnels d'Acquisition & Vitrines de Marque",
-          desc: "Sites de services conçus pour capter des prospects qualifiés et finaliser les échanges directement sur WhatsApp.",
-          tags: ["Triage Instantané par Bot", "Réservation sans Friction"]
+          desc: "Sites de services qualifiant les prospects et planifiant les rendez-vous sur WhatsApp.",
+          tags: ["Triage Instantané", "Réservation Directe"]
         },
         {
           num: "02",
           title: "Boutiques E-Commerce & Commande Directe",
-          desc: "Boutiques mobiles sans commission intermédiaire avec notifications immédiates en cuisine ou en entrepôt.",
-          tags: ["0% Commission", "Paiement à la Livraison 58 Wilayas"]
+          desc: "Boutiques mobiles sans commission avec alertes immédiates en entrepôt.",
+          tags: ["0% Commission", "58 Wilayas COD"]
         },
         {
           num: "03",
-          title: "Applications Web, CRM Propriétaires & Automatisation",
-          desc: "Pipelines de suivi commercial légers, espaces clients et automatisations qui suppriment la saisie manuelle.",
-          tags: ["CRM sur Mesure", "Automatisation Métier"]
+          title: "Applications Web & CRM Propriétaires",
+          desc: "Pipelines visuels de suivi éliminant la saisie manuelle dans Excel.",
+          tags: ["CRM sur Mesure", "Automatisation"]
         }
       ],
       pillarTwoServices: [
         {
           num: "01",
-          title: "Stratégie Marketing Complète & Publicités Meta",
-          desc: "Campagnes ciblées sur Facebook et Instagram combinées à une stratégie d'acquisition claire et des scripts vidéo percutants.",
-          tags: ["Stratégie d'Acquisition", "Scripts Vidéo", "Publicités Meta"]
+          title: "Campagnes Meta Ads & Scripts Vidéo",
+          desc: "Campagnes ciblées sur Facebook et Instagram avec scripts vidéo conçus pour convertir.",
+          tags: ["Meta Ads", "Scripts Vidéo"]
         },
         {
           num: "02",
-          title: "Audits de Conversion & Fuites de Pipeline",
-          desc: "Un diagnostic précis des points d'abandon de vos prospects et une feuille de route concrète pour accélérer vos revenus.",
-          tags: ["Audit de Tunnel", "Feuille de Route"]
+          title: "Audit de Tunnel & Feuille de Route",
+          desc: "Diagnostic précis des points de fuite avec sprint opérationnel pour débloquer du cash.",
+          tags: ["Audit Tunnel", "Feuille de Route"]
         },
         {
           num: "03",
-          title: "Finition & Crédibilité de Marque",
-          desc: "Identité visuelle soignée et gabarits publicitaires de marque inclus gratuitement dans nos projets principaux.",
-          tags: ["Bonus Inclus", "Gabarits Publicitaires"]
+          title: "Autorité de Marque & Systèmes Créatifs",
+          desc: "Standards visuels et templates de publicités inclus clé en main avec chaque projet.",
+          tags: ["Inclus Clé en Main", "Systèmes Créatifs"]
         }
       ]
     },
     flow: {
-      badge: "LA BOUCLE D'ACQUISITION",
+      badge: "BOUCLE D'ACQUISITION",
       headline: "La boucle d'acquisition en 3 étapes.",
-      subhead: "Comment transformer un trafic froid en clients payants sans friction manuelle.",
+      subhead: "Transformer le trafic en clients payants sans friction manuelle.",
       steps: [
         {
           num: "01",
           phase: "Attirer",
           title: "Publicités & Scripts Vidéo",
-          desc: "Des publicités Meta ciblées et des accroches vidéo précises attirent des acheteurs prêts à passer à l'action."
+          desc: "Publicités Meta ciblées et accroches vidéo attirant des acheteurs qualifiés."
         },
         {
           num: "02",
           phase: "Convertir",
-          title: "Plateformes d'Acquisition & CRM",
-          desc: "Des interfaces rapides et des CRM légers qui transforment les visiteurs en commandes ou rendez-vous confirmés."
+          title: "Plateformes Rapides & CRM",
+          desc: "Infrastructure mobile instantanée transformant les clics en commandes confirmées."
         },
         {
           num: "03",
           phase: "Conclure",
           title: "Alerte Bot en 30s",
-          desc: "Des bots WhatsApp ou Telegram automatisés qualifient la demande et alertent immédiatement votre équipe."
+          desc: "Bots autonomes qualifiant la demande et alertant directement votre équipe."
         }
       ]
     },
     showcase: {
       headline: "Réalisations Sélectionnées",
-      subhead: "De vrais systèmes conçus pour des entreprises en pleine expansion en Algérie et à l'international.",
+      subhead: "Plateformes commerciales en production générant des revenus réels.",
       viewAll: "Voir Tous les Projets"
     },
     founder: {
-      badge: "COLLABORATION TECHNIQUE DIRECTE",
-      quote: "Chez Fleevy, vous n'échangez pas avec des chargés de clientèle intermédiaires. Vous travaillez directement avec des ingénieurs et stratèges seniors qui conçoivent et éprouvent votre système dès le premier jour.",
+      badge: "Accès Technique Direct",
+      quote: "Chez Fleevy, vous collaborez directement avec les ingénieurs et stratèges qui conçoivent votre système—sans intermédiaire commercial.",
       founderName: "Hichem Djouadi",
       founderRole: "Fondateur & Architecte Systèmes"
     },
     ctaBanner: {
-      headline: "Prêt à structurer une acquisition prévisible ?",
-      subhead: "Planifiez un point technique de 20 minutes ou écrivez-nous sur WhatsApp pour un audit immédiat.",
-      primaryBtn: "Envoyer Votre Projet",
-      whatsappBtn: "Accès Direct WhatsApp"
+      headline: "Prêt à automatiser votre acquisition client ?",
+      subhead: "Audit technique immédiat de votre infrastructure pour libérer vos revenus.",
+      primaryBtn: "Lancer Votre Projet",
+      whatsappBtn: "Accès Rapide WhatsApp"
     }
   },
   services: {

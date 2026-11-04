@@ -22,20 +22,20 @@ export default function Home() {
   const { t, isRTL } = useTranslation();
 
   return (
-    <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen w-full max-w-[100vw] overflow-x-hidden">
+    <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen w-full max-w-full overflow-x-clip">
 
       {/* 1. CINEMATIC HERO */}
-      <section className="relative w-full flex flex-col items-center pt-24 sm:pt-32 md:pt-44 pb-14 sm:pb-20 overflow-hidden bg-white text-black">
+      <section className="relative w-full flex flex-col items-center pt-24 sm:pt-32 md:pt-44 pb-14 sm:pb-20 overflow-x-clip bg-white text-black">
         {/* Subtle architectural ambient aura */}
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(0,0,0,0.04),transparent)] pointer-events-none" />
 
-        <div className="relative z-20 flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto">
+        <div className="relative z-20 flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto overflow-x-clip">
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[28px] xs:text-[32px] sm:text-5xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[1.12] sm:leading-[0.94] text-black w-full max-w-5xl text-balance"
+            className="text-[28px] xs:text-[32px] sm:text-5xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[1.15] sm:leading-[0.94] text-black w-full max-w-5xl text-balance break-words"
           >
             {t.home.hero.headlineStart}{" "}
             <span className="rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic font-light">{t.home.hero.headlineEnd}</span>
@@ -45,7 +45,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-4 sm:mt-8 text-sm sm:text-xl md:text-2xl text-black/75 font-light max-w-[640px] leading-relaxed text-pretty"
+            className="mt-4 sm:mt-8 text-sm sm:text-xl md:text-2xl text-black/75 font-light max-w-[640px] leading-relaxed text-pretty break-words"
           >
             {t.home.hero.subtitle}
           </motion.p>

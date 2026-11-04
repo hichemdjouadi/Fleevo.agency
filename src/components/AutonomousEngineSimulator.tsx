@@ -172,29 +172,24 @@ export default function AutonomousEngineSimulator() {
           </div>
 
           {/* Scenario Overview Strip */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/5">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white font-mono text-xs font-semibold">
-                  {scenario.badge}
-                </span>
-                <span className="text-xs font-mono text-white/60">
-                  {scenario.niche}
-                </span>
-              </div>
-              <p className="text-sm sm:text-base text-white/85 font-light leading-relaxed">
-                {scenario.desc}
-              </p>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/5">
+            <div className="flex items-center gap-2.5">
+              <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white font-mono text-xs font-semibold">
+                {scenario.badge}
+              </span>
+              <span className="text-xs font-mono text-white/70">
+                {scenario.niche}
+              </span>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-white/5">
-              <div className="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-start">
-                <span className="text-[10px] font-mono text-white/50 uppercase tracking-wider block">Runtime</span>
-                <span className="text-xs sm:text-sm font-mono font-semibold text-emerald-400">{scenario.speedMetric}</span>
+            <div className="flex items-center gap-2.5 shrink-0">
+              <div className="px-3 py-1 rounded-xl bg-white/5 border border-white/10 text-start">
+                <span className="text-[9px] font-mono text-white/50 uppercase tracking-wider block">Runtime</span>
+                <span className="text-xs font-mono font-semibold text-emerald-400">{scenario.speedMetric}</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-start">
-                <span className="text-[10px] font-mono text-white/50 uppercase tracking-wider block">Commission</span>
-                <span className="text-xs sm:text-sm font-mono font-semibold text-white">{scenario.commissionMetric}</span>
+              <div className="px-3 py-1 rounded-xl bg-white/5 border border-white/10 text-start">
+                <span className="text-[9px] font-mono text-white/50 uppercase tracking-wider block">Commission</span>
+                <span className="text-xs font-mono font-semibold text-white">{scenario.commissionMetric}</span>
               </div>
             </div>
           </div>
@@ -202,8 +197,8 @@ export default function AutonomousEngineSimulator() {
           {/* Interactive Event Timeline */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             {/* Column 1: Live Event Nodes */}
-            <div className="space-y-3">
-              <span className="text-xs font-mono uppercase tracking-wider text-white/50 block mb-2">
+            <div className="space-y-2.5">
+              <span className="text-xs font-mono uppercase tracking-wider text-white/50 block mb-1">
                 // Pipeline Event Sequence
               </span>
 
@@ -228,7 +223,7 @@ export default function AutonomousEngineSimulator() {
                         ? "rgba(255, 255, 255, 0.15)" 
                         : "rgba(255, 255, 255, 0.05)"
                     }}
-                    className="p-4 sm:p-4.5 rounded-2xl border transition-colors flex items-start gap-3.5 relative overflow-hidden"
+                    className="p-3 sm:p-3.5 rounded-2xl border transition-colors flex items-center gap-3 relative overflow-hidden"
                   >
                     {/* Active pulse bar on left/right edge */}
                     {isCurrent && (
@@ -236,7 +231,7 @@ export default function AutonomousEngineSimulator() {
                     )}
 
                     {/* Step indicator */}
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-mono font-bold shrink-0 mt-0.5 ${
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-mono font-bold shrink-0 ${
                       isExecuted 
                         ? "bg-emerald-500 text-black shadow-[0_0_10px_rgba(16,185,129,0.5)]" 
                         : "bg-white/10 text-white/40"
@@ -245,8 +240,8 @@ export default function AutonomousEngineSimulator() {
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2 mb-1">
-                        <h4 className={`text-sm sm:text-base font-medium truncate ${
+                      <div className="flex items-center justify-between gap-2">
+                        <h4 className={`text-xs sm:text-sm font-medium truncate ${
                           isExecuted ? "text-white" : "text-white/60"
                         }`}>
                           {ev.title}
@@ -256,20 +251,14 @@ export default function AutonomousEngineSimulator() {
                         </span>
                       </div>
 
-                      <p className={`text-xs sm:text-sm font-light leading-relaxed mb-2 ${
-                        isExecuted ? "text-white/80" : "text-white/40"
-                      }`}>
-                        {ev.detail}
-                      </p>
-
-                      <div className="flex items-center gap-2 text-[10px] font-mono">
-                        <span className="px-2 py-0.5 rounded-md bg-white/10 text-white/70">
-                          {ev.system}
-                        </span>
+                      <div className="flex items-center gap-2 mt-1 text-[10px] font-mono">
                         <span className={`px-2 py-0.5 rounded-md ${
                           isExecuted ? "bg-emerald-500/20 text-emerald-300" : "bg-white/5 text-white/30"
                         }`}>
                           {ev.badge}
+                        </span>
+                        <span className="text-white/40">
+                          {ev.system}
                         </span>
                       </div>
                     </div>

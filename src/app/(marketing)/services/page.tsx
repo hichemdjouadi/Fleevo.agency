@@ -22,43 +22,43 @@ export default function ServicesPage() {
 
   const specializedAIText = {
     en: {
-      badge: "SPECIALIZED VERTICAL CAPABILITY · HIGH-INQUIRY NICHES",
-      title: "Domain-Specific Conversational AI & Triage Agents",
-      desc: "We do not deploy novelty chatbots everywhere. For inquiry-heavy sectors like polyclinics, real estate developments, and specialized service firms, we train custom AI agents on your pricing, procedures, and availability to pre-qualify leads and book consultations 24/7 without consuming staff hours.",
+      badge: "VERTICAL AI CAPABILITY",
+      title: "Domain-Specific Conversational AI & Lead Triage",
+      desc: "Trained AI models qualify inquiries and book consultations 24/7 on your exact pricing and availability—zero staff time wasted.",
       cta: "Inquire for Your Niche"
     },
     fr: {
-      badge: "CAPACITÉ VERTICALE SPÉCIALISÉE · SECTEURS À FORT VOLUME DE DEMANDES",
-      title: "Agents IA Conversationnels Spécialisés & Triage Automatisé",
-      desc: "Nous ne déployons pas de chatbots superficiels. Pour les secteurs à forte intensité d'appels comme les cliniques, l'immobilier et les cabinets d'expertise, nous entraînons des agents IA dédiés sur vos tarifs et disponibilités pour pré-qualifier les prospects et réserver des rendez-vous 24h/24 sans monopoliser vos équipes.",
-      cta: "Demander une Étude Sectorielle"
+      badge: "AGENTS IA SPÉCIALISÉS",
+      title: "Agents IA Métier & Triage Automatisé",
+      desc: "Agents IA entraînés sur vos tarifs et services pour qualifier les prospects et planifier des rendez-vous 24h/24 sans monopoliser votre équipe.",
+      cta: "Demander une Étude"
     },
     ar: {
-      badge: "حلول قطاعية متقدمة · الأنشطة التجارية ذات الاستفسارات الكثيفة",
-      title: "وكلاء ذكاء اصطناعي مخصصون وفرز آلي للاستفسارات",
-      desc: "لا نضع روبوتات دردشة شكلية. بالنسبة للمجالات التي تتلقى حجماً هائلاً من الاستفسارات مثل العيادات الطبية، المشاريع العقارية، والشركات الاستشارية، نقوم بتدريب نماذج ذكاء اصطناعي على أسعارك وإجراءاتك لتأهيل العملاء وحجز المواعيد على مدار الساعة دون استنزاف وقت موظفيك.",
-      cta: "طلب دراسة متخصصة لقطاعك"
+      badge: "حلول قطاعية متقدمة",
+      title: "وكلاء ذكاء اصطناعي وفرز آلي للمواعيد",
+      desc: "نماذج ذكاء اصطناعي مدربة على خدماتك وأسعارك لفرز العملاء وتأكيد المواعيد تلقائياً 24/7 دون استنزاف وقت فريقك.",
+      cta: "طلب دراسة لقطاعك"
     }
   }[locale];
 
   const guaranteeText = {
     en: {
       badge: "The Fleevy Acquisition Guarantee",
-      title: "Built to capture leads and process orders without friction.",
-      desc: "Every system we deploy is tested against real customer journeys. If inquiries fail to alert your team in 30 seconds, or if your checkout sequence creates friction on mobile, we do not sign off on delivery until the pipeline is airtight.",
+      title: "Built to capture buyers with zero technical friction.",
+      desc: "Tested on real buyer journeys. If inquiries fail to alert your team in 30 seconds or mobile checkout has friction, we do not sign off until it is airtight.",
       cta: "Discuss Your Timeline"
     },
     fr: {
-      badge: "La Garantie d'Acquisition Fleevy",
-      title: "Conçu pour capter des prospects et traiter des commandes sans aucune friction.",
-      desc: "Chaque système déployé est testé en conditions réelles. Si les demandes n'alertent pas votre équipe en moins de 30 secondes ou si votre tunnel mobile crée un point de blocage, nous ne validons pas la livraison tant que le flux n'est pas parfaitement fluide.",
+      badge: "Garantie d'Acquisition Fleevy",
+      title: "Conçu pour convertir sans aucune friction technique.",
+      desc: "Testé sur parcours réels. Si une demande met plus de 30s à vous alerter ou si le flux mobile accroche, nous ne validons pas tant que ce n'est pas parfait.",
       cta: "Planifier Vos Délais"
     },
     ar: {
-      badge: "ضمان فليفي لاكتساب العملاء",
-      title: "مبني لجلب العملاء ومعالجة الطلبات دون أي عقبات تقنية.",
-      desc: "كل نظام نطلقه يتم اختباره على مسارات مستخدمين حقيقية. إذا تعذر إشعار فريقك بطلب العميل خلال 30 ثانية، أو ظهر أي ثقل في عملية الشراء عبر الهاتف، فلن نعتمد التسليم النهائي حتى تصبح المنصة خالية تماماً من أي تسرب.",
-      cta: "احجز موعد إطلاق مشروعك"
+      badge: "ضمان فليفي الصارم",
+      title: "أنظمة مبنية لاقتناص المبيعات دون أي احتكاك تقني.",
+      desc: "نختبر المنصة على مسارات حقيقية. إن لم يصلك إشعار الطلب في 30 ثانية أو ظهر أي بطء على الهاتف، لا نعتمد التسليم حتى تصبح المنصة خالية تماماً من التسرب.",
+      cta: "ناقش مشروعك معنا"
     }
   }[locale];
 
@@ -71,26 +71,26 @@ export default function ServicesPage() {
         {
           step: "01",
           title: "Audit & Strategy",
-          desc: "We review your current funnel, spot leaks, and map the build.",
-          deliverable: "Funnel Audit Brief"
+          desc: "We review your current funnel and map the build.",
+          deliverable: "Funnel Audit"
         },
         {
           step: "02",
-          title: "Fixed Blueprint",
-          desc: "You get a fixed scope and clear delivery timeline within 24 hours.",
-          deliverable: "Fixed-Scope Roadmap"
+          title: "Fixed Scope",
+          desc: "Clear scope and fixed delivery timeline within 24 hours.",
+          deliverable: "Fixed Roadmap"
         },
         {
           step: "03",
           title: "Build & Bot Setup",
-          desc: "We code the platform, connect WhatsApp or Telegram bots, and link couriers.",
-          deliverable: "Staging Platform & Bots"
+          desc: "We code the platform, connect bots, and link couriers.",
+          deliverable: "Staging Platform"
         },
         {
           step: "04",
           title: "Test & Launch",
-          desc: "We test speed on mobile networks, set up ad pixels, and launch.",
-          deliverable: "Live Production Handover"
+          desc: "We test 4G speed, set up ad pixels, and launch live.",
+          deliverable: "Live Handover"
         }
       ]
     },
@@ -102,56 +102,56 @@ export default function ServicesPage() {
         {
           step: "01",
           title: "Audit & Stratégie",
-          desc: "Nous analysons votre entonnoir, repérons les fuites et planifions la réalisation.",
-          deliverable: "Dossier d'Audit Stratégique"
+          desc: "Analyse du parcours client et repérage des fuites.",
+          deliverable: "Rapport d'Audit"
         },
         {
           step: "02",
-          title: "Plan Fixe & Chiffré",
-          desc: "Périmètre précis et calendrier d'exécution ferme sous 24 heures.",
-          deliverable: "Feuille de Route Définitive"
+          title: "Cahier des Charges",
+          desc: "Périmètre précis et délai de livraison fixe sous 24h.",
+          deliverable: "Feuille de Route"
         },
         {
           step: "03",
           title: "Développement & Bots",
-          desc: "Nous développons la plateforme, paramétrons les bots WhatsApp et connectons les transporteurs.",
-          deliverable: "Plateforme Staging & Bots"
+          desc: "Code de la plateforme, connexion bots et livreurs.",
+          deliverable: "Environnement Test"
         },
         {
           step: "04",
           title: "Tests & Déploiement",
-          desc: "Tests de vélocité sur mobile 4G, paramétrage des pixels publicitaires et mise en ligne.",
-          deliverable: "Livraison Production Clé en Main"
+          desc: "Validation vitesse 4G, réglage pixels et lancement.",
+          deliverable: "Plateforme Active"
         }
       ]
     },
     ar: {
       title: "منهجية العمل. ",
-      titleItalic: "أربع خطوات واضحة وحاسمة.",
-      desc: "من التدقيق الأولي إلى الإطلاق المباشر في أربع مراحل هندسية محكمة.",
+      titleItalic: "أربع خطوات واضحة.",
+      desc: "من التدقيق الأولي إلى الإطلاق المباشر في أربع مراحل سريعة.",
       steps: [
         {
           step: "01",
           title: "التدقيق والاستراتيجية",
-          desc: "نفحص مسار مبيعاتك الحالي، نحدد مواضع التسرب، ونرسم خطة التنفيذ.",
-          deliverable: "تقرير التدقيق الاستراتيجي"
+          desc: "فحص مسار عملائك وتحديد مواضع تسرب المبيعات.",
+          deliverable: "تقرير التدقيق"
         },
         {
           step: "02",
-          title: "خطة عمل وتسعير ثابت",
-          desc: "استلام نطاق عمل محدد وجدول زمني نهائي للتسليم خلال 24 ساعة.",
-          deliverable: "خريطة طريق محددة النطاق"
+          title: "خطة ونطاق ثابت",
+          desc: "نطاق عمل محدد وجدول زمني نهائي للتسليم خلال 24 ساعة.",
+          deliverable: "خريطة التنفيذ"
         },
         {
           step: "03",
           title: "البرمجة وضبط البوتات",
-          desc: "نبرمج المنصة بالكامل، نربط بوتات واتساب وتيليغرام، ونصل شركات التوصيل.",
-          deliverable: "بيئة تجريبية وبوتات فعالة"
+          desc: "بناء المنصة، ربط بوتات واتساب، وتوصيل شركات الشحن.",
+          deliverable: "بيئة تجريبية وبوتات"
         },
         {
           step: "04",
           title: "الاختبار والإطلاق",
-          desc: "نختبر سرعة التحميل على شبكات 4G، نضبط بيكسل التتبع الإعلاني، ونطلق المنصة للجمهور.",
+          desc: "اختبار سرعة 4G، ضبط بيكسل التتبع، والإطلاق المباشر.",
           deliverable: "تسليم المنصة المباشرة"
         }
       ]
@@ -262,21 +262,21 @@ export default function ServicesPage() {
                   )}
                 </div>
 
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-black mb-2 sm:mb-3 text-balance">
+                <h3 className="text-lg sm:text-2xl font-medium tracking-tight text-black mb-2 text-balance">
                   <span className="font-mono text-xs sm:text-sm text-neutral-500 me-2">{service.num}. </span>
                   {service.title}
                 </h3>
 
-                <p className="text-neutral-800 font-normal text-base sm:text-lg leading-relaxed text-pretty mb-4 sm:mb-5">
+                <p className="text-neutral-700 font-normal text-xs sm:text-base leading-relaxed text-pretty mb-3 sm:mb-4">
                   {service.desc}
                 </p>
 
                 {/* Scannable Spec Chips */}
                 {service.deliverables && (
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                     {service.deliverables.map((deliv, idx) => (
-                      <span key={idx} className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium bg-neutral-100 text-neutral-800 px-3 py-1.5 rounded-full border border-neutral-200/80">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span key={idx} className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-medium bg-neutral-100 text-neutral-800 px-2.5 py-1 rounded-full border border-neutral-200/80">
+                        <Check className="w-3 h-3 text-emerald-600 shrink-0" />
                         <span>{deliv}</span>
                       </span>
                     ))}
@@ -406,21 +406,21 @@ export default function ServicesPage() {
                       )}
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-white mb-2 sm:mb-3 text-balance">
+                    <h3 className="text-lg sm:text-2xl font-medium tracking-tight text-white mb-2 text-balance">
                       <span className="font-mono text-xs sm:text-sm text-white/55 me-2">{service.num}. </span>
                       {service.title}
                     </h3>
 
-                    <p className="text-white/90 font-normal text-base sm:text-lg leading-relaxed text-pretty mb-4 sm:mb-5">
+                    <p className="text-white/80 font-normal text-xs sm:text-base leading-relaxed text-pretty mb-3 sm:mb-4">
                       {service.desc}
                     </p>
 
                     {/* Scannable Spec Chips */}
                     {service.deliverables && (
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                         {service.deliverables.map((deliv, dIdx) => (
-                          <span key={dIdx} className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium bg-white/[0.08] text-white/90 px-3 py-1.5 rounded-full border border-white/10">
-                            <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          <span key={dIdx} className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-medium bg-white/[0.08] text-white/90 px-2.5 py-1 rounded-full border border-white/10">
+                            <Check className="w-3 h-3 text-emerald-400 shrink-0" />
                             <span>{deliv}</span>
                           </span>
                         ))}

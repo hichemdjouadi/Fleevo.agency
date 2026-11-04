@@ -59,7 +59,7 @@ export default function Navbar() {
         initial={false}
         animate={hidden && !isMobileMenuOpen ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 inset-x-0 w-full max-w-[100vw] z-50 px-3 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 flex justify-center pointer-events-none overflow-x-hidden"
+        className="fixed top-0 inset-x-0 w-full max-w-full z-50 px-3 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 flex justify-center pointer-events-none overflow-x-clip"
       >
         <div className={`w-full max-w-[1300px] flex items-center justify-between transition-all duration-300 ease-[0.16,1,0.3,1] pointer-events-auto rounded-full ${
           isScrolled 
