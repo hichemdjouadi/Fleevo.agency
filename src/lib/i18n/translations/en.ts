@@ -30,8 +30,9 @@ export const en: TranslationDictionary = {
     successTitle: "Request Received.",
     successDesc: "Thank you. We received your project details and will reply within 24 hours.",
     needLabel: "01 // What do you need?",
-    timelineLabel: "02 // Target Timeline",
-    detailsLabel: "03 // Contact Details",
+    budgetLabel: "02 // Investment Tier",
+    timelineLabel: "03 // Target Timeline",
+    detailsLabel: "04 // Contact Details",
     nameLabel: "Your Name",
     namePlaceholder: "Full name",
     companyLabel: "Company",
@@ -54,6 +55,11 @@ export const en: TranslationDictionary = {
       ads: "Meta Ads & Video Scripts",
       audit: "Conversion & Content Audit",
       aiAgent: "Domain-Specific AI Agent"
+    },
+    budgets: {
+      standard: "150,000 – 250,000 DA (Core Platform)",
+      growth: "250,000 – 450,000 DA (Full Commerce & Logistics)",
+      enterprise: "450,000+ DA (Enterprise Infrastructure / Custom App)"
     },
     timelines: {
       rightAway: "Right away",
@@ -482,10 +488,10 @@ export const en: TranslationDictionary = {
       },
       {
         num: "03",
-        title: "Brand Credibility Polish",
-        badge: "Included Free Bonus",
+        title: "Brand Credibility & Design Token Polish",
+        badge: "Integrated System Polish",
         sla: "Included With Build",
-        desc: "High-end visual polish that makes your business look established and trustworthy from day one. Included at no extra cost with every core web build.",
+        desc: "High-end visual polish that makes your business look established and trustworthy from day one. Calibrated typography, design tokens, and dark/light UI assets included with every core web build.",
         deliverables: [
           "Brand typography & cohesive color hierarchy",
           "Social media ad creative & profile templates",
@@ -656,6 +662,29 @@ export const en: TranslationDictionary = {
             detail: "Replaced slow manual order entry with direct automated dispatch."
           }
         ]
+      },
+      {
+        title: "Fleevy Command Center CRM",
+        category: "Internal Agency Operating System & Operations Hub",
+        filterCategory: "webapp",
+        client: "Fleevy Operating Core",
+        systemType: "Mission-Critical Agency Command Center & Real-time CRM",
+        statusBadge: "Live Production Platform",
+        summary: "Proprietary operational brain synchronizing multi-channel inbound leads, real-time client pipeline telemetry, and automated Trello/Supabase workflows with zero sync latency.",
+        benefits: [
+          {
+            direction: "up",
+            type: "Commercial Result",
+            headline: "Instant Inbound Triage & Going-Cold Safeguard",
+            detail: "Automated 7-day lead decay monitors and instant multi-channel dispatch ensure zero prospect slippage."
+          },
+          {
+            direction: "up",
+            type: "Problem Solved",
+            headline: "Unified Multi-Service Operating Control",
+            detail: "Eliminates fragmented SaaS subscriptions by consolidating leads, projects, resources, and live metrics in a single sovereign cockpit."
+          }
+        ]
       }
     ],
     bottomCta: {
@@ -818,13 +847,13 @@ export const en: TranslationDictionary = {
       form: "📝 Detailed Message"
     },
     fastLane: {
-      badge: "FAST-LANE WHATSAPP",
-      responseBadge: "< 15m Response",
-      headline: "Prefer real-time chat over filling out forms?",
-      body: "Skip the form entirely. Send your website link or project brief directly to Hichem on WhatsApp. You will receive a direct voice note or text teardown with exact technical recommendations.",
+      badge: "PRINCIPAL DESK // DIRECT TRIAGE",
+      responseBadge: "Direct Technical Access",
+      headline: "Need immediate architecture review or launch dates?",
+      body: "Bypass intake queues. Send your existing storefront URL, bottleneck, or project brief directly to Hichem on WhatsApp for direct technical scoping and schedule availability.",
       founderName: "Hichem Djouadi",
       founderRole: "Founder & Technical Lead",
-      ctaBtn: "Start WhatsApp Chat"
+      ctaBtn: "Start WhatsApp Technical Triage"
     },
     reassurance: {
       noSalesReps: "Zero sales reps · Direct talk with the builder",

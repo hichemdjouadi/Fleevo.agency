@@ -6,36 +6,90 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 import TransitionLink from "@/components/TransitionLink";
 import Magnetic from "@/components/Magnetic";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Lock } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import { WorkPageProjectTranslation } from "@/lib/i18n/types";
 
+interface TelemetryItem {
+  label: string;
+  val: string;
+  note: string;
+}
+
 interface ProjectMeta {
+  url: string;
   image?: string;
+  mobileImage?: string;
   link: string;
   isLive: boolean;
+  telemetry: TelemetryItem[];
 }
 
 const STATIC_PROJECT_METAS: ProjectMeta[] = [
   {
+    url: "mopizzarestaurants.vercel.app",
     image: "/project-mopizza.png",
+    mobileImage: "/mopizza-mobile.png",
     link: "https://mopizzarestaurants.vercel.app/",
     isLive: true,
+    telemetry: [
+      { label: "EDGE SPEED", val: "420ms TTFB", note: "Optimized on 4G LTE" },
+      { label: "COMMISSION TOLL", val: "0% Retained", note: "Bypasses aggregators" },
+      { label: "INTAKE PIPELINE", val: "< 15s Direct", note: "Call & WhatsApp triage" },
+      { label: "INFRASTRUCTURE", val: "5 Locations", note: "Zero app download" },
+    ],
   },
   {
+    url: "almadinabookstore.com",
     image: "/project-almadina.png",
+    mobileImage: "/almadina-mobile.png",
     link: "https://almadinabookstore.com/",
     isLive: true,
+    telemetry: [
+      { label: "CATALOG INDEX", val: "12,000+ SKUs", note: "Instant fuzzy search" },
+      { label: "LOGISTICS SYNC", val: "58 Wilayas", note: "Cash on delivery pipeline" },
+      { label: "EDGE RENDER", val: "540ms TTFB", note: "Edge Next.js caching" },
+      { label: "CONVERSION FLOW", val: "One-Click", note: "Zero checkout dropoff" },
+    ],
   },
   {
+    url: "adrenaclub.vercel.app",
     image: "/project-adrena.png",
+    mobileImage: "/adrena-mobile.png",
     link: "https://adrenaclub.vercel.app/",
     isLive: true,
+    telemetry: [
+      { label: "ENROLLMENT FLOW", val: "From 3,000 DA", note: "Pre-qualified tier funnel" },
+      { label: "FACILITY SCALE", val: "2 Floors", note: "Live schedule & coach roster" },
+      { label: "FRONT-DESK LOAD", val: "-68% Calls", note: "Direct WhatsApp triage" },
+      { label: "DEVICE SPEED", val: "380ms on 4G", note: "Smooth Framer animations" },
+    ],
   },
   {
+    url: "tawheed-publishing.com",
     image: "/project-tawheed.png",
+    mobileImage: "/tawheed-mobile.png",
     link: "/contact?subject=Case+Study+-+Tawheed+Bookstore",
     isLive: true,
+    telemetry: [
+      { label: "DISTRIBUTION", val: "69 Wilayas", note: "Automated postal sync" },
+      { label: "INTAKE CHANNELS", val: "Dual Hub", note: "2 Storefronts + Delivery" },
+      { label: "ORDER VERIFY", val: "< 30s Bot", note: "Instant WhatsApp confirmation" },
+      { label: "UPTIME / COLD START", val: "0ms Stale", note: "Postgres + Supabase Edge" },
+    ],
+  },
+  {
+    url: "cockpit.fleevy.net",
+    image: "/project-dashboard.png",
+    mobileImage: undefined,
+    link: "/contact?subject=Case+Study+-+Command+Center+CRM",
+    isLive: true,
+    telemetry: [
+      { label: "CORE ARCHITECTURE", val: "Supabase + Trello", note: "Bi-directional event bus" },
+      { label: "LEAD DECAY ALERT", val: "7-Day Cold Guard", note: "Visual SLA warning" },
+      { label: "SYNC LATENCY", val: "0ms Event-Driven", note: "Instant webhook dispatch" },
+      { label: "SAAS EXPENSE", val: "$0/mo Toll", note: "100% Sovereign ownership" },
+    ],
   },
 ];
 
@@ -46,9 +100,11 @@ export default function Work() {
   const projectsWithMeta = t.work.projects.map((proj, idx) => ({
     ...proj,
     meta: STATIC_PROJECT_METAS[idx] || {
+      url: "fleevy.net",
       link: "/contact",
       isLive: true,
       image: "/project-mopizza.png",
+      telemetry: [],
     },
   }));
 
@@ -224,27 +280,92 @@ function ProjectShowcase({
         </div>
       </div>
 
-      {/* Visual Canvas */}
-      <div className={`relative w-full overflow-hidden rounded-2xl sm:rounded-[28px] md:rounded-[36px] bg-[#111116] mb-6 sm:mb-10 ${project.meta.image ? "aspect-[16/10] md:aspect-[16/9]" : "min-h-[260px] sm:min-h-[300px] md:aspect-[21/9] flex"}`}>
-        {project.meta.image && (
-          <a
-            href={project.meta.link}
-            target={isExternal ? "_blank" : undefined}
-            rel={isExternal ? "noopener noreferrer" : undefined}
-            className="block relative w-full h-full overflow-hidden"
-            data-cursor="Visit"
+      {/* Multi-Surface Visual Stage */}
+      <div className="relative w-full rounded-2xl sm:rounded-[32px] overflow-hidden bg-[#0a0a0f] border border-white/10 mb-6 sm:mb-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]">
+        {/* Desktop Browser Shell Header */}
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-[#111116] border-b border-white/10">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+          </div>
+          <div className="flex items-center gap-2 px-3 sm:px-5 py-1 rounded-full bg-black/40 border border-white/10 text-[11px] font-mono text-white/70 max-w-[260px] sm:max-w-md truncate">
+            <Lock className="w-3 h-3 text-emerald-400 shrink-0" />
+            <span dir="ltr" className="truncate">{project.meta.url}</span>
+          </div>
+          <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="hidden sm:inline">LIVE 200 OK</span>
+          </div>
+        </div>
+
+        {/* Desktop Screen Canvas & Mobile Overlap Container */}
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-[#0c0c10] overflow-hidden group">
+          {project.meta.image && (
+            <a
+              href={project.meta.link}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              className="block relative w-full h-full"
+              data-cursor="Visit"
+            >
+              <Image
+                src={project.meta.image}
+                alt={project.title}
+                fill
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                priority={index < 2}
+                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                unoptimized
+              />
+            </a>
+          )}
+
+          {/* Overlapping Mobile Device Canvas (when mobileImage is present) */}
+          {project.meta.mobileImage && (
+            <div className="hidden md:block absolute -bottom-6 end-8 z-20 pointer-events-none drop-shadow-[0_25px_35px_rgba(0,0,0,0.85)] transition-transform duration-500 ease-out group-hover:translate-y-[-8px]">
+              <div className="w-[190px] lg:w-[220px] aspect-[9/19] rounded-[30px] overflow-hidden bg-black border-[3px] border-neutral-700 shadow-2xl relative">
+                {/* Mobile Dynamic Island */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-3 bg-black rounded-full z-30" />
+                <div className="relative w-full h-full pt-4">
+                  <Image
+                    src={project.meta.mobileImage}
+                    alt={`${project.title} Mobile Viewport`}
+                    fill
+                    sizes="220px"
+                    className="object-cover object-top"
+                    unoptimized
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Telemetry HUD Grid (4 Columns) */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
+        {project.meta.telemetry?.map((tItem, tIdx) => (
+          <div
+            key={tIdx}
+            className="p-3.5 sm:p-4 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col justify-between"
           >
-            <Image
-              src={project.meta.image}
-              alt={project.title}
-              fill
-              sizes="(max-width: 1400px) 100vw, 1400px"
-              priority={index < 2}
-              className="object-cover object-top"
-              unoptimized
-            />
-          </a>
-        )}
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[10px] font-mono tracking-wider text-white/50 uppercase">
+                {tItem.label}
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" />
+            </div>
+            <div>
+              <div className="text-base sm:text-lg font-semibold tracking-tight text-white mb-0.5">
+                {tItem.val}
+              </div>
+              <div className="text-[11px] text-white/50 font-light truncate">
+                {tItem.note}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Directional Benefits Ledger */}

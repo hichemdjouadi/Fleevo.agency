@@ -30,6 +30,7 @@ export interface ContactFormTranslations {
   successTitle: string;
   successDesc: string;
   needLabel: string;
+  budgetLabel: string;
   timelineLabel: string;
   detailsLabel: string;
   nameLabel: string;
@@ -54,6 +55,11 @@ export interface ContactFormTranslations {
     ads: string;
     audit: string;
     aiAgent: string;
+  };
+  budgets: {
+    standard: string;
+    growth: string;
+    enterprise: string;
   };
   timelines: {
     rightAway: string;

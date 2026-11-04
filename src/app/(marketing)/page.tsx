@@ -24,8 +24,8 @@ export default function Home() {
 
       {/* 1. CINEMATIC HERO */}
       <section className="relative w-full flex flex-col items-center pt-32 md:pt-44 pb-20 overflow-hidden bg-white text-black">
-        {/* Subtle architectural background grid */}
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_110%)] pointer-events-none transform-gpu" />
+        {/* Subtle architectural ambient aura */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(0,0,0,0.04),transparent)] pointer-events-none" />
 
         <div className="relative z-20 flex flex-col items-center justify-start text-center px-6 md:px-12 w-full max-w-[1400px] mx-auto">
 
@@ -88,7 +88,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="font-medium text-black underline underline-offset-4 hover:text-neutral-600 transition-colors inline-flex items-center gap-1"
               >
-                <span dir="ltr">+213 655 934 124 (&lt; 15m)</span>
+                <span dir="ltr">+213 655 934 124 // Technical Desk</span>
                 <span className="rtl:rotate-180">&rarr;</span>
               </a>
             </div>
@@ -139,13 +139,13 @@ export default function Home() {
         </div>
 
         {/* PILLAR 1: Platforms & Digital Infrastructure */}
-        <div className="pt-12 border-t border-black/15 mb-24">
+        <div className="p-6 sm:p-12 md:p-16 rounded-3xl sm:rounded-[2.5rem] bg-[#f9f9fb] border border-black/10 mb-12 sm:mb-16">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
             <div>
               <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-black mb-3 text-balance">
                 {t.home.pillars.pillarOneTitle}
               </h3>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f4f4f5] text-xs font-mono font-semibold text-black">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-black/10 text-xs font-mono font-semibold text-black">
                 <span>{t.home.pillars.badge} · 01</span>
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function Home() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 rounded-full bg-[#f4f4f5] font-mono text-xs text-neutral-800 font-medium"
+                        className="px-3 py-1 rounded-full bg-white border border-black/10 font-mono text-xs text-neutral-800 font-medium"
                       >
                         {tag}
                       </span>

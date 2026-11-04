@@ -65,12 +65,8 @@ export default function TransitionLink({
       }
 
       e.preventDefault();
-      // Trigger cinematic curtain sweep
       window.dispatchEvent(new CustomEvent("trigger-page-exit"));
-
-      setTimeout(() => {
-        router.push(finalHref);
-      }, 300);
+      router.push(finalHref);
     }
   };
 

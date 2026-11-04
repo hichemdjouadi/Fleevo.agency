@@ -22,8 +22,8 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-white text-black pt-36 pb-0 selection:bg-black selection:text-white relative overflow-hidden flex flex-col justify-between text-start">
-      {/* Background ambient grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+      {/* Background ambient aura */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(0,0,0,0.03),transparent)] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 pb-28 relative z-10 w-full">
         {/* Header */}

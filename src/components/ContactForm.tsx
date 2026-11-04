@@ -6,14 +6,17 @@ import { CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone } from "lucide-react
 import { useTranslation } from "@/lib/i18n";
 
 type ServiceKey = "website" | "ecommerce" | "crm" | "ads" | "audit" | "aiAgent";
+type BudgetKey = "standard" | "growth" | "enterprise";
 type TimelineKey = "rightAway" | "twoToFourWeeks" | "planningAhead";
 
 const SERVICE_KEYS: ServiceKey[] = ["website", "ecommerce", "crm", "ads", "audit", "aiAgent"];
+const BUDGET_KEYS: BudgetKey[] = ["standard", "growth", "enterprise"];
 const TIMELINE_KEYS: TimelineKey[] = ["rightAway", "twoToFourWeeks", "planningAhead"];
 
 export default function ContactForm() {
   const { t, isRTL, locale } = useTranslation();
   const [selectedServiceKeys, setSelectedServiceKeys] = useState<ServiceKey[]>(["website"]);
+  const [selectedBudgetKey, setSelectedBudgetKey] = useState<BudgetKey>("growth");
   const [selectedTimelineKey, setSelectedTimelineKey] = useState<TimelineKey>("twoToFourWeeks");
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -87,16 +90,17 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     const localizedServices = selectedServiceKeys.map((k) => t.contactForm.services[k]);
+    const localizedBudget = t.contactForm.budgets[selectedBudgetKey];
     const localizedTimeline = t.contactForm.timelines[selectedTimelineKey];
 
     const formattedName = `${trimmedName} (${trimmedCompany})`;
-    const compiledDetails = `Language: ${locale.toUpperCase()}\nCompany: ${trimmedCompany}\nPhone/WhatsApp: ${trimmedPhone}\nDetails: ${trimmedDetails || "N/A"}`;
+    const compiledDetails = `Language: ${locale.toUpperCase()}\nCompany: ${trimmedCompany}\nPhone/WhatsApp: ${trimmedPhone}\nBudget Tier: ${localizedBudget}\nTimeline: ${localizedTimeline}\nDetails: ${trimmedDetails || "N/A"}`;
 
     const result = await submitAuditRequest({
       name: formattedName,
       email: trimmedEmail,
       timeline: localizedTimeline,
-      budget: localizedTimeline,
+      budget: localizedBudget,
       interests: localizedServices,
       details: compiledDetails
     });
@@ -160,7 +164,37 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* 2. Target Timeline */}
+        {/* 2. Anticipated Investment Tier */}
+        <div className="flex flex-col gap-3">
+          <span id="contact-budget-label" className="text-xs font-mono text-neutral-600 font-medium">
+            {t.contactForm.budgetLabel}
+          </span>
+          <div className="grid grid-cols-1 gap-2" role="radiogroup" aria-labelledby="contact-budget-label">
+            {BUDGET_KEYS.map((key) => {
+              const label = t.contactForm.budgets[key];
+              const isSelected = selectedBudgetKey === key;
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setSelectedBudgetKey(key)}
+                  role="radio"
+                  aria-checked={isSelected}
+                  className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl border text-xs sm:text-sm transition-all text-start flex items-center justify-between focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
+                    isSelected
+                      ? "bg-black text-white border-black font-semibold shadow-sm"
+                      : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
+                  }`}
+                >
+                  <span>{label}</span>
+                  <span className={`w-2 h-2 rounded-full shrink-0 ${isSelected ? "bg-emerald-400" : "bg-neutral-300"}`} />
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 3. Target Timeline */}
         <div className="flex flex-col gap-3">
           <span id="contact-timeline-label" className="text-xs font-mono text-neutral-600 font-medium">
             {t.contactForm.timelineLabel}

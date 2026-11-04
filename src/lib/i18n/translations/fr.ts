@@ -30,8 +30,9 @@ export const fr: TranslationDictionary = {
     successTitle: "Demande Reçue.",
     successDesc: "Merci. Nous avons bien reçu les détails de votre projet et nous vous répondrons sous 24 heures.",
     needLabel: "01 // De quoi avez-vous besoin ?",
-    timelineLabel: "02 // Délais Souhaités",
-    detailsLabel: "03 // Vos Coordonnées",
+    budgetLabel: "02 // Enveloppe d'Investissement",
+    timelineLabel: "03 // Délais Souhaités",
+    detailsLabel: "04 // Vos Coordonnées",
     nameLabel: "Votre Nom",
     namePlaceholder: "Nom complet",
     companyLabel: "Entreprise",
@@ -54,6 +55,11 @@ export const fr: TranslationDictionary = {
       ads: "Publicités Meta & Scripts Vidéo",
       audit: "Audit Conversion & Contenu",
       aiAgent: "Agent IA Spécialisé"
+    },
+    budgets: {
+      standard: "150 000 – 250 000 DA (Plateforme Essentielle)",
+      growth: "250 000 – 450 000 DA (Commerce Complet & Logistique)",
+      enterprise: "450 000+ DA (Infrastructure Entreprise / Application Sur Mesure)"
     },
     timelines: {
       rightAway: "Immédiatement",
@@ -482,15 +488,15 @@ export const fr: TranslationDictionary = {
       },
       {
         num: "03",
-        title: "Finition & Crédibilité de Marque",
-        badge: "Bonus Inclus Gratuitement",
-        sla: "Inclus avec la Réalisation",
-        desc: "Une finition visuelle haut de gamme qui confère immédiatement à votre entreprise une autorité incontestable. Incluse sans surcoût avec chaque projet web.",
+        title: "Identité de Marque & Tokens de Design",
+        badge: "Finition Système Intégrée",
+        sla: "Inclus dans la Réalisation",
+        desc: "Finition visuelle haut de gamme conférant une autorité immédiate à votre entreprise dès le premier jour. Typographies, tokens de design et assets soignés inclus dans chaque projet web.",
         deliverables: [
-          "Typographie soignée et palette de couleurs cohérente",
-          "Modèles graphiques pour publicités et profils sociaux",
-          "Avatar personnalisé et texte d'accueil pour bot WhatsApp",
-          "Finition vectorielle du logo et exports haute résolution"
+          "Typographie de marque et hiérarchie des couleurs",
+          "Modèles de créatifs publicitaires et profils sociaux",
+          "Avatar et textes d'accueil pour bot WhatsApp",
+          "Retouche vectorielle de logo et exports haute résolution"
         ]
       }
     ],
@@ -656,6 +662,29 @@ export const fr: TranslationDictionary = {
             detail: "Remplacement de la saisie manuelle des commandes par un flux entièrement automatisé."
           }
         ]
+      },
+      {
+        title: "Fleevy Command Center CRM",
+        category: "Système d'Exploitation & Hub Opérationnel d'Agence",
+        filterCategory: "webapp",
+        client: "Noyau Opérationnel Fleevy",
+        systemType: "Cockpit Opérationnel & CRM Temps Réel",
+        statusBadge: "Plateforme en Production",
+        summary: "Cerveau opérationnel propriétaire synchronisant les leads entrants multicanaux, la télémétrie des projets clients en direct et les flux automatisés Supabase/Trello avec zéro latence.",
+        benefits: [
+          {
+            direction: "up",
+            type: "Résultat Commercial",
+            headline: "Triage Instantané & Protection Anti-Perte de Leads",
+            detail: "Surveillance automatique de l'inactivité à 7 jours et routage multicanal immédiat évitant toute fuite de prospects."
+          },
+          {
+            direction: "up",
+            type: "Problème Résolu",
+            headline: "Contrôle Opérationnel Unifié et Souverain",
+            detail: "Supprime la fragmentation des abonnements SaaS tiers en centralisant prospects, projets, ressources et métriques dans une console unique."
+          }
+        ]
       }
     ],
     bottomCta: {
@@ -818,13 +847,13 @@ export const fr: TranslationDictionary = {
       form: "📝 Demande Détaillée"
     },
     fastLane: {
-      badge: "VOIE RAPIDE WHATSAPP",
-      responseBadge: "Réponse < 15min",
-      headline: "Vous préférez échanger directement plutôt que remplir un formulaire ?",
-      body: "Passez le formulaire. Envoyez le lien de votre site ou votre cahier des charges directement à Hichem sur WhatsApp. Vous recevrez une note vocale ou une analyse écrite avec des recommandations techniques précises.",
+      badge: "BUREAU TECHNIQUE // TRIAGE DIRECT",
+      responseBadge: "Accès Technique Direct",
+      headline: "Besoin d'un cadrage technique immédiat ou d'un calendrier ?",
+      body: "Accédez directement à l'ingénierie. Envoyez l'URL de votre plateforme actuelle ou vos objectifs à Hichem sur WhatsApp pour un retour technique direct et une vérification des disponibilités d'agenda.",
       founderName: "Hichem Djouadi",
       founderRole: "Fondateur & Directeur Technique",
-      ctaBtn: "Écrire sur WhatsApp"
+      ctaBtn: "Démarrer le Triage Technique sur WhatsApp"
     },
     reassurance: {
       noSalesReps: "Zéro commercial · Échange direct avec l'ingénieur",

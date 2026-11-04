@@ -3,86 +3,41 @@
 import { motion } from "framer-motion";
 import { ReactNode, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { useLanguage } from "@/lib/i18n";
 
 export default function Template({ children }: { children: ReactNode }) {
-  const [isExiting, setIsExiting] = useState(false);
-  const [hasEntered, setHasEntered] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
   const pathname = usePathname();
 
-  let brandName = "Fleevy.";
-  try {
-    const lang = useLanguage();
-    if (lang?.locale === "ar") {
-      brandName = "فليفي.";
-    }
-  } catch {
-    // fallback
-  }
-
   useEffect(() => {
-    const handleExit = () => setIsExiting(true);
-    window.addEventListener("trigger-page-exit", handleExit);
-    return () => window.removeEventListener("trigger-page-exit", handleExit);
+    const handleStart = () => setIsNavigating(true);
+    window.addEventListener("trigger-page-exit", handleStart);
+    return () => window.removeEventListener("trigger-page-exit", handleStart);
   }, []);
 
-  const easeCurve: [number, number, number, number] = [0.76, 0, 0.24, 1];
-  
+  useEffect(() => {
+    setIsNavigating(false);
+  }, [pathname]);
+
   return (
     <>
-      {/* Outgoing overlay (Slides up from bottom when link clicked) */}
-      {isExiting && (
+      {/* Top Ambient Loading Beam */}
+      {isNavigating && (
         <motion.div
-          className="fixed inset-0 z-[140] bg-[#050505] flex items-center justify-center pointer-events-none text-white select-none"
-          initial={{ y: "100%" }}
-          animate={{ y: "0%" }}
-          transition={{ duration: 0.55, ease: easeCurve }}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-2.5"
-          >
-            <span className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight rtl:font-sans ltr:font-sans text-white">
-              {brandName}
-            </span>
-            <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-          </motion.div>
-        </motion.div>
-      )}
-      
-      {/* Incoming overlay (Reveals brand mark, then slides up to top) */}
-      {!isExiting && !hasEntered && (
-        <motion.div
-          className="fixed inset-0 z-[140] bg-[#050505] flex items-center justify-center pointer-events-none text-white select-none"
-          initial={{ y: "0%" }}
-          animate={{ y: "-100%" }}
-          transition={{ duration: 0.8, ease: easeCurve, delay: 0.22 }}
-          onAnimationComplete={() => setHasEntered(true)}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94, y: 12 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-2.5"
-          >
-            <span className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight rtl:font-sans ltr:font-sans text-white">
-              {brandName}
-            </span>
-            <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-          </motion.div>
-        </motion.div>
+          className="fixed top-0 left-0 right-0 h-[2px] z-[200] bg-gradient-to-r from-emerald-500 via-white to-emerald-400 pointer-events-none shadow-[0_0_12px_rgba(52,211,153,0.8)]"
+          initial={{ scaleX: 0, originX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        />
       )}
 
+      {/* Silky Page Entrance */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        key={pathname}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ 
-          ease: easeCurve, 
-          duration: 0.9,
-          delay: 0.15
+        transition={{
+          duration: 0.35,
+          ease: [0.16, 1, 0.3, 1]
         }}
       >
         {children}

@@ -14,6 +14,7 @@ import {
 import Footer from "@/components/Footer";
 import TransitionLink from "@/components/TransitionLink";
 import Magnetic from "@/components/Magnetic";
+import SystemTopology from "@/components/SystemTopology";
 import { useTranslation } from "@/lib/i18n";
 
 export default function ServicesPage() {
@@ -335,6 +336,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* 2.5 SYSTEM TOPOLOGY ARCHITECTURE */}
+      <section className="py-16 md:py-24 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
+        <SystemTopology />
+      </section>
+
       {/* 3. ZERO-RISK GUARANTEE STRIP */}
       <section className="py-14 sm:py-16 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-10">
@@ -433,8 +439,8 @@ export default function ServicesPage() {
 
                     {isBonus ? (
                       <div className="w-full flex items-center justify-between px-6 py-3.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-emerald-300 font-semibold">
-                        <span>{locale === "fr" ? "Inclus avec le Projet Web" : locale === "ar" ? "مدمج مع البناء الأساسي" : "Included with Core Build"}</span>
-                        <span>⚡ {locale === "fr" ? "100% Offert" : locale === "ar" ? "100% مجاناً" : "100% Free"}</span>
+                        <span>{locale === "fr" ? "Inclus avec le Projet Web" : locale === "ar" ? "مدمج مع بناء المنصة" : "Included with Core Architecture"}</span>
+                        <span>✓ {locale === "fr" ? "Livré Clé en Main" : locale === "ar" ? "تسليم متكامل" : "Turnkey Included"}</span>
                       </div>
                     ) : (
                       <TransitionLink

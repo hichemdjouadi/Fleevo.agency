@@ -12,10 +12,9 @@ export default function Preloader() {
   const [index, setIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(true);
 
-  // Equal harmonious duration for each concept word (e.g. Architecture, Automation, Performance)
-  const WORD_HOLD_MS = 380;
-  // Dignified hold on the brand climax before the curtain lifts
-  const FINAL_BRAND_HOLD_MS = 520;
+  // Crisp, fast tempo for each concept word (under 1s total)
+  const WORD_HOLD_MS = 220;
+  const FINAL_BRAND_HOLD_MS = 320;
 
   useEffect(() => {
     // 1. Only run on the root homepage

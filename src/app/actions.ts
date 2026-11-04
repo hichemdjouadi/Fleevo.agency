@@ -36,13 +36,19 @@ export async function submitAuditRequest(formData: {
 
   const supabase = createClient(supabaseUrl, supabaseKey);
   const { name, email, timeline, budget, interests, details } = formData;
-  const targetTimeline = (timeline || budget || "Not specified").trim();
+  const targetTimeline = (timeline || "Flexible").trim();
+  const targetBudget = (budget || "Standard Tier").trim();
   
   if (!name || !email) {
     return { error: "Name and email are required." };
   }
 
-  const compiledNotes = `Interests: ${interests.join(', ')}\nTimeline: ${targetTimeline}\n${details}`.trim();
+  const compiledNotes = [
+    interests.length ? `Interests: ${interests.join(', ')}` : null,
+    `Budget: ${targetBudget}`,
+    `Timeline: ${targetTimeline}`,
+    details
+  ].filter(Boolean).join('\n').trim();
 
   try {
     // 1. Insert into Supabase
@@ -63,7 +69,7 @@ export async function submitAuditRequest(formData: {
 
     // Await all notification dispatches so serverless lambdas do not freeze prematurely
     const dispatchResults = await Promise.allSettled([
-      sendTelegramNotification(name, email, targetTimeline, interests, details),
+      sendTelegramNotification(name, email, targetTimeline, targetBudget, interests, details),
       createTrelloCard(name, compiledNotes, email),
       sendResendEmail(name, email, targetTimeline, interests, details)
     ]);
@@ -81,9 +87,9 @@ export async function submitAuditRequest(formData: {
   }
 }
 
-async function sendTelegramNotification(name: string, email: string, timeline: string, interests: string[], details: string) {
+async function sendTelegramNotification(name: string, email: string, timeline: string, budget: string, interests: string[], details: string) {
   if (!telegramBotToken || !telegramChatId) return;
-  const message = `🚨 <b>New Project Inquiry</b>\n\n<b>Name:</b> ${escapeHtml(name)}\n<b>Email:</b> ${escapeHtml(email)}\n<b>Timeline:</b> ${escapeHtml(timeline)}\n<b>Needs:</b> ${escapeHtml(interests.join(', '))}\n<b>Details:</b>\n${escapeHtml(details)}`;
+  const message = `🚨 <b>New Project Inquiry</b>\n\n<b>Name:</b> ${escapeHtml(name)}\n<b>Email:</b> ${escapeHtml(email)}\n<b>Budget Tier:</b> ${escapeHtml(budget)}\n<b>Timeline:</b> ${escapeHtml(timeline)}\n<b>Needs:</b> ${escapeHtml(interests.join(', '))}\n<b>Details:</b>\n${escapeHtml(details)}`;
   
   const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
   const res = await fetch(url, {
