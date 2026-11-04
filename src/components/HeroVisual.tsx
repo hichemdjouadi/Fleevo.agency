@@ -70,13 +70,13 @@ export default function HeroVisual() {
       ref={stageRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full flex flex-col items-center justify-center py-2 sm:py-4 select-none"
+      className="relative w-full flex flex-col items-center justify-center py-2 sm:py-4 select-none overflow-hidden"
     >
       {/* 1. Project Selector Segmented Control */}
       <div 
         role="tablist"
         aria-label="Featured client platforms"
-        className="relative z-30 mb-6 sm:mb-10 w-full max-w-[360px] sm:max-w-xl grid grid-cols-3 p-1 sm:p-1.5 bg-[#f4f4f5] rounded-xl sm:rounded-full border border-black/10 gap-1 text-center"
+        className="relative z-30 mb-6 sm:mb-10 w-full max-w-[min(360px,calc(100vw-2rem))] sm:max-w-xl grid grid-cols-3 p-1 sm:p-1.5 bg-[#f4f4f5] rounded-xl sm:rounded-full border border-black/10 gap-1 text-center"
       >
         {projects.map((proj, idx) => {
           const isActive = activeTab === idx;

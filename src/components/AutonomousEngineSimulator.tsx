@@ -80,7 +80,7 @@ export default function AutonomousEngineSimulator() {
   }, []);
 
   return (
-    <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto text-start">
+    <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto text-start overflow-hidden">
       {/* 1. Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-16 gap-6 sm:gap-8">
         <div className="max-w-3xl">
@@ -115,7 +115,7 @@ export default function AutonomousEngineSimulator() {
             <div 
               role="tablist"
               aria-label="Simulation Scenarios"
-              className="flex flex-wrap sm:flex-nowrap gap-2 bg-white/5 p-1 rounded-2xl border border-white/10"
+              className="flex flex-col sm:flex-row flex-wrap gap-2 bg-white/5 p-1 rounded-2xl border border-white/10 w-full xl:w-auto"
             >
               {sim.scenarios.map((sc, idx) => {
                 const isActive = activeScenarioIdx === idx;
@@ -126,7 +126,7 @@ export default function AutonomousEngineSimulator() {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => handleScenarioChange(idx)}
-                    className={`relative min-h-[44px] flex-1 sm:flex-none px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all cursor-pointer text-center whitespace-nowrap ${
+                    className={`relative min-h-[44px] flex-1 sm:flex-none px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all cursor-pointer text-center ${
                       isActive ? "text-black font-semibold" : "text-white/70 hover:text-white"
                     }`}
                   >

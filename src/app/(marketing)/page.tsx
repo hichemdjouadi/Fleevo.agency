@@ -22,7 +22,7 @@ export default function Home() {
   const { t, isRTL } = useTranslation();
 
   return (
-    <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen">
+    <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen w-full max-w-[100vw] overflow-x-hidden">
 
       {/* 1. CINEMATIC HERO */}
       <section className="relative w-full flex flex-col items-center pt-24 sm:pt-32 md:pt-44 pb-14 sm:pb-20 overflow-hidden bg-white text-black">

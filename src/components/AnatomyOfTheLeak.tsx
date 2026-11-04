@@ -24,7 +24,7 @@ export default function AnatomyOfTheLeak() {
   const [activeMode, setActiveMode] = useState<"traditional" | "fleevy">("traditional");
 
   return (
-    <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto text-start border-t border-black/10">
+    <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto text-start border-t border-black/10 overflow-hidden">
       {/* 1. Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-16 gap-6 sm:gap-8">
         <div className="max-w-3xl">
@@ -42,31 +42,31 @@ export default function AnatomyOfTheLeak() {
       </div>
 
       {/* 2. Interactive Toggle Bar */}
-      <div className="flex justify-center mb-10 sm:mb-14">
-        <div className="p-1 sm:p-1.5 bg-neutral-100 rounded-full border border-neutral-200/80 inline-flex items-center gap-1 shadow-sm w-full max-w-xl">
+      <div className="flex justify-center mb-10 sm:mb-14 w-full">
+        <div className="p-1 sm:p-1.5 bg-neutral-100 rounded-2xl sm:rounded-full border border-neutral-200/80 flex flex-col sm:flex-row items-stretch sm:items-center gap-1.5 sm:gap-1 shadow-sm w-full max-w-xl">
           <button
             type="button"
             onClick={() => setActiveMode("traditional")}
-            className={`flex-1 min-h-[44px] flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer text-center ${
+            className={`min-h-[44px] flex-1 flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer text-center ${
               activeMode === "traditional"
                 ? "bg-neutral-900 text-white shadow-md"
                 : "text-neutral-600 hover:text-black"
             }`}
           >
-            <TrendingDown className={`w-4 h-4 ${activeMode === "traditional" ? "text-red-400" : "text-neutral-400"}`} />
+            <TrendingDown className={`w-4 h-4 shrink-0 ${activeMode === "traditional" ? "text-red-400" : "text-neutral-400"}`} />
             <span className="truncate">{diagnostic.traditionalTab}</span>
           </button>
 
           <button
             type="button"
             onClick={() => setActiveMode("fleevy")}
-            className={`flex-1 min-h-[44px] flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer text-center ${
+            className={`min-h-[44px] flex-1 flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer text-center ${
               activeMode === "fleevy"
                 ? "bg-emerald-600 text-white shadow-md"
                 : "text-neutral-600 hover:text-black"
             }`}
           >
-            <TrendingUp className={`w-4 h-4 ${activeMode === "fleevy" ? "text-emerald-200" : "text-neutral-400"}`} />
+            <TrendingUp className={`w-4 h-4 shrink-0 ${activeMode === "fleevy" ? "text-emerald-200" : "text-neutral-400"}`} />
             <span className="truncate">{diagnostic.fleevyTab}</span>
           </button>
         </div>
