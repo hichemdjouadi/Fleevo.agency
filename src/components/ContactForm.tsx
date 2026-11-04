@@ -151,7 +151,7 @@ export default function ContactForm() {
                   type="button"
                   onClick={() => toggleInterest(key)}
                   aria-pressed={isSelected}
-                  className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full border text-xs sm:text-sm transition-all focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
+                  className={`min-h-[44px] flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border text-xs sm:text-sm transition-all focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none cursor-pointer ${
                     isSelected
                       ? "bg-black text-white border-black font-semibold shadow-sm"
                       : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
@@ -180,7 +180,7 @@ export default function ContactForm() {
                   onClick={() => setSelectedBudgetKey(key)}
                   role="radio"
                   aria-checked={isSelected}
-                  className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl border text-xs sm:text-sm transition-all text-start flex items-center justify-between focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
+                  className={`min-h-[48px] px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl border text-xs sm:text-sm transition-all text-start flex items-center justify-between focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none cursor-pointer ${
                     isSelected
                       ? "bg-black text-white border-black font-semibold shadow-sm"
                       : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
@@ -210,7 +210,7 @@ export default function ContactForm() {
                   onClick={() => setSelectedTimelineKey(key)}
                   role="radio"
                   aria-checked={isSelected}
-                  className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border text-xs sm:text-sm transition-all text-center focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none ${
+                  className={`min-h-[44px] flex items-center justify-center px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border text-xs sm:text-sm transition-all text-center focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none cursor-pointer ${
                     isSelected
                       ? "bg-black text-white border-black font-semibold shadow-sm"
                       : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
@@ -233,12 +233,13 @@ export default function ContactForm() {
               <input
                 id="contact-name"
                 type="text"
+                autoComplete="name"
                 required
                 aria-required="true"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder={t.contactForm.namePlaceholder}
-                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm"
+                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm"
               />
             </div>
 
@@ -249,12 +250,13 @@ export default function ContactForm() {
               <input
                 id="contact-company"
                 type="text"
+                autoComplete="organization"
                 required
                 aria-required="true"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
                 placeholder={t.contactForm.companyPlaceholder}
-                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm"
+                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm"
               />
             </div>
           </div>
@@ -267,12 +269,15 @@ export default function ContactForm() {
               <input
                 id="contact-email"
                 type="email"
+                inputMode="email"
+                autoComplete="email"
+                autoCapitalize="none"
                 required
                 aria-required="true"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t.contactForm.emailPlaceholder}
-                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm"
+                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm"
               />
             </div>
 
@@ -283,12 +288,14 @@ export default function ContactForm() {
               <input
                 id="contact-phone"
                 type="tel"
+                inputMode="tel"
+                autoComplete="tel"
                 required
                 aria-required="true"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder={t.contactForm.phonePlaceholder}
-                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm"
+                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm"
               />
             </div>
           </div>
@@ -303,7 +310,7 @@ export default function ContactForm() {
               onChange={(e) => setDetails(e.target.value)}
               placeholder={t.contactForm.projectScopePlaceholder}
               rows={3}
-              className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-sm resize-none"
+              className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm resize-none"
             />
           </div>
         </div>
@@ -319,7 +326,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-black text-white font-semibold text-sm hover:bg-neutral-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 group shadow-sm"
+            className="w-full sm:w-auto min-h-[50px] px-8 py-3.5 sm:py-4 rounded-full bg-black text-white font-semibold text-sm hover:bg-neutral-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 group shadow-sm cursor-pointer"
           >
             <span>{isSubmitting ? t.contactForm.submittingBtn : t.contactForm.submitBtn}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
@@ -333,19 +340,19 @@ export default function ContactForm() {
       </form>
 
       {/* Direct Studio Channels */}
-      <div className="w-full pt-8 border-t border-black/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div className="w-full pt-6 sm:pt-8 border-t border-black/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-6">
         <div>
           <span className="text-xs font-mono text-neutral-500 block mb-1">
             {t.footer.mainStudio}
           </span>
-          <p className="text-sm text-neutral-700 font-light">
+          <p className="text-xs sm:text-sm text-neutral-700 font-light">
             {t.nav.hqNotice}
           </p>
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
           <a
             href="mailto:contact@fleevy.net"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
+            className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
           >
             <Mail className="w-3.5 h-3.5" />
             <span>contact@fleevy.net</span>
@@ -354,7 +361,7 @@ export default function ContactForm() {
             href="https://wa.me/213655934124"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
+            className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
           >
             <Phone className="w-3.5 h-3.5" />
             <span dir="ltr">+213 655 934 124</span>

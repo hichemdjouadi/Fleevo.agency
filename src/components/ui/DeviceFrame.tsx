@@ -19,7 +19,7 @@ export default function DeviceFrame({
 }: DeviceFrameProps) {
   return (
     <div
-      className={`relative w-[280px] sm:w-[340px] lg:w-[360px] aspect-[9/19.5] rounded-[36px] sm:rounded-[44px] overflow-hidden bg-[#050505] flex flex-col justify-between ring-2 sm:ring-4 ring-black shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] sm:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.35)] border border-white/10 shrink-0 ${className}`}
+      className={`relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[360px] aspect-[9/19.5] rounded-[36px] sm:rounded-[44px] overflow-hidden bg-[#050505] flex flex-col justify-between ring-2 sm:ring-4 ring-black shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] sm:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.35)] border border-white/10 shrink-0 ${className}`}
     >
       {/* Dynamic Island Notch */}
       <div className="absolute top-2.5 sm:top-3 left-1/2 -translate-x-1/2 w-20 sm:w-24 h-4 sm:h-4.5 bg-black rounded-full z-30 flex items-center justify-between px-2 sm:px-2.5 shadow-sm border border-white/5">

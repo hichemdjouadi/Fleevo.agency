@@ -27,7 +27,7 @@ function StudioCapabilitiesCard({ scopeCard }: { scopeCard: any }) {
   };
 
   return (
-    <div className="relative rounded-[2rem] overflow-hidden bg-[#070707] border border-black/15 shadow-2xl p-6 sm:p-8 text-white flex flex-col justify-between gap-6 transition-all duration-300">
+    <div className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden bg-[#070707] border border-black/15 shadow-2xl p-5 sm:p-8 text-white flex flex-col justify-between gap-5 sm:gap-6 transition-all duration-300">
       {/* Top Background Glow */}
       <div 
         className="absolute -top-24 -left-24 w-72 h-72 bg-white/[0.04] rounded-full blur-3xl pointer-events-none" 
@@ -36,7 +36,7 @@ function StudioCapabilitiesCard({ scopeCard }: { scopeCard: any }) {
 
       {/* Header */}
       <div className="relative z-10">
-        <div className="flex items-center justify-between gap-2 mb-3">
+        <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-white/70">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="tracking-wider uppercase">{scopeCard.badge}</span>
@@ -45,7 +45,7 @@ function StudioCapabilitiesCard({ scopeCard }: { scopeCard: any }) {
             {scopeCard.countBadge}
           </span>
         </div>
-        <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-white text-balance">
+        <h3 className="text-lg sm:text-2xl font-medium tracking-tight text-white text-balance">
           {scopeCard.headline}
         </h3>
       </div>
@@ -61,22 +61,22 @@ function StudioCapabilitiesCard({ scopeCard }: { scopeCard: any }) {
               key={item.id}
               type="button"
               onClick={() => setActiveId(item.id)}
-              className={`w-full text-start p-4 sm:p-4.5 rounded-2xl transition-all duration-300 border ${
+              className={`w-full text-start p-3.5 sm:p-4.5 rounded-2xl transition-all duration-300 border min-h-[48px] cursor-pointer ${
                 isActive
                   ? "bg-white/[0.08] border-white/20 shadow-md"
                   : "bg-white/[0.02] border-white/5 hover:bg-white/[0.04] hover:border-white/10"
               }`}
             >
               <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                     isActive ? "bg-white text-black" : "bg-white/5 text-white/60"
                   }`}>
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-white/40 me-2">{item.num}.</span>
-                    <span className={`text-sm sm:text-base font-medium transition-colors ${
+                    <span className="text-xs font-mono text-white/40 me-1.5 sm:me-2">{item.num}.</span>
+                    <span className={`text-xs sm:text-base font-medium transition-colors ${
                       isActive ? "text-white" : "text-white/80"
                     }`}>
                       {item.title}
@@ -99,13 +99,13 @@ function StudioCapabilitiesCard({ scopeCard }: { scopeCard: any }) {
                     transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                     className="mt-3 pt-3 border-t border-white/10 flex flex-col gap-2 text-start overflow-hidden"
                   >
-                    <div className="text-[11px] font-mono text-white/55">
+                    <div className="text-[10px] sm:text-[11px] font-mono text-white/55">
                       {item.sector}
                     </div>
                     <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed">
                       {item.output}
                     </p>
-                    <div className="mt-1 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 text-[11px] font-mono text-white/90 w-fit">
+                    <div className="mt-1 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 text-[10px] sm:text-[11px] font-mono text-white/90 w-fit">
                       <span className="w-1.5 h-1.5 rounded-full bg-white/70" />
                       <span>{item.tag}</span>
                     </div>
@@ -118,7 +118,7 @@ function StudioCapabilitiesCard({ scopeCard }: { scopeCard: any }) {
       </div>
 
       {/* Footer Studio Seal */}
-      <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between gap-3 text-[11px] font-mono text-white/50">
+      <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between gap-3 text-[10px] sm:text-[11px] font-mono text-white/50">
         <span className="truncate">{scopeCard.footerText}</span>
         <span className="shrink-0 text-white/30">FLEEVY</span>
       </div>
@@ -133,53 +133,53 @@ export default function AboutPage() {
     <main className="bg-white text-black min-h-screen selection:bg-black selection:text-white">
 
       {/* 1. THE MANIFESTO HERO */}
-      <section className="relative w-full pt-36 md:pt-44 pb-20 px-6 md:px-12 max-w-[1400px] mx-auto text-start">
+      <section className="relative w-full pt-28 pb-12 sm:pt-36 sm:pb-20 md:pt-44 md:pb-20 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto text-start">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-5xl"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-mono font-medium text-neutral-800 mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-mono font-medium text-neutral-800 mb-4 sm:mb-6">
             <span>{t.nav.about.toUpperCase()}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium tracking-[-0.035em] leading-[1.02] text-black mb-8 text-balance">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium tracking-[-0.035em] leading-[1.08] sm:leading-[1.02] text-black mb-6 sm:mb-8 text-balance">
             {t.about.hero.headlineStart}{" "}
             <span className="rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic font-light">{t.about.hero.headlineEnd}</span>
           </h1>
 
-          <p className="text-lg sm:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-12 text-pretty">
+          <p className="text-base sm:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-8 sm:mb-12 text-pretty">
             {t.about.hero.subhead}
           </p>
 
           {/* Credibility Hairline Ledger */}
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x rtl:sm:divide-x-reverse divide-black/15 border-y border-black/15">
-            <div className="py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
-              <div className="text-xl font-medium text-black">{t.about.hero.ledger.speedTitle}</div>
-              <div className="text-sm text-neutral-600 mt-1">{t.about.hero.ledger.speedSub}</div>
+            <div className="py-4 sm:py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
+              <div className="text-lg sm:text-xl font-medium text-black">{t.about.hero.ledger.speedTitle}</div>
+              <div className="text-xs sm:text-sm text-neutral-600 mt-0.5 sm:mt-1">{t.about.hero.ledger.speedSub}</div>
             </div>
-            <div className="py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
-              <div className="text-xl font-medium text-black">{t.about.hero.ledger.botTitle}</div>
-              <div className="text-sm text-neutral-600 mt-1">{t.about.hero.ledger.botSub}</div>
+            <div className="py-4 sm:py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
+              <div className="text-lg sm:text-xl font-medium text-black">{t.about.hero.ledger.botTitle}</div>
+              <div className="text-xs sm:text-sm text-neutral-600 mt-0.5 sm:mt-1">{t.about.hero.ledger.botSub}</div>
             </div>
-            <div className="py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
-              <div className="text-xl font-medium text-black">{t.about.hero.ledger.lockinTitle}</div>
-              <div className="text-sm text-neutral-600 mt-1">{t.about.hero.ledger.lockinSub}</div>
+            <div className="py-4 sm:py-6 sm:px-6 first:sm:ps-0 last:sm:pe-0 text-start">
+              <div className="text-lg sm:text-xl font-medium text-black">{t.about.hero.ledger.lockinTitle}</div>
+              <div className="text-xs sm:text-sm text-neutral-600 mt-0.5 sm:mt-1">{t.about.hero.ledger.lockinSub}</div>
             </div>
           </div>
         </motion.div>
       </section>
 
       {/* 2. THREE ARCHITECTURAL STANDARDS */}
-      <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
+      <section className="py-14 sm:py-24 md:py-36 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 sm:mb-16 gap-6 sm:gap-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] text-balance">
               {t.about.standards.headline}
             </h2>
           </div>
-          <p className="text-lg text-neutral-600 font-light max-w-sm leading-relaxed text-pretty">
+          <p className="text-sm sm:text-lg text-neutral-600 font-light max-w-sm leading-relaxed text-pretty">
             {t.about.standards.subhead}
           </p>
         </div>
@@ -188,21 +188,21 @@ export default function AboutPage() {
           {t.about.standards.items.map((std) => (
             <div
               key={std.num}
-              className="py-10 lg:py-12 lg:px-8 first:lg:ps-0 last:lg:pe-0 flex flex-col justify-between gap-8 text-start"
+              className="py-7 sm:py-10 lg:py-12 lg:px-8 first:lg:ps-0 last:lg:pe-0 flex flex-col justify-between gap-6 sm:gap-8 text-start"
             >
               <div>
-                <h3 className="text-2xl sm:text-3xl font-medium text-black tracking-tight mb-3 text-balance">
-                  <span className="font-mono text-sm text-neutral-500 me-2">{std.num}. </span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-medium text-black tracking-tight mb-2 sm:mb-3 text-balance">
+                  <span className="font-mono text-xs sm:text-sm text-neutral-500 me-2">{std.num}. </span>
                   {std.title}
                 </h3>
-                <p className="text-base text-neutral-600 font-light leading-relaxed text-pretty">
+                <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed text-pretty">
                   {std.desc}
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-black/10 flex items-center justify-between gap-2 text-xs font-mono">
+              <div className="pt-4 sm:pt-6 border-t border-black/10 flex items-center justify-between gap-2 text-xs font-mono">
                 <span className="text-neutral-600">{std.benchmark}</span>
-                <span className="px-3 py-1 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium">
+                <span className="px-2.5 sm:px-3 py-1 rounded-full bg-[#f4f4f5] text-neutral-800 font-medium text-[11px] sm:text-xs">
                   {std.badge}
                 </span>
               </div>
@@ -212,37 +212,37 @@ export default function AboutPage() {
       </section>
 
       {/* 3. CORE ARCHITECTURE STRIP */}
-      <section className="py-20 md:py-28 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-start">
+      <section className="py-14 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-start">
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 md:mb-16 gap-6">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-8 sm:mb-12 md:mb-16 gap-4 sm:gap-6">
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-white/50 mb-3">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-white/50 mb-2 sm:mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 <span>{t.about.techStack.badge}</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-[1.04] text-balance">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-[1.04] text-balance">
                 {t.about.techStack.headline}
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-white/70 font-light max-w-sm leading-relaxed text-pretty">
+            <p className="text-xs sm:text-base text-white/70 font-light max-w-sm leading-relaxed text-pretty">
               {t.about.techStack.subhead}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {t.about.techStack.items.map((item) => (
               <div
                 key={item.num}
-                className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.05] transition-all flex flex-col justify-between gap-4 text-start"
+                className="p-4 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.05] transition-all flex flex-col justify-between gap-3 sm:gap-4 text-start"
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-mono text-xs text-white/40">{item.num}</span>
-                  <span className="text-[11px] font-mono text-white/60 px-2.5 py-0.5 rounded-full bg-white/5">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-white/60 px-2.5 py-0.5 rounded-full bg-white/5">
                     {item.category}
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-white mb-1.5">
+                  <h3 className="text-base sm:text-lg font-medium text-white mb-1 sm:mb-1.5">
                     {item.name}
                   </h3>
                   <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
@@ -256,8 +256,8 @@ export default function AboutPage() {
       </section>
 
       {/* 4. EXECUTIVE CREATIVE & TECHNICAL LEADERSHIP */}
-      <section className="py-24 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <section className="py-14 sm:py-24 md:py-36 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-20 items-center">
 
           {/* Studio Capabilities Column */}
           <div className="lg:col-span-5">
@@ -266,23 +266,23 @@ export default function AboutPage() {
 
           {/* Executive Statement Column */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 text-xs rtl:font-sans ltr:font-mono font-medium text-neutral-800 mb-4 w-fit">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 text-xs rtl:font-sans ltr:font-mono font-medium text-neutral-800 mb-3 sm:mb-4 w-fit">
               <span>{t.about.founder.badge}</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] mb-8 text-balance">
+            <h2 className="text-2xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] mb-6 sm:mb-8 text-balance">
               {t.about.founder.headline}
             </h2>
 
-            <div className="space-y-6 text-base sm:text-lg text-neutral-700 font-light leading-relaxed max-w-[58ch] text-pretty">
+            <div className="space-y-4 sm:space-y-6 text-sm sm:text-lg text-neutral-700 font-light leading-relaxed max-w-[58ch] text-pretty">
               {t.about.founder.paragraphs.map((p, idx) => (
                 <p key={idx}>{p}</p>
               ))}
             </div>
 
-            <div className="mt-10 pt-8 border-t border-black/15 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-black/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6">
               <div>
-                <div className="text-3xl rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic text-black font-medium">
+                <div className="text-2xl sm:text-3xl rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic text-black font-medium">
                   {t.about.founder.founderName}
                 </div>
                 <span className="rtl:font-sans ltr:font-mono text-xs text-neutral-600 block mt-1">
@@ -292,7 +292,7 @@ export default function AboutPage() {
 
               <TransitionLink
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono font-semibold shrink-0"
+                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-mono font-semibold shrink-0 cursor-pointer text-center"
               >
                 <span>{t.about.bottomCta.ctaBtn}</span>
                 <ArrowRight className="w-4 h-4 rtl:rotate-180" />
@@ -304,20 +304,20 @@ export default function AboutPage() {
       </section>
 
       {/* 5. OUTRO COLLABORATION GATEWAY */}
-      <section className="py-28 md:py-40 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-center">
+      <section className="py-20 sm:py-28 md:py-40 px-4 sm:px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] mb-8 leading-[0.96] text-white text-balance">
+          <h2 className="text-3xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] mb-4 sm:mb-8 leading-[0.98] sm:leading-[0.96] text-white text-balance">
             {t.about.bottomCta.headline}
           </h2>
-          <p className="text-lg sm:text-xl text-white/75 mb-12 max-w-lg mx-auto font-light leading-relaxed text-balance">
+          <p className="text-sm sm:text-xl text-white/75 mb-8 sm:mb-12 max-w-lg mx-auto font-light leading-relaxed text-balance">
             {t.about.bottomCta.subhead}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <Magnetic intensity={0.2}>
               <TransitionLink
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-white text-black font-semibold text-base sm:text-lg hover:bg-neutral-200 transition-all group"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-5 rounded-full bg-white text-black font-semibold text-sm sm:text-lg hover:bg-neutral-200 transition-all group cursor-pointer"
               >
                 <span>{t.about.bottomCta.ctaBtn}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />
@@ -327,7 +327,7 @@ export default function AboutPage() {
             <Magnetic intensity={0.2}>
               <a
                 href="mailto:contact@fleevy.net"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-full border border-white/20 hover:border-white text-white font-medium text-base sm:text-lg transition-all"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-5 rounded-full border border-white/20 hover:border-white text-white font-medium text-sm sm:text-lg transition-all"
               >
                 <span>contact@fleevy.net</span>
               </a>

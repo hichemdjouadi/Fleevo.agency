@@ -34,7 +34,7 @@ export default function LanguageSwitcher({
               type="button"
               onClick={() => setLocale(lang.code)}
               aria-pressed={isActive}
-              className={`relative z-10 flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-medium transition-colors duration-200 ${
+              className={`relative z-10 flex-1 min-h-[44px] flex items-center justify-center py-2 px-2.5 rounded-xl text-xs sm:text-sm font-medium transition-colors duration-200 cursor-pointer ${
                 isActive
                   ? "text-black font-semibold"
                   : "text-white/60 hover:text-white"
@@ -47,7 +47,7 @@ export default function LanguageSwitcher({
                   transition={{ type: "spring", stiffness: 450, damping: 32 }}
                 />
               )}
-              {lang.label}
+              <span className="truncate">{lang.label}</span>
             </button>
           );
         })}

@@ -72,7 +72,7 @@ export default function Navbar() {
               href="/" 
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label={t.nav.homeAria}
-              className="block w-full h-full"
+              className="flex items-center w-full h-full min-h-[44px] min-w-[44px]"
             >
               <Logo className={`w-full h-full transition-colors duration-300 ${isMobileMenuOpen ? "text-white" : "text-black"}`} />
             </TransitionLink>
@@ -123,7 +123,7 @@ export default function Navbar() {
             
             {/* Mobile Menu Toggle */}
             <button 
-              className="md:hidden w-11 h-11 flex items-center justify-center -me-1.5 transition-colors rounded-full text-black hover:bg-black/5 active:bg-black/10 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none"
+              className="md:hidden w-12 h-12 flex items-center justify-center -me-2 transition-colors rounded-full text-black hover:bg-black/5 active:bg-black/10 active:scale-95 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none cursor-pointer"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label={t.nav.openMenu}
               aria-expanded={isMobileMenuOpen}
@@ -142,15 +142,20 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[100] bg-[#050505] text-white flex flex-col justify-between p-6 sm:p-8"
+            style={{
+              paddingTop: "max(1.5rem, env(safe-area-inset-top))",
+              paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))",
+            }}
+            className="fixed inset-0 z-[100] bg-[#050505] text-white flex flex-col justify-between p-6 sm:p-8 min-h-[100dvh] h-[100dvh] overflow-y-auto"
           >
             {/* Top Bar with Logo & Close Button */}
-            <div className="w-full flex items-center justify-between pt-2">
-              <div className="w-28 h-7">
+            <div className="w-full flex items-center justify-between pt-1">
+              <div className="w-28 h-7 flex items-center">
                 <TransitionLink 
                   href="/" 
                   onClick={() => setIsMobileMenuOpen(false)} 
                   aria-label={t.nav.homeAria}
+                  className="flex items-center min-h-[44px] min-w-[44px]"
                 >
                   <Logo className="w-full h-full text-white" />
                 </TransitionLink>
@@ -160,14 +165,14 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setIsMobileMenuOpen(false)}
                 aria-label={t.nav.closeMenu}
-                className="w-11 h-11 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all"
+                className="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white hover:bg-white/10 active:scale-90 transition-all cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Middle Nav Links */}
-            <div className="flex flex-col gap-5 py-4">
+            <div className="flex flex-col gap-4 py-4">
               {[
                 { num: "01", label: t.nav.services, href: "/services" },
                 { num: "02", label: t.nav.projects, href: "/work" },
@@ -180,7 +185,7 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="group flex items-baseline justify-between py-2 border-b border-white/10"
+                    className="group flex items-center justify-between py-3 min-h-[52px] border-b border-white/10"
                   >
                     <span className={`text-2xl sm:text-4xl font-medium tracking-tight group-hover:text-neutral-300 transition-colors ${isActive ? "text-white font-semibold" : "text-white/80"}`}>
                       {item.label}
@@ -204,10 +209,10 @@ export default function Navbar() {
             {/* Bottom Studio Contact Strip */}
             <div className="pt-5 border-t border-white/10 flex flex-col gap-3 text-xs font-mono text-white/70">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <a href="mailto:contact@fleevy.net" className="hover:text-white transition-colors">
+                <a href="mailto:contact@fleevy.net" className="py-2 inline-flex items-center hover:text-white transition-colors">
                   contact@fleevy.net
                 </a>
-                <a href="tel:+213655934124" dir="ltr" className="hover:text-white transition-colors">
+                <a href="tel:+213655934124" dir="ltr" className="py-2 inline-flex items-center hover:text-white transition-colors">
                   +213 655 934 124
                 </a>
               </div>

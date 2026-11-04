@@ -23,17 +23,17 @@ export default function Home() {
     <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen">
 
       {/* 1. CINEMATIC HERO */}
-      <section className="relative w-full flex flex-col items-center pt-32 md:pt-44 pb-20 overflow-hidden bg-white text-black">
+      <section className="relative w-full flex flex-col items-center pt-24 sm:pt-32 md:pt-44 pb-14 sm:pb-20 overflow-hidden bg-white text-black">
         {/* Subtle architectural ambient aura */}
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(0,0,0,0.04),transparent)] pointer-events-none" />
 
-        <div className="relative z-20 flex flex-col items-center justify-start text-center px-6 md:px-12 w-full max-w-[1400px] mx-auto">
+        <div className="relative z-20 flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto">
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[32px] sm:text-5xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[1.04] sm:leading-[0.94] text-black w-full max-w-5xl text-balance"
+            className="text-[28px] xs:text-[32px] sm:text-5xl md:text-7xl lg:text-[78px] font-medium tracking-[-0.035em] leading-[1.12] sm:leading-[0.94] text-black w-full max-w-5xl text-balance"
           >
             {t.home.hero.headlineStart}{" "}
             <span className="rtl:font-sans rtl:not-italic ltr:font-serif ltr:italic font-light">{t.home.hero.headlineEnd}</span>
@@ -43,7 +43,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 sm:mt-8 text-base sm:text-xl md:text-2xl text-black/75 font-light max-w-[640px] leading-relaxed text-pretty"
+            className="mt-4 sm:mt-8 text-sm sm:text-xl md:text-2xl text-black/75 font-light max-w-[640px] leading-relaxed text-pretty"
           >
             {t.home.hero.subtitle}
           </motion.p>
@@ -53,13 +53,13 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 sm:mt-10 flex flex-col items-center justify-center z-30 w-full"
+            className="mt-6 sm:mt-10 flex flex-col items-center justify-center z-30 w-full"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
               <Magnetic intensity={0.2}>
                 <TransitionLink
                   href="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-4 rounded-full bg-black text-white font-medium text-sm sm:text-base hover:bg-neutral-800 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.12)] text-center group"
+                  className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-black text-white font-medium text-sm sm:text-base hover:bg-neutral-800 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.12)] text-center group"
                 >
                   <span>{t.home.hero.ctaPrimary}</span>
                   <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
@@ -68,7 +68,7 @@ export default function Home() {
               <Magnetic intensity={0.2}>
                 <TransitionLink
                   href="/work"
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-7 sm:px-9 py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
+                  className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center px-7 sm:px-9 py-3.5 sm:py-4 rounded-full border border-black/15 text-black font-medium text-sm sm:text-base hover:bg-black/5 transition-colors text-center"
                 >
                   {t.home.hero.ctaSecondary}
                 </TransitionLink>
@@ -76,19 +76,20 @@ export default function Home() {
             </div>
 
             {/* Direct Executive Fast-Track Line */}
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-black/60">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              <span>WhatsApp:</span>
+            <div className="mt-4 flex items-center justify-center">
               <a
                 href="https://wa.me/213655934124?text=Hi%20Hichem,%20I'd%20like%20to%20discuss%20an%20acquisition%20system%20for%20my%20business."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-black underline underline-offset-4 hover:text-neutral-600 transition-colors inline-flex items-center gap-1"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-800 hover:bg-emerald-500/15 text-xs font-mono font-medium transition-all min-h-[40px]"
               >
-                <span dir="ltr">+213 655 934 124 // Technical Desk</span>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span className="text-black/60 font-mono">WhatsApp:</span>
+                <span dir="ltr" className="font-semibold text-emerald-900">+213 655 934 124</span>
+                <span className="text-neutral-500 hidden xs:inline">// Technical Desk</span>
                 <span className="rtl:rotate-180">&rarr;</span>
               </a>
             </div>

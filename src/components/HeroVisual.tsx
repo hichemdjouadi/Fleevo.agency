@@ -89,7 +89,7 @@ export default function HeroVisual() {
               aria-controls={`panel-${proj.id}`}
               id={`tab-${proj.id}`}
               onClick={() => setActiveTab(idx)}
-              className={`relative z-10 py-2 sm:py-2.5 px-2 sm:px-4 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black ${
+              className={`relative z-10 min-h-[42px] sm:min-h-0 flex items-center justify-center py-2 sm:py-2.5 px-2 sm:px-4 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black cursor-pointer ${
                 isActive ? "text-white" : "text-neutral-600 hover:text-black"
               }`}
             >
@@ -114,9 +114,9 @@ export default function HeroVisual() {
           rotateY,
           transformStyle: "preserve-3d"
         }}
-        className="relative z-20 flex flex-col items-center"
+        className="relative z-20 flex flex-col items-center w-full px-2"
       >
-        <div className="w-[300px] sm:w-[340px] md:w-[370px] drop-shadow-[0_25px_60px_rgba(0,0,0,0.18)]">
+        <div className="w-[min(280px,85vw)] sm:w-[340px] md:w-[370px] drop-shadow-[0_25px_60px_rgba(0,0,0,0.18)]">
           <DeviceFrame
             url={meta.url}
             statusBadge={current.statusBadge}
@@ -137,7 +137,7 @@ export default function HeroVisual() {
                     src={meta.image}
                     alt={current.client}
                     fill
-                    sizes="(max-width: 640px) 300px, 370px"
+                    sizes="(max-width: 640px) 280px, 370px"
                     priority={activeTab === 0}
                     className="object-cover object-top"
                     unoptimized
@@ -146,8 +146,8 @@ export default function HeroVisual() {
                   {/* Top Edge Gradient overlay for realistic luxury glass depth */}
                   <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
 
-                  {/* Floating Live Badge inside viewport */}
-                  <div className="absolute bottom-3 inset-x-3 p-3 rounded-2xl bg-black/80 backdrop-blur-xl border border-white/15 text-white flex items-center justify-between pointer-events-none">
+                  {/* Floating Live Badge inside viewport (hidden on mobile to keep screenshot visible) */}
+                  <div className="hidden sm:flex absolute bottom-3 inset-x-3 p-3 rounded-2xl bg-black/80 backdrop-blur-xl border border-white/15 text-white items-center justify-between pointer-events-none">
                     <div className="flex items-center gap-2">
                       <span className={`w-2 h-2 rounded-full ${meta.statusDotColor} animate-pulse`} />
                       <span className="text-[11px] rtl:font-sans ltr:font-mono tracking-tight font-medium">

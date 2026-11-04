@@ -139,7 +139,7 @@ export default function FeaturedWork() {
   const { t } = useTranslation();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
       {t.featuredWork.projects.map((project) => (
         <ShowcaseItem key={project.id} project={project} />
       ))}
