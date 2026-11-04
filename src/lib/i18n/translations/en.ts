@@ -411,66 +411,66 @@ export const en: TranslationDictionary = {
     },
     pillarOneBadge: "PILLAR 01 // DIGITAL INFRASTRUCTURE",
     pillarOneTitle: "Custom Web Platforms & Automated Systems",
-    pillarOneDesc: "Tailored codebases built with Next.js, PostgreSQL, and instant messaging webhooks. Zero templates. Zero lock-in.",
+    pillarOneDesc: "Sovereign high-velocity codebases with direct WhatsApp dispatch and zero lock-in.",
     pillarOneItems: [
       {
         num: "01",
-        title: "Client Acquisition Funnels & Brand Vitrines",
+        title: "Acquisition Funnels & Brand Vitrines",
         badge: "Clinics & High-Ticket Services",
         sla: "2–3 Weeks Delivery",
-        desc: "High-conversion platforms built for clinics, legal firms, and specialized consultancies to capture qualified inquiries and eliminate phone tag.",
+        desc: "Fast edge platforms with WhatsApp triage. Turns qualified inquiries into bookings without phone tag.",
         deliverables: [
-          "High-conversion Next.js mobile vitrine (loads in < 1s)",
-          "WhatsApp pre-qualification triage bot",
-          "Instant lead notification alerts (< 30s)",
-          "Direct Google Calendar & CRM database sync"
+          "< 1s mobile edge load",
+          "WhatsApp triage bot",
+          "Team alert < 30 seconds",
+          "Google Calendar sync"
         ],
         proofLabel: "Adréna Club Private Intake"
       },
       {
         num: "02",
-        title: "Direct Customer Ordering & E-Commerce Engines",
+        title: "Direct Ordering & E-Commerce Engines",
         badge: "D2C Brands, Retail & Food",
         sla: "2–3 Weeks Delivery",
-        desc: "Dedicated digital storefronts that eliminate 15–30% marketplace commissions, calculate 58-Wilayas shipping, and route orders to WhatsApp.",
+        desc: "Sovereign online storefronts with 58-wilaya COD checkout and instant WhatsApp dispatch. 0% toll.",
         deliverables: [
-          "Custom Next.js mobile store (fast on 4G networks)",
-          "58-Wilayas Cash on Delivery (COD) checkout",
-          "Instant WhatsApp order dispatch bot (< 30s)",
-          "0% commission fees · 100% database & code ownership"
+          "0% marketplace commission",
+          "58-wilaya COD checkout",
+          "Instant order dispatch",
+          "100% database ownership"
         ],
         proofLabel: "Tawheed Bookstore & Mo Pizza"
       },
       {
         num: "03",
-        title: "Custom Web Apps, Proprietary CRMs & Automation",
-        badge: "Multi-Branch Operations & Logistics",
+        title: "Web Apps, Proprietary CRMs & Dispatch",
+        badge: "Operations & Logistics",
         sla: "3–4 Weeks Delivery",
-        desc: "Tailored lead tracking pipelines, branch dispatch portals, and back-office automations that replace chaotic Excel spreadsheets and prevent leads from going cold.",
+        desc: "Internal dispatch portals and deal pipelines that replace chaotic Excel and alert reps before leads go cold.",
         deliverables: [
-          "Lightweight visual deal pipeline CRM",
-          "Inactivity alerts (preventing leads going cold)",
-          "Automated courier & dispatch sync webhooks",
-          "Role-based staff logins with 100% data ownership"
+          "Visual deal pipeline",
+          "Cold lead radar alerts",
+          "Courier API automation",
+          "100% data sovereignty"
         ],
         proofLabel: "Fleevy Command Center"
       }
     ],
     pillarTwoBadge: "PILLAR 02 // DEMAND GENERATION",
     pillarTwoTitle: "Targeted Meta Ads & Direct-Response Strategy",
-    pillarTwoDesc: "We pair your infrastructure with profitable paid campaigns and video creative directions that bring predictable customer volume.",
+    pillarTwoDesc: "Paid ad campaigns and direct-response video hooks that turn viewers into booked WhatsApp orders.",
     pillarTwoItems: [
       {
         num: "01",
-        title: "Full-Funnel Marketing Strategy & Meta Ads",
+        title: "Meta Ads & Video Creative Direction",
         badge: "Strategy & Paid Demand",
         sla: "1–2 Weeks Setup",
-        desc: "We build your end-to-end customer acquisition strategy, write high-converting video scripts, and run targeted Facebook & Instagram ads optimized for WhatsApp orders—not vanity likes.",
+        desc: "Full-funnel Meta campaigns and video hook scripts built to generate qualified WhatsApp orders, not empty clicks.",
         deliverables: [
-          "Customer acquisition strategy & positioning",
-          "Direct-response video scripts & hook formulas",
-          "Targeted Facebook & Instagram ad campaigns",
-          "Pixel, Conversions API & WhatsApp tracking"
+          "Direct-response video hooks",
+          "Meta ads management",
+          "Meta CAPI tracking setup",
+          "WhatsApp order optimization"
         ]
       },
       {
@@ -478,25 +478,25 @@ export const en: TranslationDictionary = {
         title: "Pipeline Leak & Growth Audits",
         badge: "Growth Audit",
         sla: "48-Hour Delivery",
-        desc: "A fast, 48-hour diagnostic of your existing marketing, social media, and website showing exactly where you are losing sales and which content angles will attract ready buyers.",
+        desc: "A 48-hour video teardown revealing where your current funnel leaks revenue and which content angles drive sales.",
         deliverables: [
-          "48-hour video & PDF customer journey teardown",
-          "Offer positioning & pricing friction review",
-          "Organic content marketing roadmap",
-          "Prioritized quick-win revenue checklist"
+          "48h video teardown",
+          "Pricing & friction review",
+          "Quick-win revenue plan",
+          "Actionable sprint list"
         ]
       },
       {
         num: "03",
-        title: "Brand Credibility & Design Token Polish",
-        badge: "Integrated System Polish",
+        title: "Brand Credibility & Design Tokens",
+        badge: "Integrated System",
         sla: "Included With Build",
-        desc: "High-end visual polish that makes your business look established and trustworthy from day one. Calibrated typography, design tokens, and dark/light UI assets included with every core web build.",
+        desc: "Calibrated typography, design tokens, and social ad creative templates included turnkey with every core web build.",
         deliverables: [
-          "Brand typography & cohesive color hierarchy",
-          "Social media ad creative & profile templates",
-          "Custom WhatsApp bot avatar & greeting copy",
-          "Vector logo polish & high-res asset exports"
+          "Brand typography & colors",
+          "Social ad templates",
+          "WhatsApp bot branding",
+          "Vector logo polish"
         ]
       }
     ],

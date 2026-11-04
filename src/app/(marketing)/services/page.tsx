@@ -267,17 +267,17 @@ export default function ServicesPage() {
                   {service.title}
                 </h3>
 
-                <p className="text-neutral-700 font-light text-sm sm:text-base leading-relaxed text-pretty mb-4 sm:mb-6">
+                <p className="text-neutral-800 font-normal text-base sm:text-lg leading-relaxed text-pretty mb-4 sm:mb-5">
                   {service.desc}
                 </p>
 
-                {/* Mobile Scannable Spec Chips (< lg) */}
+                {/* Scannable Spec Chips */}
                 {service.deliverables && (
-                  <div className="lg:hidden flex flex-wrap gap-1.5 mb-4">
-                    {service.deliverables.slice(0, 3).map((deliv, idx) => (
-                      <span key={idx} className="inline-flex items-center gap-1 text-[11px] font-mono bg-neutral-100 text-neutral-800 px-2.5 py-1 rounded-md border border-neutral-200/60">
-                        <Check className="w-3 h-3 text-emerald-600 shrink-0" />
-                        <span className="truncate">{deliv.split("(")[0].trim()}</span>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {service.deliverables.map((deliv, idx) => (
+                      <span key={idx} className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium bg-neutral-100 text-neutral-800 px-3 py-1.5 rounded-full border border-neutral-200/80">
+                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <span>{deliv}</span>
                       </span>
                     ))}
                   </div>
@@ -285,23 +285,6 @@ export default function ServicesPage() {
               </div>
 
               <div>
-                {/* Desktop Deliverables Checklist (lg:) */}
-                {service.deliverables && (
-                  <div className="hidden lg:block pt-6 border-t border-black/10">
-                    <span className="text-xs rtl:font-sans ltr:font-mono uppercase tracking-wider font-semibold text-neutral-500 block mb-4">
-                      {locale === "fr" ? "Livrables Inclus" : locale === "ar" ? "المخرجات المتضمنة" : "Core Deliverables Included"}
-                    </span>
-                    <div className="space-y-3 mb-6">
-                      {service.deliverables.map((deliv, idx) => (
-                        <div key={idx} className="flex items-start gap-3 text-sm sm:text-base text-neutral-900 font-medium">
-                          <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
-                          <span>{deliv}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
                 {service.proofLabel && (
                   <div className="mb-4 sm:mb-5 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-neutral-700 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
@@ -315,7 +298,7 @@ export default function ServicesPage() {
 
                 <TransitionLink
                   href="/contact"
-                  className="w-full min-h-[44px] inline-flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs sm:text-sm font-semibold group shadow-sm cursor-pointer"
+                  className="w-full min-h-[44px] inline-flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-black/5 hover:bg-black text-black hover:text-white border border-black/15 hover:border-black transition-all text-xs sm:text-sm font-semibold group shadow-sm cursor-pointer"
                 >
                   <span>{locale === "fr" ? "Consulter pour cette offre" : locale === "ar" ? "طلب استشارة لهذا المشروع" : "Inquire About This Build"}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />
@@ -428,17 +411,17 @@ export default function ServicesPage() {
                       {service.title}
                     </h3>
 
-                    <p className="text-white/75 font-light text-sm sm:text-base leading-relaxed text-pretty mb-4 sm:mb-6">
+                    <p className="text-white/90 font-normal text-base sm:text-lg leading-relaxed text-pretty mb-4 sm:mb-5">
                       {service.desc}
                     </p>
 
-                    {/* Mobile Scannable Spec Chips (< lg) */}
+                    {/* Scannable Spec Chips */}
                     {service.deliverables && (
-                      <div className="lg:hidden flex flex-wrap gap-1.5 mb-4">
-                        {service.deliverables.slice(0, 3).map((deliv, dIdx) => (
-                          <span key={dIdx} className="inline-flex items-center gap-1 text-[11px] font-mono bg-white/[0.06] text-white/90 px-2.5 py-1 rounded-md border border-white/10">
-                            <Check className="w-3 h-3 text-emerald-400 shrink-0" />
-                            <span className="truncate">{deliv.split("(")[0].trim()}</span>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {service.deliverables.map((deliv, dIdx) => (
+                          <span key={dIdx} className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium bg-white/[0.08] text-white/90 px-3 py-1.5 rounded-full border border-white/10">
+                            <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                            <span>{deliv}</span>
                           </span>
                         ))}
                       </div>
@@ -446,32 +429,15 @@ export default function ServicesPage() {
                   </div>
 
                   <div>
-                    {/* Desktop Deliverables Checklist (lg:) */}
-                    {service.deliverables && (
-                      <div className="hidden lg:block pt-6 border-t border-white/15">
-                        <span className="text-xs rtl:font-sans ltr:font-mono uppercase tracking-wider font-semibold text-white/60 block mb-4">
-                          {locale === "fr" ? "Livrables Inclus" : locale === "ar" ? "المخرجات المتضمنة" : "Core Deliverables Included"}
-                        </span>
-                        <div className="space-y-3 mb-6">
-                          {service.deliverables.map((deliv, dIdx) => (
-                            <div key={dIdx} className="flex items-start gap-3 text-sm sm:text-base text-white/90 font-medium">
-                              <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-1" />
-                              <span>{deliv}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
                     {isBonus ? (
-                      <div className="w-full flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-emerald-300 font-semibold min-h-[44px]">
+                      <div className="w-full min-h-[44px] inline-flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-emerald-300 font-semibold">
                         <span>{locale === "fr" ? "Inclus avec le Projet Web" : locale === "ar" ? "مدمج مع بناء المنصة" : "Included with Core Architecture"}</span>
                         <span>✓ {locale === "fr" ? "Clé en Main" : locale === "ar" ? "تسليم متكامل" : "Turnkey Included"}</span>
                       </div>
                     ) : (
                       <TransitionLink
                         href="/contact"
-                        className="w-full min-h-[44px] inline-flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-white text-black hover:bg-neutral-200 transition-all text-xs sm:text-sm font-semibold group cursor-pointer"
+                        className="w-full min-h-[44px] inline-flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 hover:border-white transition-all text-xs sm:text-sm font-semibold group cursor-pointer"
                       >
                         <span>{locale === "fr" ? "Consulter pour cette offre" : locale === "ar" ? "طلب استشارة لهذا المشروع" : "Inquire About This Scope"}</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />

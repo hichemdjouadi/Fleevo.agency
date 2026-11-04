@@ -409,94 +409,94 @@ export const fr: TranslationDictionary = {
       headline: "Une infrastructure numérique conçue pour convertir les visiteurs en clients payants.",
       subhead: "Nous bâtissons des plateformes d'acquisition sur mesure, des boutiques mobiles et des outils internes couplés à des publicités Meta ciblées et une stratégie de conversion directe."
     },
-    pillarOneBadge: "PILIER 01 // INFRASTRUCTURE NUMÉRIQUE",
-    pillarOneTitle: "Plateformes Web Sur Mesure & Systèmes Automatisés",
-    pillarOneDesc: "Des bases techniques développées avec Next.js, PostgreSQL et des webhooks de messagerie instantanée. Zéro modèle tout fait. Zéro dépendance.",
+    pillarOneBadge: "PILIER 01 // INFRASTRUCTURE",
+    pillarOneTitle: "Plateformes Souveraines & Systèmes Automatisés",
+    pillarOneDesc: "Bases techniques sur-mesure ultra-rapides reliées directement à WhatsApp sans abonnement captif.",
     pillarOneItems: [
       {
         num: "01",
-        title: "Tunnels d'Acquisition & Vitrines de Marque",
-        badge: "Cliniques, Cabinets & Services Haut de Gamme",
+        title: "Vitrines de Marque & Tunnels d'Acquisition",
+        badge: "Cliniques & Services Premium",
         sla: "Livraison en 2–3 Semaines",
-        desc: "Des plateformes à forte conversion conçues pour capter des demandes qualifiées et éliminer les relances téléphoniques interminables.",
+        desc: "Vitrines ultra-rapides avec triage WhatsApp. Transforme chaque demande qualifiée en rendez-vous sans relance téléphonique.",
         deliverables: [
-          "Vitrine mobile Next.js ultra-rapide (chargement < 1s)",
-          "Bot WhatsApp de pré-qualification et de triage",
-          "Alertes de notification de prospect immédiates (< 30s)",
-          "Synchronisation directe avec Google Calendar et base CRM"
+          "Chargement edge < 1s",
+          "Bot de triage WhatsApp",
+          "Alerte équipe < 30 secondes",
+          "Synchro Google Calendar"
         ],
         proofLabel: "Cas Adréna Club"
       },
       {
         num: "02",
         title: "Boutiques E-Commerce & Commande Directe",
-        badge: "Marques D2C, Commerce & Restauration",
+        badge: "D2C, Commerce & Restauration",
         sla: "Livraison en 2–3 Semaines",
-        desc: "Des boutiques digitales dédiées qui suppriment les commissions de 15 à 30 % des agrégateurs, calculent la livraison 58 wilayas et acheminent les commandes vers WhatsApp.",
+        desc: "Boutique en ligne indépendante avec paiement à la livraison 58 wilayas et acheminement WhatsApp. 0% de commission.",
         deliverables: [
-          "Boutique mobile Next.js optimisée pour les réseaux 4G",
-          "Tunnel de commande avec paiement à la livraison 58 Wilayas",
-          "Bot d'expédition instantanée sur WhatsApp (< 30s)",
-          "0% de commission · Propriété totale du code et des données"
+          "0% commission plateforme",
+          "Paiement COD 58 Wilayas",
+          "Dispatch commande instantané",
+          "Propriété 100% code et base"
         ],
         proofLabel: "Cas Tawheed & Mo Pizza"
       },
       {
         num: "03",
-        title: "Applications Web, CRM Propriétaires & Automatisation",
-        badge: "Opérations Multi-Agences & Logistique",
+        title: "Applications Métier, CRM & Dispatch",
+        badge: "Opérations & Logistique",
         sla: "Livraison en 3–4 Semaines",
-        desc: "Des pipelines de suivi commercial sur mesure, des portails d'expédition et des automatisations qui remplacent les feuilles Excel chaotiques.",
+        desc: "Portails de dispatch et pipelines de vente qui remplacent les fichiers Excel et alertent votre équipe avant que les prospects ne refroidissent.",
         deliverables: [
-          "CRM visuel et intuitif de suivi des opportunités",
-          "Alertes d'inactivité pour éviter que les prospects ne refroidissent",
-          "Webhooks de synchronisation automatique avec les transporteurs",
-          "Accès collaborateurs par rôles avec souveraineté des données"
+          "Pipeline visuel de vente",
+          "Radar de prospects froids",
+          "Connexion API transporteurs",
+          "Souveraineté des données"
         ],
         proofLabel: "Fleevy Command Center"
       }
     ],
-    pillarTwoBadge: "PILIER 02 // GÉNÉRATION DE DEMANDE",
-    pillarTwoTitle: "Publicités Meta Ciblées & Stratégie Directe",
-    pillarTwoDesc: "Nous connectons votre infrastructure à des campagnes publicitaires rentables et des orientations vidéo précises pour générer un volume régulier de commandes.",
+    pillarTwoBadge: "PILIER 02 // DEMANDE & ACQUISITION",
+    pillarTwoTitle: "Publicités Meta & Stratégie Réponse Directe",
+    pillarTwoDesc: "Campagnes Meta et direction de scripts vidéo pour générer des commandes WhatsApp réelles et prévisibles.",
     pillarTwoItems: [
       {
         num: "01",
-        title: "Stratégie Marketing Complète & Publicités Meta",
-        badge: "Stratégie & Demande Payante",
-        sla: "Mise en Place en 1–2 Semaines",
-        desc: "Nous concevons votre stratégie d'acquisition de bout en bout, rédigeons des scripts vidéo percutants et gérons des publicités Facebook & Instagram calibrées pour générer des commandes WhatsApp réelles.",
+        title: "Publicités Meta & Direction Vidéo",
+        badge: "Acquisition Payante",
+        sla: "Lancement en 1–2 Semaines",
+        desc: "Campagnes Meta et scripts vidéo calibrés pour générer de vraies commandes WhatsApp, pas des clics vides.",
         deliverables: [
-          "Positionnement et stratégie d'acquisition complète",
-          "Scripts vidéo à réponse directe et formules d'accroche",
-          "Campagnes publicitaires ciblées sur Facebook et Instagram",
-          "Configuration Pixel, API Conversions et suivi WhatsApp"
+          "Scripts vidéo percutants",
+          "Campagnes Meta Ads ciblées",
+          "Tracking Meta CAPI",
+          "Optimisation flux WhatsApp"
         ]
       },
       {
         num: "02",
-        title: "Audits de Conversion & Fuites de Pipeline",
+        title: "Audit de Tunnel & Fuites de Revenu",
         badge: "Audit de Croissance",
         sla: "Restitution sous 48 Heures",
-        desc: "Un diagnostic rapide en 48h de votre marketing, de vos réseaux et de votre site pour repérer exactement où vous perdez des ventes et quels contenus activer.",
+        desc: "Un diagnostic vidéo en 48h révélant exactement où votre tunnel perd du chiffre d'affaires et les actions immédiates à mener.",
         deliverables: [
-          "Analyse vidéo et rapport PDF du parcours d'achat sous 48h",
-          "Revue du positionnement de l'offre et des points de friction",
-          "Feuille de route stratégique de contenu organique",
-          "Liste priorisée d'actions rapides pour générer du revenu"
+          "Diagnostic vidéo sous 48h",
+          "Analyse friction & prix",
+          "Plan d'action immédiat",
+          "Feuille de route priorisée"
         ]
       },
       {
         num: "03",
         title: "Identité de Marque & Tokens de Design",
-        badge: "Finition Système Intégrée",
-        sla: "Inclus dans la Réalisation",
-        desc: "Finition visuelle haut de gamme conférant une autorité immédiate à votre entreprise dès le premier jour. Typographies, tokens de design et assets soignés inclus dans chaque projet web.",
+        badge: "Inclus dans la Réalisation",
+        sla: "Livré Clé en Main",
+        desc: "Typographies calibrées, tokens de design et templates créatifs inclus clé en main avec chaque réalisation web.",
         deliverables: [
-          "Typographie de marque et hiérarchie des couleurs",
-          "Modèles de créatifs publicitaires et profils sociaux",
-          "Avatar et textes d'accueil pour bot WhatsApp",
-          "Retouche vectorielle de logo et exports haute résolution"
+          "Typographie & hiérarchie",
+          "Modèles de créatifs pubs",
+          "Branding bot WhatsApp",
+          "Exports haute résolution"
         ]
       }
     ],
