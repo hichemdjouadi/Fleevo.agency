@@ -667,9 +667,9 @@ export const en: TranslationDictionary = {
   },
   about: {
     hero: {
-      headlineStart: "We exist because most agencies build ",
-      headlineEnd: "ornaments without acquisition plumbing.",
-      subhead: "We replace slow brochure websites with fast acquisition platforms, automated bot intake, and targeted Meta ads.",
+      headlineStart: "We build revenue systems. ",
+      headlineEnd: "Not brochure websites.",
+      subhead: "High-velocity web platforms, mobile commerce, and targeted acquisition for businesses that can't afford wasted traffic.",
       ledger: {
         speedTitle: "Sub-800ms Edge Loading",
         speedSub: "Engineered for mobile 4G networks",
@@ -680,30 +680,30 @@ export const en: TranslationDictionary = {
       }
     },
     standards: {
-      badge: "ENGINEERING STANDARDS",
-      headline: "How we build digital assets.",
-      subhead: "We hold every line of code and every ad hook to strict engineering benchmarks.",
+      badge: "STUDIO CONVICTIONS",
+      headline: "The three principles behind every build.",
+      subhead: "We treat digital platforms as commercial machinery, not static art installations.",
       items: [
         {
           num: "01",
-          badge: "Custom Architecture",
-          title: "Craft Over Templates",
-          desc: "Every layout and conversion flow is built from scratch for your business model.",
-          benchmark: "100% Bespoke Codebase"
+          badge: "PURPOSE",
+          title: "Conversion Over Decoration",
+          desc: "A beautiful website that fails to convert is an expense. Every layout and button exists to turn attention into revenue.",
+          benchmark: "Measurable Pipeline"
         },
         {
           num: "02",
-          badge: "Mobile Velocity",
-          title: "Performance as Luxury",
-          desc: "Edge-compiled pages load in under 800ms on mobile 4G networks with zero lag.",
-          benchmark: "< 800ms Mobile Load"
+          badge: "SPEED",
+          title: "Performance as Architecture",
+          desc: "Speed is the foundation of conversion. We compile custom Next.js systems that load in under 800ms on cellular 4G.",
+          benchmark: "< 800ms on 4G"
         },
         {
           num: "03",
-          badge: "Production Longevity",
-          title: "Enduring Codebases",
-          desc: "Built on strict TypeScript, Next.js, and PostgreSQL so nothing breaks during updates.",
-          benchmark: "Strict TypeScript & RLS"
+          badge: "SOVEREIGNTY",
+          title: "Zero Platform Hostage",
+          desc: "You own all source code, databases, and ad accounts from day one. Zero recurring platform locks. Zero monthly hostage fees.",
+          benchmark: "100% Client Ownership"
         }
       ]
     },
@@ -751,55 +751,54 @@ export const en: TranslationDictionary = {
       ]
     },
     scopeCard: {
-      badge: "STUDIO CAPABILITIES",
-      countBadge: "4 CORE DISCIPLINES",
-      headline: "The systems we engineer.",
+      badge: "CAPABILITIES",
+      countBadge: "4 DISCIPLINES",
+      headline: "What we engineer.",
       footerText: "Fleevy Studio · 100% Bespoke Code · Zero Lock-In",
       items: [
         {
           id: "intake",
           num: "01",
-          title: "Acquisition Platforms & Booking",
-          sector: "Clinics, consultancies & specialized services",
-          output: "Sub-second mobile vitrines paired with instant WhatsApp inquiry qualification.",
-          tag: "Zero Lost Inquiries"
+          title: "Acquisition Platforms",
+          sector: "Clinics & High-Ticket Services",
+          output: "Sub-second mobile vitrines with instant WhatsApp inquiry qualification.",
+          tag: "Zero Lost Leads"
         },
         {
           id: "commerce",
           num: "02",
-          title: "Direct E-Commerce & Ordering",
-          sector: "Consumer brands, retail & food",
-          output: "Dedicated storefronts with 58-Wilayas shipping calculation and 0% platform commission.",
-          tag: "100% Margin Ownership"
+          title: "Direct Commerce",
+          sector: "Consumer Brands & Retail",
+          output: "58-Wilaya COD mobile checkout with 0% platform cuts.",
+          tag: "100% Margins"
         },
         {
           id: "portals",
           num: "03",
-          title: "Custom Web Apps & Operations CRMs",
-          sector: "Multi-branch operations & logistics",
-          output: "Visual deal pipelines and dispatcher portals replacing chaotic spreadsheets.",
-          tag: "Airtight Operations"
+          title: "Operations CRMs",
+          sector: "Logistics & Multi-Branch",
+          output: "Visual deal pipelines replacing chaotic spreadsheets.",
+          tag: "Airtight Ops"
         },
         {
           id: "growth",
           num: "04",
-          title: "Targeted Paid Advertising",
-          sector: "Scalable commercial operators",
-          output: "Data-driven Meta ad campaigns and creative direction engineered for predictable volume.",
-          tag: "Predictable Volume"
+          title: "Targeted Paid Ads",
+          sector: "Scalable Commercial Operators",
+          output: "Engineered Meta ad campaigns bringing predictable volume.",
+          tag: "Predictable Sales"
         }
       ]
     },
     founder: {
-      badge: "DIRECT BUILDER ENGAGEMENT",
-      headline: "Why Fleevy was founded.",
+      badge: "DIRECT PARTNERSHIP",
+      headline: "No salesmen. No telephone games. Build directly with senior engineers.",
       paragraphs: [
-        "In 2024, most agencies still treat websites as decorative brochures. They charge hefty monthly retainer fees for page builders that take five seconds to load on mobile and bury customer inquiries in forgotten email inboxes.",
-        "We built Fleevy around a single realization: modern businesses in fast-growing markets do not need more static pages. They need acquisition infrastructure—systems that load instantly on 4G, qualify buyers in 30 seconds via WhatsApp, and generate predictable sales with targeted ads.",
-        "Every client at Fleevy works directly with senior builders. No intermediate account executives, no bureaucratic delays—just high-velocity engineering focused on your commercial growth."
+        "Traditional agencies sell you with senior partners and pass your build to junior staff. We dismantled that model.",
+        "Every system at Fleevy is designed, coded, and deployed directly by senior engineers. Direct WhatsApp collaboration with zero bureaucracy."
       ],
       founderName: "Hichem Djouadi",
-      founderRole: "Founder & Technical Lead"
+      founderRole: "Founder & Systems Architect"
     },
     bottomCta: {
       headline: "Let's engineer your advantage.",

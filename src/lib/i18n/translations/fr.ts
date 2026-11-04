@@ -667,43 +667,43 @@ export const fr: TranslationDictionary = {
   },
   about: {
     hero: {
-      headlineStart: "Nous existons parce que la majorité des agences conçoivent des ",
-      headlineEnd: "vitrines sans la plomberie d'acquisition nécessaire.",
-      subhead: "Nous remplaçons les sites plaquettes lents par des plateformes d'acquisition réactives, une qualification par bot WhatsApp et des publicités Meta ciblées.",
+      headlineStart: "Nous concevons des moteurs de revenus. ",
+      headlineEnd: "Pas des sites vitrines.",
+      subhead: "Plateformes web ultra-rapides, commerce mobile et acquisition ciblée pour les entreprises qui refusent de gaspiller leur trafic.",
       ledger: {
-        speedTitle: "Chargement Edge < 800ms",
+        speedTitle: "Vitesse Edge < 800ms",
         speedSub: "Optimisé pour les réseaux 4G mobiles",
-        botTitle: "Triage Bot en 30 Secondes",
-        botSub: "Qualification instantanée de chaque prospect",
-        lockinTitle: "Zéro Dépendance Propriétaire",
-        lockinSub: "100% de propriété sur le code et les données"
+        botTitle: "Qualification en 30s",
+        botSub: "Alerte directe sur WhatsApp",
+        lockinTitle: "Propriété 100%",
+        lockinSub: "Zéro dépendance logicielle"
       }
     },
     standards: {
-      badge: "STANDARDS D'INGÉNIERIE",
-      headline: "Notre exigence de conception.",
-      subhead: "Chaque ligne de code et chaque script publicitaire répond à des critères stricts de performance.",
+      badge: "CONVICTIONS DU STUDIO",
+      headline: "Trois principes cardinaux pour chaque système.",
+      subhead: "Nous concevons des plateformes pensées comme des moteurs commerciaux, pas comme des vitrines passives.",
       items: [
         {
           num: "01",
-          badge: "Architecture Sur Mesure",
-          title: "Création Dédiée, Zéro Modèle",
-          desc: "Chaque mise en page et chaque tunnel de conversion est développé sur mesure pour votre modèle économique.",
-          benchmark: "Codebase 100% Dédiée"
+          badge: "OBJECTIF",
+          title: "La Conversion Avant le Superficiel",
+          desc: "Un site attrayant qui ne génère pas de clients est une perte. Chaque interaction est conçue pour transformer le trafic en chiffre d'affaires.",
+          benchmark: "Revenus Mesurables"
         },
         {
           num: "02",
-          badge: "Vitesse Mobile",
-          title: "La Performance comme Standard",
-          desc: "Nos pages compilées à la périphérie chargent en moins de 800ms sur mobile 4G, sans le moindre ralentissement.",
-          benchmark: "< 800ms sur Mobile"
+          badge: "RAPIDITÉ",
+          title: "La Vitesse comme Standard",
+          desc: "La vitesse n'est pas un détail technique, c'est le socle du taux de conversion. Nos systèmes Next.js s'affichent instantanément en 4G.",
+          benchmark: "< 800ms en 4G"
         },
         {
           num: "03",
-          badge: "Pérennité Technique",
-          title: "Des Bases Conçues pour Durer",
-          desc: "Développé avec TypeScript strict, Next.js et PostgreSQL pour garantir des évolutions sans régression.",
-          benchmark: "TypeScript Strict & RLS"
+          badge: "SOUVERAINETÉ",
+          title: "Zéro Dépendance Logicielle",
+          desc: "Vous possédez l'intégralité du code source, des bases de données et des comptes publicitaires. Zéro abonnement captif.",
+          benchmark: "100% Propriété Client"
         }
       ]
     },
@@ -751,55 +751,54 @@ export const fr: TranslationDictionary = {
       ]
     },
     scopeCard: {
-      badge: "CHAMP D'INTERVENTION",
+      badge: "CHAMP D'ACTION",
       countBadge: "4 DISCIPLINES",
-      headline: "Les systèmes que nous concevons.",
+      headline: "Ce que nous concevons.",
       footerText: "Studio Fleevy · 100% Code Sur Mesure · Zéro Dépendance",
       items: [
         {
           id: "intake",
           num: "01",
-          title: "Plateformes d'Acquisition & Prise de RDV",
-          sector: "Cliniques, cabinets & services premium",
-          output: "Vitrines mobiles ultra-rapides (< 1s) et qualification automatisée en 30 secondes.",
-          tag: "Zéro Perte de Prospect"
+          title: "Plateformes d'Acquisition",
+          sector: "Cliniques & Services Premium",
+          output: "Vitrines mobiles ultra-rapides et qualification WhatsApp en 30s.",
+          tag: "Zéro Perte"
         },
         {
           id: "commerce",
           num: "02",
-          title: "Boutiques E-Commerce & Commande Directe",
-          sector: "Marques D2C, commerce & restauration",
-          output: "Tunnels de vente dédiés avec livraison 58 wilayas et 0% de commission tiers.",
-          tag: "Marge 100% Préservée"
+          title: "Commerce Direct",
+          sector: "Marques & Restauration",
+          output: "Paiement à la livraison 58 wilayas sans commission tiers.",
+          tag: "Marges 100%"
         },
         {
           id: "portals",
           num: "03",
-          title: "Applications Web & CRM Propriétaires",
-          sector: "Opérations multi-agences & logistique",
-          output: "Pipelines visuels et portails de dispatch remplaçant les feuilles Excel chaotiques.",
-          tag: "Opérations Fluides"
+          title: "CRM Propriétaires",
+          sector: "Logistique & Multi-Agences",
+          output: "Pipelines visuels remplaçant les tableurs Excel chaotiques.",
+          tag: "Gestion Fluide"
         },
         {
           id: "growth",
           num: "04",
-          title: "Publicités Ciblées & Stratégie Directe",
-          sector: "Entreprises en phase d'accélération",
-          output: "Campagnes Meta coordonnées et orientations créatives pour un flux d'acheteurs régulier.",
-          tag: "Volume Prévisible"
+          title: "Publicités Ciblées",
+          sector: "Entreprises en Croissance",
+          output: "Campagnes Meta coordonnées générant un flux de commandes régulier.",
+          tag: "Volume Garanti"
         }
       ]
     },
     founder: {
-      badge: "RELATION DIRECTE AVEC LES BÂTISSEURS",
-      headline: "Pourquoi Fleevy a été créé.",
+      badge: "PARTENARIAT DIRECT",
+      headline: "Zéro commercial. Zéro intermédiaire. Échangez directement avec les ingénieurs.",
       paragraphs: [
-        "En 2024, trop d'agences continuent de vendre des sites web comme de simples brochures décoratives. Elles facturent des forfaits mensuels pour des éditeurs de pages qui mettent 5 secondes à charger sur smartphone et laissent les demandes clients pourrir dans des boîtes mail oubliées.",
-        "Nous avons fondé Fleevy sur un constat sans appel : les entreprises modernes sur des marchés compétitifs n'ont pas besoin de pages statiques supplémentaires. Elles ont besoin d'une infrastructure d'acquisition : des systèmes qui s'affichent instantanément en 4G, qualifient les acheteurs en 30 secondes sur WhatsApp et génèrent un chiffre d'affaires mesurable grâce à la publicité ciblée.",
-        "Chaque client chez Fleevy collabore directement avec des ingénieurs seniors. Aucun commercial intermédiaire, aucun délai administratif : une ingénierie agile dédiée à votre croissance commerciale."
+        "Les agences classiques vous séduisent avec leurs directeurs puis confient votre projet à des exécutants juniors. Nous refusons ce modèle.",
+        "Chez Fleevy, chaque système est conçu, développé et déployé directement par les ingénieurs. Une collaboration directe sur WhatsApp sans aucune lourdeur."
       ],
       founderName: "Hichem Djouadi",
-      founderRole: "Fondateur & Directeur Technique"
+      founderRole: "Fondateur & Architecte Systèmes"
     },
     bottomCta: {
       headline: "Bâtissons votre avantage concurrentiel.",

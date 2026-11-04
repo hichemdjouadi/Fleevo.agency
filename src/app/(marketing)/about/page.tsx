@@ -211,37 +211,43 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. FULL ENGINEERING STACK */}
-      <section className="py-24 md:py-36 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-start">
+      {/* 3. CORE ARCHITECTURE STRIP */}
+      <section className="py-20 md:py-28 px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-start">
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.04] text-balance">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 md:mb-16 gap-6">
+            <div className="max-w-xl">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-white/50 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span>{t.about.techStack.badge}</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-[1.04] text-balance">
                 {t.about.techStack.headline}
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-white/75 font-light max-w-sm leading-relaxed text-pretty">
+            <p className="text-sm sm:text-base text-white/70 font-light max-w-sm leading-relaxed text-pretty">
               {t.about.techStack.subhead}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-s border-white/15">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {t.about.techStack.items.map((item) => (
               <div
                 key={item.num}
-                className="p-8 sm:p-10 border-e border-b border-white/15 flex flex-col justify-between gap-6 text-start"
+                className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.05] transition-all flex flex-col justify-between gap-4 text-start"
               >
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-mono text-xs text-white/40">{item.num}</span>
+                  <span className="text-[11px] font-mono text-white/60 px-2.5 py-0.5 rounded-full bg-white/5">
+                    {item.category}
+                  </span>
+                </div>
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-medium text-white mb-2 text-balance">
-                    <span className="font-mono text-sm text-white/55 me-2">{item.num}. </span>
+                  <h3 className="text-lg font-medium text-white mb-1.5">
                     {item.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed text-pretty">
+                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
                     {item.detail}
                   </p>
-                </div>
-                <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/60">
-                  {item.category}
                 </div>
               </div>
             ))}
