@@ -311,6 +311,240 @@ export const en: TranslationDictionary = {
         commission: "0% Commission Retained"
       }
     },
+    engineSimulator: {
+      badge: "LIVE AUTOMATION LAB // INTERACTIVE SYSTEM",
+      headline: "Test the Autonomous Engine in Real Time.",
+      subhead: "Automation is not just a chat widget. It is an end-to-end event cascade: ad attribution, sub-second edge load, automated qualification, database sync, and dispatch.",
+      triggerBtn: "Run Autonomous Simulation",
+      resetBtn: "Reset Telemetry",
+      statusIdle: "Ready for telemetry test",
+      statusRunning: "Executing event cascade...",
+      statusComplete: "Execution complete · Zero manual touch",
+      scenarios: [
+        {
+          id: "clinic",
+          name: "Specialty Medical Clinic",
+          niche: "Healthcare & High-Value Consultations",
+          badge: "Consultation Pipeline",
+          desc: "Patient clicks targeted ad, gets pre-qualified by diagnosis bot, and reserves a live calendar slot.",
+          speedMetric: "1.8s Total Runtime",
+          commissionMetric: "0% Third-Party Rent",
+          resultSummary: "Confirmed patient consultation synced to Google Calendar and reception desk alert delivered.",
+          events: [
+            {
+              timestamp: "00:00.15",
+              step: "01",
+              title: "Meta CAPI Attribution Handshake",
+              detail: "Server-side pixel handshake verified. Clean ad attribution logged with zero browser cookie drop.",
+              system: "Meta Conversions API",
+              badge: "Telemetry OK"
+            },
+            {
+              timestamp: "00:00.38",
+              step: "02",
+              title: "Sub-Second Edge Infrastructure",
+              detail: "Next.js dynamic edge route renders in 240ms on mobile 4G. 0% visitor bounce.",
+              system: "Vercel Edge Node",
+              badge: "240ms Load"
+            },
+            {
+              timestamp: "00:01.05",
+              step: "03",
+              title: "Autonomous Patient Qualification",
+              detail: "Bot collects symptoms, preferred time, and confirms phone number without human intervention.",
+              system: "Intake Automation Agent",
+              badge: "Qualified"
+            },
+            {
+              timestamp: "00:01.62",
+              step: "04",
+              title: "Calendar & Database Synchronization",
+              detail: "Time slot locked in doctor's Google Calendar; encrypted patient record saved in PostgreSQL.",
+              system: "Google Calendar + Supabase",
+              badge: "Slot Reserved"
+            },
+            {
+              timestamp: "00:01.80",
+              step: "05",
+              title: "Instant Staff Dispatch Ping",
+              detail: "Complete briefing pushed to front desk WhatsApp & Telegram in 18 seconds.",
+              system: "Instant Dispatch Webhook",
+              badge: "Staff Alerted"
+            }
+          ]
+        },
+        {
+          id: "ecommerce",
+          name: "Direct-to-Consumer Commerce",
+          niche: "Retail, Food & 58-Wilayas COD",
+          badge: "Zero-Commission Commerce",
+          desc: "Customer orders directly via sub-second checkout with automated shipping calculation to 58 wilayas.",
+          speedMetric: "1.4s Total Runtime",
+          commissionMetric: "0% Commission Cut",
+          resultSummary: "Order logged, tracking assigned, warehouse dispatch payload sent via webhook.",
+          events: [
+            {
+              timestamp: "00:00.12",
+              step: "01",
+              title: "Instant Product Catalog Retrieval",
+              detail: "Item cached on edge CDN. Instant mobile checkout opens with 0 latency.",
+              system: "Edge Commerce Cache",
+              badge: "Cached"
+            },
+            {
+              timestamp: "00:00.45",
+              step: "02",
+              title: "58-Wilayas Shipping Logic Engine",
+              detail: "Auto-calculates home delivery vs desk stop desk rates across all 58 wilayas.",
+              system: "Logistics Router",
+              badge: "Calculated"
+            },
+            {
+              timestamp: "00:00.95",
+              step: "03",
+              title: "Cart & Address Validation",
+              detail: "Validates customer phone and shipping address format in under 20 milliseconds.",
+              system: "Integrity Gate",
+              badge: "Verified"
+            },
+            {
+              timestamp: "00:01.35",
+              step: "04",
+              title: "Warehouse & Kitchen Webhook Dispatch",
+              detail: "Packaging slip and order item details sent directly to warehouse printer and packing station.",
+              system: "Warehouse Dispatch Hook",
+              badge: "Dispatched"
+            }
+          ]
+        },
+        {
+          id: "b2b",
+          name: "High-Ticket B2B & Advisory",
+          niche: "Corporate Services & Real Estate",
+          badge: "Lead Scoring Pipeline",
+          desc: "Corporate lead completes project assessment, qualifies budget tier, and schedules discovery call.",
+          speedMetric: "2.1s Total Runtime",
+          commissionMetric: "100% Data Sovereignty",
+          resultSummary: "Lead scored high-priority, executive NDA delivered, founder alerted with deal briefing.",
+          events: [
+            {
+              timestamp: "00:00.20",
+              step: "01",
+              title: "Dynamic Proposal Assessment",
+              detail: "Custom interactive scope estimator collects company size, timeline, and budget bracket.",
+              system: "Dynamic Intake Engine",
+              badge: "Intake Captured"
+            },
+            {
+              timestamp: "00:00.85",
+              step: "02",
+              title: "Automated Lead Scoring Algorithm",
+              detail: "Lead scored Tier-A ($3k+ budget). Bypasses junior queue directly to executive priority desk.",
+              system: "Scoring Engine",
+              badge: "Tier-A Lead"
+            },
+            {
+              timestamp: "00:01.50",
+              step: "03",
+              title: "Executive Calendar Allocation",
+              detail: "Dedicated Zoom consultation locked on CEO calendar with pre-call brief attached.",
+              system: "Google Calendar Sync",
+              badge: "Meeting Locked"
+            },
+            {
+              timestamp: "00:02.10",
+              step: "04",
+              title: "Founder VIP Channel Notification",
+              detail: "Instant encrypted notification delivered to founder's direct channel with full dossier.",
+              system: "Encrypted Telegram/WhatsApp Alert",
+              badge: "CEO Notified"
+            }
+          ]
+        }
+      ]
+    },
+    leakDiagnostic: {
+      badge: "THE REVENUE LEAK // DIAGNOSTIC INSPECTION",
+      headline: "Where 80% of Marketing Budgets Disappear.",
+      subhead: "Most business owners believe they have an advertising problem. In reality, their technical infrastructure drops buyers at every step. Here is what happens under the hood.",
+      traditionalTab: "The Fragmented Setup (The Invisible Leak)",
+      fleevyTab: "The Fleevy Autonomous Machine",
+      stages: [
+        {
+          id: "speed",
+          num: "01",
+          title: "First Touch & Load Velocity",
+          traditional: {
+            headline: "7 to 11 Seconds on Bloated Page Builders",
+            desc: "Heavy WordPress templates and unoptimized plugins crawl on Algerian 4G networks. Visitors hit the back button before the page finishes loading.",
+            metric: "53% Bounce Before First View",
+            badge: "Traffic Bleed"
+          },
+          fleevy: {
+            headline: "240ms Sub-Second Static Edge Delivery",
+            desc: "Lightweight Next.js code pre-rendered on regional edge networks. Opens instantly on any mobile network, preserving every single click.",
+            metric: "99.2% Visitor Retention",
+            badge: "Zero Drop-off"
+          }
+        },
+        {
+          id: "intake",
+          num: "02",
+          title: "Lead Capture & Response Speed",
+          traditional: {
+            headline: "Unstructured DMs & 4-Hour Response Lags",
+            desc: "Customers message Instagram or fill passive forms. Staff replies hours later when the buyer has already contacted a competitor or lost interest.",
+            metric: "68% Drop in Lead Conversion",
+            badge: "Dead Inquiries"
+          },
+          fleevy: {
+            headline: "Autonomous Intake in Under 15 Seconds",
+            desc: "Intelligent qualification agents engage instantly 24/7, ask the right filtering questions, and capture confirmed details while purchase intent is peaking.",
+            metric: "< 15s Instant Response Time",
+            badge: "100% Captured"
+          }
+        },
+        {
+          id: "ops",
+          num: "03",
+          title: "Operations & Booking Logistics",
+          traditional: {
+            headline: "Manual Copy-Pasting & Scattered Spreadsheets",
+            desc: "Orders and appointments are manually typed into Excel, WhatsApp groups, or paper notebooks. Leads get forgotten and double-booked.",
+            metric: "Chaotic Daily Operations",
+            badge: "Human Error"
+          },
+          fleevy: {
+            headline: "Multi-Channel Synchronization Pipeline",
+            desc: "Every confirmation automatically locks a slot in Google Calendar, updates the PostgreSQL database, and pings the team's dispatch channel in seconds.",
+            metric: "0 Manual Interventions Needed",
+            badge: "Autopilot Operations"
+          }
+        },
+        {
+          id: "economics",
+          num: "04",
+          title: "Unit Economics & Platform Ownership",
+          traditional: {
+            headline: "15%–30% Marketplace Cuts & Ongoing SaaS Rent",
+            desc: "Third-party delivery platforms take 20% of your gross margin, while closed website builders trap your customer data and charge recurring fees.",
+            metric: "20% Margin Surrendered",
+            badge: "Margin Tax"
+          },
+          fleevy: {
+            headline: "0% Commission & 100% Code Sovereignty",
+            desc: "You own 100% of the software, database, and client records. No commission cuts, no third-party lock-in, and full financial independence.",
+            metric: "0% Commission · 100% Owned",
+            badge: "Total Independence"
+          }
+        }
+      ],
+      bottomNotice: {
+        headline: "Stop burning ad budget on a leaking bucket.",
+        desc: "We diagnose your current infrastructure, patch every dropped lead, and wire an autonomous capture engine that converts.",
+        cta: "Request an Architecture Diagnostic"
+      }
+    },
     pillars: {
       badge: "THE TWO PILLARS",
       headline: "Engineering meets customer acquisition.",

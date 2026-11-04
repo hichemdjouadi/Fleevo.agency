@@ -126,6 +126,71 @@ export interface ServiceItemTranslation {
   proofLabel?: string;
 }
 
+export interface LeakDiagnosticStage {
+  id: string;
+  num: string;
+  title: string;
+  traditional: {
+    headline: string;
+    desc: string;
+    metric: string;
+    badge: string;
+  };
+  fleevy: {
+    headline: string;
+    desc: string;
+    metric: string;
+    badge: string;
+  };
+}
+
+export interface LeakDiagnosticTranslations {
+  badge: string;
+  headline: string;
+  subhead: string;
+  traditionalTab: string;
+  fleevyTab: string;
+  stages: LeakDiagnosticStage[];
+  bottomNotice: {
+    headline: string;
+    desc: string;
+    cta: string;
+  };
+}
+
+export interface SimulatorEvent {
+  timestamp: string;
+  step: string;
+  title: string;
+  detail: string;
+  system: string;
+  badge: string;
+}
+
+export interface SimulatorScenario {
+  id: string;
+  name: string;
+  niche: string;
+  badge: string;
+  desc: string;
+  events: SimulatorEvent[];
+  resultSummary: string;
+  speedMetric: string;
+  commissionMetric: string;
+}
+
+export interface EngineSimulatorTranslations {
+  badge: string;
+  headline: string;
+  subhead: string;
+  triggerBtn: string;
+  resetBtn: string;
+  statusIdle: string;
+  statusRunning: string;
+  statusComplete: string;
+  scenarios: SimulatorScenario[];
+}
+
 export interface HomeTranslations {
   hero: {
     headlineStart: string;
@@ -139,6 +204,8 @@ export interface HomeTranslations {
       commission: string;
     };
   };
+  engineSimulator: EngineSimulatorTranslations;
+  leakDiagnostic: LeakDiagnosticTranslations;
   pillars: {
     badge: string;
     headline: string;

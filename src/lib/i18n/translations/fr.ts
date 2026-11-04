@@ -311,6 +311,240 @@ export const fr: TranslationDictionary = {
         commission: "0% Commission Préservée"
       }
     },
+    engineSimulator: {
+      badge: "LABO D'AUTOMATISATION // SYSTÈME INTERACTIF",
+      headline: "Testez le moteur autonome en temps réel.",
+      subhead: "L'automatisation ne se résume pas à un widget de chat. C'est une cascade d'événements continue : attribution publicitaire, chargement sub-seconde, qualification intelligente, synchronisation de base de données et dispatching.",
+      triggerBtn: "Lancer la Simulation Autonome",
+      resetBtn: "Réinitialiser la Télémétrie",
+      statusIdle: "Prêt pour le test de télémétrie",
+      statusRunning: "Exécution de la cascade d'événements...",
+      statusComplete: "Exécution terminée avec succès · 0 intervention manuelle",
+      scenarios: [
+        {
+          id: "clinic",
+          name: "Clinique Médicale & Consultations VIP",
+          niche: "Santé & Prestations à Haute Valeur",
+          badge: "Pipeline de Rendez-vous",
+          desc: "Le patient clique sur l'annonce, est pré-qualifié par le bot de diagnostic et réserve son créneau en direct.",
+          speedMetric: "1.8s Temps d'exécution total",
+          commissionMetric: "0% Commission Intermédiaire",
+          resultSummary: "Consultation confirmée dans Google Calendar et alerte envoyée à l'accueil en 18 secondes.",
+          events: [
+            {
+              timestamp: "00:00.15",
+              step: "01",
+              title: "Handshake d'Attribution Meta CAPI",
+              detail: "Vérification côté serveur direct sans perte due aux cookies tiers désactivés.",
+              system: "Meta Conversions API",
+              badge: "Télémétrie OK"
+            },
+            {
+              timestamp: "00:00.38",
+              step: "02",
+              title: "Infrastructure Edge Sub-Seconde",
+              detail: "Rendu Next.js dynamique en 240ms sur réseau mobile 4G. 0% d'abandon visiteur.",
+              system: "Nœuds Edge Vercel",
+              badge: "Chargement 240ms"
+            },
+            {
+              timestamp: "00:01.05",
+              step: "03",
+              title: "Qualification Autonome du Patient",
+              detail: "Le bot recueille les symptômes, le créneau souhaité et valide le numéro sans humain.",
+              system: "Agent d'Intake Intelligent",
+              badge: "Qualifié"
+            },
+            {
+              timestamp: "00:01.62",
+              step: "04",
+              title: "Synchronisation Calendrier & Base",
+              detail: "Créneau verrouillé dans Google Calendar ; dossier patient chiffré dans PostgreSQL.",
+              system: "Google Calendar + Supabase",
+              badge: "Créneau Réservé"
+            },
+            {
+              timestamp: "00:01.80",
+              step: "05",
+              title: "Alerte de Dispatching Immédiate",
+              detail: "Dossier complet transmis sur le WhatsApp & Telegram de la réception en 18 secondes.",
+              system: "Webhook de Notification",
+              badge: "Équipe Alertée"
+            }
+          ]
+        },
+        {
+          id: "ecommerce",
+          name: "Commerce D2C & Restauration Directe",
+          niche: "Retail, Food & Paiement à la Livraison 58 Wilayas",
+          badge: "Commerce Direct 0% Commission",
+          desc: "Commande mobile fluide avec calcul automatique des frais de livraison vers 58 wilayas.",
+          speedMetric: "1.4s Temps d'exécution",
+          commissionMetric: "0% Commission Prélevée",
+          resultSummary: "Commande enregistrée, expédition 58 wilayas calculée, bon envoyé au préparateur.",
+          events: [
+            {
+              timestamp: "00:00.12",
+              step: "01",
+              title: "Récupération Instantanée du Catalogue",
+              detail: "Produit mis en cache sur le CDN Edge. Tunnel de commande ouvert à latence zéro.",
+              system: "Cache Edge Commerce",
+              badge: "En Cache"
+            },
+            {
+              timestamp: "00:00.45",
+              step: "02",
+              title: "Moteur de Tarification 58 Wilayas",
+              detail: "Calcul instantané livraison à domicile vs bureau pour chaque wilaya et commune.",
+              system: "Routeur Logistique",
+              badge: "Tarif Calculé"
+            },
+            {
+              timestamp: "00:00.95",
+              step: "03",
+              title: "Validation Téléphone & Coordonnées",
+              detail: "Vérification automatisée du format téléphonique et de l'adresse en moins de 20ms.",
+              system: "Passerelle de Contrôle",
+              badge: "Vérifié"
+            },
+            {
+              timestamp: "00:01.35",
+              step: "04",
+              title: "Dispatching Entrepôt & Cuisine",
+              detail: "Bon de préparation et détails envoyés directement au préparateur et livreur.",
+              system: "Hook Entrepôt",
+              badge: "Expédié"
+            }
+          ]
+        },
+        {
+          id: "b2b",
+          name: "Services B2B, Immobilier & Conseil",
+          niche: "Prestations Corporate & Mandats Premium",
+          badge: "Pipeline de Scoring Client",
+          desc: "Le prospect évalue son projet, qualifie sa tranche budgétaire et bloque un rendez-vous stratégique.",
+          speedMetric: "2.1s Temps d'exécution",
+          commissionMetric: "100% Souveraineté Données",
+          resultSummary: "Prospect qualifié haute priorité, NDA transmis, fondateur alerté avec briefing complet.",
+          events: [
+            {
+              timestamp: "00:00.20",
+              step: "01",
+              title: "Estimation Interactive de Périmètre",
+              detail: "Calculateur de scope recueillant taille d'entreprise, budget cible et calendrier.",
+              system: "Moteur d'Intake Dynamique",
+              badge: "Demande Reçue"
+            },
+            {
+              timestamp: "00:00.85",
+              step: "02",
+              title: "Algorithme de Scoring Automatique",
+              detail: "Score Tier-A attribué (budget élevé) ; accès direct à l'agenda de direction sans attente.",
+              system: "Moteur de Scoring",
+              badge: "Client Prioritaire"
+            },
+            {
+              timestamp: "00:01.50",
+              step: "03",
+              title: "Allocation de Créneau Direction",
+              detail: "Consultation Zoom fixée dans l'agenda du dirigeant avec briefing préparatoire.",
+              system: "Google Calendar Sync",
+              badge: "Réunion Bloquée"
+            },
+            {
+              timestamp: "00:02.10",
+              step: "04",
+              title: "Notification Cryptée Canal VIP",
+              detail: "Alerte instantanée sur le canal direct du fondateur avec dossier complet du prospect.",
+              system: "Alerte Chiffrée Telegram/WhatsApp",
+              badge: "Direction Alertée"
+            }
+          ]
+        }
+      ]
+    },
+    leakDiagnostic: {
+      badge: "DIAGNOSTIC DE PERTE // INSPECTION TECHNIQUE",
+      headline: "Où disparaissent 80% des budgets marketing ?",
+      subhead: "La plupart des dirigeants pensent avoir un problème de publicité. En réalité, leur infrastructure technique perd des clients à chaque étape. Voici l'anatomie exacte du système.",
+      traditionalTab: "La Structure Fragmentée (La Fuite Invisible)",
+      fleevyTab: "La Machine Autonome Fleevy (Capture Immédiate)",
+      stages: [
+        {
+          id: "speed",
+          num: "01",
+          title: "Vitesse de Premier Contact & Rendu",
+          traditional: {
+            headline: "7 à 11 Secondes sur des Thèmes Wordpress Lourds",
+            desc: "Thèmes surchargés et extensions lentes qui rament sur le réseau 4G algérien. Les visiteurs cliquent sur retour avant même d'avoir vu votre offre.",
+            metric: "53% d'Abandon Avant Rendu",
+            badge: "Hémorragie de Trafic"
+          },
+          fleevy: {
+            headline: "240ms Rendu Edge Statique Instantané",
+            desc: "Architecture Next.js pré-rendue sur le réseau Edge. Affichage immédiat en un battement de cil sur tout smartphone, préservant 100% du trafic.",
+            metric: "99.2% de Rétention Visiteurs",
+            badge: "Zéro Perte"
+          }
+        },
+        {
+          id: "intake",
+          num: "02",
+          title: "Capture de Leads & Délai de Réponse",
+          traditional: {
+            headline: "DMs Instagram Désordonnés & Réponse en 4 Heures",
+            desc: "Les prospects écrivent en privé ou remplissent des formulaires passifs. L'équipe répond des heures plus tard quand le client a déjà acheté ailleurs.",
+            metric: "68% de Perte de Conversion",
+            badge: "Demandes Perdues"
+          },
+          fleevy: {
+            headline: "Intake Autonome en Moins de 15 Secondes",
+            desc: "Des agents intelligents disponibles 24/7 qui posent les bonnes questions de qualification et capturent les détails quand l'intention d'achat est maximale.",
+            metric: "< 15s Réponse Immédiate",
+            badge: "100% Capté"
+          }
+        },
+        {
+          id: "ops",
+          num: "03",
+          title: "Gestion Opérationnelle & Synchronisation",
+          traditional: {
+            headline: "Copier-Coller Manuel & Tableurs Éparpillés",
+            desc: "Commandes et réservations notées manuellement dans Excel, des groupes WhatsApp ou des cahiers. Erreurs humaines et oublis quotidiens.",
+            metric: "Opérations Quotidiennes Chaotiques",
+            badge: "Erreur Humaine"
+          },
+          fleevy: {
+            headline: "Pipeline de Synchronisation Multi-Canal",
+            desc: "Chaque confirmation verrouille un créneau Google Calendar, met à jour la base PostgreSQL et alerte l'équipe de livraison en quelques secondes.",
+            metric: "0 Intervention Manuelle",
+            badge: "Pilotage Automatique"
+          }
+        },
+        {
+          id: "economics",
+          num: "04",
+          title: "Rentabilité Nette & Souveraineté Logicielle",
+          traditional: {
+            headline: "15% à 30% de Commissions & Abonnements Mensuels",
+            desc: "Les marketplaces de livraison prélèvent 20% de votre marge, tandis que les CMS propriétaires enferment vos données et vous facturent chaque mois.",
+            metric: "20% de Marge Cédée",
+            badge: "Taxe Intermédiaire"
+          },
+          fleevy: {
+            headline: "0% Commission & 100% Souveraineté du Code",
+            desc: "Vous êtes le seul propriétaire du logiciel, de la base et des données clients. Zéro commission prélevée et une indépendance financière absolue.",
+            metric: "0% Commission · 100% Propriété",
+            badge: "Souveraineté Totale"
+          }
+        }
+      ],
+      bottomNotice: {
+        headline: "Cessez de brûler votre budget dans un panier percé.",
+        desc: "Nous diagnostiquons votre infrastructure actuelle, colmatons chaque fuite et déployons une machine d'acquisition autonome qui convertit.",
+        cta: "Demander un Diagnostic d'Infrastructure"
+      }
+    },
     pillars: {
       badge: "LES DEUX PILIERS",
       headline: "Quand l'ingénierie rencontre l'acquisition client.",

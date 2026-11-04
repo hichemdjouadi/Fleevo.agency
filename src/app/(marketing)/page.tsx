@@ -4,6 +4,8 @@ import FeaturedWork from "@/components/FeaturedWork";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import HeroVisual from "@/components/HeroVisual";
+import AutonomousEngineSimulator from "@/components/AutonomousEngineSimulator";
+import AnatomyOfTheLeak from "@/components/AnatomyOfTheLeak";
 import TransitionLink from "@/components/TransitionLink";
 import Magnetic from "@/components/Magnetic";
 import { motion } from "framer-motion";
@@ -128,7 +130,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. THE 2 PILLARS OF ACQUISITION ARCHITECTURE */}
+      {/* 2. LIVE AUTONOMOUS REVENUE ENGINE (EXCITEMENT) */}
+      <AutonomousEngineSimulator />
+
+      {/* 3. ANATOMY OF THE LEAK (ENLIGHTENMENT) */}
+      <AnatomyOfTheLeak />
+
+      {/* 4. THE 2 PILLARS OF ACQUISITION ARCHITECTURE */}
       <section className="py-28 md:py-40 px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] max-w-2xl text-balance">
