@@ -224,8 +224,10 @@ export interface HomeTranslations {
     steps: {
       num: string;
       phase: string;
+      timeline?: string;
       title: string;
       desc: string;
+      deliverable?: string;
     }[];
   };
   showcase: {

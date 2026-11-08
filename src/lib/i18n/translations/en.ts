@@ -570,27 +570,41 @@ export const en: TranslationDictionary = {
       ]
     },
     flow: {
-      badge: "ACQUISITION FLOW",
-      headline: "The 3-step acquisition loop.",
-      subhead: "Turning visitors into paying clients with zero manual drag.",
+      badge: "DELIVERY PROTOCOL // 14-DAY ROADMAP",
+      headline: "From Diagnostic to Live Revenue Engine in 14 Days.",
+      subhead: "A fixed-timeline engineering protocol with guaranteed weekly milestones. Zero guesswork, zero perpetual agency tolls.",
       steps: [
         {
           num: "01",
-          phase: "Attract",
-          title: "Ads & Video Scripts",
-          desc: "Targeted Meta ad campaigns that bring high-intent buyers into your pipeline."
+          phase: "Stage 01",
+          timeline: "48 Hours",
+          title: "Technical Audit & Architecture Blueprint",
+          desc: "We dissect traffic drop-offs, slow page renders, and uncaptured inquiries. You receive an exact wireframe spec and system architecture.",
+          deliverable: "Architecture Spec + Action Plan"
         },
         {
           num: "02",
-          phase: "Convert",
-          title: "Acquisition Platforms & CRMs",
-          desc: "Lightning-fast mobile infrastructure that turns clicks into confirmed appointments and orders."
+          phase: "Stage 02",
+          timeline: "Days 3–7",
+          title: "Sovereign Platform & Edge Deployment",
+          desc: "Custom Next.js mobile platform built on global edge CDN with automated WhatsApp dispatch and zero aggregator commission fees.",
+          deliverable: "Live Vercel Staging Environment"
         },
         {
           num: "03",
-          phase: "Close",
-          title: "Instant 30s Bot Qualification",
-          desc: "Automated qualification agents that route confirmed buyer dossiers directly to your team."
+          phase: "Stage 03",
+          timeline: "Days 8–14",
+          title: "High-Intent Creative & Meta CAPI Setup",
+          desc: "We script direct-response video hooks, configure server-side conversion tracking without cookie loss, and stress-test order throughput.",
+          deliverable: "Ad Creatives + Verified CAPI Handshake"
+        },
+        {
+          num: "04",
+          phase: "Stage 04",
+          timeline: "Day 15+",
+          title: "Production Launch & 100% Asset Transfer",
+          desc: "DNS point, live campaigns switched on, and full repository transferred. You own 100% of the code, data, and domain with zero ongoing agency rent.",
+          deliverable: "Turnkey System + Full IP Transfer"
         }
       ]
     },

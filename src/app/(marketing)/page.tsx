@@ -14,12 +14,19 @@ import {
   Zap,
   ShieldCheck,
   Bot,
-  MessageCircle
+  MessageCircle,
+  Check,
+  Clock,
+  Cpu,
+  Layers,
+  Radio,
+  Activity,
+  Server
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 
 export default function Home() {
-  const { t, isRTL } = useTranslation();
+  const { t, isRTL, locale } = useTranslation();
 
   return (
     <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen w-full max-w-full overflow-x-hidden">
@@ -149,7 +156,7 @@ export default function Home() {
 
         {/* PILLAR 1: Platforms & Digital Infrastructure */}
         <div className="p-6 sm:p-12 md:p-16 rounded-3xl sm:rounded-[2.5rem] bg-[#f9f9fb] border border-black/10 mb-12 sm:mb-16">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-8 gap-6">
             <div>
               <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-black mb-3 text-balance">
                 {t.home.pillars.pillarOneTitle}
@@ -163,41 +170,87 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-black/10 border-y border-black/10">
-            {t.home.pillars.pillarOneServices.map((item) => (
-              <div
-                key={item.num}
-                className="py-8 md:py-10 md:px-8 first:md:ps-0 last:md:pe-0 flex flex-col justify-between gap-6 text-start"
-              >
-                <div>
-                  <h4 className="text-xl md:text-2xl font-medium text-black tracking-tight mb-3 text-balance">
-                    <span className="font-mono text-sm text-neutral-500 me-2">{item.num}. </span>
-                    {item.title}
-                  </h4>
-                  <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed text-pretty">
-                    {item.desc}
-                  </p>
-                </div>
-                {item.tags && (
-                  <div className="pt-4 border-t border-black/10 flex flex-wrap gap-2">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 rounded-full bg-white border border-black/10 font-mono text-xs text-neutral-800 font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch pt-8 border-t border-black/10">
+            {/* Left: 3 Capability Columns */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6 text-start">
+              {t.home.pillars.pillarOneServices.map((item) => (
+                <div
+                  key={item.num}
+                  className="flex flex-col justify-between gap-4 p-5 rounded-2xl bg-white border border-black/10 text-start"
+                >
+                  <div>
+                    <h4 className="text-base sm:text-lg font-medium text-black tracking-tight mb-2 text-balance">
+                      <span className="font-mono text-xs text-neutral-500 me-1.5">{item.num}. </span>
+                      {item.title}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed text-pretty">
+                      {item.desc}
+                    </p>
                   </div>
-                )}
+                  {item.tags && (
+                    <div className="pt-3 border-t border-black/10 flex flex-wrap gap-1.5">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-0.5 rounded-full bg-neutral-100 font-mono text-[11px] text-neutral-800 font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Right: Tangible Visual UI Artifact (Live Sovereign Checkout) */}
+            <div className="lg:col-span-5 p-6 rounded-3xl bg-white border border-black/15 shadow-md flex flex-col justify-between gap-5 text-start">
+              <div>
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-black/10 text-xs font-mono">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                    <span dir="ltr" className="text-neutral-800 font-semibold truncate">mopizzarestaurants.vercel.app</span>
+                  </div>
+                  <span className="text-[10px] text-neutral-500 uppercase tracking-wider shrink-0 font-semibold">Live Node</span>
+                </div>
+
+                <div className="p-3.5 rounded-2xl bg-neutral-50 border border-neutral-200/80 mb-3">
+                  <div className="flex items-center justify-between text-xs font-medium text-black mb-1">
+                    <span>Pizza Truffe & Double Fromage</span>
+                    <span className="font-mono font-bold">1,400 DZD</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[11px] font-mono text-neutral-500">
+                    <span>Mo Pizza Resto #01</span>
+                    <span className="text-emerald-700 font-semibold">✓ 380ms TTFB on 4G</span>
+                  </div>
+                </div>
+
+                <div className="space-y-2 text-xs font-mono text-neutral-700">
+                  <div className="flex items-center justify-between">
+                    <span>Platform Commission:</span>
+                    <span className="font-bold text-black">0% Toll (Kept in Full)</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span>Logistics Pipeline:</span>
+                    <span className="text-neutral-800">58 Wilayas COD Connected</span>
+                  </div>
+                </div>
               </div>
-            ))}
+
+              <div className="p-3 rounded-2xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-between text-xs font-mono text-emerald-900">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Check className="w-3.5 h-3.5 text-emerald-700" />
+                  <span>Verified via WhatsApp Webhook</span>
+                </span>
+                <span className="font-bold">&lt; 14s</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* PILLAR 2: Growth & Customer Acquisition */}
         <div className="p-6 sm:p-12 md:p-16 rounded-3xl sm:rounded-[2.5rem] bg-[#050505] text-white">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-8 gap-6">
             <div>
               <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white mb-3 text-balance">
                 {t.home.pillars.pillarTwoTitle}
@@ -211,35 +264,64 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-white/15 border-y border-white/15">
-            {t.home.pillars.pillarTwoServices.map((item) => (
-              <div
-                key={item.num}
-                className="py-8 md:py-10 md:px-8 first:md:ps-0 last:md:pe-0 flex flex-col justify-between gap-6 text-start"
-              >
-                <div>
-                  <h4 className="text-xl md:text-2xl font-medium text-white tracking-tight mb-3 text-balance">
-                    <span className="font-mono text-sm text-white/60 me-2">{item.num}. </span>
-                    {item.title}
-                  </h4>
-                  <p className="text-sm md:text-base text-white/75 font-light leading-relaxed text-pretty">
-                    {item.desc}
-                  </p>
-                </div>
-                {item.tags && (
-                  <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 rounded-full bg-white/10 font-mono text-xs text-white/85 font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch pt-8 border-t border-white/15">
+            {/* Left: 3 Capability Columns */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6 text-start">
+              {t.home.pillars.pillarTwoServices.map((item) => (
+                <div
+                  key={item.num}
+                  className="flex flex-col justify-between gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/10 text-start"
+                >
+                  <div>
+                    <h4 className="text-base sm:text-lg font-medium text-white tracking-tight mb-2 text-balance">
+                      <span className="font-mono text-xs text-white/60 me-1.5">{item.num}. </span>
+                      {item.title}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed text-pretty">
+                      {item.desc}
+                    </p>
                   </div>
-                )}
+                  {item.tags && (
+                    <div className="pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-0.5 rounded-full bg-white/10 font-mono text-[11px] text-white/85 font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Right: Tangible Visual UI Artifact (Meta CAPI Telemetry Stream) */}
+            <div className="lg:col-span-5 p-6 rounded-3xl bg-[#0c0c0e] border border-white/15 shadow-2xl flex flex-col justify-between gap-4 font-mono text-xs text-start">
+              <div>
+                <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-[11px] text-white/50">
+                  <div className="flex items-center gap-2">
+                    <Radio className="w-3 h-3 text-emerald-400 animate-pulse" />
+                    <span className="text-white/80 font-bold uppercase tracking-wider">Meta Server-Side CAPI</span>
+                  </div>
+                  <span className="text-emerald-400 font-semibold">200 OK</span>
+                </div>
+
+                <div className="space-y-2 text-[11px] text-white/70 leading-relaxed">
+                  <p className="text-white/40">// Real-time conversion event pipeline</p>
+                  <p className="text-emerald-400">&gt; [00:00.12] EVENT: PurchaseInitiated · ID: #88921</p>
+                  <p className="text-white/90">&gt; [00:00.35] HANDSHAKE: Attribution Match 9.9/10</p>
+                  <p className="text-emerald-300">&gt; [00:00.68] BOT_QUALIFIED: Phone and location confirmed</p>
+                  <p className="text-white/80">&gt; [00:01.05] DISPATCH: Pushed to client team in 14s</p>
+                </div>
               </div>
-            ))}
+
+              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-white/60">
+                <span className="text-emerald-300 font-bold">ROAS Target: 4.8x</span>
+                <span>Zero Cookie Loss</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -287,43 +369,103 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. 3-STEP ACQUISITION FLOW */}
+      {/* 4. THE EXECUTIVE DELIVERY PROTOCOL (14-DAY ROADMAP) */}
       <section className="bg-[#050505] text-white py-28 md:py-44 px-4 sm:px-6 md:px-12 border-t border-white/10 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl text-start">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono font-semibold text-white mb-4">
+                <Clock className="w-3.5 h-3.5 text-white/80" />
+                <span>{t.home.flow.badge}</span>
+              </div>
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-[-0.03em] leading-[1.04] text-white text-balance">
                 {t.home.flow.headline}
               </h2>
             </div>
-            <p className="text-base sm:text-lg text-white/70 font-light max-w-sm leading-relaxed text-pretty">
+            <p className="text-base sm:text-lg text-white/70 font-light max-w-sm leading-relaxed text-pretty text-start">
               {t.home.flow.subhead}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-white/15 border-y border-white/15">
+          {/* 4-Stage Milestone Roadmap */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.home.flow.steps.map((item) => (
               <div
                 key={item.num}
-                className="py-10 md:px-8 first:md:ps-0 last:md:pe-0 flex flex-col justify-between gap-6 text-start"
+                className="p-6 sm:p-7 rounded-3xl bg-[#0c0c0e] hover:bg-[#121215] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between gap-6 text-start group"
               >
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-3 text-balance">
-                    <span className="font-mono text-sm text-white/55 me-2">{item.num}. </span>
+                  {/* Top Meta Strip */}
+                  <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                    <span className="text-xs font-mono text-white/50">{item.phase}</span>
+                    {item.timeline && (
+                      <span className="px-2.5 py-0.5 rounded-full bg-white/10 font-mono text-[11px] font-semibold text-white">
+                        {item.timeline}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Stage Title & Description */}
+                  <h3 className="text-lg sm:text-xl font-medium text-white tracking-tight mt-5 mb-2.5">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base text-white/75 font-light leading-relaxed text-pretty">
+                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/70">
-                  <span>{item.num}</span>
-                  <span className="px-3 py-1 rounded-full bg-white/10 text-white font-medium">
-                    {item.phase}
-                  </span>
+
+                {/* Bottom Deliverable Chip */}
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                  {item.deliverable && (
+                    <div className="flex items-center gap-1.5 text-white/90">
+                      <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span className="truncate max-w-[200px]">{item.deliverable}</span>
+                    </div>
+                  )}
+                  <span className="text-white/40 font-mono text-[11px] ms-auto">{item.num}</span>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Reassurance Strip */}
+          <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-start">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs font-mono text-white/70">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  {locale === "fr" 
+                    ? "Coût Forfaitaire Ferme — Zéro Dépassement" 
+                    : locale === "ar" 
+                    ? "تكلفة ثابتة معلنة — دون أي رسوم غير متوقعة" 
+                    : "Guaranteed Fixed Pricing — Zero Hidden Overages"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span>
+                  {locale === "fr" 
+                    ? "Cession 100% Code & Domaines à Votre Nom" 
+                    : locale === "ar" 
+                    ? "ملكية كاملة 100% للشفرة والنطاقات باسمك" 
+                    : "100% Code & Domain Ownership Transferred"}
+                </span>
+              </div>
+            </div>
+
+            <TransitionLink
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors text-xs font-mono font-semibold shrink-0 group"
+            >
+              <span>
+                {locale === "fr" 
+                  ? "Démarrer Votre Feuille de Route" 
+                  : locale === "ar" 
+                  ? "ابدأ خارطة طريق مشروعك" 
+                  : "Launch Your Roadmap"}
+              </span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />
+            </TransitionLink>
           </div>
         </div>
       </section>

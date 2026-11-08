@@ -1,87 +1,163 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Play, 
-  RotateCcw, 
-  CheckCircle2, 
-  Terminal, 
-  Cpu, 
   Zap, 
   ShieldCheck, 
-  Clock, 
-  ArrowRight,
-  Sparkles,
-  Server,
-  Activity
+  ArrowRight, 
+  Radio, 
+  Bot, 
+  Cpu, 
+  Database, 
+  Lock,
+  Layers,
+  Sparkles
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import TransitionLink from "@/components/TransitionLink";
 
+interface ArchitectureNode {
+  step: string;
+  title: string;
+  badge: string;
+  speed: string;
+  desc: string;
+  system: string;
+}
+
+interface SectorArchitecture {
+  id: string;
+  name: string;
+  clientBadge: string;
+  clientExample: string;
+  headlineMetric: string;
+  headlineMetricLabel: string;
+  commissionMetric: string;
+  speedMetric: string;
+  nodes: [ArchitectureNode, ArchitectureNode, ArchitectureNode];
+}
+
 export default function AutonomousEngineSimulator() {
-  const { t, isRTL } = useTranslation();
-  const sim = t.home.engineSimulator;
+  const { t, isRTL, locale } = useTranslation();
+  const [activeSector, setActiveSector] = useState<number>(0);
 
-  const [activeScenarioIdx, setActiveScenarioIdx] = useState<number>(0);
-  const [isRunning, setIsRunning] = useState<boolean>(false);
-  const [activeStep, setActiveStep] = useState<number>(-1);
-  const [isFinished, setIsFinished] = useState<boolean>(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const scenario = sim.scenarios[activeScenarioIdx] || sim.scenarios[0];
-
-  const clearCurrentTimer = () => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
+  const sectors: SectorArchitecture[] = [
+    {
+      id: "ecommerce",
+      name: locale === "fr" ? "Commerce D2C & Restauration" : locale === "ar" ? "التجارة المباشرة والمطاعم" : "D2C Food & Retail Commerce",
+      clientBadge: "Mo Pizza & Al-Madina",
+      clientExample: locale === "fr" ? "5 Établissements · 0% Commission" : locale === "ar" ? "5 فروع · 0% عمولة وسيطة" : "5 Locations · 0% Intermediary Toll",
+      headlineMetric: "0%",
+      headlineMetricLabel: locale === "fr" ? "Commission prélevée par les plateformes" : locale === "ar" ? "عمولة وسيطة محتسبة على المبيعات" : "Aggregator Marketplace Toll",
+      commissionMetric: "100% Marge Préservée",
+      speedMetric: "420ms TTFB sur 4G",
+      nodes: [
+        {
+          step: "01",
+          title: locale === "fr" ? "Attribution Meta CAPI 100%" : locale === "ar" ? "تتبع مباشر عبر Meta CAPI" : "100% Meta CAPI Attribution",
+          badge: locale === "fr" ? "Zéro Perte Cookie" : locale === "ar" ? "صفر فقدان للبيانات" : "Zero Cookie Loss",
+          speed: "0.15s",
+          desc: locale === "fr" ? "Handshake serveur direct avec Meta. Chaque clic génère un signal d'achat précis sans dépendre des bloqueurs de pubs." : locale === "ar" ? "ربط مباشر على مستوى الخادم مع ميتا لتأكيد مصادر الزيارات دون أي تسرب لبيانات التتبع." : "Direct server handshake with Meta. Every ad interaction retains high-intent attribution without client-side ad-blocker dropoff.",
+          system: "Meta Server-Side CAPI v19"
+        },
+        {
+          step: "02",
+          title: locale === "fr" ? "Plateforme Edge & Panier Express" : locale === "ar" ? "منصة سريعة وسلة شراء فورية" : "Sub-Second Edge Storefront",
+          badge: locale === "fr" ? "Chargement Instantané" : locale === "ar" ? "تحميل أقل من ثانية" : "< 420ms TTFB",
+          speed: "0.42s",
+          desc: locale === "fr" ? "Application Next.js 16 distribuée mondialement sur CDN. Catalogue fluide, commande en 2 clics sans téléchargement d'application." : locale === "ar" ? "متجر خفيف فائق السرعة عبر شبكة Edge، يتيح الطلب السريع في خطوتين دون إجبار العميل على تحميل أي تطبيق." : "Global Next.js 16 edge deployment. Ultra-responsive catalog, zero app downloads, frictionless 2-step checkout.",
+          system: "Next.js App Router · Edge Network"
+        },
+        {
+          step: "03",
+          title: locale === "fr" ? "Triage WhatsApp & Dispatch Colis" : locale === "ar" ? "فرز فوري عبر واتساب وإخطار المستودع" : "Automated Bot Triage & Dispatch",
+          badge: locale === "fr" ? "Alerte < 18s" : locale === "ar" ? "إشعار في < 18 ثانية" : "Verified in < 18s",
+          speed: "1.20s",
+          desc: locale === "fr" ? "Bot intelligent qualifiant l'adresse et le téléphone, validation automatique et envoi direct aux livreurs (58 wilayas)." : locale === "ar" ? "بوت ذكي يؤكد رقم الهاتف وعنوان التوصيل ويرسل إشعار التجهيز مباشرة للمستودع وشركات الشحن بـ 58 ولاية." : "Automated bot validates phone and shipping address, triggers instant warehouse dispatch and WhatsApp order receipt.",
+          system: "WhatsApp Webhook · Logistics API"
+        }
+      ]
+    },
+    {
+      id: "clinic",
+      name: locale === "fr" ? "Cliniques & Consultations Privées" : locale === "ar" ? "العيادات التخصصية والاستشارات" : "Clinics & Private Consultations",
+      clientBadge: "Adrena Club & Medical",
+      clientExample: locale === "fr" ? "Prise de RDV 24h/24 · Zéro Appel Perdu" : locale === "ar" ? "حجز 24/7 · إنهاء ضغط الاستقبال" : "24/7 Booking · -68% Reception Load",
+      headlineMetric: "< 30s",
+      headlineMetricLabel: locale === "fr" ? "Délai moyen de qualification d'un patient" : locale === "ar" ? "زمن فرز وتأكيد حجز العميل" : "Average Patient Qualification Speed",
+      commissionMetric: "100% Propriété Données",
+      speedMetric: "380ms Rendu Mobile",
+      nodes: [
+        {
+          step: "01",
+          title: locale === "fr" ? "Capture d'Intérêt Ciblée" : locale === "ar" ? "استقطاب الزيارات عالية النية" : "Targeted Intent Capture",
+          badge: locale === "fr" ? "Patients Qualifiés" : locale === "ar" ? "حملات موجهة" : "Qualified Inquiries",
+          speed: "0.20s",
+          desc: locale === "fr" ? "Scénarios vidéo axés sur le problème médical ou sportif, éliminant les curieux et ciblant les patients prêts à réserver." : locale === "ar" ? "سيناريوهات فيديو مقنعة تعالج احتياج المريض وتوجه المشاهدين المستعدين للحجز الفوري." : "Direct-response video creative focusing on specific treatments, filtering tire-kickers and attracting ready-to-book patients.",
+          system: "Direct-Response Meta Campaigns"
+        },
+        {
+          step: "02",
+          title: locale === "fr" ? "Vitrine & Grille Praticiens" : locale === "ar" ? "واجهة العيادة وحجز المواعيد" : "Sovereign Intake & Schedule Hub",
+          badge: locale === "fr" ? "Accès 24/7" : locale === "ar" ? "مواعيد محدثة" : "Zero Friction Access",
+          speed: "0.38s",
+          desc: locale === "fr" ? "Interface claire présentant spécialités, tarifs transparents et créneaux disponibles sans aucun temps de chargement." : locale === "ar" ? "واجهة واضحة تعرض التخصصات والأسعار والمواعيد المتاحة بتحديث مباشر وسرعة فائقة." : "Ultra-fast portal presenting doctor roster, transparent treatment tiers, and real-time open slots.",
+          system: "Edge Architecture · PostgreSQL"
+        },
+        {
+          step: "03",
+          title: locale === "fr" ? "Synchronisation Agenda & Triage" : locale === "ar" ? "مزامنة التقويم وتنبيه الاستقبال" : "Calendar Sync & Direct Reception Ping",
+          badge: locale === "fr" ? "RDV Verrouillé" : locale === "ar" ? "الموعد مثبت" : "Calendar Locked",
+          speed: "1.10s",
+          desc: locale === "fr" ? "Le bot confirme les critères du patient, enregistre le rendez-vous dans Google Calendar et prévient l'accueil par WhatsApp." : locale === "ar" ? "البوت يتحقق من بيانات المريض ويثبت الحجز في التقويم ويرسل بطاقة الموعد لمكتب الاستقبال فوراً." : "Intake bot qualifies patient criteria, commits slot to Google Calendar, and alerts reception staff via encrypted webhook.",
+          system: "Google Calendar Sync · WhatsApp Bot"
+        }
+      ]
+    },
+    {
+      id: "b2b",
+      name: locale === "fr" ? "Services B2B & Grands Comptes" : locale === "ar" ? "خدمات الشركات والصفقات الكبرى" : "High-Ticket B2B & Advisory",
+      clientBadge: "Enterprise Dealflow",
+      clientExample: locale === "fr" ? "Triage Direct · Zéro Perte Commerciale" : locale === "ar" ? "فرز العقود الكبرى تلقائياً" : "Direct Executive Dealflow",
+      headlineMetric: "100%",
+      headlineMetricLabel: locale === "fr" ? "Propriété intégrale du code & base clients" : locale === "ar" ? "ملكية كاملة للشفرة والبيانات" : "Source Code & Database Ownership",
+      commissionMetric: "0€ Abonnement SaaS",
+      speedMetric: "PostgreSQL Edge Sync",
+      nodes: [
+        {
+          step: "01",
+          title: locale === "fr" ? "Calculateur de Périmètre & Devis" : locale === "ar" ? "حاسبة نطاق العمل المخصصة" : "Scope & Qualification Estimator",
+          badge: locale === "fr" ? "Score Décideur" : locale === "ar" ? "تقييم العميل" : "Lead Scoring",
+          speed: "0.25s",
+          desc: locale === "fr" ? "Formulaire interactif qualifiant budget, volume et échéance pour orienter automatiquement le décideur." : locale === "ar" ? "حاسبة تفاعلية تجمع متطلبات العميل وميزانيته وجدوله الزمني لفرز المشروعات ذات الأولوية." : "Interactive scoping tool evaluating company budget, tech scope, and delivery window to grade client priority.",
+          system: "Interactive Valuation Engine"
+        },
+        {
+          step: "02",
+          title: locale === "fr" ? "Pipeline Sécurisé & CRM Sur Mesure" : locale === "ar" ? "بوابة الصفقات ونظام CRM مخصص" : "Sovereign CRM Pipeline",
+          badge: locale === "fr" ? "Zéro Outil Tiers" : locale === "ar" ? "دون اشتراكات خارجية" : "Zero Vendor Rent",
+          speed: "0.45s",
+          desc: locale === "fr" ? "Tableau de bord propriétaire remplaçant les abonnements mensuels coûteux. Données hébergées sur votre propre instance." : locale === "ar" ? "لوحة تحكم خاصة تنهي فوضى الاشتراكات الشهرية المرهقة وتبقي بيانات عملائك مشفرة تحت تصرفك." : "Custom internal dashboard eliminating expensive monthly CRM subscriptions, hosted on your sovereign Supabase cluster.",
+          system: "Supabase · PostgreSQL Cluster"
+        },
+        {
+          step: "03",
+          title: locale === "fr" ? "Notification Direction en Temps Réel" : locale === "ar" ? "إشعار مشفر فوري للإدارة" : "Executive Instant Ping",
+          badge: locale === "fr" ? "Alerte Téléphone" : locale === "ar" ? "تنبيه مباشر" : "Direct Hotline Ping",
+          speed: "1.40s",
+          desc: locale === "fr" ? "Notification instantanée sur le téléphone du fondateur avec le dossier complet du projet et lien de réservation Zoom." : locale === "ar" ? "تنبيه يصل لهاتف المؤسس الخاص يضم ملف العميل وميزانيته مع تثبيت مكالمة Zoom استكشافية." : "Encrypted notification delivered directly to executive device with full project dossier and scheduled Zoom slot.",
+          system: "Executive Hotline Webhook"
+        }
+      ]
     }
-  };
+  ];
 
-  const handleRunSimulation = () => {
-    if (isRunning) return;
-    clearCurrentTimer();
-    setIsRunning(true);
-    setIsFinished(false);
-    setActiveStep(0);
-
-    let step = 0;
-    const totalSteps = scenario.events.length;
-
-    timerRef.current = setInterval(() => {
-      step += 1;
-      if (step < totalSteps) {
-        setActiveStep(step);
-      } else {
-        clearCurrentTimer();
-        setIsRunning(false);
-        setIsFinished(true);
-      }
-    }, 950);
-  };
-
-  const handleReset = () => {
-    clearCurrentTimer();
-    setIsRunning(false);
-    setIsFinished(false);
-    setActiveStep(-1);
-  };
-
-  const handleScenarioChange = (idx: number) => {
-    clearCurrentTimer();
-    setActiveScenarioIdx(idx);
-    setIsRunning(false);
-    setIsFinished(false);
-    setActiveStep(-1);
-  };
-
-  useEffect(() => {
-    return () => clearCurrentTimer();
-  }, []);
+  const current = sectors[activeSector];
 
   return (
-    <section className="py-28 sm:py-36 md:py-48 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto text-start overflow-hidden">
-      {/* 1. Header */}
+    <section className="py-24 sm:py-32 md:py-44 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto text-start overflow-hidden">
+      {/* 1. Header with clear business promise */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-16 gap-6 sm:gap-8">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-800 text-xs font-mono font-medium mb-3 sm:mb-4">
@@ -89,268 +165,146 @@ export default function AutonomousEngineSimulator() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            <span>{sim.badge}</span>
+            <span>{locale === "fr" ? "BOUCLE D'ACQUISITION AUTONOME" : locale === "ar" ? "مسار الأتمتة السيادية // تشغيل 24/7" : "SOVEREIGN AUTONOMOUS LOOP"}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] text-balance">
-            {sim.headline}
+            {locale === "fr" 
+              ? "L'Architecture de Revenus Autonome." 
+              : locale === "ar" 
+              ? "هندسة الإيرادات المؤتمتة لاكتساب العملاء." 
+              : "The Autonomous Revenue Architecture."}
           </h2>
         </div>
         <p className="text-sm sm:text-base md:text-lg text-neutral-600 font-light max-w-md leading-relaxed text-pretty">
-          {sim.subhead}
+          {locale === "fr"
+            ? "Comment notre infrastructure remplace la gestion manuelle lente par une exécution ultra-rapide connectant annonces, plateforme et ventes."
+            : locale === "ar"
+            ? "كيف تستبدل بنيتنا البرمجية الفوضى والردود اليدوية البطيئة بمسار آلي فائق السرعة يربط الإعلانات بالمبيعات مباشرة."
+            : "How our engineered infrastructure replaces slow manual back-and-forth with instantaneous edge execution."}
         </p>
       </div>
 
-      {/* 2. Main Simulator Stage */}
-      <div className="rounded-3xl sm:rounded-[2.5rem] bg-[#0a0a0a] text-white border border-white/10 p-5 sm:p-8 md:p-12 shadow-2xl overflow-hidden relative">
-        {/* Subtle background tech grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
+      {/* 2. Main Architecture Stage (Dark Luxury Card, Pure Brutalism) */}
+      <div className="rounded-3xl sm:rounded-[2.5rem] bg-[#070709] text-white border border-white/10 p-6 sm:p-10 md:p-14 shadow-2xl relative overflow-hidden">
+        {/* Subtle architectural ambient aura */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-48 bg-emerald-500/10 blur-[100px] pointer-events-none" />
 
-        {/* Ambient Top Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-emerald-500/10 blur-3xl pointer-events-none" />
-
-        <div className="relative z-10 flex flex-col gap-6 sm:gap-8">
-          {/* Top Control Bar: Scenario Selector & Actions */}
-          <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-6 border-b border-white/10">
-            {/* Scenarios Segmented Tabs */}
-            <div 
-              role="tablist"
-              aria-label="Simulation Scenarios"
-              className="flex flex-col sm:flex-row flex-wrap gap-2 bg-white/5 p-1 rounded-2xl border border-white/10 w-full xl:w-auto"
-            >
-              {sim.scenarios.map((sc, idx) => {
-                const isActive = activeScenarioIdx === idx;
-                return (
-                  <button
-                    key={sc.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={isActive}
-                    onClick={() => handleScenarioChange(idx)}
-                    className={`relative min-h-[44px] flex-1 sm:flex-none px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all cursor-pointer text-center ${
-                      isActive ? "text-black font-semibold" : "text-white/70 hover:text-white"
-                    }`}
-                  >
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeSimulatorTab"
-                        className="absolute inset-0 bg-white rounded-xl shadow-md -z-10"
-                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                      />
-                    )}
-                    <span>{sc.name}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Action Buttons & System State */}
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={handleRunSimulation}
-                disabled={isRunning}
-                className={`min-h-[44px] inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                  isRunning 
-                    ? "bg-white/10 text-white/50 cursor-not-allowed" 
-                    : "bg-emerald-500 hover:bg-emerald-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.3)]"
-                }`}
-              >
-                <Play className="w-3.5 h-3.5 fill-current" />
-                <span>{isRunning ? sim.statusRunning : sim.triggerBtn}</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={handleReset}
-                className="min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-mono text-white/70 transition-colors cursor-pointer"
-                title={sim.resetBtn}
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">{sim.resetBtn}</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Scenario Overview Strip */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-            <div className="flex items-center gap-2.5">
-              <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white font-mono text-xs font-semibold">
-                {scenario.badge}
-              </span>
-              <span className="text-xs font-mono text-white/70">
-                {scenario.niche}
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2.5 shrink-0">
-              <div className="px-3 py-1 rounded-xl bg-white/5 border border-white/10 text-start">
-                <span className="text-[9px] font-mono text-white/50 uppercase tracking-wider block">Runtime</span>
-                <span className="text-xs font-mono font-semibold text-emerald-400">{scenario.speedMetric}</span>
-              </div>
-              <div className="px-3 py-1 rounded-xl bg-white/5 border border-white/10 text-start">
-                <span className="text-[9px] font-mono text-white/50 uppercase tracking-wider block">Commission</span>
-                <span className="text-xs font-mono font-semibold text-white">{scenario.commissionMetric}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Interactive Event Timeline */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-            {/* Column 1: Live Event Nodes */}
-            <div className="space-y-2.5">
-              <span className="text-xs font-mono uppercase tracking-wider text-white/50 block mb-1">
-                // Pipeline Event Sequence
-              </span>
-
-              {scenario.events.map((ev, idx) => {
-                const isExecuted = isFinished || (activeStep >= 0 && idx <= activeStep);
-                const isCurrent = activeStep === idx;
-
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={false}
-                    animate={{
-                      scale: isCurrent ? 1.01 : 1,
-                      backgroundColor: isCurrent 
-                        ? "rgba(16, 185, 129, 0.12)" 
-                        : isExecuted 
-                        ? "rgba(255, 255, 255, 0.05)" 
-                        : "rgba(255, 255, 255, 0.02)",
-                      borderColor: isCurrent 
-                        ? "rgba(16, 185, 129, 0.4)" 
-                        : isExecuted 
-                        ? "rgba(255, 255, 255, 0.15)" 
-                        : "rgba(255, 255, 255, 0.05)"
-                    }}
-                    className="p-3 sm:p-3.5 rounded-2xl border transition-colors flex items-center gap-3 relative overflow-hidden"
-                  >
-                    {/* Active pulse bar on left/right edge */}
-                    {isCurrent && (
-                      <div className="absolute top-0 bottom-0 start-0 w-1 bg-emerald-400" />
-                    )}
-
-                    {/* Step indicator */}
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-mono font-bold shrink-0 ${
-                      isExecuted 
-                        ? "bg-emerald-500 text-black shadow-[0_0_10px_rgba(16,185,129,0.5)]" 
-                        : "bg-white/10 text-white/40"
-                    }`}>
-                      {isExecuted ? "✓" : ev.step}
-                    </div>
-
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2">
-                        <h4 className={`text-xs sm:text-sm font-medium truncate ${
-                          isExecuted ? "text-white" : "text-white/60"
-                        }`}>
-                          {ev.title}
-                        </h4>
-                        <span className="text-[11px] font-mono text-emerald-400 shrink-0 font-medium">
-                          {ev.timestamp}s
-                        </span>
-                      </div>
-
-                      <div className="flex items-center gap-2 mt-1 text-[10px] font-mono">
-                        <span className={`px-2 py-0.5 rounded-md ${
-                          isExecuted ? "bg-emerald-500/20 text-emerald-300" : "bg-white/5 text-white/30"
-                        }`}>
-                          {ev.badge}
-                        </span>
-                        <span className="text-white/40">
-                          {ev.system}
-                        </span>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Column 2: Live Telemetry Terminal & Outcome */}
-            <div className="flex flex-col justify-between gap-4">
-              {/* Telemetry Console */}
-              <div className="rounded-2xl bg-black border border-white/10 p-4 sm:p-5 font-mono text-xs flex-1 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-white/50 text-[11px]">
-                    <div className="flex items-center gap-2">
-                      <Terminal className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>TELEMETRY CONSOLE // v4.2</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className={`w-2 h-2 rounded-full ${isRunning ? "bg-amber-400 animate-ping" : isFinished ? "bg-emerald-400" : "bg-neutral-600"}`} />
-                      <span>{isRunning ? "STREAMING" : isFinished ? "SECURED" : "IDLE"}</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 text-[11px] sm:text-xs leading-relaxed text-white/70">
-                    <p className="text-white/40">// System status: {isRunning ? sim.statusRunning : isFinished ? sim.statusComplete : sim.statusIdle}</p>
-                    
-                    {activeStep >= 0 && (
-                      <p className="text-emerald-400">
-                        &gt; [00:00.15] META_CAPI: Handshake 200 OK. Zero cookie drop.
-                      </p>
-                    )}
-                    {activeStep >= 1 && (
-                      <p className="text-white/90">
-                        &gt; [00:00.38] EDGE_ROUTER: Render complete in 240ms. HTTP/2 stream active.
-                      </p>
-                    )}
-                    {activeStep >= 2 && (
-                      <p className="text-emerald-300">
-                        &gt; [00:01.05] INTAKE_AGENT: Auto-qualified. Valid phone and buyer intent locked.
-                      </p>
-                    )}
-                    {activeStep >= 3 && (
-                      <p className="text-white/90">
-                        &gt; [00:01.62] POSTGRES_SYNC: Encrypted ledger row committed. Cal event created.
-                      </p>
-                    )}
-                    {activeStep >= 4 && (
-                      <p className="text-emerald-400">
-                        &gt; [00:01.80] DISPATCH_WEBHOOK: Push delivered to staff device in &lt; 18s.
-                      </p>
-                    )}
-                    {isFinished && (
-                      <p className="text-emerald-300 font-bold pt-2 border-t border-white/10">
-                        &gt;&gt; RESULT: REVENUE SECURED · 0% COMMISSION · 100% AUTONOMOUS
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[10px] text-white/40 mt-4">
-                  <span>SSL TLS 1.3 // 256-bit</span>
-                  <span>PostgreSQL Edge Cluster</span>
-                </div>
-              </div>
-
-              {/* Outcome Card */}
-              <div className={`p-4 sm:p-5 rounded-2xl border transition-all text-start ${
-                isFinished 
-                  ? "bg-emerald-500/10 border-emerald-500/30 text-white" 
-                  : "bg-white/[0.02] border-white/5 text-white/60"
-              }`}>
-                <div className="flex items-center gap-2 mb-2">
-                  <CheckCircle2 className={`w-4 h-4 ${isFinished ? "text-emerald-400" : "text-white/30"}`} />
-                  <span className="text-xs font-mono uppercase tracking-wider font-semibold">
-                    {isFinished ? "Automation Result Verified" : "Awaiting Trigger Execution"}
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm font-light leading-relaxed mb-4">
-                  {scenario.resultSummary}
-                </p>
-
-                <TransitionLink
-                  href="/contact"
-                  className="w-full min-h-[44px] inline-flex items-center justify-between px-5 py-2.5 rounded-full bg-white hover:bg-neutral-200 text-black text-xs sm:text-sm font-semibold transition-colors group cursor-pointer"
+        {/* Top Control Bar: Instant Sector Switcher */}
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-white/10">
+          <div 
+            role="tablist"
+            aria-label="Industry Pipelines"
+            className="flex flex-wrap gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-white/5 border border-white/10 w-full md:w-auto"
+          >
+            {sectors.map((sec, idx) => {
+              const isActive = activeSector === idx;
+              return (
+                <button
+                  key={sec.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActiveSector(idx)}
+                  className={`relative min-h-[44px] flex-1 sm:flex-none px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-colors cursor-pointer text-center ${
+                    isActive ? "text-black font-semibold" : "text-white/70 hover:text-white"
+                  }`}
                 >
-                  <span>Build This System For My Business</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />
-                </TransitionLink>
-              </div>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeSectorPill"
+                      className="absolute inset-0 bg-white rounded-xl shadow-md -z-10"
+                      transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                    />
+                  )}
+                  <span>{sec.name}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Client Proof Tag */}
+          <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white/80 self-start md:self-auto">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-white/50">{locale === "fr" ? "Éprouvé dans :" : locale === "ar" ? "نظام معتمد في :" : "Proven in:"}</span>
+            <span className="font-semibold text-white">{current.clientBadge}</span>
+          </div>
+        </div>
+
+        {/* Middle Stage: The 3 Connected Pipeline Nodes */}
+        <div className="relative z-10 py-10 sm:py-12">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+              className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8"
+            >
+              {current.nodes.map((node, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 sm:p-8 rounded-3xl bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 flex flex-col justify-between gap-6 transition-all group"
+                >
+                  <div>
+                    {/* Step & Timing Header */}
+                    <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 text-xs font-mono">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-white/10 text-white flex items-center justify-center font-bold text-[11px]">
+                          {node.step}
+                        </span>
+                        <span className="text-emerald-400 font-semibold">{node.badge}</span>
+                      </div>
+                      <span className="text-white/40">{node.speed}</span>
+                    </div>
+
+                    <h3 className="text-lg sm:text-xl font-medium tracking-tight text-white mb-3 text-balance">
+                      {node.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed text-pretty">
+                      {node.desc}
+                    </p>
+                  </div>
+
+                  {/* System Architecture Tag */}
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/50">
+                    <div className="flex items-center gap-1.5">
+                      <Cpu className="w-3.5 h-3.5 text-white/40" />
+                      <span className="truncate max-w-[200px]">{node.system}</span>
+                    </div>
+                    <span className="text-emerald-400 font-bold">✓</span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Bottom Strip: Financial Impact & Fast-Track Action */}
+        <div className="relative z-10 pt-8 border-t border-white/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs font-mono text-white/70">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>{locale === "fr" ? "100% Propriété du Code Source" : locale === "ar" ? "ملكية كاملة بنسبة 100% للشفرة" : "100% Code & Database Ownership"}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>{locale === "fr" ? "Zéro Abonnement Logiciel Caché" : locale === "ar" ? "صفر اشتراكات برمجية شهرية" : "Zero SaaS Subscription Tax"}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>{locale === "fr" ? "Vitesse Validée Réseau 4G" : locale === "ar" ? "سرعة مثبتة عبر شبكات 4G" : "Sub-Second 4G Delivery"}</span>
             </div>
           </div>
+
+          <TransitionLink
+            href="/contact"
+            className="w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors text-xs sm:text-sm font-semibold shadow-lg shrink-0 cursor-pointer text-center group"
+          >
+            <span>{locale === "fr" ? "Concevoir ce système pour mon entreprise" : locale === "ar" ? "بناء هذا النظام لمشروعي" : "Build This System For My Business"}</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />
+          </TransitionLink>
         </div>
       </div>
     </section>

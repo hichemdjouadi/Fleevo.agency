@@ -570,27 +570,41 @@ export const fr: TranslationDictionary = {
       ]
     },
     flow: {
-      badge: "BOUCLE D'ACQUISITION",
-      headline: "La boucle d'acquisition en 3 étapes.",
-      subhead: "Transformer le trafic en clients payants sans friction manuelle.",
+      badge: "PROTOCOLE DE DÉPLOIEMENT // 14 JOURS",
+      headline: "Du diagnostic au système opérationnel en 14 jours.",
+      subhead: "Un protocole d'ingénierie à calendrier fixe avec livrables hebdomadaires garantis. Zéro improvisation, zéro abonnement inutile.",
       steps: [
         {
           num: "01",
-          phase: "Attirer",
-          title: "Publicités & Scripts Vidéo",
-          desc: "Publicités Meta ciblées et accroches vidéo attirant des acheteurs qualifiés."
+          phase: "Phase 01",
+          timeline: "48 Heures",
+          title: "Audit Technique & Schéma d'Architecture",
+          desc: "Nous analysons les pertes de conversion, les temps de chargement et les frictions commerciales. Vous recevez un plan de développement précis et chiffré.",
+          deliverable: "Schéma d'Architecture + Plan d'Action"
         },
         {
           num: "02",
-          phase: "Convertir",
-          title: "Plateformes Rapides & CRM",
-          desc: "Infrastructure mobile instantanée transformant les clics en commandes confirmées."
+          phase: "Phase 02",
+          timeline: "Jours 3 à 7",
+          title: "Développement Edge & Intégration CRM",
+          desc: "Construction de votre plateforme sur-mesure en Next.js, optimisée pour la 4G mobile, connectée aux webhooks WhatsApp et à votre équipe.",
+          deliverable: "Environnement de Staging Validé"
         },
         {
           num: "03",
-          phase: "Conclure",
-          title: "Alerte Bot en 30s",
-          desc: "Bots autonomes qualifiant la demande et alertant directement votre équipe."
+          phase: "Phase 03",
+          timeline: "Jours 8 à 14",
+          title: "Direction Créative & Meta CAPI Serveur",
+          desc: "Rédaction des scripts vidéos à forte réponse directe, paramétrage de l'attribution Meta côté serveur (sans perte de cookies) et tests de charge.",
+          deliverable: "Scripts Vidéo + CAPI Opérationnelle"
+        },
+        {
+          num: "04",
+          phase: "Phase 04",
+          timeline: "Jour 15+",
+          title: "Mise en Ligne & Transfert 100% Propriétaire",
+          desc: "Bascule DNS, activation des flux d'acquisition et cession totale du code et des accès. Vous possédez 100% de vos actifs sans dépendance d'agence.",
+          deliverable: "Système Clé en Main + Propriété Totale"
         }
       ]
     },
