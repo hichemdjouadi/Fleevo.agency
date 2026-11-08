@@ -80,7 +80,7 @@ export default function AutonomousEngineSimulator() {
   }, []);
 
   return (
-    <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto text-start overflow-hidden">
+    <section className="py-28 sm:py-36 md:py-48 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto text-start overflow-hidden">
       {/* 1. Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-16 gap-6 sm:gap-8">
         <div className="max-w-3xl">

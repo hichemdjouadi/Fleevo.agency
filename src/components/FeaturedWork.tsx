@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { FeaturedProjectTranslation } from "@/lib/i18n/types";
 
@@ -44,6 +44,15 @@ function ShowcaseItem({ project }: { project: FeaturedProjectTranslation }) {
   };
 
   const cardRef = useRef<HTMLAnchorElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768 && window.matchMedia("(pointer: fine)").matches);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 150, damping: 20 });
@@ -71,11 +80,11 @@ function ShowcaseItem({ project }: { project: FeaturedProjectTranslation }) {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{
+      style={isDesktop ? {
         rotateX,
         rotateY,
         transformStyle: "preserve-3d"
-      }}
+      } : undefined}
       href={meta.link}
       target={meta.link.startsWith("http") ? "_blank" : undefined}
       rel={meta.link.startsWith("http") ? "noopener noreferrer" : undefined}

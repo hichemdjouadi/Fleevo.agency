@@ -10,7 +10,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-36 px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black">
+    <section className="py-24 md:py-36 px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black overflow-hidden">
       <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16">
         
         <div className="w-full md:w-1/3 md:sticky md:top-32">
@@ -30,7 +30,7 @@ export default function FAQ() {
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full py-7 sm:py-8 flex justify-between items-center text-start group focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none rounded-lg px-2 -mx-2"
+                className="w-full py-7 sm:py-8 flex justify-between items-center text-start group focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none rounded-lg px-1"
               >
                 <span className="text-lg sm:text-xl md:text-2xl font-medium tracking-tight group-hover:text-black transition-colors text-black pe-4">
                   {faq.question}

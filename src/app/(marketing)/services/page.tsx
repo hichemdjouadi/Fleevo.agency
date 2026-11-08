@@ -159,10 +159,10 @@ export default function ServicesPage() {
   }[locale];
 
   return (
-    <main className="bg-white text-black min-h-screen selection:bg-black selection:text-white">
+    <main className="bg-white text-black min-h-screen selection:bg-black selection:text-white w-full max-w-full overflow-x-hidden">
 
       {/* 1. HERO SECTION */}
-      <section className="pt-28 pb-12 sm:pt-36 sm:pb-20 md:pt-44 md:pb-28 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto flex flex-col items-center text-center">
+      <section className="pt-28 pb-14 sm:pt-36 sm:pb-24 md:pt-48 md:pb-32 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto flex flex-col items-center text-center overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -228,8 +228,8 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. PILLAR 01: PLATFORMS & DIGITAL INFRASTRUCTURE */}
-      <section className="py-14 sm:py-20 md:py-36 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 sm:mb-16 gap-6 sm:gap-8">
+      <section className="py-20 sm:py-28 md:py-40 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 overflow-hidden">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-20 gap-6 sm:gap-8">
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.04] mb-3 text-balance">
               {t.services.pillarOneTitle}
@@ -247,10 +247,10 @@ export default function ServicesPage() {
           {t.services.pillarOneItems.map((service) => (
             <div
               key={service.num}
-              className="py-7 sm:py-10 lg:py-12 lg:px-8 first:lg:ps-0 last:lg:pe-0 flex flex-col justify-between gap-6 sm:gap-8 text-start"
+              className="py-8 sm:py-12 lg:py-14 lg:px-8 first:lg:ps-0 last:lg:pe-0 flex flex-col justify-between gap-6 sm:gap-8 text-start"
             >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
+                <div className="flex items-center justify-between gap-2 mb-4">
                   <span className="text-[11px] sm:text-xs font-mono px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-neutral-100 text-neutral-900 font-semibold border border-neutral-200 truncate">
                     {service.badge}
                   </span>
@@ -262,12 +262,12 @@ export default function ServicesPage() {
                   )}
                 </div>
 
-                <h3 className="text-lg sm:text-2xl font-medium tracking-tight text-black mb-2 text-balance">
+                <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-black mb-3 text-balance">
                   <span className="font-mono text-xs sm:text-sm text-neutral-500 me-2">{service.num}. </span>
                   {service.title}
                 </h3>
 
-                <p className="text-neutral-700 font-normal text-xs sm:text-base leading-relaxed text-pretty mb-3 sm:mb-4">
+                <p className="text-neutral-600 font-light text-sm sm:text-base leading-relaxed text-pretty mb-4 sm:mb-6">
                   {service.desc}
                 </p>
 
@@ -275,7 +275,7 @@ export default function ServicesPage() {
                 {service.deliverables && (
                   <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                     {service.deliverables.map((deliv, idx) => (
-                      <span key={idx} className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-medium bg-neutral-100 text-neutral-800 px-2.5 py-1 rounded-full border border-neutral-200/80">
+                      <span key={idx} className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-medium bg-neutral-100 text-neutral-800 px-3 py-1 rounded-full border border-neutral-200/80">
                         <Check className="w-3 h-3 text-emerald-600 shrink-0" />
                         <span>{deliv}</span>
                       </span>
@@ -284,10 +284,10 @@ export default function ServicesPage() {
                 )}
               </div>
 
-              <div>
+              <div className="pt-2">
                 {service.proofLabel && (
-                  <div className="mb-4 sm:mb-5 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-neutral-700 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                  <div className="mb-4 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-neutral-600 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
                     <span>{locale === "fr" ? "Éprouvé dans :" : locale === "ar" ? "تم إثباته في :" : "Proven in:"}</span>
                     <TransitionLink href="/work" className="text-black font-semibold underline underline-offset-4 hover:text-neutral-600 inline-flex items-center gap-1">
                       <span>{service.proofLabel}</span>
@@ -298,9 +298,9 @@ export default function ServicesPage() {
 
                 <TransitionLink
                   href="/contact"
-                  className="w-full min-h-[44px] inline-flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-black/5 hover:bg-black text-black hover:text-white border border-black/15 hover:border-black transition-all text-xs sm:text-sm font-semibold group shadow-sm cursor-pointer"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-black hover:text-neutral-600 transition-colors group cursor-pointer"
                 >
-                  <span>{locale === "fr" ? "Consulter pour cette offre" : locale === "ar" ? "طلب استشارة لهذا المشروع" : "Inquire About This Build"}</span>
+                  <span>{locale === "fr" ? "Consulter pour ce système" : locale === "ar" ? "استفسر عن هذا النظام" : "Inquire About This Build"}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />
                 </TransitionLink>
               </div>
@@ -367,9 +367,9 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. PILLAR 02: GROWTH & CUSTOMER ACQUISITION */}
-      <section className="py-14 sm:py-20 md:py-36 px-4 sm:px-6 md:px-12 bg-[#050505] text-white border-t border-white/10">
+      <section className="py-20 sm:py-28 md:py-40 px-4 sm:px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 sm:mb-16 gap-6 sm:gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-20 gap-6 sm:gap-8">
             <div className="max-w-3xl">
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.04] mb-3 text-balance">
                 {t.services.pillarTwoTitle}
@@ -389,10 +389,10 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.num}
-                  className="py-7 sm:py-10 lg:py-12 lg:px-8 first:lg:ps-0 last:lg:pe-0 flex flex-col justify-between gap-6 sm:gap-8 text-start"
+                  className="py-8 sm:py-12 lg:py-14 lg:px-8 first:lg:ps-0 last:lg:pe-0 flex flex-col justify-between gap-6 sm:gap-8 text-start"
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center justify-between gap-2 mb-4">
                       <span className={`text-[11px] sm:text-xs font-mono px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full font-semibold truncate ${
                         isBonus ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" : "bg-white/10 text-white"
                       }`}>
@@ -406,12 +406,12 @@ export default function ServicesPage() {
                       )}
                     </div>
 
-                    <h3 className="text-lg sm:text-2xl font-medium tracking-tight text-white mb-2 text-balance">
+                    <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-white mb-3 text-balance">
                       <span className="font-mono text-xs sm:text-sm text-white/55 me-2">{service.num}. </span>
                       {service.title}
                     </h3>
 
-                    <p className="text-white/80 font-normal text-xs sm:text-base leading-relaxed text-pretty mb-3 sm:mb-4">
+                    <p className="text-white/75 font-light text-sm sm:text-base leading-relaxed text-pretty mb-4 sm:mb-6">
                       {service.desc}
                     </p>
 
@@ -419,7 +419,7 @@ export default function ServicesPage() {
                     {service.deliverables && (
                       <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                         {service.deliverables.map((deliv, dIdx) => (
-                          <span key={dIdx} className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-medium bg-white/[0.08] text-white/90 px-2.5 py-1 rounded-full border border-white/10">
+                          <span key={dIdx} className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-medium bg-white/[0.08] text-white/90 px-3 py-1 rounded-full border border-white/10">
                             <Check className="w-3 h-3 text-emerald-400 shrink-0" />
                             <span>{deliv}</span>
                           </span>
@@ -428,18 +428,17 @@ export default function ServicesPage() {
                     )}
                   </div>
 
-                  <div>
+                  <div className="pt-2">
                     {isBonus ? (
-                      <div className="w-full min-h-[44px] inline-flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-emerald-300 font-semibold">
-                        <span>{locale === "fr" ? "Inclus avec le Projet Web" : locale === "ar" ? "مدمج مع بناء المنصة" : "Included with Core Architecture"}</span>
-                        <span>✓ {locale === "fr" ? "Clé en Main" : locale === "ar" ? "تسليم متكامل" : "Turnkey Included"}</span>
+                      <div className="inline-flex items-center gap-2 text-xs sm:text-sm rtl:font-sans ltr:font-mono text-emerald-300 font-medium">
+                        <span>✓ {locale === "fr" ? "Inclus avec la plateforme" : locale === "ar" ? "مدمج مع بناء المنصة" : "Included with Core Build"}</span>
                       </div>
                     ) : (
                       <TransitionLink
                         href="/contact"
-                        className="w-full min-h-[44px] inline-flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 hover:border-white transition-all text-xs sm:text-sm font-semibold group cursor-pointer"
+                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white/90 hover:text-white transition-colors group cursor-pointer"
                       >
-                        <span>{locale === "fr" ? "Consulter pour cette offre" : locale === "ar" ? "طلب استشارة لهذا المشروع" : "Inquire About This Scope"}</span>
+                        <span>{locale === "fr" ? "Consulter pour ce système" : locale === "ar" ? "استفسر عن هذا النظام" : "Inquire About This Scope"}</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform shrink-0" />
                       </TransitionLink>
                     )}

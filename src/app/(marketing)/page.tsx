@@ -22,10 +22,10 @@ export default function Home() {
   const { t, isRTL } = useTranslation();
 
   return (
-    <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen w-full max-w-full overflow-x-clip">
+    <main className="bg-white text-black selection:bg-black selection:text-white min-h-screen w-full max-w-full overflow-x-hidden">
 
       {/* 1. CINEMATIC HERO */}
-      <section className="relative w-full flex flex-col items-center pt-24 sm:pt-32 md:pt-44 pb-14 sm:pb-20 overflow-x-clip bg-white text-black">
+      <section className="relative w-full flex flex-col items-center pt-28 sm:pt-36 md:pt-48 pb-16 sm:pb-24 overflow-hidden bg-white text-black">
         {/* Subtle architectural ambient aura */}
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(0,0,0,0.04),transparent)] pointer-events-none" />
 
@@ -137,7 +137,7 @@ export default function Home() {
       <AnatomyOfTheLeak />
 
       {/* 4. THE 2 PILLARS OF ACQUISITION ARCHITECTURE */}
-      <section className="py-28 md:py-40 px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black">
+      <section className="py-28 md:py-44 px-4 sm:px-6 md:px-12 w-full max-w-[1400px] mx-auto border-t border-black/10 bg-white text-black overflow-hidden">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.02] max-w-2xl text-balance">
             {t.home.pillars.headline}
@@ -245,8 +245,8 @@ export default function Home() {
       </section>
 
       {/* 3. SELECTED DEPLOYMENTS */}
-      <section className="bg-white text-black py-28 md:py-40 border-t border-black/10">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <section className="bg-white text-black py-28 md:py-44 border-t border-black/10 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20 gap-8">
             <h2 className="text-4xl md:text-7xl font-medium text-black tracking-[-0.03em] leading-[0.94] text-balance">
               {t.home.showcase.headline}
@@ -288,7 +288,7 @@ export default function Home() {
       </section>
 
       {/* 4. 3-STEP ACQUISITION FLOW */}
-      <section className="bg-[#050505] text-white py-28 md:py-40 px-6 md:px-12 border-t border-white/10">
+      <section className="bg-[#050505] text-white py-28 md:py-44 px-4 sm:px-6 md:px-12 border-t border-white/10 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
             <div className="max-w-2xl">
@@ -332,15 +332,10 @@ export default function Home() {
       <FAQ />
 
       {/* 6. CINEMATIC OUTRO & COLLABORATION GATEWAY */}
-      <section className="relative w-full bg-black text-white py-36 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden border-t border-white/10">
-        <div className="absolute inset-0 w-full h-full z-0 bg-black overflow-hidden pointer-events-none">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-25 scale-105">
-            <source src="/video-erasio-1.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80 z-0" />
+      <section className="relative w-full bg-[#050505] text-white py-36 sm:py-48 md:py-56 px-4 sm:px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden border-t border-white/10">
+        {/* Architectural Ambient Depth Aura (Zero Video Dependency) */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_35%,rgba(255,255,255,0.06),transparent_75%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay" />
 
         <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
           <motion.h2

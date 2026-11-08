@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import DeviceFrame from "@/components/ui/DeviceFrame";
@@ -38,6 +38,14 @@ const STATIC_METAS: Record<string, ProjectMeta> = {
 export default function HeroVisual() {
   const { t, isRTL } = useTranslation();
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768 && window.matchMedia("(pointer: fine)").matches);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const stageRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
@@ -110,11 +118,11 @@ export default function HeroVisual() {
 
       {/* 2. Realistic Dynamic Mobile Showcase */}
       <motion.div
-        style={{
+        style={isDesktop ? {
           rotateX,
           rotateY,
           transformStyle: "preserve-3d"
-        }}
+        } : undefined}
         className="relative z-20 flex flex-col items-center w-full px-2"
       >
         <div className="w-[min(280px,calc(100%-1rem))] sm:w-[340px] md:w-[370px] drop-shadow-[0_25px_60px_rgba(0,0,0,0.18)]">
