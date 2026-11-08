@@ -57,9 +57,9 @@ export const en: TranslationDictionary = {
       aiAgent: "Domain-Specific AI Agent"
     },
     budgets: {
-      standard: "150,000 – 250,000 DA (Core Platform)",
-      growth: "250,000 – 450,000 DA (Full Commerce & Logistics)",
-      enterprise: "450,000+ DA (Enterprise Infrastructure / Custom App)"
+      standard: "$2,500 – $5,000 (Core Platform)",
+      growth: "$5,000 – $10,000 (Full Commerce & Logistics Engine)",
+      enterprise: "$10,000+ (Enterprise Infrastructure / Custom Web App)"
     },
     timelines: {
       rightAway: "Right away",
@@ -226,7 +226,7 @@ export const en: TranslationDictionary = {
         ctaText: "Explore Staging Platform",
         ctaTextDesktop: "Explore Staging Platform (Adréna Club)",
         benefits: [
-          { direction: "up", label: "Direct WhatsApp Enrollment (dès 3 000 DA)" },
+          { direction: "up", label: "Direct WhatsApp Tiered Enrollment" },
           { direction: "down", label: "Front-Desk Inquiry Overload" }
         ]
       },
@@ -277,10 +277,10 @@ export const en: TranslationDictionary = {
         title: "Adréna Club",
         niche: "Athletics & Combat · Membership Booking",
         deployment: "2-Floor Facility Platform & WhatsApp Intake",
-        summary: "Two-floor athletic performance platform in Bab Ezzouar with real-time floor schedules, dedicated women-only hours, and direct WhatsApp membership onboarding from 3,000 DA/month.",
+        summary: "Two-floor athletic performance platform in Bab Ezzouar with real-time floor schedules, dedicated women-only hours, and direct WhatsApp membership onboarding.",
         statusBadge: "Private Preview · Staging Deployment",
         benefits: [
-          { direction: "up", label: "Direct WhatsApp Enrollment (dès 3 000 DA)" },
+          { direction: "up", label: "Direct WhatsApp Tiered Enrollment" },
           { direction: "down", label: "Front-Desk Inquiry Overload" }
         ]
       },
@@ -847,13 +847,13 @@ export const en: TranslationDictionary = {
         client: "Adréna Club (Bab Ezzouar)",
         systemType: "2-Floor Athletic Facility & WhatsApp Intake",
         statusBadge: "Private Preview · Staging Deployment",
-        summary: "Two-floor athletic performance platform in Bab Ezzouar with real-time floor schedules, dedicated women-only hours, and direct WhatsApp membership onboarding from 3,000 DA/month.",
+        summary: "Two-floor athletic performance platform in Bab Ezzouar with real-time floor schedules, dedicated women-only hours, and direct WhatsApp membership onboarding.",
         benefits: [
           {
             direction: "up",
             type: "Commercial Result",
             headline: "Direct WhatsApp Membership Enrollment",
-            detail: "Qualified membership signups direct to WhatsApp with pre-selected tiers starting from 3,000 DA/month."
+            detail: "Qualified membership signups direct to WhatsApp with pre-selected training tiers."
           },
           {
             direction: "down",

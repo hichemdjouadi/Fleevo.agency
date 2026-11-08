@@ -304,8 +304,12 @@ export default function AboutPage() {
       </section>
 
       {/* 5. OUTRO COLLABORATION GATEWAY */}
-      <section className="py-20 sm:py-28 md:py-40 px-4 sm:px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-center">
-        <div className="max-w-3xl mx-auto">
+      <section className="relative py-20 sm:py-28 md:py-40 px-4 sm:px-6 md:px-12 bg-[#050505] text-white border-t border-white/10 text-center overflow-hidden">
+        {/* Architectural Ambient Depth Aura */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_35%,rgba(255,255,255,0.06),transparent_75%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay" />
+
+        <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] mb-4 sm:mb-8 leading-[0.98] sm:leading-[0.96] text-white text-balance">
             {t.about.bottomCta.headline}
           </h2>

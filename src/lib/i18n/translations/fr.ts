@@ -57,9 +57,9 @@ export const fr: TranslationDictionary = {
       aiAgent: "Agent IA Spécialisé"
     },
     budgets: {
-      standard: "150 000 – 250 000 DA (Plateforme Essentielle)",
-      growth: "250 000 – 450 000 DA (Commerce Complet & Logistique)",
-      enterprise: "450 000+ DA (Infrastructure Entreprise / Application Sur Mesure)"
+      standard: "2 500 $ – 5 000 $ (Plateforme Essentielle)",
+      growth: "5 000 $ – 10 000 $ (Commerce Complet & Logistique)",
+      enterprise: "10 000 $+ (Infrastructure Entreprise / Application Sur Mesure)"
     },
     timelines: {
       rightAway: "Immédiatement",
@@ -226,7 +226,7 @@ export const fr: TranslationDictionary = {
         ctaText: "Explorer la Plateforme",
         ctaTextDesktop: "Explorer la Plateforme (Adréna Club)",
         benefits: [
-          { direction: "up", label: "Adhésion Directe WhatsApp (dès 3 000 DA)" },
+          { direction: "up", label: "Adhésion Directe WhatsApp par Formule" },
           { direction: "down", label: "Désengorgement de l'Accueil" }
         ]
       },
@@ -277,10 +277,10 @@ export const fr: TranslationDictionary = {
         title: "Adréna Club",
         niche: "Athlétisme & Combat · Réservation d'Adhésion",
         deployment: "Plateforme 2 Étages & Inscription WhatsApp",
-        summary: "Plateforme d'entraînement sur deux étages à Bab Ezzouar avec plannings en temps réel, créneaux femmes dédiés et intégration directe d'adhésion via WhatsApp dès 3 000 DA/mois.",
+        summary: "Plateforme d'entraînement sur deux étages à Bab Ezzouar avec plannings en temps réel, créneaux femmes dédiés et intégration directe d'adhésion via WhatsApp.",
         statusBadge: "Aperçu Privé · Déploiement Staging",
         benefits: [
-          { direction: "up", label: "Adhésion Directe WhatsApp (dès 3 000 DA)" },
+          { direction: "up", label: "Adhésion Directe WhatsApp par Formule" },
           { direction: "down", label: "Désengorgement des Appels Accueil" }
         ]
       },
@@ -847,13 +847,13 @@ export const fr: TranslationDictionary = {
         client: "Adréna Club (Bab Ezzouar)",
         systemType: "Infrastructure 2 Étages & Onboarding WhatsApp",
         statusBadge: "Aperçu Privé · Déploiement Staging",
-        summary: "Plateforme d'entraînement sur deux étages à Bab Ezzouar avec plannings en temps réel, créneaux femmes dédiés et intégration directe d'adhésion via WhatsApp dès 3 000 DA/mois.",
+        summary: "Plateforme d'entraînement sur deux étages à Bab Ezzouar avec plannings en temps réel, créneaux femmes dédiés et intégration directe d'adhésion via WhatsApp.",
         benefits: [
           {
             direction: "up",
             type: "Résultat Commercial",
             headline: "Inscriptions Directes WhatsApp",
-            detail: "Demandes d'adhésion qualifiées transmises sur WhatsApp avec choix préalable des formules dès 3 000 DA/mois."
+            detail: "Demandes d'adhésion qualifiées transmises sur WhatsApp avec choix préalable des formules d'entraînement."
           },
           {
             direction: "down",

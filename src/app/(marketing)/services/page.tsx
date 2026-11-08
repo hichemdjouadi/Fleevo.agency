@@ -14,7 +14,6 @@ import {
 import Footer from "@/components/Footer";
 import TransitionLink from "@/components/TransitionLink";
 import Magnetic from "@/components/Magnetic";
-import SystemTopology from "@/components/SystemTopology";
 import { useTranslation } from "@/lib/i18n";
 
 export default function ServicesPage() {
@@ -332,11 +331,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 2.5 SYSTEM TOPOLOGY ARCHITECTURE */}
-      <section className="py-10 sm:py-16 md:py-24 px-3 sm:px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/10">
-        <SystemTopology />
-      </section>
-
       {/* 3. ZERO-RISK GUARANTEE STRIP */}
       <section className="py-10 sm:py-14 px-4 sm:px-6 md:px-12 max-w-[1400px] mx-auto border-t border-black/15 text-start">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-10">
@@ -488,7 +482,11 @@ export default function ServicesPage() {
       </section>
 
       {/* 6. CINEMATIC OUTRO */}
-      <section className="relative w-full text-white py-24 sm:py-36 md:py-48 px-4 sm:px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden border-t border-white/10 bg-black">
+      <section className="relative w-full text-white py-24 sm:py-36 md:py-48 px-4 sm:px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden border-t border-white/10 bg-[#050505]">
+        {/* Architectural Ambient Depth Aura */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_35%,rgba(255,255,255,0.06),transparent_75%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay" />
+
         <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[0.98] mb-4 sm:mb-6 text-balance">
             {t.services.bottomCta.headline}

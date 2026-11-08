@@ -59,7 +59,7 @@ const STATIC_PROJECT_METAS: ProjectMeta[] = [
     link: "https://adrenaclub.vercel.app/",
     isLive: true,
     telemetry: [
-      { label: "ENROLLMENT FLOW", val: "From 3,000 DA", note: "Pre-qualified tier funnel" },
+      { label: "ENROLLMENT FLOW", val: "Tiered Funnel", note: "Direct WhatsApp onboarding" },
       { label: "FACILITY SCALE", val: "2 Floors", note: "Live schedule & coach roster" },
       { label: "FRONT-DESK LOAD", val: "-68% Calls", note: "Direct WhatsApp triage" },
       { label: "DEVICE SPEED", val: "380ms on 4G", note: "Smooth Framer animations" },
@@ -95,7 +95,6 @@ const STATIC_PROJECT_METAS: ProjectMeta[] = [
 
 export default function Work() {
   const { t, isRTL, locale } = useTranslation();
-  const [filter, setFilter] = useState<"all" | "commerce" | "webapp">("all");
 
   const projectsWithMeta = t.work.projects.map((proj, idx) => ({
     ...proj,
@@ -107,12 +106,6 @@ export default function Work() {
       telemetry: [],
     },
   }));
-
-  const filteredProjects = projectsWithMeta.filter((proj) => {
-    if (filter === "commerce") return proj.filterCategory === "commerce";
-    if (filter === "webapp") return proj.filterCategory === "webapp";
-    return true;
-  });
 
   return (
     <main className="relative min-h-screen bg-white text-black overflow-hidden selection:bg-black selection:text-white">
@@ -133,60 +126,27 @@ export default function Work() {
             {t.work.hero.headline}
           </h1>
 
-          <p className="text-xl md:text-2xl text-neutral-600 max-w-xl font-light leading-relaxed tracking-tight mb-12 text-balance">
+          <p className="text-xl md:text-2xl text-neutral-600 max-w-xl font-light leading-relaxed tracking-tight text-balance">
             {t.work.hero.subhead}
           </p>
-
-          {/* Filter Pills */}
-          <div className="flex items-center gap-2 pt-6 border-t border-black/10 overflow-x-auto no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 sm:flex-wrap" role="group" aria-label="Filter projects">
-            <button
-              type="button"
-              onClick={() => setFilter("all")}
-              className={`shrink-0 min-h-[42px] px-5 py-2 rounded-full text-xs font-mono transition-all active:scale-95 flex items-center justify-center cursor-pointer ${
-                filter === "all"
-                  ? "bg-black text-white font-semibold shadow-sm"
-                  : "bg-[#f4f4f5] text-neutral-700 hover:text-black hover:bg-neutral-200"
-              }`}
-            >
-              {t.work.filters.all}
-            </button>
-            <button
-              type="button"
-              onClick={() => setFilter("commerce")}
-              className={`shrink-0 min-h-[42px] px-5 py-2 rounded-full text-xs font-mono transition-all active:scale-95 flex items-center justify-center cursor-pointer ${
-                filter === "commerce"
-                  ? "bg-black text-white font-semibold shadow-sm"
-                  : "bg-[#f4f4f5] text-neutral-700 hover:text-black hover:bg-neutral-200"
-              }`}
-            >
-              {t.work.filters.commerce}
-            </button>
-            <button
-              type="button"
-              onClick={() => setFilter("webapp")}
-              className={`shrink-0 min-h-[42px] px-5 py-2 rounded-full text-xs font-mono transition-all active:scale-95 flex items-center justify-center cursor-pointer ${
-                filter === "webapp"
-                  ? "bg-black text-white font-semibold shadow-sm"
-                  : "bg-[#f4f4f5] text-neutral-700 hover:text-black hover:bg-neutral-200"
-              }`}
-            >
-              {t.work.filters.webapp}
-            </button>
-          </div>
         </motion.div>
       </section>
 
       {/* 2. PROJECTS SHOWCASE */}
       <section className="relative z-20 pt-16 sm:pt-24 pb-24 sm:pb-36 bg-[#050505] text-white border-t border-black/10">
         <div className="flex flex-col gap-16 sm:gap-28 md:gap-40 px-6 md:px-12 max-w-[1400px] mx-auto">
-          {filteredProjects.map((project, i) => (
+          {projectsWithMeta.map((project, i) => (
             <ProjectShowcase key={project.title} project={project} index={i} locale={locale} />
           ))}
         </div>
       </section>
 
       {/* 3. CTA SECTION */}
-      <section className="py-36 md:py-48 px-6 text-center relative overflow-hidden border-t border-white/10 bg-black text-white">
+      <section className="py-36 md:py-48 px-6 text-center relative overflow-hidden border-t border-white/10 bg-[#050505] text-white">
+        {/* Architectural Ambient Depth Aura */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_35%,rgba(255,255,255,0.06),transparent_75%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay" />
+
         <div className="relative z-10 max-w-[840px] mx-auto flex flex-col items-center">
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-[-0.03em] text-white mb-6 leading-[0.96] text-balance">
             {t.work.bottomCta.headline}
