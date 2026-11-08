@@ -607,6 +607,38 @@ export const en: TranslationDictionary = {
         }
       ]
     },
+    guarantee: {
+      badge: "THE FLEEVY PERFORMANCE PLEDGE // ZERO RISK",
+      headline: "Engineered For Outcomes. Backed by a 100% Money-Back Guarantee.",
+      subhead: "We eliminate the risk of hiring traditional agencies. If our deployed infrastructure does not hit these four measurable operational standards within our 14-day SLA, we issue a 100% full refund immediately.",
+      pillars: [
+        {
+          metric: "< 800ms TTFB",
+          label: "Sub-Second 4G Speed",
+          desc: "Instant page rendering on mobile networks across all 58 wilayas, eliminating visitor drop-off before your offer is seen."
+        },
+        {
+          metric: "< 30s Triage",
+          label: "Instant WhatsApp Intake",
+          desc: "Automated qualification and direct dispatch to your team in under 30 seconds, replacing 4-hour DM response delays."
+        },
+        {
+          metric: "0% Commission",
+          label: "Zero Aggregator Toll",
+          desc: "100% of top-line revenue stays in your pocket. No marketplace commissions, no platform percentages."
+        },
+        {
+          metric: "100% Sovereignty",
+          label: "Full Code & IP Ownership",
+          desc: "All source code, database credentials, and domain assets are transferred directly to your name with zero monthly SaaS rent."
+        }
+      ],
+      pledgeTitle: "The 100% Money-Back Commitment",
+      pledgeText: "If our deployed system fails to fulfill these verified performance standards upon delivery, you receive an immediate, no-questions-asked 100% refund of your investment—and you keep the architecture blueprint for free.",
+      ctaBtn: "Start Your Risk-Free Build",
+      directDeskBtn: "Ask an Architect on WhatsApp",
+      founderSignature: "Hichem Djouadi · Founder & Lead Systems Architect"
+    },
     showcase: {
       headline: "Selected Deployments",
       subhead: "Real commercial platforms generating revenue for our clients.",

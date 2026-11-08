@@ -12,7 +12,11 @@ import {
   Database, 
   Lock,
   Layers,
-  Sparkles
+  Sparkles,
+  Play,
+  RotateCcw,
+  CheckCircle2,
+  Activity
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import TransitionLink from "@/components/TransitionLink";
@@ -41,6 +45,36 @@ interface SectorArchitecture {
 export default function AutonomousEngineSimulator() {
   const { t, isRTL, locale } = useTranslation();
   const [activeSector, setActiveSector] = useState<number>(0);
+  const [isSimulating, setIsSimulating] = useState(false);
+  const [activeSimStep, setActiveSimStep] = useState<number | null>(null);
+  const [simCompleted, setSimCompleted] = useState(false);
+
+  const runSimulation = () => {
+    if (isSimulating) return;
+    setIsSimulating(true);
+    setSimCompleted(false);
+    setActiveSimStep(0);
+
+    setTimeout(() => {
+      setActiveSimStep(1);
+    }, 650);
+
+    setTimeout(() => {
+      setActiveSimStep(2);
+    }, 1300);
+
+    setTimeout(() => {
+      setActiveSimStep(null);
+      setIsSimulating(false);
+      setSimCompleted(true);
+    }, 2000);
+  };
+
+  const resetSimulation = () => {
+    setIsSimulating(false);
+    setActiveSimStep(null);
+    setSimCompleted(false);
+  };
 
   const sectors: SectorArchitecture[] = [
     {
@@ -189,12 +223,12 @@ export default function AutonomousEngineSimulator() {
         {/* Subtle architectural ambient aura */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-48 bg-emerald-500/10 blur-[100px] pointer-events-none" />
 
-        {/* Top Control Bar: Instant Sector Switcher */}
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-white/10">
+        {/* Top Control Bar: Instant Sector Switcher + Simulation Triggers */}
+        <div className="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-8 border-b border-white/10">
           <div 
             role="tablist"
             aria-label="Industry Pipelines"
-            className="flex flex-wrap gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-white/5 border border-white/10 w-full md:w-auto"
+            className="flex flex-wrap gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-white/5 border border-white/10 w-full xl:w-auto"
           >
             {sectors.map((sec, idx) => {
               const isActive = activeSector === idx;
@@ -204,7 +238,10 @@ export default function AutonomousEngineSimulator() {
                   type="button"
                   role="tab"
                   aria-selected={isActive}
-                  onClick={() => setActiveSector(idx)}
+                  onClick={() => {
+                    setActiveSector(idx);
+                    resetSimulation();
+                  }}
                   className={`relative min-h-[44px] flex-1 sm:flex-none px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-colors cursor-pointer text-center ${
                     isActive ? "text-black font-semibold" : "text-white/70 hover:text-white"
                   }`}
@@ -222,16 +259,122 @@ export default function AutonomousEngineSimulator() {
             })}
           </div>
 
-          {/* Active Client Proof Tag */}
-          <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white/80 self-start md:self-auto">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-white/50">{locale === "fr" ? "Éprouvé dans :" : locale === "ar" ? "نظام معتمد في :" : "Proven in:"}</span>
-            <span className="font-semibold text-white">{current.clientBadge}</span>
+          {/* Interactive Simulation Trigger Desk */}
+          <div className="flex flex-wrap items-center gap-3 self-start xl:self-auto">
+            <button
+              type="button"
+              onClick={runSimulation}
+              disabled={isSimulating}
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-semibold transition-all cursor-pointer ${
+                isSimulating 
+                  ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 animate-pulse cursor-wait" 
+                  : "bg-emerald-500 hover:bg-emerald-400 text-black shadow-[0_0_20px_rgba(16,185,129,0.35)] active:scale-95"
+              }`}
+            >
+              {isSimulating ? (
+                <>
+                  <Activity className="w-3.5 h-3.5 animate-spin" />
+                  <span>{locale === "ar" ? "جاري البث التجريبي..." : locale === "fr" ? "Simulation en cours..." : "Simulating Event Cascade..."}</span>
+                </>
+              ) : (
+                <>
+                  <Play className="w-3.5 h-3.5 fill-black" />
+                  <span>{locale === "ar" ? "تشغيل محاكاة التدفق الحقيقي" : locale === "fr" ? "Lancer la Simulation en Direct" : "Run Autonomous Simulation"}</span>
+                </>
+              )}
+            </button>
+
+            {simCompleted && (
+              <button
+                type="button"
+                onClick={resetSimulation}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/10 text-white/80 text-xs font-mono transition-colors cursor-pointer"
+              >
+                <RotateCcw className="w-3 h-3" />
+                <span>{locale === "ar" ? "إعادة" : locale === "fr" ? "Réinitialiser" : "Reset"}</span>
+              </button>
+            )}
+
+            {/* Active Client Proof Tag */}
+            <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white/80">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-white/50">{locale === "fr" ? "Éprouvé dans :" : locale === "ar" ? "نظام معتمد في :" : "Proven in:"}</span>
+              <span className="font-semibold text-white">{current.clientBadge}</span>
+            </div>
           </div>
         </div>
 
-        {/* Middle Stage: The 3 Connected Pipeline Nodes */}
+        {/* Hardware-Style Telemetry Status Ribbon */}
+        <div className="relative z-10 py-4 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono text-white/60">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <span className="flex items-center gap-1.5 text-emerald-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>{locale === "ar" ? "شبكة Edge العالمية نشطة" : locale === "fr" ? "CDN Edge Global Actif" : "Global Edge CDN Active"}</span>
+            </span>
+            <span className="text-white/30 hidden xs:inline">|</span>
+            <span className="text-white/80">
+              <strong className="text-emerald-400 font-mono">0%</strong> {locale === "ar" ? "عمولة منصات" : locale === "fr" ? "Taxes Marketplace" : "Marketplace Cut"}
+            </span>
+            <span className="text-white/30 hidden xs:inline">|</span>
+            <span className="text-white/80">
+              <strong className="text-emerald-400 font-mono">{current.speedMetric.split(" ")[0]}</strong> 4G TTFB
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 text-white/40">
+            <span>TELEMETRY PROTOCOL // v4.2</span>
+          </div>
+        </div>
+
+        {/* Live Simulation Success Callout Banner */}
+        <AnimatePresence>
+          {simCompleted && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, marginTop: 0 }}
+              animate={{ opacity: 1, height: "auto", marginTop: 24 }}
+              exit={{ opacity: 0, height: 0, marginTop: 0 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 overflow-hidden"
+            >
+              <div className="p-4 sm:p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-start">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-white">
+                      {locale === "ar" 
+                        ? "اكتمل البث التجريبي بنجاح — زمن الاستجابة الكلي 1.48 ثانية" 
+                        : locale === "fr" 
+                        ? "Cascade Exécutée avec Succès — Latence Totale 1.48s" 
+                        : "Simulation Cascade Verified — End-to-End Latency 1.48s"}
+                    </h4>
+                    <p className="text-xs text-emerald-300/80 font-mono">
+                      {locale === "ar" 
+                        ? "صفر تسرب للمعلومات · نسبة مطابقة Meta 9.9/10 · إخطار الواتساب مباشر" 
+                        : locale === "fr" 
+                        ? "Zéro perte cookie · Handshake Meta validé · Notification WhatsApp immédiate" 
+                        : "Zero cookie leakage · Meta handshake verified · Direct WhatsApp alert dispatched"}
+                    </p>
+                  </div>
+                </div>
+
+                <TransitionLink
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-black text-xs font-mono font-bold hover:bg-emerald-400 transition-colors shrink-0 self-start sm:self-auto"
+                >
+                  <span>{locale === "ar" ? "نشر هذا النظام لمشروعي ↗" : locale === "fr" ? "Déployer pour Mon Entreprise ↗" : "Deploy For My Business ↗"}</span>
+                </TransitionLink>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Middle Stage: The 3 Connected Pipeline Nodes with Interactive Signal Line */}
         <div className="relative z-10 py-10 sm:py-12">
+          {/* Subtle Pipeline Connecting Line on Desktop */}
+          <div className="hidden lg:block absolute top-[44px] inset-x-12 h-px bg-white/10 z-0 pointer-events-none" />
+
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
@@ -239,44 +382,71 @@ export default function AutonomousEngineSimulator() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8"
+              className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10"
             >
-              {current.nodes.map((node, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 sm:p-8 rounded-3xl bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 flex flex-col justify-between gap-6 transition-all group"
-                >
-                  <div>
-                    {/* Step & Timing Header */}
-                    <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 text-xs font-mono">
-                      <div className="flex items-center gap-2">
-                        <span className="w-6 h-6 rounded-full bg-white/10 text-white flex items-center justify-center font-bold text-[11px]">
-                          {node.step}
+              {current.nodes.map((node, idx) => {
+                const isStepActive = isSimulating && activeSimStep === idx;
+                const isStepPassed = isSimulating && activeSimStep !== null && activeSimStep > idx;
+
+                return (
+                  <motion.div
+                    key={idx}
+                    animate={{
+                      scale: isStepActive ? 1.02 : 1,
+                      borderColor: isStepActive ? "rgba(16, 185, 129, 0.7)" : isStepPassed ? "rgba(16, 185, 129, 0.4)" : "rgba(255, 255, 255, 0.1)"
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className={`p-6 sm:p-8 rounded-3xl bg-white/[0.03] hover:bg-white/[0.05] border flex flex-col justify-between gap-6 transition-all group relative overflow-hidden ${
+                      isStepActive ? "shadow-[0_0_35px_rgba(16,185,129,0.2)] bg-emerald-500/[0.04]" : ""
+                    }`}
+                  >
+                    {/* Active simulated tracer beam across node */}
+                    {isStepActive && (
+                      <motion.div
+                        layoutId="activeBeam"
+                        className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"
+                        transition={{ duration: 0.5, repeat: Infinity }}
+                      />
+                    )}
+
+                    <div>
+                      {/* Step & Timing Header */}
+                      <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 text-xs font-mono">
+                        <div className="flex items-center gap-2">
+                          <span className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs transition-colors ${
+                            isStepActive ? "bg-emerald-500 text-black shadow-md" : isStepPassed ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40" : "bg-white/10 text-white"
+                          }`}>
+                            {isStepPassed ? "✓" : node.step}
+                          </span>
+                          <span className={`${isStepActive ? "text-emerald-300 font-bold" : "text-emerald-400 font-semibold"}`}>
+                            {node.badge}
+                          </span>
+                        </div>
+                        <span className={`font-mono text-xs ${isStepActive ? "text-emerald-300 font-bold animate-pulse" : "text-white/40"}`}>
+                          {node.speed}
                         </span>
-                        <span className="text-emerald-400 font-semibold">{node.badge}</span>
                       </div>
-                      <span className="text-white/40">{node.speed}</span>
+
+                      <h3 className="text-lg sm:text-xl font-medium tracking-tight text-white mb-3 text-balance">
+                        {node.title}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed text-pretty">
+                        {node.desc}
+                      </p>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-medium tracking-tight text-white mb-3 text-balance">
-                      {node.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed text-pretty">
-                      {node.desc}
-                    </p>
-                  </div>
-
-                  {/* System Architecture Tag */}
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/50">
-                    <div className="flex items-center gap-1.5">
-                      <Cpu className="w-3.5 h-3.5 text-white/40" />
-                      <span className="truncate max-w-[200px]">{node.system}</span>
+                    {/* System Architecture Tag */}
+                    <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/50">
+                      <div className="flex items-center gap-1.5">
+                        <Cpu className="w-3.5 h-3.5 text-white/40" />
+                        <span className="truncate max-w-[200px]">{node.system}</span>
+                      </div>
+                      <span className="text-emerald-400 font-bold">✓</span>
                     </div>
-                    <span className="text-emerald-400 font-bold">✓</span>
-                  </div>
-                </div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </AnimatePresence>
         </div>

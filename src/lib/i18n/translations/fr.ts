@@ -607,6 +607,38 @@ export const fr: TranslationDictionary = {
         }
       ]
     },
+    guarantee: {
+      badge: "L'ENGAGEMENT DE RÉSULTAT FLEEVY // ZÉRO RISQUE",
+      headline: "Conçu Pour le Résultat. Garanti à 100% ou Remboursé.",
+      subhead: "Nous éliminons l'aléa des agences traditionnelles. Si notre infrastructure ne satisfait pas ces quatre critères d'excellence opérationnelle sous 14 jours, nous vous remboursons l'intégralité de votre facture.",
+      pillars: [
+        {
+          metric: "< 800ms TTFB",
+          label: "Vitesse 4G Sub-Seconde",
+          desc: "Affichage instantané sur les réseaux mobiles à travers les 58 wilayas, éliminant les abandons avant la lecture de votre offre."
+        },
+        {
+          metric: "< 30s Triage",
+          label: "Qualification WhatsApp Immédiate",
+          desc: "Prise en charge automatisée et transfert direct à votre équipe en moins de 30 secondes, éliminant les lenteurs d'Instagram."
+        },
+        {
+          metric: "0% Commission",
+          label: "Zéro Prélèvement Intermédiaire",
+          desc: "100% de vos marges restent dans votre entreprise. Aucun pourcentage reversé à des plateformes ou applications tierces."
+        },
+        {
+          metric: "100% Souveraineté",
+          label: "Cession Totale du Code & Données",
+          desc: "Tous les dépôts, codes sources, bases de données et domaines sont transférés à votre nom sans abonnement SaaS mensuel."
+        }
+      ],
+      pledgeTitle: "Notre Clause de Remboursement Intégral à 100%",
+      pledgeText: "Si le système livré ne respecte pas ces engagements chiffrés lors de la mise en production sous 14 jours, nous vous restituons 100% de votre investissement sans la moindre discussion, et vous conservez l'architecture technique.",
+      ctaBtn: "Démarrer Votre Projet Garanti",
+      directDeskBtn: "Échanger en Direct sur WhatsApp",
+      founderSignature: "Hichem Djouadi · Fondateur & Architecte Systèmes"
+    },
     showcase: {
       headline: "Réalisations Sélectionnées",
       subhead: "Plateformes commerciales en production générant des revenus réels.",

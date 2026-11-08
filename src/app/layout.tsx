@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Cairo } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
+import MobileQuickAction from "@/components/MobileQuickAction";
 import { LanguageProvider } from "@/lib/i18n";
 
 const manrope = Manrope({ 
@@ -75,6 +76,7 @@ export default function RootLayout({
       <body className={`${manrope.variable} ${cairo.variable} font-sans antialiased`} suppressHydrationWarning>
         <LanguageProvider>
           {children}
+          <MobileQuickAction />
           <CustomCursor />
         </LanguageProvider>
       </body>

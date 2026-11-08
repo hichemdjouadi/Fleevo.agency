@@ -5,6 +5,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import HeroVisual from "@/components/HeroVisual";
 import AutonomousEngineSimulator from "@/components/AutonomousEngineSimulator";
+import SovereignGuarantee from "@/components/SovereignGuarantee";
 import AnatomyOfTheLeak from "@/components/AnatomyOfTheLeak";
 import TransitionLink from "@/components/TransitionLink";
 import Magnetic from "@/components/Magnetic";
@@ -470,7 +471,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. FREQUENTLY ASKED QUESTIONS */}
+      {/* 5. SOVEREIGN PERFORMANCE GUARANTEE & MONEY-BACK RISK REVERSAL */}
+      <SovereignGuarantee />
+
+      {/* 6. FREQUENTLY ASKED QUESTIONS */}
       <FAQ />
 
       {/* 6. CINEMATIC OUTRO & COLLABORATION GATEWAY */}

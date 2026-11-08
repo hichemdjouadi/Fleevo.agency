@@ -37,6 +37,7 @@ const PROJECT_METAS: Record<string, ProjectMeta> = {
 };
 
 function ShowcaseItem({ project }: { project: FeaturedProjectTranslation }) {
+  const { locale } = useTranslation();
   const meta = PROJECT_METAS[project.id] || {
     id: project.id,
     image: "/project-mopizza.png",
@@ -94,15 +95,27 @@ function ShowcaseItem({ project }: { project: FeaturedProjectTranslation }) {
     >
       <div>
         {/* Visual Stage */}
-        <div className="relative w-full aspect-[16/10] rounded-2xl sm:rounded-[28px] overflow-hidden mb-5 sm:mb-7 bg-[#08080c]">
+        <div className="relative w-full aspect-[16/10] rounded-2xl sm:rounded-[28px] overflow-hidden mb-5 sm:mb-7 bg-[#08080c] group-hover:shadow-xl transition-shadow">
           <Image
             src={meta.image}
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-top"
+            className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
             unoptimized
           />
+          {/* Live Production Floating Tag */}
+          <div className="absolute top-3 inset-x-3 sm:top-4 sm:inset-x-4 flex items-center justify-between pointer-events-none z-10">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md border border-white/20 text-[11px] font-mono text-white font-medium shadow-md">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>{meta.link.startsWith("http") ? (locale === "ar" ? "نظام شغال في الإنتاج" : locale === "fr" ? "Plateforme en Production Réelle" : "Live Production System") : (locale === "ar" ? "دراسة معمارية خاصة" : locale === "fr" ? "Architecture Déployée" : "Sovereign Architecture")}</span>
+            </span>
+            {meta.link.startsWith("http") && (
+              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-black text-[11px] font-mono font-bold shadow-md">
+                <span>{locale === "ar" ? "تجربة المنصة ↗" : locale === "fr" ? "Tester en Direct ↗" : "Test Live ↗"}</span>
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Header Details */}
@@ -128,7 +141,7 @@ function ShowcaseItem({ project }: { project: FeaturedProjectTranslation }) {
       </div>
 
       {/* Directional Benefits Ledger */}
-      <div className="pt-4 border-t border-black/10 flex flex-wrap gap-2 text-xs rtl:font-sans ltr:font-mono">
+      <div className="pt-4 border-t border-black/10 flex flex-wrap items-center gap-2 text-xs rtl:font-sans ltr:font-mono">
         {project.benefits.map((b, idx) => (
           <span
             key={idx}
@@ -139,6 +152,12 @@ function ShowcaseItem({ project }: { project: FeaturedProjectTranslation }) {
             <span>{b.label}</span>
           </span>
         ))}
+        {meta.link.startsWith("http") && (
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black text-white font-medium text-xs font-mono group-hover:bg-neutral-800 transition-colors ms-auto">
+            <span>{locale === "ar" ? "معاينة المنصة الحية" : locale === "fr" ? "Ouvrir la Plateforme Active" : "Open Live Deployment"}</span>
+            <ArrowUpRight className="w-3.5 h-3.5 rtl:rotate-[-90deg]" />
+          </span>
+        )}
       </div>
     </motion.a>
   );

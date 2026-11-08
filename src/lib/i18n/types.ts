@@ -191,6 +191,24 @@ export interface EngineSimulatorTranslations {
   scenarios: SimulatorScenario[];
 }
 
+export interface HomeGuaranteePillar {
+  metric: string;
+  label: string;
+  desc: string;
+}
+
+export interface HomeGuaranteeTranslations {
+  badge: string;
+  headline: string;
+  subhead: string;
+  pillars: HomeGuaranteePillar[];
+  pledgeTitle: string;
+  pledgeText: string;
+  ctaBtn: string;
+  directDeskBtn: string;
+  founderSignature: string;
+}
+
 export interface HomeTranslations {
   hero: {
     headlineStart: string;
@@ -230,6 +248,7 @@ export interface HomeTranslations {
       deliverable?: string;
     }[];
   };
+  guarantee: HomeGuaranteeTranslations;
   showcase: {
     headline: string;
     subhead: string;
