@@ -11,7 +11,9 @@ export interface ProjectEntry {
   displayUrl: string;
   liveUrl?: string;
   desktopImage: string;
+  secondaryImage?: string;
   mobileImage?: string;
+  fit?: "cover" | "contain";
   /** Optional silent looping MP4 clip path under /public/demos/ (falls back cleanly to screenshot when omitted) */
   videoSrc?: string;
   mobileVideoSrc?: string;
@@ -28,6 +30,7 @@ export const PROJECTS: ProjectEntry[] = [
     displayUrl: "almadinabookstore.com",
     liveUrl: "https://almadinabookstore.com/",
     desktopImage: "/project-almadina.png",
+    secondaryImage: "/project-dashboard.png",
     mobileImage: "/almadina-mobile.png",
     serviceParam: "Direct E-Commerce Engine",
   },
@@ -60,8 +63,10 @@ export const PROJECTS: ProjectEntry[] = [
     kind: "internal",
     heroSlot: "crm",
     featuredOnHome: true,
-    displayUrl: "fleevy.net/admin",
-    desktopImage: "/project-dashboard.png",
+    displayUrl: "diwan / client-ops",
+    desktopImage: "/tawheed-admin-dashboard.jpg",
+    secondaryImage: "/project-dashboard.png",
+    fit: "contain",
     serviceParam: "Custom CRM / Web App",
   },
   {
@@ -71,6 +76,7 @@ export const PROJECTS: ProjectEntry[] = [
     featuredOnHome: false,
     displayUrl: "tawheed-publishing.com",
     desktopImage: "/project-tawheed.png",
+    secondaryImage: "/tawheed-admin-dashboard.jpg",
     mobileImage: "/tawheed-mobile.png",
     serviceParam: "Direct E-Commerce Engine",
   },

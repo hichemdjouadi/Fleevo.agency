@@ -88,14 +88,22 @@ export default function ProjectDetailClient({
         <div className="rounded-[28px] sm:rounded-[38px] bg-[#F4F4F6] border border-black/[0.06] p-4 sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             <div className={project.mobileImage ? "lg:col-span-8" : "lg:col-span-12"}>
-              <div className="relative w-full aspect-[16/10] rounded-[18px] sm:rounded-[24px] overflow-hidden bg-white border border-black/[0.08]">
+              <div
+                className={`relative w-full ${
+                  project.fit === "contain" ? "aspect-[16/9]" : "aspect-[16/10]"
+                } rounded-[18px] sm:rounded-[24px] overflow-hidden bg-[#F8F8FA] border border-black/[0.08]`}
+              >
                 <ProjectMedia
                   imageSrc={project.desktopImage}
                   videoSrc={project.videoSrc}
                   alt={`${copy.title} desktop interface`}
                   sizes={project.mobileImage ? "(max-width: 1024px) 100vw, 62vw" : "(max-width: 1024px) 100vw, 88vw"}
                   priority
-                  className="object-cover object-top"
+                  className={
+                    project.fit === "contain"
+                      ? "object-contain object-center bg-[#F8F8FA]"
+                      : "object-cover object-top"
+                  }
                 />
               </div>
             </div>
@@ -115,6 +123,19 @@ export default function ProjectDetailClient({
               </div>
             )}
           </div>
+
+          {project.secondaryImage && (
+            <div className="mt-6 pt-6 border-t border-black/[0.08]">
+              <div className="relative w-full aspect-[16/9] rounded-[18px] sm:rounded-[24px] overflow-hidden bg-[#F8F8FA] border border-black/[0.08]">
+                <ProjectMedia
+                  imageSrc={project.secondaryImage}
+                  alt={`${copy.title} admin operations view`}
+                  sizes="(max-width: 1024px) 100vw, 88vw"
+                  className="object-contain object-center bg-[#F8F8FA]"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

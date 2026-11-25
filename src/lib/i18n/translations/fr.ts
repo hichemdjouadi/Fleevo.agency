@@ -70,7 +70,7 @@ export const fr: TranslationDictionary = {
           id: "crm",
           label: "03 CRM Sur Mesure",
           shortLabel: "03 CRM",
-          caption: "Command Center — Pipeline & alertes prospects froids (7j)",
+          caption: "Tableaux Admin Sur Mesure — Stock, commandes 58 wilayas & alertes Telegram",
         },
       ],
       mobileHint: "Touchez un onglet pour inspecter chaque système",
@@ -503,38 +503,38 @@ export const fr: TranslationDictionary = {
     },
     {
       id: "command-center",
-      title: "Fleevy Command Center CRM",
-      niche: "Logiciel Opérationnel Interne",
-      shortOutcome: "CRM Supabase & alertes prospects froids (7j)",
-      kindLabel: "Développé en Interne",
+      title: "Portails Admin E-Commerce & Opérations",
+      niche: "Tableaux de Bord & Gestion Stock",
+      shortOutcome: "Commandes COD, prix en masse, 58 wilayas & alertes Telegram",
+      kindLabel: "Systèmes Clients Actifs",
       systemType: "App Web & CRM Sur Mesure",
       summary:
-        "Cockpit interne centralisant les demandes entrantes du site, le suivi projets Kanban, la synchro Trello et le radar d'inactivité 7 jours.",
+        "Interfaces d'administration sur mesure pour gérer catalogues, commandes COD, codes promo, tarifs de livraison 58 wilayas et notifications Telegram.",
       bottleneck:
-        "Jongler entre tableurs, e-mails de contact et tableaux Trello ralentissait le suivi commercial et la visibilité sur les livrables.",
+        "Piloter des centaines de références et suivre les colis sur 58 wilayas dans des interfaces génériques ralentissait les équipes.",
       solution:
-        "Développement de notre propre CRM sous Next.js et Supabase avec alertes Telegram immédiates, cartes Trello automatiques et suivi d'inactivité 7 jours.",
+        "Développement de tableaux de bord rapides en Next.js et PostgreSQL avec édition en masse, taux de conversion COD et alertes Telegram.",
       deliverables: [
-        "Boîte de réception unifiée, CRM Leads, Projets et Planning Contenu",
-        "Alertes Telegram et e-mail dès soumission d'un formulaire",
-        "Création automatique de carte Trello à l'ouverture d'un projet",
-        "Alerte visuelle après 7 jours sans prise de contact",
+        "Suivi en temps réel des commandes COD et livraisons",
+        "Édition rapide et groupée des prix et stocks",
+        "Gestion des coupons et tarifs sur 58 wilayas",
+        "Alertes Telegram intégrées et rôles d'équipe",
       ],
       flowSteps: [
-        "Une demande d'audit ou devis arrive dans Supabase",
-        "Telegram et Trello avertissent l'équipe immédiatement",
-        "Les projets validés passent automatiquement au tableau de production",
+        "Le client passe commande ou demande un renseignement sur le site",
+        "L'équipe confirme et suit le statut jusqu'à la livraison",
+        "Les stocks, statistiques et alertes Telegram se mettent à jour",
       ],
       outcomes: [
         {
-          title: "Zéro demande entrante oubliée",
+          title: "Contrôle total sans extensions lourdes",
           detail:
-            "Chaque nouveau prospect déclenche une alerte téléphone immédiate.",
+            "Une interface claire adaptée au travail réel des équipes commerciales et logistiques.",
         },
         {
-          title: "Relance commerciale maîtrisée",
+          title: "Gestion stock et commandes accélérée",
           detail:
-            "Le compteur 7 jours signale visuellement tout dossier resté sans suivi.",
+            "Recherchez, filtrez et ajustez vos prix ou frais de livraison en quelques secondes.",
         },
       ],
     },

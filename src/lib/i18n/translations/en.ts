@@ -70,7 +70,7 @@ export const en: TranslationDictionary = {
           id: "crm",
           label: "03 Custom CRM",
           shortLabel: "03 CRM",
-          caption: "Command Center · Lead triage & 7-day cold alerts",
+          caption: "Custom Admin Panels · Inventory, orders, pricing & Telegram ops",
         },
       ],
       mobileHint: "Tap tabs to preview each system layer",
@@ -498,38 +498,38 @@ export const en: TranslationDictionary = {
     },
     {
       id: "command-center",
-      title: "Fleevy Command Center CRM",
-      niche: "Internal Operations Software",
-      shortOutcome: "Supabase CRM & 7-day cold-lead alerts",
-      kindLabel: "Built In-House",
+      title: "Custom E-Commerce & Ops Admin Panels",
+      niche: "Operations & Inventory Dashboards",
+      shortOutcome: "Orders, stock pricing, 58-wilaya shipping & Telegram ops",
+      kindLabel: "Live Client Systems",
       systemType: "Custom Web App & CRM",
       summary:
-        "Custom operations hub uniting website lead capture, Kanban project boards, automated Trello card sync, and 7-day inactivity tracking.",
+        "Dedicated admin panels built for store owners and service operators: live COD pipelines, bulk price edits, coupon rules, and Telegram order dispatch.",
       bottleneck:
-        "Switching between spreadsheets, form emails, and Trello boards caused slow follow-ups and fragmented visibility over active client deliverables.",
+        "Managing multi-hundred SKU catalogs, 58-wilaya delivery statuses, and daily customer inquiries inside rigid templates slowed down teams and caused stock errors.",
       solution:
-        "Built our own Next.js and Supabase operations cockpit with instant Telegram lead alerts, automatic Trello syncing, and 7-day cold-lead flags.",
+        "Engineered fast Arabic-first dashboards in Next.js and PostgreSQL with instant filtering, bulk price updates, COD conversion analytics, and Telegram alerts.",
       deliverables: [
-        "Unified Inbox, Lead CRM, Project Hub, and Content Planner",
-        "Instant Telegram and email dispatch on every inbound inquiry",
-        "Automated Trello card creation when deals move forward",
-        "Visual 7-day inactivity flags preventing cold follow-ups",
+        "Live COD order pipeline & delivery conversion tracking",
+        "Bulk stock, pricing & quick-edit catalog controls",
+        "58-wilaya shipping rules & coupon management",
+        "Integrated Telegram bot alerts & role permissions",
       ],
       flowSteps: [
-        "Inbound audit or brief lands in Supabase",
-        "Telegram and Trello notify the builder immediately",
-        "Accepted leads convert cleanly into active tracked projects",
+        "Customer places an order or submits an inquiry on the storefront",
+        "Operators confirm and track COD status from New to Delivered",
+        "Catalog stock counts, revenue stats & Telegram alerts update immediately",
       ],
       outcomes: [
         {
-          title: "Zero missed inbound leads",
+          title: "Full control without plugin bloat",
           detail:
-            "Every form submission hits phone and board within seconds without checking multiple inboxes.",
+            "Staff work inside one uncluttered Arabic interface tailored directly to their workflow.",
         },
         {
-          title: "Clear pipeline discipline",
+          title: "Faster daily stock & order handling",
           detail:
-            "Seven-day inactivity alerts highlight stalled deals before prospects lose momentum.",
+            "Filter the full catalog and update stock counts, promo codes, or shipping tariffs in seconds.",
         },
       ],
     },

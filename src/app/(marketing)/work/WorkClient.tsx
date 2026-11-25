@@ -91,13 +91,17 @@ function WorkProjectCard({ project }: { project: ProjectEntry }) {
               />
             </div>
           ) : (
-            <div className="relative w-full aspect-[16/10] rounded-[12px] overflow-hidden bg-[#F4F4F6]">
+            <div className="relative w-full aspect-[16/10] rounded-[12px] overflow-hidden bg-[#F8F8FA]">
               <ProjectMedia
                 imageSrc={project.desktopImage}
                 videoSrc={project.videoSrc}
                 alt={`${copy.title} desktop interface`}
                 sizes="(max-width: 768px) 100vw, 46vw"
-                className="object-cover object-top"
+                className={
+                  project.fit === "contain"
+                    ? "object-contain object-center bg-[#F8F8FA]"
+                    : "object-cover object-top"
+                }
               />
             </div>
           )}

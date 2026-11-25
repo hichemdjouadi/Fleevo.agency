@@ -91,13 +91,17 @@ export default function HomeClient() {
                   href={`/work/${project.slug}`}
                   className="block rounded-[24px] sm:rounded-[28px] bg-[#F4F4F6] border border-black/[0.06] group-hover:border-black/20 transition-colors p-3 sm:p-5 overflow-hidden"
                 >
-                  <div className="relative w-full aspect-[16/10] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-white border border-black/[0.06]">
+                  <div className="relative w-full aspect-[16/10] rounded-[16px] sm:rounded-[20px] overflow-hidden bg-[#F8F8FA] border border-black/[0.06]">
                     <ProjectMedia
                       imageSrc={project.desktopImage}
                       videoSrc={project.videoSrc}
                       alt={copy.title}
                       sizes="(max-width: 768px) 100vw, 46vw"
-                      className="object-cover object-top"
+                      className={
+                        project.fit === "contain"
+                          ? "object-contain object-center bg-[#F8F8FA]"
+                          : "object-cover object-top"
+                      }
                     />
                   </div>
                 </TransitionLink>

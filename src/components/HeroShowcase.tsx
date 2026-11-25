@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import { HERO_SPECIMENS, HeroSpecimenId } from "@/lib/projects";
@@ -15,6 +14,7 @@ export default function HeroShowcase() {
   const tabs = t.home.heroShowcase.tabs;
   const activeCopy = tabs.find((item) => item.id === activeTab) || tabs[0];
   const specimen = HERO_SPECIMENS[activeTab];
+  const isContainSpecimen = specimen.fit === "contain";
 
   const desktopSizes = "(max-width: 1024px) 100vw, 620px";
   const mobileSizes = "(max-width: 768px) 320px, 190px";
@@ -26,7 +26,7 @@ export default function HeroShowcase() {
 
   return (
     <div className="w-full rounded-[26px] sm:rounded-[32px] bg-[#f4f4f6] p-3.5 sm:p-6 flex flex-col justify-between gap-4 border border-black/[0.06]">
-      {/* Mobile Tab Bar (Top for immediate 1-thumb switching on phones) */}
+      {/* Mobile Tab Bar */}
       <div
         role="tablist"
         aria-label={t.home.heroShowcase.mobileHint}
@@ -54,60 +54,72 @@ export default function HeroShowcase() {
       </div>
 
       {/* Visual Canvas */}
-      <div className="relative w-full h-[330px] sm:h-[340px] lg:h-[360px] flex items-center justify-start">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={specimen.id}
-            initial={{ opacity: 0.25, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0.25, y: -4 }}
-            transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full h-full flex items-center"
+      <div
+        className={`relative w-full flex items-center justify-start ${
+          isContainSpecimen
+            ? "aspect-[16/10] sm:aspect-auto sm:h-[340px] lg:h-[360px]"
+            : "h-[330px] sm:h-[340px] lg:h-[360px]"
+        }`}
+      >
+        <div
+          key={specimen.id}
+          className="relative w-full h-full flex items-center animate-[fleevyFadeIn_200ms_cubic-bezier(0.16,1,0.3,1)]"
+        >
+          {/* Mobile-first view (< sm) */}
+          <div
+            className={`sm:hidden relative w-full h-full rounded-[20px] overflow-hidden border border-black/[0.08] shadow-[0_16px_32px_-12px_rgba(0,0,0,0.12)] ${
+              isContainSpecimen ? "bg-[#F8F8FA]" : "bg-white"
+            }`}
           >
-            {/* Mobile-first view (< sm): displays crisp mobile screen if available, else clean desktop screen */}
-            <div className="sm:hidden relative w-full h-full rounded-[20px] overflow-hidden bg-white border border-black/[0.08] shadow-[0_16px_32px_-12px_rgba(0,0,0,0.12)]">
+            <ProjectMedia
+              imageSrc={specimen.mobileImage || specimen.desktopImage}
+              videoSrc={specimen.mobileVideoSrc || specimen.videoSrc}
+              alt={activeCopy.caption}
+              sizes="(max-width: 640px) 360px, 600px"
+              priority={activeTab === "funnel"}
+              className={
+                isContainSpecimen
+                  ? "object-contain object-center bg-[#F8F8FA]"
+                  : "object-cover object-top"
+              }
+            />
+          </div>
+
+          {/* Desktop view (sm+) */}
+          <div className="hidden sm:block relative w-full h-full">
+            <div
+              className={`relative h-full rounded-[20px] overflow-hidden border border-black/[0.08] shadow-[0_24px_48px_-18px_rgba(0,0,0,0.14)] ${
+                specimen.mobileImage ? "w-[84%]" : "w-full"
+              } ${isContainSpecimen ? "bg-[#F8F8FA]" : "bg-white"}`}
+            >
               <ProjectMedia
-                imageSrc={specimen.mobileImage || specimen.desktopImage}
-                videoSrc={specimen.mobileVideoSrc || specimen.videoSrc}
+                imageSrc={specimen.desktopImage}
+                videoSrc={specimen.videoSrc}
                 alt={activeCopy.caption}
-                sizes="(max-width: 640px) 360px, 600px"
+                sizes={desktopSizes}
                 priority={activeTab === "funnel"}
-                className="object-cover object-top"
+                className={
+                  isContainSpecimen
+                    ? "object-contain object-center bg-[#F8F8FA]"
+                    : "object-cover object-top"
+                }
               />
             </div>
 
-            {/* Desktop view (sm+): clean desktop frame + floating mobile screen when present */}
-            <div className="hidden sm:block relative w-full h-full">
-              <div
-                className={`relative h-full rounded-[20px] overflow-hidden bg-white border border-black/[0.08] shadow-[0_24px_48px_-18px_rgba(0,0,0,0.14)] ${
-                  specimen.mobileImage ? "w-[84%]" : "w-full"
-                }`}
-              >
+            {specimen.mobileImage && (
+              <div className="absolute end-1 bottom-1 w-[150px] lg:w-[168px] h-[285px] lg:h-[308px] rounded-[24px] overflow-hidden border-[4px] border-[#0b0b0c] bg-[#0b0b0c] shadow-[0_24px_48px_-12px_rgba(0,0,0,0.32)]">
                 <ProjectMedia
-                  imageSrc={specimen.desktopImage}
-                  videoSrc={specimen.videoSrc}
-                  alt={activeCopy.caption}
-                  sizes={desktopSizes}
+                  imageSrc={specimen.mobileImage}
+                  videoSrc={specimen.mobileVideoSrc}
+                  alt={`${activeCopy.caption} mobile`}
+                  sizes={mobileSizes}
                   priority={activeTab === "funnel"}
                   className="object-cover object-top"
                 />
               </div>
-
-              {specimen.mobileImage && (
-                <div className="absolute end-1 bottom-1 w-[150px] lg:w-[168px] h-[285px] lg:h-[308px] rounded-[24px] overflow-hidden border-[4px] border-[#0b0b0c] bg-[#0b0b0c] shadow-[0_24px_48px_-12px_rgba(0,0,0,0.32)]">
-                  <ProjectMedia
-                    imageSrc={specimen.mobileImage}
-                    videoSrc={specimen.mobileVideoSrc}
-                    alt={`${activeCopy.caption} mobile`}
-                    sizes={mobileSizes}
-                    priority={activeTab === "funnel"}
-                    className="object-cover object-top"
-                  />
-                </div>
-              )}
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Caption & Desktop Tabs */}
