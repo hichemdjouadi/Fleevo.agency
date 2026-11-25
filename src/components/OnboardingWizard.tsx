@@ -1,330 +1,397 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Check, RotateCcw, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, RotateCcw, MessageCircle } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
-import Magnetic from "@/components/Magnetic";
+import { submitAuditRequest } from "@/app/actions";
 
-interface OnboardingWizardProps {
-  className?: string;
-  onComplete?: () => void;
-}
+type SystemChoice = "funnel" | "commerce" | "crm" | "ai" | "ads";
 
-export default function OnboardingWizard({ className = "", onComplete }: OnboardingWizardProps) {
-  const { t, isRTL, locale } = useTranslation();
-  const w = t.onboardingWizard;
+export default function OnboardingWizard() {
+  const { t, locale } = useTranslation();
+  const w = t.contact.wizard;
 
   const [step, setStep] = useState<number>(1);
-  const [selectedSystem, setSelectedSystem] = useState<{ id: string; title: string; desc: string } | null>(null);
-  const [selectedBottleneck, setSelectedBottleneck] = useState<{ id: string; title: string; desc: string } | null>(null);
-  const [selectedTimeline, setSelectedTimeline] = useState<{ id: string; title: string; desc: string; badge: string; window: string } | null>(null);
+  const [selectedSystem, setSelectedSystem] = useState<{
+    id: SystemChoice;
+    title: string;
+    desc: string;
+  } | null>(null);
+  const [selectedBottleneck, setSelectedBottleneck] = useState<{
+    id: string;
+    title: string;
+    desc: string;
+  } | null>(null);
+  const [selectedTimeline, setSelectedTimeline] = useState<{
+    id: string;
+    title: string;
+    desc: string;
+    window: string;
+  } | null>(null);
 
-  const handleSelectSystem = (opt: { id: string; title: string; desc: string }) => {
-    setSelectedSystem(opt);
-    setStep(2);
-  };
-
-  const handleSelectBottleneck = (opt: { id: string; title: string; desc: string }) => {
-    setSelectedBottleneck(opt);
-    setStep(3);
-  };
-
-  const handleSelectTimeline = (opt: { id: string; title: string; desc: string; badge: string; window: string }) => {
-    setSelectedTimeline(opt);
-    setStep(4);
-    if (onComplete) onComplete();
-  };
+  const [contactName, setContactName] = useState("");
+  const [contactHandle, setContactHandle] = useState("");
+  const [isSaving, setIsSaving] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleReset = () => {
     setSelectedSystem(null);
     setSelectedBottleneck(null);
     setSelectedTimeline(null);
+    setContactName("");
+    setContactHandle("");
+    setIsSaved(false);
+    setError(null);
     setStep(1);
   };
 
-  // Build localized WhatsApp message
-  const generateWhatsAppHref = () => {
-    if (!selectedSystem || !selectedBottleneck || !selectedTimeline) return "https://wa.me/213655934124";
-    const s4 = w.step4;
-    const msg = 
-      `${s4.waPrefix}\n\n` +
-      `• ${s4.waSystemLabel}: ${selectedSystem.title}\n` +
-      `• ${s4.waChallengeLabel}: ${selectedBottleneck.title}\n` +
-      `• ${s4.waTimelineLabel}: ${selectedTimeline.title} (${selectedTimeline.window})\n\n` +
-      `${s4.waClosing}`;
-    return `https://wa.me/213655934124?text=${encodeURIComponent(msg)}`;
+  const branch = selectedSystem
+    ? w.step4.branches[selectedSystem.id]
+    : w.step4.branches.funnel;
+
+  const buildWhatsappUrl = () => {
+    if (!selectedSystem || !selectedBottleneck || !selectedTimeline) {
+      return "https://wa.me/213655934124";
+    }
+    const lines = [
+      w.step4.waPrefix,
+      `• ${selectedSystem.title}`,
+      `• ${selectedBottleneck.title}`,
+      `• ${selectedTimeline.title} (${selectedTimeline.window})`,
+      `• ${w.step4.recommendedLabel}: ${branch.packageName}`,
+    ];
+    if (contactName.trim()) lines.push(`• ${contactName.trim()}`);
+    return `https://wa.me/213655934124?text=${encodeURIComponent(lines.join("\n"))}`;
+  };
+
+  const handleSaveAndOpenWhatsApp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    if (!selectedSystem || !selectedBottleneck || !selectedTimeline) return;
+
+    const cleanName = contactName.trim();
+    const cleanContact = contactHandle.trim();
+    if (!cleanName || !cleanContact) {
+      setError(w.step4.errorContact);
+      return;
+    }
+
+    setIsSaving(true);
+    const details = [
+      `Language: ${locale.toUpperCase()}`,
+      `System: ${selectedSystem.title}`,
+      `Bottleneck: ${selectedBottleneck.title}`,
+      `Recommended: ${branch.packageName}`,
+      `Contact: ${cleanContact}`,
+    ].join("\n");
+
+    const res = await submitAuditRequest({
+      name: cleanName,
+      email: cleanContact,
+      niche: "3-Tap Scope",
+      timeline: `${selectedTimeline.title} (${selectedTimeline.window})`,
+      budget: branch.packageName,
+      interests: [selectedSystem.title],
+      details,
+    });
+
+    setIsSaving(false);
+    if (res.error) {
+      setError(res.error);
+      return;
+    }
+
+    setIsSaved(true);
+    window.open(buildWhatsappUrl(), "_blank", "noopener,noreferrer");
   };
 
   return (
-    <div className={`w-full bg-[#fbfbfc] border border-black/10 rounded-2xl sm:rounded-[32px] p-4 sm:p-8 md:p-10 shadow-sm relative overflow-hidden text-start ${className}`}>
-      
-      {/* Top Header & Step Progress Bar */}
-      <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-black/10 mb-6 sm:mb-8">
+    <div className="w-full rounded-[24px] sm:rounded-[28px] bg-[#f4f4f6] border border-black/[0.08] p-5 sm:p-8 text-start">
+      {/* Progress Header */}
+      <div className="flex items-center justify-between pb-4 border-b border-black/[0.08] mb-5">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse shrink-0" />
-          <span className="text-xs font-mono font-medium text-neutral-600 uppercase tracking-wider">
-            {w.badge}
+          <span
+            className={`h-2 w-2 rounded-full ${step === 4 ? "bg-[#0b0b0c]" : "bg-neutral-500"}`}
+          />
+          <span className="text-xs font-semibold text-neutral-700">
+            {step <= 3 ? `${w.stepPrefix} ${step} ${w.stepOf}` : w.readyBadge}
           </span>
         </div>
-        <div className="text-xs font-mono font-semibold text-black bg-white px-3 py-1 rounded-full border border-black/10 shadow-xs shrink-0">
-          {step <= 3 ? `${w.stepPrefix} ${step} ${w.stepOf}` : w.blueprintReady}
+        <div className="flex items-center gap-1.5">
+          {[1, 2, 3].map((num) => (
+            <span
+              key={num}
+              className={`h-1.5 w-6 rounded-full transition-colors ${
+                step >= num ? "bg-[#0b0b0c]" : "bg-black/15"
+              }`}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Progress Line */}
-      <div className="grid grid-cols-3 gap-2 mb-6 sm:mb-8">
-        <div className={`h-1.5 rounded-full transition-all duration-300 ${step >= 1 ? "bg-black" : "bg-black/10"}`} />
-        <div className={`h-1.5 rounded-full transition-all duration-300 ${step >= 2 ? "bg-black" : "bg-black/10"}`} />
-        <div className={`h-1.5 rounded-full transition-all duration-300 ${step >= 3 ? "bg-black" : "bg-black/10"}`} />
-      </div>
+      {/* Step 1 */}
+      {step === 1 && (
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#0b0b0c]">
+              {w.step1.title}
+            </h3>
+            <p className="mt-1 text-sm text-neutral-600">{w.step1.subhead}</p>
+          </div>
 
-      <AnimatePresence mode="wait">
-        {/* STEP 1: System Selection */}
-        {step === 1 && (
-          <motion.div
-            key="step1"
-            initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: isRTL ? 20 : -20 }}
-            transition={{ duration: 0.25 }}
-            className="space-y-5 sm:space-y-6"
-          >
-            <div>
-              <h3 className="text-xl sm:text-3xl font-medium tracking-tight text-black leading-snug">
-                {w.step1.title}
-              </h3>
-              <p className="text-xs sm:text-base text-neutral-600 font-light mt-1.5 sm:mt-2">
-                {w.step1.subhead}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 pt-1 sm:pt-2">
-              {w.step1.options.map((opt) => (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => handleSelectSystem(opt)}
-                  className="group p-4 sm:p-5 rounded-2xl border border-black/10 bg-white hover:border-black hover:shadow-md transition-all text-start flex flex-col justify-between gap-3 active:scale-[0.99] cursor-pointer min-h-[48px]"
-                >
-                  <div>
-                    <div className="text-sm sm:text-base font-semibold text-black group-hover:text-black mb-1 flex items-center justify-between">
-                      <span>{opt.title}</span>
-                      <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-black group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 transition-all shrink-0" />
-                    </div>
-                    <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
-                      {opt.desc}
-                    </p>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-
-        {/* STEP 2: Main Bottleneck */}
-        {step === 2 && (
-          <motion.div
-            key="step2"
-            initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: isRTL ? 20 : -20 }}
-            transition={{ duration: 0.25 }}
-            className="space-y-5 sm:space-y-6"
-          >
-            <div>
-              <h3 className="text-xl sm:text-3xl font-medium tracking-tight text-black leading-snug">
-                {w.step2.title}
-              </h3>
-              <p className="text-xs sm:text-base text-neutral-600 font-light mt-1.5 sm:mt-2">
-                {w.step2.subhead}
-              </p>
-            </div>
-
-            <div className="space-y-2.5 sm:space-y-3 pt-1 sm:pt-2">
-              {w.step2.options.map((opt) => (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => handleSelectBottleneck(opt)}
-                  className="w-full group p-4 sm:p-5 rounded-2xl border border-black/10 bg-white hover:border-black hover:shadow-md transition-all text-start flex items-center justify-between gap-3 sm:gap-4 active:scale-[0.99] cursor-pointer min-h-[48px]"
-                >
-                  <div>
-                    <div className="text-sm sm:text-base font-semibold text-black mb-0.5">
-                      {opt.title}
-                    </div>
-                    <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
-                      {opt.desc}
-                    </p>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-black group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 transition-all shrink-0" />
-                </button>
-              ))}
-            </div>
-
-            <div className="pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {w.step1.options.map((opt) => (
               <button
+                key={opt.id}
                 type="button"
-                onClick={() => setStep(1)}
-                className="min-h-[44px] inline-flex items-center gap-1.5 text-xs rtl:font-sans ltr:font-mono font-medium text-neutral-600 hover:text-black transition-colors cursor-pointer"
+                onClick={() => {
+                  setSelectedSystem(opt);
+                  setStep(2);
+                }}
+                className="p-4 rounded-2xl bg-white border border-black/[0.08] hover:border-[#0b0b0c] transition-colors text-start flex flex-col justify-between gap-2 cursor-pointer min-h-[48px]"
               >
-                <ArrowLeft className="w-3.5 h-3.5 rtl:rotate-180" />
-                <span>{w.step2.backBtn}</span>
-              </button>
-            </div>
-          </motion.div>
-        )}
-
-        {/* STEP 3: Timeline & Scale */}
-        {step === 3 && (
-          <motion.div
-            key="step3"
-            initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: isRTL ? 20 : -20 }}
-            transition={{ duration: 0.25 }}
-            className="space-y-5 sm:space-y-6"
-          >
-            <div>
-              <h3 className="text-xl sm:text-3xl font-medium tracking-tight text-black leading-snug">
-                {w.step3.title}
-              </h3>
-              <p className="text-xs sm:text-base text-neutral-600 font-light mt-1.5 sm:mt-2">
-                {w.step3.subhead}
-              </p>
-            </div>
-
-            <div className="space-y-2.5 sm:space-y-3 pt-1 sm:pt-2">
-              {w.step3.options.map((opt) => (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => handleSelectTimeline(opt)}
-                  className="w-full group p-4 sm:p-5 rounded-2xl border border-black/10 bg-white hover:border-black hover:shadow-md transition-all text-start flex items-center justify-between gap-3 sm:gap-4 active:scale-[0.99] cursor-pointer min-h-[48px]"
-                >
-                  <div>
-                    <div className="text-sm sm:text-base font-semibold text-black mb-0.5">
-                      {opt.title}
-                    </div>
-                    <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
-                      {opt.desc}
-                    </p>
-                  </div>
-                  <span className="text-[11px] sm:text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-800 border border-neutral-200 shrink-0">
-                    {opt.badge}
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-sm sm:text-base font-semibold text-[#0b0b0c]">
+                    {opt.title}
                   </span>
-                </button>
-              ))}
-            </div>
-
-            <div className="pt-2">
-              <button
-                type="button"
-                onClick={() => setStep(2)}
-                className="min-h-[44px] inline-flex items-center gap-1.5 text-xs rtl:font-sans ltr:font-mono font-medium text-neutral-600 hover:text-black transition-colors cursor-pointer"
-              >
-                <ArrowLeft className="w-3.5 h-3.5 rtl:rotate-180" />
-                <span>{w.step3.backBtn}</span>
-              </button>
-            </div>
-          </motion.div>
-        )}
-
-        {/* STEP 4: Blueprint Ready & WhatsApp Launch */}
-        {step === 4 && selectedSystem && selectedBottleneck && selectedTimeline && (
-          <motion.div
-            key="step4"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.3 }}
-            className="space-y-5 sm:space-y-6"
-          >
-            <div className="text-center pb-2">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-600 mb-3 border border-emerald-500/20">
-                <Check className="w-6 h-6 stroke-[2.5]" />
-              </div>
-              <h3 className="text-xl sm:text-3xl font-medium tracking-tight text-black">
-                {w.step4.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-600 font-light mt-1">
-                {w.step4.subhead}
-              </p>
-            </div>
-
-            {/* Blueprint Summary Card */}
-            <div className="bg-white border border-black/15 rounded-2xl p-4 sm:p-6 space-y-3 sm:space-y-4 shadow-sm">
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between border-b border-black/10 pb-3 sm:pb-4 gap-2 sm:gap-3">
-                <div>
-                  <span className="text-[11px] sm:text-xs font-mono text-neutral-500 uppercase tracking-wider block mb-0.5 sm:mb-1">
-                    {w.step4.cardSystemLabel}
-                  </span>
-                  <div className="text-sm sm:text-lg font-semibold text-black">
-                    {selectedSystem.title}
-                  </div>
+                  <ArrowRight className="w-4 h-4 text-neutral-500 rtl:rotate-180 shrink-0" />
                 </div>
-                <div className="sm:text-end">
-                  <span className="text-[11px] sm:text-xs font-mono text-neutral-500 uppercase tracking-wider block mb-0.5 sm:mb-1">
-                    {w.step4.cardWindowLabel}
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 text-xs font-mono font-semibold">
-                    {selectedTimeline.window}
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <span className="text-[11px] sm:text-xs font-mono text-neutral-500 uppercase tracking-wider block mb-0.5 sm:mb-1">
-                  {w.step4.cardChallengeLabel}
-                </span>
-                <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-medium">
-                  {selectedBottleneck.title}
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+                  {opt.desc}
                 </p>
-              </div>
-
-              <div className="pt-2 border-t border-black/10">
-                <span className="text-[11px] sm:text-xs font-mono text-neutral-500 uppercase tracking-wider block mb-1.5 sm:mb-2">
-                  {w.step4.cardDeliverablesLabel}
-                </span>
-                <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-700 font-light">
-                  {w.step4.deliverables.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-emerald-600 font-bold shrink-0 mt-0.5">✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="space-y-3 pt-2">
-              <Magnetic intensity={0.2}>
-                <a
-                  href={generateWhatsAppHref()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full min-h-[48px] inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm sm:text-base transition-colors shadow-lg group text-center cursor-pointer"
-                >
-                  <MessageCircle className="w-5 h-5 fill-white/20" />
-                  <span>{w.step4.whatsappBtn}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
-                </a>
-              </Magnetic>
-
-              <button
-                type="button"
-                onClick={handleReset}
-                className="w-full min-h-[44px] text-center py-2 text-xs font-mono text-neutral-500 hover:text-black transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span>{w.step4.resetBtn}</span>
               </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+          </div>
+        </div>
+      )}
 
+      {/* Step 2 */}
+      {step === 2 && (
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#0b0b0c]">
+              {w.step2.title}
+            </h3>
+            <p className="mt-1 text-sm text-neutral-600">{w.step2.subhead}</p>
+          </div>
+
+          <div className="space-y-2.5">
+            {w.step2.options.map((opt) => (
+              <button
+                key={opt.id}
+                type="button"
+                onClick={() => {
+                  setSelectedBottleneck(opt);
+                  setStep(3);
+                }}
+                className="w-full p-4 rounded-2xl bg-white border border-black/[0.08] hover:border-[#0b0b0c] transition-colors text-start flex items-center justify-between gap-3 cursor-pointer min-h-[48px]"
+              >
+                <div>
+                  <div className="text-sm sm:text-base font-semibold text-[#0b0b0c]">
+                    {opt.title}
+                  </div>
+                  <p className="text-xs sm:text-sm text-neutral-600 mt-0.5 leading-relaxed">
+                    {opt.desc}
+                  </p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-neutral-500 rtl:rotate-180 shrink-0" />
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setStep(1)}
+            className="min-h-[44px] inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-600 hover:text-[#0b0b0c] cursor-pointer"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 rtl:rotate-180" />
+            <span>{w.step2.backBtn}</span>
+          </button>
+        </div>
+      )}
+
+      {/* Step 3 */}
+      {step === 3 && (
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#0b0b0c]">
+              {w.step3.title}
+            </h3>
+            <p className="mt-1 text-sm text-neutral-600">{w.step3.subhead}</p>
+          </div>
+
+          <div className="space-y-2.5">
+            {w.step3.options.map((opt) => (
+              <button
+                key={opt.id}
+                type="button"
+                onClick={() => {
+                  setSelectedTimeline(opt);
+                  setStep(4);
+                }}
+                className="w-full p-4 rounded-2xl bg-white border border-black/[0.08] hover:border-[#0b0b0c] transition-colors text-start flex items-center justify-between gap-3 cursor-pointer min-h-[48px]"
+              >
+                <div>
+                  <div className="text-sm sm:text-base font-semibold text-[#0b0b0c]">
+                    {opt.title}
+                  </div>
+                  <p className="text-xs sm:text-sm text-neutral-600 mt-0.5 leading-relaxed">
+                    {opt.desc}
+                  </p>
+                </div>
+                <span className="px-3 py-1 rounded-full bg-[#f4f4f6] text-xs font-semibold text-[#0b0b0c] shrink-0">
+                  {opt.window}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setStep(2)}
+            className="min-h-[44px] inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-600 hover:text-[#0b0b0c] cursor-pointer"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 rtl:rotate-180" />
+            <span>{w.step3.backBtn}</span>
+          </button>
+        </div>
+      )}
+
+      {/* Step 4: Branched Scope + Save to Supabase BEFORE WhatsApp */}
+      {step === 4 && selectedSystem && selectedBottleneck && selectedTimeline && (
+        <form onSubmit={handleSaveAndOpenWhatsApp} className="space-y-5">
+          <div>
+            <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#0b0b0c]">
+              {w.step4.title}
+            </h3>
+            <p className="mt-1 text-sm text-neutral-600">{w.step4.subhead}</p>
+          </div>
+
+          <div className="rounded-2xl bg-white border border-black/[0.08] p-5 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-black/[0.08]">
+              <div>
+                <div className="text-xs font-semibold text-neutral-500 mb-0.5">
+                  {w.step4.recommendedLabel}
+                </div>
+                <div className="text-base font-semibold text-[#0b0b0c]">
+                  {branch.packageName}
+                </div>
+              </div>
+              <div className="sm:text-end">
+                <div className="text-xs font-semibold text-neutral-500 mb-0.5">
+                  {w.step4.windowLabel}
+                </div>
+                <span className="inline-flex px-3 py-0.5 rounded-full bg-[#f4f4f6] text-xs font-semibold text-[#0b0b0c]">
+                  {selectedTimeline.window}
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <div className="text-xs font-semibold text-neutral-500 mb-2">
+                {w.step4.deliverablesLabel}
+              </div>
+              <ul className="space-y-2">
+                {branch.deliverables.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2 text-xs sm:text-sm text-neutral-800"
+                  >
+                    <Check
+                      className="w-4 h-4 text-[#0b0b0c] shrink-0 mt-0.5"
+                      aria-hidden="true"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="flex flex-col gap-1.5">
+              <label
+                htmlFor="wizard-name"
+                className="text-xs font-semibold text-neutral-700"
+              >
+                {w.step4.nameLabel} <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="wizard-name"
+                type="text"
+                required
+                value={contactName}
+                onChange={(e) => setContactName(e.target.value)}
+                placeholder={w.step4.namePlaceholder}
+                className="w-full min-h-[48px] bg-white border border-black/[0.1] rounded-xl px-4 py-3 text-base sm:text-sm text-[#0b0b0c] placeholder:text-neutral-500 focus:outline-none focus:border-[#0b0b0c]"
+              />
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <label
+                htmlFor="wizard-phone"
+                className="text-xs font-semibold text-neutral-700"
+              >
+                {w.step4.phoneLabel} <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="wizard-phone"
+                type="text"
+                required
+                value={contactHandle}
+                onChange={(e) => setContactHandle(e.target.value)}
+                placeholder={w.step4.phonePlaceholder}
+                className="w-full min-h-[48px] bg-white border border-black/[0.1] rounded-xl px-4 py-3 text-base sm:text-sm text-[#0b0b0c] placeholder:text-neutral-500 focus:outline-none focus:border-[#0b0b0c]"
+              />
+            </div>
+          </div>
+
+          {error && (
+            <div
+              role="alert"
+              className="p-3 rounded-xl bg-white border border-black/20 text-xs font-medium text-[#0b0b0c]"
+            >
+              {error}
+            </div>
+          )}
+
+          {isSaved && (
+            <div className="p-3.5 rounded-xl bg-white border border-black/[0.12] text-xs text-neutral-700 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span>{w.step4.savedHint}</span>
+              <a
+                href={buildWhatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#0b0b0c] underline shrink-0"
+              >
+                WhatsApp &rarr;
+              </a>
+            </div>
+          )}
+
+          <div className="space-y-2.5">
+            <button
+              type="submit"
+              disabled={isSaving}
+              className="w-full min-h-[50px] px-6 py-3.5 rounded-full bg-[#0b0b0c] text-white text-sm font-semibold hover:bg-neutral-800 transition-colors disabled:opacity-50 inline-flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <MessageCircle className="w-4 h-4 shrink-0" />
+              <span>{isSaving ? w.step4.savingBtn : w.step4.saveAndWhatsappBtn}</span>
+              <ArrowRight className="w-4 h-4 rtl:rotate-180 shrink-0" />
+            </button>
+
+            <button
+              type="button"
+              onClick={handleReset}
+              className="w-full min-h-[44px] inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-neutral-600 hover:text-[#0b0b0c] cursor-pointer"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>{w.step4.resetBtn}</span>
+            </button>
+          </div>
+        </form>
+      )}
     </div>
   );
 }

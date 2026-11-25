@@ -25,6 +25,7 @@ function escapeHtml(value: string): string {
 export async function submitAuditRequest(formData: {
   name: string;
   email: string;
+  niche?: string;
   timeline?: string;
   budget?: string;
   interests: string[];
@@ -35,9 +36,10 @@ export async function submitAuditRequest(formData: {
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const { name, email, timeline, budget, interests, details } = formData;
+  const { name, email, niche, timeline, budget, interests, details } = formData;
+  const targetNiche = (niche || "Inbound Lead").trim();
   const targetTimeline = (timeline || "Flexible").trim();
-  const targetBudget = (budget || "Standard Tier").trim();
+  const targetBudget = (budget || "Custom Scope").trim();
   
   if (!name || !email) {
     return { error: "Name and email are required." };
@@ -59,7 +61,7 @@ export async function submitAuditRequest(formData: {
           business_name: name, 
           contact_email: email,
           notes: compiledNotes,
-          niche: "Inbound Lead",
+          niche: targetNiche,
           status: "New"
         }
       ])

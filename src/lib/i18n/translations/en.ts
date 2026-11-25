@@ -3,1134 +3,908 @@ import { TranslationDictionary } from "../types";
 export const en: TranslationDictionary = {
   locale: "en",
   direction: "ltr",
+  common: {
+    brand: "Fleevy",
+    openLiveSite: "Open Live Site",
+    viewCaseStudy: "Read Case Study",
+    buildSimilar: "Build a Similar System",
+    backToWork: "Back to All Work",
+    bookAudit: "Get a Free 48h Video Audit",
+    whatsappDirect: "WhatsApp Hichem",
+    exploreWork: "Explore Work",
+    mobileView: "Mobile",
+    desktopView: "Desktop",
+    liveClientBadge: "Live Client Build",
+    interactiveDemoBadge: "Interactive Niche Demo",
+    inHouseBadge: "Built In-House",
+    customScopeLabel: "Fixed Quote in 24h",
+  },
   nav: {
+    work: "Work",
     services: "Services",
-    projects: "Projects",
     about: "About",
     contact: "Contact",
+    auditCta: "Free 48h Audit",
     homeAria: "Fleevy Home",
     openMenu: "Open navigation menu",
     closeMenu: "Close navigation menu",
-    hqNotice: "Algiers HQ · Worldwide Remote Infrastructure",
-    switchLanguage: "Language"
+    hqNotice: "Algiers HQ · Worldwide Delivery",
+    switchLanguage: "Language",
   },
   footer: {
-    mainStudio: "Main Studio",
-    algiersHq: "Algiers HQ",
-    algiersLocation: "Algiers, Algeria",
-    globalDelivery: "Global Delivery",
-    worldwide: "Worldwide",
-    remoteInfra: "Remote Engineering & Infrastructure",
     tagline: "Customer Acquisition Systems & Digital Infrastructure",
-    whatsappAria: "WhatsApp Direct Line",
+    hq: "Algiers HQ · Worldwide Delivery",
+    privacy: "Privacy",
+    whatsappAria: "Message Hichem on WhatsApp",
     emailAria: "Email Fleevy",
-    contactAria: "Contact Fleevy"
   },
-  contactForm: {
-    successTitle: "Request Received.",
-    successDesc: "Thank you. We received your project details and will reply within 24 hours.",
-    needLabel: "01 // What do you need?",
-    timelineLabel: "02 // Target Timeline",
-    detailsLabel: "03 // Direct Engineering Contact",
-    nameLabel: "Your Name",
-    namePlaceholder: "Full name",
-    companyLabel: "Company",
-    companyPlaceholder: "Company or brand name",
-    emailLabel: "Email Address",
-    emailPlaceholder: "name@company.com",
-    phoneLabel: "Phone / WhatsApp Number",
-    phonePlaceholder: "+213 ... or international format",
-    projectScopeLabel: "Project Scope & Goals",
-    projectScopePlaceholder: "Briefly describe your offer, bottleneck, or what you want built...",
-    submitBtn: "Submit Request",
-    submittingBtn: "Submitting...",
-    securityBadge: "Confidential Review · Direct Engineer Access · Response in < 24h",
-    errorRequired: "Please fill in your name, company, email, and phone number.",
-    errorInterests: "Please select at least one option.",
-    services: {
-      website: "Website / Landing Page",
-      ecommerce: "E-Commerce Store",
-      crm: "Custom CRM / Web App",
-      ads: "Meta Ads & Video Scripts",
-      audit: "Conversion & Content Audit",
-      aiAgent: "Domain-Specific AI Agent"
-    },
-    budgets: {
-      standard: "$2,500 – $5,000 (Core Platform)",
-      growth: "$5,000 – $10,000 (Full Commerce & Logistics Engine)",
-      enterprise: "$10,000+ (Enterprise Infrastructure / Custom Web App)"
-    },
-    timelines: {
-      rightAway: "Right away",
-      twoToFourWeeks: "Within 2–4 weeks",
-      planningAhead: "Planning ahead"
-    }
-  },
-  onboardingWizard: {
-    badge: "System Intake Wizard",
-    stepPrefix: "Step",
-    stepOf: "of 3",
-    blueprintReady: "Blueprint Ready",
-    step1: {
-      title: "What digital system does your business need?",
-      subhead: "Select the primary build required for your operations.",
-      options: [
-        {
-          id: "ecom",
-          title: "01. E-Commerce Engine",
-          desc: "Headless store with Yalidine/ZR sync & instant 1-tap checkout."
-        },
-        {
-          id: "lead",
-          title: "02. Lead Gen Funnel",
-          desc: "High-ticket landing pages that filter tire-kickers into confirmed appointments."
-        },
-        {
-          id: "crm",
-          title: "03. Custom Ops & CRM",
-          desc: "Private web portals replacing messy spreadsheets & manual WhatsApp chats."
-        },
-        {
-          id: "ads",
-          title: "04. Growth Strategy & Meta Ads",
-          desc: "High-converting creative frameworks backed by verified pixel tracking."
-        }
-      ]
-    },
-    step2: {
-      title: "What is stopping your revenue growth today?",
-      subhead: "Select the single biggest operational bottleneck.",
-      backBtn: "Back to system selection",
-      options: [
-        {
-          id: "dm_chaos",
-          title: "Losing sales in DMs",
-          desc: "Customers abandon while waiting hours for human WhatsApp/Instagram confirmation."
-        },
-        {
-          id: "marketplace_fees",
-          title: "Marketplaces eating margins",
-          desc: "Zero direct customer data, zero repeat purchases, and heavy platform cuts."
-        },
-        {
-          id: "blind_ads",
-          title: "Blind ad spend",
-          desc: "Budget goes out without knowing which creative campaign actually brings revenue."
-        },
-        {
-          id: "sheet_chaos",
-          title: "Operational chaos & messy sheets",
-          desc: "Disorganized client handoffs, missed follow-ups, and manual re-typing."
-        }
-      ]
-    },
-    step3: {
-      title: "When do you need this operational?",
-      subhead: "Helps us allocate immediate engineering bandwidth.",
-      backBtn: "Back to bottleneck",
-      options: [
-        {
-          id: "asap",
-          title: "ASAP (Next 14 Days)",
-          desc: "Priority sprint deployment to solve immediate bottlenecks.",
-          badge: "Sprint",
-          window: "10 - 14 Business Days"
-        },
-        {
-          id: "standard",
-          title: "Standard Roadmap (3–5 Weeks)",
-          desc: "Phased rollout with team training and test staging.",
-          badge: "Planned",
-          window: "3 - 5 Weeks"
-        },
-        {
-          id: "exploring",
-          title: "Exploring feasibility for Q3/Q4",
-          desc: "Auditing requirements and comparing build options.",
-          badge: "Audit",
-          window: "Flexible"
-        }
-      ]
-    },
-    step4: {
-      title: "Tailored Architecture Blueprint Ready",
-      subhead: "Calculated based on your selected stack and operations.",
-      cardSystemLabel: "Recommended Build",
-      cardWindowLabel: "Deployment Window",
-      cardChallengeLabel: "Target Solution",
-      cardDeliverablesLabel: "What Gets Delivered",
-      deliverables: [
-        "Sub-second custom web system (Next.js & Supabase)",
-        "Integrated Algerian courier API (Yalidine/ZR Express)",
-        "100% owned source code, database, and infrastructure"
-      ],
-      whatsappBtn: "Send Blueprint to Hichem on WhatsApp",
-      resetBtn: "↺ Reset & try another configuration",
-      waPrefix: "Salam Hichem, I went through the Fleevy onboarding wizard:",
-      waSystemLabel: "System",
-      waChallengeLabel: "Core Challenge",
-      waTimelineLabel: "Target Timeline",
-      waClosing: "I would like to review the technical blueprint and confirm availability."
-    }
-  },
-  faq: {
-    title: "Frequently Asked Questions",
-    subtitle: "Quick answers on how we build and launch.",
-    items: [
-      {
-        question: "What makes Fleevy different from a traditional agency?",
-        answer: "Most agencies build static websites. We build complete acquisition systems with automated bot intake and targeted Meta ads."
-      },
-      {
-        question: "How does automated bot intake work?",
-        answer: "When a visitor submits an inquiry or order, our WhatsApp or Telegram bot qualifies their details and sends the lead to your phone in 30 seconds."
-      },
-      {
-        question: "Do we own all codebase assets and customer data?",
-        answer: "Yes. You have full ownership of the codebase and customer data with zero monthly platform lock-in."
-      },
-      {
-        question: "What is the typical delivery timeline?",
-        answer: "Most platforms launch in two to four weeks, including bot setup and testing."
-      },
-      {
-        question: "What happens on the strategy call?",
-        answer: "We review your current setup, spot where leads drop off, and outline a clear build plan."
-      }
-    ]
-  },
-  heroVisual: {
-    projects: [
-      {
-        id: "mopizza",
-        tabLabel: "Mo Pizza",
-        shortLabel: "Mo Pizza",
-        client: "Mo Pizza Restaurants",
-        category: "Direct Intake & Mobile Commerce Engine",
-        statusBadge: "Live Production Platform",
-        ctaText: "Visit Live Deployment",
-        ctaTextDesktop: "Visit Live Deployment (Mo Pizza Direct Ordering)",
-        benefits: [
-          { direction: "up", label: "0% Commission Direct Orders" },
-          { direction: "up", label: "Sub-800ms Mobile Velocity" }
-        ]
-      },
-      {
-        id: "adrena",
-        tabLabel: "Adréna Club",
-        shortLabel: "Adréna",
-        client: "Adréna Club (Bab Ezzouar)",
-        category: "Athletic Club & Intake System",
-        statusBadge: "Private Preview · Staging Deployment",
-        ctaText: "Explore Staging Platform",
-        ctaTextDesktop: "Explore Staging Platform (Adréna Club)",
-        benefits: [
-          { direction: "up", label: "Direct WhatsApp Tiered Enrollment" },
-          { direction: "down", label: "Front-Desk Inquiry Overload" }
-        ]
-      },
-      {
-        id: "almadina",
-        tabLabel: "Almadina Bookstore",
-        shortLabel: "Almadina",
-        client: "Almadina Publishing",
-        category: "Headless Catalog Architecture",
-        statusBadge: "Live Production Platform",
-        ctaText: "Visit Live Deployment",
-        ctaTextDesktop: "Visit Live Deployment (Almadina Bookstore)",
-        benefits: [
-          { direction: "up", label: "Instant Title & ISBN Search" },
-          { direction: "down", label: "58-Wilayas Cart Drop-Off" }
-        ]
-      }
-    ]
-  },
-  featuredWork: {
-    projects: [
-      {
-        id: "mopizza",
-        title: "Mo Pizza Direct Ordering",
-        niche: "Restaurant & Hospitality · Direct Mobile Commerce",
-        deployment: "Direct Mobile Commerce & Multilingual Intake",
-        summary: "Direct ordering engine for Morad Oudia's 5-branch restaurant network that cuts aggregator commission fees via instant call and WhatsApp dispatch.",
-        statusBadge: "Live Production Platform",
-        benefits: [
-          { direction: "up", label: "0% Commission Direct Orders" },
-          { direction: "up", label: "Instant Multilingual Ordering" }
-        ]
-      },
-      {
-        id: "almadina",
-        title: "Almadina Bookstore",
-        niche: "Headless Commerce · Scholarly Publishing",
-        deployment: "Headless Catalog & Delivery Pipeline",
-        summary: "Fast online bookstore with instant search and 58-Wilayas cash-on-delivery checkout.",
-        statusBadge: "Live Production Platform",
-        benefits: [
-          { direction: "up", label: "Search & Discovery Speed" },
-          { direction: "down", label: "Mobile Catalog Drop-off" }
-        ]
-      },
-      {
-        id: "adrena",
-        title: "Adréna Club",
-        niche: "Athletics & Combat · Membership Booking",
-        deployment: "2-Floor Facility Platform & WhatsApp Intake",
-        summary: "Two-floor athletic performance platform in Bab Ezzouar with real-time floor schedules, dedicated women-only hours, and direct WhatsApp membership onboarding.",
-        statusBadge: "Private Preview · Staging Deployment",
-        benefits: [
-          { direction: "up", label: "Direct WhatsApp Tiered Enrollment" },
-          { direction: "down", label: "Front-Desk Inquiry Overload" }
-        ]
-      },
-      {
-        id: "tawheed",
-        title: "Tawheed & Sunnah Bookstore",
-        niche: "Publishing & Distribution · Digital Commerce",
-        deployment: "Zero-Latency Mobile Commerce Pipeline",
-        summary: "High-performance Arabic catalog architecture with 69-wilayas courier sync, dual branch pickup, and instant WhatsApp verification.",
-        statusBadge: "Live Production Platform",
-        benefits: [
-          { direction: "up", label: "Nationwide Courier Integration" },
-          { direction: "down", label: "Manual Intake Friction" }
-        ]
-      }
-    ]
+  mobileQuickBar: {
+    auditBtn: "Free 48h Audit",
+    whatsappAria: "Chat on WhatsApp",
   },
   home: {
     hero: {
-      headlineStart: "We engineer customer acquisition systems ",
-      headlineEnd: "& digital infrastructure.",
-      subtitle: "Custom sales platforms and automated systems wired with WhatsApp and targeted Meta ads.",
-      ctaPrimary: "Start Your Project",
-      ctaSecondary: "Explore Client Work",
-      badges: {
-        speed: "Sub-800ms Edge Speed",
-        bot: "30s Bot Qualification",
-        commission: "0% Commission Retained"
-      }
+      headline: "Customer acquisition systems & custom digital platforms.",
+      subtitle:
+        "We build fast websites, online stores, internal CRMs, and domain AI agents, then fuel them with targeted Meta ads and video scripts.",
+      ctaPrimary: "Get a Free 48h Video Audit",
+      ctaSecondary: "Explore Work",
+      scopeLine:
+        "Funnels & Vitrines · Direct E-Commerce · Custom CRMs · AI Agents · Meta Ads",
     },
-    engineSimulator: {
-      badge: "LIVE AUTOMATION LAB // INTERACTIVE SYSTEM",
-      headline: "Test the Autonomous Engine in Real Time.",
-      subhead: "Real-time event cascade: ad attribution, edge render, qualification, and multi-channel dispatch.",
-      triggerBtn: "Run Autonomous Simulation",
-      resetBtn: "Reset Telemetry",
-      statusIdle: "Ready for telemetry test",
-      statusRunning: "Executing event cascade...",
-      statusComplete: "Execution complete · Zero manual touch",
-      scenarios: [
+    heroShowcase: {
+      tabs: [
         {
-          id: "clinic",
-          name: "Specialty Medical Clinic",
-          niche: "Healthcare & High-Value Consultations",
-          badge: "Consultation Pipeline",
-          speedMetric: "1.8s Runtime",
-          commissionMetric: "0% Commission Cut",
-          resultSummary: "Confirmed patient consultation synced to Google Calendar and reception desk alerted.",
-          events: [
-            {
-              timestamp: "00:00.15",
-              step: "01",
-              title: "Meta CAPI Attribution",
-              system: "CAPI Server",
-              badge: "Verified"
-            },
-            {
-              timestamp: "00:00.38",
-              step: "02",
-              title: "Sub-Second Edge Render",
-              system: "Next.js Edge",
-              badge: "240ms"
-            },
-            {
-              timestamp: "00:01.05",
-              step: "03",
-              title: "Patient Qualification",
-              system: "Intake Bot",
-              badge: "Qualified"
-            },
-            {
-              timestamp: "00:01.62",
-              step: "04",
-              title: "Calendar Sync",
-              system: "Google Calendar",
-              badge: "Slot Locked"
-            },
-            {
-              timestamp: "00:01.80",
-              step: "05",
-              title: "Staff Dispatch Ping",
-              system: "WhatsApp Webhook",
-              badge: "Delivered"
-            }
-          ]
-        },
-        {
-          id: "ecommerce",
-          name: "Direct-to-Consumer Commerce",
-          niche: "Retail, Food & 58-Wilayas COD",
-          badge: "Zero-Commission Commerce",
-          speedMetric: "1.4s Runtime",
-          commissionMetric: "0% Commission Cut",
-          resultSummary: "Order logged, 58-Wilayas shipping calculated, warehouse dispatch payload sent.",
-          events: [
-            {
-              timestamp: "00:00.12",
-              step: "01",
-              title: "Edge Catalog Fetch",
-              system: "Edge CDN",
-              badge: "Cached"
-            },
-            {
-              timestamp: "00:00.45",
-              step: "02",
-              title: "58-Wilayas Logistics Router",
-              system: "Logistics Engine",
-              badge: "Calculated"
-            },
-            {
-              timestamp: "00:00.95",
-              step: "03",
-              title: "Address & Phone Check",
-              system: "Validation Gate",
-              badge: "Verified"
-            },
-            {
-              timestamp: "00:01.35",
-              step: "04",
-              title: "Warehouse Dispatch Hook",
-              system: "Warehouse Dispatch",
-              badge: "Dispatched"
-            }
-          ]
-        },
-        {
-          id: "b2b",
-          name: "High-Ticket B2B & Advisory",
-          niche: "Corporate Services & Real Estate",
-          badge: "Lead Scoring Pipeline",
-          speedMetric: "2.1s Runtime",
-          commissionMetric: "100% Data Sovereignty",
-          resultSummary: "Lead scored Tier-A, Zoom consultation locked, founder alerted with full dossier.",
-          events: [
-            {
-              timestamp: "00:00.20",
-              step: "01",
-              title: "Scope Assessment",
-              system: "Scope Estimator",
-              badge: "Captured"
-            },
-            {
-              timestamp: "00:00.85",
-              step: "02",
-              title: "Lead Scoring Algorithm",
-              system: "Scoring Engine",
-              badge: "Tier-A Lead"
-            },
-            {
-              timestamp: "00:01.50",
-              step: "03",
-              title: "Executive Calendar Slot",
-              system: "Google Calendar",
-              badge: "Meeting Locked"
-            },
-            {
-              timestamp: "00:02.10",
-              step: "04",
-              title: "Founder VIP Channel Ping",
-              system: "CEO Alert",
-              badge: "CEO Notified"
-            }
-          ]
-        }
-      ]
-    },
-    leakDiagnostic: {
-      badge: "THE REVENUE LEAK // DIAGNOSTIC INSPECTION",
-      headline: "Where 80% of Marketing Budgets Disappear.",
-      subhead: "Most ad budgets vanish due to slow loading speeds and missing automated intake.",
-      traditionalTab: "The Fragmented Setup (The Leak)",
-      fleevyTab: "The Fleevy Machine (Captured)",
-      stages: [
-        {
-          id: "speed",
-          num: "01",
-          title: "First Touch Speed",
-          traditional: {
-            headline: "7–11s Slow Builders",
-            metric: "53% Bounce Before First View",
-            badge: "Traffic Bleed"
-          },
-          fleevy: {
-            headline: "240ms Sub-Second Edge",
-            metric: "99.2% Visitor Retention",
-            badge: "Zero Drop-off"
-          }
-        },
-        {
-          id: "intake",
-          num: "02",
-          title: "Response Velocity",
-          traditional: {
-            headline: "Unstructured 4-Hour DM Lags",
-            metric: "68% Drop in Conversion",
-            badge: "Dead Inquiries"
-          },
-          fleevy: {
-            headline: "Autonomous Intake in < 15s",
-            metric: "< 15s Instant Response",
-            badge: "100% Captured"
-          }
-        },
-        {
-          id: "ops",
-          num: "03",
-          title: "Operations & Booking",
-          traditional: {
-            headline: "Manual Spreadsheets & Errors",
-            metric: "Chaotic Operations",
-            badge: "Human Error"
-          },
-          fleevy: {
-            headline: "Calendar & Database Pipeline",
-            metric: "0 Manual Drag",
-            badge: "Autopilot Ops"
-          }
-        },
-        {
-          id: "economics",
-          num: "04",
-          title: "Unit Economics",
-          traditional: {
-            headline: "15%–30% Platform Rent",
-            metric: "20% Margin Surrendered",
-            badge: "Margin Tax"
-          },
-          fleevy: {
-            headline: "0% Commission · Owned Code",
-            metric: "0% Commission · 100% Owned",
-            badge: "Sovereign"
-          }
-        }
-      ],
-      bottomNotice: {
-        headline: "Stop burning ad budget on a leaking bucket.",
-        cta: "Request an Architecture Diagnostic"
-      }
-    },
-    pillars: {
-      badge: "THE TWO PILLARS",
-      headline: "Engineering meets customer acquisition.",
-      subhead: "Code alone does not grow a business. We combine custom digital infrastructure with targeted demand generation.",
-      pillarOneTitle: "Digital Infrastructure & Systems",
-      pillarOneDesc: "High-speed web platforms, mobile storefronts, and internal tools built from scratch.",
-      pillarTwoTitle: "Targeted Demand & Direct-Response Growth",
-      pillarTwoDesc: "Meta ad campaigns, video hook direction, and funnel teardowns that convert.",
-      pillarOneServices: [
-        {
-          num: "01",
-          title: "Client Acquisition Funnels & Brand Vitrines",
-          desc: "Service websites that capture leads and qualify buyers automatically on WhatsApp.",
-          tags: ["Instant Bot Intake", "Zero-Friction Booking"]
-        },
-        {
-          num: "02",
-          title: "Direct Customer Ordering & E-Commerce Engines",
-          desc: "Mobile online stores with 0% commission fees and instant warehouse dispatch alerts.",
-          tags: ["0% Commission", "58-Wilayas COD"]
-        },
-        {
-          num: "03",
-          title: "Custom Web Apps & Proprietary CRMs",
-          desc: "Lightweight deal tracking pipelines and client portals that eliminate manual data entry.",
-          tags: ["Custom CRM", "Workflow Automation"]
-        }
-      ],
-      pillarTwoServices: [
-        {
-          num: "01",
-          title: "Full-Funnel Marketing Strategy & Meta Ads",
-          desc: "Targeted Facebook and Instagram campaigns paired with high-converting video scripts.",
-          tags: ["Meta Ads", "Video Scripts"]
-        },
-        {
-          num: "02",
-          title: "Pipeline Leak & Growth Audits",
-          desc: "Precise diagnostic of conversion leaks with an actionable sprint to lift net revenue.",
-          tags: ["Funnel Audit", "Revenue Roadmap"]
-        },
-        {
-          num: "03",
-          title: "Brand Authority & Creative Systems",
-          desc: "Editorial typography and modular ad creative templates bundled turnkey with every build.",
-          tags: ["Turnkey Included", "Ad Systems"]
-        }
-      ]
-    },
-    flow: {
-      badge: "DELIVERY PROTOCOL // 14-DAY ROADMAP",
-      headline: "From Diagnostic to Live Revenue Engine in 14 Days.",
-      subhead: "A fixed-timeline engineering protocol with guaranteed weekly milestones. Zero guesswork, zero perpetual agency tolls.",
-      steps: [
-        {
-          num: "01",
-          phase: "Stage 01",
-          timeline: "48 Hours",
-          title: "Technical Audit & Architecture Blueprint",
-          desc: "We dissect traffic drop-offs, slow page renders, and uncaptured inquiries. You receive an exact wireframe spec and system architecture.",
-          deliverable: "Architecture Spec + Action Plan"
-        },
-        {
-          num: "02",
-          phase: "Stage 02",
-          timeline: "Days 3–7",
-          title: "Sovereign Platform & Edge Deployment",
-          desc: "Custom Next.js mobile platform built on global edge CDN with automated WhatsApp dispatch and zero aggregator commission fees.",
-          deliverable: "Live Vercel Staging Environment"
-        },
-        {
-          num: "03",
-          phase: "Stage 03",
-          timeline: "Days 8–14",
-          title: "High-Intent Creative & Meta CAPI Setup",
-          desc: "We script direct-response video hooks, configure server-side conversion tracking without cookie loss, and stress-test order throughput.",
-          deliverable: "Ad Creatives + Verified CAPI Handshake"
-        },
-        {
-          num: "04",
-          phase: "Stage 04",
-          timeline: "Day 15+",
-          title: "Production Launch & 100% Asset Transfer",
-          desc: "DNS point, live campaigns switched on, and full repository transferred. You own 100% of the code, data, and domain with zero ongoing agency rent.",
-          deliverable: "Turnkey System + Full IP Transfer"
-        }
-      ]
-    },
-    guarantee: {
-      badge: "THE FLEEVY PERFORMANCE PLEDGE // ZERO RISK",
-      headline: "Engineered For Outcomes. Backed by a 100% Money-Back Guarantee.",
-      subhead: "We eliminate the risk of hiring traditional agencies. If our deployed infrastructure does not hit these four measurable operational standards within our 14-day SLA, we issue a 100% full refund immediately.",
-      pillars: [
-        {
-          metric: "< 800ms TTFB",
-          label: "Sub-Second 4G Speed",
-          desc: "Instant page rendering on mobile networks across all 58 wilayas, eliminating visitor drop-off before your offer is seen."
-        },
-        {
-          metric: "< 30s Triage",
-          label: "Instant WhatsApp Intake",
-          desc: "Automated qualification and direct dispatch to your team in under 30 seconds, replacing 4-hour DM response delays."
-        },
-        {
-          metric: "0% Commission",
-          label: "Zero Aggregator Toll",
-          desc: "100% of top-line revenue stays in your pocket. No marketplace commissions, no platform percentages."
-        },
-        {
-          metric: "100% Sovereignty",
-          label: "Full Code & IP Ownership",
-          desc: "All source code, database credentials, and domain assets are transferred directly to your name with zero monthly SaaS rent."
-        }
-      ],
-      pledgeTitle: "The 100% Money-Back Commitment",
-      pledgeText: "If our deployed system fails to fulfill these verified performance standards upon delivery, you receive an immediate, no-questions-asked 100% refund of your investment—and you keep the architecture blueprint for free.",
-      ctaBtn: "Start Your Risk-Free Build",
-      directDeskBtn: "Ask an Architect on WhatsApp",
-      founderSignature: "Hichem Djouadi · Founder & Lead Systems Architect"
-    },
-    showcase: {
-      headline: "Selected Deployments",
-      subhead: "Real commercial platforms generating revenue for our clients.",
-      viewAll: "Explore All Work"
-    },
-    founder: {
-      badge: "Direct Engineering Access",
-      quote: "When you partner with Fleevy, you work directly with the engineers and strategists building your system—not junior account managers.",
-      founderName: "Hichem Djouadi",
-      founderRole: "Founder & Lead Systems Architect"
-    },
-    ctaBanner: {
-      headline: "Ready to build an automated acquisition system?",
-      subhead: "Get a direct technical audit of your business infrastructure to unlock hidden revenue.",
-      primaryBtn: "Start Your Project",
-      whatsappBtn: "WhatsApp Fast-Track"
-    }
-  },
-  services: {
-    hero: {
-      badge: "SOLUTIONS & ARCHITECTURE",
-      headline: "Digital infrastructure engineered to convert visitors into paying clients.",
-      subhead: "We build bespoke acquisition platforms, mobile e-commerce engines, and internal systems—paired with targeted Meta ads and direct-response strategy."
-    },
-    pillarOneBadge: "PILLAR 01 // DIGITAL INFRASTRUCTURE",
-    pillarOneTitle: "Custom Web Platforms & Automated Systems",
-    pillarOneDesc: "Sovereign high-velocity codebases with direct WhatsApp dispatch and zero lock-in.",
-    pillarOneItems: [
-      {
-        num: "01",
-        title: "Acquisition Funnels & Brand Vitrines",
-        badge: "Clinics & High-Ticket Services",
-        sla: "2–3 Weeks Delivery",
-        desc: "Fast edge platforms with WhatsApp triage. Turns qualified inquiries into bookings without phone tag.",
-        deliverables: [
-          "< 1s mobile edge load",
-          "WhatsApp triage bot",
-          "Team alert < 30 seconds",
-          "Google Calendar sync"
-        ],
-        proofLabel: "Adréna Club Private Intake"
-      },
-      {
-        num: "02",
-        title: "Direct Ordering & E-Commerce Engines",
-        badge: "D2C Brands, Retail & Food",
-        sla: "2–3 Weeks Delivery",
-        desc: "Sovereign online storefronts with 58-wilaya COD checkout and instant WhatsApp dispatch. 0% toll.",
-        deliverables: [
-          "0% marketplace commission",
-          "58-wilaya COD checkout",
-          "Instant order dispatch",
-          "100% database ownership"
-        ],
-        proofLabel: "Tawheed Bookstore & Mo Pizza"
-      },
-      {
-        num: "03",
-        title: "Web Apps, Proprietary CRMs & Dispatch",
-        badge: "Operations & Logistics",
-        sla: "3–4 Weeks Delivery",
-        desc: "Internal dispatch portals and deal pipelines that replace chaotic Excel and alert reps before leads go cold.",
-        deliverables: [
-          "Visual deal pipeline",
-          "Cold lead radar alerts",
-          "Courier API automation",
-          "100% data sovereignty"
-        ],
-        proofLabel: "Fleevy Command Center"
-      }
-    ],
-    pillarTwoBadge: "PILLAR 02 // DEMAND GENERATION",
-    pillarTwoTitle: "Targeted Meta Ads & Direct-Response Strategy",
-    pillarTwoDesc: "Paid ad campaigns and direct-response video hooks that turn viewers into booked WhatsApp orders.",
-    pillarTwoItems: [
-      {
-        num: "01",
-        title: "Meta Ads & Video Creative Direction",
-        badge: "Strategy & Paid Demand",
-        sla: "1–2 Weeks Setup",
-        desc: "Full-funnel Meta campaigns and video hook scripts built to generate qualified WhatsApp orders, not empty clicks.",
-        deliverables: [
-          "Direct-response video hooks",
-          "Meta ads management",
-          "Meta CAPI tracking setup",
-          "WhatsApp order optimization"
-        ]
-      },
-      {
-        num: "02",
-        title: "Pipeline Leak & Growth Audits",
-        badge: "Growth Audit",
-        sla: "48-Hour Delivery",
-        desc: "A 48-hour video teardown revealing where your current funnel leaks revenue and which content angles drive sales.",
-        deliverables: [
-          "48h video teardown",
-          "Pricing & friction review",
-          "Quick-win revenue plan",
-          "Actionable sprint list"
-        ]
-      },
-      {
-        num: "03",
-        title: "Brand Credibility & Design Tokens",
-        badge: "Integrated System",
-        sla: "Included With Build",
-        desc: "Calibrated typography, design tokens, and social ad creative templates included turnkey with every core web build.",
-        deliverables: [
-          "Brand typography & colors",
-          "Social ad templates",
-          "WhatsApp bot branding",
-          "Vector logo polish"
-        ]
-      }
-    ],
-    comparison: {
-      badge: "THE DIFFERENCE",
-      headline: "Traditional Agencies vs Fleevy",
-      subhead: "Why business owners switch to an engineering and acquisition partner.",
-      colAgency: "Traditional Agency",
-      colFleevy: "Fleevy Systems",
-      rows: [
-        {
-          metric: "Primary Focus",
-          agency: "Aesthetic brochures & vanity design",
-          fleevy: "Revenue generation & automated bot intake"
-        },
-        {
-          metric: "Technology Stack",
-          agency: "Bloated WordPress or locked site builders",
-          fleevy: "Custom Next.js, TypeScript & PostgreSQL"
-        },
-        {
-          metric: "Mobile Performance",
-          agency: "3–6 second load times on 4G networks",
-          fleevy: "Sub-800ms edge loading with zero bloat"
-        },
-        {
-          metric: "Lead Intake",
-          agency: "Static contact forms that sit in spam",
-          fleevy: "Instant 30s WhatsApp bot triage"
-        },
-        {
-          metric: "Code & Data Ownership",
-          agency: "Recurring host locks or platform fees",
-          fleevy: "100% full client ownership of all assets"
-        }
-      ]
-    },
-    guarantees: {
-      badge: "OUR COMMITMENT",
-      headline: "Architectural Guarantees",
-      items: [
-        {
-          title: "Fixed Timelines & Deliverables",
-          desc: "Every milestone is agreed in advance with exact delivery windows. No scope creep, no endless revisions."
-        },
-        {
-          title: "Zero Platform Lock-In",
-          desc: "All source code, database credentials, and ad account setups remain 100% under your ownership forever."
-        },
-        {
-          title: "Direct Builder Communication",
-          desc: "You collaborate directly with engineers on WhatsApp. Zero account managers, zero telephone games."
-        }
-      ]
-    },
-    bottomCta: {
-      headline: "Ready to scale your infrastructure?",
-      subhead: "Let's review your current customer funnel and pinpoint where you can recapture lost revenue.",
-      ctaBtn: "Start Your Project",
-      whatsappBtn: "WhatsApp Fast-Lane"
-    }
-  },
-  work: {
-    hero: {
-      badge: "CASE STUDIES & ARCHITECTURE",
-      headline: "Systems built for speed, conversion, and zero-leak operations.",
-      subhead: "Browse live client deployments and staging platforms engineered by Fleevy."
-    },
-    filters: {
-      all: "All Projects",
-      commerce: "Direct Commerce",
-      webapp: "Web Apps & Systems"
-    },
-    projects: [
-      {
-        title: "Mo Pizza Direct Ordering",
-        category: "Direct Commerce & Multilingual Intake Architecture",
-        filterCategory: "commerce",
-        client: "Mo Pizza Restaurants (Morad Oudia)",
-        systemType: "Direct Intake & Mobile Commerce Engine",
-        statusBadge: "Live Production Platform",
-        summary: "Direct ordering engine for Morad Oudia's 5-branch restaurant network that cuts aggregator commission fees via instant call and WhatsApp dispatch.",
-        benefits: [
-          {
-            direction: "up",
-            type: "Commercial Result",
-            headline: "0% Commission Direct Margin Retained",
-            detail: "Bypasses 15–30% food aggregator fees with direct WhatsApp and phone dispatch straight to branch kitchens."
-          },
-          {
-            direction: "up",
-            type: "Problem Solved",
-            headline: "Instant Multilingual Ordering Without App Friction",
-            detail: "Interactive 6-item order tray supporting English, Arabic, and French across 5 locations with zero app downloads."
-          }
-        ]
-      },
-      {
-        title: "Almadina Bookstore",
-        category: "Headless E-Commerce & Distribution Infrastructure",
-        filterCategory: "commerce",
-        client: "Almadina Publishing",
-        systemType: "Headless Catalog & Inventory Engine",
-        statusBadge: "Live Production Platform",
-        summary: "Fast online bookstore with instant search and 58-Wilayas cash-on-delivery checkout.",
-        benefits: [
-          {
-            direction: "up",
-            type: "Commercial Result",
-            headline: "Search & Discovery Speed",
-            detail: "Fast catalog search across thousands of titles."
-          },
-          {
-            direction: "down",
-            type: "Problem Solved",
-            headline: "Mobile Catalog Drop-off",
-            detail: "Fast 58-Wilayas cash on delivery mobile checkout."
-          }
-        ]
-      },
-      {
-        title: "Adréna Club",
-        category: "High-Ticket Membership & Athlete Intake Architecture",
-        filterCategory: "webapp",
-        client: "Adréna Club (Bab Ezzouar)",
-        systemType: "2-Floor Athletic Facility & WhatsApp Intake",
-        statusBadge: "Private Preview · Staging Deployment",
-        summary: "Two-floor athletic performance platform in Bab Ezzouar with real-time floor schedules, dedicated women-only hours, and direct WhatsApp membership onboarding.",
-        benefits: [
-          {
-            direction: "up",
-            type: "Commercial Result",
-            headline: "Direct WhatsApp Membership Enrollment",
-            detail: "Qualified membership signups direct to WhatsApp with pre-selected training tiers."
-          },
-          {
-            direction: "down",
-            type: "Problem Solved",
-            headline: "Front-Desk Inquiry Overload",
-            detail: "Real-time schedules and automated tier answers cut repetitive phone inquiries."
-          }
-        ]
-      },
-      {
-        title: "Tawheed & Sunnah Bookstore",
-        category: "Publishing & Distribution · Digital Commerce",
-        filterCategory: "commerce",
-        client: "Tawheed Publishing",
-        systemType: "Zero-Latency Mobile Commerce Pipeline",
-        statusBadge: "Live Production Platform",
-        summary: "High-performance Arabic catalog architecture with 69-wilayas courier sync, dual branch pickup, and instant WhatsApp verification.",
-        benefits: [
-          {
-            direction: "up",
-            type: "Commercial Result",
-            headline: "Nationwide Courier Integration",
-            detail: "Automated postal and courier dispatch with direct cash-on-delivery reconciliation."
-          },
-          {
-            direction: "down",
-            type: "Problem Solved",
-            headline: "Manual Intake Friction",
-            detail: "Replaced slow manual order entry with direct automated dispatch."
-          }
-        ]
-      },
-      {
-        title: "Fleevy Command Center CRM",
-        category: "Internal Agency Operating System & Operations Hub",
-        filterCategory: "webapp",
-        client: "Fleevy Operating Core",
-        systemType: "Mission-Critical Agency Command Center & Real-time CRM",
-        statusBadge: "Live Production Platform",
-        summary: "Proprietary operational brain synchronizing multi-channel inbound leads, real-time client pipeline telemetry, and automated Trello/Supabase workflows with zero sync latency.",
-        benefits: [
-          {
-            direction: "up",
-            type: "Commercial Result",
-            headline: "Instant Inbound Triage & Going-Cold Safeguard",
-            detail: "Automated 7-day lead decay monitors and instant multi-channel dispatch ensure zero prospect slippage."
-          },
-          {
-            direction: "up",
-            type: "Problem Solved",
-            headline: "Unified Multi-Service Operating Control",
-            detail: "Eliminates fragmented SaaS subscriptions by consolidating leads, projects, resources, and live metrics in a single sovereign cockpit."
-          }
-        ]
-      }
-    ],
-    bottomCta: {
-      headline: "Have a project in mind?",
-      subhead: "Let's discuss how custom architecture can accelerate your customer acquisition.",
-      ctaBtn: "Start Your Project",
-      whatsappBtn: "WhatsApp Fast-Lane"
-    }
-  },
-  about: {
-    hero: {
-      headlineStart: "We build revenue systems. ",
-      headlineEnd: "Not brochure websites.",
-      subhead: "High-velocity web platforms, mobile commerce, and targeted acquisition for businesses that can't afford wasted traffic.",
-      ledger: {
-        speedTitle: "Sub-800ms Edge Loading",
-        speedSub: "Engineered for mobile 4G networks",
-        botTitle: "30-Second Bot Triage",
-        botSub: "Instant WhatsApp lead qualification",
-        lockinTitle: "Zero Platform Lock-in",
-        lockinSub: "100% code & database ownership"
-      }
-    },
-    standards: {
-      badge: "STUDIO CONVICTIONS",
-      headline: "The three principles behind every build.",
-      subhead: "We treat digital platforms as commercial machinery, not static art installations.",
-      items: [
-        {
-          num: "01",
-          badge: "PURPOSE",
-          title: "Conversion Over Decoration",
-          desc: "A beautiful website that fails to convert is an expense. Every layout and button exists to turn attention into revenue.",
-          benchmark: "Measurable Pipeline"
-        },
-        {
-          num: "02",
-          badge: "SPEED",
-          title: "Performance as Architecture",
-          desc: "Speed is the foundation of conversion. We compile custom Next.js systems that load in under 800ms on cellular 4G.",
-          benchmark: "< 800ms on 4G"
-        },
-        {
-          num: "03",
-          badge: "SOVEREIGNTY",
-          title: "Zero Platform Hostage",
-          desc: "You own all source code, databases, and ad accounts from day one. Zero recurring platform locks. Zero monthly hostage fees.",
-          benchmark: "100% Client Ownership"
-        }
-      ]
-    },
-    techStack: {
-      badge: "THE FOUNDATION",
-      headline: "Modern Architecture Stack",
-      subhead: "Enterprise-grade tooling that powers world-class speed, reliability, and security.",
-      items: [
-        {
-          num: "01",
-          name: "Next.js App Router",
-          category: "Frontend & Edge Runtime",
-          detail: "Fast server rendering for mobile speed."
-        },
-        {
-          num: "02",
-          name: "TypeScript",
-          category: "Language & Type Safety",
-          detail: "Strict type safety across every module."
-        },
-        {
-          num: "03",
-          name: "PostgreSQL & Supabase",
-          category: "Database & Authentication",
-          detail: "Secure cloud databases with live sync."
-        },
-        {
-          num: "04",
-          name: "Tailwind CSS",
-          category: "Design System Tokens",
-          detail: "Clean styling with zero CSS bloat."
-        },
-        {
-          num: "05",
-          name: "Framer Motion",
-          category: "Kinetic Choreography",
-          detail: "Smooth physics for responsive interface motion."
-        },
-        {
-          num: "06",
-          name: "Automated Bot Webhooks",
-          category: "Intake & Logistics Sync",
-          detail: "Instant WhatsApp or Telegram lead alerts."
-        }
-      ]
-    },
-    scopeCard: {
-      badge: "CAPABILITIES",
-      countBadge: "4 DISCIPLINES",
-      headline: "What we engineer.",
-      footerText: "Fleevy Studio · 100% Bespoke Code · Zero Lock-In",
-      items: [
-        {
-          id: "intake",
-          num: "01",
-          title: "Acquisition Platforms",
-          sector: "Clinics & High-Ticket Services",
-          output: "Sub-second mobile vitrines with instant WhatsApp inquiry qualification.",
-          tag: "Zero Lost Leads"
+          id: "funnel",
+          label: "01 Funnel & Intake",
+          shortLabel: "01 Funnel",
+          caption: "Adréna Club · Tiered enrollment wired to WhatsApp",
         },
         {
           id: "commerce",
-          num: "02",
-          title: "Direct Commerce",
-          sector: "Consumer Brands & Retail",
-          output: "58-Wilaya COD mobile checkout with 0% platform cuts.",
-          tag: "100% Margins"
+          label: "02 Direct E-Commerce",
+          shortLabel: "02 Store",
+          caption: "Almadina Bookstore · Search & 58-wilaya checkout",
         },
         {
-          id: "portals",
-          num: "03",
-          title: "Operations CRMs",
-          sector: "Logistics & Multi-Branch",
-          output: "Visual deal pipelines replacing chaotic spreadsheets.",
-          tag: "Airtight Ops"
+          id: "crm",
+          label: "03 Custom CRM",
+          shortLabel: "03 CRM",
+          caption: "Command Center · Lead triage & 7-day cold alerts",
         },
-        {
-          id: "growth",
-          num: "04",
-          title: "Targeted Paid Ads",
-          sector: "Scalable Commercial Operators",
-          output: "Engineered Meta ad campaigns bringing predictable volume.",
-          tag: "Predictable Sales"
-        }
-      ]
-    },
-    founder: {
-      badge: "DIRECT PARTNERSHIP",
-      headline: "No salesmen. No telephone games. Build directly with senior engineers.",
-      paragraphs: [
-        "Traditional agencies sell you with senior partners and pass your build to junior staff. We dismantled that model.",
-        "Every system at Fleevy is designed, coded, and deployed directly by senior engineers. Direct WhatsApp collaboration with zero bureaucracy."
       ],
-      founderName: "Hichem Djouadi",
-      founderRole: "Founder & Systems Architect"
+      mobileHint: "Tap tabs to preview each system layer",
     },
-    bottomCta: {
-      headline: "Let's engineer your advantage.",
-      subhead: "Ready to launch custom acquisition infrastructure built specifically for your revenue model?",
-      ctaBtn: "Start Your Project",
-      whatsappBtn: "WhatsApp Fast-Lane"
-    }
+    work: {
+      headline: "Selected Work",
+      viewAll: "All Shipped Systems",
+    },
+    systemAndCalc: {
+      headline: "The platform captures buyers. Growth fuel fills it.",
+      subhead:
+        "Explore how our two disciplines connect, then estimate what slow replies or third-party app fees cost your team each month.",
+      capabilities: [
+        {
+          id: "ads",
+          label: "Meta Ads & Video Scripts",
+          fuelLabel: "Growth Fuel",
+          fuelValue:
+            "Offer angles, direct-response video scripts & Meta CAPI ad campaigns",
+          engineLabel: "Target Destination",
+          engineValue:
+            "High-speed landing funnel or WhatsApp qualification flow",
+          bonusLabel: "Included Bonus",
+          bonusValue: "10-point funnel audit & Brand Credibility Polish",
+        },
+        {
+          id: "funnels",
+          label: "Lead Funnels & Vitrines",
+          fuelLabel: "Ideal For",
+          fuelValue:
+            "Medical clinics, real estate developers, consulting & clubs",
+          engineLabel: "What We Build",
+          engineValue:
+            "Sub-second mobile pages with 30-second WhatsApp or Telegram alerts",
+          bonusLabel: "Growth Layer",
+          bonusValue: "Local Google Maps setup & Meta Pixel conversion tracking",
+        },
+        {
+          id: "commerce",
+          label: "Direct E-Commerce",
+          fuelLabel: "Ideal For",
+          fuelValue: "Retail brands, bookstores, restaurants & D2C merchants",
+          engineLabel: "What We Build",
+          engineValue:
+            "Instant search, 58-wilaya cash on delivery & courier sync",
+          bonusLabel: "Margin Impact",
+          bonusValue: "Keep 100% of direct orders with zero marketplace cuts",
+        },
+        {
+          id: "crm",
+          label: "Custom Web Apps & CRMs",
+          fuelLabel: "Ideal For",
+          fuelValue:
+            "Teams that have outgrown spreadsheets and messy WhatsApp chats",
+          engineLabel: "What We Build",
+          engineValue:
+            "Kanban deal boards, role logins & 7-day inactivity alerts",
+          bonusLabel: "Automation",
+          bonusValue:
+            "Instant lead routing from forms directly to sales reps",
+        },
+        {
+          id: "ai",
+          label: "Domain AI Agents",
+          fuelLabel: "Ideal For",
+          fuelValue:
+            "High-inquiry polyclinics, real estate desks & private academies",
+          engineLabel: "What We Build",
+          engineValue:
+            "24/7 triage bot trained on your prices, schedules & criteria",
+          bonusLabel: "Booking Flow",
+          bonusValue:
+            "Filters tire-kickers & escalates ready buyers to live staff",
+        },
+      ],
+      calculator: {
+        modeLeads: "Slow Replies & Ads",
+        modeOrders: "App Commissions",
+        leadsVolumeLabel: "Monthly Ad or DM Inquiries",
+        leadsValueLabel: "Average Customer Value",
+        leadsResultLabel: "Monthly revenue value exposed to slow manual replies",
+        leadsFormulaNote:
+          "Calculated from your monthly inquiries multiplied by average customer value.",
+        leadsCta: "Fix Lead Leakage",
+        ordersVolumeLabel: "Monthly Orders",
+        ordersValueLabel: "Average Order Basket",
+        ordersResultLabel: "Yearly fees saved against a 20% aggregator cut",
+        ordersFormulaNote:
+          "Calculated as monthly orders x basket x 20% commission x 12 months.",
+        ordersCta: "Keep 100% Margin",
+      },
+    },
+    packages: {
+      headline: "Three ways we package and ship.",
+      subhead:
+        "Clear scopes built in two to four weeks, priced after a short review of your exact workflow.",
+      guaranteeLine:
+        "Sign-off guarantee: every checkout flow, mobile 4G load time, and 30-second bot alert is tested live with your team before handover.",
+      cards: [
+        {
+          id: "foundational",
+          num: "01 · Engine",
+          tag: "2–3 Weeks",
+          title: "Foundational Engine",
+          desc: "A custom lead-capture vitrine or direct ordering store wired straight to your team via WhatsApp or Telegram.",
+          bullets: [
+            "Fast Next.js mobile platform built around conversion",
+            "30-second WhatsApp or Telegram inquiry alerts",
+            "Hosting setup & complete source code ownership",
+          ],
+          cta: "Scope Foundational Engine",
+          serviceParam: "Acquisition Funnel & Vitrine",
+        },
+        {
+          id: "turnkey",
+          num: "02 · Complete System",
+          tag: "Most Popular",
+          title: "Turnkey Growth Machine",
+          desc: "Your custom platform paired with Meta Ads setup, video recording scripts, pipeline audit, and free brand polish.",
+          bullets: [
+            "Full web platform or 58-wilaya store with bot intake",
+            "Meta Ads setup, CAPI tracking & direct-response video scripts",
+            "Free Bonus: Pipeline Audit & Brand Credibility Polish",
+          ],
+          cta: "Book Turnkey Review",
+          serviceParam: "Meta Ads & Video Scripts",
+          featured: true,
+        },
+        {
+          id: "scale",
+          num: "03 · Scale Partner",
+          tag: "Custom Ops",
+          title: "Scale & AI Automation",
+          desc: "Full turnkey acquisition plus a custom internal CRM, vertical AI triage agent, and monthly campaign optimization.",
+          bullets: [
+            "Proprietary CRM dashboard with 7-day cold-lead alerts",
+            "Domain-specific AI agent trained on your internal offers",
+            "Ongoing monthly Meta ad testing & funnel tuning",
+          ],
+          cta: "Discuss Custom Build",
+          serviceParam: "Custom CRM / Web App",
+        },
+      ],
+    },
+    builder: {
+      badge: "Direct Builder Access",
+      tag: "Zero Account Managers",
+      quote:
+        "You work directly with the engineers writing your code, wiring your WhatsApp and AI bots, and structuring your Meta ad campaigns from audit to launch.",
+      name: "Hichem Djouadi",
+      role: "Founder & Systems Architect · Algiers HQ",
+      cta: "Message on WhatsApp",
+    },
+    faq: {
+      title: "Common Questions",
+      items: [
+        {
+          question: "Do you build only websites, or handle Meta ads and AI bots too?",
+          answer:
+            "Both. We engineer the platform itself (vitrine, e-commerce store, or custom CRM) and can pair it with Meta ad campaigns, video scripts, and domain AI triage bots where inquiry volume justifies them.",
+        },
+        {
+          question: "How long does a typical launch take?",
+          answer:
+            "Most funnels and stores launch within two to four weeks, including bot routing setup and live mobile testing.",
+        },
+        {
+          question: "Do we keep full ownership of our code and customer data?",
+          answer:
+            "Yes. Your codebase, database, domain, and ad accounts stay in your name with zero ongoing platform rent or vendor lock-in.",
+        },
+        {
+          question: "How does the Free 48h Video Audit work?",
+          answer:
+            "Send your website URL or Instagram page plus your WhatsApp number. Within 48 hours, we send a short video showing exactly where prospects drop off and what to fix first.",
+        },
+        {
+          question: "Do you work in Algeria and internationally?",
+          answer:
+            "Yes. We build native Algerian workflows (French/Arabic RTL, 58-wilaya cash on delivery, courier APIs) as well as international English web systems.",
+        },
+      ],
+    },
+    closeBand: {
+      headline: "Ready to engineer your customer acquisition system?",
+      primaryBtn: "Get a Free 48h Video Audit",
+      whatsappBtn: "WhatsApp Hichem",
+      note: "Send your website or Instagram link for clear video feedback within 48 hours.",
+    },
+  },
+  services: {
+    heroHeadline: "Two disciplines. One connected acquisition machine.",
+    heroSubhead:
+      "We build the digital infrastructure that captures buyers and routes leads in seconds, then fuel it with targeted Meta ads and pipeline audits.",
+    disciplineOne: {
+      label: "Discipline 01 · The Engine",
+      title: "Platforms, CRMs & AI Intake",
+      countLabel: "4 Core Systems",
+      items: [
+        {
+          num: "01",
+          title: "Client Acquisition Funnels & Brand Vitrines",
+          timeline: "2–3 Weeks",
+          desc: "Fast mobile platforms for clinics, real estate developers, and local service brands with 30-second WhatsApp or Telegram lead alerts and local SEO setup.",
+          serviceParam: "Acquisition Funnel & Vitrine",
+        },
+        {
+          num: "02",
+          title: "Direct Ordering & E-Commerce Engines",
+          timeline: "2–4 Weeks",
+          desc: "Commission-free stores with instant catalog search, 58-wilaya cash on delivery, optional card payments, and automated courier dispatch tickets.",
+          serviceParam: "Direct E-Commerce Engine",
+        },
+        {
+          num: "03",
+          title: "Custom Web Apps, Proprietary CRMs & Automation",
+          timeline: "3–4 Weeks",
+          desc: "Internal Kanban deal pipelines, role-based staff portals, and 7-day cold-lead alerts built to replace spreadsheets and lost chats.",
+          serviceParam: "Custom CRM / Web App",
+        },
+        {
+          num: "04",
+          title: "Domain-Specific Conversational AI Agents",
+          timeline: "Vertical Tier",
+          desc: "Specialized triage bots for high-inquiry clinics, showrooms, real estate, and academies. Trained strictly on your procedures to qualify buyers and book slots 24/7.",
+          serviceParam: "Domain-Specific AI Agent",
+        },
+      ],
+    },
+    disciplineTwo: {
+      label: "Discipline 02 · The Fuel",
+      title: "Growth & Customer Acquisition",
+      countLabel: "3 Growth Layers",
+      items: [
+        {
+          num: "01",
+          title: "Full-Funnel Strategy & Performance Meta Ads",
+          timeline: "1–2 Weeks Setup",
+          desc: "Offer positioning, direct-response video scripts and hook direction, Meta CAPI tracking, and click-to-WhatsApp campaigns driving ready buyers.",
+          serviceParam: "Meta Ads & Video Scripts",
+        },
+        {
+          num: "02",
+          title: "Customer Pipeline & Content Marketing Audits",
+          timeline: "48h Delivery",
+          desc: "A 10-point diagnostic across your ad click, landing page, pricing structure, and DM reply speed, paired with an organic content roadmap.",
+          serviceParam: "Pipeline & Content Audit",
+        },
+        {
+          num: "03",
+          title: "Brand Credibility Polish (Onboarding Bonus)",
+          timeline: "Free With Build",
+          desc: "Logo cleanup, clean typography and color tokens, plus branded social ad templates bundled free with system builds and never sold separately.",
+          isBonus: true,
+          serviceParam: "Acquisition Funnel & Vitrine",
+        },
+      ],
+    },
+    signOffBar: {
+      title: "Guaranteed Sign-Off Standard",
+      desc: "If an inquiry fails to alert your team within 30 seconds or mobile checkout stutters on 4G, we keep fixing it until the pipeline is airtight.",
+      cta: "Request Free 48h Audit",
+    },
+    process: {
+      headline: "Four steps from audit to live launch.",
+      subhead: "Clear weekly milestones with direct engineer communication on WhatsApp.",
+      steps: [
+        {
+          num: "01",
+          title: "Pipeline Audit",
+          desc: "We review where visitors bounce, how fast inquiries get answered, and which manual steps slow down fulfillment.",
+          deliverable: "48h Video Teardown",
+        },
+        {
+          num: "02",
+          title: "Fixed Scope & Plan",
+          desc: "You receive a clear technical scope, package fit, and fixed delivery schedule within 24 hours.",
+          deliverable: "Signed Scope Sheet",
+        },
+        {
+          num: "03",
+          title: "Build & Bot Wiring",
+          desc: "We code the platform, connect WhatsApp or Telegram alerts, wire courier APIs or AI triage, and configure Meta CAPI.",
+          deliverable: "Live Staging Link",
+        },
+        {
+          num: "04",
+          title: "4G Test & Handover",
+          desc: "We verify mobile speed, live alerts, and order flows with your team, then transfer full code and domain ownership.",
+          deliverable: "Production Launch",
+        },
+      ],
+    },
+  },
+  workPage: {
+    headline: "Systems shipped for speed and real inquiry capture.",
+    subhead:
+      "Review live client builds, interactive sector demos, and our own internal agency software.",
+    clientSectionTitle: "Client Builds & Sector Demos",
+    inHouseSectionTitle: "Built In-House",
+    inHouseSubhead:
+      "The exact operations software we built to run Fleevy's own sales pipeline and project delivery.",
+    caseStudyDetail: {
+      bottleneckHeading: "The Bottleneck",
+      solutionHeading: "What We Engineered",
+      flowHeading: "Customer & Team Flow",
+      deliverablesHeading: "Delivered Components",
+      outcomesHeading: "Operational Shift",
+      ctaHeadline: "Want a system built like this for your business?",
+      ctaSubhead:
+        "Tell us what you sell and where leads get stuck. We will send a tailored plan within 24 hours.",
+    },
+  },
+  projects: [
+    {
+      id: "almadina",
+      title: "Almadina Bookstore",
+      niche: "Publishing & Retail E-Commerce",
+      shortOutcome: "Fast catalog search & 58-wilaya checkout",
+      kindLabel: "Live Client Build",
+      systemType: "Direct E-Commerce Engine",
+      summary:
+        "High-speed Arabic online bookstore featuring instant catalog search and structured 58-wilaya cash-on-delivery checkout.",
+      bottleneck:
+        "Readers searching across a large catalog on mobile data waited too long for pages to load, and manual DM order taking caused repeated address errors.",
+      solution:
+        "Built a fast Next.js catalog with instant fuzzy book search and a structured 58-wilaya cash-on-delivery checkout flow.",
+      deliverables: [
+        "Instant Arabic & French catalog search across thousands of titles",
+        "Native 58-wilaya and commune cash-on-delivery selector",
+        "Structured mobile order routing directly to fulfillment staff",
+        "Clean mobile reading and checkout UX on 4G connections",
+      ],
+      flowSteps: [
+        "Reader searches by title or topic in real time",
+        "Selects wilaya and delivery mode in two taps",
+        "Confirmed order ticket reaches staff for dispatch",
+      ],
+      outcomes: [
+        {
+          title: "Instant mobile book discovery",
+          detail:
+            "Customers find exact titles in seconds on mobile data instead of scrolling slow social posts.",
+        },
+        {
+          title: "Cleaner 58-wilaya fulfillment",
+          detail:
+            "Every order arrives with validated phone plus wilaya and commune fields ready for courier prep.",
+        },
+      ],
+    },
+    {
+      id: "adrena",
+      title: "Adréna Club",
+      niche: "Athletics & Combat Complex · Bab Ezzouar",
+      shortOutcome: "Tiered funnel & direct WhatsApp onboarding",
+      kindLabel: "Interactive Niche Demo",
+      systemType: "Client Acquisition Funnel",
+      summary:
+        "Two-floor athletic club platform in Bab Ezzouar displaying live schedules, women-only hours, and pre-qualified WhatsApp membership onboarding.",
+      bottleneck:
+        "Prospects flooded front-desk phone lines and DMs asking identical questions about schedules, pricing tiers, and women-only access.",
+      solution:
+        "Engineered a bilingual club site organizing floor schedules, coaching programs, and direct WhatsApp enrollment by selected membership tier.",
+      deliverables: [
+        "Bilingual French and Arabic mobile site",
+        "Interactive floor schedules & women-only session timetable",
+        "Membership tier selection pre-filling WhatsApp intake",
+        "Zero-app-download mobile experience",
+      ],
+      flowSteps: [
+        "Visitor checks floor equipment and class hours",
+        "Picks preferred training tier",
+        "WhatsApp opens with pre-selected membership inquiry",
+      ],
+      outcomes: [
+        {
+          title: "Pre-qualified membership messages",
+          detail:
+            "Prospective members message reception already knowing schedules along with club rules and their target plan.",
+        },
+        {
+          title: "Clear two-floor positioning",
+          detail:
+            "Presents bodybuilding, combat sports, and women-only spaces clearly before the first visit.",
+        },
+      ],
+    },
+    {
+      id: "mopizza",
+      title: "Mo Pizza Direct Ordering",
+      niche: "Multi-Branch Restaurants",
+      shortOutcome: "0% commission ordering across 5 branches",
+      kindLabel: "Live Client Build",
+      systemType: "Direct Ordering Engine",
+      summary:
+        "Direct ordering platform for a five-branch restaurant network replacing third-party delivery app cuts with instant WhatsApp and phone branch routing.",
+      bottleneck:
+        "Third-party food delivery apps charged heavy commissions on every order while slow mobile PDF menus drove hungry customers away.",
+      solution:
+        "Built a fast multilingual direct ordering engine supporting English plus French and Arabic across five branch locations with instant WhatsApp dispatch.",
+      deliverables: [
+        "Multilingual interactive menu with zero app install",
+        "Direct WhatsApp & branch telephone order routing",
+        "5-branch location selector and menu cart tray",
+        "Commission-free direct revenue channel",
+      ],
+      flowSteps: [
+        "Customer picks branch and builds meal order on mobile",
+        "Confirms pickup or delivery details in seconds",
+        "Formatted order lands directly at the selected branch",
+      ],
+      outcomes: [
+        {
+          title: "Zero aggregator toll on direct orders",
+          detail:
+            "Every direct website order retains full restaurant margin instead of paying marketplace commissions.",
+        },
+        {
+          title: "Faster multilingual ordering",
+          detail:
+            "Guests browse and submit clean orders in Arabic, French, or English on 4G mobile.",
+        },
+      ],
+    },
+    {
+      id: "command-center",
+      title: "Fleevy Command Center CRM",
+      niche: "Internal Operations Software",
+      shortOutcome: "Supabase CRM & 7-day cold-lead alerts",
+      kindLabel: "Built In-House",
+      systemType: "Custom Web App & CRM",
+      summary:
+        "Custom operations hub uniting website lead capture, Kanban project boards, automated Trello card sync, and 7-day inactivity tracking.",
+      bottleneck:
+        "Switching between spreadsheets, form emails, and Trello boards caused slow follow-ups and fragmented visibility over active client deliverables.",
+      solution:
+        "Built our own Next.js and Supabase operations cockpit with instant Telegram lead alerts, automatic Trello syncing, and 7-day cold-lead flags.",
+      deliverables: [
+        "Unified Inbox, Lead CRM, Project Hub, and Content Planner",
+        "Instant Telegram and email dispatch on every inbound inquiry",
+        "Automated Trello card creation when deals move forward",
+        "Visual 7-day inactivity flags preventing cold follow-ups",
+      ],
+      flowSteps: [
+        "Inbound audit or brief lands in Supabase",
+        "Telegram and Trello notify the builder immediately",
+        "Accepted leads convert cleanly into active tracked projects",
+      ],
+      outcomes: [
+        {
+          title: "Zero missed inbound leads",
+          detail:
+            "Every form submission hits phone and board within seconds without checking multiple inboxes.",
+        },
+        {
+          title: "Clear pipeline discipline",
+          detail:
+            "Seven-day inactivity alerts highlight stalled deals before prospects lose momentum.",
+        },
+      ],
+    },
+    {
+      id: "tawheed",
+      title: "Tawheed & Sunnah Bookstore",
+      niche: "Publishing & National Distribution",
+      shortOutcome: "58-wilaya courier flow & WhatsApp verification",
+      kindLabel: "Live Client Build",
+      systemType: "Direct E-Commerce Engine",
+      summary:
+        "High-speed Arabic bookstore platform supporting dual branch pickup, 58-wilaya courier delivery routing, and instant WhatsApp order verification.",
+      bottleneck:
+        "Managing dual storefront stock alongside nationwide cash-on-delivery requests through manual phone messages slowed daily packing.",
+      solution:
+        "Engineered an Arabic RTL e-commerce platform linking dual branch pickup options and 58-wilaya delivery choices straight to instant WhatsApp tickets.",
+      deliverables: [
+        "Dedicated Arabic RTL catalog built for fast mobile browsing",
+        "Dual-branch store pickup plus 58-wilaya delivery checkout",
+        "Instant WhatsApp order confirmation payload",
+        "Structured inventory organization for publisher stock",
+      ],
+      flowSteps: [
+        "Customer selects books inside the RTL mobile catalog",
+        "Chooses store pickup or 58-wilaya delivery",
+        "Order details arrive pre-formatted for fast verification",
+      ],
+      outcomes: [
+        {
+          title: "Organized nationwide order intake",
+          detail:
+            "Replaced scattered voice notes and chats with clean, structured delivery tickets.",
+        },
+        {
+          title: "Built natively for Arabic readers",
+          detail:
+            "Clean typography, fast search, and friction-free checkout in proper RTL layout.",
+        },
+      ],
+    },
+  ],
+  about: {
+    headline: "We build revenue infrastructure. Not static brochures.",
+    subhead:
+      "Fleevy combines software engineering and direct-response marketing so local and international operators capture more buyers with less manual work.",
+    metrics: [
+      {
+        title: "Fast on 4G Mobile",
+        desc: "Every platform is coded in Next.js without heavy page-builder bloat so mobile visitors stay and buy.",
+      },
+      {
+        title: "30-Second Alert Pipeline",
+        desc: "Inquiries, orders, and pre-qualified leads route automatically to WhatsApp, Telegram, or your CRM.",
+      },
+      {
+        title: "100% Client Ownership",
+        desc: "You keep your domain, database, ad accounts, and source code with zero ongoing agency hostage fees.",
+      },
+    ],
+    standardsTitle: "Three engineering rules behind every project.",
+    standards: [
+      {
+        num: "01",
+        title: "Conversion First",
+        desc: "Design exists to turn attention into booked consultations and paid orders. Every section earns its place by removing buyer hesitation.",
+      },
+      {
+        num: "02",
+        title: "Engine Plus Fuel",
+        desc: "A fast website with no traffic stays quiet, and paid ads pointing to slow DMs waste budget. We align both halves together.",
+      },
+      {
+        num: "03",
+        title: "Direct Builder Accountability",
+        desc: "No layers of junior account reps. The same senior team diagnosing your funnel builds and tests the live system.",
+      },
+    ],
+    stackTitle: "Production Stack",
+    stackSubhead:
+      "Proven web, database, and automation tools built for speed and low ongoing overhead.",
+    stack: [
+      {
+        name: "Next.js & TypeScript",
+        role: "Frontend & Server",
+        detail: "Fast server-rendered pages and reliable API routes.",
+      },
+      {
+        name: "PostgreSQL & Supabase",
+        role: "Database & Auth",
+        detail: "Structured storage for orders and leads plus custom CRMs.",
+      },
+      {
+        name: "WhatsApp & Telegram Webhooks",
+        role: "Bot Intake",
+        detail: "Instant lead qualification and 30-second team alerts.",
+      },
+      {
+        name: "Domain AI Agents",
+        role: "Vertical Triage",
+        detail: "Custom knowledge assistants trained on business docs.",
+      },
+      {
+        name: "Meta Pixel & CAPI",
+        role: "Ad Attribution",
+        detail: "Server-side conversion tracking for Facebook and Instagram ads.",
+      },
+      {
+        name: "OVH, Coolify & Cloudflare",
+        role: "Hosting & Edge",
+        detail: "Low-latency hosting, SSL certificates, and automated backups.",
+      },
+    ],
   },
   contact: {
-    hero: {
-      badge: "DIRECT INTAKE PIPELINE",
-      headline: "Let's build an acquisition engine that scales.",
-      subhead: "Choose your channel. Message directly on WhatsApp for an immediate teardown, or submit your project requirements below for a detailed blueprint within 24 hours."
+    headline: "Start with a free 48h audit or scope your build.",
+    subhead:
+      "Pick the channel that fits best. Drop your website or Instagram for a free video review, answer three quick prompts, or send a full project brief.",
+    tabs: {
+      audit: "Free 48h Video Audit",
+      scope: "3-Tap System Scope",
+      brief: "Full Project Brief",
     },
-    modeToggle: {
-      wizard: "⚡ Quick 3-Tap Intake",
-      form: "📝 Detailed Message"
+    whatsappCard: {
+      title: "Prefer talking directly on WhatsApp?",
+      body: "Send your current site, Instagram handle, or bottleneck directly to Hichem for a fast technical review and schedule check.",
+      builderName: "Hichem Djouadi",
+      builderRole: "Founder & Systems Architect",
+      cta: "Open WhatsApp Chat",
+      prefillMessage:
+        "Salam Hichem, I'd like to discuss a system or funnel audit for my business.",
     },
-    fastLane: {
-      badge: "PRINCIPAL DESK // DIRECT TRIAGE",
-      responseBadge: "Direct Technical Access",
-      headline: "Need immediate architecture review or launch dates?",
-      body: "Bypass intake queues. Send your existing storefront URL, bottleneck, or project brief directly to Hichem on WhatsApp for direct technical scoping and schedule availability.",
-      founderName: "Hichem Djouadi",
-      founderRole: "Founder & Technical Lead",
-      ctaBtn: "Start WhatsApp Technical Triage"
+    reassurance: [
+      "Direct conversation with the builder · zero sales reps",
+      "Fixed scope and clear quote within 24 hours",
+      "100% confidential review of your numbers and links",
+    ],
+    auditForm: {
+      title: "Get a Free 48-Hour Video Audit",
+      subhead:
+        "Share your website or Instagram link and WhatsApp number. We record a short breakdown showing where leads leak and what to fix first.",
+      urlLabel: "Website URL or Instagram / Facebook Link",
+      urlPlaceholder: "https://yourbusiness.com or @yourinstagram",
+      whatsappLabel: "WhatsApp Number",
+      whatsappPlaceholder: "+213 555 ... or international format",
+      nameLabel: "Your Name & Business (Optional)",
+      namePlaceholder: "Amine · Dental Clinic Algiers",
+      goalLabel: "Main Goal or Bottleneck (Optional)",
+      goalPlaceholder: "e.g., running Meta ads but missing inquiries in DMs...",
+      submitBtn: "Request Free 48h Video Audit",
+      submittingBtn: "Sending Request...",
+      errorRequired:
+        "Please enter both your website or social link and a WhatsApp number.",
+      successTitle: "Audit Request Received.",
+      successDesc:
+        "We logged your link and will send your custom video breakdown on WhatsApp within 48 hours.",
+      resetBtn: "Submit another link",
     },
-    reassurance: {
-      noSalesReps: "Zero sales reps · Direct talk with the builder",
-      fixedProposal: "Fixed proposal & pricing within 24 hours",
-      confidential: "100% confidential project review"
-    }
+    wizard: {
+      stepPrefix: "Step",
+      stepOf: "of 3",
+      readyBadge: "Tailored Scope Ready",
+      step1: {
+        title: "What system do you need built or upgraded?",
+        subhead: "Select the main focus for your business right now.",
+        options: [
+          {
+            id: "funnel",
+            title: "01. Acquisition Funnel & Vitrine",
+            desc: "High-converting site for clinics, real estate, clubs, or B2B services with instant WhatsApp triage.",
+          },
+          {
+            id: "commerce",
+            title: "02. Direct E-Commerce & Ordering",
+            desc: "Commission-free storefront with 58-wilaya cash on delivery, courier sync, and automated tickets.",
+          },
+          {
+            id: "crm",
+            title: "03. Custom CRM & Operations App",
+            desc: "Private dashboard replacing messy Excel sheets with Kanban stages and 7-day cold-lead alerts.",
+          },
+          {
+            id: "ai",
+            title: "04. Domain AI Triage Agent",
+            desc: "24/7 assistant trained on your procedures plus prices and schedules to screen and book buyers.",
+          },
+          {
+            id: "ads",
+            title: "05. Meta Ads, Scripts & Audit",
+            desc: "Targeted Facebook & Instagram campaigns with video hook scripts and Meta CAPI setup.",
+          },
+        ],
+      },
+      step2: {
+        title: "What is slowing down revenue today?",
+        subhead: "Pick the biggest bottleneck in your current workflow.",
+        backBtn: "Back to system choice",
+        options: [
+          {
+            id: "dm_loss",
+            title: "Losing buyers in slow DMs",
+            desc: "Prospects message on Instagram or WhatsApp and buy elsewhere while waiting hours for a reply.",
+          },
+          {
+            id: "app_fees",
+            title: "Middleman commissions & cart drops",
+            desc: "Third-party platforms take heavy margin cuts or slow pages force mobile shoppers to quit.",
+          },
+          {
+            id: "blind_ads",
+            title: "Ad spend without clear conversion",
+            desc: "Meta campaigns bring clicks or vanity likes instead of booked appointments and real orders.",
+          },
+          {
+            id: "manual_ops",
+            title: "Manual sheets & missed follow-ups",
+            desc: "Leads and orders sit scattered across chats and spreadsheets without follow-up reminders.",
+          },
+        ],
+      },
+      step3: {
+        title: "When do you want to launch?",
+        subhead: "Helps us confirm engineering availability.",
+        backBtn: "Back to bottleneck",
+        options: [
+          {
+            id: "asap",
+            title: "Right away",
+            desc: "Priority build schedule to plug leaks immediately.",
+            window: "2–3 Weeks",
+          },
+          {
+            id: "standard",
+            title: "Within 2–4 weeks",
+            desc: "Standard rollout with staging checks and team onboarding.",
+            window: "2–4 Weeks",
+          },
+          {
+            id: "exploring",
+            title: "Planning ahead",
+            desc: "Auditing options and scoping before committing a date.",
+            window: "Flexible",
+          },
+        ],
+      },
+      step4: {
+        title: "Your Tailored System Blueprint",
+        subhead:
+          "Save your details to log this scope and jump straight to WhatsApp with Hichem.",
+        recommendedLabel: "Recommended Package",
+        windowLabel: "Target Timeline",
+        deliverablesLabel: "Included Scope",
+        nameLabel: "Your Name & Business",
+        namePlaceholder: "Full name or company",
+        phoneLabel: "WhatsApp / Email",
+        phonePlaceholder: "+213 ... or email@company.com",
+        saveAndWhatsappBtn: "Save Scope & Open WhatsApp",
+        savingBtn: "Saving Blueprint...",
+        savedHint:
+          "Saved to our desk. If WhatsApp did not open automatically, click below.",
+        resetBtn: "Start over with another option",
+        errorContact: "Please enter your name and WhatsApp or email to save your blueprint.",
+        branches: {
+          funnel: {
+            packageName: "Foundational Engine or Turnkey Growth Machine",
+            deliverables: [
+              "Fast mobile site & conversion page (Next.js)",
+              "30-second WhatsApp or Telegram lead alert bot",
+              "Google Maps setup & optional Meta CAPI pixel wiring",
+            ],
+          },
+          commerce: {
+            packageName: "Direct E-Commerce Engine",
+            deliverables: [
+              "Fast mobile catalog with instant product search",
+              "58-wilaya cash on delivery + optional card payment",
+              "Automated WhatsApp tickets & courier tracking sync",
+            ],
+          },
+          crm: {
+            packageName: "Custom CRM & Workflow Scale",
+            deliverables: [
+              "Custom deal pipeline dashboard (Kanban stages)",
+              "Automated 7-day cold-lead inactivity alerts",
+              "Role-based staff access & form webhook sync",
+            ],
+          },
+          ai: {
+            packageName: "Enterprise Scale & Vertical AI",
+            deliverables: [
+              "Conversational AI trained strictly on your offers & FAQs",
+              "24/7 buyer pre-screening & calendar slot booking",
+              "Instant escalation to human staff for complex inquiries",
+            ],
+          },
+          ads: {
+            packageName: "Turnkey Growth Machine (Fuel Layer)",
+            deliverables: [
+              "Full-funnel positioning & direct-response video scripts",
+              "Meta Ads campaign setup with Pixel & CAPI tracking",
+              "10-point funnel audit & organic content roadmap",
+            ],
+          },
+        },
+        waPrefix: "Salam Hichem, I scoped a system on Fleevy:",
+      },
+    },
+    briefForm: {
+      needLabel: "01 · What do you need?",
+      timelineLabel: "02 · Target timeline",
+      detailsLabel: "03 · Your contact details",
+      nameLabel: "Your Name",
+      namePlaceholder: "Full name",
+      companyLabel: "Company",
+      companyPlaceholder: "Company or brand name",
+      emailLabel: "Email Address",
+      emailPlaceholder: "name@company.com",
+      phoneLabel: "Phone / WhatsApp",
+      phonePlaceholder: "+213 ... or international format",
+      scopeLabel: "Project Scope & Goals",
+      scopePlaceholder:
+        "Briefly describe your business, current bottleneck, or what you want built...",
+      submitBtn: "Send Project Brief",
+      submittingBtn: "Sending...",
+      note: "Confidential review · Direct builder response within 24 hours",
+      errorRequired:
+        "Please fill in your name and company along with email and phone number.",
+      errorInterests: "Please pick at least one service above.",
+      successTitle: "Brief Received.",
+      successDesc:
+        "Thank you. We logged your project details and will reply within 24 hours.",
+      services: {
+        website: "Acquisition Funnel & Vitrine",
+        ecommerce: "Direct E-Commerce Engine",
+        crm: "Custom CRM / Web App",
+        aiAgent: "Domain-Specific AI Agent",
+        ads: "Meta Ads & Video Scripts",
+        audit: "Pipeline & Content Audit",
+      },
+      timelines: {
+        rightAway: "Right away",
+        twoToFourWeeks: "Within 2–4 weeks",
+        planningAhead: "Planning ahead",
+      },
+    },
   },
-  preloader: {
-    words: ["Architecture", "Automation", "Performance", "Fleevy."]
+  privacy: {
+    title: "Privacy Policy",
+    updated: "Updated November 2026",
+    intro:
+      "Fleevy collects only the contact details and project links you intentionally submit when requesting a 48-hour video audit, scoping a build, or sending a project brief.",
+    sections: [
+      {
+        heading: "1. What Information We Collect",
+        body: "When you fill out an audit request, system scope, or contact form, we store your name, business name, email address, phone or WhatsApp number, submitted links, and project notes.",
+      },
+      {
+        heading: "2. How We Use Your Details",
+        body: "We use this information solely to review your request, prepare your video teardown or fixed-scope proposal, and communicate with you directly. We never sell or rent your details to third parties.",
+      },
+      {
+        heading: "3. Data Ownership & Removal",
+        body: "You can request access to or deletion of any project inquiry at any time by emailing contact@fleevy.net.",
+      },
+    ],
   },
   error: {
-    title: "Systems ",
-    titleItalic: "offline.",
-    message: "We encountered an anomaly in the deployment architecture.",
-    reboot: "Reboot Engine",
-    returnBase: "Return Base"
+    title: "Something went wrong.",
+    message: "We hit an unexpected issue loading this view. Try reloading or head back home.",
+    retry: "Try Again",
+    home: "Back Home",
   },
   notFound: {
-    badge: "404 // ROUTE NOT FOUND",
-    title: "Page ",
-    titleItalic: "not found.",
-    message: "The requested route does not exist or has been relocated within our architecture.",
-    returnHome: "Return to Base",
-    exploreServices: "Explore Services"
-  }
+    title: "Page not found.",
+    message: "This route does not exist or moved during our latest update.",
+    home: "Back Home",
+    services: "Explore Services",
+  },
 };

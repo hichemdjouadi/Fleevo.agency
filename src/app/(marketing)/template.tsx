@@ -20,28 +20,15 @@ export default function Template({ children }: { children: ReactNode }) {
 
   return (
     <>
-      {/* Top Ambient Loading Beam */}
       {isNavigating && (
         <motion.div
-          className="fixed top-0 left-0 right-0 h-[2px] z-[200] bg-gradient-to-r from-emerald-500 via-white to-emerald-400 pointer-events-none shadow-[0_0_12px_rgba(52,211,153,0.8)]"
+          className="fixed top-0 inset-x-0 h-[2px] z-[200] bg-[#0b0b0c] pointer-events-none"
           initial={{ scaleX: 0, originX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
         />
       )}
-
-      {/* Silky Page Entrance */}
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.35,
-          ease: [0.16, 1, 0.3, 1]
-        }}
-      >
-        {children}
-      </motion.div>
+      {children}
     </>
   );
 }

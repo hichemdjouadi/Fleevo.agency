@@ -1,532 +1,379 @@
 export type Locale = "en" | "fr" | "ar";
 export type Direction = "ltr" | "rtl";
 
-export interface NavTranslations {
-  services: string;
-  projects: string;
-  about: string;
-  contact: string;
-  homeAria: string;
-  openMenu: string;
-  closeMenu: string;
-  hqNotice: string;
-  switchLanguage: string;
-}
+export type CapabilityId = "ads" | "funnels" | "commerce" | "crm" | "ai";
+export type PackageId = "foundational" | "turnkey" | "scale";
+export type ServiceKey = "website" | "ecommerce" | "crm" | "aiAgent" | "ads" | "audit";
+export type TimelineKey = "rightAway" | "twoToFourWeeks" | "planningAhead";
+export type CalcMode = "leads" | "orders";
 
-export interface FooterTranslations {
-  mainStudio: string;
-  algiersHq: string;
-  algiersLocation: string;
-  globalDelivery: string;
-  worldwide: string;
-  remoteInfra: string;
-  tagline: string;
-  whatsappAria: string;
-  emailAria: string;
-  contactAria: string;
-}
-
-export interface ContactFormTranslations {
-  successTitle: string;
-  successDesc: string;
-  needLabel: string;
-  budgetLabel?: string;
-  timelineLabel: string;
-  detailsLabel: string;
-  nameLabel: string;
-  namePlaceholder: string;
-  companyLabel: string;
-  companyPlaceholder: string;
-  emailLabel: string;
-  emailPlaceholder: string;
-  phoneLabel: string;
-  phonePlaceholder: string;
-  projectScopeLabel: string;
-  projectScopePlaceholder: string;
-  submitBtn: string;
-  submittingBtn: string;
-  securityBadge: string;
-  errorRequired: string;
-  errorInterests: string;
-  services: {
-    website: string;
-    ecommerce: string;
-    crm: string;
-    ads: string;
-    audit: string;
-    aiAgent: string;
-  };
-  budgets?: {
-    standard?: string;
-    growth?: string;
-    enterprise?: string;
-  };
-  timelines: {
-    rightAway: string;
-    twoToFourWeeks: string;
-    planningAhead: string;
-  };
-}
-
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-export interface FAQTranslations {
-  title: string;
-  subtitle: string;
-  items: FAQItem[];
-}
-
-export interface ProjectBenefit {
-  direction: "up" | "down";
-  type?: string;
-  label?: string;
-  headline?: string;
-  detail?: string;
-}
-
-export interface FeaturedProjectTranslation {
-  id: string;
+export interface ProjectCopy {
+  id: "mopizza" | "almadina" | "adrena" | "tawheed" | "command-center";
   title: string;
   niche: string;
-  deployment: string;
-  summary: string;
-  statusBadge: string;
-  benefits: {
-    direction: "up" | "down";
-    label: string;
-  }[];
-}
-
-export interface HeroVisualProjectTranslation {
-  id: "mopizza" | "adrena" | "almadina";
-  tabLabel: string;
-  shortLabel: string;
-  client: string;
-  category: string;
-  statusBadge: string;
-  ctaText: string;
-  ctaTextDesktop: string;
-  benefits: {
-    direction: "up" | "down";
-    label: string;
-  }[];
-}
-
-export interface ServiceItemTranslation {
-  num: string;
-  title: string;
-  badge?: string;
-  sla?: string;
-  desc: string;
-  tags?: string[];
-  deliverables?: string[];
-  proofLabel?: string;
-}
-
-export interface LeakDiagnosticStage {
-  id: string;
-  num: string;
-  title: string;
-  traditional: {
-    headline: string;
-    desc?: string;
-    metric: string;
-    badge: string;
-  };
-  fleevy: {
-    headline: string;
-    desc?: string;
-    metric: string;
-    badge: string;
-  };
-}
-
-export interface LeakDiagnosticTranslations {
-  badge: string;
-  headline: string;
-  subhead: string;
-  traditionalTab: string;
-  fleevyTab: string;
-  stages: LeakDiagnosticStage[];
-  bottomNotice: {
-    headline: string;
-    desc?: string;
-    cta: string;
-  };
-}
-
-export interface SimulatorEvent {
-  timestamp: string;
-  step: string;
-  title: string;
-  detail?: string;
-  system: string;
-  badge: string;
-}
-
-export interface SimulatorScenario {
-  id: string;
-  name: string;
-  niche: string;
-  badge: string;
-  desc?: string;
-  events: SimulatorEvent[];
-  resultSummary: string;
-  speedMetric: string;
-  commissionMetric: string;
-}
-
-export interface EngineSimulatorTranslations {
-  badge: string;
-  headline: string;
-  subhead: string;
-  triggerBtn: string;
-  resetBtn: string;
-  statusIdle: string;
-  statusRunning: string;
-  statusComplete: string;
-  scenarios: SimulatorScenario[];
-}
-
-export interface HomeGuaranteePillar {
-  metric: string;
-  label: string;
-  desc: string;
-}
-
-export interface HomeGuaranteeTranslations {
-  badge: string;
-  headline: string;
-  subhead: string;
-  pillars: HomeGuaranteePillar[];
-  pledgeTitle: string;
-  pledgeText: string;
-  ctaBtn: string;
-  directDeskBtn: string;
-  founderSignature: string;
-}
-
-export interface HomeTranslations {
-  hero: {
-    headlineStart: string;
-    headlineEnd: string;
-    subtitle: string;
-    ctaPrimary: string;
-    ctaSecondary: string;
-    badges: {
-      speed: string;
-      bot: string;
-      commission: string;
-    };
-  };
-  engineSimulator: EngineSimulatorTranslations;
-  leakDiagnostic: LeakDiagnosticTranslations;
-  pillars: {
-    badge: string;
-    headline: string;
-    subhead: string;
-    pillarOneTitle: string;
-    pillarOneDesc: string;
-    pillarTwoTitle: string;
-    pillarTwoDesc: string;
-    pillarOneServices: ServiceItemTranslation[];
-    pillarTwoServices: ServiceItemTranslation[];
-  };
-  flow: {
-    badge: string;
-    headline: string;
-    subhead: string;
-    steps: {
-      num: string;
-      phase: string;
-      timeline?: string;
-      title: string;
-      desc: string;
-      deliverable?: string;
-    }[];
-  };
-  guarantee: HomeGuaranteeTranslations;
-  showcase: {
-    headline: string;
-    subhead: string;
-    viewAll: string;
-  };
-  founder: {
-    badge: string;
-    quote: string;
-    founderName: string;
-    founderRole: string;
-  };
-  ctaBanner: {
-    headline: string;
-    subhead: string;
-    primaryBtn: string;
-    whatsappBtn: string;
-  };
-}
-
-export interface ServicesPageTranslations {
-  hero: {
-    badge: string;
-    headline: string;
-    subhead: string;
-  };
-  pillarOneBadge: string;
-  pillarOneTitle: string;
-  pillarOneDesc: string;
-  pillarOneItems: ServiceItemTranslation[];
-  pillarTwoBadge: string;
-  pillarTwoTitle: string;
-  pillarTwoDesc: string;
-  pillarTwoItems: ServiceItemTranslation[];
-  comparison: {
-    badge: string;
-    headline: string;
-    subhead: string;
-    colAgency: string;
-    colFleevy: string;
-    rows: {
-      metric: string;
-      agency: string;
-      fleevy: string;
-    }[];
-  };
-  guarantees: {
-    badge: string;
-    headline: string;
-    items: {
-      title: string;
-      desc: string;
-    }[];
-  };
-  bottomCta: {
-    headline: string;
-    subhead: string;
-    ctaBtn: string;
-    whatsappBtn: string;
-  };
-}
-
-export interface WorkPageProjectTranslation {
-  title: string;
-  category: string;
-  filterCategory: "commerce" | "webapp";
-  client: string;
+  shortOutcome: string;
+  kindLabel: string;
   systemType: string;
-  statusBadge: string;
-  summary?: string;
-  benefits: {
-    direction: "up" | "down";
-    type: string;
-    headline: string;
+  summary: string;
+  bottleneck: string;
+  solution: string;
+  deliverables: string[];
+  flowSteps: string[];
+  outcomes: {
+    title: string;
     detail: string;
   }[];
-}
-
-export interface WorkPageTranslations {
-  hero: {
-    badge: string;
-    headline: string;
-    subhead: string;
-  };
-  filters: {
-    all: string;
-    commerce: string;
-    webapp: string;
-  };
-  projects: WorkPageProjectTranslation[];
-  bottomCta: {
-    headline: string;
-    subhead: string;
-    ctaBtn: string;
-    whatsappBtn: string;
-  };
-}
-
-export interface AboutPageTranslations {
-  hero: {
-    headlineStart: string;
-    headlineEnd: string;
-    subhead: string;
-    ledger: {
-      speedTitle: string;
-      speedSub: string;
-      botTitle: string;
-      botSub: string;
-      lockinTitle: string;
-      lockinSub: string;
-    };
-  };
-  standards: {
-    badge: string;
-    headline: string;
-    subhead: string;
-    items: {
-      num: string;
-      badge: string;
-      title: string;
-      desc: string;
-      benchmark: string;
-    }[];
-  };
-  techStack: {
-    badge: string;
-    headline: string;
-    subhead: string;
-    items: {
-      num: string;
-      name: string;
-      category: string;
-      detail: string;
-    }[];
-  };
-  scopeCard: {
-    badge: string;
-    countBadge: string;
-    headline: string;
-    footerText: string;
-    items: {
-      id: string;
-      num: string;
-      title: string;
-      sector: string;
-      output: string;
-      tag: string;
-    }[];
-  };
-  founder: {
-    badge: string;
-    headline: string;
-    paragraphs: string[];
-    founderName: string;
-    founderRole: string;
-  };
-  bottomCta: {
-    headline: string;
-    subhead: string;
-    ctaBtn: string;
-    whatsappBtn: string;
-  };
-}
-
-export interface OnboardingWizardTranslations {
-  badge: string;
-  stepPrefix: string;
-  stepOf: string;
-  blueprintReady: string;
-  step1: {
-    title: string;
-    subhead: string;
-    options: {
-      id: string;
-      title: string;
-      desc: string;
-    }[];
-  };
-  step2: {
-    title: string;
-    subhead: string;
-    backBtn: string;
-    options: {
-      id: string;
-      title: string;
-      desc: string;
-    }[];
-  };
-  step3: {
-    title: string;
-    subhead: string;
-    backBtn: string;
-    options: {
-      id: string;
-      title: string;
-      desc: string;
-      badge: string;
-      window: string;
-    }[];
-  };
-  step4: {
-    title: string;
-    subhead: string;
-    cardSystemLabel: string;
-    cardWindowLabel: string;
-    cardChallengeLabel: string;
-    cardDeliverablesLabel: string;
-    deliverables: string[];
-    whatsappBtn: string;
-    resetBtn: string;
-    waPrefix: string;
-    waSystemLabel: string;
-    waChallengeLabel: string;
-    waTimelineLabel: string;
-    waClosing: string;
-  };
-}
-
-export interface ContactPageTranslations {
-  hero: {
-    badge: string;
-    headline: string;
-    subhead: string;
-  };
-  modeToggle: {
-    wizard: string;
-    form: string;
-  };
-  fastLane: {
-    badge: string;
-    responseBadge: string;
-    headline: string;
-    body: string;
-    founderName: string;
-    founderRole: string;
-    ctaBtn: string;
-  };
-  reassurance: {
-    noSalesReps: string;
-    fixedProposal: string;
-    confidential: string;
-  };
 }
 
 export interface TranslationDictionary {
   locale: Locale;
   direction: Direction;
-  nav: NavTranslations;
-  footer: FooterTranslations;
-  contactForm: ContactFormTranslations;
-  onboardingWizard: OnboardingWizardTranslations;
-  faq: FAQTranslations;
-  heroVisual: {
-    projects: HeroVisualProjectTranslation[];
+  common: {
+    brand: string;
+    openLiveSite: string;
+    viewCaseStudy: string;
+    buildSimilar: string;
+    backToWork: string;
+    bookAudit: string;
+    whatsappDirect: string;
+    exploreWork: string;
+    mobileView: string;
+    desktopView: string;
+    liveClientBadge: string;
+    interactiveDemoBadge: string;
+    inHouseBadge: string;
+    customScopeLabel: string;
   };
-  featuredWork: {
-    projects: FeaturedProjectTranslation[];
+  nav: {
+    work: string;
+    services: string;
+    about: string;
+    contact: string;
+    auditCta: string;
+    homeAria: string;
+    openMenu: string;
+    closeMenu: string;
+    hqNotice: string;
+    switchLanguage: string;
   };
-  home: HomeTranslations;
-  services: ServicesPageTranslations;
-  work: WorkPageTranslations;
-  about: AboutPageTranslations;
-  contact: ContactPageTranslations;
-  preloader: {
-    words: string[];
+  footer: {
+    tagline: string;
+    hq: string;
+    privacy: string;
+    whatsappAria: string;
+    emailAria: string;
+  };
+  mobileQuickBar: {
+    auditBtn: string;
+    whatsappAria: string;
+  };
+  home: {
+    hero: {
+      headline: string;
+      subtitle: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+      scopeLine: string;
+    };
+    heroShowcase: {
+      tabs: {
+        id: "funnel" | "commerce" | "crm";
+        label: string;
+        shortLabel: string;
+        caption: string;
+      }[];
+      mobileHint: string;
+    };
+    work: {
+      headline: string;
+      viewAll: string;
+    };
+    systemAndCalc: {
+      headline: string;
+      subhead: string;
+      capabilities: {
+        id: CapabilityId;
+        label: string;
+        fuelLabel: string;
+        fuelValue: string;
+        engineLabel: string;
+        engineValue: string;
+        bonusLabel: string;
+        bonusValue: string;
+      }[];
+      calculator: {
+        modeLeads: string;
+        modeOrders: string;
+        leadsVolumeLabel: string;
+        leadsValueLabel: string;
+        leadsResultLabel: string;
+        leadsFormulaNote: string;
+        leadsCta: string;
+        ordersVolumeLabel: string;
+        ordersValueLabel: string;
+        ordersResultLabel: string;
+        ordersFormulaNote: string;
+        ordersCta: string;
+      };
+    };
+    packages: {
+      headline: string;
+      subhead: string;
+      guaranteeLine: string;
+      cards: {
+        id: PackageId;
+        num: string;
+        tag: string;
+        title: string;
+        desc: string;
+        bullets: string[];
+        cta: string;
+        serviceParam: string;
+        featured?: boolean;
+      }[];
+    };
+    builder: {
+      badge: string;
+      tag: string;
+      quote: string;
+      name: string;
+      role: string;
+      cta: string;
+    };
+    faq: {
+      title: string;
+      items: {
+        question: string;
+        answer: string;
+      }[];
+    };
+    closeBand: {
+      headline: string;
+      primaryBtn: string;
+      whatsappBtn: string;
+      note: string;
+    };
+  };
+  services: {
+    heroHeadline: string;
+    heroSubhead: string;
+    disciplineOne: {
+      label: string;
+      title: string;
+      countLabel: string;
+      items: {
+        num: string;
+        title: string;
+        timeline: string;
+        desc: string;
+        serviceParam: string;
+      }[];
+    };
+    disciplineTwo: {
+      label: string;
+      title: string;
+      countLabel: string;
+      items: {
+        num: string;
+        title: string;
+        timeline: string;
+        desc: string;
+        isBonus?: boolean;
+        serviceParam: string;
+      }[];
+    };
+    signOffBar: {
+      title: string;
+      desc: string;
+      cta: string;
+    };
+    process: {
+      headline: string;
+      subhead: string;
+      steps: {
+        num: string;
+        title: string;
+        desc: string;
+        deliverable: string;
+      }[];
+    };
+  };
+  workPage: {
+    headline: string;
+    subhead: string;
+    clientSectionTitle: string;
+    inHouseSectionTitle: string;
+    inHouseSubhead: string;
+    caseStudyDetail: {
+      bottleneckHeading: string;
+      solutionHeading: string;
+      flowHeading: string;
+      deliverablesHeading: string;
+      outcomesHeading: string;
+      ctaHeadline: string;
+      ctaSubhead: string;
+    };
+  };
+  projects: ProjectCopy[];
+  about: {
+    headline: string;
+    subhead: string;
+    metrics: {
+      title: string;
+      desc: string;
+    }[];
+    standardsTitle: string;
+    standards: {
+      num: string;
+      title: string;
+      desc: string;
+    }[];
+    stackTitle: string;
+    stackSubhead: string;
+    stack: {
+      name: string;
+      role: string;
+      detail: string;
+    }[];
+  };
+  contact: {
+    headline: string;
+    subhead: string;
+    tabs: {
+      audit: string;
+      scope: string;
+      brief: string;
+    };
+    whatsappCard: {
+      title: string;
+      body: string;
+      builderName: string;
+      builderRole: string;
+      cta: string;
+      prefillMessage: string;
+    };
+    reassurance: string[];
+    auditForm: {
+      title: string;
+      subhead: string;
+      urlLabel: string;
+      urlPlaceholder: string;
+      whatsappLabel: string;
+      whatsappPlaceholder: string;
+      nameLabel: string;
+      namePlaceholder: string;
+      goalLabel: string;
+      goalPlaceholder: string;
+      submitBtn: string;
+      submittingBtn: string;
+      errorRequired: string;
+      successTitle: string;
+      successDesc: string;
+      resetBtn: string;
+    };
+    wizard: {
+      stepPrefix: string;
+      stepOf: string;
+      readyBadge: string;
+      step1: {
+        title: string;
+        subhead: string;
+        options: {
+          id: "funnel" | "commerce" | "crm" | "ai" | "ads";
+          title: string;
+          desc: string;
+        }[];
+      };
+      step2: {
+        title: string;
+        subhead: string;
+        backBtn: string;
+        options: {
+          id: "dm_loss" | "app_fees" | "blind_ads" | "manual_ops";
+          title: string;
+          desc: string;
+        }[];
+      };
+      step3: {
+        title: string;
+        subhead: string;
+        backBtn: string;
+        options: {
+          id: "asap" | "standard" | "exploring";
+          title: string;
+          desc: string;
+          window: string;
+        }[];
+      };
+      step4: {
+        title: string;
+        subhead: string;
+        recommendedLabel: string;
+        windowLabel: string;
+        deliverablesLabel: string;
+        nameLabel: string;
+        namePlaceholder: string;
+        phoneLabel: string;
+        phonePlaceholder: string;
+        saveAndWhatsappBtn: string;
+        savingBtn: string;
+        savedHint: string;
+        resetBtn: string;
+        errorContact: string;
+        branches: Record<
+          "funnel" | "commerce" | "crm" | "ai" | "ads",
+          {
+            packageName: string;
+            deliverables: string[];
+          }
+        >;
+        waPrefix: string;
+      };
+    };
+    briefForm: {
+      needLabel: string;
+      timelineLabel: string;
+      detailsLabel: string;
+      nameLabel: string;
+      namePlaceholder: string;
+      companyLabel: string;
+      companyPlaceholder: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      phoneLabel: string;
+      phonePlaceholder: string;
+      scopeLabel: string;
+      scopePlaceholder: string;
+      submitBtn: string;
+      submittingBtn: string;
+      note: string;
+      errorRequired: string;
+      errorInterests: string;
+      successTitle: string;
+      successDesc: string;
+      services: Record<ServiceKey, string>;
+      timelines: Record<TimelineKey, string>;
+    };
+  };
+  privacy: {
+    title: string;
+    updated: string;
+    intro: string;
+    sections: {
+      heading: string;
+      body: string;
+    }[];
   };
   error: {
     title: string;
-    titleItalic: string;
     message: string;
-    reboot: string;
-    returnBase: string;
+    retry: string;
+    home: string;
   };
   notFound: {
-    badge: string;
     title: string;
-    titleItalic: string;
     message: string;
-    returnHome: string;
-    exploreServices: string;
+    home: string;
+    services: string;
   };
 }

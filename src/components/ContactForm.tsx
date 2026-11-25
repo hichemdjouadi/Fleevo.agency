@@ -2,19 +2,39 @@
 
 import { useState, useEffect } from "react";
 import { submitAuditRequest } from "@/app/actions";
-import { CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
+import { ServiceKey, TimelineKey } from "@/lib/i18n/types";
 
-type ServiceKey = "website" | "ecommerce" | "crm" | "ads" | "audit" | "aiAgent";
-type TimelineKey = "rightAway" | "twoToFourWeeks" | "planningAhead";
+const SERVICE_KEYS: ServiceKey[] = [
+  "website",
+  "ecommerce",
+  "crm",
+  "aiAgent",
+  "ads",
+  "audit",
+];
+const TIMELINE_KEYS: TimelineKey[] = [
+  "rightAway",
+  "twoToFourWeeks",
+  "planningAhead",
+];
 
-const SERVICE_KEYS: ServiceKey[] = ["website", "ecommerce", "crm", "ads", "audit", "aiAgent"];
-const TIMELINE_KEYS: TimelineKey[] = ["rightAway", "twoToFourWeeks", "planningAhead"];
+export default function ContactForm({
+  initialServiceParam,
+  initialSubjectParam,
+}: {
+  initialServiceParam?: string | null;
+  initialSubjectParam?: string | null;
+}) {
+  const { t, locale } = useTranslation();
+  const f = t.contact.briefForm;
 
-export default function ContactForm() {
-  const { t, isRTL, locale } = useTranslation();
-  const [selectedServiceKeys, setSelectedServiceKeys] = useState<ServiceKey[]>(["website"]);
-  const [selectedTimelineKey, setSelectedTimelineKey] = useState<TimelineKey>("twoToFourWeeks");
+  const [selectedServiceKeys, setSelectedServiceKeys] = useState<ServiceKey[]>([
+    "website",
+  ]);
+  const [selectedTimelineKey, setSelectedTimelineKey] =
+    useState<TimelineKey>("twoToFourWeeks");
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -25,13 +45,19 @@ export default function ContactForm() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const params = new URLSearchParams(window.location.search);
-    const subject = params.get("subject");
-    const serviceParam = params.get("service");
+    const paramService =
+      initialServiceParam ??
+      (typeof window !== "undefined"
+        ? new URLSearchParams(window.location.search).get("service")
+        : null);
+    const paramSubject =
+      initialSubjectParam ??
+      (typeof window !== "undefined"
+        ? new URLSearchParams(window.location.search).get("subject")
+        : null);
 
-    if (serviceParam) {
-      const decoded = decodeURIComponent(serviceParam).toLowerCase();
+    if (paramService) {
+      const decoded = paramService.toLowerCase();
       if (decoded.includes("crm") || decoded.includes("app")) {
         setSelectedServiceKeys(["crm"]);
       } else if (decoded.includes("commerce") || decoded.includes("store")) {
@@ -47,18 +73,16 @@ export default function ContactForm() {
       }
     }
 
-    if (subject) {
-      setDetails((prev) =>
-        prev ? prev : `Inquiry regarding: ${decodeURIComponent(subject)}\n`
-      );
+    if (paramSubject) {
+      setDetails((prev) => (prev ? prev : `${paramSubject}\n`));
     }
-  }, []);
+  }, [initialServiceParam, initialSubjectParam]);
 
   const toggleInterest = (key: ServiceKey) => {
     setSelectedServiceKeys((prev) => {
       if (prev.includes(key)) {
         if (prev.length === 1) return prev;
-        return prev.filter((i) => i !== key);
+        return prev.filter((item) => item !== key);
       }
       return [...prev, key];
     });
@@ -75,30 +99,36 @@ export default function ContactForm() {
     const trimmedDetails = details.trim();
 
     if (!trimmedName || !trimmedCompany || !trimmedEmail || !trimmedPhone) {
-      setError(t.contactForm.errorRequired);
+      setError(f.errorRequired);
       return;
     }
 
     if (selectedServiceKeys.length === 0) {
-      setError(t.contactForm.errorInterests);
+      setError(f.errorInterests);
       return;
     }
 
     setIsSubmitting(true);
 
-    const localizedServices = selectedServiceKeys.map((k) => t.contactForm.services[k]);
-    const localizedTimeline = t.contactForm.timelines[selectedTimelineKey];
-
+    const localizedServices = selectedServiceKeys.map((k) => f.services[k]);
+    const localizedTimeline = f.timelines[selectedTimelineKey];
     const formattedName = `${trimmedName} (${trimmedCompany})`;
-    const compiledDetails = `Language: ${locale.toUpperCase()}\nCompany: ${trimmedCompany}\nPhone/WhatsApp: ${trimmedPhone}\nTimeline: ${localizedTimeline}\nDetails: ${trimmedDetails || "N/A"}`;
+    const compiledDetails = [
+      `Language: ${locale.toUpperCase()}`,
+      `Company: ${trimmedCompany}`,
+      `Phone/WhatsApp: ${trimmedPhone}`,
+      `Timeline: ${localizedTimeline}`,
+      `Details: ${trimmedDetails || "N/A"}`,
+    ].join("\n");
 
     const result = await submitAuditRequest({
       name: formattedName,
       email: trimmedEmail,
+      niche: "Project Brief",
       timeline: localizedTimeline,
       budget: "Custom Scope",
       interests: localizedServices,
-      details: compiledDetails
+      details: compiledDetails,
     });
 
     if (result.error) {
@@ -112,231 +142,220 @@ export default function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="w-full py-16 px-8 rounded-[32px] bg-[#f7f7f8] border border-black/15 text-center shadow-sm text-black">
-        <div className="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="w-7 h-7" />
+      <div className="w-full py-14 px-8 rounded-[24px] sm:rounded-[28px] bg-[#f4f4f6] border border-black/[0.08] text-center text-[#0b0b0c]">
+        <div className="w-12 h-12 rounded-full bg-[#0b0b0c] text-white flex items-center justify-center mx-auto mb-5">
+          <CheckCircle2 className="w-6 h-6" />
         </div>
-        <h3 className="text-3xl font-medium tracking-tight text-black mb-3">
-          {t.contactForm.successTitle}
+        <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-2">
+          {f.successTitle}
         </h3>
-        <p className="text-neutral-600 font-light max-w-md mx-auto leading-relaxed">
-          {t.contactForm.successDesc}
+        <p className="text-sm sm:text-base text-neutral-600 max-w-md mx-auto leading-relaxed">
+          {f.successDesc}
         </p>
       </div>
     );
   }
 
   return (
-    <div className="w-full flex flex-col gap-8">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full bg-white border border-black/15 rounded-2xl sm:rounded-[32px] p-5 sm:p-10 md:p-12 flex flex-col gap-7 sm:gap-8 text-start shadow-[0_20px_50px_rgba(0,0,0,0.04)] text-black"
-      >
-        {/* 1. What do you need? */}
-        <div className="flex flex-col gap-3">
-          <span id="contact-need-label" className="text-xs font-mono text-neutral-600 font-medium">
-            {t.contactForm.needLabel}
-          </span>
-          <div className="flex flex-wrap gap-2 sm:gap-2.5" role="group" aria-labelledby="contact-need-label">
-            {SERVICE_KEYS.map((key) => {
-              const label = t.contactForm.services[key];
-              const isSelected = selectedServiceKeys.includes(key);
-              return (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => toggleInterest(key)}
-                  aria-pressed={isSelected}
-                  className={`min-h-[44px] flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border text-xs sm:text-sm transition-all focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none cursor-pointer ${
-                    isSelected
-                      ? "bg-black text-white border-black font-semibold shadow-sm"
-                      : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
-          </div>
+    <form
+      onSubmit={handleSubmit}
+      className="w-full bg-white border border-black/[0.1] rounded-[24px] sm:rounded-[28px] p-5 sm:p-8 flex flex-col gap-6 text-start text-[#0b0b0c]"
+    >
+      {/* Service Selection */}
+      <div className="flex flex-col gap-3">
+        <span id="contact-need-label" className="text-xs font-semibold text-neutral-700">
+          {f.needLabel}
+        </span>
+        <div
+          className="flex flex-wrap gap-2"
+          role="group"
+          aria-labelledby="contact-need-label"
+        >
+          {SERVICE_KEYS.map((key) => {
+            const label = f.services[key];
+            const isSelected = selectedServiceKeys.includes(key);
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => toggleInterest(key)}
+                aria-pressed={isSelected}
+                className={`min-h-[42px] px-4 py-2 rounded-full border text-xs sm:text-sm font-medium transition-colors cursor-pointer ${
+                  isSelected
+                    ? "bg-[#0b0b0c] text-white border-[#0b0b0c]"
+                    : "bg-[#f4f4f6] border-black/[0.08] text-neutral-700 hover:border-black/30 hover:text-[#0b0b0c]"
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
+      </div>
 
-        {/* 2. Target Timeline */}
-        <div className="flex flex-col gap-3">
-          <span id="contact-timeline-label" className="text-xs font-mono text-neutral-600 font-medium">
-            {t.contactForm.timelineLabel}
-          </span>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5" role="radiogroup" aria-labelledby="contact-timeline-label">
-            {TIMELINE_KEYS.map((key) => {
-              const label = t.contactForm.timelines[key];
-              const isSelected = selectedTimelineKey === key;
-              return (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => setSelectedTimelineKey(key)}
-                  role="radio"
-                  aria-checked={isSelected}
-                  className={`min-h-[44px] flex items-center justify-center px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border text-xs sm:text-sm transition-all text-center focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none cursor-pointer ${
-                    isSelected
-                      ? "bg-black text-white border-black font-semibold shadow-sm"
-                      : "bg-[#f7f7f8] border-black/10 text-neutral-700 hover:border-black/30 hover:text-black"
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
-          </div>
+      {/* Target Timeline */}
+      <div className="flex flex-col gap-3">
+        <span
+          id="contact-timeline-label"
+          className="text-xs font-semibold text-neutral-700"
+        >
+          {f.timelineLabel}
+        </span>
+        <div
+          className="grid grid-cols-1 sm:grid-cols-3 gap-2"
+          role="radiogroup"
+          aria-labelledby="contact-timeline-label"
+        >
+          {TIMELINE_KEYS.map((key) => {
+            const label = f.timelines[key];
+            const isSelected = selectedTimelineKey === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => setSelectedTimelineKey(key)}
+                role="radio"
+                aria-checked={isSelected}
+                className={`min-h-[44px] px-4 py-2.5 rounded-full border text-xs sm:text-sm font-medium transition-colors text-center cursor-pointer ${
+                  isSelected
+                    ? "bg-[#0b0b0c] text-white border-[#0b0b0c]"
+                    : "bg-[#f4f4f6] border-black/[0.08] text-neutral-700 hover:border-black/30 hover:text-[#0b0b0c]"
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
+      </div>
 
-        {/* 3. Direct Contact Details */}
-        <div className="flex flex-col gap-5">
-          <span className="text-xs font-mono text-neutral-600 font-medium">
-            {t.contactForm.detailsLabel}
-          </span>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="contact-name" className="text-xs font-mono text-neutral-600 font-medium">
-                {t.contactForm.nameLabel} <span className="text-black font-bold" aria-hidden="true">*</span>
-              </label>
-              <input
-                id="contact-name"
-                type="text"
-                autoComplete="name"
-                required
-                aria-required="true"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder={t.contactForm.namePlaceholder}
-                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm"
-              />
-            </div>
+      {/* Contact Inputs */}
+      <div className="flex flex-col gap-4">
+        <span className="text-xs font-semibold text-neutral-700">
+          {f.detailsLabel}
+        </span>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="contact-company" className="text-xs font-mono text-neutral-600 font-medium">
-                {t.contactForm.companyLabel} <span className="text-black font-bold" aria-hidden="true">*</span>
-              </label>
-              <input
-                id="contact-company"
-                type="text"
-                autoComplete="organization"
-                required
-                aria-required="true"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-                placeholder={t.contactForm.companyPlaceholder}
-                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="contact-email" className="text-xs font-mono text-neutral-600 font-medium">
-                {t.contactForm.emailLabel} <span className="text-black font-bold" aria-hidden="true">*</span>
-              </label>
-              <input
-                id="contact-email"
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                autoCapitalize="none"
-                required
-                aria-required="true"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t.contactForm.emailPlaceholder}
-                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm"
-              />
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label htmlFor="contact-phone" className="text-xs font-mono text-neutral-600 font-medium">
-                {t.contactForm.phoneLabel} <span className="text-black font-bold" aria-hidden="true">*</span>
-              </label>
-              <input
-                id="contact-phone"
-                type="tel"
-                inputMode="tel"
-                autoComplete="tel"
-                required
-                aria-required="true"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder={t.contactForm.phonePlaceholder}
-                className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <label htmlFor="contact-details" className="text-xs font-mono text-neutral-600 font-medium">
-              {t.contactForm.projectScopeLabel}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-1.5">
+            <label
+              htmlFor="contact-name"
+              className="text-xs font-medium text-neutral-700"
+            >
+              {f.nameLabel} <span aria-hidden="true">*</span>
             </label>
-            <textarea
-              id="contact-details"
-              value={details}
-              onChange={(e) => setDetails(e.target.value)}
-              placeholder={t.contactForm.projectScopePlaceholder}
-              rows={3}
-              className="w-full bg-[#f7f7f8] border border-black/10 rounded-2xl px-5 py-3.5 text-black placeholder:text-neutral-500 focus:outline-none focus:border-black focus:bg-white transition-colors text-base sm:text-sm resize-none"
+            <input
+              id="contact-name"
+              type="text"
+              autoComplete="name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder={f.namePlaceholder}
+              className="w-full min-h-[48px] bg-[#f4f4f6] border border-black/[0.08] rounded-xl px-4 py-3 text-base sm:text-sm text-[#0b0b0c] placeholder:text-[#525252] focus:outline-none focus:border-[#0b0b0c] focus:bg-white transition-colors"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label
+              htmlFor="contact-company"
+              className="text-xs font-medium text-neutral-700"
+            >
+              {f.companyLabel} <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id="contact-company"
+              type="text"
+              autoComplete="organization"
+              required
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              placeholder={f.companyPlaceholder}
+              className="w-full min-h-[48px] bg-[#f4f4f6] border border-black/[0.08] rounded-xl px-4 py-3 text-base sm:text-sm text-[#0b0b0c] placeholder:text-[#525252] focus:outline-none focus:border-[#0b0b0c] focus:bg-white transition-colors"
             />
           </div>
         </div>
 
-        {error && (
-          <div className="p-4 rounded-xl bg-[#f4f4f5] border border-black/20 text-black text-xs font-mono" role="alert">
-            {error}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-1.5">
+            <label
+              htmlFor="contact-email"
+              className="text-xs font-medium text-neutral-700"
+            >
+              {f.emailLabel} <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id="contact-email"
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={f.emailPlaceholder}
+              className="w-full min-h-[48px] bg-[#f4f4f6] border border-black/[0.08] rounded-xl px-4 py-3 text-base sm:text-sm text-[#0b0b0c] placeholder:text-[#525252] focus:outline-none focus:border-[#0b0b0c] focus:bg-white transition-colors"
+            />
           </div>
-        )}
 
-        {/* Submit Button */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-black/10">
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full sm:w-auto min-h-[50px] px-8 py-3.5 sm:py-4 rounded-full bg-black text-white font-semibold text-sm hover:bg-neutral-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 group shadow-sm cursor-pointer"
-          >
-            <span>{isSubmitting ? t.contactForm.submittingBtn : t.contactForm.submitBtn}</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
-          </button>
-
-          <div className="flex items-center gap-2 text-xs text-neutral-600 font-mono">
-            <ShieldCheck className="w-4 h-4 text-black shrink-0" />
-            <span>{t.contactForm.securityBadge}</span>
+          <div className="flex flex-col gap-1.5">
+            <label
+              htmlFor="contact-phone"
+              className="text-xs font-medium text-neutral-700"
+            >
+              {f.phoneLabel} <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id="contact-phone"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              required
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder={f.phonePlaceholder}
+              className="w-full min-h-[48px] bg-[#f4f4f6] border border-black/[0.08] rounded-xl px-4 py-3 text-base sm:text-sm text-[#0b0b0c] placeholder:text-[#525252] focus:outline-none focus:border-[#0b0b0c] focus:bg-white transition-colors"
+            />
           </div>
         </div>
-      </form>
 
-      {/* Direct Studio Channels */}
-      <div className="w-full pt-6 sm:pt-8 border-t border-black/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-6">
-        <div>
-          <span className="text-xs font-mono text-neutral-500 block mb-1">
-            {t.footer.mainStudio}
-          </span>
-          <p className="text-xs sm:text-sm text-neutral-700 font-light">
-            {t.nav.hqNotice}
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
-          <a
-            href="mailto:contact@fleevy.net"
-            className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
+        <div className="flex flex-col gap-1.5">
+          <label
+            htmlFor="contact-details"
+            className="text-xs font-medium text-neutral-700"
           >
-            <Mail className="w-3.5 h-3.5" />
-            <span>contact@fleevy.net</span>
-          </a>
-          <a
-            href="https://wa.me/213655934124"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/15 text-xs font-mono text-black hover:bg-black hover:text-white transition-colors text-center"
-          >
-            <Phone className="w-3.5 h-3.5" />
-            <span dir="ltr">+213 655 934 124</span>
-          </a>
+            {f.scopeLabel}
+          </label>
+          <textarea
+            id="contact-details"
+            rows={3}
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            placeholder={f.scopePlaceholder}
+            className="w-full bg-[#f4f4f6] border border-black/[0.08] rounded-xl px-4 py-3 text-base sm:text-sm text-[#0b0b0c] placeholder:text-[#525252] focus:outline-none focus:border-[#0b0b0c] focus:bg-white transition-colors resize-none"
+          />
         </div>
       </div>
-    </div>
+
+      {error && (
+        <div
+          role="alert"
+          className="p-3 rounded-xl bg-[#f4f4f6] border border-black/20 text-xs font-medium text-[#0b0b0c]"
+        >
+          {error}
+        </div>
+      )}
+
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-black/[0.08]">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full sm:w-auto min-h-[50px] px-8 py-3.5 rounded-full bg-[#0b0b0c] text-white text-sm font-semibold hover:bg-neutral-800 transition-colors disabled:opacity-50 inline-flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <span>{isSubmitting ? f.submittingBtn : f.submitBtn}</span>
+          <ArrowRight className="w-4 h-4 rtl:rotate-180 shrink-0" />
+        </button>
+
+        <span className="text-xs text-neutral-600">{f.note}</span>
+      </div>
+    </form>
   );
 }
